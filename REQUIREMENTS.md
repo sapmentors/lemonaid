@@ -18,7 +18,14 @@
 
 ### Security
 
-* Authentication should leverage SAP ID
+* Authentication should leverage an IDP, preferrably linked to the SAP/SCN ID service
+* It should be possible to add all mentors and alumni as users of the applications
+* It should be possible to grant specific access rights to particular users, identified as part of the project team
 * Every mentors has insight in their own profile and is able to manage it (read/write)
 * Every mentor should have insight in the profile of other mentors, but should not be able to change it (read)
 * Members of the SAP project team should have access to all mentor data (read/write/create)
+
+### Scalability
+
+* It should be possible to extend the application in the future with addional features
+* In the future the application could potential also share (smaller portions of) mentors data with the larger SAP community, based on mentors permissions
