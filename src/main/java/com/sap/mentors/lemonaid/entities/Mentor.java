@@ -69,17 +69,17 @@ public class Mentor {
     private boolean interestInOtherIdeas;
     private int hoursAvailable;
     
-    private String topicLeadRegion;
-    private String topic1;
+    @ManyToOne private Region topicLeadRegion;
+    @ManyToOne private Topic topic1;
     private String topic1Executive;
-    private String topic2;
+    @ManyToOne private Topic topic2;
     private String topic2Executive;
-    private String topic3;
+    @ManyToOne private Topic topic3;
     private String topic3Executive;
-    private String topic4;
+    @ManyToOne private Topic topic4;
     private String topic4Executive;
     private boolean topicLeadInterest;
-    private String topicInterest;
+    @ManyToOne private Topic topicInterest;
     
     public Mentor() {}
 
@@ -95,7 +95,8 @@ public class Mentor {
     		String address, String city, String state, String zip, Country country, String phone,
     		Region region,
     		int shirtNumber, String shirtText, Size shirtSize, Gender shirtMF,
-    		boolean interestInMentorCommunicationStrategy, boolean interestInMentorManagementModel, boolean interestInMentorMix, boolean interestInOtherIdeas, int hoursAvailable)
+    		boolean interestInMentorCommunicationStrategy, boolean interestInMentorManagementModel, boolean interestInMentorMix, boolean interestInOtherIdeas, int hoursAvailable,
+    		Region topicLeadRegion, Topic topic1, String topic1Executive, Topic topic2, String topic2Executive, Topic topic3, String topic3Executive, Topic topic4, String topic4Executive, boolean topicLeadInterest, Topic topicInterest)
     {
     	this.id = id;
         this.fullName = fullName;
@@ -148,6 +149,18 @@ public class Mentor {
         this.interestInMentorMix = interestInMentorMix;
         this.interestInOtherIdeas = interestInOtherIdeas;
         this.hoursAvailable = hoursAvailable;
+        
+        this.topicLeadRegion = topicLeadRegion;
+        this.topic1 = topic1;
+        this.topic1Executive = topic1Executive;
+        this.topic2 = topic2;
+        this.topic2Executive = topic2Executive;
+        this.topic3 = topic3;
+        this.topic3Executive = topic3Executive;
+        this.topic4 = topic4;
+        this.topic4Executive = topic4Executive;
+        this.topicLeadInterest = topicLeadInterest;
+        this.topicInterest = topicInterest;
     }
 
     @Override
@@ -549,19 +562,19 @@ public class Mentor {
 		this.hoursAvailable = hoursAvailable;
 	}
 
-	public String getTopicLeadRegion() {
+	public Region getTopicLeadRegion() {
 		return topicLeadRegion;
 	}
 
-	public void setTopicLeadRegion(String topicLeadRegion) {
+	public void setTopicLeadRegion(Region topicLeadRegion) {
 		this.topicLeadRegion = topicLeadRegion;
 	}
 
-	public String getTopic1() {
+	public Topic getTopic1() {
 		return topic1;
 	}
 
-	public void setTopic1(String topic1) {
+	public void setTopic1(Topic topic1) {
 		this.topic1 = topic1;
 	}
 
@@ -573,11 +586,11 @@ public class Mentor {
 		this.topic1Executive = topic1Executive;
 	}
 
-	public String getTopic2() {
+	public Topic getTopic2() {
 		return topic2;
 	}
 
-	public void setTopic2(String topic2) {
+	public void setTopic2(Topic topic2) {
 		this.topic2 = topic2;
 	}
 
@@ -589,11 +602,11 @@ public class Mentor {
 		this.topic2Executive = topic2Executive;
 	}
 
-	public String getTopic3() {
+	public Topic getTopic3() {
 		return topic3;
 	}
 
-	public void setTopic3(String topic3) {
+	public void setTopic3(Topic topic3) {
 		this.topic3 = topic3;
 	}
 
@@ -605,11 +618,11 @@ public class Mentor {
 		this.topic3Executive = topic3Executive;
 	}
 
-	public String getTopic4() {
+	public Topic getTopic4() {
 		return topic4;
 	}
 
-	public void setTopic4(String topic4) {
+	public void setTopic4(Topic topic4) {
 		this.topic4 = topic4;
 	}
 
@@ -629,11 +642,11 @@ public class Mentor {
 		this.topicLeadInterest = topicLeadInterest;
 	}
 
-	public String getTopicInterest() {
+	public Topic getTopicInterest() {
 		return topicInterest;
 	}
 
-	public void setTopicInterest(String topicInterest) {
+	public void setTopicInterest(Topic topicInterest) {
 		this.topicInterest = topicInterest;
 	}
 

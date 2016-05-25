@@ -23,6 +23,7 @@ import com.sap.mentors.lemonaid.entities.RelationshipToSap;
 import com.sap.mentors.lemonaid.entities.SapSoftwareSolution;
 import com.sap.mentors.lemonaid.entities.Size;
 import com.sap.mentors.lemonaid.entities.SoftSkill;
+import com.sap.mentors.lemonaid.entities.Topic;
 import com.sap.mentors.lemonaid.repository.CountryRepository;
 import com.sap.mentors.lemonaid.repository.ExpertiseLevelRepository;
 import com.sap.mentors.lemonaid.repository.GenderRepository;
@@ -35,6 +36,7 @@ import com.sap.mentors.lemonaid.repository.RelationshipRepository;
 import com.sap.mentors.lemonaid.repository.SapSoftwareSolutionRepository;
 import com.sap.mentors.lemonaid.repository.SizeRepository;
 import com.sap.mentors.lemonaid.repository.SoftSkillRepository;
+import com.sap.mentors.lemonaid.repository.TopicRepository;
 
 @SpringBootApplication
 public class Application extends SpringBootServletInitializer {
@@ -64,7 +66,8 @@ public class Application extends SpringBootServletInitializer {
 			final CountryRepository countryRepository,
 			final RegionRepository regionRepository,
 			final GenderRepository genderRepository,
-			final SizeRepository sizeRepository
+			final SizeRepository sizeRepository,
+			final TopicRepository topicRepository
 		) {
 
 		return new CommandLineRunner() {
@@ -766,6 +769,24 @@ public class Application extends SpringBootServletInitializer {
 					genderRepository.save(new Gender(Gender.M, "Male"));
 					genderRepository.save(new Gender(Gender.F, "Female"));
 				}
+				
+				if (topicRepository.count() == 0) {
+					log.info("Topics table is still empty. Populating it");
+					topicRepository.save(new Topic(Topic.SAP_RUN_SAP, "SAP Run SAP"));
+					topicRepository.save(new Topic(Topic.HANA_CLOUD_PLATFORM, "Hana Cloud Platform"));
+					topicRepository.save(new Topic(Topic.PRODUCTS_INNOVATION, "Products & Innovation"));
+					topicRepository.save(new Topic(Topic.CLOUD_FOR_CUSTOMERS, "Cloud for Customers"));
+					topicRepository.save(new Topic(Topic.S4HANA_SAP_ACTIVATE, "S/4Hana (SAP Activate)"));
+					topicRepository.save(new Topic(Topic.ABAP_AND_WORKFLOW, "ABAP and Workflow"));
+					topicRepository.save(new Topic(Topic.GLOBAL_BUSINESS_NETWORK, "Global Business Network"));
+					topicRepository.save(new Topic(Topic.UX_DESIGN, "Ux & Design"));
+					topicRepository.save(new Topic(Topic.ANALYTICS, "Analytics"));
+					topicRepository.save(new Topic(Topic.TECHNOLOGY_STRATEGY, "Technology Strategy"));
+					topicRepository.save(new Topic(Topic.SAP_SUPPORT, "Sap Support"));
+					topicRepository.save(new Topic(Topic.PLATFORM_SOLUTIONS, "Platform Solutions"));
+					topicRepository.save(new Topic(Topic.TECHNOLOGY, "Technology"));
+					topicRepository.save(new Topic(Topic.IOT, "IOT"));
+				}
 
 				if (mentorRepository.count() == 0) {
 					log.info("Mentors is still empty. Adding some sample records");
@@ -809,7 +830,13 @@ public class Application extends SpringBootServletInitializer {
 							"@jpenninkhof",
 							new Size(Size.L),
 							new Gender(Gender.M),
-							false, false, false, false, 0
+							false, false, false, false, 0,
+							null,
+							null, null, 
+							null, null, 
+							null, null, 
+							null, null, 
+							true, new Topic(Topic.HANA_CLOUD_PLATFORM) 
 						));
 					mentorRepository.save(new Mentor(
 							UUID.randomUUID().toString(), 
@@ -851,7 +878,13 @@ public class Application extends SpringBootServletInitializer {
 							"@Qualiture",
 							new Size(Size.L),
 							new Gender(Gender.M),
-							false, false, true, true, 0
+							false, false, true, true, 0,
+							new Region(Region.EUR),
+							new Topic(Topic.UX_DESIGN), "Prakash Darji Prakash Darji - (SVP & GM, Platform as a Service)  Uddhav Gupta; Rick Constanzo",
+							null, null, 
+							null, null, 
+							null, null, 
+							true, new Topic(Topic.UX_DESIGN) 
 						));
 				}
 
