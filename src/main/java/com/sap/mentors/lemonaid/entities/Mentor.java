@@ -95,6 +95,7 @@ public class Mentor {
     		String address, String city, String state, String zip, Country country, String phone,
     		Region region,
     		int shirtNumber, String shirtText, Size shirtSize, Gender shirtMF,
+    		String scnUrl, String twitterId, String linkedInUrl, String xingUrl, String facebookUrl,
     		boolean interestInMentorCommunicationStrategy, boolean interestInMentorManagementModel, boolean interestInMentorMix, boolean interestInOtherIdeas, int hoursAvailable,
     		Region topicLeadRegion, Topic topic1, String topic1Executive, Topic topic2, String topic2Executive, Topic topic3, String topic3Executive, Topic topic4, String topic4Executive, boolean topicLeadInterest, Topic topicInterest)
     {
@@ -143,6 +144,12 @@ public class Mentor {
         this.shirtText = shirtText;
         this.shirtSize = shirtSize;
         this.shirtMF = shirtMF;
+        
+        this.scnUrl = scnUrl; 
+        this.twitterId = twitterId;
+        this.linkedInUrl = linkedInUrl;
+        this.xingUrl = xingUrl;
+        this.facebookUrl = facebookUrl;
         
         this.interestInMentorCommunicationStrategy = interestInMentorCommunicationStrategy;
         this.interestInMentorManagementModel = interestInMentorManagementModel;

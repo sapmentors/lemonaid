@@ -28,7 +28,13 @@
 					<JPARelationship name="country">Country</JPARelationship>
 					<JPARelationship name="region">Region</JPARelationship>
 					<JPARelationship name="shirtSize">ShirtSize</JPARelationship>
-					<JPARelationship name="ShirtMF">ShirtMF</JPARelationship>
+					<JPARelationship name="shirtMF">ShirtMF</JPARelationship>
+					<JPARelationship name="topicLeadRegion">TopicLeadRegion</JPARelationship>
+					<JPARelationship name="topic1">Topic1</JPARelationship>
+					<JPARelationship name="topic2">Topic2</JPARelationship>
+					<JPARelationship name="topic3">Topic3</JPARelationship>
+					<JPARelationship name="topic4">Topic4</JPARelationship>
+					<JPARelationship name="topicInterest">TopicInterest</JPARelationship>
 				</JPARelationships>
 			</JPAEntityType>
 			<JPAEntityType name="MentorStatus">
