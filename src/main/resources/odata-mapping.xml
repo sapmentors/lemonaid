@@ -26,6 +26,9 @@
 					<JPARelationship name="softSkill5">SoftSkill5</JPARelationship>
 					<JPARelationship name="softSkill6">SoftSkill6</JPARelationship>
 					<JPARelationship name="country">Country</JPARelationship>
+					<JPARelationship name="region">Region</JPARelationship>
+					<JPARelationship name="shirtSize">ShirtSize</JPARelationship>
+					<JPARelationship name="ShirtMF">ShirtMF</JPARelationship>
 				</JPARelationships>
 			</JPAEntityType>
 			<JPAEntityType name="MentorStatus">

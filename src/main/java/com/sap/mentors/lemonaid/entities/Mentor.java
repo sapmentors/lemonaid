@@ -54,8 +54,8 @@ public class Mentor {
     
     private int shirtNumber;
     private String shirtText;
-    private String shirtSize;
-    private String shirtMF;
+    @ManyToOne private Size shirtSize;
+    @ManyToOne private Gender shirtMF;
 
     private String scnUrl;
     private String twitterId;
@@ -94,7 +94,7 @@ public class Mentor {
     		String email1, String email2, int preferredEmail,
     		String address, String city, String state, String zip, Country country, String phone,
     		Region region,
-    		int shirtNumber, String shirtText)
+    		int shirtNumber, String shirtText, Size shirtSize, Gender shirtMF)
     {
     	this.id = id;
         this.fullName = fullName;
@@ -139,6 +139,8 @@ public class Mentor {
         
         this.shirtNumber = shirtNumber;
         this.shirtText = shirtText;
+        this.shirtSize = shirtSize;
+        this.shirtMF = shirtMF;
     }
 
     @Override
@@ -484,19 +486,19 @@ public class Mentor {
 		this.shirtText = shirtText;
 	}
 
-	public String getShirtSize() {
+	public Size getShirtSize() {
 		return shirtSize;
 	}
 
-	public void setShirtSize(String shirtSize) {
+	public void setShirtSize(Size shirtSize) {
 		this.shirtSize = shirtSize;
 	}
 
-	public String getShirtMF() {
+	public Gender getShirtMF() {
 		return shirtMF;
 	}
 
-	public void setShirtMF(String shirtMF) {
+	public void setShirtMF(Gender shirtMF) {
 		this.shirtMF = shirtMF;
 	}
 

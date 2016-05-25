@@ -13,6 +13,7 @@ import org.springframework.context.annotation.Bean;
 
 import com.sap.mentors.lemonaid.entities.Country;
 import com.sap.mentors.lemonaid.entities.ExpertiseLevel;
+import com.sap.mentors.lemonaid.entities.Gender;
 import com.sap.mentors.lemonaid.entities.Industry;
 import com.sap.mentors.lemonaid.entities.LineOfBusiness;
 import com.sap.mentors.lemonaid.entities.Mentor;
@@ -20,9 +21,11 @@ import com.sap.mentors.lemonaid.entities.MentorStatus;
 import com.sap.mentors.lemonaid.entities.Region;
 import com.sap.mentors.lemonaid.entities.RelationshipToSap;
 import com.sap.mentors.lemonaid.entities.SapSoftwareSolution;
+import com.sap.mentors.lemonaid.entities.Size;
 import com.sap.mentors.lemonaid.entities.SoftSkill;
 import com.sap.mentors.lemonaid.repository.CountryRepository;
 import com.sap.mentors.lemonaid.repository.ExpertiseLevelRepository;
+import com.sap.mentors.lemonaid.repository.GenderRepository;
 import com.sap.mentors.lemonaid.repository.IndustryRepository;
 import com.sap.mentors.lemonaid.repository.LineOfBusinessRepository;
 import com.sap.mentors.lemonaid.repository.MentorRepository;
@@ -30,6 +33,7 @@ import com.sap.mentors.lemonaid.repository.MentorStatusRepository;
 import com.sap.mentors.lemonaid.repository.RegionRepository;
 import com.sap.mentors.lemonaid.repository.RelationshipRepository;
 import com.sap.mentors.lemonaid.repository.SapSoftwareSolutionRepository;
+import com.sap.mentors.lemonaid.repository.SizeRepository;
 import com.sap.mentors.lemonaid.repository.SoftSkillRepository;
 
 @SpringBootApplication
@@ -58,7 +62,9 @@ public class Application extends SpringBootServletInitializer {
 			final ExpertiseLevelRepository expertiseLevelRepository,
 			final SoftSkillRepository softSkillRepository,
 			final CountryRepository countryRepository,
-			final RegionRepository regionRepository
+			final RegionRepository regionRepository,
+			final GenderRepository genderRepository,
+			final SizeRepository sizeRepository
 		) {
 
 		return new CommandLineRunner() {
@@ -745,6 +751,22 @@ public class Application extends SpringBootServletInitializer {
 					regionRepository.save(new Region(Region.SA, "South America"));
 				}
 				
+				if (sizeRepository.count() == 0) {
+					log.info("Sizes table is still empty. Prepopulating it");
+					sizeRepository.save(new Size(Size.S, "S"));
+					sizeRepository.save(new Size(Size.M, "M"));
+					sizeRepository.save(new Size(Size.L, "L"));
+					sizeRepository.save(new Size(Size.XL, "XL"));
+					sizeRepository.save(new Size(Size.XXL, "XXL"));
+					sizeRepository.save(new Size(Size.XXXL, "XXXL"));
+				}
+
+				if (genderRepository.count() == 0) {
+					log.info("Genders table is still empty. Prepopulating it");
+					genderRepository.save(new Gender(Gender.M, "Male"));
+					genderRepository.save(new Gender(Gender.F, "Female"));
+				}
+
 				if (mentorRepository.count() == 0) {
 					log.info("Mentors is still empty. Adding some sample records");
 					mentorRepository.save(new Mentor(
@@ -784,7 +806,9 @@ public class Application extends SpringBootServletInitializer {
 							"+31987654321",
 							new Region(Region.EUR),
 							150,
-							"@jpenninkhof"
+							"@jpenninkhof",
+							new Size(Size.L),
+							new Gender(Gender.M)
 						));
 					mentorRepository.save(new Mentor(
 							UUID.randomUUID().toString(), 
@@ -823,7 +847,9 @@ public class Application extends SpringBootServletInitializer {
 							"+31123456789",
 							new Region(Region.EUR),
 							234,
-							"@Qualiture"
+							"@Qualiture",
+							new Size(Size.L),
+							new Gender(Gender.M)
 						));
 				}
 
