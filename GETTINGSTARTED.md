@@ -2,7 +2,7 @@
 
 ## Web application
 
-To get started with developement of the web-application, please follow the steps below:
+To get started with development of the web-application, please follow the steps below:
 
 1. Create a destination in the HCP Cockpit by importing file https://raw.githubusercontent.com/sapmentors/lemonaid/master/Lemonaid.dest
 1. Open Web-IDE
