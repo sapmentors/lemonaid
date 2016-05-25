@@ -11,3 +11,5 @@ mock_preview_sapui5.html
 sap-ui-cachebuster-info.json
 extended_runnable_file.html
 .*/extended_runnable_file.html
+/src/main/webapp/preview_hidden.html
+/.user.project.json
