@@ -782,7 +782,9 @@ public class Application extends SpringBootServletInitializer {
 							"4321AA", 
 							new Country(Country.NL), 
 							"+31987654321",
-							new Region(Region.EUR)
+							new Region(Region.EUR),
+							150,
+							"@jpenninkhof"
 						));
 					mentorRepository.save(new Mentor(
 							UUID.randomUUID().toString(), 
@@ -819,7 +821,9 @@ public class Application extends SpringBootServletInitializer {
 							"1234AA", 
 							new Country(Country.NL), 
 							"+31123456789",
-							new Region(Region.EUR)
+							new Region(Region.EUR),
+							234,
+							"@Qualiture"
 						));
 				}
 

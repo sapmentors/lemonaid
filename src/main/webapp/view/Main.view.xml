@@ -20,7 +20,10 @@
 									inset="false"
 									growing="true"
 									growingScrollToLoad="true"
-									items="{/Mentors}"
+									items="{
+										path: '/Mentors',
+										sorter: 'ShirtNumber'
+									}"
 									updateFinished="onUpdateFinished">
 									<headerToolbar>
 										<Toolbar id="tableToolbar">
@@ -34,12 +37,12 @@
 										</Toolbar>
 									</headerToolbar>
 									<columns>
-										<Column id="id" width="20em" />
+										<Column id="shirtNumber" width="20%" />
 										<Column id="fullName" />
 									</columns>
 									<ColumnListItem id="columnListItem">
 										<cells>
-											<ObjectIdentifier title="{Id}" class="sapMTableContentMargin"/>
+											<ObjectIdentifier title="{ShirtNumber}" class="sapMTableContentMargin"/>
 											<Text text="{FullName}" class="sapMTableContentMargin" />
 										</cells>
 									</ColumnListItem>

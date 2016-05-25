@@ -52,17 +52,17 @@ public class Mentor {
     
     @ManyToOne private Region region;
     
+    private int shirtNumber;
+    private String shirtText;
+    private String shirtSize;
+    private String shirtMF;
+
     private String scnUrl;
     private String twitterId;
     private String linkedInUrl;
     private String xingUrl;
     private String facebookUrl;
-    
-    private int shirtNumber;
-    private String shirtText;
-    private String shirtSize;
-    private String shirtMF;
-    
+        
     private boolean interestInMentorCommunicationStrategy;
     private boolean interestInMentorManagementModel;
     private boolean interestInMentorMix;
@@ -93,7 +93,8 @@ public class Mentor {
     		String bio,
     		String email1, String email2, int preferredEmail,
     		String address, String city, String state, String zip, Country country, String phone,
-    		Region region)
+    		Region region,
+    		int shirtNumber, String shirtText)
     {
     	this.id = id;
         this.fullName = fullName;
@@ -135,6 +136,9 @@ public class Mentor {
         this.phone = phone;
         
         this.region = region;
+        
+        this.shirtNumber = shirtNumber;
+        this.shirtText = shirtText;
     }
 
     @Override
