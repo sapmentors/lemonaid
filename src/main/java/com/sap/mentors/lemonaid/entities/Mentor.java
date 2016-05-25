@@ -1,6 +1,5 @@
 package com.sap.mentors.lemonaid.entities;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Lob;
@@ -39,7 +38,7 @@ public class Mentor {
     @ManyToOne private SoftSkill softSkill5;
     @ManyToOne private SoftSkill softSkill6;
     
-    @Column(columnDefinition="clob") @Lob private String bio; // The column annotation is for Derby only 
+    @Lob private String bio; 
     private String email1;
     private String email2;
     private int preferredEmail;
