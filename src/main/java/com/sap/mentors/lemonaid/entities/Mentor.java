@@ -30,12 +30,12 @@ public class Mentor {
     @ManyToOne private ExpertiseLevel sapExpertise2level;
     @ManyToOne private SapSoftwareSolution sapExpertise3;
     @ManyToOne private ExpertiseLevel sapExpertise3level;
-    private String softSkill1;
-    private String softSkill2;
-    private String softSkill3;
-    private String softSkill4;
-    private String softSkill5;
-    private String softSkill6;
+    @ManyToOne private SoftSkill softSkill1;
+    @ManyToOne private SoftSkill softSkill2;
+    @ManyToOne private SoftSkill softSkill3;
+    @ManyToOne private SoftSkill softSkill4;
+    @ManyToOne private SoftSkill softSkill5;
+    @ManyToOne private SoftSkill softSkill6;
     
     private String bio;
     private String email1;
@@ -87,7 +87,8 @@ public class Mentor {
     		String jobTitle, String company, RelationshipToSap relationshipToSap,
     		LineOfBusiness lineOfBusiness1, LineOfBusiness lineOfBusiness2, LineOfBusiness lineOfBusiness3,
     		Industry industry1, Industry industry2, Industry industry3,
-    		SapSoftwareSolution sapExpertise1, ExpertiseLevel sapExpertise1level, SapSoftwareSolution sapExpertise2, ExpertiseLevel sapExpertise2level, SapSoftwareSolution sapExpertise3, ExpertiseLevel sapExpertise3level)
+    		SapSoftwareSolution sapExpertise1, ExpertiseLevel sapExpertise1level, SapSoftwareSolution sapExpertise2, ExpertiseLevel sapExpertise2level, SapSoftwareSolution sapExpertise3, ExpertiseLevel sapExpertise3level,
+    		SoftSkill softSkill1, SoftSkill softSkill2, SoftSkill softSkill3, SoftSkill softSkill4, SoftSkill softSkill5, SoftSkill softSkill6)
     {
     	this.id = id;
         this.fullName = fullName;
@@ -109,6 +110,12 @@ public class Mentor {
         this.sapExpertise2level = sapExpertise2level;
         this.sapExpertise3 = sapExpertise3;
         this.sapExpertise3level = sapExpertise3level;
+        this.softSkill1 = softSkill1;
+        this.softSkill2 = softSkill2;
+        this.softSkill3 = softSkill3;
+        this.softSkill4 = softSkill4;
+        this.softSkill5 = softSkill5;
+        this.softSkill6 = softSkill6;
     }
 
     @Override
@@ -262,51 +269,51 @@ public class Mentor {
 		this.sapExpertise3level = sapExpertise3level;
 	}
 
-	public String getSoftSkill1() {
+	public SoftSkill getSoftSkill1() {
 		return softSkill1;
 	}
 
-	public void setSoftSkill1(String softSkill1) {
+	public void setSoftSkill1(SoftSkill softSkill1) {
 		this.softSkill1 = softSkill1;
 	}
 
-	public String getSoftSkill2() {
+	public SoftSkill getSoftSkill2() {
 		return softSkill2;
 	}
 
-	public void setSoftSkill2(String softSkill2) {
+	public void setSoftSkill2(SoftSkill softSkill2) {
 		this.softSkill2 = softSkill2;
 	}
 
-	public String getSoftSkill3() {
+	public SoftSkill getSoftSkill3() {
 		return softSkill3;
 	}
 
-	public void setSoftSkill3(String softSkill3) {
+	public void setSoftSkill3(SoftSkill softSkill3) {
 		this.softSkill3 = softSkill3;
 	}
 
-	public String getSoftSkill4() {
+	public SoftSkill getSoftSkill4() {
 		return softSkill4;
 	}
 
-	public void setSoftSkill4(String softSkill4) {
+	public void setSoftSkill4(SoftSkill softSkill4) {
 		this.softSkill4 = softSkill4;
 	}
 
-	public String getSoftSkill5() {
+	public SoftSkill getSoftSkill5() {
 		return softSkill5;
 	}
 
-	public void setSoftSkill5(String softSkill5) {
+	public void setSoftSkill5(SoftSkill softSkill5) {
 		this.softSkill5 = softSkill5;
 	}
 
-	public String getSoftSkill6() {
+	public SoftSkill getSoftSkill6() {
 		return softSkill6;
 	}
 
-	public void setSoftSkill6(String softSkill6) {
+	public void setSoftSkill6(SoftSkill softSkill6) {
 		this.softSkill6 = softSkill6;
 	}
 

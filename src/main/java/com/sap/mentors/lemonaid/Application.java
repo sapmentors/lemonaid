@@ -18,6 +18,7 @@ import com.sap.mentors.lemonaid.entities.Mentor;
 import com.sap.mentors.lemonaid.entities.MentorStatus;
 import com.sap.mentors.lemonaid.entities.RelationshipToSap;
 import com.sap.mentors.lemonaid.entities.SapSoftwareSolution;
+import com.sap.mentors.lemonaid.entities.SoftSkill;
 import com.sap.mentors.lemonaid.repository.ExpertiseLevelRepository;
 import com.sap.mentors.lemonaid.repository.IndustryRepository;
 import com.sap.mentors.lemonaid.repository.LineOfBusinessRepository;
@@ -25,6 +26,7 @@ import com.sap.mentors.lemonaid.repository.MentorRepository;
 import com.sap.mentors.lemonaid.repository.MentorStatusRepository;
 import com.sap.mentors.lemonaid.repository.RelationshipRepository;
 import com.sap.mentors.lemonaid.repository.SapSoftwareSolutionRepository;
+import com.sap.mentors.lemonaid.repository.SoftSkillRepository;
 
 @SpringBootApplication
 public class Application extends SpringBootServletInitializer {
@@ -49,7 +51,8 @@ public class Application extends SpringBootServletInitializer {
 			final LineOfBusinessRepository lineOfBusinessRepository,
 			final IndustryRepository industryRepository,
 			final SapSoftwareSolutionRepository sapSoftwareSolutionRepository,
-			final ExpertiseLevelRepository expertiseLevelRepository
+			final ExpertiseLevelRepository expertiseLevelRepository,
+			final SoftSkillRepository softSkillRepository
 		) {
 
 		return new CommandLineRunner() {
@@ -455,6 +458,25 @@ public class Application extends SpringBootServletInitializer {
 					expertiseLevelRepository.save(new ExpertiseLevel(ExpertiseLevel.EXPERT, "Expert"));
 				}
 
+				if (softSkillRepository.count() == 0) {
+					log.info("Soft skills table is still empty. Prepopulating it");
+					softSkillRepository.save(new SoftSkill(SoftSkill.DESIGN_THINKING, "Design Thinking"));
+					softSkillRepository.save(new SoftSkill(SoftSkill.ASUG, "ASUG"));
+					softSkillRepository.save(new SoftSkill(SoftSkill.INSIDETRACKS, "InsideTracks"));
+					softSkillRepository.save(new SoftSkill(SoftSkill.INTERNET_OF_THINGS, "Internet of Things"));
+					softSkillRepository.save(new SoftSkill(SoftSkill.LEAN_METHODOLOGY, "Lean Methodology"));
+					softSkillRepository.save(new SoftSkill(SoftSkill.COMMUNICATION_SKILLS, "Communication skills"));
+					softSkillRepository.save(new SoftSkill(SoftSkill.INTERPERSONAL_SKILLS, "Interpersonal skills"));
+					softSkillRepository.save(new SoftSkill(SoftSkill.PROJECT_MANAGEMENT_SKILLS, "Project management skills"));
+					softSkillRepository.save(new SoftSkill(SoftSkill.PROCESS_IMPROVEMENT_EXPERTISE, "Process improvement expertise"));
+					softSkillRepository.save(new SoftSkill(SoftSkill.EMOTIONAL_INTELLIGENCE, "Emotional intelligence"));
+					softSkillRepository.save(new SoftSkill(SoftSkill.CRITICAL_OBSERVATION_SKILLS, "Critical observation skills"));
+					softSkillRepository.save(new SoftSkill(SoftSkill.CONFLICT_RESOLUTION, "Conflict Resolution"));
+					softSkillRepository.save(new SoftSkill(SoftSkill.DECISIONMAKING, "Decision-Making"));
+					softSkillRepository.save(new SoftSkill(SoftSkill.LEADERSHIP_SKILLS, "Leadership skills"));
+					softSkillRepository.save(new SoftSkill(SoftSkill.CHANGE_MANAGEMENT, "Change Management"));
+				}
+
 				if (mentorRepository.count() == 0) {
 					log.info("Database is still empty. Adding some sample records");
 					mentorRepository.save(new Mentor(
@@ -475,7 +497,13 @@ public class Application extends SpringBootServletInitializer {
 							new SapSoftwareSolution(SapSoftwareSolution.SAP_MOBILE_PLATFORM),
 							new ExpertiseLevel(ExpertiseLevel.EXPERT),
 							new SapSoftwareSolution(SapSoftwareSolution.SAP_FIORI),
-							new ExpertiseLevel(ExpertiseLevel.EXPERT)
+							new ExpertiseLevel(ExpertiseLevel.EXPERT),
+							new SoftSkill(SoftSkill.INSIDETRACKS),
+							new SoftSkill(SoftSkill.DESIGN_THINKING),
+							new SoftSkill(SoftSkill.INTERNET_OF_THINGS),
+							null,
+							null,
+							null
 						));
 					mentorRepository.save(new Mentor(
 							UUID.randomUUID().toString(), 
@@ -495,7 +523,13 @@ public class Application extends SpringBootServletInitializer {
 							new SapSoftwareSolution(SapSoftwareSolution.SAP_HANA_CLOUD_PLATFORM),
 							new ExpertiseLevel(ExpertiseLevel.EXPERT),
 							new SapSoftwareSolution(SapSoftwareSolution.SAP_NETWEAVER),
-							new ExpertiseLevel(ExpertiseLevel.EXPERT)
+							new ExpertiseLevel(ExpertiseLevel.EXPERT),
+							new SoftSkill(SoftSkill.INTERPERSONAL_SKILLS),
+							new SoftSkill(SoftSkill.EMOTIONAL_INTELLIGENCE),
+							new SoftSkill(SoftSkill.DESIGN_THINKING),
+							new SoftSkill(SoftSkill.LEAN_METHODOLOGY),
+							new SoftSkill(SoftSkill.CONFLICT_RESOLUTION),
+							new SoftSkill(SoftSkill.CRITICAL_OBSERVATION_SKILLS)
 						));
 				}
 
