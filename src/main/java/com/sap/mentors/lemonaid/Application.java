@@ -17,6 +17,7 @@ import com.sap.mentors.lemonaid.entities.Industry;
 import com.sap.mentors.lemonaid.entities.LineOfBusiness;
 import com.sap.mentors.lemonaid.entities.Mentor;
 import com.sap.mentors.lemonaid.entities.MentorStatus;
+import com.sap.mentors.lemonaid.entities.Region;
 import com.sap.mentors.lemonaid.entities.RelationshipToSap;
 import com.sap.mentors.lemonaid.entities.SapSoftwareSolution;
 import com.sap.mentors.lemonaid.entities.SoftSkill;
@@ -26,6 +27,7 @@ import com.sap.mentors.lemonaid.repository.IndustryRepository;
 import com.sap.mentors.lemonaid.repository.LineOfBusinessRepository;
 import com.sap.mentors.lemonaid.repository.MentorRepository;
 import com.sap.mentors.lemonaid.repository.MentorStatusRepository;
+import com.sap.mentors.lemonaid.repository.RegionRepository;
 import com.sap.mentors.lemonaid.repository.RelationshipRepository;
 import com.sap.mentors.lemonaid.repository.SapSoftwareSolutionRepository;
 import com.sap.mentors.lemonaid.repository.SoftSkillRepository;
@@ -55,7 +57,8 @@ public class Application extends SpringBootServletInitializer {
 			final SapSoftwareSolutionRepository sapSoftwareSolutionRepository,
 			final ExpertiseLevelRepository expertiseLevelRepository,
 			final SoftSkillRepository softSkillRepository,
-			final CountryRepository countryRepository
+			final CountryRepository countryRepository,
+			final RegionRepository regionRepository
 		) {
 
 		return new CommandLineRunner() {
@@ -733,8 +736,17 @@ public class Application extends SpringBootServletInitializer {
 					countryRepository.save(new Country(Country.ZW, "Zimbabwe"));
 				}
 
+				if (regionRepository.count() == 0) {
+					log.info("Region table is still empty. Prepopulating it");
+					regionRepository.save(new Region(Region.APJ, "Asia Pacific and Japan (APJ)"));
+					regionRepository.save(new Region(Region.EUR, "Europe"));
+					regionRepository.save(new Region(Region.MEA, "Middle East and Africa"));
+					regionRepository.save(new Region(Region.NA, "North America"));
+					regionRepository.save(new Region(Region.SA, "South America"));
+				}
+				
 				if (mentorRepository.count() == 0) {
-					log.info("Database is still empty. Adding some sample records");
+					log.info("Mentors is still empty. Adding some sample records");
 					mentorRepository.save(new Mentor(
 							UUID.randomUUID().toString(), 
 							"Jan Penninkhof",
@@ -769,7 +781,8 @@ public class Application extends SpringBootServletInitializer {
 							null, 
 							"4321AA", 
 							new Country(Country.NL), 
-							"+31987654321"
+							"+31987654321",
+							new Region(Region.EUR)
 						));
 					mentorRepository.save(new Mentor(
 							UUID.randomUUID().toString(), 
@@ -805,7 +818,8 @@ public class Application extends SpringBootServletInitializer {
 							null, 
 							"1234AA", 
 							new Country(Country.NL), 
-							"+31123456789"
+							"+31123456789",
+							new Region(Region.EUR)
 						));
 				}
 

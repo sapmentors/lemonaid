@@ -50,7 +50,7 @@ public class Mentor {
     @ManyToOne private Country country;
     private String phone;
     
-    private String region;
+    @ManyToOne private Region region;
     
     private String scnUrl;
     private String twitterId;
@@ -92,7 +92,8 @@ public class Mentor {
     		SoftSkill softSkill1, SoftSkill softSkill2, SoftSkill softSkill3, SoftSkill softSkill4, SoftSkill softSkill5, SoftSkill softSkill6,
     		String bio,
     		String email1, String email2, int preferredEmail,
-    		String address, String city, String state, String zip, Country country, String phone)
+    		String address, String city, String state, String zip, Country country, String phone,
+    		Region region)
     {
     	this.id = id;
         this.fullName = fullName;
@@ -132,6 +133,8 @@ public class Mentor {
         this.zip = zip;
         this.country = country;
         this.phone = phone;
+        
+        this.region = region;
     }
 
     @Override
@@ -413,11 +416,11 @@ public class Mentor {
 		this.phone = phone;
 	}
 
-	public String getRegion() {
+	public Region getRegion() {
 		return region;
 	}
 
-	public void setRegion(String region) {
+	public void setRegion(Region region) {
 		this.region = region;
 	}
 
