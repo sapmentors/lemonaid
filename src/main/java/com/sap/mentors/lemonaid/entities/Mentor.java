@@ -94,7 +94,8 @@ public class Mentor {
     		String email1, String email2, int preferredEmail,
     		String address, String city, String state, String zip, Country country, String phone,
     		Region region,
-    		int shirtNumber, String shirtText, Size shirtSize, Gender shirtMF)
+    		int shirtNumber, String shirtText, Size shirtSize, Gender shirtMF,
+    		boolean interestInMentorCommunicationStrategy, boolean interestInMentorManagementModel, boolean interestInMentorMix, boolean interestInOtherIdeas, int hoursAvailable)
     {
     	this.id = id;
         this.fullName = fullName;
@@ -141,6 +142,12 @@ public class Mentor {
         this.shirtText = shirtText;
         this.shirtSize = shirtSize;
         this.shirtMF = shirtMF;
+        
+        this.interestInMentorCommunicationStrategy = interestInMentorCommunicationStrategy;
+        this.interestInMentorManagementModel = interestInMentorManagementModel;
+        this.interestInMentorMix = interestInMentorMix;
+        this.interestInOtherIdeas = interestInOtherIdeas;
+        this.hoursAvailable = hoursAvailable;
     }
 
     @Override

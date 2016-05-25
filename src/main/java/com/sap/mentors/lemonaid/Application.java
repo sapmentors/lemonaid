@@ -808,7 +808,8 @@ public class Application extends SpringBootServletInitializer {
 							150,
 							"@jpenninkhof",
 							new Size(Size.L),
-							new Gender(Gender.M)
+							new Gender(Gender.M),
+							false, false, false, false, 0
 						));
 					mentorRepository.save(new Mentor(
 							UUID.randomUUID().toString(), 
@@ -849,7 +850,8 @@ public class Application extends SpringBootServletInitializer {
 							234,
 							"@Qualiture",
 							new Size(Size.L),
-							new Gender(Gender.M)
+							new Gender(Gender.M),
+							false, false, true, true, 0
 						));
 				}
 
