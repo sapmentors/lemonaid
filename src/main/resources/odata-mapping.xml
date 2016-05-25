@@ -19,6 +19,13 @@
 					<JPARelationship name="sapExpertise1level">SapExpertise1Level</JPARelationship>
 					<JPARelationship name="sapExpertise2level">SapExpertise2Level</JPARelationship>
 					<JPARelationship name="sapExpertise3level">SapExpertise3Level</JPARelationship>
+					<JPARelationship name="softSkill1">SoftSkill1</JPARelationship>
+					<JPARelationship name="softSkill2">SoftSkill2</JPARelationship>
+					<JPARelationship name="softSkill3">SoftSkill3</JPARelationship>
+					<JPARelationship name="softSkill4">SoftSkill4</JPARelationship>
+					<JPARelationship name="softSkill5">SoftSkill5</JPARelationship>
+					<JPARelationship name="softSkill6">SoftSkill6</JPARelationship>
+					<JPARelationship name="country">Country</JPARelationship>
 				</JPARelationships>
 			</JPAEntityType>
 			<JPAEntityType name="MentorStatus">
@@ -32,6 +39,9 @@
 			</JPAEntityType>
 			<JPAEntityType name="Industry">
 				<EDMEntitySet>Industries</EDMEntitySet> 
+			</JPAEntityType>
+			<JPAEntityType name="Country">
+				<EDMEntitySet>Countries</EDMEntitySet> 
 			</JPAEntityType>
 		</JPAEntityTypes>
 	</PersistenceUnit>

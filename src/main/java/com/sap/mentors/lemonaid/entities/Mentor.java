@@ -1,5 +1,6 @@
 package com.sap.mentors.lemonaid.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Lob;
@@ -38,7 +39,7 @@ public class Mentor {
     @ManyToOne private SoftSkill softSkill5;
     @ManyToOne private SoftSkill softSkill6;
     
-    @Lob private String bio;
+    @Column(columnDefinition="clob") @Lob private String bio; // The column annotation is for Derby only 
     private String email1;
     private String email2;
     private int preferredEmail;
@@ -47,9 +48,9 @@ public class Mentor {
     private String city;
     private String state;
     private String zip;
-    private String country;
+    @ManyToOne private Country country;
     private String phone;
-
+    
     private String region;
     
     private String scnUrl;
@@ -91,7 +92,8 @@ public class Mentor {
     		SapSoftwareSolution sapExpertise1, ExpertiseLevel sapExpertise1level, SapSoftwareSolution sapExpertise2, ExpertiseLevel sapExpertise2level, SapSoftwareSolution sapExpertise3, ExpertiseLevel sapExpertise3level,
     		SoftSkill softSkill1, SoftSkill softSkill2, SoftSkill softSkill3, SoftSkill softSkill4, SoftSkill softSkill5, SoftSkill softSkill6,
     		String bio,
-    		String email1, String email2, int preferredEmail)
+    		String email1, String email2, int preferredEmail,
+    		String address, String city, String state, String zip, Country country, String phone)
     {
     	this.id = id;
         this.fullName = fullName;
@@ -124,6 +126,13 @@ public class Mentor {
         this.email1 = email1;
         this.email2 = email2;
         this.preferredEmail = 1;
+        
+        this.address = address;
+        this.city = city;
+        this.state = state;
+        this.zip = zip;
+        this.country = country;
+        this.phone = phone;
     }
 
     @Override
@@ -389,11 +398,11 @@ public class Mentor {
 		this.zip = zip;
 	}
 
-	public String getCountry() {
+	public Country getCountry() {
 		return country;
 	}
 
-	public void setCountry(String country) {
+	public void setCountry(Country country) {
 		this.country = country;
 	}
 

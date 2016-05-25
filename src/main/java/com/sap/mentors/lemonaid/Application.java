@@ -11,6 +11,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
 
+import com.sap.mentors.lemonaid.entities.Country;
 import com.sap.mentors.lemonaid.entities.ExpertiseLevel;
 import com.sap.mentors.lemonaid.entities.Industry;
 import com.sap.mentors.lemonaid.entities.LineOfBusiness;
@@ -19,6 +20,7 @@ import com.sap.mentors.lemonaid.entities.MentorStatus;
 import com.sap.mentors.lemonaid.entities.RelationshipToSap;
 import com.sap.mentors.lemonaid.entities.SapSoftwareSolution;
 import com.sap.mentors.lemonaid.entities.SoftSkill;
+import com.sap.mentors.lemonaid.repository.CountryRepository;
 import com.sap.mentors.lemonaid.repository.ExpertiseLevelRepository;
 import com.sap.mentors.lemonaid.repository.IndustryRepository;
 import com.sap.mentors.lemonaid.repository.LineOfBusinessRepository;
@@ -52,7 +54,8 @@ public class Application extends SpringBootServletInitializer {
 			final IndustryRepository industryRepository,
 			final SapSoftwareSolutionRepository sapSoftwareSolutionRepository,
 			final ExpertiseLevelRepository expertiseLevelRepository,
-			final SoftSkillRepository softSkillRepository
+			final SoftSkillRepository softSkillRepository,
+			final CountryRepository countryRepository
 		) {
 
 		return new CommandLineRunner() {
@@ -477,6 +480,259 @@ public class Application extends SpringBootServletInitializer {
 					softSkillRepository.save(new SoftSkill(SoftSkill.CHANGE_MANAGEMENT, "Change Management"));
 				}
 
+				if (countryRepository.count() == 0) {
+					log.info("Country table is still empty. Prepopulating it");
+					countryRepository.save(new Country(Country.AD, "Andorra"));
+					countryRepository.save(new Country(Country.AE, "United Arab Emirates"));
+					countryRepository.save(new Country(Country.AF, "Afghanistan"));
+					countryRepository.save(new Country(Country.AG, "Antigua and Barbuda"));
+					countryRepository.save(new Country(Country.AI, "Anguilla"));
+					countryRepository.save(new Country(Country.AL, "Albania"));
+					countryRepository.save(new Country(Country.AM, "Armenia"));
+					countryRepository.save(new Country(Country.AO, "Angola"));
+					countryRepository.save(new Country(Country.AQ, "Antarctica"));
+					countryRepository.save(new Country(Country.AR, "Argentina"));
+					countryRepository.save(new Country(Country.AS, "American Samoa"));
+					countryRepository.save(new Country(Country.AT, "Austria"));
+					countryRepository.save(new Country(Country.AU, "Australia"));
+					countryRepository.save(new Country(Country.AW, "Aruba"));
+					countryRepository.save(new Country(Country.AX, "Åland Islands"));
+					countryRepository.save(new Country(Country.AZ, "Azerbaijan"));
+					countryRepository.save(new Country(Country.BA, "Bosnia and Herzegovina"));
+					countryRepository.save(new Country(Country.BB, "Barbados"));
+					countryRepository.save(new Country(Country.BD, "Bangladesh"));
+					countryRepository.save(new Country(Country.BE, "Belgium"));
+					countryRepository.save(new Country(Country.BF, "Burkina Faso"));
+					countryRepository.save(new Country(Country.BG, "Bulgaria"));
+					countryRepository.save(new Country(Country.BH, "Bahrain"));
+					countryRepository.save(new Country(Country.BI, "Burundi"));
+					countryRepository.save(new Country(Country.BJ, "Benin"));
+					countryRepository.save(new Country(Country.BL, "Saint Barthélemy"));
+					countryRepository.save(new Country(Country.BM, "Bermuda"));
+					countryRepository.save(new Country(Country.BN, "Brunei Darussalam"));
+					countryRepository.save(new Country(Country.BO, "Bolivia, Plurinational State of"));
+					countryRepository.save(new Country(Country.BQ, "Bonaire, Sint Eustatius and Saba"));
+					countryRepository.save(new Country(Country.BR, "Brazil"));
+					countryRepository.save(new Country(Country.BS, "Bahamas"));
+					countryRepository.save(new Country(Country.BT, "Bhutan"));
+					countryRepository.save(new Country(Country.BV, "Bouvet Island"));
+					countryRepository.save(new Country(Country.BW, "Botswana"));
+					countryRepository.save(new Country(Country.BY, "Belarus"));
+					countryRepository.save(new Country(Country.BZ, "Belize"));
+					countryRepository.save(new Country(Country.CA, "Canada"));
+					countryRepository.save(new Country(Country.CC, "Cocos (Keeling) Islands"));
+					countryRepository.save(new Country(Country.CD, "Congo, the Democratic Republic of the"));
+					countryRepository.save(new Country(Country.CF, "Central African Republic"));
+					countryRepository.save(new Country(Country.CG, "Congo"));
+					countryRepository.save(new Country(Country.CH, "Switzerland"));
+					countryRepository.save(new Country(Country.CI, "Côte d'Ivoire"));
+					countryRepository.save(new Country(Country.CK, "Cook Islands"));
+					countryRepository.save(new Country(Country.CL, "Chile"));
+					countryRepository.save(new Country(Country.CM, "Cameroon"));
+					countryRepository.save(new Country(Country.CN, "China"));
+					countryRepository.save(new Country(Country.CO, "Colombia"));
+					countryRepository.save(new Country(Country.CR, "Costa Rica"));
+					countryRepository.save(new Country(Country.CU, "Cuba"));
+					countryRepository.save(new Country(Country.CV, "Cabo Verde"));
+					countryRepository.save(new Country(Country.CW, "Curaçao"));
+					countryRepository.save(new Country(Country.CX, "Christmas Island"));
+					countryRepository.save(new Country(Country.CY, "Cyprus"));
+					countryRepository.save(new Country(Country.CZ, "Czech Republic"));
+					countryRepository.save(new Country(Country.DE, "Germany"));
+					countryRepository.save(new Country(Country.DJ, "Djibouti"));
+					countryRepository.save(new Country(Country.DK, "Denmark"));
+					countryRepository.save(new Country(Country.DM, "Dominica"));
+					countryRepository.save(new Country(Country.DO, "Dominican Republic"));
+					countryRepository.save(new Country(Country.DZ, "Algeria"));
+					countryRepository.save(new Country(Country.EC, "Ecuador"));
+					countryRepository.save(new Country(Country.EE, "Estonia"));
+					countryRepository.save(new Country(Country.EG, "Egypt"));
+					countryRepository.save(new Country(Country.EH, "Western Sahara"));
+					countryRepository.save(new Country(Country.ER, "Eritrea"));
+					countryRepository.save(new Country(Country.ES, "Spain"));
+					countryRepository.save(new Country(Country.ET, "Ethiopia"));
+					countryRepository.save(new Country(Country.FI, "Finland"));
+					countryRepository.save(new Country(Country.FJ, "Fiji"));
+					countryRepository.save(new Country(Country.FK, "Falkland Islands (Malvinas)"));
+					countryRepository.save(new Country(Country.FM, "Micronesia, Federated States of"));
+					countryRepository.save(new Country(Country.FO, "Faroe Islands"));
+					countryRepository.save(new Country(Country.FR, "France"));
+					countryRepository.save(new Country(Country.GA, "Gabon"));
+					countryRepository.save(new Country(Country.GB, "United Kingdom"));
+					countryRepository.save(new Country(Country.GD, "Grenada"));
+					countryRepository.save(new Country(Country.GE, "Georgia"));
+					countryRepository.save(new Country(Country.GF, "French Guiana"));
+					countryRepository.save(new Country(Country.GG, "Guernsey"));
+					countryRepository.save(new Country(Country.GH, "Ghana"));
+					countryRepository.save(new Country(Country.GI, "Gibraltar"));
+					countryRepository.save(new Country(Country.GL, "Greenland"));
+					countryRepository.save(new Country(Country.GM, "Gambia"));
+					countryRepository.save(new Country(Country.GN, "Guinea"));
+					countryRepository.save(new Country(Country.GP, "Guadeloupe"));
+					countryRepository.save(new Country(Country.GQ, "Equatorial Guinea"));
+					countryRepository.save(new Country(Country.GR, "Greece"));
+					countryRepository.save(new Country(Country.GS, "South Georgia and the South Sandwich Islands"));
+					countryRepository.save(new Country(Country.GT, "Guatemala"));
+					countryRepository.save(new Country(Country.GU, "Guam"));
+					countryRepository.save(new Country(Country.GW, "Guinea-Bissau"));
+					countryRepository.save(new Country(Country.GY, "Guyana"));
+					countryRepository.save(new Country(Country.HK, "Hong Kong"));
+					countryRepository.save(new Country(Country.HM, "Heard Island and McDonald Islands"));
+					countryRepository.save(new Country(Country.HN, "Honduras"));
+					countryRepository.save(new Country(Country.HR, "Croatia"));
+					countryRepository.save(new Country(Country.HT, "Haiti"));
+					countryRepository.save(new Country(Country.HU, "Hungary"));
+					countryRepository.save(new Country(Country.ID, "Indonesia"));
+					countryRepository.save(new Country(Country.IE, "Ireland"));
+					countryRepository.save(new Country(Country.IL, "Israel"));
+					countryRepository.save(new Country(Country.IM, "Isle of Man"));
+					countryRepository.save(new Country(Country.IN, "India"));
+					countryRepository.save(new Country(Country.IO, "British Indian Ocean Territory"));
+					countryRepository.save(new Country(Country.IQ, "Iraq"));
+					countryRepository.save(new Country(Country.IR, "Iran, Islamic Republic of"));
+					countryRepository.save(new Country(Country.IS, "Iceland"));
+					countryRepository.save(new Country(Country.IT, "Italy"));
+					countryRepository.save(new Country(Country.JE, "Jersey"));
+					countryRepository.save(new Country(Country.JM, "Jamaica"));
+					countryRepository.save(new Country(Country.JO, "Jordan"));
+					countryRepository.save(new Country(Country.JP, "Japan"));
+					countryRepository.save(new Country(Country.KE, "Kenya"));
+					countryRepository.save(new Country(Country.KG, "Kyrgyzstan"));
+					countryRepository.save(new Country(Country.KH, "Cambodia"));
+					countryRepository.save(new Country(Country.KI, "Kiribati"));
+					countryRepository.save(new Country(Country.KM, "Comoros"));
+					countryRepository.save(new Country(Country.KN, "Saint Kitts and Nevis"));
+					countryRepository.save(new Country(Country.KP, "Korea (the Democratic People's Republic of)"));
+					countryRepository.save(new Country(Country.KR, "Korea (the Republic of)"));
+					countryRepository.save(new Country(Country.KW, "Kuwait"));
+					countryRepository.save(new Country(Country.KY, "Cayman Islands"));
+					countryRepository.save(new Country(Country.KZ, "Kazakhstan"));
+					countryRepository.save(new Country(Country.LA, "Lao People's Democratic Republic"));
+					countryRepository.save(new Country(Country.LB, "Lebanon"));
+					countryRepository.save(new Country(Country.LC, "Saint Lucia"));
+					countryRepository.save(new Country(Country.LI, "Liechtenstein"));
+					countryRepository.save(new Country(Country.LK, "Sri Lanka"));
+					countryRepository.save(new Country(Country.LR, "Liberia"));
+					countryRepository.save(new Country(Country.LS, "Lesotho"));
+					countryRepository.save(new Country(Country.LT, "Lithuania"));
+					countryRepository.save(new Country(Country.LU, "Luxembourg"));
+					countryRepository.save(new Country(Country.LV, "Latvia"));
+					countryRepository.save(new Country(Country.LY, "Libya"));
+					countryRepository.save(new Country(Country.MA, "Morocco"));
+					countryRepository.save(new Country(Country.MC, "Monaco"));
+					countryRepository.save(new Country(Country.MD, "Moldova, Republic of"));
+					countryRepository.save(new Country(Country.ME, "Montenegro"));
+					countryRepository.save(new Country(Country.MF, "Saint Martin (French part)"));
+					countryRepository.save(new Country(Country.MG, "Madagascar"));
+					countryRepository.save(new Country(Country.MH, "Marshall Islands"));
+					countryRepository.save(new Country(Country.MK, "Macedonia, the former Yugoslav Republic of"));
+					countryRepository.save(new Country(Country.ML, "Mali"));
+					countryRepository.save(new Country(Country.MM, "Myanmar"));
+					countryRepository.save(new Country(Country.MN, "Mongolia"));
+					countryRepository.save(new Country(Country.MO, "Macao"));
+					countryRepository.save(new Country(Country.MP, "Northern Mariana Islands"));
+					countryRepository.save(new Country(Country.MQ, "Martinique"));
+					countryRepository.save(new Country(Country.MR, "Mauritania"));
+					countryRepository.save(new Country(Country.MS, "Montserrat"));
+					countryRepository.save(new Country(Country.MT, "Malta"));
+					countryRepository.save(new Country(Country.MU, "Mauritius"));
+					countryRepository.save(new Country(Country.MV, "Maldives"));
+					countryRepository.save(new Country(Country.MW, "Malawi"));
+					countryRepository.save(new Country(Country.MX, "Mexico"));
+					countryRepository.save(new Country(Country.MY, "Malaysia"));
+					countryRepository.save(new Country(Country.MZ, "Mozambique"));
+					countryRepository.save(new Country(Country.NA, "Namibia"));
+					countryRepository.save(new Country(Country.NC, "New Caledonia"));
+					countryRepository.save(new Country(Country.NE, "Niger"));
+					countryRepository.save(new Country(Country.NF, "Norfolk Island"));
+					countryRepository.save(new Country(Country.NG, "Nigeria"));
+					countryRepository.save(new Country(Country.NI, "Nicaragua"));
+					countryRepository.save(new Country(Country.NL, "Netherlands[note 1]"));
+					countryRepository.save(new Country(Country.NO, "Norway"));
+					countryRepository.save(new Country(Country.NP, "Nepal"));
+					countryRepository.save(new Country(Country.NR, "Nauru"));
+					countryRepository.save(new Country(Country.NU, "Niue"));
+					countryRepository.save(new Country(Country.NZ, "New Zealand"));
+					countryRepository.save(new Country(Country.OM, "Oman"));
+					countryRepository.save(new Country(Country.PA, "Panama"));
+					countryRepository.save(new Country(Country.PE, "Peru"));
+					countryRepository.save(new Country(Country.PF, "French Polynesia"));
+					countryRepository.save(new Country(Country.PG, "Papua New Guinea"));
+					countryRepository.save(new Country(Country.PH, "Philippines"));
+					countryRepository.save(new Country(Country.PK, "Pakistan"));
+					countryRepository.save(new Country(Country.PL, "Poland"));
+					countryRepository.save(new Country(Country.PM, "Saint Pierre and Miquelon"));
+					countryRepository.save(new Country(Country.PN, "Pitcairn"));
+					countryRepository.save(new Country(Country.PR, "Puerto Rico"));
+					countryRepository.save(new Country(Country.PS, "Palestine, State of"));
+					countryRepository.save(new Country(Country.PT, "Portugal"));
+					countryRepository.save(new Country(Country.PW, "Palau"));
+					countryRepository.save(new Country(Country.PY, "Paraguay"));
+					countryRepository.save(new Country(Country.QA, "Qatar"));
+					countryRepository.save(new Country(Country.RE, "Réunion"));
+					countryRepository.save(new Country(Country.RO, "Romania"));
+					countryRepository.save(new Country(Country.RS, "Serbia"));
+					countryRepository.save(new Country(Country.RU, "Russian Federation"));
+					countryRepository.save(new Country(Country.RW, "Rwanda"));
+					countryRepository.save(new Country(Country.SA, "Saudi Arabia"));
+					countryRepository.save(new Country(Country.SB, "Solomon Islands"));
+					countryRepository.save(new Country(Country.SC, "Seychelles"));
+					countryRepository.save(new Country(Country.SD, "Sudan"));
+					countryRepository.save(new Country(Country.SE, "Sweden"));
+					countryRepository.save(new Country(Country.SG, "Singapore"));
+					countryRepository.save(new Country(Country.SH, "Saint Helena, Ascension and Tristan da Cunha"));
+					countryRepository.save(new Country(Country.SI, "Slovenia"));
+					countryRepository.save(new Country(Country.SJ, "Svalbard and Jan Mayen"));
+					countryRepository.save(new Country(Country.SK, "Slovakia"));
+					countryRepository.save(new Country(Country.SL, "Sierra Leone"));
+					countryRepository.save(new Country(Country.SM, "San Marino"));
+					countryRepository.save(new Country(Country.SN, "Senegal"));
+					countryRepository.save(new Country(Country.SO, "Somalia"));
+					countryRepository.save(new Country(Country.SR, "Suriname"));
+					countryRepository.save(new Country(Country.SS, "South Sudan"));
+					countryRepository.save(new Country(Country.ST, "Sao Tome and Principe"));
+					countryRepository.save(new Country(Country.SV, "El Salvador"));
+					countryRepository.save(new Country(Country.SX, "Sint Maarten (Dutch part)"));
+					countryRepository.save(new Country(Country.SY, "Syrian Arab Republic"));
+					countryRepository.save(new Country(Country.SZ, "Swaziland"));
+					countryRepository.save(new Country(Country.TC, "Turks and Caicos Islands"));
+					countryRepository.save(new Country(Country.TD, "Chad"));
+					countryRepository.save(new Country(Country.TF, "French Southern Territories"));
+					countryRepository.save(new Country(Country.TG, "Togo"));
+					countryRepository.save(new Country(Country.TH, "Thailand"));
+					countryRepository.save(new Country(Country.TJ, "Tajikistan"));
+					countryRepository.save(new Country(Country.TK, "Tokelau"));
+					countryRepository.save(new Country(Country.TL, "Timor-Leste"));
+					countryRepository.save(new Country(Country.TM, "Turkmenistan"));
+					countryRepository.save(new Country(Country.TN, "Tunisia"));
+					countryRepository.save(new Country(Country.TO, "Tonga"));
+					countryRepository.save(new Country(Country.TR, "Turkey"));
+					countryRepository.save(new Country(Country.TT, "Trinidad and Tobago"));
+					countryRepository.save(new Country(Country.TV, "Tuvalu"));
+					countryRepository.save(new Country(Country.TW, "Taiwan, Province of China [note 2]"));
+					countryRepository.save(new Country(Country.TZ, "Tanzania, United Republic of"));
+					countryRepository.save(new Country(Country.UA, "Ukraine"));
+					countryRepository.save(new Country(Country.UG, "Uganda"));
+					countryRepository.save(new Country(Country.UM, "United States Minor Outlying Islands"));
+					countryRepository.save(new Country(Country.US, "United States"));
+					countryRepository.save(new Country(Country.UY, "Uruguay"));
+					countryRepository.save(new Country(Country.UZ, "Uzbekistan"));
+					countryRepository.save(new Country(Country.VA, "Holy See (Vatican City State)"));
+					countryRepository.save(new Country(Country.VC, "Saint Vincent and the Grenadines"));
+					countryRepository.save(new Country(Country.VE, "Venezuela, Bolivarian Republic of"));
+					countryRepository.save(new Country(Country.VG, "Virgin Islands, British"));
+					countryRepository.save(new Country(Country.VI, "Virgin Islands, U.S."));
+					countryRepository.save(new Country(Country.VN, "Viet Nam"));
+					countryRepository.save(new Country(Country.VU, "Vanuatu"));
+					countryRepository.save(new Country(Country.WF, "Wallis and Futuna"));
+					countryRepository.save(new Country(Country.WS, "Samoa"));
+					countryRepository.save(new Country(Country.YE, "Yemen"));
+					countryRepository.save(new Country(Country.YT, "Mayotte"));
+					countryRepository.save(new Country(Country.ZA, "South Africa"));
+					countryRepository.save(new Country(Country.ZM, "Zambia"));
+					countryRepository.save(new Country(Country.ZW, "Zimbabwe"));
+				}
+
 				if (mentorRepository.count() == 0) {
 					log.info("Database is still empty. Adding some sample records");
 					mentorRepository.save(new Mentor(
@@ -507,7 +763,13 @@ public class Application extends SpringBootServletInitializer {
 							"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras posuere nunc non efficitur feugiat. Quisque aliquam porttitor eros quis vestibulum. Aliquam dui elit, tincidunt vel suscipit ut, porttitor nec nisi. Curabitur eu gravida nibh. Integer commodo in justo at efficitur. Vestibulum consectetur rhoncus erat ac pulvinar. Duis tempor sapien bibendum velit imperdiet tempor.\n\nCras maximus ultricies dapibus. Sed eu eros sodales, consectetur augue a, consectetur odio. Sed dictum lobortis ipsum ut vehicula. In at fermentum turpis. Phasellus vel convallis lectus. Nullam vitae feugiat libero. Mauris non urna a mauris sodales aliquet. Pellentesque consequat posuere diam vel egestas. Integer pretium mi in orci rutrum scelerisque. Cras volutpat orci urna, at laoreet augue sodales ac. Aenean viverra leo in velit laoreet ultrices. Vivamus sodales, ex eget viverra varius, velit ipsum pellentesque nibh, ac egestas elit elit suscipit neque. Praesent aliquam nec purus vel volutpat.",
 							"email1@jpenninkhof.com",
 							"email2@jpenninkhof.com",
-							1
+							1,
+							"Janstreet 1", 
+							"Lelystad", 
+							null, 
+							"4321AA", 
+							new Country(Country.NL), 
+							"+31987654321"
 						));
 					mentorRepository.save(new Mentor(
 							UUID.randomUUID().toString(), 
@@ -537,7 +799,13 @@ public class Application extends SpringBootServletInitializer {
 							"Donec tincidunt turpis magna, in consequat eros condimentum ut. Curabitur eleifend pharetra varius. Sed justo lorem, semper eget dui aliquet, lobortis ultricies dui. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi vulputate, risus et ultricies feugiat, urna lorem mattis quam, in ullamcorper orci ligula ut ligula. Vestibulum porttitor nisl dolor, non tristique urna porta nec. Aliquam tortor tellus, volutpat ac ornare non, ultrices at ante. Aliquam egestas quam sed arcu dapibus aliquet. Mauris vulputate dapibus dictum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla dictum quam odio, eu feugiat neque ornare vitae. Ut elit nisi, luctus sit amet auctor at, tempor non justo. Donec varius ipsum et justo suscipit pretium. Mauris eu ipsum fermentum, commodo est non, pellentesque nisi.\n\nIn imperdiet fringilla magna in rutrum. Suspendisse porttitor efficitur justo. Integer ornare finibus auctor. Vivamus ipsum lacus, vestibulum sed laoreet sit amet, pretium nec mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla condimentum tincidunt odio sed finibus. Duis a ultrices est. In justo lorem, ullamcorper eget pulvinar sed, commodo in enim. Ut orci ante, rutrum id pulvinar vel, dapibus ut mauris. Nulla massa urna, tincidunt nec quam at, ultrices tristique turpis. Sed euismod commodo lacus, a tristique justo tincidunt et. Vestibulum imperdiet fermentum nunc sed accumsan. In et convallis enim. Duis maximus congue vestibulum. Vestibulum ac consectetur odio, non interdum enim. Fusce aliquet semper orci, sit amet interdum libero feugiat id.",
 							"email1@robin.com",
 							"email2@robin.com",
-							1
+							1,
+							"Robinstreet 1", 
+							"Zoetermeer", 
+							null, 
+							"1234AA", 
+							new Country(Country.NL), 
+							"+31123456789"
 						));
 				}
 
