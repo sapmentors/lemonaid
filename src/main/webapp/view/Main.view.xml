@@ -22,7 +22,11 @@
 									growingScrollToLoad="true"
 									items="{
 										path: '/Mentors',
-										sorter: 'ShirtNumber'
+										parameters: {
+											select: 'FullName,ShirtNumber',
+											expand: 'MentorStatus'
+										},
+										sorter: {path: 'ShirtNumber', descending: false}
 									}"
 									updateFinished="onUpdateFinished">
 									<headerToolbar>
