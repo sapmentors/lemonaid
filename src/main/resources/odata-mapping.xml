@@ -30,6 +30,9 @@
 			<JPAEntityType name="LineOfBusiness">
 				<EDMEntitySet>LinesOfBusiness</EDMEntitySet> 
 			</JPAEntityType>
+			<JPAEntityType name="Industry">
+				<EDMEntitySet>Industries</EDMEntitySet> 
+			</JPAEntityType>
 		</JPAEntityTypes>
 	</PersistenceUnit>
 </JPAEDMMappingModel>

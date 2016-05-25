@@ -503,7 +503,11 @@ public class Application extends SpringBootServletInitializer {
 							new SoftSkill(SoftSkill.INTERNET_OF_THINGS),
 							null,
 							null,
-							null
+							null,
+							"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras posuere nunc non efficitur feugiat. Quisque aliquam porttitor eros quis vestibulum. Aliquam dui elit, tincidunt vel suscipit ut, porttitor nec nisi. Curabitur eu gravida nibh. Integer commodo in justo at efficitur. Vestibulum consectetur rhoncus erat ac pulvinar. Duis tempor sapien bibendum velit imperdiet tempor.\n\nCras maximus ultricies dapibus. Sed eu eros sodales, consectetur augue a, consectetur odio. Sed dictum lobortis ipsum ut vehicula. In at fermentum turpis. Phasellus vel convallis lectus. Nullam vitae feugiat libero. Mauris non urna a mauris sodales aliquet. Pellentesque consequat posuere diam vel egestas. Integer pretium mi in orci rutrum scelerisque. Cras volutpat orci urna, at laoreet augue sodales ac. Aenean viverra leo in velit laoreet ultrices. Vivamus sodales, ex eget viverra varius, velit ipsum pellentesque nibh, ac egestas elit elit suscipit neque. Praesent aliquam nec purus vel volutpat.",
+							"email1@jpenninkhof.com",
+							"email2@jpenninkhof.com",
+							1
 						));
 					mentorRepository.save(new Mentor(
 							UUID.randomUUID().toString(), 
@@ -529,7 +533,11 @@ public class Application extends SpringBootServletInitializer {
 							new SoftSkill(SoftSkill.DESIGN_THINKING),
 							new SoftSkill(SoftSkill.LEAN_METHODOLOGY),
 							new SoftSkill(SoftSkill.CONFLICT_RESOLUTION),
-							new SoftSkill(SoftSkill.CRITICAL_OBSERVATION_SKILLS)
+							new SoftSkill(SoftSkill.CRITICAL_OBSERVATION_SKILLS),
+							"Donec tincidunt turpis magna, in consequat eros condimentum ut. Curabitur eleifend pharetra varius. Sed justo lorem, semper eget dui aliquet, lobortis ultricies dui. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi vulputate, risus et ultricies feugiat, urna lorem mattis quam, in ullamcorper orci ligula ut ligula. Vestibulum porttitor nisl dolor, non tristique urna porta nec. Aliquam tortor tellus, volutpat ac ornare non, ultrices at ante. Aliquam egestas quam sed arcu dapibus aliquet. Mauris vulputate dapibus dictum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla dictum quam odio, eu feugiat neque ornare vitae. Ut elit nisi, luctus sit amet auctor at, tempor non justo. Donec varius ipsum et justo suscipit pretium. Mauris eu ipsum fermentum, commodo est non, pellentesque nisi.\n\nIn imperdiet fringilla magna in rutrum. Suspendisse porttitor efficitur justo. Integer ornare finibus auctor. Vivamus ipsum lacus, vestibulum sed laoreet sit amet, pretium nec mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla condimentum tincidunt odio sed finibus. Duis a ultrices est. In justo lorem, ullamcorper eget pulvinar sed, commodo in enim. Ut orci ante, rutrum id pulvinar vel, dapibus ut mauris. Nulla massa urna, tincidunt nec quam at, ultrices tristique turpis. Sed euismod commodo lacus, a tristique justo tincidunt et. Vestibulum imperdiet fermentum nunc sed accumsan. In et convallis enim. Duis maximus congue vestibulum. Vestibulum ac consectetur odio, non interdum enim. Fusce aliquet semper orci, sit amet interdum libero feugiat id.",
+							"email1@robin.com",
+							"email2@robin.com",
+							1
 						));
 				}
 

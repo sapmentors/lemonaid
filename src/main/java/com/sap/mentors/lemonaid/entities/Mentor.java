@@ -2,6 +2,7 @@ package com.sap.mentors.lemonaid.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -37,7 +38,7 @@ public class Mentor {
     @ManyToOne private SoftSkill softSkill5;
     @ManyToOne private SoftSkill softSkill6;
     
-    private String bio;
+    @Lob private String bio;
     private String email1;
     private String email2;
     private int preferredEmail;
@@ -88,7 +89,9 @@ public class Mentor {
     		LineOfBusiness lineOfBusiness1, LineOfBusiness lineOfBusiness2, LineOfBusiness lineOfBusiness3,
     		Industry industry1, Industry industry2, Industry industry3,
     		SapSoftwareSolution sapExpertise1, ExpertiseLevel sapExpertise1level, SapSoftwareSolution sapExpertise2, ExpertiseLevel sapExpertise2level, SapSoftwareSolution sapExpertise3, ExpertiseLevel sapExpertise3level,
-    		SoftSkill softSkill1, SoftSkill softSkill2, SoftSkill softSkill3, SoftSkill softSkill4, SoftSkill softSkill5, SoftSkill softSkill6)
+    		SoftSkill softSkill1, SoftSkill softSkill2, SoftSkill softSkill3, SoftSkill softSkill4, SoftSkill softSkill5, SoftSkill softSkill6,
+    		String bio,
+    		String email1, String email2, int preferredEmail)
     {
     	this.id = id;
         this.fullName = fullName;
@@ -116,6 +119,11 @@ public class Mentor {
         this.softSkill4 = softSkill4;
         this.softSkill5 = softSkill5;
         this.softSkill6 = softSkill6;
+        
+        this.bio = bio;
+        this.email1 = email1;
+        this.email2 = email2;
+        this.preferredEmail = 1;
     }
 
     @Override
