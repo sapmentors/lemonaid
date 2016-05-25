@@ -1,0 +1,56 @@
+<mvc:View
+	controllerName="com.sap.mentors.lemonaid.controller.Main"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m">
+	<App>
+		<pages>
+			<Page title="{i18n>title}">
+				<content>
+
+					<IconTabBar
+						id="idIconTabBarNoIcons"
+						expanded="{device>/isNoPhone}"
+						class="sapUiResponsiveContentPadding">
+						<items>
+						
+							<IconTabFilter text="{i18n>mentors}">
+								<Table
+									id="table"
+									inset="false"
+									growing="true"
+									growingScrollToLoad="true"
+									items="{/Mentors}"
+									updateFinished="onUpdateFinished">
+									<headerToolbar>
+										<Toolbar id="tableToolbar">
+											<Label text="{i18n>mentors} ({ui>/count})" class="sapMH4FontSize"  />
+											<ToolbarSpacer />
+											<SearchField
+												id="searchField"
+												search="onSearchPressed"
+												placeholder="{i18n>searchPlaceholder}"
+												width="30%" />
+										</Toolbar>
+									</headerToolbar>
+									<columns>
+										<Column id="id" width="20em" />
+										<Column id="fullName" />
+									</columns>
+									<ColumnListItem id="columnListItem">
+										<cells>
+											<ObjectIdentifier title="{Id}" class="sapMTableContentMargin"/>
+											<Text text="{FullName}" class="sapMTableContentMargin" />
+										</cells>
+									</ColumnListItem>
+								</Table>
+							</IconTabFilter>
+
+						</items>
+					</IconTabBar>
+				</content>
+
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

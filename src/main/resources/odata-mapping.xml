@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JPAEDMMappingModel
+	xmlns="http://www.apache.org/olingo/odata2/jpa/processor/api/model/mapping">
+	<PersistenceUnit name="Model">
+		<JPAEntityTypes>
+			<JPAEntityType name="Mentor">
+				<JPARelationships>
+					<JPARelationship name="status">MentorStatus</JPARelationship>
+					<JPARelationship name="relationshipToSap">RelationshipToSap</JPARelationship>
+					<JPARelationship name="lineOfBusiness1">LineOfBusiness1</JPARelationship>
+					<JPARelationship name="lineOfBusiness2">LineOfBusiness2</JPARelationship>
+					<JPARelationship name="lineOfBusiness3">LineOfBusiness3</JPARelationship>
+					<JPARelationship name="industry1">Industry1</JPARelationship>
+					<JPARelationship name="industry2">Industry2</JPARelationship>
+					<JPARelationship name="industry3">Industry3</JPARelationship>
+					<JPARelationship name="sapExpertise1">SapExpertise1</JPARelationship>
+					<JPARelationship name="sapExpertise2">SapExpertise2</JPARelationship>
+					<JPARelationship name="sapExpertise3">SapExpertise3</JPARelationship>
+					<JPARelationship name="sapExpertise1level">SapExpertise1Level</JPARelationship>
+					<JPARelationship name="sapExpertise2level">SapExpertise2Level</JPARelationship>
+					<JPARelationship name="sapExpertise3level">SapExpertise3Level</JPARelationship>
+				</JPARelationships>
+			</JPAEntityType>
+			<JPAEntityType name="MentorStatus">
+				<EDMEntitySet>MentorStatuses</EDMEntitySet> 
+			</JPAEntityType>
+			<JPAEntityType name="RelationshipToSap">
+				<EDMEntitySet>RelationshipsToSap</EDMEntitySet> 
+			</JPAEntityType>
+			<JPAEntityType name="LineOfBusiness">
+				<EDMEntitySet>LinesOfBusiness</EDMEntitySet> 
+			</JPAEntityType>
+		</JPAEntityTypes>
+	</PersistenceUnit>
+</JPAEDMMappingModel>
+			
