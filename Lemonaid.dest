@@ -1,0 +1,13 @@
+#
+#Wed May 25 20:26:48 UTC 2016
+Description=Lemonaid
+Type=HTTP
+WebIDEAdditionalData=full_url
+Authentication=NoAuthentication
+WebIDEUsage=odata_gen
+Name=Lemonaid
+WebIDEEnabled=true
+CloudConnectorVersion=2
+URL=https\://lemonaidp508741trial.hanatrial.ondemand.com/odata.svc/
+ProxyType=Internet
+WebIDESystem=lemonaid
