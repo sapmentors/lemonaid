@@ -5,6 +5,7 @@ import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name="mentors")
@@ -48,6 +49,7 @@ public class Mentor {
     private String state;
     private String zip;
     @ManyToOne private Country country;
+    @Transient private String countryId;
     private String phone;
     
     @ManyToOne private Region region;
@@ -439,6 +441,14 @@ public class Mentor {
 
 	public void setCountry(Country country) {
 		this.country = country;
+	}
+
+	public String getCountryId() {
+		return country.getId();
+	}
+
+	public void setCountryId(String countryId) {
+		country = new Country(countryId);
 	}
 
 	public String getPhone() {

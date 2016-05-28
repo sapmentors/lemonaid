@@ -5,11 +5,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import org.apache.olingo.odata2.api.edm.EdmSimpleTypeKind;
 import org.apache.olingo.odata2.api.edm.provider.AnnotationAttribute;
 import org.apache.olingo.odata2.api.edm.provider.EntityType;
 import org.apache.olingo.odata2.api.edm.provider.Property;
 import org.apache.olingo.odata2.api.edm.provider.Schema;
+import org.apache.olingo.odata2.api.edm.provider.SimpleProperty;
 import org.apache.olingo.odata2.jpa.processor.api.model.JPAEdmSchemaView;
+import org.apache.olingo.odata2.jpa.processor.core.model.JPAEdmMappingImpl;
 
 public class JPAEdmExtension implements org.apache.olingo.odata2.jpa.processor.api.model.JPAEdmExtension {
 
@@ -28,6 +31,8 @@ public class JPAEdmExtension implements org.apache.olingo.odata2.jpa.processor.a
 		final Schema edmSchema = view.getEdmSchema();
 		
 		for (EntityType entityType : edmSchema.getEntityTypes()) {
+			
+			// Add language specific labels to the properties
 			for (Property property : entityType.getProperties()) {
 				String label = null;
 				if (i18n != null) { try { label = i18n.getString(entityType.getName() + "." + property.getName()); } catch (Exception e) {} }
@@ -39,6 +44,10 @@ public class JPAEdmExtension implements org.apache.olingo.odata2.jpa.processor.a
 							.setName(LABEL).setText(label));
 				}
 				property.setAnnotationAttributes(annotationAttributeList); 
+			}
+			
+			if (entityType.getName().equals("Mentor")) {
+				entityType.getProperties().add(new SimpleProperty().setName("CountryId").setType(EdmSimpleTypeKind.String));
 			}
 		}
 	}
