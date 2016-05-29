@@ -48,6 +48,33 @@ public class JPAEdmExtension implements org.apache.olingo.odata2.jpa.processor.a
 			
 			if (entityType.getName().equals("Mentor")) {
 				entityType.getProperties().add(new SimpleProperty().setName("CountryId").setType(EdmSimpleTypeKind.String));
+				entityType.getProperties().add(new SimpleProperty().setName("LineOfBusiness1Id").setType(EdmSimpleTypeKind.String));
+				entityType.getProperties().add(new SimpleProperty().setName("LineOfBusiness2Id").setType(EdmSimpleTypeKind.String));
+				entityType.getProperties().add(new SimpleProperty().setName("LineOfBusiness3Id").setType(EdmSimpleTypeKind.String));
+				entityType.getProperties().add(new SimpleProperty().setName("Industry1Id").setType(EdmSimpleTypeKind.String));
+				entityType.getProperties().add(new SimpleProperty().setName("Industry2Id").setType(EdmSimpleTypeKind.String));
+				entityType.getProperties().add(new SimpleProperty().setName("Industry3Id").setType(EdmSimpleTypeKind.String));
+				entityType.getProperties().add(new SimpleProperty().setName("SapExpertise1Id").setType(EdmSimpleTypeKind.String));
+				entityType.getProperties().add(new SimpleProperty().setName("SapExpertise1LevelId").setType(EdmSimpleTypeKind.String));
+				entityType.getProperties().add(new SimpleProperty().setName("SapExpertise2Id").setType(EdmSimpleTypeKind.String));
+				entityType.getProperties().add(new SimpleProperty().setName("SapExpertise2LevelId").setType(EdmSimpleTypeKind.String));
+				entityType.getProperties().add(new SimpleProperty().setName("SapExpertise3Id").setType(EdmSimpleTypeKind.String));
+				entityType.getProperties().add(new SimpleProperty().setName("SapExpertise3LevelId").setType(EdmSimpleTypeKind.String));
+				entityType.getProperties().add(new SimpleProperty().setName("SoftSkill1Id").setType(EdmSimpleTypeKind.String));
+				entityType.getProperties().add(new SimpleProperty().setName("SoftSkill2Id").setType(EdmSimpleTypeKind.String));
+				entityType.getProperties().add(new SimpleProperty().setName("SoftSkill3Id").setType(EdmSimpleTypeKind.String));
+				entityType.getProperties().add(new SimpleProperty().setName("SoftSkill4Id").setType(EdmSimpleTypeKind.String));
+				entityType.getProperties().add(new SimpleProperty().setName("SoftSkill5Id").setType(EdmSimpleTypeKind.String));
+				entityType.getProperties().add(new SimpleProperty().setName("SoftSkill6Id").setType(EdmSimpleTypeKind.String));
+				entityType.getProperties().add(new SimpleProperty().setName("RegionId").setType(EdmSimpleTypeKind.String));
+				entityType.getProperties().add(new SimpleProperty().setName("ShirtSizeId").setType(EdmSimpleTypeKind.String));
+				entityType.getProperties().add(new SimpleProperty().setName("ShirtMFId").setType(EdmSimpleTypeKind.String));
+				entityType.getProperties().add(new SimpleProperty().setName("TopicLeadRegionId").setType(EdmSimpleTypeKind.String));
+				entityType.getProperties().add(new SimpleProperty().setName("Topic1Id").setType(EdmSimpleTypeKind.String));
+				entityType.getProperties().add(new SimpleProperty().setName("Topic2Id").setType(EdmSimpleTypeKind.String));
+				entityType.getProperties().add(new SimpleProperty().setName("Topic3Id").setType(EdmSimpleTypeKind.String));
+				entityType.getProperties().add(new SimpleProperty().setName("Topic4Id").setType(EdmSimpleTypeKind.String));
+				entityType.getProperties().add(new SimpleProperty().setName("TopicInterestId").setType(EdmSimpleTypeKind.String));
 			}
 		}
 	}

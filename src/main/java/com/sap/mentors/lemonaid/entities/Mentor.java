@@ -5,7 +5,6 @@ import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 
 @Entity
 @Table(name="mentors")
@@ -27,11 +26,11 @@ public class Mentor {
     @ManyToOne private Industry industry2;
     @ManyToOne private Industry industry3;
     @ManyToOne private SapSoftwareSolution sapExpertise1;
-    @ManyToOne private ExpertiseLevel sapExpertise1level;
+    @ManyToOne private ExpertiseLevel sapExpertise1Level;
     @ManyToOne private SapSoftwareSolution sapExpertise2;
-    @ManyToOne private ExpertiseLevel sapExpertise2level;
+    @ManyToOne private ExpertiseLevel sapExpertise2Level;
     @ManyToOne private SapSoftwareSolution sapExpertise3;
-    @ManyToOne private ExpertiseLevel sapExpertise3level;
+    @ManyToOne private ExpertiseLevel sapExpertise3Level;
     @ManyToOne private SoftSkill softSkill1;
     @ManyToOne private SoftSkill softSkill2;
     @ManyToOne private SoftSkill softSkill3;
@@ -49,7 +48,6 @@ public class Mentor {
     private String state;
     private String zip;
     @ManyToOne private Country country;
-    @Transient private String countryId;
     private String phone;
     
     @ManyToOne private Region region;
@@ -90,7 +88,7 @@ public class Mentor {
     		String jobTitle, String company, RelationshipToSap relationshipToSap,
     		LineOfBusiness lineOfBusiness1, LineOfBusiness lineOfBusiness2, LineOfBusiness lineOfBusiness3,
     		Industry industry1, Industry industry2, Industry industry3,
-    		SapSoftwareSolution sapExpertise1, ExpertiseLevel sapExpertise1level, SapSoftwareSolution sapExpertise2, ExpertiseLevel sapExpertise2level, SapSoftwareSolution sapExpertise3, ExpertiseLevel sapExpertise3level,
+    		SapSoftwareSolution sapExpertise1, ExpertiseLevel sapExpertise1Level, SapSoftwareSolution sapExpertise2, ExpertiseLevel sapExpertise2Level, SapSoftwareSolution sapExpertise3, ExpertiseLevel sapExpertise3Level,
     		SoftSkill softSkill1, SoftSkill softSkill2, SoftSkill softSkill3, SoftSkill softSkill4, SoftSkill softSkill5, SoftSkill softSkill6,
     		String bio,
     		String email1, String email2, int preferredEmail,
@@ -116,11 +114,11 @@ public class Mentor {
         this.industry2 = industry2;
         this.industry3 = industry3;
         this.sapExpertise1 = sapExpertise1;
-        this.sapExpertise1level = sapExpertise1level;
+        this.sapExpertise1Level = sapExpertise1Level;
         this.sapExpertise2 = sapExpertise2;
-        this.sapExpertise2level = sapExpertise2level;
+        this.sapExpertise2Level = sapExpertise2Level;
         this.sapExpertise3 = sapExpertise3;
-        this.sapExpertise3level = sapExpertise3level;
+        this.sapExpertise3Level = sapExpertise3Level;
         this.softSkill1 = softSkill1;
         this.softSkill2 = softSkill2;
         this.softSkill3 = softSkill3;
@@ -283,12 +281,12 @@ public class Mentor {
 		this.sapExpertise1 = sapExpertise1;
 	}
 
-	public ExpertiseLevel getSapExpertise1level() {
-		return sapExpertise1level;
+	public ExpertiseLevel getSapExpertise1Level() {
+		return sapExpertise1Level;
 	}
 
-	public void setSapExpertise1level(ExpertiseLevel sapExpertise1level) {
-		this.sapExpertise1level = sapExpertise1level;
+	public void setSapExpertise1Level(ExpertiseLevel sapExpertise1Level) {
+		this.sapExpertise1Level = sapExpertise1Level;
 	}
 
 	public SapSoftwareSolution getSapExpertise2() {
@@ -299,12 +297,12 @@ public class Mentor {
 		this.sapExpertise2 = sapExpertise2;
 	}
 
-	public ExpertiseLevel getSapExpertise2level() {
-		return sapExpertise2level;
+	public ExpertiseLevel getSapExpertise2Level() {
+		return sapExpertise2Level;
 	}
 
-	public void setSapExpertise2level(ExpertiseLevel sapExpertise2level) {
-		this.sapExpertise2level = sapExpertise2level;
+	public void setSapExpertise2Level(ExpertiseLevel sapExpertise2Level) {
+		this.sapExpertise2Level = sapExpertise2Level;
 	}
 
 	public SapSoftwareSolution getSapExpertise3() {
@@ -315,12 +313,12 @@ public class Mentor {
 		this.sapExpertise3 = sapExpertise3;
 	}
 
-	public ExpertiseLevel getSapExpertise3level() {
-		return sapExpertise3level;
+	public ExpertiseLevel getSapExpertise3Level() {
+		return sapExpertise3Level;
 	}
 
-	public void setSapExpertise3level(ExpertiseLevel sapExpertise3level) {
-		this.sapExpertise3level = sapExpertise3level;
+	public void setSapExpertise3Level(ExpertiseLevel sapExpertise3Level) {
+		this.sapExpertise3Level = sapExpertise3Level;
 	}
 
 	public SoftSkill getSoftSkill1() {
@@ -665,6 +663,330 @@ public class Mentor {
 
 	public void setTopicInterest(Topic topicInterest) {
 		this.topicInterest = topicInterest;
+	}
+
+	public String getLineOfBusiness1Id() {
+		if (this.getLineOfBusiness1() == null) {
+			return null;
+		} else {
+			return this.getLineOfBusiness1().getId();
+		}
+	}
+
+	public void setLineOfBusiness1Id(String lineOfBusiness1Id) {
+		this.lineOfBusiness1 = new LineOfBusiness(lineOfBusiness1Id);
+	}
+
+	public String getLineOfBusiness2Id() {
+		if (this.getLineOfBusiness2() == null) {
+			return null;
+		} else {
+			return this.getLineOfBusiness2().getId();
+		}
+	}
+
+	public void setLineOfBusiness2Id(String lineOfBusiness2Id) {
+		this.lineOfBusiness2 = new LineOfBusiness(lineOfBusiness2Id);
+	}
+
+	public String getLineOfBusiness3Id() {
+		if (this.getLineOfBusiness3() == null) {
+			return null;
+		} else {
+			return this.getLineOfBusiness3().getId();
+		}
+	}
+
+	public void setLineOfBusiness3Id(String lineOfBusiness3Id) {
+		this.lineOfBusiness3 = new LineOfBusiness(lineOfBusiness3Id);
+	}
+
+	public String getIndustry1Id() {
+		if (this.getIndustry1() == null) {
+			return null;
+		} else {
+			return this.getIndustry1().getId();
+		}
+	}
+
+	public void setIndustry1Id(String industry1Id) {
+		this.industry1 = new Industry(industry1Id);
+	}
+
+	public String getIndustry2Id() {
+		if (this.getIndustry2() == null) {
+			return null;
+		} else {
+			return this.getIndustry2().getId();
+		}
+	}
+
+	public void setIndustry2Id(String industry2Id) {
+		this.industry2 = new Industry(industry2Id);
+	}
+
+	public String getIndustry3Id() {
+		if (this.getIndustry3() == null) {
+			return null;
+		} else {
+			return this.getIndustry3().getId();
+		}
+	}
+
+	public void setIndustry3Id(String industry3Id) {
+		this.industry3 = new Industry(industry3Id);
+	}
+
+	public String getSapExpertise1Id() {
+		if (this.getSapExpertise1() == null) {
+			return null;
+		} else {
+			return this.getSapExpertise1().getId();
+		}
+	}
+
+	public void setSapExpertise1Id(String sapExpertise1Id) {
+		this.sapExpertise1 = new SapSoftwareSolution(sapExpertise1Id);
+	}
+
+	public String getSapExpertise1LevelId() {
+		if (this.getSapExpertise1Level() == null) {
+			return null;
+		} else {
+			return this.getSapExpertise1Level().getId();
+		}
+	}
+
+	public void setSapExpertise1LevelId(String sapExpertise1LevelId) {
+		this.sapExpertise1Level = new ExpertiseLevel(sapExpertise1LevelId);
+	}
+
+	public String getSapExpertise2Id() {
+		if (this.getSapExpertise2() == null) {
+			return null;
+		} else {
+			return this.getSapExpertise2().getId();
+		}
+	}
+
+	public void setSapExpertise2Id(String sapExpertise2Id) {
+		this.sapExpertise2 = new SapSoftwareSolution(sapExpertise2Id);
+	}
+
+	public String getSapExpertise2LevelId() {
+		if (this.getSapExpertise2Level() == null) {
+			return null;
+		} else {
+			return this.getSapExpertise2Level().getId();
+		}
+	}
+
+	public void setSapExpertise2LevelId(String sapExpertise2LevelId) {
+		this.sapExpertise2Level = new ExpertiseLevel(sapExpertise2LevelId);
+	}
+
+	public String getSapExpertise3Id() {
+		if (this.getSapExpertise3() == null) {
+			return null;
+		} else {
+			return this.getSapExpertise3().getId();
+		}
+	}
+
+	public void setSapExpertise3Id(String sapExpertise3Id) {
+		this.sapExpertise3 = new SapSoftwareSolution(sapExpertise3Id);
+	}
+
+	public String getSapExpertise3LevelId() {
+		if (this.getSapExpertise3Level() == null) {
+			return null;
+		} else {
+			return this.getSapExpertise3Level().getId();
+		}
+	}
+
+	public void setSapExpertise3LevelId(String sapExpertise3LevelId) {
+		this.sapExpertise3Level = new ExpertiseLevel(sapExpertise3LevelId);
+	}
+
+	public String getSoftSkill1Id() {
+		if (this.getSoftSkill1() == null) {
+			return null;
+		} else {
+			return this.getSoftSkill1().getId();
+		}
+	}
+
+	public void setSoftSkill1Id(String softSkill1Id) {
+		this.softSkill1 = new SoftSkill(softSkill1Id);
+	}
+
+	public String getSoftSkill2Id() {
+		if (this.getSoftSkill2() == null) {
+			return null;
+		} else {
+			return this.getSoftSkill2().getId();
+		}
+	}
+
+	public void setSoftSkill2Id(String softSkill2Id) {
+		this.softSkill2 = new SoftSkill(softSkill2Id);
+	}
+
+	public String getSoftSkill3Id() {
+		if (this.getSoftSkill3() == null) {
+			return null;
+		} else {
+			return this.getSoftSkill3().getId();
+		}
+	}
+
+	public void setSoftSkill3Id(String softSkill3Id) {
+		this.softSkill3 = new SoftSkill(softSkill3Id);
+	}
+
+	public String getSoftSkill4Id() {
+		if (this.getSoftSkill4() == null) {
+			return null;
+		} else {
+			return this.getSoftSkill4().getId();
+		}
+	}
+
+	public void setSoftSkill4Id(String softSkill4Id) {
+		this.softSkill4 = new SoftSkill(softSkill4Id);
+	}
+
+	public String getSoftSkill5Id() {
+		if (this.getSoftSkill5() == null) {
+			return null;
+		} else {
+			return this.getSoftSkill5().getId();
+		}
+	}
+
+	public void setSoftSkill5Id(String softSkill5Id) {
+		this.softSkill5 = new SoftSkill(softSkill5Id);
+	}
+
+	public String getSoftSkill6Id() {
+		if (this.getSoftSkill6() == null) {
+			return null;
+		} else {
+			return this.getSoftSkill6().getId();
+		}
+	}
+
+	public void setSoftSkill6Id(String softSkill6Id) {
+		this.softSkill6 = new SoftSkill(softSkill6Id);
+	}
+
+	public String getRegionId() {
+		if (this.getRegion() == null) {
+			return null;
+		} else {
+			return this.getRegion().getId();
+		}
+	}
+
+	public void setRegionId(String regionId) {
+		this.region = new Region(regionId);
+	}
+
+	public String getShirtSizeId() {
+		if (this.getShirtSize() == null) {
+			return null;
+		} else {
+			return this.getShirtSize().getId();
+		}
+	}
+
+	public void setShirtSizeId(String shirtSizeId) {
+		this.shirtSize = new Size(shirtSizeId);
+	}
+
+	public String getShirtMFId() {
+		if (this.getShirtMF() == null) {
+			return null;
+		} else {
+			return this.getShirtMF().getId();
+		}
+	}
+
+	public void setShirtMFId(String shirtMFId) {
+		this.shirtMF = new Gender(shirtMFId);
+	}
+
+	public String getTopicLeadRegionId() {
+		if (this.getTopicLeadRegion() == null) {
+			return null;
+		} else {
+			return this.getTopicLeadRegion().getId();
+		}
+	}
+
+	public void setTopicLeadRegionId(String topicLeadRegionId) {
+		this.topicLeadRegion = new Region(topicLeadRegionId);
+	}
+
+	public String getTopic1Id() {
+		if (this.getTopic1() == null) {
+			return null;
+		} else {
+			return this.getTopic1().getId();
+		}
+	}
+
+	public void setTopic1Id(String topic1Id) {
+		this.topic1 = new Topic(topic1Id);
+	}
+
+	public String getTopic2Id() {
+		if (this.getTopic2() == null) {
+			return null;
+		} else {
+			return this.getTopic2().getId();
+		}
+	}
+
+	public void setTopic2Id(String topic2Id) {
+		this.topic2 = new Topic(topic2Id);
+	}
+
+	public String getTopic3Id() {
+		if (this.getTopic3() == null) {
+			return null;
+		} else {
+			return this.getTopic3().getId();
+		}
+	}
+
+	public void setTopic3Id(String topic3Id) {
+		this.topic3 = new Topic(topic3Id);
+	}
+
+	public String getTopic4Id() {
+		if (this.getTopic4() == null) {
+			return null;
+		} else {
+			return this.getTopic4().getId();
+		}
+	}
+
+	public void setTopic4Id(String topic4Id) {
+		this.topic4 = new Topic(topic4Id);
+	}
+
+	public String getTopicInterestId() {
+		if (this.getTopicInterest() == null) {
+			return null;
+		} else {
+			return this.getTopicInterest().getId();
+		}
+	}
+
+	public void setTopicInterestId(String topicInterestId) {
+		this.topicInterest = new Topic(topicInterestId);
 	}
 
 }
