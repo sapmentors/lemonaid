@@ -1,3 +1,4 @@
+
 {
 	"_version": "1.1.0",
 	"sap.app": {
@@ -19,12 +20,12 @@
 				"uri": "/odata.svc/",
 				"type": "OData",
 				"settings": {
-					"odataVersion": "2.0"
+					"odataVersion": "2.0",
+					"localUri": "/localService/metadata.xml"
 				}
 			}
 		}
 	},
-
 	"sap.ui": {
 		"_version": "1.1.0",
 		"technology": "UI5",
@@ -41,12 +42,8 @@
 			"tablet": true,
 			"phone": true
 		},
-		"supportedThemes": [
-			"sap_hcb",
-			"sap_bluecrystal"
-		]
+		"supportedThemes": ["sap_hcb", "sap_bluecrystal"]
 	},
-
 	"sap.ui5": {
 		"_version": "1.1.0",
 		"rootView": {
@@ -89,17 +86,15 @@
 				"controlAggregation": "pages",
 				"transition": "slide"
 			},
-			"routes": [
-				{
-					"pattern": "",
-					"name": "Main",
-					"target": "main"
-				},{
-					"pattern" : "Mentor/{Id}",
-					"name" : "Mentor",
-					"target" : "mentor"
-				}
-			],
+			"routes": [{
+				"pattern": "",
+				"name": "Main",
+				"target": "main"
+			}, {
+				"pattern": "Mentor/{Id}",
+				"name": "Mentor",
+				"target": "mentor"
+			}],
 			"targets": {
 				"main": {
 					"viewName": "Main",

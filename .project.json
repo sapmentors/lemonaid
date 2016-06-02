@@ -1,0 +1,9 @@
+{
+  "mockpreview": {
+    "loadJSONFiles": true,
+    "mockUri": "/odata.svc/",
+    "metadataFilePath": "/localService/metadata.xml",
+    "loadCustomRequests": false,
+    "mockRequestsFilePath": ""
+  }
+}
