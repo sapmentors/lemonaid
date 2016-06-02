@@ -23,7 +23,7 @@
 									items="{
 										path: '/Mentors',
 										parameters: {
-											select: 'Id,FullName,ShirtNumber,RelationshipToSap/Name,MentorStatus/Name',
+											select: 'Id,Email1,FullName,ShirtNumber,RelationshipToSap/Name,MentorStatus/Name',
 											expand: 'MentorStatus,RelationshipToSap'
 										},
 										sorter: {path: 'ShirtNumber', descending: false}
@@ -41,7 +41,8 @@
 										</Toolbar>
 									</headerToolbar>
 									<columns>
-										<Column id="shirtNumber" width="20%" />
+										<Column id="shirtNumber" width="128px" />
+										<Column id="photo" width="64px" />
 										<Column id="fullName" />
 										<Column id="relationship" />
 										<Column id="status" />
@@ -49,6 +50,7 @@
 									<ColumnListItem id="columnListItem" type="Navigation" press="onMentorDetailPress">
 										<cells>
 											<ObjectIdentifier title="{ShirtNumber}" class="sapMTableContentMargin" />
+											<Image width="48px" height="48px" src="{path:'Email1', formatter:'.gravatar'}" class="sapMTableContentMargin" />
 											<Text text="{FullName}" class="sapMTableContentMargin" />
 											<Text text="{RelationshipToSap/Name}" class="sapMTableContentMargin" />
 											<Text text="{MentorStatus/Name}" class="sapMTableContentMargin" />

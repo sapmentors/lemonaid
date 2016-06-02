@@ -22,6 +22,9 @@ sap.ui.define([
 			this.oModel.metadataLoaded().then(function() {
 				that.oView.bindElement({
 					path: that.oModel.createKey("/Mentors", { Id: sId }),
+					parameters: {
+						expand: 'MentorStatus,RelationshipToSap,Country,Topic1,Topic2,Topic3'
+					},
 					events : {
 						change: that._onBindingChange.bind(that)
 					}

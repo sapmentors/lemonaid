@@ -1,7 +1,9 @@
 sap.ui.define([
 	"com/sap/mentors/lemonaid/controller/BaseController",
 	"sap/ui/model/Filter",
-	"sap/ui/model/FilterOperator"
+	"sap/ui/model/FilterOperator",
+	"com/sap/mentors/lemonaid/util/crypto-js/core",
+	"com/sap/mentors/lemonaid/util/crypto-js/md5"
 ], function(Controller, Filter, FilterOperator) {
 	"use strict";
 
@@ -28,8 +30,17 @@ sap.ui.define([
 			this.getRouter().navTo("Mentor", {
 				Id : event.getSource().getBindingContext().getProperty("Id")
 			});
+		},
+		
+		gravatar : function(email){
+			var src = "images/logo.png";
+			if(email) {
+				src = "https://www.gravatar.com/avatar/" + 
+					CryptoJS.MD5(email).toString() +
+					"?s=144&d=http%3A%2F%2Fscn.sap.com%2Fcommunity%2Fimage%2F2422%2F1.png"
+			}
+			return src;
 		}
-
 	});
 
 });
