@@ -1,5 +1,6 @@
 <mvc:View controllerName="com.sap.mentors.lemonaid.controller.Mentor" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
-	xmlns="sap.uxap" xmlns:layout="sap.ui.layout" xmlns:m="sap.m">
+	xmlns:core="sap.ui.core"
+	xmlns="sap.uxap" xmlns:layout="sap.ui.layout" xmlns:m="sap.m" xmlns:form="sap.ui.layout.form">
 	<m:Page title="{FullName}" navButtonPress="onNavBack" showNavButton="true">
 		<m:content>
 			<ObjectPageLayout id="ObjectPageLayout" enableLazyLoading="false" showTitleInHeaderContent="true" showEditHeaderButton="false"
@@ -24,6 +25,7 @@
 					</ObjectPageHeader>
 				</headerTitle>
 				<headerContent>
+					<m:NumericContent value="{ShirtNumber}" size="M" />
 					<layout:VerticalLayout>
 						<m:Label text="{City}, {Country/Name}"/>
 						<m:Link text="{Phone}"/>
@@ -41,9 +43,41 @@
 					</layout:VerticalLayout>
 				</headerContent>
 				<sections>
-					<ObjectPageSection title="Personal" importance="Medium">
+					<ObjectPageSection title="About" importance="Medium">
 						<subSections>
 							<ObjectPageSubSection title="Connect">
+								<blocks>
+									<form:SimpleForm labelMinWidth="192" maxContainerCols="2" layout="ResponsiveGridLayout" columnsL="1" columnsM="1" columnsXL="1">
+										<form:title>
+											<core:Title text="{i18n>status}"/>
+										</form:title>
+										<form:content>
+										<m:Label text="{i18n>relSAP}"/>
+										<m:Text text="{RelationshipToSap/Name}"/>
+										<m:Label text="{i18n>mentorStatus}"/>
+										<m:Text text="{MentorStatus/Name}"/>
+										</form:content>
+									</form:SimpleForm>
+									<form:SimpleForm labelMinWidth="192" maxContainerCols="2" layout="ResponsiveGridLayout" columnsL="1" columnsM="1" columnsXL="1">
+										<form:title>
+											<core:Title text="{i18n>socialAccounts}"/>
+										</form:title>
+										<form:content>
+										<m:Label text="SCN"/>
+										<m:Link href="{ScnUrl}" text="{ScnUrl}" target="_blank"/>
+										<m:Label text="LinkedIn"/>
+										<m:Link href="{LinkedInUrl}" text="{LinkedInUrl}" target="_blank"/>
+										<m:Label text="Twitter"/>
+										<m:Text text="{TwitterId}"/>
+										<m:Label text="Facebook"/>
+										<m:Link href="{FacebookUrl}" text="{FacebookUrl}" target="_blank"/>
+										</form:content>
+									</form:SimpleForm>
+								</blocks>
+							</ObjectPageSubSection>
+						</subSections>
+						<subSections>
+							<ObjectPageSubSection title="Connect 2">
 								<blocks>
 									
 								</blocks>
