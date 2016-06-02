@@ -1,1 +1,411 @@
-<?xml version='1.0' encoding='UTF-8'?><edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"><edmx:DataServices m:DataServiceVersion="1.0" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"><Schema Namespace="Model" xmlns="http://schemas.microsoft.com/ado/2008/09/edm"><EntityType Name="Topic"><Key><PropertyRef Name="Id"/></Key><Property Name="Id" Type="Edm.String" Nullable="false"/><Property Name="Name" Type="Edm.String"/></EntityType><EntityType Name="ExpertiseLevel"><Key><PropertyRef Name="Id"/></Key><Property Name="Id" Type="Edm.String" Nullable="false"/><Property Name="Name" Type="Edm.String"/></EntityType><EntityType Name="Gender"><Key><PropertyRef Name="Id"/></Key><Property Name="Id" Type="Edm.String" Nullable="false"/><Property Name="Name" Type="Edm.String"/></EntityType><EntityType Name="MentorStatus"><Key><PropertyRef Name="Id"/></Key><Property Name="Id" Type="Edm.String" Nullable="false"/><Property Name="Name" Type="Edm.String"/></EntityType><EntityType Name="Mentor"><Key><PropertyRef Name="Id"/></Key><Property Name="Address" Type="Edm.String"/><Property Name="Bio" Type="Edm.String"/><Property Name="City" Type="Edm.String"/><Property Name="Company" Type="Edm.String"/><Property Name="Email1" Type="Edm.String"/><Property Name="Email2" Type="Edm.String"/><Property Name="FacebookUrl" Type="Edm.String"/><Property Name="FullName" Type="Edm.String" sap:label="Name" xmlns:sap="http://www.sap.com/Protocols/SAPData"/><Property Name="HoursAvailable" Type="Edm.Int32"/><Property Name="Id" Type="Edm.String" Nullable="false"/><Property Name="InterestInMentorCommunicationStrategy" Type="Edm.Boolean"/><Property Name="InterestInMentorManagementModel" Type="Edm.Boolean"/><Property Name="InterestInMentorMix" Type="Edm.Boolean"/><Property Name="InterestInOtherIdeas" Type="Edm.Boolean"/><Property Name="JobTitle" Type="Edm.String"/><Property Name="LinkedInUrl" Type="Edm.String"/><Property Name="Phone" Type="Edm.String"/><Property Name="PreferredEmail" Type="Edm.Int32"/><Property Name="ScnUrl" Type="Edm.String"/><Property Name="ShirtNumber" Type="Edm.Int32"/><Property Name="ShirtText" Type="Edm.String"/><Property Name="State" Type="Edm.String"/><Property Name="Topic1Executive" Type="Edm.String"/><Property Name="Topic2Executive" Type="Edm.String"/><Property Name="Topic3Executive" Type="Edm.String"/><Property Name="Topic4Executive" Type="Edm.String"/><Property Name="TopicLeadInterest" Type="Edm.Boolean"/><Property Name="TwitterId" Type="Edm.String"/><Property Name="XingUrl" Type="Edm.String"/><Property Name="Zip" Type="Edm.String"/><NavigationProperty Name="Country" Relationship="Model.Mentor_Country_Many_One0" FromRole="Mentor" ToRole="Country"/><NavigationProperty Name="Industry1" Relationship="Model.Mentor_Industry_Many_One0" FromRole="Mentor" ToRole="Industry"/><NavigationProperty Name="Industry2" Relationship="Model.Mentor_Industry_Many_One1" FromRole="Mentor" ToRole="Industry"/><NavigationProperty Name="Industry3" Relationship="Model.Mentor_Industry_Many_One2" FromRole="Mentor" ToRole="Industry"/><NavigationProperty Name="LineOfBusiness1" Relationship="Model.Mentor_LineOfBusiness_Many_One0" FromRole="Mentor" ToRole="LineOfBusiness"/><NavigationProperty Name="LineOfBusiness2" Relationship="Model.Mentor_LineOfBusiness_Many_One1" FromRole="Mentor" ToRole="LineOfBusiness"/><NavigationProperty Name="LineOfBusiness3" Relationship="Model.Mentor_LineOfBusiness_Many_One2" FromRole="Mentor" ToRole="LineOfBusiness"/><NavigationProperty Name="Region" Relationship="Model.Mentor_Region_Many_One0" FromRole="Mentor" ToRole="Region"/><NavigationProperty Name="RelationshipToSap" Relationship="Model.Mentor_RelationshipToSap_Many_One0" FromRole="Mentor" ToRole="RelationshipToSap"/><NavigationProperty Name="SapExpertise1" Relationship="Model.Mentor_SapSoftwareSolution_Many_One0" FromRole="Mentor" ToRole="SapSoftwareSolution"/><NavigationProperty Name="SapExpertise1Level" Relationship="Model.Mentor_ExpertiseLevel_Many_One0" FromRole="Mentor" ToRole="ExpertiseLevel"/><NavigationProperty Name="SapExpertise2" Relationship="Model.Mentor_SapSoftwareSolution_Many_One1" FromRole="Mentor" ToRole="SapSoftwareSolution"/><NavigationProperty Name="SapExpertise2Level" Relationship="Model.Mentor_ExpertiseLevel_Many_One1" FromRole="Mentor" ToRole="ExpertiseLevel"/><NavigationProperty Name="SapExpertise3" Relationship="Model.Mentor_SapSoftwareSolution_Many_One2" FromRole="Mentor" ToRole="SapSoftwareSolution"/><NavigationProperty Name="SapExpertise3Level" Relationship="Model.Mentor_ExpertiseLevel_Many_One2" FromRole="Mentor" ToRole="ExpertiseLevel"/><NavigationProperty Name="ShirtMF" Relationship="Model.Mentor_Gender_Many_One0" FromRole="Mentor" ToRole="Gender"/><NavigationProperty Name="ShirtSize" Relationship="Model.Mentor_Size_Many_One0" FromRole="Mentor" ToRole="Size"/><NavigationProperty Name="SoftSkill1" Relationship="Model.Mentor_SoftSkill_Many_One0" FromRole="Mentor" ToRole="SoftSkill"/><NavigationProperty Name="SoftSkill2" Relationship="Model.Mentor_SoftSkill_Many_One1" FromRole="Mentor" ToRole="SoftSkill"/><NavigationProperty Name="SoftSkill3" Relationship="Model.Mentor_SoftSkill_Many_One2" FromRole="Mentor" ToRole="SoftSkill"/><NavigationProperty Name="SoftSkill4" Relationship="Model.Mentor_SoftSkill_Many_One3" FromRole="Mentor" ToRole="SoftSkill"/><NavigationProperty Name="SoftSkill5" Relationship="Model.Mentor_SoftSkill_Many_One4" FromRole="Mentor" ToRole="SoftSkill"/><NavigationProperty Name="SoftSkill6" Relationship="Model.Mentor_SoftSkill_Many_One5" FromRole="Mentor" ToRole="SoftSkill"/><NavigationProperty Name="MentorStatus" Relationship="Model.Mentor_MentorStatus_Many_One0" FromRole="Mentor" ToRole="MentorStatus"/><NavigationProperty Name="Topic1" Relationship="Model.Mentor_Topic_Many_One0" FromRole="Mentor" ToRole="Topic"/><NavigationProperty Name="Topic2" Relationship="Model.Mentor_Topic_Many_One1" FromRole="Mentor" ToRole="Topic"/><NavigationProperty Name="Topic3" Relationship="Model.Mentor_Topic_Many_One2" FromRole="Mentor" ToRole="Topic"/><NavigationProperty Name="Topic4" Relationship="Model.Mentor_Topic_Many_One3" FromRole="Mentor" ToRole="Topic"/><NavigationProperty Name="TopicInterest" Relationship="Model.Mentor_Topic_Many_One4" FromRole="Mentor" ToRole="Topic"/><NavigationProperty Name="TopicLeadRegion" Relationship="Model.Mentor_Region_Many_One1" FromRole="Mentor" ToRole="Region"/></EntityType><EntityType Name="Region"><Key><PropertyRef Name="Id"/></Key><Property Name="Id" Type="Edm.String" Nullable="false"/><Property Name="Name" Type="Edm.String"/></EntityType><EntityType Name="LineOfBusiness"><Key><PropertyRef Name="Id"/></Key><Property Name="Id" Type="Edm.String" Nullable="false"/><Property Name="Name" Type="Edm.String"/></EntityType><EntityType Name="SoftSkill"><Key><PropertyRef Name="Id"/></Key><Property Name="Id" Type="Edm.String" Nullable="false"/><Property Name="Name" Type="Edm.String"/></EntityType><EntityType Name="Size"><Key><PropertyRef Name="Id"/></Key><Property Name="Id" Type="Edm.String" Nullable="false"/><Property Name="Name" Type="Edm.String"/></EntityType><EntityType Name="Industry"><Key><PropertyRef Name="Id"/></Key><Property Name="Id" Type="Edm.String" Nullable="false"/><Property Name="Name" Type="Edm.String"/></EntityType><EntityType Name="RelationshipToSap"><Key><PropertyRef Name="Id"/></Key><Property Name="Id" Type="Edm.String" Nullable="false"/><Property Name="Name" Type="Edm.String"/></EntityType><EntityType Name="SapSoftwareSolution"><Key><PropertyRef Name="Id"/></Key><Property Name="Id" Type="Edm.String" Nullable="false"/><Property Name="Name" Type="Edm.String"/></EntityType><EntityType Name="Country"><Key><PropertyRef Name="Id"/></Key><Property Name="Id" Type="Edm.String" Nullable="false"/><Property Name="Name" Type="Edm.String"/></EntityType><Association Name="Mentor_SapSoftwareSolution_Many_One0"><End Type="Model.Mentor" Multiplicity="*" Role="Mentor"/><End Type="Model.SapSoftwareSolution" Multiplicity="1" Role="SapSoftwareSolution"/></Association><Association Name="Mentor_Topic_Many_One4"><End Type="Model.Mentor" Multiplicity="*" Role="Mentor"/><End Type="Model.Topic" Multiplicity="1" Role="Topic"/></Association><Association Name="Mentor_Gender_Many_One0"><End Type="Model.Mentor" Multiplicity="*" Role="Mentor"/><End Type="Model.Gender" Multiplicity="1" Role="Gender"/></Association><Association Name="Mentor_SapSoftwareSolution_Many_One2"><End Type="Model.Mentor" Multiplicity="*" Role="Mentor"/><End Type="Model.SapSoftwareSolution" Multiplicity="1" Role="SapSoftwareSolution"/></Association><Association Name="Mentor_SapSoftwareSolution_Many_One1"><End Type="Model.Mentor" Multiplicity="*" Role="Mentor"/><End Type="Model.SapSoftwareSolution" Multiplicity="1" Role="SapSoftwareSolution"/></Association><Association Name="Mentor_Industry_Many_One0"><End Type="Model.Mentor" Multiplicity="*" Role="Mentor"/><End Type="Model.Industry" Multiplicity="1" Role="Industry"/></Association><Association Name="Mentor_Size_Many_One0"><End Type="Model.Mentor" Multiplicity="*" Role="Mentor"/><End Type="Model.Size" Multiplicity="1" Role="Size"/></Association><Association Name="Mentor_Industry_Many_One1"><End Type="Model.Mentor" Multiplicity="*" Role="Mentor"/><End Type="Model.Industry" Multiplicity="1" Role="Industry"/></Association><Association Name="Mentor_Industry_Many_One2"><End Type="Model.Mentor" Multiplicity="*" Role="Mentor"/><End Type="Model.Industry" Multiplicity="1" Role="Industry"/></Association><Association Name="Mentor_SoftSkill_Many_One1"><End Type="Model.Mentor" Multiplicity="*" Role="Mentor"/><End Type="Model.SoftSkill" Multiplicity="1" Role="SoftSkill"/></Association><Association Name="Mentor_SoftSkill_Many_One0"><End Type="Model.Mentor" Multiplicity="*" Role="Mentor"/><End Type="Model.SoftSkill" Multiplicity="1" Role="SoftSkill"/></Association><Association Name="Mentor_SoftSkill_Many_One3"><End Type="Model.Mentor" Multiplicity="*" Role="Mentor"/><End Type="Model.SoftSkill" Multiplicity="1" Role="SoftSkill"/></Association><Association Name="Mentor_SoftSkill_Many_One2"><End Type="Model.Mentor" Multiplicity="*" Role="Mentor"/><End Type="Model.SoftSkill" Multiplicity="1" Role="SoftSkill"/></Association><Association Name="Mentor_Country_Many_One0"><End Type="Model.Mentor" Multiplicity="*" Role="Mentor"/><End Type="Model.Country" Multiplicity="1" Role="Country"/></Association><Association Name="Mentor_SoftSkill_Many_One5"><End Type="Model.Mentor" Multiplicity="*" Role="Mentor"/><End Type="Model.SoftSkill" Multiplicity="1" Role="SoftSkill"/></Association><Association Name="Mentor_SoftSkill_Many_One4"><End Type="Model.Mentor" Multiplicity="*" Role="Mentor"/><End Type="Model.SoftSkill" Multiplicity="1" Role="SoftSkill"/></Association><Association Name="Mentor_Topic_Many_One0"><End Type="Model.Mentor" Multiplicity="*" Role="Mentor"/><End Type="Model.Topic" Multiplicity="1" Role="Topic"/></Association><Association Name="Mentor_Topic_Many_One1"><End Type="Model.Mentor" Multiplicity="*" Role="Mentor"/><End Type="Model.Topic" Multiplicity="1" Role="Topic"/></Association><Association Name="Mentor_Topic_Many_One2"><End Type="Model.Mentor" Multiplicity="*" Role="Mentor"/><End Type="Model.Topic" Multiplicity="1" Role="Topic"/></Association><Association Name="Mentor_Topic_Many_One3"><End Type="Model.Mentor" Multiplicity="*" Role="Mentor"/><End Type="Model.Topic" Multiplicity="1" Role="Topic"/></Association><Association Name="Mentor_Region_Many_One1"><End Type="Model.Mentor" Multiplicity="*" Role="Mentor"/><End Type="Model.Region" Multiplicity="1" Role="Region"/></Association><Association Name="Mentor_RelationshipToSap_Many_One0"><End Type="Model.Mentor" Multiplicity="*" Role="Mentor"/><End Type="Model.RelationshipToSap" Multiplicity="1" Role="RelationshipToSap"/></Association><Association Name="Mentor_Region_Many_One0"><End Type="Model.Mentor" Multiplicity="*" Role="Mentor"/><End Type="Model.Region" Multiplicity="1" Role="Region"/></Association><Association Name="Mentor_LineOfBusiness_Many_One0"><End Type="Model.Mentor" Multiplicity="*" Role="Mentor"/><End Type="Model.LineOfBusiness" Multiplicity="1" Role="LineOfBusiness"/></Association><Association Name="Mentor_LineOfBusiness_Many_One1"><End Type="Model.Mentor" Multiplicity="*" Role="Mentor"/><End Type="Model.LineOfBusiness" Multiplicity="1" Role="LineOfBusiness"/></Association><Association Name="Mentor_ExpertiseLevel_Many_One2"><End Type="Model.Mentor" Multiplicity="*" Role="Mentor"/><End Type="Model.ExpertiseLevel" Multiplicity="1" Role="ExpertiseLevel"/></Association><Association Name="Mentor_LineOfBusiness_Many_One2"><End Type="Model.Mentor" Multiplicity="*" Role="Mentor"/><End Type="Model.LineOfBusiness" Multiplicity="1" Role="LineOfBusiness"/></Association><Association Name="Mentor_ExpertiseLevel_Many_One1"><End Type="Model.Mentor" Multiplicity="*" Role="Mentor"/><End Type="Model.ExpertiseLevel" Multiplicity="1" Role="ExpertiseLevel"/></Association><Association Name="Mentor_MentorStatus_Many_One0"><End Type="Model.Mentor" Multiplicity="*" Role="Mentor"/><End Type="Model.MentorStatus" Multiplicity="1" Role="MentorStatus"/></Association><Association Name="Mentor_ExpertiseLevel_Many_One0"><End Type="Model.Mentor" Multiplicity="*" Role="Mentor"/><End Type="Model.ExpertiseLevel" Multiplicity="1" Role="ExpertiseLevel"/></Association><EntityContainer Name="ModelContainer" m:IsDefaultEntityContainer="true"><EntitySet Name="Topics" EntityType="Model.Topic"/><EntitySet Name="ExpertiseLevels" EntityType="Model.ExpertiseLevel"/><EntitySet Name="Genders" EntityType="Model.Gender"/><EntitySet Name="MentorStatuses" EntityType="Model.MentorStatus"/><EntitySet Name="Mentors" EntityType="Model.Mentor"/><EntitySet Name="Regions" EntityType="Model.Region"/><EntitySet Name="LinesOfBusiness" EntityType="Model.LineOfBusiness"/><EntitySet Name="SoftSkills" EntityType="Model.SoftSkill"/><EntitySet Name="Sizes" EntityType="Model.Size"/><EntitySet Name="Industries" EntityType="Model.Industry"/><EntitySet Name="RelationshipsToSap" EntityType="Model.RelationshipToSap"/><EntitySet Name="SapSoftwareSolutions" EntityType="Model.SapSoftwareSolution"/><EntitySet Name="Countries" EntityType="Model.Country"/><AssociationSet Name="Mentor_SapSoftwareSolution_Many_One0Set" Association="Model.Mentor_SapSoftwareSolution_Many_One0"><End EntitySet="Mentors" Role="Mentor"/><End EntitySet="SapSoftwareSolutions" Role="SapSoftwareSolution"/></AssociationSet><AssociationSet Name="Mentor_Topic_Many_One4Set" Association="Model.Mentor_Topic_Many_One4"><End EntitySet="Mentors" Role="Mentor"/><End EntitySet="Topics" Role="Topic"/></AssociationSet><AssociationSet Name="Mentor_Gender_Many_One0Set" Association="Model.Mentor_Gender_Many_One0"><End EntitySet="Mentors" Role="Mentor"/><End EntitySet="Genders" Role="Gender"/></AssociationSet><AssociationSet Name="Mentor_SapSoftwareSolution_Many_One2Set" Association="Model.Mentor_SapSoftwareSolution_Many_One2"><End EntitySet="Mentors" Role="Mentor"/><End EntitySet="SapSoftwareSolutions" Role="SapSoftwareSolution"/></AssociationSet><AssociationSet Name="Mentor_SapSoftwareSolution_Many_One1Set" Association="Model.Mentor_SapSoftwareSolution_Many_One1"><End EntitySet="Mentors" Role="Mentor"/><End EntitySet="SapSoftwareSolutions" Role="SapSoftwareSolution"/></AssociationSet><AssociationSet Name="Mentor_Industry_Many_One0Set" Association="Model.Mentor_Industry_Many_One0"><End EntitySet="Mentors" Role="Mentor"/><End EntitySet="Industries" Role="Industry"/></AssociationSet><AssociationSet Name="Mentor_Size_Many_One0Set" Association="Model.Mentor_Size_Many_One0"><End EntitySet="Mentors" Role="Mentor"/><End EntitySet="Sizes" Role="Size"/></AssociationSet><AssociationSet Name="Mentor_Industry_Many_One1Set" Association="Model.Mentor_Industry_Many_One1"><End EntitySet="Mentors" Role="Mentor"/><End EntitySet="Industries" Role="Industry"/></AssociationSet><AssociationSet Name="Mentor_Industry_Many_One2Set" Association="Model.Mentor_Industry_Many_One2"><End EntitySet="Mentors" Role="Mentor"/><End EntitySet="Industries" Role="Industry"/></AssociationSet><AssociationSet Name="Mentor_SoftSkill_Many_One1Set" Association="Model.Mentor_SoftSkill_Many_One1"><End EntitySet="Mentors" Role="Mentor"/><End EntitySet="SoftSkills" Role="SoftSkill"/></AssociationSet><AssociationSet Name="Mentor_SoftSkill_Many_One0Set" Association="Model.Mentor_SoftSkill_Many_One0"><End EntitySet="Mentors" Role="Mentor"/><End EntitySet="SoftSkills" Role="SoftSkill"/></AssociationSet><AssociationSet Name="Mentor_SoftSkill_Many_One3Set" Association="Model.Mentor_SoftSkill_Many_One3"><End EntitySet="Mentors" Role="Mentor"/><End EntitySet="SoftSkills" Role="SoftSkill"/></AssociationSet><AssociationSet Name="Mentor_SoftSkill_Many_One2Set" Association="Model.Mentor_SoftSkill_Many_One2"><End EntitySet="Mentors" Role="Mentor"/><End EntitySet="SoftSkills" Role="SoftSkill"/></AssociationSet><AssociationSet Name="Mentor_Country_Many_One0Set" Association="Model.Mentor_Country_Many_One0"><End EntitySet="Mentors" Role="Mentor"/><End EntitySet="Countries" Role="Country"/></AssociationSet><AssociationSet Name="Mentor_SoftSkill_Many_One5Set" Association="Model.Mentor_SoftSkill_Many_One5"><End EntitySet="Mentors" Role="Mentor"/><End EntitySet="SoftSkills" Role="SoftSkill"/></AssociationSet><AssociationSet Name="Mentor_SoftSkill_Many_One4Set" Association="Model.Mentor_SoftSkill_Many_One4"><End EntitySet="Mentors" Role="Mentor"/><End EntitySet="SoftSkills" Role="SoftSkill"/></AssociationSet><AssociationSet Name="Mentor_Topic_Many_One0Set" Association="Model.Mentor_Topic_Many_One0"><End EntitySet="Mentors" Role="Mentor"/><End EntitySet="Topics" Role="Topic"/></AssociationSet><AssociationSet Name="Mentor_Topic_Many_One1Set" Association="Model.Mentor_Topic_Many_One1"><End EntitySet="Mentors" Role="Mentor"/><End EntitySet="Topics" Role="Topic"/></AssociationSet><AssociationSet Name="Mentor_Topic_Many_One2Set" Association="Model.Mentor_Topic_Many_One2"><End EntitySet="Mentors" Role="Mentor"/><End EntitySet="Topics" Role="Topic"/></AssociationSet><AssociationSet Name="Mentor_Topic_Many_One3Set" Association="Model.Mentor_Topic_Many_One3"><End EntitySet="Mentors" Role="Mentor"/><End EntitySet="Topics" Role="Topic"/></AssociationSet><AssociationSet Name="Mentor_Region_Many_One1Set" Association="Model.Mentor_Region_Many_One1"><End EntitySet="Mentors" Role="Mentor"/><End EntitySet="Regions" Role="Region"/></AssociationSet><AssociationSet Name="Mentor_RelationshipToSap_Many_One0Set" Association="Model.Mentor_RelationshipToSap_Many_One0"><End EntitySet="Mentors" Role="Mentor"/><End EntitySet="RelationshipsToSap" Role="RelationshipToSap"/></AssociationSet><AssociationSet Name="Mentor_Region_Many_One0Set" Association="Model.Mentor_Region_Many_One0"><End EntitySet="Mentors" Role="Mentor"/><End EntitySet="Regions" Role="Region"/></AssociationSet><AssociationSet Name="Mentor_LineOfBusiness_Many_One0Set" Association="Model.Mentor_LineOfBusiness_Many_One0"><End EntitySet="Mentors" Role="Mentor"/><End EntitySet="LinesOfBusiness" Role="LineOfBusiness"/></AssociationSet><AssociationSet Name="Mentor_LineOfBusiness_Many_One1Set" Association="Model.Mentor_LineOfBusiness_Many_One1"><End EntitySet="Mentors" Role="Mentor"/><End EntitySet="LinesOfBusiness" Role="LineOfBusiness"/></AssociationSet><AssociationSet Name="Mentor_ExpertiseLevel_Many_One2Set" Association="Model.Mentor_ExpertiseLevel_Many_One2"><End EntitySet="Mentors" Role="Mentor"/><End EntitySet="ExpertiseLevels" Role="ExpertiseLevel"/></AssociationSet><AssociationSet Name="Mentor_LineOfBusiness_Many_One2Set" Association="Model.Mentor_LineOfBusiness_Many_One2"><End EntitySet="Mentors" Role="Mentor"/><End EntitySet="LinesOfBusiness" Role="LineOfBusiness"/></AssociationSet><AssociationSet Name="Mentor_ExpertiseLevel_Many_One1Set" Association="Model.Mentor_ExpertiseLevel_Many_One1"><End EntitySet="Mentors" Role="Mentor"/><End EntitySet="ExpertiseLevels" Role="ExpertiseLevel"/></AssociationSet><AssociationSet Name="Mentor_MentorStatus_Many_One0Set" Association="Model.Mentor_MentorStatus_Many_One0"><End EntitySet="Mentors" Role="Mentor"/><End EntitySet="MentorStatuses" Role="MentorStatus"/></AssociationSet><AssociationSet Name="Mentor_ExpertiseLevel_Many_One0Set" Association="Model.Mentor_ExpertiseLevel_Many_One0"><End EntitySet="Mentors" Role="Mentor"/><End EntitySet="ExpertiseLevels" Role="ExpertiseLevel"/></AssociationSet></EntityContainer></Schema></edmx:DataServices></edmx:Edmx>
+<?xml version='1.0' encoding='UTF-8'?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <edmx:DataServices m:DataServiceVersion="1.0" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata">
+        <Schema Namespace="Model" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="Topic">
+                <Key>
+                    <PropertyRef Name="Id" />
+                </Key>
+                <Property Name="Id" Type="Edm.String" Nullable="false" />
+                <Property Name="Name" Type="Edm.String" />
+            </EntityType>
+            <EntityType Name="ExpertiseLevel">
+                <Key>
+                    <PropertyRef Name="Id" />
+                </Key>
+                <Property Name="Id" Type="Edm.String" Nullable="false" />
+                <Property Name="Name" Type="Edm.String" />
+            </EntityType>
+            <EntityType Name="Gender">
+                <Key>
+                    <PropertyRef Name="Id" />
+                </Key>
+                <Property Name="Id" Type="Edm.String" Nullable="false" />
+                <Property Name="Name" Type="Edm.String" />
+            </EntityType>
+            <EntityType Name="MentorStatus">
+                <Key>
+                    <PropertyRef Name="Id" />
+                </Key>
+                <Property Name="Id" Type="Edm.String" Nullable="false" />
+                <Property Name="Name" Type="Edm.String" />
+            </EntityType>
+            <EntityType Name="Mentor">
+                <Key>
+                    <PropertyRef Name="Id" />
+                </Key>
+                <Property Name="Address" Type="Edm.String" />
+                <Property Name="Bio" Type="Edm.String" />
+                <Property Name="City" Type="Edm.String" />
+                <Property Name="Company" Type="Edm.String" />
+                <Property Name="Email1" Type="Edm.String" />
+                <Property Name="Email2" Type="Edm.String" />
+                <Property Name="FacebookUrl" Type="Edm.String" />
+                <Property Name="FullName" Type="Edm.String" sap:label="Name" xmlns:sap="http://www.sap.com/Protocols/SAPData" />
+                <Property Name="HoursAvailable" Type="Edm.Int32" />
+                <Property Name="Id" Type="Edm.String" Nullable="false" />
+                <Property Name="InterestInMentorCommunicationStrategy" Type="Edm.Boolean" />
+                <Property Name="InterestInMentorManagementModel" Type="Edm.Boolean" />
+                <Property Name="InterestInMentorMix" Type="Edm.Boolean" />
+                <Property Name="InterestInOtherIdeas" Type="Edm.Boolean" />
+                <Property Name="JobTitle" Type="Edm.String" />
+                <Property Name="LinkedInUrl" Type="Edm.String" />
+                <Property Name="Phone" Type="Edm.String" />
+                <Property Name="PreferredEmail" Type="Edm.Int32" />
+                <Property Name="ScnUrl" Type="Edm.String" />
+                <Property Name="ShirtNumber" Type="Edm.Int32" />
+                <Property Name="ShirtText" Type="Edm.String" />
+                <Property Name="State" Type="Edm.String" />
+                <Property Name="Topic1Executive" Type="Edm.String" />
+                <Property Name="Topic2Executive" Type="Edm.String" />
+                <Property Name="Topic3Executive" Type="Edm.String" />
+                <Property Name="Topic4Executive" Type="Edm.String" />
+                <Property Name="TopicLeadInterest" Type="Edm.Boolean" />
+                <Property Name="TwitterId" Type="Edm.String" />
+                <Property Name="XingUrl" Type="Edm.String" />
+                <Property Name="Zip" Type="Edm.String" />
+                <NavigationProperty Name="Country" Relationship="Model.Mentor_Country_Many_One0" FromRole="Mentor" ToRole="Country" />
+                <NavigationProperty Name="Industry1" Relationship="Model.Mentor_Industry_Many_One0" FromRole="Mentor" ToRole="Industry" />
+                <NavigationProperty Name="Industry2" Relationship="Model.Mentor_Industry_Many_One1" FromRole="Mentor" ToRole="Industry" />
+                <NavigationProperty Name="Industry3" Relationship="Model.Mentor_Industry_Many_One2" FromRole="Mentor" ToRole="Industry" />
+                <NavigationProperty Name="LineOfBusiness1" Relationship="Model.Mentor_LineOfBusiness_Many_One0" FromRole="Mentor" ToRole="LineOfBusiness" />
+                <NavigationProperty Name="LineOfBusiness2" Relationship="Model.Mentor_LineOfBusiness_Many_One1" FromRole="Mentor" ToRole="LineOfBusiness" />
+                <NavigationProperty Name="LineOfBusiness3" Relationship="Model.Mentor_LineOfBusiness_Many_One2" FromRole="Mentor" ToRole="LineOfBusiness" />
+                <NavigationProperty Name="Region" Relationship="Model.Mentor_Region_Many_One0" FromRole="Mentor" ToRole="Region" />
+                <NavigationProperty Name="RelationshipToSap" Relationship="Model.Mentor_RelationshipToSap_Many_One0" FromRole="Mentor" ToRole="RelationshipToSap" />
+                <NavigationProperty Name="SapExpertise1" Relationship="Model.Mentor_SapSoftwareSolution_Many_One0" FromRole="Mentor" ToRole="SapSoftwareSolution" />
+                <NavigationProperty Name="SapExpertise1Level" Relationship="Model.Mentor_ExpertiseLevel_Many_One0" FromRole="Mentor" ToRole="ExpertiseLevel" />
+                <NavigationProperty Name="SapExpertise2" Relationship="Model.Mentor_SapSoftwareSolution_Many_One1" FromRole="Mentor" ToRole="SapSoftwareSolution" />
+                <NavigationProperty Name="SapExpertise2Level" Relationship="Model.Mentor_ExpertiseLevel_Many_One1" FromRole="Mentor" ToRole="ExpertiseLevel" />
+                <NavigationProperty Name="SapExpertise3" Relationship="Model.Mentor_SapSoftwareSolution_Many_One2" FromRole="Mentor" ToRole="SapSoftwareSolution" />
+                <NavigationProperty Name="SapExpertise3Level" Relationship="Model.Mentor_ExpertiseLevel_Many_One2" FromRole="Mentor" ToRole="ExpertiseLevel" />
+                <NavigationProperty Name="ShirtMF" Relationship="Model.Mentor_Gender_Many_One0" FromRole="Mentor" ToRole="Gender" />
+                <NavigationProperty Name="ShirtSize" Relationship="Model.Mentor_Size_Many_One0" FromRole="Mentor" ToRole="Size" />
+                <NavigationProperty Name="SoftSkill1" Relationship="Model.Mentor_SoftSkill_Many_One0" FromRole="Mentor" ToRole="SoftSkill" />
+                <NavigationProperty Name="SoftSkill2" Relationship="Model.Mentor_SoftSkill_Many_One1" FromRole="Mentor" ToRole="SoftSkill" />
+                <NavigationProperty Name="SoftSkill3" Relationship="Model.Mentor_SoftSkill_Many_One2" FromRole="Mentor" ToRole="SoftSkill" />
+                <NavigationProperty Name="SoftSkill4" Relationship="Model.Mentor_SoftSkill_Many_One3" FromRole="Mentor" ToRole="SoftSkill" />
+                <NavigationProperty Name="SoftSkill5" Relationship="Model.Mentor_SoftSkill_Many_One4" FromRole="Mentor" ToRole="SoftSkill" />
+                <NavigationProperty Name="SoftSkill6" Relationship="Model.Mentor_SoftSkill_Many_One5" FromRole="Mentor" ToRole="SoftSkill" />
+                <NavigationProperty Name="MentorStatus" Relationship="Model.Mentor_MentorStatus_Many_One0" FromRole="Mentor" ToRole="MentorStatus" />
+                <NavigationProperty Name="Topic1" Relationship="Model.Mentor_Topic_Many_One0" FromRole="Mentor" ToRole="Topic" />
+                <NavigationProperty Name="Topic2" Relationship="Model.Mentor_Topic_Many_One1" FromRole="Mentor" ToRole="Topic" />
+                <NavigationProperty Name="Topic3" Relationship="Model.Mentor_Topic_Many_One2" FromRole="Mentor" ToRole="Topic" />
+                <NavigationProperty Name="Topic4" Relationship="Model.Mentor_Topic_Many_One3" FromRole="Mentor" ToRole="Topic" />
+                <NavigationProperty Name="TopicInterest" Relationship="Model.Mentor_Topic_Many_One4" FromRole="Mentor" ToRole="Topic" />
+                <NavigationProperty Name="TopicLeadRegion" Relationship="Model.Mentor_Region_Many_One1" FromRole="Mentor" ToRole="Region" />
+            </EntityType>
+            <EntityType Name="Region">
+                <Key>
+                    <PropertyRef Name="Id" />
+                </Key>
+                <Property Name="Id" Type="Edm.String" Nullable="false" />
+                <Property Name="Name" Type="Edm.String" />
+            </EntityType>
+            <EntityType Name="LineOfBusiness">
+                <Key>
+                    <PropertyRef Name="Id" />
+                </Key>
+                <Property Name="Id" Type="Edm.String" Nullable="false" />
+                <Property Name="Name" Type="Edm.String" />
+            </EntityType>
+            <EntityType Name="SoftSkill">
+                <Key>
+                    <PropertyRef Name="Id" />
+                </Key>
+                <Property Name="Id" Type="Edm.String" Nullable="false" />
+                <Property Name="Name" Type="Edm.String" />
+            </EntityType>
+            <EntityType Name="Size">
+                <Key>
+                    <PropertyRef Name="Id" />
+                </Key>
+                <Property Name="Id" Type="Edm.String" Nullable="false" />
+                <Property Name="Name" Type="Edm.String" />
+            </EntityType>
+            <EntityType Name="Industry">
+                <Key>
+                    <PropertyRef Name="Id" />
+                </Key>
+                <Property Name="Id" Type="Edm.String" Nullable="false" />
+                <Property Name="Name" Type="Edm.String" />
+            </EntityType>
+            <EntityType Name="RelationshipToSap">
+                <Key>
+                    <PropertyRef Name="Id" />
+                </Key>
+                <Property Name="Id" Type="Edm.String" Nullable="false" />
+                <Property Name="Name" Type="Edm.String" />
+            </EntityType>
+            <EntityType Name="SapSoftwareSolution">
+                <Key>
+                    <PropertyRef Name="Id" />
+                </Key>
+                <Property Name="Id" Type="Edm.String" Nullable="false" />
+                <Property Name="Name" Type="Edm.String" />
+            </EntityType>
+            <EntityType Name="Country">
+                <Key>
+                    <PropertyRef Name="Id" />
+                </Key>
+                <Property Name="Id" Type="Edm.String" Nullable="false" />
+                <Property Name="Name" Type="Edm.String" />
+            </EntityType>
+            <Association Name="Mentor_SapSoftwareSolution_Many_One0">
+                <End Type="Model.Mentor" Multiplicity="*" Role="Mentor" />
+                <End Type="Model.SapSoftwareSolution" Multiplicity="1" Role="SapSoftwareSolution" />
+            </Association>
+            <Association Name="Mentor_Topic_Many_One4">
+                <End Type="Model.Mentor" Multiplicity="*" Role="Mentor" />
+                <End Type="Model.Topic" Multiplicity="1" Role="Topic" />
+            </Association>
+            <Association Name="Mentor_Gender_Many_One0">
+                <End Type="Model.Mentor" Multiplicity="*" Role="Mentor" />
+                <End Type="Model.Gender" Multiplicity="1" Role="Gender" />
+            </Association>
+            <Association Name="Mentor_SapSoftwareSolution_Many_One2">
+                <End Type="Model.Mentor" Multiplicity="*" Role="Mentor" />
+                <End Type="Model.SapSoftwareSolution" Multiplicity="1" Role="SapSoftwareSolution" />
+            </Association>
+            <Association Name="Mentor_SapSoftwareSolution_Many_One1">
+                <End Type="Model.Mentor" Multiplicity="*" Role="Mentor" />
+                <End Type="Model.SapSoftwareSolution" Multiplicity="1" Role="SapSoftwareSolution" />
+            </Association>
+            <Association Name="Mentor_Industry_Many_One0">
+                <End Type="Model.Mentor" Multiplicity="*" Role="Mentor" />
+                <End Type="Model.Industry" Multiplicity="1" Role="Industry" />
+            </Association>
+            <Association Name="Mentor_Size_Many_One0">
+                <End Type="Model.Mentor" Multiplicity="*" Role="Mentor" />
+                <End Type="Model.Size" Multiplicity="1" Role="Size" />
+            </Association>
+            <Association Name="Mentor_Industry_Many_One1">
+                <End Type="Model.Mentor" Multiplicity="*" Role="Mentor" />
+                <End Type="Model.Industry" Multiplicity="1" Role="Industry" />
+            </Association>
+            <Association Name="Mentor_Industry_Many_One2">
+                <End Type="Model.Mentor" Multiplicity="*" Role="Mentor" />
+                <End Type="Model.Industry" Multiplicity="1" Role="Industry" />
+            </Association>
+            <Association Name="Mentor_SoftSkill_Many_One1">
+                <End Type="Model.Mentor" Multiplicity="*" Role="Mentor" />
+                <End Type="Model.SoftSkill" Multiplicity="1" Role="SoftSkill" />
+            </Association>
+            <Association Name="Mentor_SoftSkill_Many_One0">
+                <End Type="Model.Mentor" Multiplicity="*" Role="Mentor" />
+                <End Type="Model.SoftSkill" Multiplicity="1" Role="SoftSkill" />
+            </Association>
+            <Association Name="Mentor_SoftSkill_Many_One3">
+                <End Type="Model.Mentor" Multiplicity="*" Role="Mentor" />
+                <End Type="Model.SoftSkill" Multiplicity="1" Role="SoftSkill" />
+            </Association>
+            <Association Name="Mentor_SoftSkill_Many_One2">
+                <End Type="Model.Mentor" Multiplicity="*" Role="Mentor" />
+                <End Type="Model.SoftSkill" Multiplicity="1" Role="SoftSkill" />
+            </Association>
+            <Association Name="Mentor_Country_Many_One0">
+                <End Type="Model.Mentor" Multiplicity="*" Role="Mentor" />
+                <End Type="Model.Country" Multiplicity="1" Role="Country" />
+            </Association>
+            <Association Name="Mentor_SoftSkill_Many_One5">
+                <End Type="Model.Mentor" Multiplicity="*" Role="Mentor" />
+                <End Type="Model.SoftSkill" Multiplicity="1" Role="SoftSkill" />
+            </Association>
+            <Association Name="Mentor_SoftSkill_Many_One4">
+                <End Type="Model.Mentor" Multiplicity="*" Role="Mentor" />
+                <End Type="Model.SoftSkill" Multiplicity="1" Role="SoftSkill" />
+            </Association>
+            <Association Name="Mentor_Topic_Many_One0">
+                <End Type="Model.Mentor" Multiplicity="*" Role="Mentor" />
+                <End Type="Model.Topic" Multiplicity="1" Role="Topic" />
+            </Association>
+            <Association Name="Mentor_Topic_Many_One1">
+                <End Type="Model.Mentor" Multiplicity="*" Role="Mentor" />
+                <End Type="Model.Topic" Multiplicity="1" Role="Topic" />
+            </Association>
+            <Association Name="Mentor_Topic_Many_One2">
+                <End Type="Model.Mentor" Multiplicity="*" Role="Mentor" />
+                <End Type="Model.Topic" Multiplicity="1" Role="Topic" />
+            </Association>
+            <Association Name="Mentor_Topic_Many_One3">
+                <End Type="Model.Mentor" Multiplicity="*" Role="Mentor" />
+                <End Type="Model.Topic" Multiplicity="1" Role="Topic" />
+            </Association>
+            <Association Name="Mentor_Region_Many_One1">
+                <End Type="Model.Mentor" Multiplicity="*" Role="Mentor" />
+                <End Type="Model.Region" Multiplicity="1" Role="Region" />
+            </Association>
+            <Association Name="Mentor_RelationshipToSap_Many_One0">
+                <End Type="Model.Mentor" Multiplicity="*" Role="Mentor" />
+                <End Type="Model.RelationshipToSap" Multiplicity="1" Role="RelationshipToSap" />
+            </Association>
+            <Association Name="Mentor_Region_Many_One0">
+                <End Type="Model.Mentor" Multiplicity="*" Role="Mentor" />
+                <End Type="Model.Region" Multiplicity="1" Role="Region" />
+            </Association>
+            <Association Name="Mentor_LineOfBusiness_Many_One0">
+                <End Type="Model.Mentor" Multiplicity="*" Role="Mentor" />
+                <End Type="Model.LineOfBusiness" Multiplicity="1" Role="LineOfBusiness" />
+            </Association>
+            <Association Name="Mentor_LineOfBusiness_Many_One1">
+                <End Type="Model.Mentor" Multiplicity="*" Role="Mentor" />
+                <End Type="Model.LineOfBusiness" Multiplicity="1" Role="LineOfBusiness" />
+            </Association>
+            <Association Name="Mentor_ExpertiseLevel_Many_One2">
+                <End Type="Model.Mentor" Multiplicity="*" Role="Mentor" />
+                <End Type="Model.ExpertiseLevel" Multiplicity="1" Role="ExpertiseLevel" />
+            </Association>
+            <Association Name="Mentor_LineOfBusiness_Many_One2">
+                <End Type="Model.Mentor" Multiplicity="*" Role="Mentor" />
+                <End Type="Model.LineOfBusiness" Multiplicity="1" Role="LineOfBusiness" />
+            </Association>
+            <Association Name="Mentor_ExpertiseLevel_Many_One1">
+                <End Type="Model.Mentor" Multiplicity="*" Role="Mentor" />
+                <End Type="Model.ExpertiseLevel" Multiplicity="1" Role="ExpertiseLevel" />
+            </Association>
+            <Association Name="Mentor_MentorStatus_Many_One0">
+                <End Type="Model.Mentor" Multiplicity="*" Role="Mentor" />
+                <End Type="Model.MentorStatus" Multiplicity="1" Role="MentorStatus" />
+            </Association>
+            <Association Name="Mentor_ExpertiseLevel_Many_One0">
+                <End Type="Model.Mentor" Multiplicity="*" Role="Mentor" />
+                <End Type="Model.ExpertiseLevel" Multiplicity="1" Role="ExpertiseLevel" />
+            </Association>
+            <EntityContainer Name="ModelContainer" m:IsDefaultEntityContainer="true">
+                <EntitySet Name="Topics" EntityType="Model.Topic" />
+                <EntitySet Name="ExpertiseLevels" EntityType="Model.ExpertiseLevel" />
+                <EntitySet Name="Genders" EntityType="Model.Gender" />
+                <EntitySet Name="MentorStatuses" EntityType="Model.MentorStatus" />
+                <EntitySet Name="Mentors" EntityType="Model.Mentor" />
+                <EntitySet Name="Regions" EntityType="Model.Region" />
+                <EntitySet Name="LinesOfBusiness" EntityType="Model.LineOfBusiness" />
+                <EntitySet Name="SoftSkills" EntityType="Model.SoftSkill" />
+                <EntitySet Name="Sizes" EntityType="Model.Size" />
+                <EntitySet Name="Industries" EntityType="Model.Industry" />
+                <EntitySet Name="RelationshipsToSap" EntityType="Model.RelationshipToSap" />
+                <EntitySet Name="SapSoftwareSolutions" EntityType="Model.SapSoftwareSolution" />
+                <EntitySet Name="Countries" EntityType="Model.Country" />
+                <AssociationSet Name="Mentor_SapSoftwareSolution_Many_One0Set" Association="Model.Mentor_SapSoftwareSolution_Many_One0">
+                    <End EntitySet="Mentors" Role="Mentor" />
+                    <End EntitySet="SapSoftwareSolutions" Role="SapSoftwareSolution" />
+                </AssociationSet>
+                <AssociationSet Name="Mentor_Topic_Many_One4Set" Association="Model.Mentor_Topic_Many_One4">
+                    <End EntitySet="Mentors" Role="Mentor" />
+                    <End EntitySet="Topics" Role="Topic" />
+                </AssociationSet>
+                <AssociationSet Name="Mentor_Gender_Many_One0Set" Association="Model.Mentor_Gender_Many_One0">
+                    <End EntitySet="Mentors" Role="Mentor" />
+                    <End EntitySet="Genders" Role="Gender" />
+                </AssociationSet>
+                <AssociationSet Name="Mentor_SapSoftwareSolution_Many_One2Set" Association="Model.Mentor_SapSoftwareSolution_Many_One2">
+                    <End EntitySet="Mentors" Role="Mentor" />
+                    <End EntitySet="SapSoftwareSolutions" Role="SapSoftwareSolution" />
+                </AssociationSet>
+                <AssociationSet Name="Mentor_SapSoftwareSolution_Many_One1Set" Association="Model.Mentor_SapSoftwareSolution_Many_One1">
+                    <End EntitySet="Mentors" Role="Mentor" />
+                    <End EntitySet="SapSoftwareSolutions" Role="SapSoftwareSolution" />
+                </AssociationSet>
+                <AssociationSet Name="Mentor_Industry_Many_One0Set" Association="Model.Mentor_Industry_Many_One0">
+                    <End EntitySet="Mentors" Role="Mentor" />
+                    <End EntitySet="Industries" Role="Industry" />
+                </AssociationSet>
+                <AssociationSet Name="Mentor_Size_Many_One0Set" Association="Model.Mentor_Size_Many_One0">
+                    <End EntitySet="Mentors" Role="Mentor" />
+                    <End EntitySet="Sizes" Role="Size" />
+                </AssociationSet>
+                <AssociationSet Name="Mentor_Industry_Many_One1Set" Association="Model.Mentor_Industry_Many_One1">
+                    <End EntitySet="Mentors" Role="Mentor" />
+                    <End EntitySet="Industries" Role="Industry" />
+                </AssociationSet>
+                <AssociationSet Name="Mentor_Industry_Many_One2Set" Association="Model.Mentor_Industry_Many_One2">
+                    <End EntitySet="Mentors" Role="Mentor" />
+                    <End EntitySet="Industries" Role="Industry" />
+                </AssociationSet>
+                <AssociationSet Name="Mentor_SoftSkill_Many_One1Set" Association="Model.Mentor_SoftSkill_Many_One1">
+                    <End EntitySet="Mentors" Role="Mentor" />
+                    <End EntitySet="SoftSkills" Role="SoftSkill" />
+                </AssociationSet>
+                <AssociationSet Name="Mentor_SoftSkill_Many_One0Set" Association="Model.Mentor_SoftSkill_Many_One0">
+                    <End EntitySet="Mentors" Role="Mentor" />
+                    <End EntitySet="SoftSkills" Role="SoftSkill" />
+                </AssociationSet>
+                <AssociationSet Name="Mentor_SoftSkill_Many_One3Set" Association="Model.Mentor_SoftSkill_Many_One3">
+                    <End EntitySet="Mentors" Role="Mentor" />
+                    <End EntitySet="SoftSkills" Role="SoftSkill" />
+                </AssociationSet>
+                <AssociationSet Name="Mentor_SoftSkill_Many_One2Set" Association="Model.Mentor_SoftSkill_Many_One2">
+                    <End EntitySet="Mentors" Role="Mentor" />
+                    <End EntitySet="SoftSkills" Role="SoftSkill" />
+                </AssociationSet>
+                <AssociationSet Name="Mentor_Country_Many_One0Set" Association="Model.Mentor_Country_Many_One0">
+                    <End EntitySet="Mentors" Role="Mentor" />
+                    <End EntitySet="Countries" Role="Country" />
+                </AssociationSet>
+                <AssociationSet Name="Mentor_SoftSkill_Many_One5Set" Association="Model.Mentor_SoftSkill_Many_One5">
+                    <End EntitySet="Mentors" Role="Mentor" />
+                    <End EntitySet="SoftSkills" Role="SoftSkill" />
+                </AssociationSet>
+                <AssociationSet Name="Mentor_SoftSkill_Many_One4Set" Association="Model.Mentor_SoftSkill_Many_One4">
+                    <End EntitySet="Mentors" Role="Mentor" />
+                    <End EntitySet="SoftSkills" Role="SoftSkill" />
+                </AssociationSet>
+                <AssociationSet Name="Mentor_Topic_Many_One0Set" Association="Model.Mentor_Topic_Many_One0">
+                    <End EntitySet="Mentors" Role="Mentor" />
+                    <End EntitySet="Topics" Role="Topic" />
+                </AssociationSet>
+                <AssociationSet Name="Mentor_Topic_Many_One1Set" Association="Model.Mentor_Topic_Many_One1">
+                    <End EntitySet="Mentors" Role="Mentor" />
+                    <End EntitySet="Topics" Role="Topic" />
+                </AssociationSet>
+                <AssociationSet Name="Mentor_Topic_Many_One2Set" Association="Model.Mentor_Topic_Many_One2">
+                    <End EntitySet="Mentors" Role="Mentor" />
+                    <End EntitySet="Topics" Role="Topic" />
+                </AssociationSet>
+                <AssociationSet Name="Mentor_Topic_Many_One3Set" Association="Model.Mentor_Topic_Many_One3">
+                    <End EntitySet="Mentors" Role="Mentor" />
+                    <End EntitySet="Topics" Role="Topic" />
+                </AssociationSet>
+                <AssociationSet Name="Mentor_Region_Many_One1Set" Association="Model.Mentor_Region_Many_One1">
+                    <End EntitySet="Mentors" Role="Mentor" />
+                    <End EntitySet="Regions" Role="Region" />
+                </AssociationSet>
+                <AssociationSet Name="Mentor_RelationshipToSap_Many_One0Set" Association="Model.Mentor_RelationshipToSap_Many_One0">
+                    <End EntitySet="Mentors" Role="Mentor" />
+                    <End EntitySet="RelationshipsToSap" Role="RelationshipToSap" />
+                </AssociationSet>
+                <AssociationSet Name="Mentor_Region_Many_One0Set" Association="Model.Mentor_Region_Many_One0">
+                    <End EntitySet="Mentors" Role="Mentor" />
+                    <End EntitySet="Regions" Role="Region" />
+                </AssociationSet>
+                <AssociationSet Name="Mentor_LineOfBusiness_Many_One0Set" Association="Model.Mentor_LineOfBusiness_Many_One0">
+                    <End EntitySet="Mentors" Role="Mentor" />
+                    <End EntitySet="LinesOfBusiness" Role="LineOfBusiness" />
+                </AssociationSet>
+                <AssociationSet Name="Mentor_LineOfBusiness_Many_One1Set" Association="Model.Mentor_LineOfBusiness_Many_One1">
+                    <End EntitySet="Mentors" Role="Mentor" />
+                    <End EntitySet="LinesOfBusiness" Role="LineOfBusiness" />
+                </AssociationSet>
+                <AssociationSet Name="Mentor_ExpertiseLevel_Many_One2Set" Association="Model.Mentor_ExpertiseLevel_Many_One2">
+                    <End EntitySet="Mentors" Role="Mentor" />
+                    <End EntitySet="ExpertiseLevels" Role="ExpertiseLevel" />
+                </AssociationSet>
+                <AssociationSet Name="Mentor_LineOfBusiness_Many_One2Set" Association="Model.Mentor_LineOfBusiness_Many_One2">
+                    <End EntitySet="Mentors" Role="Mentor" />
+                    <End EntitySet="LinesOfBusiness" Role="LineOfBusiness" />
+                </AssociationSet>
+                <AssociationSet Name="Mentor_ExpertiseLevel_Many_One1Set" Association="Model.Mentor_ExpertiseLevel_Many_One1">
+                    <End EntitySet="Mentors" Role="Mentor" />
+                    <End EntitySet="ExpertiseLevels" Role="ExpertiseLevel" />
+                </AssociationSet>
+                <AssociationSet Name="Mentor_MentorStatus_Many_One0Set" Association="Model.Mentor_MentorStatus_Many_One0">
+                    <End EntitySet="Mentors" Role="Mentor" />
+                    <End EntitySet="MentorStatuses" Role="MentorStatus" />
+                </AssociationSet>
+                <AssociationSet Name="Mentor_ExpertiseLevel_Many_One0Set" Association="Model.Mentor_ExpertiseLevel_Many_One0">
+                    <End EntitySet="Mentors" Role="Mentor" />
+                    <End EntitySet="ExpertiseLevels" Role="ExpertiseLevel" />
+                </AssociationSet>
+            </EntityContainer>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
