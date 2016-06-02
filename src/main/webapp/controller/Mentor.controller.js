@@ -20,7 +20,10 @@ sap.ui.define([
 				sId = oEvent.getParameter("arguments").Id;
 			oModel.metadataLoaded().then(function() {
 				oView.bindElement({
-					path: oModel.createKey("/Mentors", { Id: sId })
+					path: oModel.createKey("/Mentors", { Id: sId }),
+					parameters: {
+						expand: 'MentorStatus,RelationshipToSap,Country,Topic1,Topic2,Topic3'
+					}
 				});
 			});
 		}
