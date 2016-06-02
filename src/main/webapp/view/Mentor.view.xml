@@ -1,0 +1,11 @@
+<mvc:View
+	controllerName="com.sap.mentors.lemonaid.controller.Mentor"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m">
+	<Page title="{i18n>mentortitle}" id="MentorPage" showNavButton="true" navButtonPress="onNavBack">
+		<content>
+			<!--TODO-->
+		</content>
+	</Page>
+</mvc:View>

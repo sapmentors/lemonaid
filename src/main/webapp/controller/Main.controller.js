@@ -22,6 +22,19 @@ sap.ui.define([
 
 		onUpdateFinished: function(event) {
 			this.ui.setProperty("/count", event.getParameter("total"));	
+		},
+		
+		onMentorDetailPress : function(event){
+			/*
+			 * Ideally, we'd use Shirt Number as unique identifier to pass to Router, rather 
+			 * than array index.  Will need to know how we can expose additional OData services
+			 * possibly, or maybe just use a Filter in the main model similar to text search.
+			 */
+			var oItem = event.getSource();
+			var oContext = oItem.getBindingContext();
+			var shirtNumber = oContext.getProperty("ShirtNumber");
+			// Routing pattern is set up in manifest.json and expects a Shirt Number for now.
+			this.getRouter().navTo("Mentor",{ShirtNumber : shirtNumber});
 		}
 
 	});

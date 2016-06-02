@@ -94,11 +94,19 @@
 					"pattern": "",
 					"name": "Main",
 					"target": "main"
+				},{
+					"pattern" : "Mentor/{ShirtNumber}",
+					"name" : "Mentor",
+					"target" : "mentor"
 				}
 			],
 			"targets": {
 				"main": {
 					"viewName": "Main",
+					"viewLevel": 0
+				},
+				"mentor": {
+					"viewName": "Mentor",
 					"viewLevel": 0
 				}
 			}

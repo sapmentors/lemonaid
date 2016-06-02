@@ -44,9 +44,9 @@
 										<Column id="shirtNumber" width="20%" />
 										<Column id="fullName" />
 									</columns>
-									<ColumnListItem id="columnListItem">
+									<ColumnListItem id="columnListItem" type="Navigation" press="onMentorDetailPress">
 										<cells>
-											<ObjectIdentifier title="{ShirtNumber}" class="sapMTableContentMargin"/>
+											<ObjectIdentifier title="{ShirtNumber}" class="sapMTableContentMargin" />
 											<Text text="{FullName}" class="sapMTableContentMargin" />
 										</cells>
 									</ColumnListItem>
