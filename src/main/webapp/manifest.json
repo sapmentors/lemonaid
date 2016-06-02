@@ -95,7 +95,7 @@
 					"name": "Main",
 					"target": "main"
 				},{
-					"pattern" : "Mentor/{ShirtNumber}",
+					"pattern" : "Mentor/{Id}",
 					"name" : "Mentor",
 					"target" : "mentor"
 				}

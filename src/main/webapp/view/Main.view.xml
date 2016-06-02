@@ -23,7 +23,7 @@
 									items="{
 										path: '/Mentors',
 										parameters: {
-											select: 'FullName,ShirtNumber',
+											select: 'Id,FullName,ShirtNumber',
 											expand: 'MentorStatus'
 										},
 										sorter: {path: 'ShirtNumber', descending: false}

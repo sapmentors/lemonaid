@@ -3,7 +3,7 @@
 	xmlns:html="http://www.w3.org/1999/xhtml"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns="sap.m">
-	<Page title="{i18n>mentortitle}" id="MentorPage" showNavButton="true" navButtonPress="onNavBack">
+	<Page title="{FullName}" id="MentorPage" showNavButton="true" navButtonPress="onNavBack">
 		<content>
 			<!--TODO-->
 		</content>
