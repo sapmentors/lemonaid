@@ -1,5 +1,7 @@
 sap.ui.define([
-	"com/sap/mentors/lemonaid/controller/BaseController"
+	"com/sap/mentors/lemonaid/controller/BaseController",
+	"com/sap/mentors/lemonaid/util/crypto-js/core",
+	"com/sap/mentors/lemonaid/util/crypto-js/md5"
 ], function(Controller) {
 	"use strict";
 
@@ -11,18 +13,30 @@ sap.ui.define([
 			this.oModel = this.oComponent.getModel();
 			this.oView.setModel(this.oModel);
 			this.oRouter = this.getRouter();
-			this.oRouter.getRoute("Mentor").attachMatched(this.onRouteMatched, this);
+			this.oRouter.getRoute("Mentor").attachMatched(this._onRouteMatched, this);
 		},
 		
-		onRouteMatched : function (oEvent) {
-			var oModel = this.oModel, 
-				oView = this.oView,
-				sId = oEvent.getParameter("arguments").Id;
-			oModel.metadataLoaded().then(function() {
-				oView.bindElement({
-					path: oModel.createKey("/Mentors", { Id: sId })
+		_onRouteMatched : function (oEvent) {
+			var	sId = oEvent.getParameter("arguments").Id,
+				that = this;
+			this.oModel.metadataLoaded().then(function() {
+				that.oView.bindElement({
+					path: that.oModel.createKey("/Mentors", { Id: sId }),
+					events : {
+						change: that._onBindingChange.bind(that)
+					}
 				});
 			});
+		},
+		
+		_onBindingChange : function () {
+			var sEmail = this.oView.getBindingContext().getProperty("Email1");
+			this.oView.byId("header").setObjectImageURI(
+				sEmail ?
+					"https://www.gravatar.com/avatar/" + 
+						CryptoJS.MD5(sEmail).toString() +
+						"?s=144&d=http%3A%2F%2Fscn.sap.com%2Fcommunity%2Fimage%2F2422%2F1.png" :
+					"images/logo.png");
 		}
 
 	});

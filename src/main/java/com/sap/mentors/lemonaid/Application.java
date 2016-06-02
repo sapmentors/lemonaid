@@ -816,7 +816,7 @@ public class Application extends SpringBootServletInitializer {
 							null,
 							null,
 							"Lorem ipsum dolor sit amet, consectetur adipiscing elit.\nCras posuere nunc non efficitur feugiat.\nQuisque aliquam porttitor eros quis vestibulum.",
-							"email1@jpenninkhof.com",
+							"jan@penninkhof.com",
 							"email2@jpenninkhof.com",
 							1,
 							"Janstreet 1", 

@@ -5,7 +5,9 @@
 			<ObjectPageLayout id="ObjectPageLayout" enableLazyLoading="false" showTitleInHeaderContent="true" showEditHeaderButton="false"
 				editHeaderButtonPress="handleEditBtnPress">
 				<headerTitle>
-					<ObjectPageHeader objectImageURI="images/Portrait_placeholder.png"
+					<ObjectPageHeader 
+						id="header"
+						objectImageURI="images/logo.png"
 						objectTitle="{FullName}"
 						objectImageShape="Circle"
 						objectImageAlt="{FullName}"
