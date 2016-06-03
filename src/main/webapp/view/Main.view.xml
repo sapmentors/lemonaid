@@ -41,14 +41,13 @@
 										</Toolbar>
 									</headerToolbar>
 									<columns>
-										<Column id="shirtNumber" width="128px">
-											<Text text="{i18n>shirtNumber}" />
-										</Column>
-										<Column id="photo" width="64px">
+										<Column id="photo" width="5rem">
 											<Text text="{i18n>photo}" />
 										</Column>
+										<Column id="shirtNumber">
+											<Text text="{i18n>fullName}\n{i18n>shirtNumber}" />
+										</Column>
 										<Column id="fullName">
-											<Text text="{i18n>fullName}" />
 										</Column>
 										<Column id="relationship">
 											<Text text="{i18n>relSAP}" />	
@@ -59,9 +58,8 @@
 									</columns>
 									<ColumnListItem id="columnListItem" type="Navigation" press="onMentorDetailPress">
 										<cells>
-											<ObjectIdentifier title="{ShirtNumber}" class="sapMTableContentMargin" />
-											<Image width="48px" height="48px" src="{path:'Email1', formatter:'.gravatar'}" class="sapMTableContentMargin" />
-											<Text text="{FullName}" class="sapMTableContentMargin" />
+											<Image width="4rem" height="4rem" src="{path:'Email1', formatter:'.gravatar'}" class="sapMTableContentMargin avatarSmall sapUxAPObjectPageHeaderObjectImage-Circle" />
+											<ObjectIdentifier title="{FullName}" text="{ShirtNumber}" class="sapMTableContentMargin" />
 											<Text text="{RelationshipToSap/Name}" class="sapMTableContentMargin" />
 											<Text text="{MentorStatus/Name}" class="sapMTableContentMargin" />
 										</cells>
