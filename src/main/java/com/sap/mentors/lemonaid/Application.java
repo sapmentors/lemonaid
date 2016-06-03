@@ -869,7 +869,7 @@ public class Application extends SpringBootServletInitializer {
 							new SoftSkill(SoftSkill.CONFLICT_RESOLUTION),
 							new SoftSkill(SoftSkill.CRITICAL_OBSERVATION_SKILLS),
 							"Donec tincidunt turpis magna, in consequat eros condimentum ut.\nCurabitur eleifend pharetra varius.",
-							"email1@robin.com",
+							"robin.van.het.hof@qualiture.nl",
 							"email2@robin.com",
 							1,
 							"Robinstreet 1", 
