@@ -47,12 +47,10 @@
 										<Column id="shirtNumber">
 											<Text text="{i18n>fullName}\n{i18n>shirtNumber}" />
 										</Column>
-										<Column id="fullName">
-										</Column>
-										<Column id="relationship">
+										<Column id="relationship" minScreenWidth="Tablet">
 											<Text text="{i18n>relSAP}" />	
 										</Column>
-										<Column id="status">
+										<Column id="status" minScreenWidth="Tablet">
 											<Text text="{i18n>mentorStatus}" />
 										</Column>
 									</columns>
