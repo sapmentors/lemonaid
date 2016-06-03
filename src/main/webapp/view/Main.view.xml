@@ -41,11 +41,21 @@
 										</Toolbar>
 									</headerToolbar>
 									<columns>
-										<Column id="shirtNumber" width="128px" />
-										<Column id="photo" width="64px" />
-										<Column id="fullName" />
-										<Column id="relationship" />
-										<Column id="status" />
+										<Column id="shirtNumber" width="128px">
+											<Text text="{i18n>shirtNumber}" />
+										</Column>
+										<Column id="photo" width="64px">
+											<Text text="{i18n>photo}" />
+										</Column>
+										<Column id="fullName">
+											<Text text="{i18n>fullName}" />
+										</Column>
+										<Column id="relationship">
+											<Text text="{i18n>relSAP}" />	
+										</Column>
+										<Column id="status">
+											<Text text="{i18n>mentorStatus}" />
+										</Column>
 									</columns>
 									<ColumnListItem id="columnListItem" type="Navigation" press="onMentorDetailPress">
 										<cells>
