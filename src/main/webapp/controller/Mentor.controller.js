@@ -1,46 +1,36 @@
 sap.ui.define([
-	"com/sap/mentors/lemonaid/controller/BaseController",
-	"com/sap/mentors/lemonaid/util/crypto-js/core",
-	"com/sap/mentors/lemonaid/util/crypto-js/md5"
-], function(Controller) {
-	"use strict";
+    "com/sap/mentors/lemonaid/controller/BaseController"
+], function(BaseController) {
+    "use strict";
 
-	return Controller.extend("com.sap.mentors.lemonaid.controller.Mentor", {
-		
-		onInit: function () {
-			this.oView = this.getView();
-			this.oComponent = sap.ui.component(sap.ui.core.Component.getOwnerIdFor(this.oView));
-			this.oModel = this.oComponent.getModel();
-			this.oView.setModel(this.oModel);
-			this.oRouter = this.getRouter();
-			this.oRouter.getRoute("Mentor").attachMatched(this._onRouteMatched, this);
-		},
-		
-		_onRouteMatched : function (oEvent) {
-			var	sId = oEvent.getParameter("arguments").Id,
-				that = this;
-			this.oModel.metadataLoaded().then(function() {
-				that.oView.bindElement({
-					path: that.oModel.createKey("/Mentors", { Id: sId }),
-					parameters: {
-						expand: 'MentorStatus,RelationshipToSap,Country,Topic1,Topic2,Topic3'
-					},
-					events : {
-						change: that._onBindingChange.bind(that)
-					}
-				});
-			});
-		},
-		
-		_onBindingChange : function () {
-			var sEmail = this.oView.getBindingContext().getProperty("Email1");
-			this.oView.byId("header").setObjectImageURI(
-				sEmail ?
-					"https://www.gravatar.com/avatar/" + 
-						CryptoJS.MD5(sEmail).toString() +
-						"?s=144&d=http%3A%2F%2Fscn.sap.com%2Fcommunity%2Fimage%2F2422%2F1.png" :
-					"images/logo.png");
-		}
+    return BaseController.extend("com.sap.mentors.lemonaid.controller.Mentor", {
 
-	});
+        onInit: function() {
+            this.getRouter().getRoute("Mentor").attachMatched(this._onRouteMatched, this);
+        },
+
+        _onRouteMatched: function(oEvent) {
+            this.sMentorId = oEvent.getParameter("arguments").Id;
+            this.getModel().metadataLoaded().then(this.bindView.bind(this));
+        },
+
+        bindView: function() {
+            this.getView().bindElement({
+                path: this.getModel().createKey("/Mentors", { Id: this.sMentorId }),
+                parameters: {
+                    expand: 'MentorStatus,RelationshipToSap,Country,Topic1,Topic2,Topic3'
+                },
+                events: {
+                    change: this._onBindingChange.bind(this)
+                }
+            });
+        },
+
+        _onBindingChange: function() {
+            // set avatar
+            var sEmail = this.getView().getBindingContext().getProperty("Email1");
+            this.oView.byId("header").setObjectImageURI(this.getAvatarURL(sEmail));
+        }
+
+    });
 });

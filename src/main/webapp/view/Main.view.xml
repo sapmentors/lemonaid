@@ -49,7 +49,7 @@
 						</columns>
 						<ColumnListItem id="columnListItem" type="Navigation" press="onMentorDetailPress">
 							<cells>
-								<Image width="4rem" height="4rem" src="{path:'Email1', formatter:'.gravatar'}" class="sapMTableContentMargin avatarSmall sapUxAPObjectPageHeaderObjectImage-Circle" />
+								<Image width="4rem" height="4rem" src="{path:'Email1', formatter:'.getAvatarURL'}" class="sapMTableContentMargin avatarSmall sapUxAPObjectPageHeaderObjectImage-Circle" />
 								<ObjectIdentifier title="{FullName}" text="{ShirtNumber}" class="sapMTableContentMargin" />
 								<Text text="{RelationshipToSap/Name}" class="sapMTableContentMargin" />
 								<Text text="{MentorStatus/Name}" class="sapMTableContentMargin" />
