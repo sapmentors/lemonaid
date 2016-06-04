@@ -1,0 +1,201 @@
+[{
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Industries('aerospace_and_defense')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Industries('aerospace_and_defense')",
+        "type": "Model.Industry"
+    },
+    "Id": "aerospace_and_defense",
+    "Name": "Aerospace and Defense"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Industries('automotive')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Industries('automotive')",
+        "type": "Model.Industry"
+    },
+    "Id": "automotive",
+    "Name": "Automotive"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Industries('banking')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Industries('banking')",
+        "type": "Model.Industry"
+    },
+    "Id": "banking",
+    "Name": "Banking"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Industries('chemicals')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Industries('chemicals')",
+        "type": "Model.Industry"
+    },
+    "Id": "chemicals",
+    "Name": "Chemicals"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Industries('consumer_products')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Industries('consumer_products')",
+        "type": "Model.Industry"
+    },
+    "Id": "consumer_products",
+    "Name": "Consumer Products"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Industries('defense_and_security')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Industries('defense_and_security')",
+        "type": "Model.Industry"
+    },
+    "Id": "defense_and_security",
+    "Name": "Defense and Security"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Industries('engineering_construction_and_operations')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Industries('engineering_construction_and_operations')",
+        "type": "Model.Industry"
+    },
+    "Id": "engineering_construction_and_operations",
+    "Name": "Engineering, Construction, and Operations"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Industries('healthcare')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Industries('healthcare')",
+        "type": "Model.Industry"
+    },
+    "Id": "healthcare",
+    "Name": "Healthcare"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Industries('high_tech')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Industries('high_tech')",
+        "type": "Model.Industry"
+    },
+    "Id": "high_tech",
+    "Name": "High Tech"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Industries('higher_education_and_research')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Industries('higher_education_and_research')",
+        "type": "Model.Industry"
+    },
+    "Id": "higher_education_and_research",
+    "Name": "Higher Education and Research"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Industries('industrial_machinery_and_components')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Industries('industrial_machinery_and_components')",
+        "type": "Model.Industry"
+    },
+    "Id": "industrial_machinery_and_components",
+    "Name": "Industrial Machinery and Components"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Industries('insurance')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Industries('insurance')",
+        "type": "Model.Industry"
+    },
+    "Id": "insurance",
+    "Name": "Insurance"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Industries('life_sciences')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Industries('life_sciences')",
+        "type": "Model.Industry"
+    },
+    "Id": "life_sciences",
+    "Name": "Life Sciences"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Industries('media')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Industries('media')",
+        "type": "Model.Industry"
+    },
+    "Id": "media",
+    "Name": "Media"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Industries('mill_products')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Industries('mill_products')",
+        "type": "Model.Industry"
+    },
+    "Id": "mill_products",
+    "Name": "Mill Products"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Industries('mining')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Industries('mining')",
+        "type": "Model.Industry"
+    },
+    "Id": "mining",
+    "Name": "Mining"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Industries('oil_and_gas')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Industries('oil_and_gas')",
+        "type": "Model.Industry"
+    },
+    "Id": "oil_and_gas",
+    "Name": "Oil and Gas"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Industries('professional_services')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Industries('professional_services')",
+        "type": "Model.Industry"
+    },
+    "Id": "professional_services",
+    "Name": "Professional Services"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Industries('public_sector')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Industries('public_sector')",
+        "type": "Model.Industry"
+    },
+    "Id": "public_sector",
+    "Name": "Public Sector"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Industries('retail')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Industries('retail')",
+        "type": "Model.Industry"
+    },
+    "Id": "retail",
+    "Name": "Retail"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Industries('sports_and_entertainment')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Industries('sports_and_entertainment')",
+        "type": "Model.Industry"
+    },
+    "Id": "sports_and_entertainment",
+    "Name": "Sports and Entertainment"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Industries('telecommunications')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Industries('telecommunications')",
+        "type": "Model.Industry"
+    },
+    "Id": "telecommunications",
+    "Name": "Telecommunications"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Industries('travel_and_transportation')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Industries('travel_and_transportation')",
+        "type": "Model.Industry"
+    },
+    "Id": "travel_and_transportation",
+    "Name": "Travel and Transportation"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Industries('utilities')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Industries('utilities')",
+        "type": "Model.Industry"
+    },
+    "Id": "utilities",
+    "Name": "Utilities"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Industries('wholesale_distribution')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Industries('wholesale_distribution')",
+        "type": "Model.Industry"
+    },
+    "Id": "wholesale_distribution",
+    "Name": "Wholesale Distribution"
+}]

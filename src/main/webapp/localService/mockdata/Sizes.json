@@ -1,0 +1,49 @@
+{
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Sizes('S')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Sizes('S')",
+        "type": "Model.Size"
+    },
+    "Id": "S",
+    "Name": "S"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Sizes('M')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Sizes('M')",
+        "type": "Model.Size"
+    },
+    "Id": "M",
+    "Name": "M"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Sizes('L')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Sizes('L')",
+        "type": "Model.Size"
+    },
+    "Id": "L",
+    "Name": "L"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Sizes('XL')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Sizes('XL')",
+        "type": "Model.Size"
+    },
+    "Id": "XL",
+    "Name": "XL"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Sizes('XXL')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Sizes('XXL')",
+        "type": "Model.Size"
+    },
+    "Id": "XXL",
+    "Name": "XXL"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Sizes('XXXL')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Sizes('XXXL')",
+        "type": "Model.Size"
+    },
+    "Id": "XXXL",
+    "Name": "XXXL"
+}]

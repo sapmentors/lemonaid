@@ -1,0 +1,17 @@
+[{
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Genders('M')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Genders('M')",
+        "type": "Model.Gender"
+    },
+    "Id": "M",
+    "Name": "Male"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Genders('F')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Genders('F')",
+        "type": "Model.Gender"
+    },
+    "Id": "F",
+    "Name": "Female"
+}]
