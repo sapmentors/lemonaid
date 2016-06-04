@@ -1,0 +1,105 @@
+[{
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/LinesOfBusiness('platform_and_technology')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/LinesOfBusiness('platform_and_technology')",
+        "type": "Model.LineOfBusiness"
+    },
+    "Id": "platform_and_technology",
+    "Name": "Platform and Technology"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/LinesOfBusiness('asset_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/LinesOfBusiness('asset_management')",
+        "type": "Model.LineOfBusiness"
+    },
+    "Id": "asset_management",
+    "Name": "Asset Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/LinesOfBusiness('commerce')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/LinesOfBusiness('commerce')",
+        "type": "Model.LineOfBusiness"
+    },
+    "Id": "commerce",
+    "Name": "Commerce"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/LinesOfBusiness('finance')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/LinesOfBusiness('finance')",
+        "type": "Model.LineOfBusiness"
+    },
+    "Id": "finance",
+    "Name": "Finance"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/LinesOfBusiness('human_resources')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/LinesOfBusiness('human_resources')",
+        "type": "Model.LineOfBusiness"
+    },
+    "Id": "human_resources",
+    "Name": "Finance"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/LinesOfBusiness('manufacturing')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/LinesOfBusiness('manufacturing')",
+        "type": "Model.LineOfBusiness"
+    },
+    "Id": "manufacturing",
+    "Name": "Manufacturing"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/LinesOfBusiness('marketing')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/LinesOfBusiness('marketing')",
+        "type": "Model.LineOfBusiness"
+    },
+    "Id": "marketing",
+    "Name": "Marketing"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/LinesOfBusiness('engineering')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/LinesOfBusiness('engineering')",
+        "type": "Model.LineOfBusiness"
+    },
+    "Id": "engineering",
+    "Name": "R&D / Engineering"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/LinesOfBusiness('sales')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/LinesOfBusiness('sales')",
+        "type": "Model.LineOfBusiness"
+    },
+    "Id": "sales",
+    "Name": "Sales"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/LinesOfBusiness('service')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/LinesOfBusiness('service')",
+        "type": "Model.LineOfBusiness"
+    },
+    "Id": "service",
+    "Name": "Service"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/LinesOfBusiness('sourcing_and_procurement')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/LinesOfBusiness('sourcing_and_procurement')",
+        "type": "Model.LineOfBusiness"
+    },
+    "Id": "sourcing_and_procurement",
+    "Name": "Sourcing and Procurement"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/LinesOfBusiness('supply_chain')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/LinesOfBusiness('supply_chain')",
+        "type": "Model.LineOfBusiness"
+    },
+    "Id": "supply_chain",
+    "Name": "Supply Chain"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/LinesOfBusiness('sustainability')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/LinesOfBusiness('sustainability')",
+        "type": "Model.LineOfBusiness"
+    },
+    "Id": "sustainability",
+    "Name": "Sustainability"
+}]
