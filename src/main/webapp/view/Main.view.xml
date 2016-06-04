@@ -8,67 +8,56 @@
 			<Page title="{i18n>title}">
 				<content>
 
-					<IconTabBar
-						id="idIconTabBarNoIcons"
-						expanded="{device>/isNoPhone}"
-						class="sapUiResponsiveContentPadding">
-						<items>
-						
-							<IconTabFilter text="{i18n>mentors}">
-								<Table
-									id="table"
-									inset="false"
-									growing="true"
-									growingScrollToLoad="true"
-									items="{
-										path: '/Mentors',
-										parameters: {
-											select: 'Id,Email1,FullName,ShirtNumber,RelationshipToSap/Name,MentorStatus/Name',
-											expand: 'MentorStatus,RelationshipToSap'
-										},
-										sorter: {path: 'ShirtNumber', descending: false}
-									}"
-									updateFinished="onUpdateFinished">
-									<headerToolbar>
-										<Toolbar id="tableToolbar">
-											<Label text="{i18n>mentors} ({ui>/count})" class="sapMH4FontSize"  />
-											<ToolbarSpacer />
-											<SearchField
-												id="searchField"
-												search="onSearchPressed"
-												placeholder="{i18n>searchPlaceholder}"
-												width="{= ${device>/system/phone} ? '50%' : '30%' }" />
-										</Toolbar>
-									</headerToolbar>
-									<columns minScreenWidth="Tablet">
-										<Column id="photo" width="5rem">
-											<Text text="{i18n>photo}" visible="{= !${device>/system/phone} }" />
-										</Column>
-										<Column id="shirtNumber">
-											<Text text="{i18n>fullName}\n{i18n>shirtNumber}" visible="{= !${device>/system/phone} }" />
-										</Column>
-										<Column id="relationship" minScreenWidth="Tablet">
-											<Text text="{i18n>relSAP}" />	
-										</Column>
-										<Column id="status" minScreenWidth="Tablet">
-											<Text text="{i18n>mentorStatus}" />
-										</Column>
-									</columns>
-									<ColumnListItem id="columnListItem" type="Navigation" press="onMentorDetailPress">
-										<cells>
-											<Image width="4rem" height="4rem" src="{path:'Email1', formatter:'.gravatar'}" class="sapMTableContentMargin avatarSmall sapUxAPObjectPageHeaderObjectImage-Circle" />
-											<ObjectIdentifier title="{FullName}" text="{ShirtNumber}" class="sapMTableContentMargin" />
-											<Text text="{RelationshipToSap/Name}" class="sapMTableContentMargin" />
-											<Text text="{MentorStatus/Name}" class="sapMTableContentMargin" />
-										</cells>
-									</ColumnListItem>
-								</Table>
-							</IconTabFilter>
+					<Table
+						id="table"
+						inset="false"
+						growing="true"
+						growingScrollToLoad="true"
+						items="{
+							path: '/Mentors',
+							parameters: {
+								select: 'Id,Email1,FullName,ShirtNumber,RelationshipToSap/Name,MentorStatus/Name',
+								expand: 'MentorStatus,RelationshipToSap'
+							},
+							sorter: {path: 'ShirtNumber', descending: false}
+						}"
+						updateFinished="onUpdateFinished">
+						<headerToolbar>
+							<Toolbar id="tableToolbar">
+								<Label text="{i18n>mentors} ({ui>/count})" class="sapMH4FontSize"  />
+								<ToolbarSpacer />
+								<SearchField
+									id="searchField"
+									search="onSearchPressed"
+									placeholder="{i18n>searchPlaceholder}"
+									width="{= ${device>/system/phone} ? '50%' : '30%' }" />
+							</Toolbar>
+						</headerToolbar>
+						<columns minScreenWidth="Tablet">
+							<Column id="photo" width="5rem">
+								<Text text="{i18n>photo}" visible="{= !${device>/system/phone} }" />
+							</Column>
+							<Column id="shirtNumber">
+								<Text text="{i18n>fullName}\n{i18n>shirtNumber}" visible="{= !${device>/system/phone} }" />
+							</Column>
+							<Column id="relationship" minScreenWidth="Tablet">
+								<Text text="{i18n>relSAP}" />	
+							</Column>
+							<Column id="status" minScreenWidth="Tablet">
+								<Text text="{i18n>mentorStatus}" />
+							</Column>
+						</columns>
+						<ColumnListItem id="columnListItem" type="Navigation" press="onMentorDetailPress">
+							<cells>
+								<Image width="4rem" height="4rem" src="{path:'Email1', formatter:'.gravatar'}" class="sapMTableContentMargin avatarSmall sapUxAPObjectPageHeaderObjectImage-Circle" />
+								<ObjectIdentifier title="{FullName}" text="{ShirtNumber}" class="sapMTableContentMargin" />
+								<Text text="{RelationshipToSap/Name}" class="sapMTableContentMargin" />
+								<Text text="{MentorStatus/Name}" class="sapMTableContentMargin" />
+							</cells>
+						</ColumnListItem>
+					</Table>
 
-						</items>
-					</IconTabBar>
 				</content>
-
 			</Page>
 		</pages>
 	</App>
