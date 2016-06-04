@@ -37,15 +37,15 @@
 												id="searchField"
 												search="onSearchPressed"
 												placeholder="{i18n>searchPlaceholder}"
-												width="30%" />
+												width="{= ${device>/system/phone} ? '50%' : '30%' }" />
 										</Toolbar>
 									</headerToolbar>
-									<columns>
+									<columns minScreenWidth="Tablet">
 										<Column id="photo" width="5rem">
-											<Text text="{i18n>photo}" />
+											<Text text="{i18n>photo}" visible="{= !${device>/system/phone} }" />
 										</Column>
 										<Column id="shirtNumber">
-											<Text text="{i18n>fullName}\n{i18n>shirtNumber}" />
+											<Text text="{i18n>fullName}\n{i18n>shirtNumber}" visible="{= !${device>/system/phone} }" />
 										</Column>
 										<Column id="relationship" minScreenWidth="Tablet">
 											<Text text="{i18n>relSAP}" />	
