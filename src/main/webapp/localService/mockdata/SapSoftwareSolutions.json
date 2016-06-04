@@ -1,0 +1,2625 @@
+[{
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('accelerated_application_delivery')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('accelerated_application_delivery')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "accelerated_application_delivery",
+    "Name": "Accelerated application delivery"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('application_development_platform')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('application_development_platform')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "application_development_platform",
+    "Name": "Application Development Platform"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('application_lifecycle_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('application_lifecycle_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "application_lifecycle_management",
+    "Name": "Application Lifecycle Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('applications_powered_by_sap_hana')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('applications_powered_by_sap_hana')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "applications_powered_by_sap_hana",
+    "Name": "Applications (powered by SAP HANA)"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('ariba_cloud_integration')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('ariba_cloud_integration')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "ariba_cloud_integration",
+    "Name": "Ariba Cloud Integration"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('ariba_contract_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('ariba_contract_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "ariba_contract_management",
+    "Name": "Ariba Contract Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('ariba_network')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('ariba_network')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "ariba_network",
+    "Name": "Ariba Network"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('ariba_network_finance')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('ariba_network_finance')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "ariba_network_finance",
+    "Name": "Ariba Network Finance"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('ariba_network_integration_for_sap_business_suite')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('ariba_network_integration_for_sap_business_suite')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "ariba_network_integration_for_sap_business_suite",
+    "Name": "Ariba Network Integration for SAP Business Suite"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('ariba_network_procurement')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('ariba_network_procurement')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "ariba_network_procurement",
+    "Name": "Ariba Network Procurement"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('ariba_network_sourcing')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('ariba_network_sourcing')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "ariba_network_sourcing",
+    "Name": "Ariba Network Sourcing, "
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('ariba_procurement')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('ariba_procurement')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "ariba_procurement",
+    "Name": "Ariba Procurement"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('ariba_sourcing')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('ariba_sourcing')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "ariba_sourcing",
+    "Name": "Ariba Sourcing"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('big_data_analytics')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('big_data_analytics')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "big_data_analytics",
+    "Name": "Big Data Analytics"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('big_data_applications')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('big_data_applications')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "big_data_applications",
+    "Name": "Big Data Applications"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('big_data_platform')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('big_data_platform')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "big_data_platform",
+    "Name": "Big Data Platform"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('big_data_services')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('big_data_services')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "big_data_services",
+    "Name": "Big Data Services"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('business_intelligence')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('business_intelligence')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "business_intelligence",
+    "Name": "Business Intelligence"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('business_networks')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('business_networks')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "business_networks",
+    "Name": "Business Networks"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('choai_route_management_localization_for_japan')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('choai_route_management_localization_for_japan')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "choai_route_management_localization_for_japan",
+    "Name": "Choai route management, localization for Japan"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('collaboration_tools')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('collaboration_tools')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "collaboration_tools",
+    "Name": "Collaboration Tools"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('collaborative_quote_to_cash')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('collaborative_quote_to_cash')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "collaborative_quote_to_cash",
+    "Name": "Collaborative Quote to Cash"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('concur_travel_and_expense_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('concur_travel_and_expense_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "concur_travel_and_expense_management",
+    "Name": "Concur Travel and Expense Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('consumer_insights')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('consumer_insights')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "consumer_insights",
+    "Name": "Consumer Insights"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('customer_engagement_and_crm')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('customer_engagement_and_crm')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "customer_engagement_and_crm",
+    "Name": "CUSTOMER ENGAGEMENT AND CRM"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('data_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('data_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "data_management",
+    "Name": "Data Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('data_warehousing')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('data_warehousing')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "data_warehousing",
+    "Name": "Data Warehousing"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('enterprise_information_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('enterprise_information_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "enterprise_information_management",
+    "Name": "Enterprise Information Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('enterprise_mobility_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('enterprise_mobility_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "enterprise_mobility_management",
+    "Name": "Enterprise Mobility Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('enterprise_performance_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('enterprise_performance_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "enterprise_performance_management",
+    "Name": "Enterprise Performance Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('enterprise_technology')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('enterprise_technology')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "enterprise_technology",
+    "Name": "Enterprise Technology"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('fieldglass_flexible_labor_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('fieldglass_flexible_labor_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "fieldglass_flexible_labor_management",
+    "Name": "Fieldglass Flexible Labor Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('governance_risk_and_compliance')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('governance_risk_and_compliance')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "governance_risk_and_compliance",
+    "Name": "Governance, Risk and Compliance"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('inmemory_technology')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('inmemory_technology')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "inmemory_technology",
+    "Name": "In-Memory Technology"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('it_infrastructure_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('it_infrastructure_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "it_infrastructure_management",
+    "Name": "IT Infrastructure Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('logistics_addon_for_importexport_localization_for_india')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('logistics_addon_for_importexport_localization_for_india')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "logistics_addon_for_importexport_localization_for_india",
+    "Name": "Logistics add-on for import/export, localization for India"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('managed_mobility')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('managed_mobility')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "managed_mobility",
+    "Name": "Managed Mobility"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('manager_selfservices_addon')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('manager_selfservices_addon')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "manager_selfservices_addon",
+    "Name": "Manager self-services add-on"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('master_data_management_for_commerce')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('master_data_management_for_commerce')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "master_data_management_for_commerce",
+    "Name": "Master Data Management for Commerce "
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('middleware')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('middleware')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "middleware",
+    "Name": "Middleware"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('mobile_enterprise_services')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('mobile_enterprise_services')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "mobile_enterprise_services",
+    "Name": "Mobile Enterprise Services"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('mobile_industry_apps')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('mobile_industry_apps')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "mobile_industry_apps",
+    "Name": "Mobile Industry Apps"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('mobile_line_of_business_apps')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('mobile_line_of_business_apps')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "mobile_line_of_business_apps",
+    "Name": "Mobile Line of Business Apps"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('mobile_operator_services')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('mobile_operator_services')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "mobile_operator_services",
+    "Name": "Mobile Operator Services"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('mobile_technology')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('mobile_technology')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "mobile_technology",
+    "Name": "Mobile Technology"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('omnichannel_commerce_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('omnichannel_commerce_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "omnichannel_commerce_management",
+    "Name": "Omni-Channel Commerce Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('partner_managed_cloud')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('partner_managed_cloud')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "partner_managed_cloud",
+    "Name": "Partner Managed Cloud"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('predictive_analytics')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('predictive_analytics')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "predictive_analytics",
+    "Name": "Predictive Analytics"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('s4hana')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('s4hana')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "s4hana",
+    "Name": "S/4HANA"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sales_force_automation')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sales_force_automation')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sales_force_automation",
+    "Name": "Sales Force Automation"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sales_performance_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sales_performance_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sales_performance_management",
+    "Name": "Sales Performance Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_accelerated_trade_promotion_planning')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_accelerated_trade_promotion_planning')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_accelerated_trade_promotion_planning",
+    "Name": "SAP Accelerated Trade Promotion Planning"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_access_approver')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_access_approver')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_access_approver",
+    "Name": "SAP Access Approver"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_access_control')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_access_control')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_access_control",
+    "Name": "SAP Access Control"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_access_violation_management_by_greenlight')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_access_violation_management_by_greenlight')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_access_violation_management_by_greenlight",
+    "Name": "SAP Access Violation Management by Greenlight"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_adaptive_server_enterprise')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_adaptive_server_enterprise')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_adaptive_server_enterprise",
+    "Name": "SAP Adaptive Server Enterprise"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_address_directories')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_address_directories')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_address_directories",
+    "Name": "SAP Address Directories"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_advanced_planning_and_optimization')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_advanced_planning_and_optimization')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_advanced_planning_and_optimization",
+    "Name": "SAP Advanced Planning and Optimization"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_advanced_track_and_trace_for_pharmaceuticals')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_advanced_track_and_trace_for_pharmaceuticals')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_advanced_track_and_trace_for_pharmaceuticals",
+    "Name": "SAP Advanced Track and Trace for Pharmaceuticals"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_afaria')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_afaria')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_afaria",
+    "Name": "SAP Afaria"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_agricultural_contract_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_agricultural_contract_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_agricultural_contract_management",
+    "Name": "SAP Agricultural Contract Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_anywhere')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_anywhere')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_anywhere",
+    "Name": "SAP Anywhere"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_api_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_api_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_api_management",
+    "Name": "SAP API Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_apparel_and_footwear')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_apparel_and_footwear')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_apparel_and_footwear",
+    "Name": "SAP Apparel and Footwear"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_application_interface_framework')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_application_interface_framework')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_application_interface_framework",
+    "Name": "SAP Application Interface Framework"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_application_visualization_by_irise')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_application_visualization_by_irise')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_application_visualization_by_irise",
+    "Name": "SAP Application Visualization by iRise"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_ar_service_technician')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_ar_service_technician')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_ar_service_technician",
+    "Name": "SAP AR Service Technician"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_ar_warehouse_picker')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_ar_warehouse_picker')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_ar_warehouse_picker",
+    "Name": "SAP AR Warehouse Picker"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_archiving_and_document_access_by_opentext')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_archiving_and_document_access_by_opentext')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_archiving_and_document_access_by_opentext",
+    "Name": "SAP Archiving and Document Access by OpenText"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_assessment_management_by_questionmark')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_assessment_management_by_questionmark')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_assessment_management_by_questionmark",
+    "Name": "SAP Assessment Management by Questionmark"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_asset_lifecycle_accounting')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_asset_lifecycle_accounting')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_asset_lifecycle_accounting",
+    "Name": "SAP Asset Lifecycle Accounting"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_asset_retirement_obligation_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_asset_retirement_obligation_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_asset_retirement_obligation_management",
+    "Name": "SAP Asset Retirement Obligation Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_assurance_and_compliance_software')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_assurance_and_compliance_software')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_assurance_and_compliance_software",
+    "Name": "SAP Assurance and Compliance Software"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_augmented_reality_apps')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_augmented_reality_apps')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_augmented_reality_apps",
+    "Name": "SAP Augmented Reality Apps"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_bank_analyzer')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_bank_analyzer')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_bank_analyzer",
+    "Name": "SAP Bank Analyzer"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_bulk_fuel_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_bulk_fuel_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_bulk_fuel_management",
+    "Name": "SAP Bulk Fuel Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_business_allinone')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_business_allinone')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_business_allinone",
+    "Name": "SAP Business All-in-One"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_business_bydesign')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_business_bydesign')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_business_bydesign",
+    "Name": "SAP Business ByDesign"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_business_one')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_business_one')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_business_one",
+    "Name": "SAP Business One"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_business_one_cloud')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_business_one_cloud')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_business_one_cloud",
+    "Name": "SAP Business One Cloud"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_business_planning_and_consolidation')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_business_planning_and_consolidation')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_business_planning_and_consolidation",
+    "Name": "SAP Business Planning and Consolidation"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_business_process_automation_by_redwood')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_business_process_automation_by_redwood')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_business_process_automation_by_redwood",
+    "Name": "SAP Business Process Automation by Redwood"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_business_warehouse_accelerator')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_business_warehouse_accelerator')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_business_warehouse_accelerator",
+    "Name": "SAP Business Warehouse Accelerator"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_businessobjects_analysis_edition_for_microsoft_office')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_businessobjects_analysis_edition_for_microsoft_office')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_businessobjects_analysis_edition_for_microsoft_office",
+    "Name": "SAP BusinessObjects Analysis, edition for Microsoft Office"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_businessobjects_business_intelligence')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_businessobjects_business_intelligence')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_businessobjects_business_intelligence",
+    "Name": "SAP BusinessObjects Business Intelligence"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_businessobjects_dashboards')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_businessobjects_dashboards')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_businessobjects_dashboards",
+    "Name": "SAP BusinessObjects Dashboards"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_businessobjects_design_studio')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_businessobjects_design_studio')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_businessobjects_design_studio",
+    "Name": "SAP BusinessObjects Design Studio"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_businessobjects_explorer')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_businessobjects_explorer')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_businessobjects_explorer",
+    "Name": "SAP BusinessObjects Explorer"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_capital_yield_tax_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_capital_yield_tax_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_capital_yield_tax_management",
+    "Name": "SAP Capital Yield Tax Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_cash_flow_management_for_banking')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_cash_flow_management_for_banking')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_cash_flow_management_for_banking",
+    "Name": "SAP Cash Flow Management for Banking"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_cloud_appliance_library')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_cloud_appliance_library')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_cloud_appliance_library",
+    "Name": "SAP Cloud Appliance Library"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_cloud_applications_studio')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_cloud_applications_studio')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_cloud_applications_studio",
+    "Name": "SAP Cloud Applications Studio"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_cloud_for_analytics')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_cloud_for_analytics')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_cloud_for_analytics",
+    "Name": "SAP Cloud for Analytics"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_cloud_for_customer_crm_cloud')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_cloud_for_customer_crm_cloud')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_cloud_for_customer_crm_cloud",
+    "Name": "SAP Cloud for Customer (CRM cloud)"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_cloud_for_travel_and_expense')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_cloud_for_travel_and_expense')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_cloud_for_travel_and_expense",
+    "Name": "SAP Cloud for Travel and Expense"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_cloud_identity')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_cloud_identity')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_cloud_identity",
+    "Name": "SAP Cloud Identity"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_collaboration_tools')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_collaboration_tools')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_collaboration_tools",
+    "Name": "SAP Collaboration Tools"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_commercial_project_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_commercial_project_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_commercial_project_management",
+    "Name": "SAP Commercial Project Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_common_area_maintenance_expense_recovery')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_common_area_maintenance_expense_recovery')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_common_area_maintenance_expense_recovery",
+    "Name": "SAP Common Area Maintenance Expense Recovery"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_communication_center_by_ancile')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_communication_center_by_ancile')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_communication_center_by_ancile",
+    "Name": "SAP Communication Center by ANCILE"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_complex_assembly_manufacturing')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_complex_assembly_manufacturing')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_complex_assembly_manufacturing",
+    "Name": "SAP Complex Assembly Manufacturing"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_complex_manufacturing_accelerator')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_complex_manufacturing_accelerator')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_complex_manufacturing_accelerator",
+    "Name": "SAP Complex Manufacturing Accelerator"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_composition_environment')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_composition_environment')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_composition_environment",
+    "Name": "SAP Composition Environment"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_configure_price_and_quote')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_configure_price_and_quote')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_configure_price_and_quote",
+    "Name": "SAP Configure, Price, and Quote"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_connected_logistics')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_connected_logistics')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_connected_logistics",
+    "Name": "SAP Connected Logistics"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_connected_manufacturing')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_connected_manufacturing')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_connected_manufacturing",
+    "Name": "SAP Connected Manufacturing"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_consumer_insight_365')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_consumer_insight_365')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_consumer_insight_365",
+    "Name": "SAP Consumer Insight 365"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_contact_center')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_contact_center')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_contact_center",
+    "Name": "SAP Contact Center"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_content_management_for_microsoft_sharepoint_by_opentext')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_content_management_for_microsoft_sharepoint_by_opentext')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_content_management_for_microsoft_sharepoint_by_opentext",
+    "Name": "SAP Content Management for Microsoft SharePoint by OpenText"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_convergent_charging')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_convergent_charging')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_convergent_charging",
+    "Name": "SAP Convergent Charging"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_convergent_mediation_by_digitalroute')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_convergent_mediation_by_digitalroute')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_convergent_mediation_by_digitalroute",
+    "Name": "SAP Convergent Mediation by DigitalRoute"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_convergent_pricing_simulation')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_convergent_pricing_simulation')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_convergent_pricing_simulation",
+    "Name": "SAP Convergent Pricing Simulation"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_cproject_suite')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_cproject_suite')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_cproject_suite",
+    "Name": "SAP cProject Suite"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_crm_service_manager')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_crm_service_manager')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_crm_service_manager",
+    "Name": "SAP CRM Service Manager"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_cross_channel_order_management_for_retail')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_cross_channel_order_management_for_retail')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_cross_channel_order_management_for_retail",
+    "Name": "SAP Cross Channel Order Management for Retail"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_crystal_reports')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_crystal_reports')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_crystal_reports",
+    "Name": "SAP Crystal Reports"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_crystal_server')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_crystal_server')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_crystal_server",
+    "Name": "SAP Crystal Server"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_customer_activity_repository')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_customer_activity_repository')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_customer_activity_repository",
+    "Name": "SAP Customer Activity Repository"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_customer_briefing')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_customer_briefing')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_customer_briefing",
+    "Name": "SAP Customer Briefing"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_customer_checkout')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_customer_checkout')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_customer_checkout",
+    "Name": "SAP Customer Checkout"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_customer_financial_factsheet')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_customer_financial_factsheet')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_customer_financial_factsheet",
+    "Name": "SAP Customer Financial Factsheet"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_customer_relationship_management_crm_onpremise')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_customer_relationship_management_crm_onpremise')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_customer_relationship_management_crm_onpremise",
+    "Name": "SAP Customer Relationship Management (CRM on-premise)"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_data_maintenance_for_sap_erp_by_vistex')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_data_maintenance_for_sap_erp_by_vistex')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_data_maintenance_for_sap_erp_by_vistex",
+    "Name": "SAP Data Maintenance for SAP ERP by Vistex"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_data_quality_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_data_quality_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_data_quality_management",
+    "Name": "SAP Data Quality Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_data_services')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_data_services')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_data_services",
+    "Name": "SAP Data Services"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_decision_service_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_decision_service_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_decision_service_management",
+    "Name": "SAP Decision Service Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_demand_signal_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_demand_signal_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_demand_signal_management",
+    "Name": "SAP Demand Signal Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_deposits_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_deposits_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_deposits_management",
+    "Name": "SAP Deposits Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_digital_asset_management_by_opentext')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_digital_asset_management_by_opentext')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_digital_asset_management_by_opentext",
+    "Name": "SAP Digital Asset Management by OpenText"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_direct_store_delivery')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_direct_store_delivery')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_direct_store_delivery",
+    "Name": "SAP Direct Store Delivery"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_disclosure_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_disclosure_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_disclosure_management",
+    "Name": "SAP Disclosure Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_document_builder')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_document_builder')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_document_builder",
+    "Name": "SAP Document Builder"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_document_presentment_by_opentext')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_document_presentment_by_opentext')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_document_presentment_by_opentext",
+    "Name": "SAP Document Presentment by OpenText"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_dynamic_authorization_management_by_nextlabs')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_dynamic_authorization_management_by_nextlabs')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_dynamic_authorization_management_by_nextlabs",
+    "Name": "SAP Dynamic Authorization Management by NextLabs"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_eam_and_service_mobile_app_sdk')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_eam_and_service_mobile_app_sdk')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_eam_and_service_mobile_app_sdk",
+    "Name": "SAP EAM and service mobile app SDK"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_ehs_regulatory_content')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_ehs_regulatory_content')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_ehs_regulatory_content",
+    "Name": "SAP EHS Regulatory Content"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_ehs_safety_issue')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_ehs_safety_issue')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_ehs_safety_issue",
+    "Name": "SAP EHS Safety Issue"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_electronic_invoicing_for_brazil')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_electronic_invoicing_for_brazil')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_electronic_invoicing_for_brazil",
+    "Name": "SAP Electronic Invoicing for Brazil"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_employee_file_management_by_opentext')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_employee_file_management_by_opentext')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_employee_file_management_by_opentext",
+    "Name": "SAP Employee File Management by OpenText"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_emr_unwired')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_emr_unwired')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_emr_unwired",
+    "Name": "SAP EMR Unwired"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_energy_data_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_energy_data_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_energy_data_management",
+    "Name": "SAP Energy Data Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_energy_portfolio_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_energy_portfolio_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_energy_portfolio_management",
+    "Name": "SAP Energy Portfolio Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_engineering_control_center')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_engineering_control_center')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_engineering_control_center",
+    "Name": "SAP Engineering Control Center"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_enhanced_maintenance_and_service_planning')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_enhanced_maintenance_and_service_planning')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_enhanced_maintenance_and_service_planning",
+    "Name": "SAP Enhanced Maintenance and Service Planning"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_enterprise_demand_sensing')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_enterprise_demand_sensing')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_enterprise_demand_sensing",
+    "Name": "SAP Enterprise Demand Sensing"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_enterprise_inventory_and_servicelevel_optimization')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_enterprise_inventory_and_servicelevel_optimization')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_enterprise_inventory_and_servicelevel_optimization",
+    "Name": "SAP Enterprise Inventory and Service-Level Optimization"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_enterprise_learning')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_enterprise_learning')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_enterprise_learning",
+    "Name": "SAP Enterprise Learning"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_enterprise_modeling_by_software_ag')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_enterprise_modeling_by_software_ag')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_enterprise_modeling_by_software_ag",
+    "Name": "SAP Enterprise Modeling by Software AG"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_enterprise_portal')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_enterprise_portal')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_enterprise_portal",
+    "Name": "SAP Enterprise Portal"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_enterprise_project_connection')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_enterprise_project_connection')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_enterprise_project_connection",
+    "Name": "SAP Enterprise Project Connection"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_enterprise_threat_detection')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_enterprise_threat_detection')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_enterprise_threat_detection",
+    "Name": "SAP Enterprise Threat Detection"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_environment_health_and_safety_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_environment_health_and_safety_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_environment_health_and_safety_management",
+    "Name": "SAP Environment, Health, and Safety Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_environmental_compliance')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_environmental_compliance')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_environmental_compliance",
+    "Name": "SAP Environmental Compliance"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_erp')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_erp')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_erp",
+    "Name": "SAP ERP"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_event_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_event_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_event_management",
+    "Name": "SAP Event Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_event_stream_processor')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_event_stream_processor')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_event_stream_processor",
+    "Name": "SAP Event Stream Processor"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_event_ticketing')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_event_ticketing')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_event_ticketing",
+    "Name": "SAP Event Ticketing"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_extended_diagnostics_by_ca')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_extended_diagnostics_by_ca')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_extended_diagnostics_by_ca",
+    "Name": "SAP Extended Diagnostics by CA"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_extended_enterprise_content_management_by_opentext')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_extended_enterprise_content_management_by_opentext')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_extended_enterprise_content_management_by_opentext",
+    "Name": "SAP Extended Enterprise Content Management by OpenText"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_extended_warehouse_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_extended_warehouse_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_extended_warehouse_management",
+    "Name": "SAP Extended Warehouse Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_fashion_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_fashion_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_fashion_management",
+    "Name": "SAP Fashion Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_fieldglass_vendor_management_system')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_fieldglass_vendor_management_system')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_fieldglass_vendor_management_system",
+    "Name": "SAP Fieldglass Vendor Management System"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_file_lifecycle_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_file_lifecycle_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_file_lifecycle_management",
+    "Name": "SAP File Lifecycle Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_financial_closing_cockpit')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_financial_closing_cockpit')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_financial_closing_cockpit",
+    "Name": "SAP Financial Closing cockpit"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_financial_consolidation')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_financial_consolidation')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_financial_consolidation",
+    "Name": "SAP Financial Consolidation"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_financial_information_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_financial_information_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_financial_information_management",
+    "Name": "SAP Financial Information Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_financial_services_network')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_financial_services_network')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_financial_services_network",
+    "Name": "SAP Financial Services Network"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_financial_supply_chain_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_financial_supply_chain_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_financial_supply_chain_management",
+    "Name": "SAP Financial Supply Chain Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_fiori')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_fiori')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_fiori",
+    "Name": "SAP Fiori"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_fiory')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_fiory')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_fiory",
+    "Name": "SAP Fiory"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_flexible_solution_billing')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_flexible_solution_billing')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_flexible_solution_billing",
+    "Name": "SAP Flexible Solution Billing"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_forecasting_and_replenishment_for_retail')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_forecasting_and_replenishment_for_retail')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_forecasting_and_replenishment_for_retail",
+    "Name": "SAP Forecasting and Replenishment for Retail"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_fortify_by_hp')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_fortify_by_hp')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_fortify_by_hp",
+    "Name": "SAP Fortify by HP"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_fundraising_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_fundraising_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_fundraising_management",
+    "Name": "SAP Fundraising Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_gateway')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_gateway')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_gateway",
+    "Name": "SAP Gateway"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_global_batch_traceability')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_global_batch_traceability')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_global_batch_traceability",
+    "Name": "SAP Global Batch Traceability"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_global_trade_services')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_global_trade_services')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_global_trade_services",
+    "Name": "SAP Global Trade Services"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_hana')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_hana')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_hana",
+    "Name": "SAP HANA"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_hana_cloud_integration')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_hana_cloud_integration')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_hana_cloud_integration",
+    "Name": "SAP HANA Cloud Integration"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_hana_cloud_platform')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_hana_cloud_platform')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_hana_cloud_platform",
+    "Name": "SAP HANA Cloud Platform"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_hana_cloud_platform_for_the_internet_of_things')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_hana_cloud_platform_for_the_internet_of_things')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_hana_cloud_platform_for_the_internet_of_things",
+    "Name": "SAP HANA Cloud Platform for the Internet of Things"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_hana_cloud_portal')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_hana_cloud_portal')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_hana_cloud_portal",
+    "Name": "SAP HANA Cloud Portal"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_hana_enterprise_cloud')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_hana_enterprise_cloud')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_hana_enterprise_cloud",
+    "Name": "SAP HANA Enterprise Cloud"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_hana_enterprise_cloud_consulting_services')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_hana_enterprise_cloud_consulting_services')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_hana_enterprise_cloud_consulting_services",
+    "Name": "SAP HANA Enterprise Cloud Consulting Services"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_hana_live')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_hana_live')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_hana_live",
+    "Name": "SAP HANA Live"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_hana_vora')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_hana_vora')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_hana_vora",
+    "Name": "SAP HANA Vora"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_hybris_commerce_suite')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_hybris_commerce_suite')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_hybris_commerce_suite",
+    "Name": "SAP hybris Commerce Suite"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_hybris_marketing')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_hybris_marketing')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_hybris_marketing",
+    "Name": "SAP hybris Marketing"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_identity_analytics')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_identity_analytics')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_identity_analytics",
+    "Name": "SAP Identity Analytics"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_identity_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_identity_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_identity_management",
+    "Name": "SAP Identity Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_incentive_administration_by_vistex')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_incentive_administration_by_vistex')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_incentive_administration_by_vistex",
+    "Name": "SAP Incentive Administration by Vistex "
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_infomaker')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_infomaker')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_infomaker",
+    "Name": "SAP InfoMaker"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_information_steward')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_information_steward')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_information_steward",
+    "Name": "SAP Information Steward"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_innovation_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_innovation_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_innovation_management",
+    "Name": "SAP Innovation Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_instore_product_lookup')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_instore_product_lookup')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_instore_product_lookup",
+    "Name": "SAP In-Store Product Lookup"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_integrated_business_planning')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_integrated_business_planning')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_integrated_business_planning",
+    "Name": "SAP Integrated Business Planning"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_intercompany')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_intercompany')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_intercompany",
+    "Name": "SAP Intercompany"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_intercompany_data_exchange')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_intercompany_data_exchange')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_intercompany_data_exchange",
+    "Name": "SAP Intercompany Data Exchange"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_inventory_manager')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_inventory_manager')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_inventory_manager",
+    "Name": "SAP Inventory Manager"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_invoice_management_by_opentext')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_invoice_management_by_opentext')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_invoice_management_by_opentext",
+    "Name": "SAP Invoice Management by OpenText"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_iq')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_iq')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_iq",
+    "Name": "SAP IQ"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_it_infrastructure_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_it_infrastructure_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_it_infrastructure_management",
+    "Name": "SAP IT Infrastructure Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_jam')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_jam')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_jam",
+    "Name": "SAP Jam"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_jam_communities')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_jam_communities')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_jam_communities",
+    "Name": "SAP Jam Communities"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_knowledge_acceleration')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_knowledge_acceleration')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_knowledge_acceleration",
+    "Name": "SAP Knowledge Acceleration"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_knowledge_central_by_mindtouch')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_knowledge_central_by_mindtouch')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_knowledge_central_by_mindtouch",
+    "Name": "SAP Knowledge Central by MindTouch"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_landscape_transformation')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_landscape_transformation')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_landscape_transformation",
+    "Name": "SAP Landscape Transformation"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_landscape_virtualization_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_landscape_virtualization_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_landscape_virtualization_management",
+    "Name": "SAP Landscape Virtualization Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_lease_administration_by_nakisa')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_lease_administration_by_nakisa')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_lease_administration_by_nakisa",
+    "Name": "SAP Lease Administration by Nakisa"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_liquidity_risk_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_liquidity_risk_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_liquidity_risk_management",
+    "Name": "SAP Liquidity Risk Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_loadrunner_by_hp')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_loadrunner_by_hp')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_loadrunner_by_hp",
+    "Name": "SAP LoadRunner by HP"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_loans_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_loans_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_loans_management",
+    "Name": "SAP Loans Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_lumira')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_lumira')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_lumira",
+    "Name": "SAP Lumira"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_lumira_cloud')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_lumira_cloud')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_lumira_cloud",
+    "Name": "SAP Lumira Cloud"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_management_of_change')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_management_of_change')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_management_of_change",
+    "Name": "SAP Management of Change"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_manager_insight')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_manager_insight')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_manager_insight",
+    "Name": "SAP Manager Insight"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_manufacturing_execution')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_manufacturing_execution')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_manufacturing_execution",
+    "Name": "SAP Manufacturing Execution"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_manufacturing_integration_and_intelligence')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_manufacturing_integration_and_intelligence')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_manufacturing_integration_and_intelligence",
+    "Name": "SAP Manufacturing Integration and Intelligence"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_master_data_governance')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_master_data_governance')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_master_data_governance",
+    "Name": "SAP Master Data Governance"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_military_data_exchange')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_military_data_exchange')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_military_data_exchange",
+    "Name": "SAP Military Data Exchange"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_mobile_app_protection_by_mocana')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_mobile_app_protection_by_mocana')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_mobile_app_protection_by_mocana",
+    "Name": "SAP Mobile App Protection by Mocana"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_mobile_asset_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_mobile_asset_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_mobile_asset_management",
+    "Name": "SAP Mobile Asset Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_mobile_defense_security')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_mobile_defense_security')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_mobile_defense_security",
+    "Name": "SAP Mobile Defense & Security"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_mobile_documents')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_mobile_documents')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_mobile_documents",
+    "Name": "SAP Mobile Documents"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_mobile_platform')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_mobile_platform')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_mobile_platform",
+    "Name": "SAP Mobile Platform"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_mobile_secure')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_mobile_secure')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_mobile_secure",
+    "Name": "SAP Mobile Secure"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_multichannel_foundation')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_multichannel_foundation')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_multichannel_foundation",
+    "Name": "SAP Multichannel Foundation"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_multiresource_scheduling')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_multiresource_scheduling')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_multiresource_scheduling",
+    "Name": "SAP Multiresource Scheduling"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_netweaver')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_netweaver')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_netweaver",
+    "Name": "SAP NetWeaver"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_netweaver_master_data_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_netweaver_master_data_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_netweaver_master_data_management",
+    "Name": "SAP NetWeaver Master Data Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_netweaver_mobile')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_netweaver_mobile')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_netweaver_mobile",
+    "Name": "SAP NetWeaver Mobile"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_networked_logistics_hub')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_networked_logistics_hub')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_networked_logistics_hub",
+    "Name": "SAP Networked Logistics Hub"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_notes_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_notes_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_notes_management",
+    "Name": "SAP Notes Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_open_server')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_open_server')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_open_server",
+    "Name": "SAP Open Server"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_open_switch')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_open_switch')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_open_switch",
+    "Name": "SAP Open Switch"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_operational_process_intelligence')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_operational_process_intelligence')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_operational_process_intelligence",
+    "Name": "SAP Operational Process Intelligence"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_organizational_visualization_by_nakisa')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_organizational_visualization_by_nakisa')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_organizational_visualization_by_nakisa",
+    "Name": "SAP Organizational Visualization by Nakisa"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_overall_equipment_effectiveness_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_overall_equipment_effectiveness_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_overall_equipment_effectiveness_management",
+    "Name": "SAP Overall Equipment Effectiveness Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_paybacks_and_chargebacks_by_vistex')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_paybacks_and_chargebacks_by_vistex')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_paybacks_and_chargebacks_by_vistex",
+    "Name": "SAP Paybacks and Chargebacks by Vistex"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_payment_approvals')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_payment_approvals')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_payment_approvals",
+    "Name": "SAP Payment Approvals"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_payment_engine')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_payment_engine')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_payment_engine",
+    "Name": "SAP Payment Engine"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_plant_connectivity')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_plant_connectivity')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_plant_connectivity",
+    "Name": "SAP Plant Connectivity"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_pointofsale')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_pointofsale')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_pointofsale",
+    "Name": "SAP Point-of-Sale"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_policy_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_policy_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_policy_management",
+    "Name": "SAP Policy Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_portal_site_management_by_opentext')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_portal_site_management_by_opentext')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_portal_site_management_by_opentext",
+    "Name": "SAP Portal Site Management By OpenText"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_portfolio_and_project_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_portfolio_and_project_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_portfolio_and_project_management",
+    "Name": "SAP Portfolio and Project Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_powerbuilder')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_powerbuilder')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_powerbuilder",
+    "Name": "SAP PowerBuilder"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_powerdesigner')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_powerdesigner')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_powerdesigner",
+    "Name": "SAP PowerDesigner"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_predictive_analytics')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_predictive_analytics')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_predictive_analytics",
+    "Name": "SAP Predictive Analytics"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_predictive_maintenance_and_service')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_predictive_maintenance_and_service')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_predictive_maintenance_and_service",
+    "Name": "SAP Predictive Maintenance and Service"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_price_and_margin_management_by_vendavo')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_price_and_margin_management_by_vendavo')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_price_and_margin_management_by_vendavo",
+    "Name": "SAP Price and Margin Management by Vendavo"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_pricing_and_costing_for_utilities')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_pricing_and_costing_for_utilities')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_pricing_and_costing_for_utilities",
+    "Name": "SAP Pricing and Costing for Utilities"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_process_control')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_process_control')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_process_control",
+    "Name": "SAP Process Control"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_process_object_builder')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_process_object_builder')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_process_object_builder",
+    "Name": "SAP Process Object Builder"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_product_lifecycle_management_for_insurance')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_product_lifecycle_management_for_insurance')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_product_lifecycle_management_for_insurance",
+    "Name": "SAP Product Lifecycle Management for Insurance"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_production_and_revenue_accounting')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_production_and_revenue_accounting')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_production_and_revenue_accounting",
+    "Name": "SAP Production and Revenue Accounting"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_profitability_and_cost_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_profitability_and_cost_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_profitability_and_cost_management",
+    "Name": "SAP Profitability and Cost Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_promotion_management_for_retail')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_promotion_management_for_retail')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_promotion_management_for_retail",
+    "Name": "SAP Promotion Management for Retail"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_public_budget_formulation')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_public_budget_formulation')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_public_budget_formulation",
+    "Name": "SAP Public Budget Formulation"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_quality_center_by_hp')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_quality_center_by_hp')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_quality_center_by_hp",
+    "Name": "SAP Quality Center by HP"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_r3')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_r3')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_r3",
+    "Name": "SAP R/3"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_real_estate_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_real_estate_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_real_estate_management",
+    "Name": "SAP Real Estate Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_realtime_offer_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_realtime_offer_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_realtime_offer_management",
+    "Name": "SAP Real-Time Offer Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_receivables_manager')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_receivables_manager')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_receivables_manager",
+    "Name": "SAP Receivables Manager"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_regulation_management_by_greenlight')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_regulation_management_by_greenlight')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_regulation_management_by_greenlight",
+    "Name": "SAP Regulation Management by Greenlight"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_replication_server')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_replication_server')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_replication_server",
+    "Name": "SAP Replication Server"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_retail_execution')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_retail_execution')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_retail_execution",
+    "Name": "SAP Retail Execution"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_revenue_accounting_and_reporting')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_revenue_accounting_and_reporting')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_revenue_accounting_and_reporting",
+    "Name": "SAP Revenue Accounting and Reporting"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_risk_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_risk_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_risk_management",
+    "Name": "SAP Risk Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_s4hana')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_s4hana')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_s4hana",
+    "Name": "SAP S/4HANA"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_sales_and_operations_planning')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_sales_and_operations_planning')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_sales_and_operations_planning",
+    "Name": "SAP Sales and Operations Planning"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_sales_companion')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_sales_companion')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_sales_companion",
+    "Name": "SAP Sales Companion"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_sales_manager')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_sales_manager')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_sales_manager",
+    "Name": "SAP Sales Manager"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_scouting')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_scouting')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_scouting",
+    "Name": "SAP Scouting"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_screen_personas')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_screen_personas')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_screen_personas",
+    "Name": "SAP Screen Personas"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_secondary_distribution_for_oil_gas')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_secondary_distribution_for_oil_gas')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_secondary_distribution_for_oil_gas",
+    "Name": "SAP Secondary Distribution for Oil & Gas"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_service_virtualization_by_hp')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_service_virtualization_by_hp')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_service_virtualization_by_hp",
+    "Name": "SAP Service Virtualization by HP"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_simple_finance')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_simple_finance')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_simple_finance",
+    "Name": "SAP Simple Finance"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_single_signon')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_single_signon')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_single_signon",
+    "Name": "SAP Single Sign-On"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_solution_manager')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_solution_manager')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_solution_manager",
+    "Name": "SAP Solution Manager"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_solutions_for_commerce')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_solutions_for_commerce')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_solutions_for_commerce",
+    "Name": "SAP Solutions for Commerce"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_solutions_for_finance')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_solutions_for_finance')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_solutions_for_finance",
+    "Name": "SAP Solutions for Finance"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_solutions_for_human_resources')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_solutions_for_human_resources')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_solutions_for_human_resources",
+    "Name": "SAP Solutions for Human Resources"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_solutions_for_marketing')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_solutions_for_marketing')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_solutions_for_marketing",
+    "Name": "SAP Solutions for Marketing"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_solutions_for_sales')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_solutions_for_sales')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_solutions_for_sales",
+    "Name": "SAP Solutions for Sales"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_solutions_for_service')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_solutions_for_service')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_solutions_for_service",
+    "Name": "SAP Solutions for Service"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_solutions_for_sourcing_and_procurement')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_solutions_for_sourcing_and_procurement')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_solutions_for_sourcing_and_procurement",
+    "Name": "SAP Solutions for Sourcing and Procurement"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_sourcing_and_sap_contract_lifecycle_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_sourcing_and_sap_contract_lifecycle_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_sourcing_and_sap_contract_lifecycle_management",
+    "Name": "SAP Sourcing and SAP Contract Lifecycle Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_spend_performance_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_spend_performance_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_spend_performance_management",
+    "Name": "SAP Spend Performance Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_sql_anywhere')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_sql_anywhere')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_sql_anywhere",
+    "Name": "SAP SQL Anywhere"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_strategic_enterprise_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_strategic_enterprise_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_strategic_enterprise_management",
+    "Name": "SAP Strategic Enterprise Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_strategy_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_strategy_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_strategy_management",
+    "Name": "SAP Strategy Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_supplier_lifecycle_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_supplier_lifecycle_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_supplier_lifecycle_management",
+    "Name": "SAP Supplier Lifecycle Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_supplier_relationship_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_supplier_relationship_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_supplier_relationship_management",
+    "Name": "SAP Supplier Relationship Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_supply_chain_info_center')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_supply_chain_info_center')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_supply_chain_info_center",
+    "Name": "SAP Supply Chain Info Center"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_supply_chain_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_supply_chain_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_supply_chain_management",
+    "Name": "SAP Supply Chain Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_supply_network_collaboration')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_supply_network_collaboration')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_supply_network_collaboration",
+    "Name": "SAP Supply Network Collaboration"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_sustainability_performance_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_sustainability_performance_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_sustainability_performance_management",
+    "Name": "SAP Sustainability Performance Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_talent_visualization_by_nakisa')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_talent_visualization_by_nakisa')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_talent_visualization_by_nakisa",
+    "Name": "SAP Talent Visualization by Nakisa"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_tax_classification_and_reporting_for_fatca')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_tax_classification_and_reporting_for_fatca')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_tax_classification_and_reporting_for_fatca",
+    "Name": "SAP Tax Classification and Reporting for FATCA"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_tax_declaration_framework_for_brazil')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_tax_declaration_framework_for_brazil')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_tax_declaration_framework_for_brazil",
+    "Name": "SAP Tax Declaration Framework for Brazil"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_test_acceleration_and_optimization')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_test_acceleration_and_optimization')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_test_acceleration_and_optimization",
+    "Name": "SAP Test Acceleration and Optimization"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_test_data_migration_server')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_test_data_migration_server')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_test_data_migration_server",
+    "Name": "SAP Test Data Migration Server"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_trade_promotion_optimization')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_trade_promotion_optimization')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_trade_promotion_optimization",
+    "Name": "SAP Trade Promotion Optimization"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_transport_notification_and_status')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_transport_notification_and_status')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_transport_notification_and_status",
+    "Name": "SAP Transport Notification and Status"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_transport_tendering')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_transport_tendering')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_transport_tendering",
+    "Name": "SAP Transport Tendering"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_transportation_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_transportation_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_transportation_management",
+    "Name": "SAP Transportation Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_transportation_resource_planning')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_transportation_resource_planning')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_transportation_resource_planning",
+    "Name": "SAP Transportation Resource Planning"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_travel_receipts_management_by_opentext')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_travel_receipts_management_by_opentext')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_travel_receipts_management_by_opentext",
+    "Name": "SAP Travel Receipts Management by OpenText"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_underwriting_for_insurance')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_underwriting_for_insurance')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_underwriting_for_insurance",
+    "Name": "SAP Underwriting for Insurance"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_user_experience_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_user_experience_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_user_experience_management",
+    "Name": "SAP User Experience Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_utility_customer_eservices')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_utility_customer_eservices')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_utility_customer_eservices",
+    "Name": "SAP Utility Customer E-Services"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_visual_business')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_visual_business')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_visual_business",
+    "Name": "SAP Visual Business"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_web_ide')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_web_ide')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_web_ide",
+    "Name": "SAP Web IDE"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_workforce_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_workforce_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_workforce_management",
+    "Name": "SAP Workforce Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_workforce_performance_builder')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_workforce_performance_builder')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_workforce_performance_builder",
+    "Name": "SAP Workforce Performance Builder"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_workforce_scheduling_and_optimization_by_clicksoftware')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_workforce_scheduling_and_optimization_by_clicksoftware')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_workforce_scheduling_and_optimization_by_clicksoftware",
+    "Name": "SAP Workforce Scheduling and Optimization by ClickSoftware"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_working_capital_analytics')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('sap_working_capital_analytics')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "sap_working_capital_analytics",
+    "Name": "SAP Working Capital Analytics"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('security')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('security')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "security",
+    "Name": "Security"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('selling_through_contact_centers')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('selling_through_contact_centers')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "selling_through_contact_centers",
+    "Name": "Selling Through Contact Centers"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('software_logistics_toolset')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('software_logistics_toolset')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "software_logistics_toolset",
+    "Name": "Software logistics toolset"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('solutions_by_line_of_business')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('solutions_by_line_of_business')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "solutions_by_line_of_business",
+    "Name": "Solutions by Line of Business"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('subscription_billing_and_revenue_management')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('subscription_billing_and_revenue_management')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "subscription_billing_and_revenue_management",
+    "Name": "Subscription Billing and Revenue Management"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('successfactors_employee_central')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('successfactors_employee_central')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "successfactors_employee_central",
+    "Name": "SuccessFactors Employee Central"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('successfactors_hcm_suite')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('successfactors_hcm_suite')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "successfactors_hcm_suite",
+    "Name": "SuccessFactors HCM Suite"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('taxpayer_online_services')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('taxpayer_online_services')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "taxpayer_online_services",
+    "Name": "Taxpayer Online Services"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('twogo_by_sap')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('twogo_by_sap')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "twogo_by_sap",
+    "Name": "TwoGo by SAP"
+}, {
+    "__metadata": {
+        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('ui_addon')",
+        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SapSoftwareSolutions('ui_addon')",
+        "type": "Model.SapSoftwareSolution"
+    },
+    "Id": "ui_addon",
+    "Name": "UI add-on"
+}]
