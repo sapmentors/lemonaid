@@ -35,6 +35,18 @@ sap.ui.define([
              */
             iLookAtTheScreen: function() {
                 return this;
+            },
+
+
+            /**
+             * [getEntitySet description]
+             * @param  {string} sEntitySet name of entity set
+             * @return {array}           values in entityset
+             */
+            getEntitySet: function(sEntitySet) {
+                return mockserver.getMockServer().getEntitySetData(sEntitySet);
             }
+
+
         });
     });

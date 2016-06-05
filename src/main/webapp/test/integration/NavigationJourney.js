@@ -32,7 +32,16 @@ sap.ui.define([
 
         // Assertions
         Then.onTheMainPage.iShouldSeeTheTableOfMentors().
-        and.theTableShouldHaveAllEntries().
+        and.theTableShouldHaveAllEntries();
+    });
+
+    opaTest("Should return only one entry when searching for Rondald", function(Given, When, Then) {
+
+        //Actions
+        When.onTheMainPage.iEnterRonaldInTheSearchField();
+
+        // Assertions
+        Then.onTheMainPage.iShouldSeeOnlyRonaldMcDonaldInTheTable().
         and.iTeardownMyUIComponent();
     });
 });

@@ -3,15 +3,16 @@ sap.ui.define([
         "test/integration/pages/Common",
         "sap/ui/test/matchers/AggregationLengthEquals",
         "sap/ui/test/actions/Press",
-        "sap/ui/test/matchers/BindingPath"
+        "sap/ui/test/matchers/BindingPath",
+        "sap/ui/test/actions/EnterText",
+        "sap/ui/test/matchers/PropertyStrictEquals"
     ],
-    function(Opa5, Common, AggregationLengthEquals, Press, BindingPath) {
+    function(Opa5, Common, AggregationLengthEquals, Press, BindingPath, EnterText, PropertyStrictEquals) {
         "use strict";
         var sViewName = "Main";
         var sTableId = "table";
+        var sSearchFieldId = "searchField";
         var sFirstMentorPath = "/Mentors('S0004623911')";
-
-
 
         Opa5.createPageObjects({
             onTheMainPage: {
@@ -29,6 +30,15 @@ sap.ui.define([
                             errorMessage: "Cannot find the Mentor list"
                         });
 
+                    },
+
+                    iEnterRonaldInTheSearchField: function() {
+                        return this.waitFor({
+                            id: sSearchFieldId,
+                            viewName: sViewName,
+                            actions: [new EnterText({ text: "Ronald" }), new Press()],
+                            errorMessage: "Failed to find search field in Main view."
+                        });
                     }
                 },
                 assertions: {
@@ -45,7 +55,7 @@ sap.ui.define([
 
                     theTableShouldHaveAllEntries: function() {
                         var iExpectedNumberOfItems;
-                        var iAllEntries = 11;
+                        var iAllEntries = this.getEntitySet("Mentors").length || 0;
 
                         return this.waitFor({
                             id: sTableId,
@@ -57,6 +67,28 @@ sap.ui.define([
                             },
                             success: function(oTable) {
                                 Opa5.assert.strictEqual(oTable.getItems().length, iExpectedNumberOfItems, "The growing Table has " + iExpectedNumberOfItems + " items");
+                            },
+                            errorMessage: "Table does not have all entries."
+                        });
+                    },
+
+                    iShouldSeeOnlyRonaldMcDonaldInTheTable: function() {
+                        this.waitFor({
+                            id: sTableId,
+                            viewName: sViewName,
+                            matchers: new AggregationLengthEquals({ name: "items", length: 1 }),
+                            success: function(oTable) {
+                                Opa5.assert.strictEqual(oTable.getItems().length, 1, "The table has only 1 entry");
+                            },
+                            errorMessage: "Table does not have all entries."
+                        });
+
+                        return this.waitFor({
+                            controlType: "sap.m.ObjectIdentifier",
+                            viewName: sViewName,
+                            matchers: new PropertyStrictEquals({ name: "title", value: "Ronald McDonald" }),
+                            success: function(objectIdentifier) {
+                                Opa5.assert.ok(objectIdentifier, "Found Ronald McDonald");
                             },
                             errorMessage: "Table does not have all entries."
                         });
