@@ -1,0 +1,1 @@
+sap.ui.define(["jquery.sap.global","sap/ui/core/Control","google.maps","./MapUtils"],function(e,o){"use strict";var t=o.extend("openui5.googlemaps.Waypoint",{metadata:{properties:{location:{type:"string"},stopover:{type:"boolean"}},renderer:{}}});return t},!0);

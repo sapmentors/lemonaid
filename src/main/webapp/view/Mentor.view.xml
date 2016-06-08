@@ -1,6 +1,6 @@
 <mvc:View controllerName="com.sap.mentors.lemonaid.controller.Mentor" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
 	xmlns:core="sap.ui.core"
-	xmlns="sap.uxap" xmlns:layout="sap.ui.layout" xmlns:m="sap.m" xmlns:form="sap.ui.layout.form">
+	xmlns="sap.uxap" xmlns:layout="sap.ui.layout" xmlns:m="sap.m" xmlns:form="sap.ui.layout.form" xmlns:gmaps="openui5.googlemaps">
 	<m:Page title="{FullName}" navButtonPress="onNavBack" showNavButton="true">
 		<m:content>
 			<ObjectPageLayout id="ObjectPageLayout" enableLazyLoading="false" showTitleInHeaderContent="true" showEditHeaderButton="false"
@@ -79,7 +79,15 @@
 						<subSections>
 							<ObjectPageSubSection title="Connect 2">
 								<blocks>
-									
+								<form:SimpleForm labelMinWidth="192" maxContainerCols="2" layout="ResponsiveGridLayout" columnsL="1" columnsM="1" columnsXL="1" >
+								    <form:content>
+								        <gmaps:Map id="idMap" lat="{mentors>lat}" lng="{mentors>lng}" height="250px" zoom="8">
+								            <gmaps:markers>
+								                <gmaps:Marker lat="{mentors>lat}" lng="{mentors>lng}" info="{mentors>info}"   />
+								            </gmaps:markers>
+								        </gmaps:Map>
+								    </form:content>
+								</form:SimpleForm>					
 								</blocks>
 							</ObjectPageSubSection>
 						</subSections>
