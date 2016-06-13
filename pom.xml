@@ -18,7 +18,8 @@
     <properties>
         <java.version>1.7</java.version>
         <cxf.version>3.1.6</cxf.version>
-		<olingo.version>2.0.6</olingo.version>
+		<olingo.version>2.0.7-RC01</olingo.version>
+		<commons-codec.version>1.6</commons-codec.version>
         <tomcat.version>7.0.59</tomcat.version>
     </properties>
 
@@ -71,7 +72,7 @@
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
-			<version>3.0.1</version>
+			<version>3.0.1</version><!--$NO-MVN-MAN-VER$-->
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
@@ -94,6 +95,11 @@
 			<artifactId>olingo-odata2-api-annotation</artifactId>
 			<version>${olingo.version}</version>
 		</dependency>
+		<dependency>
+		    <groupId>commons-codec</groupId>
+		    <artifactId>commons-codec</artifactId>
+		    <version>${commons-codec.version}</version>
+		</dependency>
     </dependencies>
 
 	<build>
@@ -113,7 +119,15 @@
 	        </plugin>
         </plugins>
     </build>
-	
+
+ 	<repositories>
+        <repository>
+          <id>nexus</id>
+          <name>Lemonaid Repository</name>
+          <url>http://nexus.penninkhof.com/content/repositories/releases/</url>
+        </repository>
+    </repositories>
+    	
     <pluginRepositories>
         <pluginRepository>
             <id>spring-releases</id>
