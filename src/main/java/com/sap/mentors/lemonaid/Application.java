@@ -899,7 +899,7 @@ public class Application extends SpringBootServletInitializer {
 					mentorRepository.save(new Mentor(
 							UUID.randomUUID().toString(), 
 							"Fred Verheul",
-							new MentorStatus(MentorStatus.ACTIVE),
+							new MentorStatus(MentorStatus.ALUMNI),
 							"SAP Consultant",
 							"SOA People",
 							new RelationshipToSap(RelationshipToSap.PARTNER),
