@@ -50,7 +50,7 @@
 				updateFinished="onUpdateFinished">
 				<headerToolbar>
 					<Toolbar id="tableToolbar">
-						<Label text="{i18n>mentors} ({ui>/count})" class="sapMH4FontSize"  />
+						<!--<Label text="{i18n>mentors} ({ui>/count})" class="sapMH4FontSize"  />-->
 						<ToolbarSpacer />
 						<SearchField
 							id="searchField"
