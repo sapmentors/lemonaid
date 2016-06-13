@@ -3,94 +3,91 @@
 	xmlns:html="http://www.w3.org/1999/xhtml"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:semantic="sap.m.semantic"
+	xmlns:uxap="sap.uxap"
 	xmlns="sap.m">
 
-	<semantic:FullscreenPage
+	<Page
 		id="page"
-		navButtonPress="onNavBack"
-		showNavButton="true"
+		showNavButton="false"
+		showHeader="false"
 		title="{i18n>title}">
-		<semantic:content>
+		
+		<content>
 
-			<IconTabBar
-				id="iconTabBar"
-				select="onQuickFilter"
-				expandable="false"
-				applyContentPadding="false">
-				<items>
-					<IconTabFilter
-						key="all"
-						showAll="true"
-						count="{i18n>all}"
-						text="{i18n>mentors}"/>
-					<IconTabSeparator/>
-					<IconTabFilter
-						key="active"
-						icon="sap-icon://waiver"
-						iconColor="Positive"
-						count="{ui>/active}"
-						text="{i18n>activeMentors}"/>
-					<IconTabFilter
-						key="alumni"
-						icon="sap-icon://loan"
-						iconColor="Default"
-						count="{ui>/alumni}"
-						text="{i18n>alumni}"/>
-				</items>
-				<content>
+			<uxap:ObjectPageLayout
+				
+				enableLazyLoading="false" 
+				alwaysShowContentHeader="true" 
+				id="mainObjectPageLayout" 
+				subSectionLayout="TitleOnTop" 
+				useIconTabBar="true">
 
-					<Table
-						id="table"
-						inset="false"
-						growing="true"
-						growingScrollToLoad="true"
-						items="{
-							path: '/Mentors',
-							parameters: {
-								select: 'Id,Email1,FullName,ShirtNumber,RelationshipToSap/Name,MentorStatus/Name',
-								expand: 'MentorStatus,RelationshipToSap'
-							},
-							sorter: {path: 'ShirtNumber', descending: false}
-						}"
-						updateFinished="onUpdateFinished">
-						<headerToolbar>
-							<Toolbar id="tableToolbar">
-								<Label text="{i18n>mentors} ({ui>/count})" class="sapMH4FontSize"  />
-								<ToolbarSpacer />
-								<SearchField
-									id="searchField"
-									tooltip="{i18n>worklistSearchTooltip}"
-									search="onSearchPressed"
-									width="auto"/>
-							</Toolbar>
-						</headerToolbar>
-						<columns minScreenWidth="Tablet">
-							<Column id="photo" width="5rem">
-								<Text text="{i18n>photo}" visible="{= !${device>/system/phone} }" />
-							</Column>
-							<Column id="shirtNumber">
-								<Text text="{i18n>fullName}\n{i18n>shirtNumber}" visible="{= !${device>/system/phone} }" />
-							</Column>
-							<Column id="relationship" minScreenWidth="Tablet">
-								<Text text="{i18n>relSAP}" />	
-							</Column>
-							<Column id="status" minScreenWidth="Tablet">
-								<Text text="{i18n>mentorStatus}" />
-							</Column>
-						</columns>
-						<ColumnListItem id="columnListItem" type="Navigation" press="onMentorDetailPress">
-							<cells>
-								<Image width="4rem" height="4rem" src="{path:'Email1', formatter:'.getAvatarURL'}" class="sapMTableContentMargin avatarSmall sapUxAPObjectPageHeaderObjectImage-Circle" />
-								<ObjectIdentifier title="{FullName}" text="{ShirtNumber}" class="sapMTableContentMargin" />
-								<Text text="{RelationshipToSap/Name}" class="sapMTableContentMargin" />
-								<Text text="{MentorStatus/Name}" class="sapMTableContentMargin" />
-							</cells>
-						</ColumnListItem>
-					</Table>
+				<uxap:headerTitle>
+					<uxap:ObjectPageHeader 
+						headerDesign="Light" 
+						id="mainObjectPageHeader" 
+						isActionAreaAlwaysVisible="true"
+						isObjectIconAlwaysVisible="false" 
+						isObjectSubtitleAlwaysVisible="true" 
+						isObjectTitleAlwaysVisible="true"
+						objectImageAlt="mainDescription" 
+						objectImageShape="Circle" 
+						objectImageURI="" 
+						objectTitle="{i18n>title}" 
+						showPlaceholder="true" 
+						visible="false">
+						<!-- uxap:actions>
+							<uxap:ObjectPageHeaderActionButton icon="{mainView>/deltaFileIcon}" hideText="False" text="{/BSAR/JE_UPL_UPL_009}" type="Transparent"/>
+							<uxap:ObjectPageHeaderActionButton icon="{mainView>/fileListIcon}" hideText="False" text="{/BSAR/JE_UPL_UPL_022}" type="Transparent"/>
+						</uxap:actions -->
+					</uxap:ObjectPageHeader>
+				</uxap:headerTitle>
 
-				</content>
-			</IconTabBar> 
-		</semantic:content>
-	</semantic:FullscreenPage>
+				<uxap:sections>
+					<uxap:ObjectPageSection title="{i18n>mentors}">
+						<uxap:subSections>
+							<uxap:ObjectPageSubSection title="{i18n>mentors}">
+								<uxap:blocks>
+									<mvc:XMLView viewName="com.sap.mentors.lemonaid.view.MentorList"/>
+								</uxap:blocks>
+							</uxap:ObjectPageSubSection>
+						</uxap:subSections>
+					</uxap:ObjectPageSection>
+					
+					<uxap:ObjectPageSection title="{i18n>events}">
+						<uxap:subSections>
+							<uxap:ObjectPageSubSection title="{i18n>events}">
+								<uxap:blocks>
+									<Text text="please implement view: com.sap.mentors.lemonaid.view.Eventlist"/>
+								</uxap:blocks>
+							</uxap:ObjectPageSubSection>
+						</uxap:subSections>
+					</uxap:ObjectPageSection>
 
+					<uxap:ObjectPageSection title="{i18n>content}">
+						<uxap:subSections>
+							<uxap:ObjectPageSubSection title="{i18n>content}">
+								<uxap:blocks>
+									<Text text="please implement view: com.sap.mentors.lemonaid.view.ContentList" />
+								</uxap:blocks>
+							</uxap:ObjectPageSubSection>
+						</uxap:subSections>
+					</uxap:ObjectPageSection>
+
+					<uxap:ObjectPageSection title="{i18n>socialMedia}">
+						<uxap:subSections>
+							<uxap:ObjectPageSubSection title="{i18n>socialMedia}">
+								<uxap:blocks>
+									<Text text="please implement view: com.sap.mentors.lemonaid.view.SocialMedia" />
+								</uxap:blocks>
+							</uxap:ObjectPageSubSection>
+						</uxap:subSections>
+					</uxap:ObjectPageSection>
+
+				</uxap:sections>
+			</uxap:ObjectPageLayout>
+			
+		</content>
+
+	</Page>
 </mvc:View>
