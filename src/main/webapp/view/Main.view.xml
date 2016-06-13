@@ -2,10 +2,41 @@
 	controllerName="com.sap.mentors.lemonaid.controller.Main"
 	xmlns:html="http://www.w3.org/1999/xhtml"
 	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:semantic="sap.m.semantic"
 	xmlns="sap.m">
-	<App>
-		<pages>
-			<Page title="{i18n>title}">
+
+	<semantic:FullscreenPage
+		id="page"
+		navButtonPress="onNavBack"
+		showNavButton="true"
+		title="{i18n>title}">
+		<semantic:content>
+
+			<IconTabBar
+				id="iconTabBar"
+				select="onQuickFilter"
+				expandable="false"
+				applyContentPadding="false">
+				<items>
+					<IconTabFilter
+						key="all"
+						showAll="true"
+						count="{i18n>all}"
+						text="{i18n>mentors}"/>
+					<IconTabSeparator/>
+					<IconTabFilter
+						key="active"
+						icon="sap-icon://waiver"
+						iconColor="Positive"
+						count="{ui>/active}"
+						text="{i18n>activeMentors}"/>
+					<IconTabFilter
+						key="alumni"
+						icon="sap-icon://loan"
+						iconColor="Default"
+						count="{ui>/alumni}"
+						text="{i18n>alumni}"/>
+				</items>
 				<content>
 
 					<Table
@@ -58,7 +89,8 @@
 					</Table>
 
 				</content>
-			</Page>
-		</pages>
-	</App>
+			</IconTabBar> 
+		</semantic:content>
+	</semantic:FullscreenPage>
+
 </mvc:View>

@@ -27,7 +27,7 @@
     }
   ],
   "codeCheckingTriggers": {
-    "notifyBeforePush": true,
+    "notifyBeforePush": false,
     "notifyBeforePushLevel": "Error",
     "blockPush": false,
     "blockPushLevel": "Error"

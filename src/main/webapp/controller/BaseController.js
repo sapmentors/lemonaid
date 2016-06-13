@@ -16,6 +16,14 @@ sap.ui.define([
         },
 
         /**
+         * get the apps event bys
+         * @return {object} app event bus
+         */
+		getEventBus: function(){
+			return this.getOwnerComponent().getEventBus();
+		},
+
+        /**
          * get Componet
          * @return {[type]} [description]
          */
@@ -23,22 +31,35 @@ sap.ui.define([
             return this.getOwnerComponent();
         },
 
-        /**
-         * get the model with name from the component
-         * @param  {string} sName the name of the model
-         * @return {object}       named model
-         */
-        getModel: function(sName) {
-            return this.getView().getModel(sName) || this.getOwnerComponent().getModel(sName);
-        },
+		/**
+		 * Convenience method for getting the view model by name.
+		 * @public
+		 * @param {string} [sName] the model name
+		 * @returns {sap.ui.model.Model} the model instance
+		 */
+		getModel: function(sName) {
+			return this.getView().getModel(sName);
+		},
 
-        /**
-         * get the resource model
-         * @return {[type]} [description]
-         */
-        getResourceBundle: function() {
-            return this.getModel("i18n").getResourceBundle();
-        },
+		/**
+		 * Convenience method for setting the view model.
+		 * @public
+		 * @param {sap.ui.model.Model} oModel the model instance
+		 * @param {string} sName the model name
+		 * @returns {sap.ui.mvc.View} the view instance
+		 */
+		setModel: function(oModel, sName) {
+			return this.getView().setModel(oModel, sName);
+		},
+
+		/**
+		 * Getter for the resource bundle.
+		 * @public
+		 * @returns {sap.ui.model.resource.ResourceModel} the resourceModel of the component
+		 */
+		getResourceBundle: function() {
+			return this.getOwnerComponent().getModel("i18n").getResourceBundle();
+		},
 
         /**
          * get the message manager - MM  is a unified error handler, it parses both client
