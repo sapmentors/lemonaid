@@ -201,6 +201,14 @@ public class Mentor {
 		this.status = status;
 	}
 
+	public String getStatusId() {
+		return status.getId();
+	}
+
+	public void setStatusId(String statusId) {
+		status = new Status(statusId);
+	}
+
 	public String getJobTitle() {
 		return jobTitle;
 	}

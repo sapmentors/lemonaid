@@ -47,6 +47,7 @@ public class JPAEdmExtension implements org.apache.olingo.odata2.jpa.processor.a
 			}
 			
 			if (entityType.getName().equals("Mentor")) {
+				entityType.getProperties().add(new SimpleProperty().setName("StatusId").setType(EdmSimpleTypeKind.String));
 				entityType.getProperties().add(new SimpleProperty().setName("CountryId").setType(EdmSimpleTypeKind.String));
 				entityType.getProperties().add(new SimpleProperty().setName("LineOfBusiness1Id").setType(EdmSimpleTypeKind.String));
 				entityType.getProperties().add(new SimpleProperty().setName("LineOfBusiness2Id").setType(EdmSimpleTypeKind.String));
