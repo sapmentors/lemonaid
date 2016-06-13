@@ -61,10 +61,10 @@
 				</headerToolbar>
 				<columns minScreenWidth="Tablet">
 					<Column id="photo" width="5rem">
-						<Text text="{i18n>photo}" visible="{= !${device>/system/phone} }" />
+						<Text text="" visible="{= !${device>/system/phone} }" />
 					</Column>
 					<Column id="shirtNumber">
-						<Text text="{i18n>fullName}\n{i18n>shirtNumber}" visible="{= !${device>/system/phone} }" />
+						<Text text="{i18n>fullName}" visible="{= !${device>/system/phone} }" />
 					</Column>
 					<Column id="relationship" minScreenWidth="Tablet">
 						<Text text="{i18n>relSAP}" />	
