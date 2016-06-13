@@ -206,7 +206,7 @@ public class Mentor {
 	}
 
 	public void setStatusId(String statusId) {
-		status = new Status(statusId);
+		status = new MentorStatus(statusId);
 	}
 
 	public String getJobTitle() {
