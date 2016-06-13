@@ -21,13 +21,13 @@
 			<IconTabSeparator/>
 			<IconTabFilter
 				key="active"
-				icon="sap-icon://waiver"
+				icon="sap-icon://person-placeholder"
 				iconColor="Positive"
 				count="{ui>/active}"
 				text="{i18n>activeMentors}"/>
 			<IconTabFilter
 				key="alumni"
-				icon="sap-icon://loan"
+				icon="sap-icon://person-placeholder"
 				iconColor="Default"
 				count="{ui>/alumni}"
 				text="{i18n>alumni}"/>
