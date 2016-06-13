@@ -59,9 +59,9 @@
 								<ToolbarSpacer />
 								<SearchField
 									id="searchField"
+									tooltip="{i18n>worklistSearchTooltip}"
 									search="onSearchPressed"
-									placeholder="{i18n>searchPlaceholder}"
-									width="{= ${device>/system/phone} ? '50%' : '30%' }" />
+									width="auto"/>
 							</Toolbar>
 						</headerToolbar>
 						<columns minScreenWidth="Tablet">
