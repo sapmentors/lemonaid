@@ -62,6 +62,9 @@
 				<Page id="Mentors" showHeader="false">
 					<mvc:XMLView viewName="com.sap.mentors.lemonaid.view.MentorList"/>
 				</Page>
+				<Page id="Mentor" showHeader="false" enableScrolling="false">
+					<mvc:XMLView viewName="com.sap.mentors.lemonaid.view.Mentor"/>
+				</Page>
 				<Page id="Events" showHeader="false">
 					<mvc:XMLView viewName="com.sap.mentors.lemonaid.view.EventList"/>
 				</Page>
@@ -73,7 +76,6 @@
 				</Page>
 			</NavContainer>
 		</tnt:mainContents>
-
 			
 	</tnt:ToolPage>
 </mvc:View>

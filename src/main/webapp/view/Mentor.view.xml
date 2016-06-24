@@ -1,106 +1,109 @@
 <mvc:View 
 	controllerName="com.sap.mentors.lemonaid.controller.Mentor" 
-	xmlns:html="http://www.w3.org/1999/xhtml" 
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:core="sap.ui.core"
 	xmlns="sap.uxap" 
-	xmlns:layout="sap.ui.layout" 
+	xmlns:l="sap.ui.layout" 
 	xmlns:m="sap.m" 
-	xmlns:form="sap.ui.layout.form" 
+	xmlns:f="sap.ui.layout.form" 
 	xmlns:gmaps="openui5.googlemaps">
-	<m:Page title="{FullName}" navButtonPress="onNavBack" showNavButton="true">
-		<m:content>
-			<ObjectPageLayout id="ObjectPageLayout" enableLazyLoading="false" showTitleInHeaderContent="true" showEditHeaderButton="false"
-				editHeaderButtonPress="handleEditBtnPress">
-				<headerTitle>
-					<ObjectPageHeader 
-						id="header"
-						objectImageURI="images/logo.png"
-						objectTitle="{FullName}"
-						objectImageShape="Circle"
-						objectImageAlt="{FullName}"
-						objectSubtitle="{JobTitle}"
-						isObjectIconAlwaysVisible="false"
-						isObjectTitleAlwaysVisible="false"
-						isObjectSubtitleAlwaysVisible="false">
-						<actions>
-							<!--
-							<ObjectPageHeaderActionButton icon="sap-icon://pull-down" text="show section" type="Emphasized"/>
-							<ObjectPageHeaderActionButton icon="sap-icon://show" text="show state" type="Emphasized"/>
-							-->
-						</actions>
-					</ObjectPageHeader>
-				</headerTitle>
-				<headerContent>
-					<m:NumericContent value="{ShirtNumber}" size="M" />
-					<layout:VerticalLayout>
-						<m:Label text="{City}, {Country/Name}"/>
-						<m:Link text="{Phone}"/>
-						<m:Link text="{Email1}"/>
-						<m:Link text="{Email2}"/>
-					</layout:VerticalLayout>
-					<layout:HorizontalLayout>
-						<m:Image src="images/linkedin.png"></m:Image>
-						<m:Image src="images/Twitter.png"></m:Image>
-					</layout:HorizontalLayout>
-					<layout:VerticalLayout>
-						<m:Label text="{Bio}"/>
-					</layout:VerticalLayout>
-					<layout:VerticalLayout>
-					</layout:VerticalLayout>
-				</headerContent>
-				<sections>
-					<ObjectPageSection title="About" importance="Medium">
-						<subSections>
-							<ObjectPageSubSection title="Connect">
-								<blocks>
-									<form:SimpleForm labelMinWidth="192" maxContainerCols="2" layout="ResponsiveGridLayout" columnsL="1" columnsM="1" columnsXL="1">
-										<form:title>
-											<core:Title text="{i18n>status}"/>
-										</form:title>
-										<form:content>
-										<m:Label text="{i18n>relSAP}"/>
-										<m:Text text="{RelationshipToSap/Name}"/>
-										<m:Label text="{i18n>mentorStatus}"/>
-										<m:Text text="{MentorStatus/Name}"/>
-										</form:content>
-									</form:SimpleForm>
-									<form:SimpleForm labelMinWidth="192" maxContainerCols="2" layout="ResponsiveGridLayout" columnsL="1" columnsM="1" columnsXL="1">
-										<form:title>
-											<core:Title text="{i18n>socialAccounts}"/>
-										</form:title>
-										<form:content>
-										<m:Label text="SCN"/>
-										<m:Link href="{ScnUrl}" text="{ScnUrl}" target="_blank"/>
-										<m:Label text="LinkedIn"/>
-										<m:Link href="{LinkedInUrl}" text="{LinkedInUrl}" target="_blank"/>
-										<m:Label text="Twitter"/>
-										<m:Text text="{TwitterId}"/>
-										<m:Label text="Facebook"/>
-										<m:Link href="{FacebookUrl}" text="{FacebookUrl}" target="_blank"/>
-										</form:content>
-									</form:SimpleForm>
-								</blocks>
-							</ObjectPageSubSection>
-						</subSections>
-						<subSections>
-							<ObjectPageSubSection title="Connect 2">
-								<blocks>
-								<form:SimpleForm labelMinWidth="192" maxContainerCols="2" layout="ResponsiveGridLayout" columnsL="1" columnsM="1" columnsXL="1" >
-								    <form:content>
-								        <gmaps:Map id="idMap" lat="{mentors>lat}" lng="{mentors>lng}" height="250px" zoom="8">
-								            <gmaps:markers>
-								                <gmaps:Marker lat="{mentors>lat}" lng="{mentors>lng}" info="{mentors>info}"   />
-								            </gmaps:markers>
-								        </gmaps:Map>
-								    </form:content>
-								</form:SimpleForm>					
-								</blocks>
-							</ObjectPageSubSection>
-						</subSections>
-					</ObjectPageSection>
-				</sections>
-			</ObjectPageLayout>
-		</m:content>
-	</m:Page>
+	<ObjectPageLayout 
+		id="ObjectPageLayout" 
+		enableLazyLoading="false" 
+		showTitleInHeaderContent="true"
+		showEditHeaderButton="false"
+		editHeaderButtonPress="handleEditBtnPress">
+		<headerTitle>
+			<ObjectPageHeader 
+				id="header"
+				objectImageURI="images/logo.png"
+				objectTitle="{FullName}"
+				objectImageShape="Circle"
+				objectImageAlt="{FullName}"
+				objectSubtitle="{JobTitle}"
+				isObjectIconAlwaysVisible="false"
+				isObjectTitleAlwaysVisible="false"
+				isObjectSubtitleAlwaysVisible="false">
+				<navigationBar>
+					<m:Bar>
+						<m:contentLeft>
+							<m:Button icon="sap-icon://nav-back" press="onNavBack"/>
+						</m:contentLeft>
+						<m:contentRight>
+							<m:Button icon="sap-icon://edit" text="{i18n>edit}" press="onEdit"/>
+						</m:contentRight>
+					</m:Bar>					
+				</navigationBar>
+			</ObjectPageHeader>
+		</headerTitle>
+		<headerContent>
+			<m:NumericContent value="{ShirtNumber}" size="M" />
+			<l:VerticalLayout>
+				<m:Label text="{City}, {Country/Name}"/>
+				<m:Link text="{Phone}"/>
+				<m:Link text="{Email1}"/>
+				<m:Link text="{Email2}"/>
+			</l:VerticalLayout>
+			<l:HorizontalLayout>
+				<m:Image src="images/linkedin.png"></m:Image>
+				<m:Image src="images/Twitter.png"></m:Image>
+			</l:HorizontalLayout>
+			<l:VerticalLayout>
+				<m:Label text="{Bio}"/>
+			</l:VerticalLayout>
+			<l:VerticalLayout>
+			</l:VerticalLayout>
+		</headerContent>
+		<sections>
+			<ObjectPageSection title="About" importance="Medium">
+				<subSections>
+					<ObjectPageSubSection title="Connect">
+						<blocks>
+							<f:SimpleForm labelMinWidth="192" maxContainerCols="2" layout="ResponsiveGridLayout" columnsL="1" columnsM="1" columnsXL="1">
+								<f:title>
+									<core:Title text="{i18n>status}"/>
+								</f:title>
+								<f:content>
+								<m:Label text="{i18n>relSAP}"/>
+								<m:Text text="{RelationshipToSap/Name}"/>
+								<m:Label text="{i18n>mentorStatus}"/>
+								<m:Text text="{MentorStatus/Name}"/>
+								</f:content>
+							</f:SimpleForm>
+							<f:SimpleForm labelMinWidth="192" maxContainerCols="2" layout="ResponsiveGridLayout" columnsL="1" columnsM="1" columnsXL="1">
+								<f:title>
+									<core:Title text="{i18n>socialAccounts}"/>
+								</f:title>
+								<f:content>
+								<m:Label text="SCN"/>
+								<m:Link href="{ScnUrl}" text="{ScnUrl}" target="_blank"/>
+								<m:Label text="LinkedIn"/>
+								<m:Link href="{LinkedInUrl}" text="{LinkedInUrl}" target="_blank"/>
+								<m:Label text="Twitter"/>
+								<m:Text text="{TwitterId}"/>
+								<m:Label text="Facebook"/>
+								<m:Link href="{FacebookUrl}" text="{FacebookUrl}" target="_blank"/>
+								</f:content>
+							</f:SimpleForm>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+				<subSections>
+					<ObjectPageSubSection title="Connect 2">
+						<blocks>
+						<f:SimpleForm labelMinWidth="192" maxContainerCols="2" layout="ResponsiveGridLayout" columnsL="1" columnsM="1" columnsXL="1" >
+						    <f:content>
+						        <gmaps:Map id="idMap" lat="{mentors>lat}" lng="{mentors>lng}" height="350px" zoom="8">
+						            <gmaps:markers>
+						                <gmaps:Marker lat="{mentors>lat}" lng="{mentors>lng}" info="{mentors>info}"   />
+						            </gmaps:markers>
+						        </gmaps:Map>
+						    </f:content>
+						</f:SimpleForm>					
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+		</sections>
+	</ObjectPageLayout>
 </mvc:View>

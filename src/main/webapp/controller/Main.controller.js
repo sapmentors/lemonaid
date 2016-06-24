@@ -19,6 +19,9 @@ sap.ui.define([
         onInit: function() {
         	this.view = this.getView();
         	this.router = this.getRouter();
+        	this.component = this.getComponent();
+        	this.toolPage = this.view.byId("toolPage");
+        	this.device = this.component.getModel("device");
         	this.router.attachRoutePatternMatched(this.onRoutePatternMatched, this);
         },
 
@@ -38,13 +41,14 @@ sap.ui.define([
         },
         
 		onHamburgerPress: function() {
-			var viewId = this.view.getId();
-			var toolPage = sap.ui.getCore().byId(viewId + "--toolPage");
- 			toolPage.setSideExpanded(!toolPage.getSideExpanded());
+ 			this.toolPage.setSideExpanded(!this.toolPage.getSideExpanded());
 		},
 		
 		onMenuSelect: function(event) {
             this.router.navTo(event.getParameter('item').getKey(), null, true);
+            if (this.device.getProperty("/system/phone")) {
+ 				this.toolPage.setSideExpanded(false);
+            }
 		}
 
 	});
