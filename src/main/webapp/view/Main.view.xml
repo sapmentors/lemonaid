@@ -36,7 +36,7 @@
 
 		<tnt:sideContent>
 			<tnt:SideNavigation expanded="false" itemSelect="onMenuSelect">
-				<tnt:NavigationList>
+				<tnt:NavigationList id="NavigationList">
 					<tnt:NavigationListItem 
 						key="Mentors"
 						text="{i18n>mentors}" 

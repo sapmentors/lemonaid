@@ -36,6 +36,13 @@ sap.ui.define([
         			this.router.navTo("Mentors", null, true);
         			break;
         		default:
+        			var navList = this.view.byId("NavigationList");
+        			var items = navList.getItems();
+        			for (var i = 0; i < items.length; i++) {
+        				if (items[i].getKey() === key) {
+        					navList.setSelectedItem(items[i]);
+        				}
+        			}
 					this.view.byId("pageContainer").to(this.getView().byId(key));
         	}
         },
