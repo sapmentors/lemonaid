@@ -24,7 +24,10 @@ sap.ui.define([
         	this.map = this.byId("map");
             this.ui = new JSONModel({ tableBusyDelay: 0, count: 0, mentors: 0, alumni: 0 });
             this.model = this.getComponent().getModel();
-            this.getView().setModel(this.ui, "ui");
+            this.view = this.getView();
+            this.router = this.getRouter();
+            this.view.setModel(this.ui, "ui");
+            this.router.getRoute("Mentors").attachMatched(this.onRouteMatched, this);
 
 			// Make sure, busy indication is showing immediately so there is no
 			// break after the busy indication for loading the view's meta data is
@@ -93,6 +96,13 @@ sap.ui.define([
 					new sap.ui.model.Filter("MentorStatus/Id", "EQ", oEvent.getParameter("key"));
 			this.table.getBinding("items").filter(filter);
 			this.map.getBinding("markers").filter(filter);
+		},
+		
+		onRouteMatched: function() {
+			var that = this;
+			jQuery.sap.delayedCall(500, this, function() {
+				that.view.byId("searchField").focus();
+			});
 		}
 
 		/* =========================================================== */
