@@ -17,7 +17,18 @@ sap.ui.define([
 		 * @public
 		 */
         onInit: function() {
-        }
+        },
+
+		/* =========================================================== */
+		/* event handlers                                              */
+		/* =========================================================== */
+        
+		onSideNavButtonPress : function() {
+			var viewId = this.getView().getId();
+			var toolPage = sap.ui.getCore().byId(viewId + "--toolPage");
+			var sideExpanded = toolPage.getSideExpanded();
+ 			toolPage.setSideExpanded(!toolPage.getSideExpanded());
+		}
 
 	});
 });

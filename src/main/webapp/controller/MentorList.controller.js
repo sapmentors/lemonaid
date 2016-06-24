@@ -25,13 +25,14 @@ sap.ui.define([
 			// Make sure, busy indication is showing immediately so there is no
 			// break after the busy indication for loading the view's meta data is
 			// ended (see promise 'oWhenMetadataIsLoaded' in AppController)
-			var that = this,
-				originalBusyDelay = this.table.getBusyIndicatorDelay();
-			this.table.attachEventOnce("updateFinished", function(){
-				// Restore original busy indicator delay for worklist's table
-				that.ui.setProperty("/tableBusyDelay", originalBusyDelay);
-			});
-
+			if (this.table) {
+				var that = this,
+					originalBusyDelay = this.table.getBusyIndicatorDelay();
+				this.table.attachEventOnce("updateFinished", function(){
+					// Restore original busy indicator delay for worklist's table
+					that.ui.setProperty("/tableBusyDelay", originalBusyDelay);
+				});
+			}
         },
 
         onSearchPressed: function(event) {

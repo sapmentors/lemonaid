@@ -2,92 +2,65 @@
 	controllerName="com.sap.mentors.lemonaid.controller.Main"
 	xmlns:html="http://www.w3.org/1999/xhtml"
 	xmlns:mvc="sap.ui.core.mvc"
-	xmlns:semantic="sap.m.semantic"
-	xmlns:uxap="sap.uxap"
+	xmlns:tnt="sap.tnt"
 	xmlns="sap.m">
 
-	<Page
-		id="page"
-		showNavButton="false"
-		showHeader="false"
-		title="{i18n>title}">
+	<tnt:ToolPage 
+		id="toolPage"
+		sideExpanded="false">
+	
+		<tnt:header>
+			<tnt:ToolHeader>
+				<Button id="sideNavigationToggleButton"
+						icon="sap-icon://menu2"
+						type="Transparent"
+						press="onSideNavButtonPress">
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow" />
+					</layoutData>
+				</Button>
+				<ToolbarSpacer width="0" />
+				<Text text="{i18n>title}" />	
+				<ToolbarSpacer>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow" minWidth="20px" />
+					</layoutData>
+				</ToolbarSpacer>
+				<Button text="{user>/displayName}" type="Transparent" press="onPressUserNamePress">
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow" />
+					</layoutData>
+				</Button>
+			</tnt:ToolHeader>
+		</tnt:header>
+
+		<tnt:sideContent>
+			<tnt:SideNavigation expanded="false" itemSelect="onItemSelect">
+				<tnt:NavigationList>
+					<tnt:NavigationListItem 
+						text="{i18n>mentors}" 
+						icon="sap-icon://person-placeholder" />
+					<tnt:NavigationListItem 
+						text="{i18n>events}" 
+						icon="sap-icon://calendar" />
+					<tnt:NavigationListItem 
+						text="{i18n>content}" 
+						icon="sap-icon://documents" />
+					<tnt:NavigationListItem 
+						text="{i18n>socialMedia}" 
+						icon="sap-icon://discussion" />
+				</tnt:NavigationList>
+			</tnt:SideNavigation>
+		</tnt:sideContent>
 		
-		<content>
+		<tnt:mainContents>
+			<NavContainer id="pageContainer">
+				<pages>
+					<mvc:XMLView viewName="com.sap.mentors.lemonaid.view.MentorList"/>
+				</pages>
+			</NavContainer>
+		</tnt:mainContents>
 
-			<uxap:ObjectPageLayout
-				
-				enableLazyLoading="false" 
-				alwaysShowContentHeader="true" 
-				id="mainObjectPageLayout" 
-				subSectionLayout="TitleOnTop" 
-				useIconTabBar="true">
-
-				<uxap:headerTitle>
-					<uxap:ObjectPageHeader 
-						headerDesign="Light" 
-						id="mainObjectPageHeader" 
-						isActionAreaAlwaysVisible="true"
-						isObjectIconAlwaysVisible="false" 
-						isObjectSubtitleAlwaysVisible="true" 
-						isObjectTitleAlwaysVisible="true"
-						objectImageAlt="mainDescription" 
-						objectImageShape="Circle" 
-						objectImageURI="" 
-						objectTitle="{i18n>title}" 
-						showPlaceholder="true" 
-						visible="false">
-						<!-- uxap:actions>
-							<uxap:ObjectPageHeaderActionButton icon="{mainView>/deltaFileIcon}" hideText="False" text="{/BSAR/JE_UPL_UPL_009}" type="Transparent"/>
-							<uxap:ObjectPageHeaderActionButton icon="{mainView>/fileListIcon}" hideText="False" text="{/BSAR/JE_UPL_UPL_022}" type="Transparent"/>
-						</uxap:actions -->
-					</uxap:ObjectPageHeader>
-				</uxap:headerTitle>
-
-				<uxap:sections>
-					<uxap:ObjectPageSection title="{i18n>mentors}">
-						<uxap:subSections>
-							<uxap:ObjectPageSubSection title="{i18n>mentors}">
-								<uxap:blocks>
-									<mvc:XMLView viewName="com.sap.mentors.lemonaid.view.MentorList"/>
-								</uxap:blocks>
-							</uxap:ObjectPageSubSection>
-						</uxap:subSections>
-					</uxap:ObjectPageSection>
-					
-					<uxap:ObjectPageSection title="{i18n>events}">
-						<uxap:subSections>
-							<uxap:ObjectPageSubSection title="{i18n>events}">
-								<uxap:blocks>
-									<Text text="please implement view: com.sap.mentors.lemonaid.view.Eventlist"/>
-								</uxap:blocks>
-							</uxap:ObjectPageSubSection>
-						</uxap:subSections>
-					</uxap:ObjectPageSection>
-
-					<uxap:ObjectPageSection title="{i18n>content}">
-						<uxap:subSections>
-							<uxap:ObjectPageSubSection title="{i18n>content}">
-								<uxap:blocks>
-									<Text text="please implement view: com.sap.mentors.lemonaid.view.ContentList" />
-								</uxap:blocks>
-							</uxap:ObjectPageSubSection>
-						</uxap:subSections>
-					</uxap:ObjectPageSection>
-
-					<uxap:ObjectPageSection title="{i18n>socialMedia}">
-						<uxap:subSections>
-							<uxap:ObjectPageSubSection title="{i18n>socialMedia}">
-								<uxap:blocks>
-									<Text text="please implement view: com.sap.mentors.lemonaid.view.SocialMedia" />
-								</uxap:blocks>
-							</uxap:ObjectPageSubSection>
-						</uxap:subSections>
-					</uxap:ObjectPageSection>
-
-				</uxap:sections>
-			</uxap:ObjectPageLayout>
 			
-		</content>
-
-	</Page>
+	</tnt:ToolPage>
 </mvc:View>

@@ -1,12 +1,20 @@
 {
-  "routes": [
-    {
-      "path": "/odata.svc",
-      "target": {
-        "type": "destination",
-        "name": "Lemonaid"
-      },
-      "description": "Lemonaid"
-    }
-  ]
+    "routes": [
+        {
+            "path": "/odata.svc",
+            "target": {
+                "type": "destination",
+                "name": "Lemonaid"
+            },
+            "description": "Lemonaid services"
+        },
+        {
+            "path": "/userapi",
+            "target": {
+                "type": "service",
+                "name": "userapi"
+            },
+            "description": "User API services"
+        }
+    ]
 }
