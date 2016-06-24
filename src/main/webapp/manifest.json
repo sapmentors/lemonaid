@@ -22,6 +22,10 @@
 					"odataVersion": "2.0",
 					"localUri": "/localService/metadata.xml"
 				}
+			},
+			"user": {
+				"uri": "/userapi/currentUser",
+				"type": "JSON"
 			}
 		}
 	},
@@ -73,6 +77,13 @@
 				"type": "sap.ui.model.resource.ResourceModel",
 				"settings": {
 					"bundleName": "com.sap.mentors.lemonaid.i18n.i18n"
+				}
+			},
+			"user": {
+				"type": "sap.ui.model.json.JSONModel",
+				"dataSource": "user",		
+				"settings": {
+					"defaultBindingMode": "OneWay"
 				}
 			},
 			"": {

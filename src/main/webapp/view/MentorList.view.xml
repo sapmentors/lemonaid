@@ -1,0 +1,48 @@
+<mvc:View 
+	controllerName="com.sap.mentors.lemonaid.controller.MentorList" 
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns:core="sap.ui.core">
+
+	<IconTabBar
+		id="iconTabBar"
+		select="onQuickFilter"
+		expandable="false"
+		stretchContentHeight="true"
+		applyContentPadding="false">
+		<items>
+			<IconTabFilter
+				key="all"
+				showAll="true"
+				count="{i18n>all}"
+				text="{i18n>mentors}"/>
+			<IconTabSeparator/>
+			<IconTabFilter
+				key="active"
+				icon="sap-icon://person-placeholder"
+				iconColor="Positive"
+				count="{ui>/active}"
+				text="{i18n>activeMentors}"/>
+			<IconTabFilter
+				key="alumni"
+				icon="sap-icon://person-placeholder"
+				iconColor="Default"
+				count="{ui>/alumni}"
+				text="{i18n>alumni}"/>
+		</items>
+		<content>
+			<l:ResponsiveSplitter defaultPane="default">
+				<l:PaneContainer>
+					<l:SplitPane requiredParentWidth="400" id="default">
+						<core:Fragment fragmentName="com.sap.mentors.lemonaid.view.MentorTable" type="XML"/>
+					</l:SplitPane>
+					<l:SplitPane requiredParentWidth="800" demandPane="false">
+						<Text text="Map here" />
+					</l:SplitPane>
+				</l:PaneContainer>
+			</l:ResponsiveSplitter>
+		</content>
+	</IconTabBar> 
+
+</mvc:View>

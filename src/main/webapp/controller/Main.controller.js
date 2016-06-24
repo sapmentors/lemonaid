@@ -8,29 +8,27 @@ sap.ui.define([
 
     return BaseController.extend("com.sap.mentors.lemonaid.controller.Main", {
 
+		/* =========================================================== */
+		/* lifecycle methods                                           */
+		/* =========================================================== */
+
+		/**
+		 * Called when the view controller is instantiated.
+		 * @public
+		 */
         onInit: function() {
-            this.ui = new JSONModel({ count: 0 });
-            this.getView().setModel(this.ui, "ui");
         },
 
-        onSearchPressed: function(event) {
-            var search = event.getParameters().query;
-            this.getView().byId("table").getBinding("items").filter(
-                [new Filter([
-                    new Filter("FullName", FilterOperator.Contains, search)
-                ], false)]);
-        },
+		/* =========================================================== */
+		/* event handlers                                              */
+		/* =========================================================== */
+        
+		onSideNavButtonPress : function() {
+			var viewId = this.getView().getId();
+			var toolPage = sap.ui.getCore().byId(viewId + "--toolPage");
+			var sideExpanded = toolPage.getSideExpanded();
+ 			toolPage.setSideExpanded(!toolPage.getSideExpanded());
+		}
 
-        onUpdateFinished: function(event) {
-            this.ui.setProperty("/count", event.getParameter("total"));
-        },
-
-        onMentorDetailPress: function(event) {
-            this.getRouter().navTo("Mentor", {
-                Id: event.getSource().getBindingContext().getProperty("Id")
-            });
-        }
-
-    });
-
+	});
 });

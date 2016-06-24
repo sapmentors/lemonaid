@@ -1,23 +1,6 @@
 {
   "run": [
     {
-      "filePath": "/src/main/webapp/Component.js",
-      "previewMode": 1,
-      "dataMode": 1,
-      "workspace": "withoutWorkspace",
-      "ui5ActiveVersion": null,
-      "ui5VerSource": null,
-      "isDefaultVersion": 0,
-      "urlParameters": [],
-      "hashParameter": "",
-      "backendSystem": [],
-      "_metadata": {
-        "runnerId": "fiorirunner",
-        "id": 1270074,
-        "displayName": "Run Component.js"
-      }
-    },
-    {
       "filePath": "/src/main/webapp/index.html",
       "previewMode": 1,
       "dataMode": 1,
@@ -41,7 +24,8 @@
       "_metadata": {
         "id": 87567846,
         "runnerId": "webapprunner",
-        "displayName": "App"
+        "displayName": "App",
+        "lastRunTimeStamp": 1466755500786
       }
     },
     {
@@ -68,7 +52,8 @@
       "_metadata": {
         "id": 87567847,
         "runnerId": "webapprunner",
-        "displayName": "App (Mock Server)"
+        "displayName": "App (Mock Server)",
+        "lastRunTimeStamp": 1466667882871
       }
     },
     {
@@ -149,6 +134,23 @@
         "id": 7524840,
         "runnerId": "webapprunner",
         "displayName": "Test Suite (Unit, OPA)"
+      }
+    },
+    {
+      "filePath": "/src/main/webapp/Component.js",
+      "previewMode": 1,
+      "dataMode": 1,
+      "workspace": "withoutWorkspace",
+      "ui5ActiveVersion": null,
+      "ui5VerSource": null,
+      "isDefaultVersion": 0,
+      "urlParameters": [],
+      "hashParameter": "",
+      "backendSystem": [],
+      "_metadata": {
+        "id": 1270074,
+        "runnerId": "fiorirunner",
+        "displayName": "Run Component.js"
       }
     }
   ]

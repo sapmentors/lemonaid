@@ -2,3 +2,31 @@
 	border-radius: 4rem;
 	border: 0.2rem solid rgba(0,73,144,0.2);
 }
+
+.withoutMargin {
+	margin: 0rem 0rem !important;
+}
+
+/* =========================================================== */
+/* Styling of toolpage's side nav bar to get light Grey on a   */
+/* dark background                                             */
+/* =========================================================== */
+
+.sapTntSideNavigation {
+    background: #444 !important;
+    color: #e5e5e5 !important;
+}
+
+.sapTntNavLIItemSelected .sapTntNavLIGroup {
+    background-color: #666 !important;
+    color: #e5e5e5 !important;
+}
+
+.sapTntNavLIGroup {
+    background-color: #444 !important;
+    color: #e5e5e5 !important;
+}
+
+.sapTntNavLIGroup>.sapUiIcon {
+    color: #e5e5e5 !important;
+}

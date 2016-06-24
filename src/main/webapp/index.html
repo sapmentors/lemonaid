@@ -8,12 +8,13 @@
 
 	<!-- Bootstrapping UI5 -->
 	<script id="sap-ui-bootstrap"
-			src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+			src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"
 			data-sap-ui-libs="sap.m"
 			data-sap-ui-theme="sap_bluecrystal"
 			data-sap-ui-compatVersion="edge"
 			data-sap-ui-resourceroots='{"com.sap.mentors.lemonaid": ""}'
-			data-sap-ui-frameOptions="trusted">
+			data-sap-ui-frameOptions="trusted"
+			data-sap-ui-preload="async">
 	</script>
 
 	<script>
@@ -24,6 +25,7 @@
 			], function (Shell, ComponentContainer) {
 				// initialize the UI component
 				new Shell({
+					appWidthLimited: false,
 					app: new ComponentContainer({
 						height : "100%",
 						name : "com.sap.mentors.lemonaid"
