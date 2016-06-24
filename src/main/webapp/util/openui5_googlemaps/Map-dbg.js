@@ -96,7 +96,7 @@
                 oRm.write("<div ");
                 oRm.writeControlData(oControl);
                 oRm.addStyle("width", "auto");
-                oRm.addStyle("height", "auto");
+                oRm.addStyle("height", oControl.getHeight() === "100%" ?  "100%" : "auto");
                 oRm.writeClasses();
                 oRm.writeStyles();
                 oRm.write(">");
