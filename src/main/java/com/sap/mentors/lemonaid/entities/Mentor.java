@@ -49,6 +49,8 @@ public class Mentor {
     private String zip;
     @ManyToOne private Country country;
     private String phone;
+    private Double latitude;
+    private Double longitude;
     
     @ManyToOne private Region region;
     
@@ -93,6 +95,7 @@ public class Mentor {
     		String bio,
     		String email1, String email2, int preferredEmail,
     		String address, String city, String state, String zip, Country country, String phone,
+    		Double latitude, Double longitude,
     		Region region,
     		int shirtNumber, String shirtText, Size shirtSize, Gender shirtMF,
     		String scnUrl, String twitterId, String linkedInUrl, String xingUrl, String facebookUrl,
@@ -137,6 +140,9 @@ public class Mentor {
         this.zip = zip;
         this.country = country;
         this.phone = phone;
+        
+        this.latitude = latitude;
+        this.longitude = longitude;
         
         this.region = region;
         
@@ -463,6 +469,22 @@ public class Mentor {
 
 	public void setPhone(String phone) {
 		this.phone = phone;
+	}
+
+	public Double getLatitude() {
+		return latitude;
+	}
+
+	public void setLatitude(Double latitude) {
+		this.latitude = latitude;
+	}
+
+	public Double getLongitude() {
+		return longitude;
+	}
+
+	public void setLongigude(Double longitude) {
+		this.longitude = longitude;
 	}
 
 	public Region getRegion() {
