@@ -1,0 +1,21 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:gmaps="openui5.googlemaps"
+	xmlns:core="sap.ui.core">
+    <gmaps:Map height="50em" lat="25" width="100%" zoom="2" zoomControl="true">
+        <gmaps:markerCluster>
+            <gmaps:MarkerCluster 
+            	id="map"
+            	markers="{
+					path: '/Mentors',
+					parameters: {
+						select: 'Id,FullName,Latitude,Longitude'
+					}
+				}">
+                <gmaps:markers>
+                    <gmaps:Marker lat="{Latitude}" lng="{Longitude}" info="{FullName}" />
+                </gmaps:markers>
+            </gmaps:MarkerCluster>
+        </gmaps:markerCluster>
+    </gmaps:Map>
+</core:FragmentDefinition>

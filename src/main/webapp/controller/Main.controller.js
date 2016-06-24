@@ -17,17 +17,34 @@ sap.ui.define([
 		 * @public
 		 */
         onInit: function() {
+        	this.view = this.getView();
+        	this.router = this.getRouter();
+        	this.router.attachRoutePatternMatched(this.onRoutePatternMatched, this);
         },
 
 		/* =========================================================== */
 		/* event handlers                                              */
 		/* =========================================================== */
         
-		onSideNavButtonPress : function() {
-			var viewId = this.getView().getId();
+        onRoutePatternMatched: function(event) {
+        	var key = event.getParameter("name");
+        	switch(key) {
+        		case "Main":
+        			this.router.navTo("Mentors", null, true);
+        			break;
+        		default:
+					this.view.byId("pageContainer").to(this.getView().byId(key));
+        	}
+        },
+        
+		onHamburgerPress: function() {
+			var viewId = this.view.getId();
 			var toolPage = sap.ui.getCore().byId(viewId + "--toolPage");
-			var sideExpanded = toolPage.getSideExpanded();
  			toolPage.setSideExpanded(!toolPage.getSideExpanded());
+		},
+		
+		onMenuSelect: function(event) {
+            this.router.navTo(event.getParameter('item').getKey(), null, true);
 		}
 
 	});

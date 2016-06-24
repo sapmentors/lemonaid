@@ -107,18 +107,50 @@
 				"pattern": "",
 				"name": "Main",
 				"target": "main"
-			}, {
+			},{
+				"pattern": "Mentors",
+				"name": "Mentors",
+				"target": "mentors"
+			},{
 				"pattern": "Mentor/{Id}",
 				"name": "Mentor",
 				"target": "mentor"
+			},{
+				"pattern": "Events",
+				"name": "Events",
+				"target": "events"
+			},{
+				"pattern": "Content",
+				"name": "Content",
+				"target": "content"
+			},{
+				"pattern": "SocialMedia",
+				"name": "SocialMedia",
+				"target": "socialMedia"
 			}],
 			"targets": {
 				"main": {
 					"viewName": "Main",
 					"viewLevel": 0
 				},
+				"mentors": {
+					"viewName": "Main",
+					"viewLevel": 0
+				},
 				"mentor": {
 					"viewName": "Mentor",
+					"viewLevel": 0
+				},
+				"events": {
+					"viewName": "Main",
+					"viewLevel": 0
+				},
+				"content": {
+					"viewName": "Main",
+					"viewLevel": 0
+				},
+				"socialMedia": {
+					"viewName": "Main",
 					"viewLevel": 0
 				}
 			}

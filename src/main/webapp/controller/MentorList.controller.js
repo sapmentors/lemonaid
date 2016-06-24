@@ -18,6 +18,7 @@ sap.ui.define([
 		 */
         onInit: function() {
         	this.table = this.byId("table");
+        	this.map = this.byId("map");
             this.ui = new JSONModel({ tableBusyDelay: 0, count: 0, mentors: 0, alumni: 0 });
             this.model = this.getComponent().getModel();
             this.getView().setModel(this.ui, "ui");
@@ -37,10 +38,9 @@ sap.ui.define([
 
         onSearchPressed: function(event) {
             var search = event.getParameters().query;
-            this.getView().byId("table").getBinding("items").filter(
-                [new Filter([
-                    new Filter("FullName", FilterOperator.Contains, search)
-                ], false)]);
+            var filter = new Filter("FullName", FilterOperator.Contains, search); 
+            this.table.getBinding("items").filter(filter);
+            this.map.getBinding("markers").filter(filter);
         },
 
 		/* =========================================================== */
@@ -84,11 +84,12 @@ sap.ui.define([
 		 * @public
 		 */
 		onQuickFilter: function(oEvent) {
-			this.table.getBinding("items").filter(
+			var filter = 
 				oEvent.getParameter("key") === "all" ? 
 					[] :
-					new sap.ui.model.Filter("MentorStatus/Id", "EQ", oEvent.getParameter("key"))
-			);
+					new sap.ui.model.Filter("MentorStatus/Id", "EQ", oEvent.getParameter("key"));
+			this.table.getBinding("items").filter(filter);
+			this.map.getBinding("markers").filter(filter);
 		}
 
 		/* =========================================================== */

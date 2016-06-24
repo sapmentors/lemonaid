@@ -1,0 +1,10 @@
+<mvc:View 
+	controllerName="com.sap.mentors.lemonaid.controller.EventList" 
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns:core="sap.ui.core">
+
+	<Text text="Placeholder for Events page" class="sapUiResponsiveMargin" />
+
+</mvc:View>

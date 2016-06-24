@@ -14,7 +14,7 @@
 				<Button id="sideNavigationToggleButton"
 						icon="sap-icon://menu2"
 						type="Transparent"
-						press="onSideNavButtonPress">
+						press="onHamburgerPress">
 					<layoutData>
 						<OverflowToolbarLayoutData priority="NeverOverflow" />
 					</layoutData>
@@ -35,18 +35,22 @@
 		</tnt:header>
 
 		<tnt:sideContent>
-			<tnt:SideNavigation expanded="false" itemSelect="onItemSelect">
+			<tnt:SideNavigation expanded="false" itemSelect="onMenuSelect">
 				<tnt:NavigationList>
 					<tnt:NavigationListItem 
+						key="Mentors"
 						text="{i18n>mentors}" 
 						icon="sap-icon://person-placeholder" />
 					<tnt:NavigationListItem 
+						key="Events"
 						text="{i18n>events}" 
 						icon="sap-icon://calendar" />
 					<tnt:NavigationListItem 
+						key="Content"
 						text="{i18n>content}" 
 						icon="sap-icon://documents" />
 					<tnt:NavigationListItem 
+						key="SocialMedia"
 						text="{i18n>socialMedia}" 
 						icon="sap-icon://discussion" />
 				</tnt:NavigationList>
@@ -55,9 +59,18 @@
 		
 		<tnt:mainContents>
 			<NavContainer id="pageContainer">
-				<pages>
+				<Page id="Mentors" showHeader="false">
 					<mvc:XMLView viewName="com.sap.mentors.lemonaid.view.MentorList"/>
-				</pages>
+				</Page>
+				<Page id="Events" showHeader="false">
+					<mvc:XMLView viewName="com.sap.mentors.lemonaid.view.EventList"/>
+				</Page>
+				<Page id="Content" showHeader="false">
+					<mvc:XMLView viewName="com.sap.mentors.lemonaid.view.ContentList"/>
+				</Page>
+				<Page id="SocialMedia" showHeader="false">
+					<mvc:XMLView viewName="com.sap.mentors.lemonaid.view.SocialMedia"/>
+				</Page>
 			</NavContainer>
 		</tnt:mainContents>
 
