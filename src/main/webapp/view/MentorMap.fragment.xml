@@ -2,20 +2,34 @@
 	xmlns="sap.m"
 	xmlns:gmaps="openui5.googlemaps"
 	xmlns:core="sap.ui.core">
-    <gmaps:Map height="50em" lat="25" width="100%" zoom="2" zoomControl="true">
-        <gmaps:markerCluster>
-            <gmaps:MarkerCluster 
-            	id="map"
-            	markers="{
-					path: '/Mentors',
-					parameters: {
-						select: 'Id,FullName,Latitude,Longitude'
-					}
-				}">
-                <gmaps:markers>
-                    <gmaps:Marker lat="{Latitude}" lng="{Longitude}" info="{FullName}" />
-                </gmaps:markers>
-            </gmaps:MarkerCluster>
-        </gmaps:markerCluster>
+    <gmaps:Map
+    	id="map"
+    	height="50em" 
+    	lat="25" 
+    	width="100%" 
+    	zoom="2" 
+    	zoomControl="true"
+    	markers="{
+			path: '/Mentors',
+			parameters: {
+				select: 'Id,FullName,ShirtNumber,Email1,Latitude,Longitude,MentorStatus/Id',
+				expand: 'MentorStatus'
+			}
+		}">
+        <gmaps:markers>  
+            <gmaps:Marker 
+            	lat="{Latitude}" 
+            	lng="{Longitude}" 
+            	info="{
+					parts: [
+						'FullName',
+						'ShirtNumber',
+						'Email1',
+						'MentorStatus/Id'
+					],
+					formatter: '.formatters.formatMapInfo'
+				}"
+            	icon="images/pin-{= ${MentorStatus/Id} === 'active' ? 'mentor' : 'alumni' }.png" />  
+        </gmaps:markers>  
     </gmaps:Map>
 </core:FragmentDefinition>
