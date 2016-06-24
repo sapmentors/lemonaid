@@ -34,8 +34,11 @@
 		<content>
 			<l:ResponsiveSplitter defaultPane="default">
 				<l:PaneContainer>
-					<l:SplitPane requiredParentWidth="400" id="default">
+					<l:SplitPane requiredParentWidth="0" id="default">
 						<core:Fragment fragmentName="com.sap.mentors.lemonaid.view.MentorTable" type="XML"/>
+						<l:layoutData>
+							<l:SplitterLayoutData size="33%" />
+						</l:layoutData>
 					</l:SplitPane>
 					<l:SplitPane requiredParentWidth="800" demandPane="false">
 						<core:Fragment fragmentName="com.sap.mentors.lemonaid.view.MentorMap" type="XML"/>
