@@ -6,7 +6,7 @@ sap.ui.define([
 
 		return BaseController.extend("com.sap.mentors.lemonaid.controller.App", {
 
-			onInit : function () {
+			onInit: function () {
 				var oViewModel,
 					fnSetAppNotBusy,
 					iOriginalBusyDelay = this.getView().getBusyIndicatorDelay();
@@ -27,7 +27,12 @@ sap.ui.define([
 
 				// apply content density mode to root view
 				this.getView().addStyleClass(this.getOwnerComponent().getContentDensityClass());
+			},
+
+			onAfterRendering: function() {
+				$("#splash-screen").remove();
 			}
+
 		});
 
 	}
