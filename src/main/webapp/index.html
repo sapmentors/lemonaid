@@ -1,10 +1,148 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="viewport" content="minimal-ui, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<link rel="apple-touch-icon" sizes="144x144" href="images/favicon-144.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/favicon-114.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/favicon-72.png">
+	<link rel="apple-touch-icon" sizes="57x57" href="images/favicon-57.png">
+	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
 	<title>SAP Mentors Lemonaid</title>
+
+	<style>
+	    body {
+	        overflow: hidden
+	    }
+	    ;
+	    #splash-screen {
+	        position: absolute;
+	        top: 0;
+	        left: 0;
+	        right: 0;
+	        bottom: 0;
+	        overflow: hidden;
+	        background-color: #e7e7e7 !important;
+	        background-size: 100% !important;
+	        background-position: center !important;
+	        background-repeat: no-repeat !important;
+	    }
+	    #splash-screen > * {
+	        /* center child divs  */
+
+	        position: absolute;
+	        top: 50%;
+	        left: 50%;
+	        /* x-border-box */
+
+	        box-sizing: border-box;
+	        -moz-box-sizing: border-box;
+	        -ms-box-sizing: border-box;
+	        -webkit-box-sizing: border-box;
+	        /* x-unselectable */
+
+	        user-select: none;
+	        -o-user-select: none;
+	        -ms-user-select: none;
+	        -moz-user-select: -moz-none;
+	        -webkit-user-select: none;
+	        cursor: default;
+	    }
+	    .splash-screen-circle-outer {
+	        z-index: 20000;
+	        width: 100px;
+	        height: 100px;
+	        border-radius: 100px;
+	        margin-top: -50px;
+	        margin-left: -50px;
+	        border: 5px solid rgba(87, 113, 145, 0.9);
+	        opacity: .9;
+	        border-right: 5px solid rgba(0, 0, 0, 0);
+	        border-left: 5px solid rgba(0, 0, 0, 0);
+	        box-shadow: 0 0 35px #577191;
+	        -moz-animation: spinPulse 1s infinite ease-in-out;
+	        -webkit-animation: spinPulse 1s infinite linear;
+	    }
+	    .splash-screen-circle-inner {
+	        z-index: 20001;
+	        width: 80px;
+	        height: 80px;
+	        border-radius: 80px;
+	        margin-top: -40px;
+	        margin-left: -40px;
+	        background-color: rgba(0, 0, 0, 0);
+	        border: 5px solid rgba(87, 113, 145, 0.9);
+	        opacity: .9;
+	        border-left: 5px solid rgba(0, 0, 0, 0);
+	        border-right: 5px solid rgba(0, 0, 0, 0);
+	        box-shadow: 0 0 15px #577191;
+	        -moz-animation: spinoffPulse 1s infinite linear;
+	        -webkit-animation: spinoffPulse 1s infinite linear;
+	    }
+	    .splash-screen-text {
+	        z-index: 20002;
+	        width: 100px;
+	        height: 100px;
+	        line-height: 100px;
+	        margin-top: -50px;
+	        margin-left: -50px;
+	        font-family: Verdana, Geneva, sans-serif;
+	        font-size: 13px;
+	        text-align: center;
+	        text-shadow: 1px 1px #cccccc;
+	        vertical-align: middle;
+	        color: #002951;
+	    }
+	    @-moz-keyframes spinPulse {
+	        0% {
+	            -moz-transform: rotate(160deg);
+	            opacity: 0;
+	            box-shadow: 0 0 1px #577191;
+	        }
+	        50% {
+	            -moz-transform: rotate(145deg);
+	            opacity: 1;
+	        }
+	        100% {
+	            -moz-transform: rotate(-320deg);
+	            opacity: 0;
+	        }
+	    }
+	    @-moz-keyframes spinoffPulse {
+	        0% {
+	            -moz-transform: rotate(0deg);
+	        }
+	        100% {
+	            -moz-transform: rotate(360deg);
+	        }
+	    }
+	    @-webkit-keyframes spinPulse {
+	        0% {
+	            -webkit-transform: rotate(160deg);
+	            opacity: 0;
+	            box-shadow: 0 0 1px #577191;
+	        }
+	        50% {
+	            -webkit-transform: rotate(145deg);
+	            opacity: 1;
+	        }
+	        100% {
+	            -webkit-transform: rotate(-320deg);
+	            opacity: 0;
+	        }
+	    }
+	    @-webkit-keyframes spinoffPulse {
+	        0% {
+	            -webkit-transform: rotate(0deg);
+	        }
+	        100% {
+	            -webkit-transform: rotate(360deg);
+	        }
+	    }
+	</style>
 
 	<!-- Bootstrapping UI5 -->
 	<script id="sap-ui-bootstrap"
@@ -18,21 +156,31 @@
 	</script>
 
 	<script>
-		sap.ui.getCore().attachInit(function () {
-			sap.ui.require([
-				"sap/m/Shell",
-				"sap/ui/core/ComponentContainer"
-			], function (Shell, ComponentContainer) {
-				// initialize the UI component
-				new Shell({
-					appWidthLimited: false,
-					app: new ComponentContainer({
-						height : "100%",
-						name : "com.sap.mentors.lemonaid"
-					})
-				}).placeAt("content");
+		function appInit() {
+			sap.ui.getCore().attachInit(function () {
+				sap.ui.require([
+					"sap/m/Shell",
+					"sap/ui/core/ComponentContainer"
+				], function (Shell, ComponentContainer) {
+					// initialize the UI component
+					new Shell({
+						appWidthLimited: false,
+						app: new ComponentContainer({
+							height : "100%",
+							name : "com.sap.mentors.lemonaid"
+						})
+					}).placeAt("content");
+				});
 			});
-		});
+		}
+
+		window.onload = function () {
+			if (window.cordova) {
+				document.addEventListener("deviceready", appReady, false);
+			} else {
+				appInit();
+			}
+		}
 	</script>
 
 </head>
