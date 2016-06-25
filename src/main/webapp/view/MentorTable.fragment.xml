@@ -16,7 +16,7 @@
 		}"
 		updateFinished="onUpdateFinished">
 		<headerToolbar>
-			<Toolbar id="tableToolbar">
+			<Toolbar id="tableToolbar" class="removeToolbarPaddingLeft">
 				<SearchField
 					id="searchField"
 					tooltip="{i18n>worklistSearchTooltip}"
@@ -24,7 +24,7 @@
 					width="100%"/>
 			</Toolbar>
 		</headerToolbar>
-		<columns minScreenWidth="Tablet">
+		<columns>
 			<Column id="photo" width="5rem">
 				<Text text="" visible="{= !${device>/system/phone} }" />
 			</Column>

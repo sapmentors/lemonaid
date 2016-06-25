@@ -7,6 +7,10 @@
 	margin: 0rem 0rem !important;
 }
 
+.removeToolbarPaddingLeft {
+	padding-left: 0 !important;
+}
+
 /* =========================================================== */
 /* Styling of toolpage's side nav bar to get light Grey on a   */
 /* dark background                                             */

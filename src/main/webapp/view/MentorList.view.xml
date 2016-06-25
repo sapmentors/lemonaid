@@ -37,7 +37,8 @@
 					<l:SplitPane requiredParentWidth="0" id="default">
 						<core:Fragment fragmentName="com.sap.mentors.lemonaid.view.MentorTable" type="XML"/>
 						<l:layoutData>
-							<l:SplitterLayoutData minSize="700px" size="700px" />
+							<l:SplitterLayoutData 
+								size="{= ${device>/system/desktop} ? '33%' : null }" />
 						</l:layoutData>
 					</l:SplitPane>
 					<l:SplitPane requiredParentWidth="800" demandPane="false">
