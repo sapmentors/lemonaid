@@ -29,7 +29,7 @@
 					],
 					formatter: '.formatters.formatMapInfo'
 				}"
-            	icon="images/pin-{= ${MentorStatus/Id} === 'active' ? 'mentor' : 'alumni' }.png" />  
+            	icon="images/pin-{= ${MentorStatus/Id} === 'active' ? 'mentor' : 'alumni' }.svg" />  
         </gmaps:markers>  
     </gmaps:Map>
 </core:FragmentDefinition>
