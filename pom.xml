@@ -19,6 +19,7 @@
         <java.version>1.7</java.version>
         <cxf.version>3.1.6</cxf.version>
 		<olingo.version>2.0.7-RC01</olingo.version>
+		<hcp.version>2.52.10</hcp.version>
 		<commons-codec.version>1.6</commons-codec.version>
         <tomcat.version>7.0.59</tomcat.version>
     </properties>
@@ -94,6 +95,12 @@
 			<groupId>org.apache.olingo</groupId>
 			<artifactId>olingo-odata2-api-annotation</artifactId>
 			<version>${olingo.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>com.sap.cloud</groupId>
+		    <artifactId>neo-java-web-api</artifactId>
+		    <version>${hcp.version}</version>
+		    <scope>provided</scope>
 		</dependency>
 		<dependency>
 		    <groupId>commons-codec</groupId>
