@@ -31,6 +31,10 @@ public class CustomODataJPAProcessor extends ODataJPAProcessorDefault {
     	return isInRole("Mentor");
 	}
 
+	private boolean isAlumnus() {
+    	return isInRole("Alumnus");
+	}
+
 	private boolean isProjectMember() {
     	return isInRole("ProjectMember");
 	}
@@ -38,7 +42,7 @@ public class CustomODataJPAProcessor extends ODataJPAProcessorDefault {
 	@Override
 	public ODataResponse createEntity(final PostUriInfo uriParserResultView, final InputStream content,
 			final String requestContentType, final String contentType) throws ODataException {
-		if (!isMentor() && !isProjectMember()) {
+		if (!isMentor() && !isAlumnus() && !isProjectMember()) {
 			return ODataResponse.entity("Unauthorized").status(HttpStatusCodes.UNAUTHORIZED).contentHeader("text/html").build();
 		}
 		ODataResponse oDataResponse = null;
@@ -55,7 +59,7 @@ public class CustomODataJPAProcessor extends ODataJPAProcessorDefault {
 	@Override
 	public ODataResponse updateEntity(final PutMergePatchUriInfo uriParserResultView, final InputStream content,
 			final String requestContentType, final boolean merge, final String contentType) throws ODataException {
-		if (!isMentor() && !isProjectMember()) {
+		if (!isMentor() && !isAlumnus() && !isProjectMember()) {
 			return ODataResponse.entity("Unauthorized").status(HttpStatusCodes.UNAUTHORIZED).contentHeader("text/html").build();
 		}
 		ODataResponse oDataResponse = null;
@@ -72,7 +76,7 @@ public class CustomODataJPAProcessor extends ODataJPAProcessorDefault {
 	@Override
 	public ODataResponse deleteEntity(final DeleteUriInfo uriParserResultView, final String contentType)
 			throws ODataException {
-		if (!isMentor() && !isProjectMember()) {
+		if (!isMentor() && !isAlumnus() && !isProjectMember()) {
 			return ODataResponse.entity("Unauthorized").status(HttpStatusCodes.UNAUTHORIZED).contentHeader("text/html").build();
 		}
 		ODataResponse oDataResponse = null;
@@ -89,7 +93,7 @@ public class CustomODataJPAProcessor extends ODataJPAProcessorDefault {
 	@Override
 	public ODataResponse createEntityLink(final PostUriInfo uriParserResultView, final InputStream content,
 			final String requestContentType, final String contentType) throws ODataException {
-		if (!isMentor() && !isProjectMember()) {
+		if (!isMentor() && !isAlumnus() && !isProjectMember()) {
 			return ODataResponse.entity("Unauthorized").status(HttpStatusCodes.UNAUTHORIZED).contentHeader("text/html").build();
 		}
 		try {
@@ -104,7 +108,7 @@ public class CustomODataJPAProcessor extends ODataJPAProcessorDefault {
 	@Override
 	public ODataResponse updateEntityLink(final PutMergePatchUriInfo uriParserResultView, final InputStream content,
 			final String requestContentType, final String contentType) throws ODataException {
-		if (!isMentor() && !isProjectMember()) {
+		if (!isMentor() && !isAlumnus() && !isProjectMember()) {
 			return ODataResponse.entity("Unauthorized").status(HttpStatusCodes.UNAUTHORIZED).contentHeader("text/html").build();
 		}
 		try {
