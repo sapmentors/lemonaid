@@ -12,7 +12,6 @@ import org.apache.olingo.odata2.api.edm.provider.Property;
 import org.apache.olingo.odata2.api.edm.provider.Schema;
 import org.apache.olingo.odata2.api.edm.provider.SimpleProperty;
 import org.apache.olingo.odata2.jpa.processor.api.model.JPAEdmSchemaView;
-import org.apache.olingo.odata2.jpa.processor.core.model.JPAEdmMappingImpl;
 
 public class JPAEdmExtension implements org.apache.olingo.odata2.jpa.processor.api.model.JPAEdmExtension {
 

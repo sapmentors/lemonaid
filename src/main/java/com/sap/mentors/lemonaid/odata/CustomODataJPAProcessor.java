@@ -14,12 +14,8 @@ import org.apache.olingo.odata2.api.uri.info.PutMergePatchUriInfo;
 import org.apache.olingo.odata2.jpa.processor.api.ODataJPAContext;
 import org.apache.olingo.odata2.jpa.processor.core.ODataJPAContextImpl;
 import org.apache.olingo.odata2.jpa.processor.core.ODataJPAProcessorDefault;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class CustomODataJPAProcessor extends ODataJPAProcessorDefault {
-
-	private static final Logger log = LoggerFactory.getLogger(CustomODataJPAProcessor.class);
 
 	public CustomODataJPAProcessor(ODataJPAContext oDataJPAContext) {
 		super(oDataJPAContext);
