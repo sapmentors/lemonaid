@@ -1,4 +1,4 @@
-package com.sap.mentors.lemonaid.utils;
+package com.sap.mentors.lemonaid.odata;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

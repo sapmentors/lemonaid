@@ -1,4 +1,4 @@
-package com.sap.mentors.lemonaid.utils;
+package com.sap.mentors.lemonaid.odata;
 
 import java.util.Locale;
 import java.util.ResourceBundle;
