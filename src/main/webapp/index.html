@@ -15,136 +15,100 @@
 		<title>SAP Mentors Lemonaid</title>
 	
 		<style>
-		    body {
-		        overflow: hidden
-		    }
-		    ;
-		    #splash-screen {
-		        position: absolute;
-		        top: 0;
-		        left: 0;
-		        right: 0;
-		        bottom: 0;
-		        overflow: hidden;
-		        background-color: #e7e7e7 !important;
-		        background-size: 100% !important;
-		        background-position: center !important;
-		        background-repeat: no-repeat !important;
-		    }
-		    #splash-screen > * {
-		        /* center child divs  */
-	
-		        position: absolute;
-		        top: 50%;
-		        left: 50%;
-		        /* x-border-box */
-	
-		        box-sizing: border-box;
-		        -moz-box-sizing: border-box;
-		        -ms-box-sizing: border-box;
-		        -webkit-box-sizing: border-box;
-		        /* x-unselectable */
-	
-		        user-select: none;
-		        -o-user-select: none;
-		        -ms-user-select: none;
-		        -moz-user-select: -moz-none;
-		        -webkit-user-select: none;
-		        cursor: default;
-		    }
-		    .splash-screen-circle-outer {
-		        z-index: 20000;
-		        width: 100px;
-		        height: 100px;
-		        border-radius: 100px;
-		        margin-top: -50px;
-		        margin-left: -50px;
-		        border: 5px solid rgba(87, 113, 145, 0.9);
-		        opacity: .9;
-		        border-right: 5px solid rgba(0, 0, 0, 0);
-		        border-left: 5px solid rgba(0, 0, 0, 0);
-		        box-shadow: 0 0 35px #577191;
-		        -moz-animation: spinPulse 1s infinite ease-in-out;
-		        -webkit-animation: spinPulse 1s infinite linear;
-		    }
-		    .splash-screen-circle-inner {
-		        z-index: 20001;
-		        width: 80px;
-		        height: 80px;
-		        border-radius: 80px;
-		        margin-top: -40px;
-		        margin-left: -40px;
-		        background-color: rgba(0, 0, 0, 0);
-		        border: 5px solid rgba(87, 113, 145, 0.9);
-		        opacity: .9;
-		        border-left: 5px solid rgba(0, 0, 0, 0);
-		        border-right: 5px solid rgba(0, 0, 0, 0);
-		        box-shadow: 0 0 15px #577191;
-		        -moz-animation: spinoffPulse 1s infinite linear;
-		        -webkit-animation: spinoffPulse 1s infinite linear;
-		    }
-		    .splash-screen-text {
-		        z-index: 20002;
-		        width: 100px;
-		        height: 100px;
-		        line-height: 100px;
-		        margin-top: -50px;
-		        margin-left: -50px;
-		        font-family: Verdana, Geneva, sans-serif;
-		        font-size: 13px;
-		        text-align: center;
-		        text-shadow: 1px 1px #cccccc;
-		        vertical-align: middle;
-		        color: #002951;
-		    }
-		    @-moz-keyframes spinPulse {
-		        0% {
-		            -moz-transform: rotate(160deg);
-		            opacity: 0;
-		            box-shadow: 0 0 1px #577191;
-		        }
-		        50% {
-		            -moz-transform: rotate(145deg);
-		            opacity: 1;
-		        }
-		        100% {
-		            -moz-transform: rotate(-320deg);
-		            opacity: 0;
-		        }
-		    }
-		    @-moz-keyframes spinoffPulse {
-		        0% {
-		            -moz-transform: rotate(0deg);
-		        }
-		        100% {
-		            -moz-transform: rotate(360deg);
-		        }
-		    }
-		    @-webkit-keyframes spinPulse {
-		        0% {
-		            -webkit-transform: rotate(160deg);
-		            opacity: 0;
-		            box-shadow: 0 0 1px #577191;
-		        }
-		        50% {
-		            -webkit-transform: rotate(145deg);
-		            opacity: 1;
-		        }
-		        100% {
-		            -webkit-transform: rotate(-320deg);
-		            opacity: 0;
-		        }
-		    }
-		    @-webkit-keyframes spinoffPulse {
-		        0% {
-		            -webkit-transform: rotate(0deg);
-		        }
-		        100% {
-		            -webkit-transform: rotate(360deg);
-		        }
-		    }
+			.overlay-loader {
+			    position: fixed;
+			    top: 0;
+			    right: 0;
+			    bottom: 0;
+			    left: 0;
+			    z-index: 1000;
+			}
+			.overlay-loader .loader-background {
+			    position: absolute;
+			    top: 0;
+			    right: 0;
+			    bottom: 0;
+			    left: 0;
+			    background-color: #fff;
+			    -webkit-transition: background-color .2s 0s linear, right .2s .3s ease-out;
+			    -moz-transition: background-color .2s 0s linear, right .2s .3s ease-out;
+			    -ms-transition: background-color .2s 0s linear, right .2s .3s ease-out;
+			    -o-transition: background-color .2s 0s linear, right .2s .3s ease-out;
+			    transition: background-color .2s 0s linear, right .2s .3s ease-out;
+			}
+			.overlay-loader .loader-icon {
+			    position: absolute;
+			    top: 50%;
+			    left: 50%;
+			    margin: -128px 0 0 -128px;
+			    width: 256px;
+			    height: 256px;
+			}
+			.overlay-loader .loader-text {
+			    position: absolute;
+			    top: 50%;
+			    left: 50%;
+			    margin: 140px 0 0 -40px;
+			    font-size: 20px;
+			    font-family: Arial, Helvetica, sans-serif;
+			    color: #000;
+			}
+			.overlay-loader .loader-icon.spinning-cog {
+			    -webkit-animation: spinning-cog 1.3s infinite ease;
+			    -moz-animation: spinning-cog 1.3s infinite ease;
+			    -ms-animation: spinning-cog 1.3s infinite ease;
+			    -o-animation: spinning-cog 1.3s infinite ease;
+			    animation: spinning-cog 1.3s infinite ease;
+			}
+			@-webkit-keyframes spinning-cog {
+			    0% { -webkit-transform: rotate(0deg) }
+			    20% { -webkit-transform: rotate(-45deg) }
+			    100% { -webkit-transform: rotate(360deg) }
+			}
+			@-moz-keyframes spinning-cog {
+			    0% { -moz-transform: rotate(0deg) }
+			    20% { -moz-transform: rotate(-45deg) }
+			    100% { -moz-transform: rotate(360deg) }
+			}
+			@-o-keyframes spinning-cog {
+			    0% { -o-transform: rotate(0deg) }
+			    20% { -o-transform: rotate(-45deg) }
+			    100% { -o-transform: rotate(360deg) }
+			}
+			@keyframes spinning-cog {
+			    0% { transform: rotate(0deg) }
+			    20% { transform: rotate(-45deg) }
+			    100% { transform: rotate(360deg) }
+			}
+			@-webkit-keyframes shrinking-cog {
+			    0% { -webkit-transform: scale(1) }
+			    20% { -webkit-transform: scale(1.2) }
+			    100% { -webkit-transform: scale(0) }
+			}
+			@-moz-keyframes shrinking-cog {
+			    0% { -moz-transform: scale(1) }
+			    20% { -moz-transform: scale(1.2) }
+			    100% { -moz-transform: scale(0) }
+			}
+			@-o-keyframes shrinking-cog {
+			    0% { -o-transform: scale(1) }
+			    20% { -o-transform: scale(1.2) }
+			    100% { -o-transform: scale(0) }
+			}
+			@keyframes shrinking-cog {
+			    0% { transform: scale(1) }
+			    20% { transform: scale(1.2) }
+			    100% { transform: scale(0) }
+			}
+			.overlay-loader .loader-icon.shrinking-cog {
+			    -webkit-animation: shrinking-cog .3s 1 ease forwards;
+			    -moz-animation: shrinking-cog .3s 1 ease forwards;
+			    -ms-animation: shrinking-cog .3s 1 ease forwards;
+			    -o-animation: shrinking-cog .3s 1 ease forwards;
+			    animation: shrinking-cog .3s 1 ease forwards;
+			}
 		</style>
-	
+		
 		<!-- Bootstrapping UI5 -->
 		<script id="sap-ui-bootstrap"
 				src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"
@@ -177,11 +141,12 @@
 	</head>
 
 	<!-- UI Content -->
-	<body class="sapUiBody" id="content">
-		<div id="splash-screen">
-			<div class="splash-screen-text">Loading</div>
-			<div class="splash-screen-circle-outer"></div>
-			<div class="splash-screen-circle-inner"></div>
+	<body class="sapUiBody" id="zcontent">
+		<div id="content"></div>
+		<div id="loader" class="overlay-loader">
+			<div class="loader-background"></div>
+			<img class="loader-icon spinning-cog" src="images/logo.svg">
+			<div class="loader-text">Loading...</div>
 		</div>
 	</body>
 

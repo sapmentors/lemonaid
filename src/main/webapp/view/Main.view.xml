@@ -25,8 +25,17 @@
 					<layoutData>
 						<OverflowToolbarLayoutData priority="NeverOverflow" minWidth="20px" />
 					</layoutData>
-				</ToolbarSpacer>
-				<Button text="{user>/displayName}" type="Transparent" press="onPressUserNamePress">
+				</ToolbarSpacer>		
+				<Button
+					text="{i18n>login}" 
+					type="Transparent"
+					press="onPressLogin"
+					visible="{= !${user>/name} }" />	
+				<Button 
+					text="{user>/displayName}" 
+					type="Transparent" 
+					press="onPressUserName"
+					visible="{= !!${user>/name}}">
 					<layoutData>
 						<OverflowToolbarLayoutData priority="NeverOverflow" />
 					</layoutData>

@@ -30,7 +30,10 @@ sap.ui.define([
 			},
 
 			onAfterRendering: function() {
-				$("#splash-screen").remove();
+				// Remove the spinner
+			    $('.loader-icon').removeClass('spinning-cog').addClass('shrinking-cog');
+			    $('.loader-background').fadeOut(); 
+			    $('.loader-text').fadeOut();
 			}
 
 		});

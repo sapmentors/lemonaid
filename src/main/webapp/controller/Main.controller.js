@@ -56,6 +56,10 @@ sap.ui.define([
             if (this.device.getProperty("/system/phone")) {
  				this.toolPage.setSideExpanded(false);
             }
+		},
+		
+		onPressLogin: function() {
+			window.location = "login.html";
 		}
 
 	});
