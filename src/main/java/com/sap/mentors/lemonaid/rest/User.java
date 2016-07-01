@@ -8,6 +8,7 @@ public class User {
 	private final String email;
 	private final String displayName;
 	private final boolean isMentor;
+	private final boolean isAlumnus;
 	private final boolean isProjectMember;
 
 	public User(String name) {
@@ -17,16 +18,18 @@ public class User {
 		this.email = null;
 		this.displayName = null;
 		this.isMentor = false;
+		this.isAlumnus = false;
 		this.isProjectMember = false;
 	}
 
-	public User(String name, String firstName, String lastName, String email, String displayName, boolean isMentor, boolean isProjectMember) {
+	public User(String name, String firstName, String lastName, String email, String displayName, boolean isMentor, boolean isAlumnus, boolean isProjectMember) {
 		this.name = name;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
 		this.displayName = displayName;
 		this.isMentor = isMentor;
+		this.isAlumnus = isAlumnus;
 		this.isProjectMember = isProjectMember;
 	}
 
@@ -52,6 +55,10 @@ public class User {
 
 	public boolean isMentor() {
 		return isMentor;
+	}
+
+	public boolean isAlumnus() {
+		return isAlumnus;
 	}
 
 	public boolean isProjectMember() {

@@ -38,6 +38,7 @@ public class UserController {
 			    		user.getAttribute("email"),
 			    		user.getAttribute("firstname") + " " + user.getAttribute("lastname") + " (" + userPrincipal.getName() + ")",
 			    		request.isUserInRole("Mentor"),
+			    		request.isUserInRole("Alumnus"),
 			    		request.isUserInRole("ProjectMember")
 			    	);
 			} catch (Exception e) {
