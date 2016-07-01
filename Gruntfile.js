@@ -23,8 +23,8 @@ module.exports = function(grunt) {
 						],
 	                    prefix: 'com/sap/mentors/lemonaid' // namespace prefix (in case the namespace is not already in folder structure like sap/ui/core/**)
 	                },
-					dest: 'dist',
-					compress: true
+					compress: true,
+					dest: 'src/main/webapp'
 	            },
 	            components: true
 	        }

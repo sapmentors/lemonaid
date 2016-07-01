@@ -27,15 +27,9 @@ sap.ui.define([
 
 				// apply content density mode to root view
 				this.getView().addStyleClass(this.getOwnerComponent().getContentDensityClass());
-			},
 
-			onAfterRendering: function() {
-				// Remove the spinner
-			    $('.loader-icon').removeClass('spinning-cog').addClass('shrinking-cog');
-			    $('.loader-background').fadeOut(); 
-			    $('.loader-text').fadeOut();
 			}
-
+		
 		});
 
 	}

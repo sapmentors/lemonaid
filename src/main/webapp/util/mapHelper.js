@@ -22,37 +22,10 @@ sap.ui.define([
             sSrc = sBaseURL + window.CryptoJS.MD5(sEmail).toString() + "?s=144&d=" + sLemonaideURL;
         }
         return sSrc;
-
     }
-
-
-            searchForLocation: function(oObject, fnCallBack) {
-            mapUtils.search({
-                "address": oObject.City + " " + oObject.State
-            }).done(this.addMentorLocation.bind(this)).done(fnCallBack);
-        },
-
-       var  fnAddMentorLocation(aResults, sStatus) {
-            if (sStatus === "OK") {
-                var oMentorsModel = this.getModel("mentors");
-                var aEntries = oMentorsModel.getData().locations;
-                var oObject = this.getView().getBindingContext().getObject();
-                var oLocation = aResults[0];
-                var oEntry = {
-                    Id: oObject.Id,
-                    lat: oLocation.geometry.location.lat(),
-                    lng: oLocation.geometry.location.lng(),
-                    info: oLocation.formatted_address
-                };
-
-                aEntries.push(oEntry);
-                oMentorsModel.setData({
-                    locations: aEntries
-                });
-            }
-        }
 
     return {
         getAvatarURL: fnGetAvatarURL
     };
+    
 });

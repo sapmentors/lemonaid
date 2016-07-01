@@ -23,6 +23,12 @@ sap.ui.define([
 			// call the base component's init function
 			UIComponent.prototype.init.apply(this, arguments);
 
+			// Remove the splash screen
+		    $('.loader-icon').removeClass('spinning-cog').addClass('shrinking-cog');
+		    $('.loader-background').fadeOut(); 
+		    $('.loader-text').fadeOut();
+		    window.setTimeout(function() { $('#loader').remove() }, 400);
+
 			// Register Google Maps
 			var sPath = jQuery.sap.getResourcePath("openui5/googlemaps/loadScripts");
 			jQuery.sap.registerResourcePath("google.maps", sPath);
