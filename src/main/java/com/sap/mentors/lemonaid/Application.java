@@ -1,9 +1,12 @@
 package com.sap.mentors.lemonaid;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.UUID;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -24,6 +27,7 @@ import com.sap.mentors.lemonaid.entities.SapSoftwareSolution;
 import com.sap.mentors.lemonaid.entities.Size;
 import com.sap.mentors.lemonaid.entities.SoftSkill;
 import com.sap.mentors.lemonaid.entities.Topic;
+import com.sap.mentors.lemonaid.external.Gravatar;
 import com.sap.mentors.lemonaid.repository.CountryRepository;
 import com.sap.mentors.lemonaid.repository.ExpertiseLevelRepository;
 import com.sap.mentors.lemonaid.repository.GenderRepository;
@@ -42,6 +46,7 @@ import com.sap.mentors.lemonaid.repository.TopicRepository;
 public class Application extends SpringBootServletInitializer {
 
 	private static final Logger log = LoggerFactory.getLogger(Application.class);
+	@Autowired private Gravatar gravatar;
 
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
@@ -952,6 +957,27 @@ public class Application extends SpringBootServletInitializer {
 							null, null, 
 							false, null 
 						));
+
+					for (Mentor mentor : mentorRepository.findAll()) {
+			    		ArrayList<String> emails = new ArrayList<String>();
+			    		if (mentor.getEmail1() != null && mentor.getEmail1().length() > 0) {
+			    			emails.add(mentor.getEmail1());
+			    		}
+			    		if (mentor.getEmail2() != null && mentor.getEmail1().length() > 0) {
+			    			emails.add(mentor.getEmail2());
+			    		}
+			    		HashMap<String, Boolean> exist = gravatar.emailsExist(emails);
+			    		if (exist.get(mentor.getEmail1())) {
+			    			mentor.setPhotoUrl(gravatar.getUrlForEmail(mentor.getEmail1()));
+			    		} else if (exist.get(mentor.getEmail2())) {
+			    			mentor.setPhotoUrl(gravatar.getUrlForEmail(mentor.getEmail2()));
+			    		} else { 
+			    			mentor.setPhotoUrl(gravatar.getUrlOfUser());
+			    		}
+			    		mentorRepository.save(mentor);
+			    	}
+
+					
 				}
 	        }
 	    };

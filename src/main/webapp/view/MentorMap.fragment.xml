@@ -24,7 +24,7 @@
 					parts: [
 						'FullName',
 						'ShirtNumber',
-						'Email1',
+						'PhotoUrl',
 						'MentorStatus/Id'
 					],
 					formatter: '.formatters.formatMapInfo'

@@ -13,6 +13,7 @@ public class Mentor {
 	@Id
 	private String id;
     private String fullName;
+    private String photoUrl;
     @ManyToOne private MentorStatus status;
 
     private String jobTitle;
@@ -197,6 +198,14 @@ public class Mentor {
 
 	public void setFullName(String fullName) {
 		this.fullName = fullName;
+	}
+
+	public String getPhotoUrl() {
+		return photoUrl;
+	}
+
+	public void setPhotoUrl(String photoUrl) {
+		this.photoUrl = photoUrl;
 	}
 
 	public MentorStatus getStatus() {

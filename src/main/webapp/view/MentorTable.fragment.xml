@@ -9,7 +9,7 @@
 		items="{
 			path: '/Mentors',
 			parameters: {
-				select: 'Id,Email1,FullName,ShirtNumber,RelationshipToSap/Name,MentorStatus/Name',
+				select: 'Id,FullName,ShirtNumber,PhotoUrl,RelationshipToSap/Name,MentorStatus/Name',
 				expand: 'MentorStatus,RelationshipToSap'
 			},
 			sorter: {path: 'ShirtNumber', descending: false}
@@ -40,7 +40,7 @@
 		</columns>
 		<ColumnListItem id="columnListItem" type="Navigation" press="onMentorDetailPress">
 			<cells>
-				<Image width="4rem" height="4rem" src="{path:'Email1', formatter:'.getAvatarURL'}" class="sapMTableContentMargin avatarSmall sapUxAPObjectPageHeaderObjectImage-Circle" />
+				<Image width="4rem" height="4rem" src="{PhotoUrl}?s=70" class="sapMTableContentMargin avatarSmall sapUxAPObjectPageHeaderObjectImage-Circle" />
 				<ObjectIdentifier title="{FullName}" text="{ShirtNumber}" class="sapMTableContentMargin" />
 				<Text text="{RelationshipToSap/Name}" class="sapMTableContentMargin" />
 				<Text text="{MentorStatus/Name}" class="sapMTableContentMargin" />

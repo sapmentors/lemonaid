@@ -16,7 +16,7 @@
 		<headerTitle>
 			<ObjectPageHeader 
 				id="header"
-				objectImageURI="images/logo.png"
+				objectImageURI="{PhotoUrl}?s=144"
 				objectTitle="{FullName}"
 				objectImageShape="Circle"
 				objectImageAlt="{FullName}"

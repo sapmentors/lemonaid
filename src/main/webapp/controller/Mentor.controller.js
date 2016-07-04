@@ -21,18 +21,8 @@ sap.ui.define([
                 path: this.getModel().createKey("/Mentors", { Id: this.sMentorId }),
                 parameters: {
                     expand: 'MentorStatus,RelationshipToSap,Country,Topic1,Topic2,Topic3'
-                },
-                events: {
-                    change: this._onBindingChange.bind(this)
                 }
             });
-        },
-
-        _onBindingChange: function() {
-            this.setMentorLocation();
-            // set avatar
-            var sEmail = this.getView().getBindingContext().getProperty("Email1");
-            this.oView.byId("header").setObjectImageURI(this.getAvatarURL(sEmail));
         },
 
         /**

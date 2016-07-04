@@ -2,8 +2,7 @@ sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/ui/core/routing/History",
     "sap/ui/core/UIComponent",
-    "../util/avatarHelper"
-], function(Controller, History, UIComponent, avatarHelper) {
+], function(Controller, History, UIComponent) {
     "use strict";
 
     return Controller.extend("com.sap.mentors.lemonaid.controller.BaseController", {
@@ -88,15 +87,6 @@ sap.ui.define([
             } else {
                 this.getRouter().navTo("Main", {}, true /*no history*/ );
             }
-        },
-
-        /**
-         * get Avatar URL for Email address
-         * @param  {string} sEmail Email Address
-         * @return {string}        URL of Avatar
-         */
-        getAvatarURL: function(sEmail) {
-            return avatarHelper.getAvatarURL(sEmail);
         }
 
     });
