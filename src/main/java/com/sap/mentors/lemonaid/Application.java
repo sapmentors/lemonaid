@@ -968,11 +968,11 @@ public class Application extends SpringBootServletInitializer {
 			    		}
 			    		HashMap<String, Boolean> exist = gravatar.emailsExist(emails);
 			    		if (exist.get(mentor.getEmail1())) {
-			    			mentor.setPhotoUrl(gravatar.getUrlForEmail(mentor.getEmail1()));
+			    			mentor.setPhotoUrl(gravatar.getUrlForEmail(mentor.getEmail1()) + "?s=144");
 			    		} else if (exist.get(mentor.getEmail2())) {
-			    			mentor.setPhotoUrl(gravatar.getUrlForEmail(mentor.getEmail2()));
+			    			mentor.setPhotoUrl(gravatar.getUrlForEmail(mentor.getEmail2()) + "?s=144");
 			    		} else { 
-			    			mentor.setPhotoUrl(gravatar.getUrlOfUser());
+			    			mentor.setPhotoUrl(gravatar.getUrlOfUser() + "?s=144");
 			    		}
 			    		mentorRepository.save(mentor);
 			    	}
