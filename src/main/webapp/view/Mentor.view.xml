@@ -31,7 +31,7 @@
 							<m:Button icon="sap-icon://nav-back" press="onNavBack"/>
 						</m:contentLeft>
 						<m:contentRight>
-							<m:Button icon="sap-icon://edit" text="{i18n>edit}" press="onEdit"/>
+							<m:Button icon="sap-icon://edit" text="{i18n>edit}" press="onEdit" visible="{MayEdit}"/>
 						</m:contentRight>
 					</m:Bar>					
 				</navigationBar>
@@ -122,7 +122,8 @@
 									uploadComplete="onUploadComplete"
 									change="onUploadChange"
 									fileDeleted="onFileDeleted"
-									items="{Attachments}">
+									items="{Attachments}"
+									uploadEnabled="{MayEdit}">
 								<m:items>
 									<m:UploadCollectionItem
 										id="UploadCollectionItem"

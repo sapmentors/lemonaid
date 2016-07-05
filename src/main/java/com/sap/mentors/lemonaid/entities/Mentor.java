@@ -10,6 +10,7 @@ import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name="mentors")
@@ -89,6 +90,8 @@ public class Mentor {
     private boolean topicLeadInterest;
     @JoinColumn(name="topicInterestId") @ManyToOne private Topic topicInterestId;
  
+    @Transient boolean mayEdit;
+    
     @OneToMany(cascade = CascadeType.ALL, mappedBy="mentorId")
     private List<Attachment> attachments;    
     
@@ -694,6 +697,14 @@ public class Mentor {
 
 	public void setTopicInterestId(Topic topicInterestId) {
 		this.topicInterestId = topicInterestId;
+	}
+
+	public boolean isMayEdit() {
+		return mayEdit;
+	}
+
+	public void setMayEdit(boolean mayEdit) {
+		this.mayEdit = mayEdit;
 	}
 
 	public List<Attachment> getAttachments() {

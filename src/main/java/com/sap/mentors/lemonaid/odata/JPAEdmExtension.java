@@ -5,10 +5,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import org.apache.olingo.odata2.api.edm.EdmSimpleTypeKind;
 import org.apache.olingo.odata2.api.edm.provider.AnnotationAttribute;
 import org.apache.olingo.odata2.api.edm.provider.EntityType;
 import org.apache.olingo.odata2.api.edm.provider.Property;
 import org.apache.olingo.odata2.api.edm.provider.Schema;
+import org.apache.olingo.odata2.api.edm.provider.SimpleProperty;
 import org.apache.olingo.odata2.jpa.processor.api.model.JPAEdmSchemaView;
 
 public class JPAEdmExtension implements org.apache.olingo.odata2.jpa.processor.api.model.JPAEdmExtension {
@@ -41,6 +43,11 @@ public class JPAEdmExtension implements org.apache.olingo.odata2.jpa.processor.a
 							.setName(LABEL).setText(label));
 				}
 				property.setAnnotationAttributes(annotationAttributeList); 
+			}
+
+			// Add transient properties
+			if (entityType.getName().equals("Mentor")) {
+				entityType.getProperties().add(new SimpleProperty().setName("MayEdit").setType(EdmSimpleTypeKind.Boolean));
 			}
 			
 			// Turn entity 'Attachments' into a media entity (with a stream) and hide the data property
