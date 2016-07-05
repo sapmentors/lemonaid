@@ -11,6 +11,17 @@ public class User {
 	private final boolean isAlumnus;
 	private final boolean isProjectMember;
 
+	public User() {
+		this.name = null;
+		this.firstName = null;
+		this.lastName = null;
+		this.email = null;
+		this.displayName = null;
+		this.isMentor = false;
+		this.isAlumnus = false;
+		this.isProjectMember = false;
+	}
+	
 	public User(String name) {
 		this.name = name;
 		this.firstName = null;

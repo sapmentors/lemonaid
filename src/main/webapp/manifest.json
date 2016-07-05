@@ -49,6 +49,7 @@
 	},
 	"sap.ui5": {
 		"_version": "1.2.0",
+		"handleValidation": true,
 		"rootView": {
 			"viewName": "com.sap.mentors.lemonaid.view.App",
 			"type": "XML"

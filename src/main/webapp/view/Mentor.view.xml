@@ -13,6 +13,7 @@
 		showTitleInHeaderContent="true"
 		showEditHeaderButton="false"
 		editHeaderButtonPress="handleEditBtnPress">
+
 		<headerTitle>
 			<ObjectPageHeader 
 				id="header"
@@ -36,6 +37,7 @@
 				</navigationBar>
 			</ObjectPageHeader>
 		</headerTitle>
+
 		<headerContent>
 			<m:NumericContent value="{ShirtNumber}" size="M" />
 			<l:VerticalLayout>
@@ -54,8 +56,10 @@
 			<l:VerticalLayout>
 			</l:VerticalLayout>
 		</headerContent>
+
 		<sections>
 			<ObjectPageSection title="About" importance="Medium">
+
 				<subSections>
 					<ObjectPageSubSection title="Connect">
 						<blocks>
@@ -88,14 +92,15 @@
 						</blocks>
 					</ObjectPageSubSection>
 				</subSections>
+
 				<subSections>
 					<ObjectPageSubSection title="Connect 2">
 						<blocks>
 						<f:SimpleForm labelMinWidth="192" maxContainerCols="2" layout="ResponsiveGridLayout" columnsL="1" columnsM="1" columnsXL="1" >
 						    <f:content>
-						        <gmaps:Map id="idMap" lat="{mentors>lat}" lng="{mentors>lng}" height="350px" zoom="8">
+						        <gmaps:Map id="idMap" lat="{Latitude}" lng="{Longitude}" height="350px" zoom="8">
 						            <gmaps:markers>
-						                <gmaps:Marker lat="{mentors>lat}" lng="{mentors>lng}" info="{mentors>info}"   />
+						                <gmaps:Marker lat="{Latitude}" lng="{Longitude}" info="{mentors>info}" />
 						            </gmaps:markers>
 						        </gmaps:Map>
 						    </f:content>
@@ -103,7 +108,54 @@
 						</blocks>
 					</ObjectPageSubSection>
 				</subSections>
+
 			</ObjectPageSection>
+
+
+			<ObjectPageSection title="Media" importance="Medium">
+				<subSections>
+					<ObjectPageSubSection title="Media and Documents">
+						<blocks>
+							<m:UploadCollection
+									id="UploadCollection"
+									beforeUploadStarts="onBeforeUploadStarts"
+									uploadComplete="onUploadComplete"
+									change="onUploadChange"
+									fileDeleted="onFileDeleted"
+									items="{Attachments}">
+								<m:items>
+									<m:UploadCollectionItem
+										id="UploadCollectionItem"
+										fileName="{FileName}"
+										mimeType="{MimeType}"
+										visibleEdit="false">
+										<m:attributes>
+											<m:ObjectAttribute
+												title="Size"
+												text="{
+													path: 'FileSize',
+													type: 'sap.ui.model.type.Float'
+												}"/>
+											<m:ObjectAttribute
+												title="Modified"
+												text="{
+														path: 'LastModified',
+														type: 'sap.ui.model.type.DateTime',
+														formatOptions: {
+															relativeScale: 'auto'
+														}
+													}"/>
+										</m:attributes>
+									</m:UploadCollectionItem>
+								</m:items>
+							</m:UploadCollection>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+
 		</sections>
+		
 	</ObjectPageLayout>
+	
 </mvc:View>

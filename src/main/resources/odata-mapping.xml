@@ -5,36 +5,42 @@
 		<JPAEntityTypes>
 			<JPAEntityType name="Mentor">
 				<JPARelationships>
-					<JPARelationship name="status">MentorStatus</JPARelationship>
-					<JPARelationship name="relationshipToSap">RelationshipToSap</JPARelationship>
-					<JPARelationship name="lineOfBusiness1">LineOfBusiness1</JPARelationship>
-					<JPARelationship name="lineOfBusiness2">LineOfBusiness2</JPARelationship>
-					<JPARelationship name="lineOfBusiness3">LineOfBusiness3</JPARelationship>
-					<JPARelationship name="industry1">Industry1</JPARelationship>
-					<JPARelationship name="industry2">Industry2</JPARelationship>
-					<JPARelationship name="industry3">Industry3</JPARelationship>
-					<JPARelationship name="sapExpertise1">SapExpertise1</JPARelationship>
-					<JPARelationship name="sapExpertise2">SapExpertise2</JPARelationship>
-					<JPARelationship name="sapExpertise3">SapExpertise3</JPARelationship>
-					<JPARelationship name="sapExpertise1level">SapExpertise1Level</JPARelationship>
-					<JPARelationship name="sapExpertise2level">SapExpertise2Level</JPARelationship>
-					<JPARelationship name="sapExpertise3level">SapExpertise3Level</JPARelationship>
-					<JPARelationship name="softSkill1">SoftSkill1</JPARelationship>
-					<JPARelationship name="softSkill2">SoftSkill2</JPARelationship>
-					<JPARelationship name="softSkill3">SoftSkill3</JPARelationship>
-					<JPARelationship name="softSkill4">SoftSkill4</JPARelationship>
-					<JPARelationship name="softSkill5">SoftSkill5</JPARelationship>
-					<JPARelationship name="softSkill6">SoftSkill6</JPARelationship>
-					<JPARelationship name="country">Country</JPARelationship>
-					<JPARelationship name="region">Region</JPARelationship>
-					<JPARelationship name="shirtSize">ShirtSize</JPARelationship>
-					<JPARelationship name="shirtMF">ShirtMF</JPARelationship>
-					<JPARelationship name="topicLeadRegion">TopicLeadRegion</JPARelationship>
-					<JPARelationship name="topic1">Topic1</JPARelationship>
-					<JPARelationship name="topic2">Topic2</JPARelationship>
-					<JPARelationship name="topic3">Topic3</JPARelationship>
-					<JPARelationship name="topic4">Topic4</JPARelationship>
-					<JPARelationship name="topicInterest">TopicInterest</JPARelationship>
+					<JPARelationship name="statusId">MentorStatus</JPARelationship>
+					<JPARelationship name="relationshipToSapId">RelationshipToSap</JPARelationship>
+					<JPARelationship name="lineOfBusiness1Id">LineOfBusiness1</JPARelationship>
+					<JPARelationship name="lineOfBusiness2Id">LineOfBusiness2</JPARelationship>
+					<JPARelationship name="lineOfBusiness3Id">LineOfBusiness3</JPARelationship>
+					<JPARelationship name="industry1Id">Industry1</JPARelationship>
+					<JPARelationship name="industry2Id">Industry2</JPARelationship>
+					<JPARelationship name="industry3Id">Industry3</JPARelationship>
+					<JPARelationship name="sapExpertise1Id">SapExpertise1</JPARelationship>
+					<JPARelationship name="sapExpertise2Id">SapExpertise2</JPARelationship>
+					<JPARelationship name="sapExpertise3Id">SapExpertise3</JPARelationship>
+					<JPARelationship name="sapExpertise1levelId">SapExpertise1Level</JPARelationship>
+					<JPARelationship name="sapExpertise2levelId">SapExpertise2Level</JPARelationship>
+					<JPARelationship name="sapExpertise3levelId">SapExpertise3Level</JPARelationship>
+					<JPARelationship name="softSkill1Id">SoftSkill1</JPARelationship>
+					<JPARelationship name="softSkill2Id">SoftSkill2</JPARelationship>
+					<JPARelationship name="softSkill3Id">SoftSkill3</JPARelationship>
+					<JPARelationship name="softSkill4Id">SoftSkill4</JPARelationship>
+					<JPARelationship name="softSkill5Id">SoftSkill5</JPARelationship>
+					<JPARelationship name="softSkill6Id">SoftSkill6</JPARelationship>
+					<JPARelationship name="countryId">Country</JPARelationship>
+					<JPARelationship name="regionId">Region</JPARelationship>
+					<JPARelationship name="shirtSizeId">ShirtSize</JPARelationship>
+					<JPARelationship name="shirtMFId">ShirtMF</JPARelationship>
+					<JPARelationship name="topicLeadRegionId">TopicLeadRegion</JPARelationship>
+					<JPARelationship name="topic1Id">Topic1</JPARelationship>
+					<JPARelationship name="topic2Id">Topic2</JPARelationship>
+					<JPARelationship name="topic3Id">Topic3</JPARelationship>
+					<JPARelationship name="topic4Id">Topic4</JPARelationship>
+					<JPARelationship name="topicInterestId">TopicInterest</JPARelationship>
+					<JPARelationship name="attachments">Attachments</JPARelationship>
+				</JPARelationships>
+			</JPAEntityType>
+			<JPAEntityType name="Attachment">
+				<JPARelationships>
+					<JPARelationship name="mentorId">Mentor</JPARelationship>
 				</JPARelationships>
 			</JPAEntityType>
 			<JPAEntityType name="MentorStatus">

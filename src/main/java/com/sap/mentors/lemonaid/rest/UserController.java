@@ -46,7 +46,7 @@ public class UserController {
 			}			
 	        return new User(userPrincipal.getName());
 		}
-        return null;
+        return new User();
     }
 
 }

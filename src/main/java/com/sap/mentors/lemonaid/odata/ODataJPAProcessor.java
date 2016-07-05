@@ -1,7 +1,6 @@
 package com.sap.mentors.lemonaid.odata;
 
 import java.io.InputStream;
-import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -10,20 +9,17 @@ import org.apache.olingo.odata2.api.exception.ODataException;
 import org.apache.olingo.odata2.api.processor.ODataContext;
 import org.apache.olingo.odata2.api.processor.ODataResponse;
 import org.apache.olingo.odata2.api.uri.info.DeleteUriInfo;
-import org.apache.olingo.odata2.api.uri.info.GetEntitySetUriInfo;
 import org.apache.olingo.odata2.api.uri.info.PostUriInfo;
 import org.apache.olingo.odata2.api.uri.info.PutMergePatchUriInfo;
 import org.apache.olingo.odata2.jpa.processor.api.ODataJPAContext;
 import org.apache.olingo.odata2.jpa.processor.core.ODataJPAContextImpl;
 import org.apache.olingo.odata2.jpa.processor.core.ODataJPAProcessorDefault;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-public class CustomODataJPAProcessor extends ODataJPAProcessorDefault {
+public class ODataJPAProcessor extends ODataJPAProcessorDefault {
 
-	private static final Logger log = LoggerFactory.getLogger(CustomODataJPAProcessor.class);
+	private final MediaProcessor mediaProcessor = new MediaProcessor();
 
-	public CustomODataJPAProcessor(ODataJPAContext oDataJPAContext) {
+	public ODataJPAProcessor(ODataJPAContext oDataJPAContext) {
 		super(oDataJPAContext);
 	}
 
@@ -46,21 +42,6 @@ public class CustomODataJPAProcessor extends ODataJPAProcessorDefault {
 	}
 
 	@Override
-	public ODataResponse readEntitySet(final GetEntitySetUriInfo uriParserResultView, final String contentType)
-			throws ODataException {
-
-		ODataResponse oDataResponse = null;
-		try {
-			oDataJPAContext.setODataContext(getContext());
-			List<Object> jpaEntities = jpaProcessor.process(uriParserResultView);
-			oDataResponse = responseBuilder.build(uriParserResultView, jpaEntities, contentType);
-		} finally {
-			close();
-		}
-		return oDataResponse;
-	}
-	
-	@Override
 	public ODataResponse createEntity(final PostUriInfo uriParserResultView, final InputStream content,
 			final String requestContentType, final String contentType) throws ODataException {
 		if (!isMentor() && !isAlumnus() && !isProjectMember()) {
@@ -68,9 +49,14 @@ public class CustomODataJPAProcessor extends ODataJPAProcessorDefault {
 		}
 		ODataResponse oDataResponse = null;
 		try {
-			oDataJPAContext.setODataContext(getContext());
-			Object createdJpaEntity = jpaProcessor.process(uriParserResultView, content, requestContentType);
-			oDataResponse = responseBuilder.build(uriParserResultView, createdJpaEntity, contentType);
+			if (uriParserResultView.getTargetEntitySet().getEntityType().hasStream()) {
+				Object createdJpaEntity = mediaProcessor.process(uriParserResultView, content, requestContentType);
+				oDataResponse = responseBuilder.build(uriParserResultView, createdJpaEntity, contentType);
+			} else {
+				oDataJPAContext.setODataContext(getContext());
+				Object createdJpaEntity = jpaProcessor.process(uriParserResultView, content, requestContentType);
+				oDataResponse = responseBuilder.build(uriParserResultView, createdJpaEntity, contentType);
+			}
 		} finally {
 			close();
 		}
@@ -144,6 +130,9 @@ public class CustomODataJPAProcessor extends ODataJPAProcessorDefault {
 	@Override
 	public ODataResponse deleteEntityLink(final DeleteUriInfo uriParserResultView, final String contentType)
 			throws ODataException {
+		if (!isMentor() && !isAlumnus() && !isProjectMember()) {
+			return ODataResponse.entity("Unauthorized").status(HttpStatusCodes.UNAUTHORIZED).contentHeader("text/html").build();
+		}
 		try {
 			oDataJPAContext.setODataContext(getContext());
 			jpaProcessor.process(uriParserResultView, contentType);

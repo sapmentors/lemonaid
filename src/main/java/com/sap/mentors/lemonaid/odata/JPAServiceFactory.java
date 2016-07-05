@@ -65,7 +65,7 @@ public class JPAServiceFactory extends ODataServiceFactory {
 			oDataJPAContext.setODataContext(ctx);
 		}
 
-		ODataSingleProcessor odataJPAProcessor = new CustomODataJPAProcessor(oDataJPAContext);
+		ODataSingleProcessor odataJPAProcessor = new ODataJPAProcessor(oDataJPAContext);
 
 		// OData Entity Data Model Provider based on JPA
 		EdmProvider edmProvider = accessFactory.createJPAEdmProvider(oDataJPAContext);

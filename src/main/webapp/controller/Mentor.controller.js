@@ -1,17 +1,23 @@
 sap.ui.define([
     "com/sap/mentors/lemonaid/controller/BaseController",
-    "openui5/googlemaps/MapUtils"
-], function(BaseController, mapUtils) {
+    "sap/m/MessageBox"
+], function(BaseController, MessageBox) {
     "use strict";
 
     return BaseController.extend("com.sap.mentors.lemonaid.controller.Mentor", {
-        mapUtils: mapUtils,
+    	
+    	busyDialog: new sap.m.BusyDialog(),
 
         onInit: function() {
-            this.getRouter().getRoute("Mentor").attachMatched(this._onRouteMatched, this);
+        	this.view = this.getView();
+        	this.component = this.getComponent();
+        	this.model = this.component.getModel();
+        	this.router = this.getRouter();
+        	this.i18n = this.component.getModel("i18n").getResourceBundle();
+            this.router.getRoute("Mentor").attachMatched(this.onRouteMatched, this);
         },
 
-        _onRouteMatched: function(oEvent) {
+        onRouteMatched: function(oEvent) {
             this.sMentorId = oEvent.getParameter("arguments").Id;
             this.getModel().metadataLoaded().then(this.bindView.bind(this));
         },
@@ -23,69 +29,60 @@ sap.ui.define([
                     expand: 'MentorStatus,RelationshipToSap,Country,Topic1,Topic2,Topic3'
                 }
             });
+			var uploadControl = this.view.byId("UploadCollection");
+			uploadControl.setUploadUrl(
+				this.model.sServiceUrl + "/" + this.model.createKey("Mentors", {Id: this.sMentorId}) + "/Attachments");
+			uploadControl.bindElement({
+				path: "/" + this.model.createKey("Mentors", {Id: this.sMentorId})
+			});
         },
 
-        /**
-         * set the location of the new binding
-         */
-        setMentorLocation: function() {
-            var oMap = this.getView().byId("idMap");
-            var oObject = this.getView().getBindingContext().getObject();
-            var oMentorsModel = this.getModel("mentors");
-            var aEntries = oMentorsModel.getData();
+		onBeforeUploadStarts: function(oEvent) {
+			oEvent.getParameters().addHeaderParameter(
+				new sap.m.UploadCollectionParameter({
+					name: "slug",
+					value: oEvent.getParameter("fileName")
+				})
+			);
+//			oEvent.getParameters().addHeaderParameter(
+//				new sap.m.UploadCollectionParameter({
+//					name: "x-csrf-token",
+//					value: this.model.getHeaders()["x-csrf-token"]
+//				})
+//			);
+			this.busyDialog.setTitle(this.i18n.getText("attachment"));
+			this.busyDialog.setText(this.i18n.getText("uploadingAttachment", [ oEvent.getParameter("fileName") ]));
+			this.busyDialog.open();
+		},
+		
+		onUploadComplete: function(event) {
+			var result = event.getParameter("mParameters"); 
+			if (result.status >= 400) {
+				MessageBox.error(
+						this.i18n.getText("errorDuringUpload", [ result.status, result.responseRaw]), {
+						styleClass: this.component.getContentDensityClass()
+				     });
+			}
+			this.model.read("/" + this.model.createKey("Mentors", {Id: this.sMentorId}) + "/Attachments");
+			this.model.refresh();
+			this.busyDialog.close();
+		},
+		
+		onChange: function(oEvent) {
+			var oUploadCollection = oEvent.getSource();
+			var oRequest = this.model._createRequest();  
+			var oCustomerHeaderToken = new UploadCollectionParameter({
+				name: "x-csrf-token",
+				value: oRequest.headers['x-csrf-token']
+			});
+			oUploadCollection.addHeaderParameter(oCustomerHeaderToken);
+		},
+		
+		onFileDeleted: function(event) {
+			this.model.remove(event.getParameter("item").getBindingContext().getPath());
+		}
 
-            // check for an existing entry
-            var fnFilter = function(oEntry) {
-                return (oEntry.Id === oObject.Id);
-            };
-
-            var oEntry = aEntries.filter(fnFilter)[0] || null;
-
-            if (!oEntry) {
-                this.searchForLocation(oObject, this.addMentorLocation.bind(this), this.setMentorLocation.bind(this));
-            } else {
-                var oContext = oMentorsModel.getContext("/" + aEntries.indexOf(oEntry));
-                oMap.setBindingContext(oContext, "mentors");      
-     
-            }
-        },
-
-        /**
-         * search for the location, if found add to the model and set the map
-         * @param  {object} oObject     context data for entry
-         * @param  {function} fnCallBack1 add the location to the model
-         * @param  {function} fnCallBack2 set the location
-         */
-        searchForLocation: function(oObject, fnCallBack1, fnCallBack2) {
-            var sAddress = oObject.City + " " + oObject.State;
-
-            mapUtils.search({
-                "address": sAddress
-            }).then(fnCallBack1).then(fnCallBack2);
-        },
-
-        /**
-         * read the first returned entry from the geocode call and set it to model
-         * @param {array} aResults array of found locations
-         * @param {string} sStatus  status of the call
-         */
-        addMentorLocation: function(aResults, sStatus) {
-            if (sStatus === "OK") {
-                var oMentorsModel = this.getModel("mentors");
-                var aEntries = oMentorsModel.getData();
-                var oObject = this.getView().getBindingContext().getObject();
-                var oLocation = aResults[0];
-                var oEntry = {
-                    Id: oObject.Id,
-                    lat: oLocation.geometry.location.lat(),
-                    lng: oLocation.geometry.location.lng(),
-                    info: oLocation.formatted_address
-                };
-
-                aEntries.push(oEntry);
-                oMentorsModel.setData(aEntries);
-            }
-        }
+        
     });
 });
 

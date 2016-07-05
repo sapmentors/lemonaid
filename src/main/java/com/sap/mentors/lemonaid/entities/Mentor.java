@@ -1,9 +1,14 @@
 package com.sap.mentors.lemonaid.entities;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -14,30 +19,30 @@ public class Mentor {
 	private String id;
     private String fullName;
     private String photoUrl;
-    @ManyToOne private MentorStatus status;
+    @JoinColumn(name="statusId") @ManyToOne private MentorStatus statusId;
 
     private String jobTitle;
     private String company;
-    @ManyToOne private RelationshipToSap relationshipToSap;
+    @JoinColumn(name="relationshipToSapId") @ManyToOne private RelationshipToSap relationshipToSapId;
 
-    @ManyToOne private LineOfBusiness lineOfBusiness1;
-    @ManyToOne private LineOfBusiness lineOfBusiness2;
-    @ManyToOne private LineOfBusiness lineOfBusiness3;
-    @ManyToOne private Industry industry1;
-    @ManyToOne private Industry industry2;
-    @ManyToOne private Industry industry3;
-    @ManyToOne private SapSoftwareSolution sapExpertise1;
-    @ManyToOne private ExpertiseLevel sapExpertise1Level;
-    @ManyToOne private SapSoftwareSolution sapExpertise2;
-    @ManyToOne private ExpertiseLevel sapExpertise2Level;
-    @ManyToOne private SapSoftwareSolution sapExpertise3;
-    @ManyToOne private ExpertiseLevel sapExpertise3Level;
-    @ManyToOne private SoftSkill softSkill1;
-    @ManyToOne private SoftSkill softSkill2;
-    @ManyToOne private SoftSkill softSkill3;
-    @ManyToOne private SoftSkill softSkill4;
-    @ManyToOne private SoftSkill softSkill5;
-    @ManyToOne private SoftSkill softSkill6;
+    @JoinColumn(name="lineOfBusiness1Id") @ManyToOne private LineOfBusiness lineOfBusiness1Id;
+    @JoinColumn(name="lineOfBusiness2Id") @ManyToOne private LineOfBusiness lineOfBusiness2Id;
+    @JoinColumn(name="lineOfBusiness3Id") @ManyToOne private LineOfBusiness lineOfBusiness3Id;
+    @JoinColumn(name="industry1Id") @ManyToOne private Industry industry1Id;
+    @JoinColumn(name="industry2Id") @ManyToOne private Industry industry2Id;
+    @JoinColumn(name="industry3Id") @ManyToOne private Industry industry3Id;
+    @JoinColumn(name="sapExpertise1Id") @ManyToOne private SapSoftwareSolution sapExpertise1Id;
+    @JoinColumn(name="sapExpertise1LevelId") @ManyToOne private ExpertiseLevel sapExpertise1LevelId;
+    @JoinColumn(name="sapExpertise2Id") @ManyToOne private SapSoftwareSolution sapExpertise2Id;
+    @JoinColumn(name="sapExpertise2LevelId") @ManyToOne private ExpertiseLevel sapExpertise2LevelId;
+    @JoinColumn(name="sapExpertise3Id") @ManyToOne private SapSoftwareSolution sapExpertise3Id;
+    @JoinColumn(name="sapExpertise3LevelId") @ManyToOne private ExpertiseLevel sapExpertise3LevelId;
+    @JoinColumn(name="softSkill1Id") @ManyToOne private SoftSkill softSkill1Id;
+    @JoinColumn(name="softSkill2Id") @ManyToOne private SoftSkill softSkill2Id;
+    @JoinColumn(name="softSkill3Id") @ManyToOne private SoftSkill softSkill3Id;
+    @JoinColumn(name="softSkill4Id") @ManyToOne private SoftSkill softSkill4Id;
+    @JoinColumn(name="softSkill5Id") @ManyToOne private SoftSkill softSkill5Id;
+    @JoinColumn(name="softSkill6Id") @ManyToOne private SoftSkill softSkill6Id;
     
     @Lob private String bio; 
     private String email1;
@@ -48,17 +53,17 @@ public class Mentor {
     private String city;
     private String state;
     private String zip;
-    @ManyToOne private Country country;
+    @JoinColumn(name="countryId") @ManyToOne() private Country countryId;    
     private String phone;
     private Double latitude;
     private Double longitude;
     
-    @ManyToOne private Region region;
+    @JoinColumn(name="regionId") @ManyToOne private Region regionId;
     
     private int shirtNumber;
     private String shirtText;
-    @ManyToOne private Size shirtSize;
-    @ManyToOne private Gender shirtMF;
+    @JoinColumn(name="shirtSizeId") @ManyToOne private Size shirtSizeId;
+    @JoinColumn(name="shirtMFId") @ManyToOne private Gender shirtMFId;
 
     private String scnUrl;
     private String twitterId;
@@ -72,63 +77,66 @@ public class Mentor {
     private boolean interestInOtherIdeas;
     private int hoursAvailable;
     
-    @ManyToOne private Region topicLeadRegion;
-    @ManyToOne private Topic topic1;
+    @JoinColumn(name="topicLeadRegionId") @ManyToOne private Region topicLeadRegionId;
+    @JoinColumn(name="topic1Id") @ManyToOne private Topic topic1Id;
     private String topic1Executive;
-    @ManyToOne private Topic topic2;
+    @JoinColumn(name="topic2Id") @ManyToOne private Topic topic2Id;
     private String topic2Executive;
-    @ManyToOne private Topic topic3;
+    @JoinColumn(name="topic3Id") @ManyToOne private Topic topic3Id;
     private String topic3Executive;
-    @ManyToOne private Topic topic4;
+    @JoinColumn(name="topic4Id") @ManyToOne private Topic topic4Id;
     private String topic4Executive;
     private boolean topicLeadInterest;
-    @ManyToOne private Topic topicInterest;
+    @JoinColumn(name="topicInterestId") @ManyToOne private Topic topicInterestId;
+ 
+    @OneToMany(cascade = CascadeType.ALL, mappedBy="mentorId")
+    private List<Attachment> attachments;    
     
     public Mentor() {}
 
     public Mentor(
     		String id, String fullName, MentorStatus status, 
     		String jobTitle, String company, RelationshipToSap relationshipToSap,
-    		LineOfBusiness lineOfBusiness1, LineOfBusiness lineOfBusiness2, LineOfBusiness lineOfBusiness3,
-    		Industry industry1, Industry industry2, Industry industry3,
-    		SapSoftwareSolution sapExpertise1, ExpertiseLevel sapExpertise1Level, SapSoftwareSolution sapExpertise2, ExpertiseLevel sapExpertise2Level, SapSoftwareSolution sapExpertise3, ExpertiseLevel sapExpertise3Level,
-    		SoftSkill softSkill1, SoftSkill softSkill2, SoftSkill softSkill3, SoftSkill softSkill4, SoftSkill softSkill5, SoftSkill softSkill6,
+    		LineOfBusiness lineOfBusiness1Id, LineOfBusiness lineOfBusiness2Id, LineOfBusiness lineOfBusiness3Id,
+    		Industry industry1Id, Industry industry2Id, Industry industry3Id,
+    		SapSoftwareSolution sapExpertise1Id, ExpertiseLevel sapExpertise1LevelId, SapSoftwareSolution sapExpertise2Id, ExpertiseLevel sapExpertise2LevelId, SapSoftwareSolution sapExpertise3Id, ExpertiseLevel sapExpertise3LevelId,
+    		SoftSkill softSkill1Id, SoftSkill softSkill2Id, SoftSkill softSkill3Id, SoftSkill softSkill4Id, SoftSkill softSkill5Id, SoftSkill softSkill6Id,
     		String bio,
     		String email1, String email2, int preferredEmail,
-    		String address, String city, String state, String zip, Country country, String phone,
+    		String address, String city, String state, String zip, Country countryId, String phone,
     		Double latitude, Double longitude,
-    		Region region,
-    		int shirtNumber, String shirtText, Size shirtSize, Gender shirtMF,
+    		Region regionId,
+    		int shirtNumber, String shirtText, Size shirtSizeId, Gender shirtMFId,
     		String scnUrl, String twitterId, String linkedInUrl, String xingUrl, String facebookUrl,
     		boolean interestInMentorCommunicationStrategy, boolean interestInMentorManagementModel, boolean interestInMentorMix, boolean interestInOtherIdeas, int hoursAvailable,
-    		Region topicLeadRegion, Topic topic1, String topic1Executive, Topic topic2, String topic2Executive, Topic topic3, String topic3Executive, Topic topic4, String topic4Executive, boolean topicLeadInterest, Topic topicInterest)
+    		Region topicLeadRegionId, Topic topic1Id, String topic1Executive, Topic topic2Id, String topic2Executive, Topic topic3Id, String topic3Executive, Topic topic4Id, String topic4Executive, boolean topicLeadInterest, Topic topicInterestId)
     {
     	this.id = id;
         this.fullName = fullName;
-        this.status = status;
+        this.statusId = status;
         
         this.jobTitle = jobTitle;
         this.company = company;
-        this.relationshipToSap = relationshipToSap;
+        this.relationshipToSapId = relationshipToSap;
         
-        this.lineOfBusiness1 = lineOfBusiness1;
-        this.lineOfBusiness2 = lineOfBusiness2;
-        this.lineOfBusiness3 = lineOfBusiness3;
-        this.industry1 = industry1;
-        this.industry2 = industry2;
-        this.industry3 = industry3;
-        this.sapExpertise1 = sapExpertise1;
-        this.sapExpertise1Level = sapExpertise1Level;
-        this.sapExpertise2 = sapExpertise2;
-        this.sapExpertise2Level = sapExpertise2Level;
-        this.sapExpertise3 = sapExpertise3;
-        this.sapExpertise3Level = sapExpertise3Level;
-        this.softSkill1 = softSkill1;
-        this.softSkill2 = softSkill2;
-        this.softSkill3 = softSkill3;
-        this.softSkill4 = softSkill4;
-        this.softSkill5 = softSkill5;
-        this.softSkill6 = softSkill6;
+        this.lineOfBusiness1Id = lineOfBusiness1Id;
+        this.lineOfBusiness2Id = lineOfBusiness2Id;
+        this.lineOfBusiness3Id = lineOfBusiness3Id;
+        this.industry1Id = industry1Id;
+        this.industry2Id = industry2Id;
+        this.industry3Id = industry3Id;
+        this.sapExpertise1Id = sapExpertise1Id;
+        this.sapExpertise1LevelId = sapExpertise1LevelId;
+        this.sapExpertise2Id = sapExpertise2Id;
+        this.sapExpertise2LevelId = sapExpertise2LevelId;
+        this.sapExpertise3Id = sapExpertise3Id;
+        this.sapExpertise3LevelId = sapExpertise3LevelId;
+        this.softSkill1Id = softSkill1Id;
+        this.softSkill2Id = softSkill2Id;
+        this.softSkill3Id = softSkill3Id;
+        this.softSkill4Id = softSkill4Id;
+        this.softSkill5Id = softSkill5Id;
+        this.softSkill6Id = softSkill6Id;
         
         this.bio = bio;
         this.email1 = email1;
@@ -139,18 +147,18 @@ public class Mentor {
         this.city = city;
         this.state = state;
         this.zip = zip;
-        this.country = country;
+        this.countryId = countryId;
         this.phone = phone;
         
         this.latitude = latitude;
         this.longitude = longitude;
         
-        this.region = region;
+        this.regionId = regionId;
         
         this.shirtNumber = shirtNumber;
         this.shirtText = shirtText;
-        this.shirtSize = shirtSize;
-        this.shirtMF = shirtMF;
+        this.shirtSizeId = shirtSizeId;
+        this.shirtMFId = shirtMFId;
         
         this.scnUrl = scnUrl; 
         this.twitterId = twitterId;
@@ -164,17 +172,17 @@ public class Mentor {
         this.interestInOtherIdeas = interestInOtherIdeas;
         this.hoursAvailable = hoursAvailable;
         
-        this.topicLeadRegion = topicLeadRegion;
-        this.topic1 = topic1;
+        this.topicLeadRegionId = topicLeadRegionId;
+        this.topic1Id = topic1Id;
         this.topic1Executive = topic1Executive;
-        this.topic2 = topic2;
+        this.topic2Id = topic2Id;
         this.topic2Executive = topic2Executive;
-        this.topic3 = topic3;
+        this.topic3Id = topic3Id;
         this.topic3Executive = topic3Executive;
-        this.topic4 = topic4;
+        this.topic4Id = topic4Id;
         this.topic4Executive = topic4Executive;
         this.topicLeadInterest = topicLeadInterest;
-        this.topicInterest = topicInterest;
+        this.topicInterestId = topicInterestId;
     }
 
     @Override
@@ -208,20 +216,12 @@ public class Mentor {
 		this.photoUrl = photoUrl;
 	}
 
-	public MentorStatus getStatus() {
-		return status;
+	public MentorStatus getStatusId() {
+		return statusId;
 	}
 
-	public void setStatus(MentorStatus status) {
-		this.status = status;
-	}
-
-	public String getStatusId() {
-		return status.getId();
-	}
-
-	public void setStatusId(String statusId) {
-		status = new MentorStatus(statusId);
+	public void setStatusId(MentorStatus statusId) {
+		this.statusId = statusId;
 	}
 
 	public String getJobTitle() {
@@ -240,156 +240,156 @@ public class Mentor {
 		this.company = company;
 	}
 
-	public RelationshipToSap getRelationshipToSap() {
-		return relationshipToSap;
+	public RelationshipToSap getRelationshipToSapId() {
+		return relationshipToSapId;
 	}
 
-	public void setRelationshipToSap(RelationshipToSap relationshipToSap) {
-		this.relationshipToSap = relationshipToSap;
+	public void setRelationshipToSapId(RelationshipToSap relationshipToSapId) {
+		this.relationshipToSapId = relationshipToSapId;
 	}
 
-	public LineOfBusiness getLineOfBusiness1() {
-		return lineOfBusiness1;
+	public LineOfBusiness getLineOfBusiness1Id() {
+		return lineOfBusiness1Id;
 	}
 
-	public void setLineOfBusiness1(LineOfBusiness lineOfBusiness1) {
-		this.lineOfBusiness1 = lineOfBusiness1;
+	public void setLineOfBusiness1Id(LineOfBusiness lineOfBusiness1Id) {
+		this.lineOfBusiness1Id = lineOfBusiness1Id;
 	}
 
-	public LineOfBusiness getLineOfBusiness2() {
-		return lineOfBusiness2;
+	public LineOfBusiness getLineOfBusiness2Id() {
+		return lineOfBusiness2Id;
 	}
 
-	public void setLineOfBusiness2(LineOfBusiness lineOfBusiness2) {
-		this.lineOfBusiness2 = lineOfBusiness2;
+	public void setLineOfBusiness2Id(LineOfBusiness lineOfBusiness2Id) {
+		this.lineOfBusiness2Id = lineOfBusiness2Id;
 	}
 
-	public LineOfBusiness getLineOfBusiness3() {
-		return lineOfBusiness3;
+	public LineOfBusiness getLineOfBusiness3Id() {
+		return lineOfBusiness3Id;
 	}
 
-	public void setLineOfBusiness3(LineOfBusiness lineOfBusiness3) {
-		this.lineOfBusiness3 = lineOfBusiness3;
+	public void setLineOfBusiness3Id(LineOfBusiness lineOfBusiness3Id) {
+		this.lineOfBusiness3Id = lineOfBusiness3Id;
 	}
 
-	public Industry getIndustry1() {
-		return industry1;
+	public Industry getIndustry1Id() {
+		return industry1Id;
 	}
 
-	public void setIndustry1(Industry industry1) {
-		this.industry1 = industry1;
+	public void setIndustry1Id(Industry industry1Id) {
+		this.industry1Id = industry1Id;
 	}
 
-	public Industry getIndustry2() {
-		return industry2;
+	public Industry getIndustry2Id() {
+		return industry2Id;
 	}
 
-	public void setIndustry2(Industry industry2) {
-		this.industry2 = industry2;
+	public void setIndustry2Id(Industry industry2Id) {
+		this.industry2Id = industry2Id;
 	}
 
-	public Industry getIndustry3() {
-		return industry3;
+	public Industry getIndustry3Id() {
+		return industry3Id;
 	}
 
-	public void setIndustry3(Industry industry3) {
-		this.industry3 = industry3;
+	public void setIndustry3Id(Industry industry3Id) {
+		this.industry3Id = industry3Id;
 	}
 
-	public SapSoftwareSolution getSapExpertise1() {
-		return sapExpertise1;
+	public SapSoftwareSolution getSapExpertise1Id() {
+		return sapExpertise1Id;
 	}
 
-	public void setSapExpertise1(SapSoftwareSolution sapExpertise1) {
-		this.sapExpertise1 = sapExpertise1;
+	public void setSapExpertise1Id(SapSoftwareSolution sapExpertise1Id) {
+		this.sapExpertise1Id = sapExpertise1Id;
 	}
 
-	public ExpertiseLevel getSapExpertise1Level() {
-		return sapExpertise1Level;
+	public ExpertiseLevel getSapExpertise1LevelId() {
+		return sapExpertise1LevelId;
 	}
 
-	public void setSapExpertise1Level(ExpertiseLevel sapExpertise1Level) {
-		this.sapExpertise1Level = sapExpertise1Level;
+	public void setSapExpertise1LevelId(ExpertiseLevel sapExpertise1LevelId) {
+		this.sapExpertise1LevelId = sapExpertise1LevelId;
 	}
 
-	public SapSoftwareSolution getSapExpertise2() {
-		return sapExpertise2;
+	public SapSoftwareSolution getSapExpertise2Id() {
+		return sapExpertise2Id;
 	}
 
-	public void setSapExpertise2(SapSoftwareSolution sapExpertise2) {
-		this.sapExpertise2 = sapExpertise2;
+	public void setSapExpertise2Id(SapSoftwareSolution sapExpertise2Id) {
+		this.sapExpertise2Id = sapExpertise2Id;
 	}
 
-	public ExpertiseLevel getSapExpertise2Level() {
-		return sapExpertise2Level;
+	public ExpertiseLevel getSapExpertise2LevelId() {
+		return sapExpertise2LevelId;
 	}
 
-	public void setSapExpertise2Level(ExpertiseLevel sapExpertise2Level) {
-		this.sapExpertise2Level = sapExpertise2Level;
+	public void setSapExpertise2LevelId(ExpertiseLevel sapExpertise2LevelId) {
+		this.sapExpertise2LevelId = sapExpertise2LevelId;
 	}
 
-	public SapSoftwareSolution getSapExpertise3() {
-		return sapExpertise3;
+	public SapSoftwareSolution getSapExpertise3Id() {
+		return sapExpertise3Id;
 	}
 
-	public void setSapExpertise3(SapSoftwareSolution sapExpertise3) {
-		this.sapExpertise3 = sapExpertise3;
+	public void setSapExpertise3Id(SapSoftwareSolution sapExpertise3Id) {
+		this.sapExpertise3Id = sapExpertise3Id;
 	}
 
-	public ExpertiseLevel getSapExpertise3Level() {
-		return sapExpertise3Level;
+	public ExpertiseLevel getSapExpertise3LevelId() {
+		return sapExpertise3LevelId;
 	}
 
-	public void setSapExpertise3Level(ExpertiseLevel sapExpertise3Level) {
-		this.sapExpertise3Level = sapExpertise3Level;
+	public void setSapExpertise3LevelId(ExpertiseLevel sapExpertise3LevelId) {
+		this.sapExpertise3LevelId = sapExpertise3LevelId;
 	}
 
-	public SoftSkill getSoftSkill1() {
-		return softSkill1;
+	public SoftSkill getSoftSkill1Id() {
+		return softSkill1Id;
 	}
 
-	public void setSoftSkill1(SoftSkill softSkill1) {
-		this.softSkill1 = softSkill1;
+	public void setSoftSkill1Id(SoftSkill softSkill1Id) {
+		this.softSkill1Id = softSkill1Id;
 	}
 
-	public SoftSkill getSoftSkill2() {
-		return softSkill2;
+	public SoftSkill getSoftSkill2Id() {
+		return softSkill2Id;
 	}
 
-	public void setSoftSkill2(SoftSkill softSkill2) {
-		this.softSkill2 = softSkill2;
+	public void setSoftSkill2Id(SoftSkill softSkill2Id) {
+		this.softSkill2Id = softSkill2Id;
 	}
 
-	public SoftSkill getSoftSkill3() {
-		return softSkill3;
+	public SoftSkill getSoftSkill3Id() {
+		return softSkill3Id;
 	}
 
-	public void setSoftSkill3(SoftSkill softSkill3) {
-		this.softSkill3 = softSkill3;
+	public void setSoftSkill3Id(SoftSkill softSkill3Id) {
+		this.softSkill3Id = softSkill3Id;
 	}
 
-	public SoftSkill getSoftSkill4() {
-		return softSkill4;
+	public SoftSkill getSoftSkill4Id() {
+		return softSkill4Id;
 	}
 
-	public void setSoftSkill4(SoftSkill softSkill4) {
-		this.softSkill4 = softSkill4;
+	public void setSoftSkill4Id(SoftSkill softSkill4Id) {
+		this.softSkill4Id = softSkill4Id;
 	}
 
-	public SoftSkill getSoftSkill5() {
-		return softSkill5;
+	public SoftSkill getSoftSkill5Id() {
+		return softSkill5Id;
 	}
 
-	public void setSoftSkill5(SoftSkill softSkill5) {
-		this.softSkill5 = softSkill5;
+	public void setSoftSkill5Id(SoftSkill softSkill5Id) {
+		this.softSkill5Id = softSkill5Id;
 	}
 
-	public SoftSkill getSoftSkill6() {
-		return softSkill6;
+	public SoftSkill getSoftSkill6Id() {
+		return softSkill6Id;
 	}
 
-	public void setSoftSkill6(SoftSkill softSkill6) {
-		this.softSkill6 = softSkill6;
+	public void setSoftSkill6Id(SoftSkill softSkill6Id) {
+		this.softSkill6Id = softSkill6Id;
 	}
 
 	public String getBio() {
@@ -456,20 +456,12 @@ public class Mentor {
 		this.zip = zip;
 	}
 
-	public Country getCountry() {
-		return country;
+	public Country getCountryId() {
+		return countryId;
 	}
 
-	public void setCountry(Country country) {
-		this.country = country;
-	}
-
-	public String getCountryId() {
-		return country.getId();
-	}
-
-	public void setCountryId(String countryId) {
-		country = new Country(countryId);
+	public void setCountryId(Country countryId) {
+		this.countryId = countryId;
 	}
 
 	public String getPhone() {
@@ -492,16 +484,48 @@ public class Mentor {
 		return longitude;
 	}
 
-	public void setLongigude(Double longitude) {
+	public void setLongitude(Double longitude) {
 		this.longitude = longitude;
 	}
 
-	public Region getRegion() {
-		return region;
+	public Region getRegionId() {
+		return regionId;
 	}
 
-	public void setRegion(Region region) {
-		this.region = region;
+	public void setRegionId(Region regionId) {
+		this.regionId = regionId;
+	}
+
+	public int getShirtNumber() {
+		return shirtNumber;
+	}
+
+	public void setShirtNumber(int shirtNumber) {
+		this.shirtNumber = shirtNumber;
+	}
+
+	public String getShirtText() {
+		return shirtText;
+	}
+
+	public void setShirtText(String shirtText) {
+		this.shirtText = shirtText;
+	}
+
+	public Size getShirtSizeId() {
+		return shirtSizeId;
+	}
+
+	public void setShirtSizeId(Size shirtSizeId) {
+		this.shirtSizeId = shirtSizeId;
+	}
+
+	public Gender getShirtMFId() {
+		return shirtMFId;
+	}
+
+	public void setShirtMFId(Gender shirtMFId) {
+		this.shirtMFId = shirtMFId;
 	}
 
 	public String getScnUrl() {
@@ -544,38 +568,6 @@ public class Mentor {
 		this.facebookUrl = facebookUrl;
 	}
 
-	public int getShirtNumber() {
-		return shirtNumber;
-	}
-
-	public void setShirtNumber(int shirtNumber) {
-		this.shirtNumber = shirtNumber;
-	}
-
-	public String getShirtText() {
-		return shirtText;
-	}
-
-	public void setShirtText(String shirtText) {
-		this.shirtText = shirtText;
-	}
-
-	public Size getShirtSize() {
-		return shirtSize;
-	}
-
-	public void setShirtSize(Size shirtSize) {
-		this.shirtSize = shirtSize;
-	}
-
-	public Gender getShirtMF() {
-		return shirtMF;
-	}
-
-	public void setShirtMF(Gender shirtMF) {
-		this.shirtMF = shirtMF;
-	}
-
 	public boolean isInterestInMentorCommunicationStrategy() {
 		return interestInMentorCommunicationStrategy;
 	}
@@ -616,20 +608,20 @@ public class Mentor {
 		this.hoursAvailable = hoursAvailable;
 	}
 
-	public Region getTopicLeadRegion() {
-		return topicLeadRegion;
+	public Region getTopicLeadRegionId() {
+		return topicLeadRegionId;
 	}
 
-	public void setTopicLeadRegion(Region topicLeadRegion) {
-		this.topicLeadRegion = topicLeadRegion;
+	public void setTopicLeadRegionId(Region topicLeadRegionId) {
+		this.topicLeadRegionId = topicLeadRegionId;
 	}
 
-	public Topic getTopic1() {
-		return topic1;
+	public Topic getTopic1Id() {
+		return topic1Id;
 	}
 
-	public void setTopic1(Topic topic1) {
-		this.topic1 = topic1;
+	public void setTopic1Id(Topic topic1Id) {
+		this.topic1Id = topic1Id;
 	}
 
 	public String getTopic1Executive() {
@@ -640,12 +632,12 @@ public class Mentor {
 		this.topic1Executive = topic1Executive;
 	}
 
-	public Topic getTopic2() {
-		return topic2;
+	public Topic getTopic2Id() {
+		return topic2Id;
 	}
 
-	public void setTopic2(Topic topic2) {
-		this.topic2 = topic2;
+	public void setTopic2Id(Topic topic2Id) {
+		this.topic2Id = topic2Id;
 	}
 
 	public String getTopic2Executive() {
@@ -656,12 +648,12 @@ public class Mentor {
 		this.topic2Executive = topic2Executive;
 	}
 
-	public Topic getTopic3() {
-		return topic3;
+	public Topic getTopic3Id() {
+		return topic3Id;
 	}
 
-	public void setTopic3(Topic topic3) {
-		this.topic3 = topic3;
+	public void setTopic3Id(Topic topic3Id) {
+		this.topic3Id = topic3Id;
 	}
 
 	public String getTopic3Executive() {
@@ -672,12 +664,12 @@ public class Mentor {
 		this.topic3Executive = topic3Executive;
 	}
 
-	public Topic getTopic4() {
-		return topic4;
+	public Topic getTopic4Id() {
+		return topic4Id;
 	}
 
-	public void setTopic4(Topic topic4) {
-		this.topic4 = topic4;
+	public void setTopic4Id(Topic topic4Id) {
+		this.topic4Id = topic4Id;
 	}
 
 	public String getTopic4Executive() {
@@ -696,336 +688,20 @@ public class Mentor {
 		this.topicLeadInterest = topicLeadInterest;
 	}
 
-	public Topic getTopicInterest() {
-		return topicInterest;
+	public Topic getTopicInterestId() {
+		return topicInterestId;
 	}
 
-	public void setTopicInterest(Topic topicInterest) {
-		this.topicInterest = topicInterest;
+	public void setTopicInterestId(Topic topicInterestId) {
+		this.topicInterestId = topicInterestId;
 	}
 
-	public String getLineOfBusiness1Id() {
-		if (this.getLineOfBusiness1() == null) {
-			return null;
-		} else {
-			return this.getLineOfBusiness1().getId();
-		}
+	public List<Attachment> getAttachments() {
+		return attachments;
 	}
 
-	public void setLineOfBusiness1Id(String lineOfBusiness1Id) {
-		this.lineOfBusiness1 = new LineOfBusiness(lineOfBusiness1Id);
-	}
-
-	public String getLineOfBusiness2Id() {
-		if (this.getLineOfBusiness2() == null) {
-			return null;
-		} else {
-			return this.getLineOfBusiness2().getId();
-		}
-	}
-
-	public void setLineOfBusiness2Id(String lineOfBusiness2Id) {
-		this.lineOfBusiness2 = new LineOfBusiness(lineOfBusiness2Id);
-	}
-
-	public String getLineOfBusiness3Id() {
-		if (this.getLineOfBusiness3() == null) {
-			return null;
-		} else {
-			return this.getLineOfBusiness3().getId();
-		}
-	}
-
-	public void setLineOfBusiness3Id(String lineOfBusiness3Id) {
-		this.lineOfBusiness3 = new LineOfBusiness(lineOfBusiness3Id);
-	}
-
-	public String getIndustry1Id() {
-		if (this.getIndustry1() == null) {
-			return null;
-		} else {
-			return this.getIndustry1().getId();
-		}
-	}
-
-	public void setIndustry1Id(String industry1Id) {
-		this.industry1 = new Industry(industry1Id);
-	}
-
-	public String getIndustry2Id() {
-		if (this.getIndustry2() == null) {
-			return null;
-		} else {
-			return this.getIndustry2().getId();
-		}
-	}
-
-	public void setIndustry2Id(String industry2Id) {
-		this.industry2 = new Industry(industry2Id);
-	}
-
-	public String getIndustry3Id() {
-		if (this.getIndustry3() == null) {
-			return null;
-		} else {
-			return this.getIndustry3().getId();
-		}
-	}
-
-	public void setIndustry3Id(String industry3Id) {
-		this.industry3 = new Industry(industry3Id);
-	}
-
-	public String getSapExpertise1Id() {
-		if (this.getSapExpertise1() == null) {
-			return null;
-		} else {
-			return this.getSapExpertise1().getId();
-		}
-	}
-
-	public void setSapExpertise1Id(String sapExpertise1Id) {
-		this.sapExpertise1 = new SapSoftwareSolution(sapExpertise1Id);
-	}
-
-	public String getSapExpertise1LevelId() {
-		if (this.getSapExpertise1Level() == null) {
-			return null;
-		} else {
-			return this.getSapExpertise1Level().getId();
-		}
-	}
-
-	public void setSapExpertise1LevelId(String sapExpertise1LevelId) {
-		this.sapExpertise1Level = new ExpertiseLevel(sapExpertise1LevelId);
-	}
-
-	public String getSapExpertise2Id() {
-		if (this.getSapExpertise2() == null) {
-			return null;
-		} else {
-			return this.getSapExpertise2().getId();
-		}
-	}
-
-	public void setSapExpertise2Id(String sapExpertise2Id) {
-		this.sapExpertise2 = new SapSoftwareSolution(sapExpertise2Id);
-	}
-
-	public String getSapExpertise2LevelId() {
-		if (this.getSapExpertise2Level() == null) {
-			return null;
-		} else {
-			return this.getSapExpertise2Level().getId();
-		}
-	}
-
-	public void setSapExpertise2LevelId(String sapExpertise2LevelId) {
-		this.sapExpertise2Level = new ExpertiseLevel(sapExpertise2LevelId);
-	}
-
-	public String getSapExpertise3Id() {
-		if (this.getSapExpertise3() == null) {
-			return null;
-		} else {
-			return this.getSapExpertise3().getId();
-		}
-	}
-
-	public void setSapExpertise3Id(String sapExpertise3Id) {
-		this.sapExpertise3 = new SapSoftwareSolution(sapExpertise3Id);
-	}
-
-	public String getSapExpertise3LevelId() {
-		if (this.getSapExpertise3Level() == null) {
-			return null;
-		} else {
-			return this.getSapExpertise3Level().getId();
-		}
-	}
-
-	public void setSapExpertise3LevelId(String sapExpertise3LevelId) {
-		this.sapExpertise3Level = new ExpertiseLevel(sapExpertise3LevelId);
-	}
-
-	public String getSoftSkill1Id() {
-		if (this.getSoftSkill1() == null) {
-			return null;
-		} else {
-			return this.getSoftSkill1().getId();
-		}
-	}
-
-	public void setSoftSkill1Id(String softSkill1Id) {
-		this.softSkill1 = new SoftSkill(softSkill1Id);
-	}
-
-	public String getSoftSkill2Id() {
-		if (this.getSoftSkill2() == null) {
-			return null;
-		} else {
-			return this.getSoftSkill2().getId();
-		}
-	}
-
-	public void setSoftSkill2Id(String softSkill2Id) {
-		this.softSkill2 = new SoftSkill(softSkill2Id);
-	}
-
-	public String getSoftSkill3Id() {
-		if (this.getSoftSkill3() == null) {
-			return null;
-		} else {
-			return this.getSoftSkill3().getId();
-		}
-	}
-
-	public void setSoftSkill3Id(String softSkill3Id) {
-		this.softSkill3 = new SoftSkill(softSkill3Id);
-	}
-
-	public String getSoftSkill4Id() {
-		if (this.getSoftSkill4() == null) {
-			return null;
-		} else {
-			return this.getSoftSkill4().getId();
-		}
-	}
-
-	public void setSoftSkill4Id(String softSkill4Id) {
-		this.softSkill4 = new SoftSkill(softSkill4Id);
-	}
-
-	public String getSoftSkill5Id() {
-		if (this.getSoftSkill5() == null) {
-			return null;
-		} else {
-			return this.getSoftSkill5().getId();
-		}
-	}
-
-	public void setSoftSkill5Id(String softSkill5Id) {
-		this.softSkill5 = new SoftSkill(softSkill5Id);
-	}
-
-	public String getSoftSkill6Id() {
-		if (this.getSoftSkill6() == null) {
-			return null;
-		} else {
-			return this.getSoftSkill6().getId();
-		}
-	}
-
-	public void setSoftSkill6Id(String softSkill6Id) {
-		this.softSkill6 = new SoftSkill(softSkill6Id);
-	}
-
-	public String getRegionId() {
-		if (this.getRegion() == null) {
-			return null;
-		} else {
-			return this.getRegion().getId();
-		}
-	}
-
-	public void setRegionId(String regionId) {
-		this.region = new Region(regionId);
-	}
-
-	public String getShirtSizeId() {
-		if (this.getShirtSize() == null) {
-			return null;
-		} else {
-			return this.getShirtSize().getId();
-		}
-	}
-
-	public void setShirtSizeId(String shirtSizeId) {
-		this.shirtSize = new Size(shirtSizeId);
-	}
-
-	public String getShirtMFId() {
-		if (this.getShirtMF() == null) {
-			return null;
-		} else {
-			return this.getShirtMF().getId();
-		}
-	}
-
-	public void setShirtMFId(String shirtMFId) {
-		this.shirtMF = new Gender(shirtMFId);
-	}
-
-	public String getTopicLeadRegionId() {
-		if (this.getTopicLeadRegion() == null) {
-			return null;
-		} else {
-			return this.getTopicLeadRegion().getId();
-		}
-	}
-
-	public void setTopicLeadRegionId(String topicLeadRegionId) {
-		this.topicLeadRegion = new Region(topicLeadRegionId);
-	}
-
-	public String getTopic1Id() {
-		if (this.getTopic1() == null) {
-			return null;
-		} else {
-			return this.getTopic1().getId();
-		}
-	}
-
-	public void setTopic1Id(String topic1Id) {
-		this.topic1 = new Topic(topic1Id);
-	}
-
-	public String getTopic2Id() {
-		if (this.getTopic2() == null) {
-			return null;
-		} else {
-			return this.getTopic2().getId();
-		}
-	}
-
-	public void setTopic2Id(String topic2Id) {
-		this.topic2 = new Topic(topic2Id);
-	}
-
-	public String getTopic3Id() {
-		if (this.getTopic3() == null) {
-			return null;
-		} else {
-			return this.getTopic3().getId();
-		}
-	}
-
-	public void setTopic3Id(String topic3Id) {
-		this.topic3 = new Topic(topic3Id);
-	}
-
-	public String getTopic4Id() {
-		if (this.getTopic4() == null) {
-			return null;
-		} else {
-			return this.getTopic4().getId();
-		}
-	}
-
-	public void setTopic4Id(String topic4Id) {
-		this.topic4 = new Topic(topic4Id);
-	}
-
-	public String getTopicInterestId() {
-		if (this.getTopicInterest() == null) {
-			return null;
-		} else {
-			return this.getTopicInterest().getId();
-		}
-	}
-
-	public void setTopicInterestId(String topicInterestId) {
-		this.topicInterest = new Topic(topicInterestId);
+	public void setAttachments(List<Attachment> attachments) {
+		this.attachments = attachments;
 	}
 
 }
