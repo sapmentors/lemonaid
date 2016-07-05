@@ -22,12 +22,16 @@ import com.sap.mentors.lemonaid.repository.MentorRepository;
 @Component
 public class MediaProcessor {
 	
-	private MentorRepository mentorRepository;
-	private AttachmentRepository attachmentRepository;
+	private MentorRepository mentorRepository = null;
+	private AttachmentRepository attachmentRepository = null;
 	
 	private void initialize() {
-		mentorRepository = (MentorRepository) SpringContextsUtil.getBean("mentorRepository");
-		attachmentRepository = (AttachmentRepository) SpringContextsUtil.getBean("attachmentRepository");
+		if (mentorRepository == null) {
+			mentorRepository = (MentorRepository) SpringContextsUtil.getBean("mentorRepository");
+		}
+		if (attachmentRepository == null) {
+			attachmentRepository = (AttachmentRepository) SpringContextsUtil.getBean("attachmentRepository");
+		}
 	}
 
 	public Object process(PostUriInfo uriParserResultView, InputStream content, String requestContentType) throws ODataException{

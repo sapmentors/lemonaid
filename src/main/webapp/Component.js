@@ -40,8 +40,8 @@ sap.ui.define([
 			this.setModel(models.createDeviceModel(), "device");
 
 			// set the mentors model, needed for additional info
-			this.setModel(models.createMentorsModel(), "mentors");
-
+			this.setModel(models.createConfigModel(this.getModel()), "config");
+			
 			//TODO - get real key this is W3Cs
        		gmapScriptsUtil.setApiKey('AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM');
 

@@ -58,6 +58,9 @@
 			<JPAEntityType name="Country">
 				<EDMEntitySet>Countries</EDMEntitySet> 
 			</JPAEntityType>
+			<JPAEntityType name="Config">
+				<EDMEntitySet>Configuration</EDMEntitySet> 
+			</JPAEntityType>
 		</JPAEntityTypes>
 	</PersistenceUnit>
 </JPAEDMMappingModel>

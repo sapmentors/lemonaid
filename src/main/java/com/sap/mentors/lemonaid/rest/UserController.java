@@ -36,10 +36,7 @@ public class UserController {
 			    		user.getAttribute("firstname"),
 			    		user.getAttribute("lastname"),
 			    		user.getAttribute("email"),
-			    		user.getAttribute("firstname") + " " + user.getAttribute("lastname") + " (" + userPrincipal.getName() + ")",
-			    		request.isUserInRole("Mentor"),
-			    		request.isUserInRole("Alumnus"),
-			    		request.isUserInRole("ProjectMember")
+			    		user.getAttribute("firstname") + " " + user.getAttribute("lastname") + " (" + userPrincipal.getName() + ")"
 			    	);
 			} catch (Exception e) {
 				log.error("Error: " + e.getMessage());

@@ -1,23 +1,29 @@
 package com.sap.mentors.lemonaid.odata;
 
 import java.io.InputStream;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.olingo.odata2.api.batch.BatchHandler;
 import org.apache.olingo.odata2.api.commons.HttpStatusCodes;
 import org.apache.olingo.odata2.api.exception.ODataException;
 import org.apache.olingo.odata2.api.processor.ODataContext;
 import org.apache.olingo.odata2.api.processor.ODataResponse;
 import org.apache.olingo.odata2.api.uri.info.DeleteUriInfo;
+import org.apache.olingo.odata2.api.uri.info.GetEntitySetUriInfo;
 import org.apache.olingo.odata2.api.uri.info.PostUriInfo;
 import org.apache.olingo.odata2.api.uri.info.PutMergePatchUriInfo;
 import org.apache.olingo.odata2.jpa.processor.api.ODataJPAContext;
 import org.apache.olingo.odata2.jpa.processor.core.ODataJPAContextImpl;
 import org.apache.olingo.odata2.jpa.processor.core.ODataJPAProcessorDefault;
 
+import com.sap.mentors.lemonaid.entities.Config;
+
 public class ODataJPAProcessor extends ODataJPAProcessorDefault {
 
 	private final MediaProcessor mediaProcessor = new MediaProcessor();
+	private HttpServletRequest batchRequest = null;
 
 	public ODataJPAProcessor(ODataJPAContext oDataJPAContext) {
 		super(oDataJPAContext);
@@ -26,7 +32,7 @@ public class ODataJPAProcessor extends ODataJPAProcessorDefault {
 	private boolean isInRole(String roleName) {
 		ODataContext ctx = ODataJPAContextImpl.getContextInThreadLocal();  
 		HttpServletRequest request = (HttpServletRequest) ctx.getParameter(ODataContext.HTTP_SERVLET_REQUEST_OBJECT);  
-    	return request.isUserInRole(roleName);
+    	return request == null ? batchRequest.isUserInRole(roleName) : request.isUserInRole(roleName);
 	}
 	
 	private boolean isMentor() {
@@ -39,6 +45,25 @@ public class ODataJPAProcessor extends ODataJPAProcessorDefault {
 
 	private boolean isProjectMember() {
     	return isInRole("ProjectMember");
+	}
+
+	@Override
+	public ODataResponse readEntitySet(final GetEntitySetUriInfo uriParserResultView, final String contentType)
+			throws ODataException {
+		ODataResponse oDataResponse = null;
+		try {
+			oDataJPAContext.setODataContext(getContext());
+			List<Object> jpaEntities = jpaProcessor.process(uriParserResultView);
+			if (uriParserResultView.getTargetEntitySet().getEntityType().getName().equals("Config")) {
+				jpaEntities.add(new Config("IsMentor", Boolean.toString(isMentor())));
+				jpaEntities.add(new Config("IsAlumnus", Boolean.toString(isAlumnus())));
+				jpaEntities.add(new Config("IsProjectMember", Boolean.toString(isProjectMember())));
+			}
+			oDataResponse = responseBuilder.build(uriParserResultView, jpaEntities, contentType);
+		} finally {
+			close();
+		}
+		return oDataResponse;
 	}
 
 	@Override
@@ -142,4 +167,14 @@ public class ODataJPAProcessor extends ODataJPAProcessorDefault {
 		}
 	}
 
+	@Override
+	public ODataResponse executeBatch(BatchHandler handler, String contentType, InputStream content)
+			throws ODataException {
+		ODataContext ctx = ODataJPAContextImpl.getContextInThreadLocal();  
+		this.batchRequest = (HttpServletRequest) ctx.getParameter(ODataContext.HTTP_SERVLET_REQUEST_OBJECT);  
+		return super.executeBatch(handler, contentType, content);
+	}
+
+	
+	
 }

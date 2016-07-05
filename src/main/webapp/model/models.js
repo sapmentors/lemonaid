@@ -11,14 +11,17 @@ sap.ui.define([
 			oModel.setDefaultBindingMode("OneWay");
 			return oModel;
 		},
-
-		/**
-		 * Create a model which holds additional info about mentor
-		 * @return {object} JSON Model for Mentor details
-		 */
-		createMentorsModel: function() {
-			var oModel = new JSONModel([]);
+		
+		createConfigModel: function(odataModel) {
+			var oModel = new JSONModel();
 			oModel.setDefaultBindingMode("OneWay");
+		    odataModel.read("/Configuration", { 
+		    	success: function(data) { 
+		    		jQuery.each(data.results, function(idx, value) {
+		    			oModel.setProperty("/" + value.Id, value.Name)
+		    		});
+		    	}
+		    });
 			return oModel;
 		}
 
