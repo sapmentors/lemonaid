@@ -14,7 +14,6 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
 
-import com.sap.mentors.lemonaid.entities.Attachment;
 import com.sap.mentors.lemonaid.entities.Country;
 import com.sap.mentors.lemonaid.entities.ExpertiseLevel;
 import com.sap.mentors.lemonaid.entities.Gender;
@@ -29,7 +28,6 @@ import com.sap.mentors.lemonaid.entities.Size;
 import com.sap.mentors.lemonaid.entities.SoftSkill;
 import com.sap.mentors.lemonaid.entities.Topic;
 import com.sap.mentors.lemonaid.external.Gravatar;
-import com.sap.mentors.lemonaid.repository.AttachmentRepository;
 import com.sap.mentors.lemonaid.repository.CountryRepository;
 import com.sap.mentors.lemonaid.repository.ExpertiseLevelRepository;
 import com.sap.mentors.lemonaid.repository.GenderRepository;
@@ -74,8 +72,7 @@ public class Application extends SpringBootServletInitializer {
 			final RegionRepository regionRepository,
 			final GenderRepository genderRepository,
 			final SizeRepository sizeRepository,
-			final TopicRepository topicRepository,
-			final AttachmentRepository attachmentRepository
+			final TopicRepository topicRepository
 		) {
 
 		return new CommandLineRunner() {
@@ -978,15 +975,7 @@ public class Application extends SpringBootServletInitializer {
 			    			mentor.setPhotoUrl(gravatar.getUrlOfUser() + "?s=144");
 			    		}
 			    		mentorRepository.save(mentor);
-			    		
-			    		Attachment attachment = new Attachment();
-			    		attachment.setMentorId(mentor);
-			    		attachment.setId(UUID.randomUUID().toString());
-			    		attachment.setFileName("just-a-file.gif");
-			    		attachment.setMimeType("images/gif");
-			    		attachmentRepository.save(attachment);
 			    	}
-
 					
 				}
 	        }
