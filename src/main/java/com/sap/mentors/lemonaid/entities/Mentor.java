@@ -90,7 +90,8 @@ public class Mentor {
     private boolean topicLeadInterest;
     @JoinColumn(name="topicInterestId") @ManyToOne private Topic topicInterestId;
  
-    @Transient boolean mayEdit;
+    private String userId;
+    @Transient private boolean mayEdit;
     
     @OneToMany(cascade = CascadeType.ALL, mappedBy="mentorId")
     private List<Attachment> attachments;    
@@ -112,7 +113,8 @@ public class Mentor {
     		int shirtNumber, String shirtText, Size shirtSizeId, Gender shirtMFId,
     		String scnUrl, String twitterId, String linkedInUrl, String xingUrl, String facebookUrl,
     		boolean interestInMentorCommunicationStrategy, boolean interestInMentorManagementModel, boolean interestInMentorMix, boolean interestInOtherIdeas, int hoursAvailable,
-    		Region topicLeadRegionId, Topic topic1Id, String topic1Executive, Topic topic2Id, String topic2Executive, Topic topic3Id, String topic3Executive, Topic topic4Id, String topic4Executive, boolean topicLeadInterest, Topic topicInterestId)
+    		Region topicLeadRegionId, Topic topic1Id, String topic1Executive, Topic topic2Id, String topic2Executive, Topic topic3Id, String topic3Executive, Topic topic4Id, String topic4Executive, boolean topicLeadInterest, Topic topicInterestId,
+    		String userId)
     {
     	this.id = id;
         this.fullName = fullName;
@@ -186,6 +188,8 @@ public class Mentor {
         this.topic4Executive = topic4Executive;
         this.topicLeadInterest = topicLeadInterest;
         this.topicInterestId = topicInterestId;
+        
+        this.userId = userId;
     }
 
     @Override
@@ -697,6 +701,14 @@ public class Mentor {
 
 	public void setTopicInterestId(Topic topicInterestId) {
 		this.topicInterestId = topicInterestId;
+	}
+
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
 
 	public boolean isMayEdit() {

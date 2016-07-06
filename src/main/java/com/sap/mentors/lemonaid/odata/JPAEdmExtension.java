@@ -12,6 +12,7 @@ import org.apache.olingo.odata2.api.edm.provider.Property;
 import org.apache.olingo.odata2.api.edm.provider.Schema;
 import org.apache.olingo.odata2.api.edm.provider.SimpleProperty;
 import org.apache.olingo.odata2.jpa.processor.api.model.JPAEdmSchemaView;
+import org.apache.olingo.odata2.jpa.processor.core.model.JPAEdmMappingImpl;
 
 public class JPAEdmExtension implements org.apache.olingo.odata2.jpa.processor.api.model.JPAEdmExtension {
 
@@ -47,7 +48,9 @@ public class JPAEdmExtension implements org.apache.olingo.odata2.jpa.processor.a
 
 			// Add transient properties
 			if (entityType.getName().equals("Mentor")) {
-				entityType.getProperties().add(new SimpleProperty().setName("MayEdit").setType(EdmSimpleTypeKind.Boolean));
+				JPAEdmMappingImpl mapping = new JPAEdmMappingImpl();
+				mapping.setJPAType(boolean.class);
+				entityType.getProperties().add(new SimpleProperty().setName("MayEdit").setType(EdmSimpleTypeKind.Boolean).setMapping(mapping));
 			}
 			
 			// Turn entity 'Attachments' into a media entity (with a stream) and hide the data property

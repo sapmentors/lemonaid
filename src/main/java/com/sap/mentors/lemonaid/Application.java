@@ -664,7 +664,7 @@ public class Application extends SpringBootServletInitializer {
 					countryRepository.save(new Country(Country.NF, "Norfolk Island"));
 					countryRepository.save(new Country(Country.NG, "Nigeria"));
 					countryRepository.save(new Country(Country.NI, "Nicaragua"));
-					countryRepository.save(new Country(Country.NL, "Netherlands[note 1]"));
+					countryRepository.save(new Country(Country.NL, "Netherlands"));
 					countryRepository.save(new Country(Country.NO, "Norway"));
 					countryRepository.save(new Country(Country.NP, "Nepal"));
 					countryRepository.save(new Country(Country.NR, "Nauru"));
@@ -824,10 +824,10 @@ public class Application extends SpringBootServletInitializer {
 							"jan@penninkhof.com",
 							"email2@jpenninkhof.com",
 							1,
-							"Janstreet 1", 
+							"Cannenburch 110", 
 							"Lelystad", 
 							null, 
-							"4321AA", 
+							"8226RT", 
 							new Country(Country.NL), 
 							"+31987654321",
 							52.51853699999999, 5.471421999999961,
@@ -847,7 +847,8 @@ public class Application extends SpringBootServletInitializer {
 							null, null, 
 							null, null, 
 							null, null, 
-							true, new Topic(Topic.HANA_CLOUD_PLATFORM) 
+							true, new Topic(Topic.HANA_CLOUD_PLATFORM),
+							"P508741"
 						));
 					mentorRepository.save(new Mentor(
 							UUID.randomUUID().toString(), 
@@ -878,10 +879,10 @@ public class Application extends SpringBootServletInitializer {
 							"robin.van.het.hof@qualiture.nl",
 							"email2@robin.com",
 							1,
-							"Robinstreet 1", 
+							"Multatulihove 40", 
 							"Zoetermeer", 
 							null, 
-							"1234AA", 
+							"2726CC", 
 							new Country(Country.NL), 
 							"+31123456789",
 							52.060669, 4.494024999999965,
@@ -901,7 +902,8 @@ public class Application extends SpringBootServletInitializer {
 							null, null, 
 							null, null, 
 							null, null, 
-							true, new Topic(Topic.UX_DESIGN) 
+							true, new Topic(Topic.UX_DESIGN),
+							"S0007138856"
 						));
 					mentorRepository.save(new Mentor(
 							UUID.randomUUID().toString(), 
@@ -932,10 +934,10 @@ public class Application extends SpringBootServletInitializer {
 							"fred.verheul@gmail.com",
 							null,
 							1,
-							"Fredstreet 2", 
+							"Keplerstraat 43", 
 							"Nijmegen", 
 							null, 
-							"2382AJ", 
+							"6533DA", 
 							new Country(Country.NL), 
 							"+31777777777",
 							51.8125626, 5.837226399999963,
@@ -955,7 +957,8 @@ public class Application extends SpringBootServletInitializer {
 							null, null, 
 							null, null, 
 							null, null, 
-							false, null 
+							false, null ,
+							null
 						));
 
 					for (Mentor mentor : mentorRepository.findAll()) {

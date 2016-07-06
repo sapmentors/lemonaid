@@ -3,6 +3,7 @@ package com.sap.mentors.lemonaid.jobs;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import org.quartz.DisallowConcurrentExecution;
 import org.quartz.Job;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
@@ -18,6 +19,7 @@ import com.sap.mentors.lemonaid.repository.MentorRepository;
 
 @Service
 @Transactional
+@DisallowConcurrentExecution
 public class GravatarJob implements Job {
     
 	private static final Logger log = LoggerFactory.getLogger(GravatarJob.class);
