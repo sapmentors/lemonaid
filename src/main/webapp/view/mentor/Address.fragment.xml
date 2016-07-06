@@ -1,0 +1,36 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout" 
+	xmlns:f="sap.ui.layout.form" 
+	xmlns:core="sap.ui.core">
+
+	<f:SimpleForm
+			labelSpanL="4"
+			labelSpanM="4"
+			labelSpanS="4"
+			emptySpanL="0"
+			emptySpanM="0"
+			emptySpanS="0"
+			maxContainerCols="2" layout="ResponsiveLayout"
+			width="100%">
+
+		<core:Title text="{i18n>address}"></core:Title>
+
+		<l:VerticalLayout>
+		
+			<Label text="{i18n>address}" />
+			<Text text="{FullName}" />
+			<Text text="{Address}" visible="{= !!${Address} }"/>
+			<Text text="{Zip} {City}" visible="{= !!${Zip} || !!${City} }"/>
+			<Text text="{State}" visible="{= !!${State} }" />
+			<Text text="{Country/Name}" visible="{= !!${Country/Name} }"/>
+			<Text text="" />
+			
+			<Label text="{i18n>phone}" />
+			<Text text="{Phone}" />
+			
+		</l:VerticalLayout>
+
+	</f:SimpleForm>
+	
+</core:FragmentDefinition>

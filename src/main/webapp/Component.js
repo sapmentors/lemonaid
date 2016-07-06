@@ -43,7 +43,7 @@ sap.ui.define([
 			this.setModel(models.createConfigModel(this.getModel()), "config");
 			
 			//TODO - get real key this is W3Cs
-       		gmapScriptsUtil.setApiKey('AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM');
+       		gmapScriptsUtil.setApiKey('AIzaSyCaQHRFcYj9WY2yU_bfaf1pW5MWpszjWrM');
 
 			// create the views based on the url/hash
 			this.getRouter().initialize();

@@ -1,7 +1,8 @@
 sap.ui.define([
     "com/sap/mentors/lemonaid/controller/BaseController",
+    "sap/ui/model/json/JSONModel",
     "sap/m/MessageBox"
-], function(BaseController, MessageBox) {
+], function(BaseController, JSONModel, MessageBox) {
     "use strict";
 
     return BaseController.extend("com.sap.mentors.lemonaid.controller.Mentor", {
@@ -14,6 +15,9 @@ sap.ui.define([
         	this.model = this.component.getModel();
         	this.router = this.getRouter();
         	this.i18n = this.component.getModel("i18n").getResourceBundle();
+        	this.ui = this.getView().setModel(new JSONModel({
+        		ServiceUrl: this.model.sServiceUrl,
+        	}), "ui")
             this.router.getRoute("Mentor").attachMatched(this.onRouteMatched, this);
         },
 
@@ -44,12 +48,6 @@ sap.ui.define([
 					value: oEvent.getParameter("fileName")
 				})
 			);
-//			oEvent.getParameters().addHeaderParameter(
-//				new sap.m.UploadCollectionParameter({
-//					name: "x-csrf-token",
-//					value: this.model.getHeaders()["x-csrf-token"]
-//				})
-//			);
 			this.busyDialog.setTitle(this.i18n.getText("attachment"));
 			this.busyDialog.setText(this.i18n.getText("uploadingAttachment", [ oEvent.getParameter("fileName") ]));
 			this.busyDialog.open();
@@ -66,16 +64,6 @@ sap.ui.define([
 			this.model.read("/" + this.model.createKey("Mentors", {Id: this.sMentorId}) + "/Attachments");
 			this.model.refresh();
 			this.busyDialog.close();
-		},
-		
-		onChange: function(oEvent) {
-			var oUploadCollection = oEvent.getSource();
-			var oRequest = this.model._createRequest();  
-			var oCustomerHeaderToken = new UploadCollectionParameter({
-				name: "x-csrf-token",
-				value: oRequest.headers['x-csrf-token']
-			});
-			oUploadCollection.addHeaderParameter(oCustomerHeaderToken);
 		},
 		
 		onFileDeleted: function(event) {

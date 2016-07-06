@@ -58,8 +58,21 @@
 		</headerContent>
 
 		<sections>
-			<ObjectPageSection title="About" importance="Medium">
 
+			<ObjectPageSection title="{i18n>location}" importance="Medium">
+				<subSections>
+					<ObjectPageSubSection title="{i18n>location}">
+						<blocks>
+							<core:Fragment fragmentName="com.sap.mentors.lemonaid.view.mentor.Address" type="XML"/>
+						</blocks>
+						<blocks>
+							<core:Fragment fragmentName="com.sap.mentors.lemonaid.view.mentor.Map" type="XML"/>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+		
+			<ObjectPageSection title="About" importance="Medium">
 				<subSections>
 					<ObjectPageSubSection title="Connect">
 						<blocks>
@@ -92,78 +105,13 @@
 						</blocks>
 					</ObjectPageSubSection>
 				</subSections>
-
-				<subSections>
-					<ObjectPageSubSection title="Connect 2">
-						<blocks>
-						<f:SimpleForm labelMinWidth="192" maxContainerCols="2" layout="ResponsiveGridLayout" columnsL="1" columnsM="1" columnsXL="1" >
-						    <f:content>
-						        <gmaps:Map id="idMap" lat="{Latitude}" lng="{Longitude}" height="350px" zoom="8">
-						            <gmaps:markers>
-						                <gmaps:Marker lat="{Latitude}" lng="{Longitude}" info="{mentors>info}" />
-						            </gmaps:markers>
-						        </gmaps:Map>
-						    </f:content>
-						</f:SimpleForm>					
-						</blocks>
-					</ObjectPageSubSection>
-				</subSections>
-
 			</ObjectPageSection>
-
 
 			<ObjectPageSection title="Media" importance="Medium">
 				<subSections>
 					<ObjectPageSubSection title="Media and Documents">
 						<blocks>
-							<m:UploadCollection
-									id="UploadCollection"
-									beforeUploadStarts="onBeforeUploadStarts"
-									uploadComplete="onUploadComplete"
-									change="onUploadChange"
-									fileDeleted="onFileDeleted"
-									items="{Attachments}"
-									uploadEnabled="{MayEdit}"
-									showSeparators="All"
-									multiple="true"
-									mode="MultiSelect"
-									selected="{selected}"
-									url="{url}">
-								<m:toolbar>
-									<m:OverflowToolbar id="UploadCollectionTools" >
-										<m:Title id="attachmentTitle"/>
-										<m:ToolbarSpacer/>
-										<m:Button id="downloadButton" text="Download" press="onDownloadItems" type="Transparent"></m:Button>
-										<m:UploadCollectionToolbarPlaceholder></m:UploadCollectionToolbarPlaceholder>
-									</m:OverflowToolbar>
-								</m:toolbar>
-								<m:items>
-									<m:UploadCollectionItem
-										id="UploadCollectionItem"
-										fileName="{FileName}"
-										mimeType="{MimeType}"
-										url="odata.svc/Attachments('{Id}')/$value"
-										visibleEdit="false">
-										<m:attributes>
-											<m:ObjectAttribute
-												title="Size"
-												text="{
-													path: 'FileSize',
-													type: 'sap.ui.model.type.Float'
-												}"/>
-											<m:ObjectAttribute
-												title="Modified"
-												text="{
-														path: 'LastModified',
-														type: 'sap.ui.model.type.DateTime',
-														formatOptions: {
-															relativeScale: 'auto'
-														}
-													}"/>
-										</m:attributes>
-									</m:UploadCollectionItem>
-								</m:items>
-							</m:UploadCollection>
+							<core:Fragment fragmentName="com.sap.mentors.lemonaid.view.mentor.Attachments" type="XML"/>
 						</blocks>
 					</ObjectPageSubSection>
 				</subSections>

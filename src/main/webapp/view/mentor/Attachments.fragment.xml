@@ -1,0 +1,49 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<UploadCollection
+			id="UploadCollection"
+			beforeUploadStarts="onBeforeUploadStarts"
+			uploadComplete="onUploadComplete"
+			fileDeleted="onFileDeleted"
+			items="{Attachments}"
+			uploadEnabled="{MayEdit}"
+			showSeparators="All"
+			multiple="true"
+			mode="MultiSelect">
+		<toolbar>
+			<OverflowToolbar id="UploadCollectionTools" >
+				<Title id="attachmentTitle"/>
+				<ToolbarSpacer/>
+				<Button id="downloadButton" text="Download" press="onDownloadItems" type="Transparent"></Button>
+				<UploadCollectionToolbarPlaceholder></UploadCollectionToolbarPlaceholder>
+			</OverflowToolbar>
+		</toolbar>
+		<items>
+			<UploadCollectionItem
+				id="UploadCollectionItem"
+				fileName="{FileName}"
+				mimeType="{MimeType}"
+				url="{ui>/ServiceUrl}/Attachments('{Id}')/$value"
+				visibleEdit="false">
+				<attributes>
+					<ObjectAttribute
+						title="Size"
+						text="{
+							path: 'FileSize',
+							type: 'sap.ui.model.type.Float'
+						}"/>
+					<ObjectAttribute
+						title="Modified"
+						text="{
+								path: 'LastModified',
+								type: 'sap.ui.model.type.DateTime',
+								formatOptions: {
+									relativeScale: 'auto'
+								}
+							}"/>
+				</attributes>
+			</UploadCollectionItem>
+		</items>
+	</UploadCollection>
+</core:FragmentDefinition>
