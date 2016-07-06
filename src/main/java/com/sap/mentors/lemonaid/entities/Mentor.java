@@ -92,8 +92,9 @@ public class Mentor {
  
     private String userId;
     @Transient private boolean mayEdit;
+    private boolean publicProfile;
     
-    @OneToMany(cascade = CascadeType.ALL, mappedBy="mentorId")
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="mentorId")
     private List<Attachment> attachments;    
     
     public Mentor() {}
@@ -190,6 +191,7 @@ public class Mentor {
         this.topicInterestId = topicInterestId;
         
         this.userId = userId;
+        this.publicProfile = true;
     }
 
     @Override
@@ -709,6 +711,14 @@ public class Mentor {
 
 	public void setUserId(String userId) {
 		this.userId = userId;
+	}
+
+    public boolean isPublicProfile() {
+		return publicProfile;
+	}
+
+	public void setPublicProfile(boolean publicProfile) {
+		this.publicProfile = publicProfile;
 	}
 
 	public boolean isMayEdit() {

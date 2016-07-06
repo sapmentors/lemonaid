@@ -99,10 +99,6 @@ sap.ui.define([
 		},
 		
 		onRouteMatched: function() {
-			var that = this;
-			jQuery.sap.delayedCall(500, this, function() {
-				that.view.byId("searchField").focus();
-			});
 		}
 
 		/* =========================================================== */

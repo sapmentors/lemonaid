@@ -15,6 +15,7 @@ import org.apache.olingo.odata2.api.processor.ODataResponse;
 import org.apache.olingo.odata2.api.uri.info.DeleteUriInfo;
 import org.apache.olingo.odata2.api.uri.info.GetEntitySetUriInfo;
 import org.apache.olingo.odata2.api.uri.info.GetEntityUriInfo;
+import org.apache.olingo.odata2.api.uri.info.GetMediaResourceUriInfo;
 import org.apache.olingo.odata2.api.uri.info.PostUriInfo;
 import org.apache.olingo.odata2.api.uri.info.PutMergePatchUriInfo;
 import org.apache.olingo.odata2.jpa.processor.api.ODataJPAContext;
@@ -79,6 +80,18 @@ public class ODataJPAProcessor extends ODataJPAProcessorDefault {
 		return jpaEntities;
 	}
 	
+	@Override
+	public ODataResponse readEntityMedia(final GetMediaResourceUriInfo uriInfo, final String contentType)
+			throws ODataException {
+		ODataResponse oDataResponse = null;
+		try {
+			oDataResponse = mediaProcessor.getMediaEntity(uriInfo, contentType);
+		} finally {
+			close();
+		}
+		return oDataResponse;
+	}
+
 	@Override
 	public ODataResponse readEntity(final GetEntityUriInfo uriParserResultView, final String contentType)
 			throws ODataException {

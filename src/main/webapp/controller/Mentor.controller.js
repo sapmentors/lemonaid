@@ -80,8 +80,22 @@ sap.ui.define([
 		
 		onFileDeleted: function(event) {
 			this.model.remove(event.getParameter("item").getBindingContext().getPath());
+		},
+		
+		onDownloadItems: function(oEvent){
+			var oUploadCollection = this.getView().byId("UploadCollection");
+			var aSelectedItems = oUploadCollection.getSelectedItems();
+			if (aSelectedItems){
+				for (var i = 0; i < aSelectedItems.length; i++){
+					oUploadCollection.downloadItem(aSelectedItems[i], true);
+				}
+			} else {
+				MessageBox.information(
+						this.i18n.getText("selectAttachmentsFirst"), {
+						styleClass: this.component.getContentDensityClass()
+				     });
+			}
 		}
-
         
     });
 });

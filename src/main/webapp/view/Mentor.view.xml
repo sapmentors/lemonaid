@@ -123,12 +123,26 @@
 									change="onUploadChange"
 									fileDeleted="onFileDeleted"
 									items="{Attachments}"
-									uploadEnabled="{MayEdit}">
+									uploadEnabled="{MayEdit}"
+									showSeparators="All"
+									multiple="true"
+									mode="MultiSelect"
+									selected="{selected}"
+									url="{url}">
+								<m:toolbar>
+									<m:OverflowToolbar id="UploadCollectionTools" >
+										<m:Title id="attachmentTitle"/>
+										<m:ToolbarSpacer/>
+										<m:Button id="downloadButton" text="Download" press="onDownloadItems" type="Transparent"></m:Button>
+										<m:UploadCollectionToolbarPlaceholder></m:UploadCollectionToolbarPlaceholder>
+									</m:OverflowToolbar>
+								</m:toolbar>
 								<m:items>
 									<m:UploadCollectionItem
 										id="UploadCollectionItem"
 										fileName="{FileName}"
 										mimeType="{MimeType}"
+										url="odata.svc/Attachments('{Id}')/$value"
 										visibleEdit="false">
 										<m:attributes>
 											<m:ObjectAttribute

@@ -8,9 +8,13 @@ import java.util.UUID;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.io.IOUtils;
+import org.apache.olingo.odata2.api.ep.EntityProvider;
 import org.apache.olingo.odata2.api.exception.ODataException;
+import org.apache.olingo.odata2.api.exception.ODataNotFoundException;
 import org.apache.olingo.odata2.api.processor.ODataContext;
+import org.apache.olingo.odata2.api.processor.ODataResponse;
 import org.apache.olingo.odata2.api.uri.KeyPredicate;
+import org.apache.olingo.odata2.api.uri.info.GetMediaResourceUriInfo;
 import org.apache.olingo.odata2.api.uri.info.PostUriInfo;
 import org.apache.olingo.odata2.jpa.processor.core.ODataJPAContextImpl;
 import org.springframework.stereotype.Component;
@@ -34,7 +38,23 @@ public class MediaProcessor {
 		}
 	}
 
-	public Object process(PostUriInfo uriParserResultView, InputStream content, String requestContentType) throws ODataException{
+	public ODataResponse getMediaEntity(final GetMediaResourceUriInfo uriInfo, final String contentType) throws ODataException {
+		initialize();
+		if (uriInfo.getTargetEntitySet().getEntityType().getName().equals("Attachment")) {
+			for (KeyPredicate keyPredicate : uriInfo.getKeyPredicates()) {
+				if (keyPredicate.getProperty().getName().equals("Id")) {
+					Attachment attachment = attachmentRepository.findOne(keyPredicate.getLiteral());
+					return ODataResponse
+							.fromResponse(EntityProvider.writeBinary(attachment.getMimeType(), attachment.getData()))
+							.header("Content-Disposition", "attachment ;filename=\"" + attachment.getFileName() + "\"")
+							.build();
+				}
+			}
+		}
+		throw new ODataNotFoundException(ODataNotFoundException.COMMON);
+	}
+
+	public Object process(PostUriInfo uriParserResultView, InputStream content, String requestContentType) throws ODataException {
 		initialize();
 		ODataContext ctx = ODataJPAContextImpl.getContextInThreadLocal();
 		HttpServletRequest request = (HttpServletRequest) ctx.getParameter(ODataContext.HTTP_SERVLET_REQUEST_OBJECT);  		
