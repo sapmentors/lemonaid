@@ -34,8 +34,11 @@ public class LocationJob implements Job {
 		for (Mentor mentor : mentorRepository.findAll()) {
 			try {
 				String address = "";
-				if (mentor.getAddress() != null && mentor.getAddress().length() > 0) {
-					address += (address.length() > 0 ? ", " : "") + mentor.getAddress();
+				if (mentor.getAddress1() != null && mentor.getAddress1().length() > 0) {
+					address += (address.length() > 0 ? ", " : "") + mentor.getAddress1();
+				}
+				if (mentor.getAddress2() != null && mentor.getAddress2().length() > 0) {
+					address += (address.length() > 0 ? ", " : "") + mentor.getAddress2();
 				}
 				if (mentor.getZip() != null && mentor.getZip().length() > 0) {
 					address += (address.length() > 0 ? ", " : "") + mentor.getZip();

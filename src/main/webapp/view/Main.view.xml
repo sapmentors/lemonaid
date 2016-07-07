@@ -72,7 +72,7 @@
 					<mvc:XMLView viewName="com.sap.mentors.lemonaid.view.MentorList"/>
 				</Page>
 				<Page id="Mentor" showHeader="false" enableScrolling="false">
-					<mvc:XMLView viewName="com.sap.mentors.lemonaid.view.Mentor"/>
+					<mvc:XMLView viewName="com.sap.mentors.lemonaid.view.MentorDetails"/>
 				</Page>
 				<Page id="Events" showHeader="false">
 					<mvc:XMLView viewName="com.sap.mentors.lemonaid.view.EventList"/>

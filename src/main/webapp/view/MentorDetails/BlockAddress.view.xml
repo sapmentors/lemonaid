@@ -1,0 +1,43 @@
+<mvc:View 
+	controllerName="com.sap.mentors.lemonaid.controller.BaseBlock" 
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns:forms="sap.ui.layout.form"
+	xmlns:core="sap.ui.core" 
+	xmlns:layout="sap.ui.layout" 
+	xmlns="sap.m">
+ 
+	<forms:SimpleForm
+			labelSpanL="4"
+			labelSpanM="4"
+			labelSpanS="4"
+			emptySpanL="0"
+			emptySpanM="0"
+			emptySpanS="0"
+			maxContainerCols="2" layout="ResponsiveLayout"
+			width="100%">
+		<core:Title text="{i18n>address}"></core:Title>
+		
+		<Label text="{i18n>homeAddress}"/>
+		<Text text="{
+				parts: [
+					'FullName',
+					'Address1',
+					'Address2',
+					'City', 
+					'State', 
+					'Zip',
+					'Country/Name',
+					'Country/Id'
+				],
+				formatter: '.formatters.formatAddress'
+			}" />
+
+
+		<Label text="{i18n>phone}" visible="{= !!${Phone} }" />
+		<Link text="{Phone}" href="tel:{Phone}" target="_blank" visible="{= !!${Phone} }" />
+
+		<Label text="{i18n>region}" />
+		<Text text="{Region/Name}" />
+
+	</forms:SimpleForm>
+</mvc:View>

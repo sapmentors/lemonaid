@@ -27,7 +27,7 @@ sap.ui.define([
          * @return {[type]} [description]
          */
         getComponent: function() {
-            return this.getOwnerComponent();
+            return this.getOwnerComponent() ? this.getOwnerComponent() : this.getParent().getOwnerComponent();
         },
 
 		/**

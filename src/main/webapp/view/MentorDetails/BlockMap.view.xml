@@ -1,0 +1,12 @@
+<mvc:View 
+	controllerName="com.sap.mentors.lemonaid.controller.BaseBlock" 
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns="openui5.googlemaps">
+ 
+	<Map lat="{Latitude}" lng="{Longitude}" width="100%" height="350px" zoom="4">
+        <markers>
+            <Marker lat="{Latitude}" lng="{Longitude}" info="{mentors>info}" />
+        </markers>
+    </Map>
+    
+</mvc:View>

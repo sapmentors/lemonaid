@@ -1,6 +1,8 @@
-<core:FragmentDefinition
-	xmlns="sap.m"
-	xmlns:core="sap.ui.core">
+<mvc:View 
+	controllerName="com.sap.mentors.lemonaid.controller.Attachments" 
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns="sap.m">
+	
 	<UploadCollection
 			id="UploadCollection"
 			beforeUploadStarts="onBeforeUploadStarts"
@@ -10,7 +12,8 @@
 			uploadEnabled="{MayEdit}"
 			showSeparators="All"
 			multiple="true"
-			mode="MultiSelect">
+			mode="MultiSelect"
+			uploadUrl="{ui>/UploadUrl}">
 		<toolbar>
 			<OverflowToolbar id="UploadCollectionTools" >
 				<Title id="attachmentTitle"/>
@@ -46,4 +49,5 @@
 			</UploadCollectionItem>
 		</items>
 	</UploadCollection>
-</core:FragmentDefinition>
+    
+</mvc:View>

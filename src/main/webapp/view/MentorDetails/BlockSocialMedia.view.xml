@@ -1,0 +1,44 @@
+<mvc:View 
+	controllerName="com.sap.mentors.lemonaid.controller.BaseBlock" 
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns:forms="sap.ui.layout.form"
+	xmlns:core="sap.ui.core" 
+	xmlns:layout="sap.ui.layout" 
+	xmlns="sap.m">
+ 
+	<forms:SimpleForm
+			labelSpanL="4"
+			labelSpanM="4"
+			labelSpanS="4"
+			emptySpanL="0"
+			emptySpanM="0"
+			emptySpanS="0"
+			maxContainerCols="2" layout="ResponsiveLayout"
+			width="100%">
+			
+		<core:Title text="{i18n>socialMedia}"></core:Title>
+
+		<Label text="{i18n>scn}" visible="{= !!${ScnUrl} }" />
+		<Link text="{ScnUrl}" href="{ScnUrl}" target="_blank" visible="{= !!${ScnUrl} }" />
+
+ 		<Label text="{i18n>twitter}" visible="{= !!${TwitterId} }" />
+		<Link text="{TwitterId}" href="https://www.twitter.com/{TwitterId}" target="_blank" visible="{= !!${TwitterId} }" />
+
+		<Label text="{i18n>linkedIn}" visible="{= !!${LinkedInUrl} }" />
+		<Link text="{LinkedInUrl}" href="{LinkedInUrl}" target="_blank" visible="{= !!${LinkedInUrl} }" />
+
+		<Label text="{i18n>xing}" visible="{= !!${XingUrl} }" />
+		<Link text="{XingUrl}" href="{XingUrl}" target="_blank" visible="{= !!${XingUrl} }" />
+
+		<Label text="{i18n>facebook}" visible="{= !!${FacebookUrl} }" />
+		<Link text="{FacebookUrl}" href="{FacebookUrl}" target="_blank" visible="{= !!${FacebookUrl} }" />
+
+		<Label text="{i18n>email}" visible="{= !!${Email1} &amp;&amp; !!${Email2} }" />
+		<layout:VerticalLayout>
+			<Link text="{Email1}" href="mailto:{Email1}" target="_blank" visible="{= !!${Email1} }" />
+			<Link text="{Email2}" href="mailto:{Email2}" target="_blank" visible="{= !!${Email2} }" />
+		</layout:VerticalLayout>
+		
+
+	</forms:SimpleForm>
+</mvc:View>

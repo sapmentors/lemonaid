@@ -1,9 +1,7 @@
 <core:FragmentDefinition
-	xmlns="sap.m"
-	xmlns:gmaps="openui5.googlemaps"
+	xmlns="openui5.googlemaps"
 	xmlns:core="sap.ui.core">
-    <gmaps:Map
-    	id="map"
+    <Map
     	height="100%" 
     	width="100%" 
     	lat="20"
@@ -16,8 +14,8 @@
 				expand: 'MentorStatus'
 			}
 		}">
-        <gmaps:markers>  
-            <gmaps:Marker 
+        <markers>  
+            <Marker 
             	lat="{Latitude}" 
             	lng="{Longitude}" 
             	info="{
@@ -30,6 +28,6 @@
 					formatter: '.formatters.formatMapInfo'
 				}"
             	icon="images/pin-{= ${MentorStatus/Id} === 'active' ? 'mentor' : 'alumni' }.svg" />  
-        </gmaps:markers>  
-    </gmaps:Map>
+        </markers>  
+    </Map>
 </core:FragmentDefinition>

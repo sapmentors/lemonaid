@@ -50,7 +50,8 @@ public class Mentor {
     private String email2;
     private int preferredEmail;
     
-    private String address;
+    private String address1;
+    private String address2;
     private String city;
     private String state;
     private String zip;
@@ -149,7 +150,7 @@ public class Mentor {
         this.email2 = email2;
         this.preferredEmail = 1;
         
-        this.address = address;
+        this.address1 = address;
         this.city = city;
         this.state = state;
         this.zip = zip;
@@ -433,12 +434,20 @@ public class Mentor {
 		this.preferredEmail = preferredEmail;
 	}
 
-	public String getAddress() {
-		return address;
+	public String getAddress1() {
+		return address1;
 	}
 
-	public void setAddress(String address) {
-		this.address = address;
+	public void setAddress1(String address1) {
+		this.address1 = address1;
+	}
+
+	public String getAddress2() {
+		return address2;
+	}
+
+	public void setAddress2(String address2) {
+		this.address2 = address2;
 	}
 
 	public String getCity() {

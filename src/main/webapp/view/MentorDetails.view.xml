@@ -1,12 +1,12 @@
 <mvc:View 
-	controllerName="com.sap.mentors.lemonaid.controller.Mentor" 
+	controllerName="com.sap.mentors.lemonaid.controller.MentorDetails" 
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:core="sap.ui.core"
 	xmlns="sap.uxap" 
 	xmlns:l="sap.ui.layout" 
 	xmlns:m="sap.m" 
-	xmlns:f="sap.ui.layout.form" 
-	xmlns:gmaps="openui5.googlemaps">
+	xmlns:f="sap.ui.layout.form"
+	xmlns:details="com.sap.mentors.lemonaid.view.MentorDetails">
 	<ObjectPageLayout 
 		id="ObjectPageLayout" 
 		enableLazyLoading="false" 
@@ -59,20 +59,19 @@
 
 		<sections>
 
-			<ObjectPageSection title="{i18n>location}" importance="Medium">
+			<ObjectPageSection title="{i18n>personalInfo}" importance="Medium">
 				<subSections>
-					<ObjectPageSubSection title="{i18n>location}">
+					<ObjectPageSubSection title="{i18n>personalInfo}">
 						<blocks>
-							<core:Fragment fragmentName="com.sap.mentors.lemonaid.view.mentor.Address" type="XML"/>
-						</blocks>
-						<blocks>
-							<core:Fragment fragmentName="com.sap.mentors.lemonaid.view.mentor.Map" type="XML"/>
+							<details:BlockAddress />
+							<details:BlockSocialMedia />
+							<details:BlockMap />
 						</blocks>
 					</ObjectPageSubSection>
 				</subSections>
 			</ObjectPageSection>
 		
-			<ObjectPageSection title="About" importance="Medium">
+<!-- 			<ObjectPageSection title="About" importance="Medium">
 				<subSections>
 					<ObjectPageSubSection title="Connect">
 						<blocks>
@@ -106,12 +105,12 @@
 					</ObjectPageSubSection>
 				</subSections>
 			</ObjectPageSection>
-
-			<ObjectPageSection title="Media" importance="Medium">
+ -->
+ 			<ObjectPageSection title="Media" importance="Medium">
 				<subSections>
 					<ObjectPageSubSection title="Media and Documents">
 						<blocks>
-							<core:Fragment fragmentName="com.sap.mentors.lemonaid.view.mentor.Attachments" type="XML"/>
+							<details:BlockAttachments />
 						</blocks>
 					</ObjectPageSubSection>
 				</subSections>
