@@ -1,12 +1,7 @@
 package com.sap.mentors.lemonaid;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.UUID;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -19,7 +14,6 @@ import com.sap.mentors.lemonaid.entities.ExpertiseLevel;
 import com.sap.mentors.lemonaid.entities.Gender;
 import com.sap.mentors.lemonaid.entities.Industry;
 import com.sap.mentors.lemonaid.entities.LineOfBusiness;
-import com.sap.mentors.lemonaid.entities.Mentor;
 import com.sap.mentors.lemonaid.entities.MentorStatus;
 import com.sap.mentors.lemonaid.entities.Region;
 import com.sap.mentors.lemonaid.entities.RelationshipToSap;
@@ -27,7 +21,6 @@ import com.sap.mentors.lemonaid.entities.SapSoftwareSolution;
 import com.sap.mentors.lemonaid.entities.Size;
 import com.sap.mentors.lemonaid.entities.SoftSkill;
 import com.sap.mentors.lemonaid.entities.Topic;
-import com.sap.mentors.lemonaid.external.Gravatar;
 import com.sap.mentors.lemonaid.repository.CountryRepository;
 import com.sap.mentors.lemonaid.repository.ExpertiseLevelRepository;
 import com.sap.mentors.lemonaid.repository.GenderRepository;
@@ -41,12 +34,12 @@ import com.sap.mentors.lemonaid.repository.SapSoftwareSolutionRepository;
 import com.sap.mentors.lemonaid.repository.SizeRepository;
 import com.sap.mentors.lemonaid.repository.SoftSkillRepository;
 import com.sap.mentors.lemonaid.repository.TopicRepository;
+import com.sap.mentors.lemonaid.utils.Importer;
 
 @SpringBootApplication
 public class Application extends SpringBootServletInitializer {
 
 	private static final Logger log = LoggerFactory.getLogger(Application.class);
-	@Autowired private Gravatar gravatar;
 
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
@@ -72,7 +65,8 @@ public class Application extends SpringBootServletInitializer {
 			final RegionRepository regionRepository,
 			final GenderRepository genderRepository,
 			final SizeRepository sizeRepository,
-			final TopicRepository topicRepository
+			final TopicRepository topicRepository,
+			final Importer importer
 		) {
 
 		return new CommandLineRunner() {
@@ -99,8 +93,10 @@ public class Application extends SpringBootServletInitializer {
 					lineOfBusinessRepository.save(new LineOfBusiness(LineOfBusiness.PLATFORM_AND_TECHNOLOGY, "Platform and Technology"));
 					lineOfBusinessRepository.save(new LineOfBusiness(LineOfBusiness.ASSET_MANAGEMENT, "Asset Management"));
 					lineOfBusinessRepository.save(new LineOfBusiness(LineOfBusiness.COMMERCE, "Commerce"));
+					lineOfBusinessRepository.save(new LineOfBusiness(LineOfBusiness.ERP, "ERP"));
 					lineOfBusinessRepository.save(new LineOfBusiness(LineOfBusiness.FINANCE, "Finance"));
 					lineOfBusinessRepository.save(new LineOfBusiness(LineOfBusiness.HUMAN_RESOURCES, "Finance"));
+					lineOfBusinessRepository.save(new LineOfBusiness(LineOfBusiness.MAINTENANCE, "Maintenance"));
 					lineOfBusinessRepository.save(new LineOfBusiness(LineOfBusiness.MANUFACTURING, "Manufacturing"));
 					lineOfBusinessRepository.save(new LineOfBusiness(LineOfBusiness.MARKETING, "Marketing"));
 					lineOfBusinessRepository.save(new LineOfBusiness(LineOfBusiness.ENGINEERING, "R&D / Engineering"));
@@ -126,15 +122,18 @@ public class Application extends SpringBootServletInitializer {
 					industryRepository.save(new Industry(Industry.INDUSTRIAL_MACHINERY_AND_COMPONENTS, "Industrial Machinery and Components"));
 					industryRepository.save(new Industry(Industry.INSURANCE, "Insurance"));
 					industryRepository.save(new Industry(Industry.LIFE_SCIENCES, "Life Sciences"));
+					industryRepository.save(new Industry(Industry.MANUFACTURING, "Manufacturing"));
 					industryRepository.save(new Industry(Industry.MEDIA, "Media"));
 					industryRepository.save(new Industry(Industry.MILL_PRODUCTS, "Mill Products"));
 					industryRepository.save(new Industry(Industry.MINING, "Mining"));
 					industryRepository.save(new Industry(Industry.OIL_AND_GAS, "Oil and Gas"));
+					industryRepository.save(new Industry(Industry.PRODUCTION, "Production"));
 					industryRepository.save(new Industry(Industry.PROFESSIONAL_SERVICES, "Professional Services"));
 					industryRepository.save(new Industry(Industry.PUBLIC_SECTOR, "Public Sector"));
 					industryRepository.save(new Industry(Industry.RETAIL, "Retail"));
 					industryRepository.save(new Industry(Industry.SPORTS_AND_ENTERTAINMENT, "Sports and Entertainment"));
 					industryRepository.save(new Industry(Industry.TELECOMMUNICATIONS, "Telecommunications"));
+					industryRepository.save(new Industry(Industry.TECHNICAL_WHOLESALE, "Technical Wholesale"));
 					industryRepository.save(new Industry(Industry.TRAVEL_AND_TRANSPORTATION, "Travel and Transportation"));
 					industryRepository.save(new Industry(Industry.UTILITIES, "Utilities"));
 					industryRepository.save(new Industry(Industry.WHOLESALE_DISTRIBUTION, "Wholesale Distribution"));
@@ -188,6 +187,7 @@ public class Application extends SpringBootServletInitializer {
 					sapSoftwareSolutionRepository.save(new SapSoftwareSolution(SapSoftwareSolution.MOBILE_OPERATOR_SERVICES, "Mobile Operator Services"));
 					sapSoftwareSolutionRepository.save(new SapSoftwareSolution(SapSoftwareSolution.MOBILE_TECHNOLOGY, "Mobile Technology"));
 					sapSoftwareSolutionRepository.save(new SapSoftwareSolution(SapSoftwareSolution.OMNICHANNEL_COMMERCE_MANAGEMENT, "Omni-Channel Commerce Management"));
+					sapSoftwareSolutionRepository.save(new SapSoftwareSolution(SapSoftwareSolution.OUTPUT_MANAGEMENT_IFBA, "Output Management - Ifba"));
 					sapSoftwareSolutionRepository.save(new SapSoftwareSolution(SapSoftwareSolution.PARTNER_MANAGED_CLOUD, "Partner Managed Cloud"));
 					sapSoftwareSolutionRepository.save(new SapSoftwareSolution(SapSoftwareSolution.PREDICTIVE_ANALYTICS, "Predictive Analytics"));
 					sapSoftwareSolutionRepository.save(new SapSoftwareSolution(SapSoftwareSolution.S4HANA, "S/4HANA"));
@@ -396,6 +396,7 @@ public class Application extends SpringBootServletInitializer {
 					sapSoftwareSolutionRepository.save(new SapSoftwareSolution(SapSoftwareSolution.SAP_PRICING_AND_COSTING_FOR_UTILITIES, "SAP Pricing and Costing for Utilities"));
 					sapSoftwareSolutionRepository.save(new SapSoftwareSolution(SapSoftwareSolution.SAP_PROCESS_CONTROL, "SAP Process Control"));
 					sapSoftwareSolutionRepository.save(new SapSoftwareSolution(SapSoftwareSolution.SAP_PROCESS_OBJECT_BUILDER, "SAP Process Object Builder"));
+					sapSoftwareSolutionRepository.save(new SapSoftwareSolution(SapSoftwareSolution.SAP_PROCESS_ORCHESTRATION, "SAP Process Orchestration"));
 					sapSoftwareSolutionRepository.save(new SapSoftwareSolution(SapSoftwareSolution.SAP_PRODUCT_LIFECYCLE_MANAGEMENT_FOR_INSURANCE, "SAP Product Lifecycle Management for Insurance"));
 					sapSoftwareSolutionRepository.save(new SapSoftwareSolution(SapSoftwareSolution.SAP_PRODUCTION_AND_REVENUE_ACCOUNTING, "SAP Production and Revenue Accounting"));
 					sapSoftwareSolutionRepository.save(new SapSoftwareSolution(SapSoftwareSolution.SAP_PROFITABILITY_AND_COST_MANAGEMENT, "SAP Profitability and Cost Management"));
@@ -756,7 +757,7 @@ public class Application extends SpringBootServletInitializer {
 					regionRepository.save(new Region(Region.EUR, "Europe"));
 					regionRepository.save(new Region(Region.MEA, "Middle East and Africa"));
 					regionRepository.save(new Region(Region.NA, "North America"));
-					regionRepository.save(new Region(Region.SA, "South America"));
+					regionRepository.save(new Region(Region.LA, "Latin America"));
 				}
 				
 				if (sizeRepository.count() == 0) {
@@ -779,207 +780,234 @@ public class Application extends SpringBootServletInitializer {
 					log.info("Topics table is still empty. Populating it");
 					topicRepository.save(new Topic(Topic.SAP_RUN_SAP, "SAP Run SAP"));
 					topicRepository.save(new Topic(Topic.HANA_CLOUD_PLATFORM, "Hana Cloud Platform"));
+					topicRepository.save(new Topic(Topic.SAP_HANA_PLATFORM, "SAP Hana Platform"));
+					topicRepository.save(new Topic(Topic.HANA_CLOUD_INTEGRATION, "Hana Cloud Integration"));
+					topicRepository.save(new Topic(Topic.SAP_HANA_VORA, "SAP Hana Vora"));
 					topicRepository.save(new Topic(Topic.PRODUCTS_INNOVATION, "Products & Innovation"));
-					topicRepository.save(new Topic(Topic.CLOUD_FOR_CUSTOMERS, "Cloud for Customers"));
-					topicRepository.save(new Topic(Topic.S4HANA_SAP_ACTIVATE, "S/4Hana (SAP Activate)"));
+					topicRepository.save(new Topic(Topic.CLOUD_FOR_CUSTOMER, "Cloud for Customer"));
+					topicRepository.save(new Topic(Topic.S4HANA, "S/4Hana"));
 					topicRepository.save(new Topic(Topic.ABAP_AND_WORKFLOW, "ABAP and Workflow"));
-					topicRepository.save(new Topic(Topic.GLOBAL_BUSINESS_NETWORK, "Global Business Network"));
-					topicRepository.save(new Topic(Topic.UX_DESIGN, "Ux & Design"));
+					topicRepository.save(new Topic(Topic.GLOBAL_BUSINESS_NETWORK, "global_business_network"));
+					topicRepository.save(new Topic(Topic.UX, "Ux & Design"));
 					topicRepository.save(new Topic(Topic.ANALYTICS, "Analytics"));
 					topicRepository.save(new Topic(Topic.TECHNOLOGY_STRATEGY, "Technology Strategy"));
 					topicRepository.save(new Topic(Topic.SAP_SUPPORT, "Sap Support"));
 					topicRepository.save(new Topic(Topic.PLATFORM_SOLUTIONS, "Platform Solutions"));
 					topicRepository.save(new Topic(Topic.TECHNOLOGY, "Technology"));
 					topicRepository.save(new Topic(Topic.IOT, "IOT"));
+					topicRepository.save(new Topic(Topic.MOBILITY, "Mobility"));
+					topicRepository.save(new Topic(Topic.SAP_DIGITAL, "SAP Digital"));
+					topicRepository.save(new Topic(Topic.FINANCE, "Finance"));
+					topicRepository.save(new Topic(Topic.SECURITY, "Security"));
+					topicRepository.save(new Topic(Topic.SAP_PROCESS_ORCHESTRATION, "SAP Process Orchestration"));
+					topicRepository.save(new Topic(Topic.CIO_AMERICAS, "CIO Americas"));
+					topicRepository.save(new Topic(Topic.HUMAN_RESOURCES, "Human Resources"));
+					topicRepository.save(new Topic(Topic.GRC, "GRC"));
+					topicRepository.save(new Topic(Topic.CLOUD_INFRASTRUCTURE, "Cloud Infrastructure"));
+					topicRepository.save(new Topic(Topic.SAP_GCO, "SAP GCO"));
+					topicRepository.save(new Topic(Topic.HANA_HADOOP_INTEGRATION, "HANA/Hadoop Integration"));
+					topicRepository.save(new Topic(Topic.SAP_DATAWAREHOUSING, "SAP Data Warehousing"));
+					topicRepository.save(new Topic(Topic.BOARDROOM_REDEFINED, "Boardroom redefined"));
+					topicRepository.save(new Topic(Topic.ABAP_DEVELOPMENT, "ABAP Development"));
+					topicRepository.save(new Topic(Topic.PREDICTIVE_ANALYTICS, "Predictive Analytics"));
+					topicRepository.save(new Topic(Topic.SAP_APPLICATION_INTERFACE_FRAMEWORK, "SAP Application Interface Framework"));
+					topicRepository.save(new Topic(Topic.SOLUTIONS_MANAGER, "Solution Manager"));
+					topicRepository.save(new Topic(Topic.SAPUI5, "SAPUI5"));
+					topicRepository.save(new Topic(Topic.SAP_PORTALS, "SAP Portals"));
+					topicRepository.save(new Topic(Topic.ASUG, "ASUG"));
+					topicRepository.save(new Topic(Topic.INDUSTRY_CLOUD, "Industry Cloud"));
+					topicRepository.save(new Topic(Topic.DEVELOPMENT, "Development"));
+					topicRepository.save(new Topic(Topic.BUSINESS_ONE, "Business One"));
+					topicRepository.save(new Topic(Topic.OUTPUT_MANAGEMENT_IFBA, "Output Management - Ifba"));
 				}
 
 				if (mentorRepository.count() == 0) {
-					log.info("Mentors is still empty. Adding some sample records");
-					mentorRepository.save(new Mentor(
-							UUID.randomUUID().toString(), 
-							"Jan Penninkhof",
-							new MentorStatus(MentorStatus.ACTIVE),
-							"SAP Consultant",
-							"Phoqus B.V.",
-							new RelationshipToSap(RelationshipToSap.PARTNER),
-							new LineOfBusiness(LineOfBusiness.PLATFORM_AND_TECHNOLOGY),
-							null,
-							null,
-							new Industry(Industry.HEALTHCARE),
-							new Industry(Industry.HIGH_TECH),
-							null,
-							new SapSoftwareSolution(SapSoftwareSolution.SAP_HANA_CLOUD_PLATFORM),
-							new ExpertiseLevel(ExpertiseLevel.EXPERT),
-							new SapSoftwareSolution(SapSoftwareSolution.SAP_MOBILE_PLATFORM),
-							new ExpertiseLevel(ExpertiseLevel.EXPERT),
-							new SapSoftwareSolution(SapSoftwareSolution.SAP_FIORI),
-							new ExpertiseLevel(ExpertiseLevel.EXPERT),
-							new SoftSkill(SoftSkill.INSIDETRACKS),
-							new SoftSkill(SoftSkill.DESIGN_THINKING),
-							new SoftSkill(SoftSkill.INTERNET_OF_THINGS),
-							null,
-							null,
-							null,
-							"Lorem ipsum dolor sit amet, consectetur adipiscing elit.\nCras posuere nunc non efficitur feugiat.\nQuisque aliquam porttitor eros quis vestibulum.",
-							"jan@penninkhof.com",
-							"email2@jpenninkhof.com",
-							1,
-							"Cannenburch 110", 
-							"Lelystad", 
-							null, 
-							"8226RT", 
-							new Country(Country.NL), 
-							"+31987654321",
-							52.51853699999999, 5.471421999999961,
-							new Region(Region.EUR),
-							150,
-							"@jpenninkhof",
-							new Size(Size.L),
-							new Gender(Gender.M),
-							"http://scn.sap.com/people/jan.penninkhof2",
-							"@jpenninkhof", 
-							"http://nl.linkedin.com/in/jpenninkhof/",
-							null,
-							null,
-							false, false, false, false, 0,
-							null,
-							null, null, 
-							null, null, 
-							null, null, 
-							null, null, 
-							true, new Topic(Topic.HANA_CLOUD_PLATFORM),
-							"P508741"
-						));
-					mentorRepository.save(new Mentor(
-							UUID.randomUUID().toString(), 
-							"Robin van het Hof",
-							new MentorStatus(MentorStatus.ACTIVE),
-							"SAP NetWeaver Magician",
-							"Qualiture",
-							new RelationshipToSap(RelationshipToSap.FREELANCE),
-							new LineOfBusiness(LineOfBusiness.PLATFORM_AND_TECHNOLOGY),
-							new LineOfBusiness(LineOfBusiness.SUPPLY_CHAIN),
-							new LineOfBusiness(LineOfBusiness.HUMAN_RESOURCES),
-							new Industry(Industry.PROFESSIONAL_SERVICES),
-							new Industry(Industry.OIL_AND_GAS),
-							null,
-							new SapSoftwareSolution(SapSoftwareSolution.UI_ADDON),
-							new ExpertiseLevel(ExpertiseLevel.EXPERT),
-							new SapSoftwareSolution(SapSoftwareSolution.SAP_HANA_CLOUD_PLATFORM),
-							new ExpertiseLevel(ExpertiseLevel.EXPERT),
-							new SapSoftwareSolution(SapSoftwareSolution.SAP_NETWEAVER),
-							new ExpertiseLevel(ExpertiseLevel.EXPERT),
-							new SoftSkill(SoftSkill.INTERPERSONAL_SKILLS),
-							new SoftSkill(SoftSkill.EMOTIONAL_INTELLIGENCE),
-							new SoftSkill(SoftSkill.DESIGN_THINKING),
-							new SoftSkill(SoftSkill.LEAN_METHODOLOGY),
-							new SoftSkill(SoftSkill.CONFLICT_RESOLUTION),
-							new SoftSkill(SoftSkill.CRITICAL_OBSERVATION_SKILLS),
-							"Donec tincidunt turpis magna, in consequat eros condimentum ut.\nCurabitur eleifend pharetra varius.",
-							"robin.van.het.hof@qualiture.nl",
-							"email2@robin.com",
-							1,
-							"Multatulihove 40", 
-							"Zoetermeer", 
-							null, 
-							"2726CC", 
-							new Country(Country.NL), 
-							"+31123456789",
-							52.060669, 4.494024999999965,
-							new Region(Region.EUR),
-							234,
-							"@Qualiture",
-							new Size(Size.L),
-							new Gender(Gender.M),
-							"http://scn.sap.com/people/robin.vanhethof",
-							"@qualiture", 
-							"http://nl.linkedin.com/pub/robin-van-het-hof/2/526/bb7/",
-							null,
-							null,
-							false, false, true, true, 0,
-							new Region(Region.EUR),
-							new Topic(Topic.UX_DESIGN), "Prakash Darji Prakash Darji - (SVP & GM, Platform as a Service)  Uddhav Gupta; Rick Constanzo",
-							null, null, 
-							null, null, 
-							null, null, 
-							true, new Topic(Topic.UX_DESIGN),
-							"S0007138856"
-						));
-					mentorRepository.save(new Mentor(
-							UUID.randomUUID().toString(), 
-							"Fred Verheul",
-							new MentorStatus(MentorStatus.ALUMNI),
-							"SAP Consultant",
-							"SOA People",
-							new RelationshipToSap(RelationshipToSap.PARTNER),
-							null,
-							null,
-							null,
-							null,
-							null,
-							null,
-							null,
-							null,
-							null,
-							null,
-							null,
-							null,
-							null,
-							null,
-							null,
-							null,
-							null,
-							null,
-							"Aenean id tempor lectus, dignissim rutrum ligula. Vivamus eu placerat felis. Nullam ornare, massa quis condimentum ornare, elit nulla malesuada augue, nec scelerisque magna ligula posuere ipsum.",
-							"fred.verheul@gmail.com",
-							null,
-							1,
-							"Keplerstraat 43", 
-							"Nijmegen", 
-							null, 
-							"6533DA", 
-							new Country(Country.NL), 
-							"+31777777777",
-							51.8125626, 5.837226399999963,
-							new Region(Region.EUR),
-							64,
-							"@fredverheul",
-							new Size(Size.M),
-							new Gender(Gender.M),
-							"http://scn.sap.com/people/fred.verheul",
-							"@fredverheul", 
-							"http://nl.linkedin.com/in/fredverheul",
-							null,
-							null,
-							false, false, true, true, 0,
-							null,
-							null, null,
-							null, null, 
-							null, null, 
-							null, null, 
-							false, null ,
-							null
-						));
-
-					for (Mentor mentor : mentorRepository.findAll()) {
-			    		ArrayList<String> emails = new ArrayList<String>();
-			    		if (mentor.getEmail1() != null && mentor.getEmail1().length() > 0) {
-			    			emails.add(mentor.getEmail1());
-			    		}
-			    		if (mentor.getEmail2() != null && mentor.getEmail1().length() > 0) {
-			    			emails.add(mentor.getEmail2());
-			    		}
-			    		HashMap<String, Boolean> exist = gravatar.emailsExist(emails);
-			    		if (exist.get(mentor.getEmail1())) {
-			    			mentor.setPhotoUrl(gravatar.getUrlForEmail(mentor.getEmail1()) + "?s=144");
-			    		} else if (exist.get(mentor.getEmail2())) {
-			    			mentor.setPhotoUrl(gravatar.getUrlForEmail(mentor.getEmail2()) + "?s=144");
-			    		} else { 
-			    			mentor.setPhotoUrl(gravatar.getUrlOfUser() + "?s=144");
-			    		}
-			    		mentorRepository.save(mentor);
-			    	}
-					
+//					log.info("Mentors is still empty. Adding some sample records");
+//					mentorRepository.save(new Mentor(
+//							UUID.randomUUID().toString(), 
+//							"Jan Penninkhof",
+//							new MentorStatus(MentorStatus.ACTIVE),
+//							"SAP Consultant",
+//							"Phoqus B.V.",
+//							new RelationshipToSap(RelationshipToSap.PARTNER),
+//							new LineOfBusiness(LineOfBusiness.PLATFORM_AND_TECHNOLOGY),
+//							null,
+//							null,
+//							new Industry(Industry.HEALTHCARE),
+//							new Industry(Industry.HIGH_TECH),
+//							null,
+//							new SapSoftwareSolution(SapSoftwareSolution.SAP_HANA_CLOUD_PLATFORM),
+//							new ExpertiseLevel(ExpertiseLevel.EXPERT),
+//							new SapSoftwareSolution(SapSoftwareSolution.SAP_MOBILE_PLATFORM),
+//							new ExpertiseLevel(ExpertiseLevel.EXPERT),
+//							new SapSoftwareSolution(SapSoftwareSolution.SAP_FIORI),
+//							new ExpertiseLevel(ExpertiseLevel.EXPERT),
+//							new SoftSkill(SoftSkill.INSIDETRACKS),
+//							new SoftSkill(SoftSkill.DESIGN_THINKING),
+//							new SoftSkill(SoftSkill.INTERNET_OF_THINGS),
+//							null,
+//							null,
+//							null,
+//							"Lorem ipsum dolor sit amet, consectetur adipiscing elit.\nCras posuere nunc non efficitur feugiat.\nQuisque aliquam porttitor eros quis vestibulum.",
+//							"jan@penninkhof.com",
+//							"email2@jpenninkhof.com",
+//							1,
+//							"Cannenburch 110", 
+//							"Lelystad", 
+//							null, 
+//							"8226RT", 
+//							new Country(Country.NL), 
+//							"+31987654321",
+//							52.51853699999999, 5.471421999999961,
+//							new Region(Region.EUR),
+//							150,
+//							"@jpenninkhof",
+//							new Size(Size.L),
+//							new Gender(Gender.M),
+//							"http://scn.sap.com/people/jan.penninkhof2",
+//							"@jpenninkhof", 
+//							"http://nl.linkedin.com/in/jpenninkhof/",
+//							null,
+//							null,
+//							false, false, false, false, 0,
+//							null,
+//							null, null, 
+//							null, null, 
+//							null, null, 
+//							null, null, 
+//							true, new Topic(Topic.HANA_CLOUD_PLATFORM),
+//							true, "P508741"
+//						));
+//					mentorRepository.save(new Mentor(
+//							UUID.randomUUID().toString(), 
+//							"Robin van het Hof",
+//							new MentorStatus(MentorStatus.ACTIVE),
+//							"SAP NetWeaver Magician",
+//							"Qualiture",
+//							new RelationshipToSap(RelationshipToSap.FREELANCE),
+//							new LineOfBusiness(LineOfBusiness.PLATFORM_AND_TECHNOLOGY),
+//							new LineOfBusiness(LineOfBusiness.SUPPLY_CHAIN),
+//							new LineOfBusiness(LineOfBusiness.HUMAN_RESOURCES),
+//							new Industry(Industry.PROFESSIONAL_SERVICES),
+//							new Industry(Industry.OIL_AND_GAS),
+//							null,
+//							new SapSoftwareSolution(SapSoftwareSolution.UI_ADDON),
+//							new ExpertiseLevel(ExpertiseLevel.EXPERT),
+//							new SapSoftwareSolution(SapSoftwareSolution.SAP_HANA_CLOUD_PLATFORM),
+//							new ExpertiseLevel(ExpertiseLevel.EXPERT),
+//							new SapSoftwareSolution(SapSoftwareSolution.SAP_NETWEAVER),
+//							new ExpertiseLevel(ExpertiseLevel.EXPERT),
+//							new SoftSkill(SoftSkill.INTERPERSONAL_SKILLS),
+//							new SoftSkill(SoftSkill.EMOTIONAL_INTELLIGENCE),
+//							new SoftSkill(SoftSkill.DESIGN_THINKING),
+//							new SoftSkill(SoftSkill.LEAN_METHODOLOGY),
+//							new SoftSkill(SoftSkill.CONFLICT_RESOLUTION),
+//							new SoftSkill(SoftSkill.CRITICAL_OBSERVATION_SKILLS),
+//							"Donec tincidunt turpis magna, in consequat eros condimentum ut.\nCurabitur eleifend pharetra varius.",
+//							"robin.van.het.hof@qualiture.nl",
+//							"email2@robin.com",
+//							1,
+//							"Multatulihove 40", 
+//							"Zoetermeer", 
+//							null, 
+//							"2726CC", 
+//							new Country(Country.NL), 
+//							"+31123456789",
+//							52.060669, 4.494024999999965,
+//							new Region(Region.EUR),
+//							234,
+//							"@Qualiture",
+//							new Size(Size.L),
+//							new Gender(Gender.M),
+//							"http://scn.sap.com/people/robin.vanhethof",
+//							"@qualiture", 
+//							"http://nl.linkedin.com/pub/robin-van-het-hof/2/526/bb7/",
+//							null,
+//							null,
+//							false, false, true, true, 0,
+//							new Region(Region.EUR),
+//							new Topic(Topic.UX_DESIGN), "Prakash Darji Prakash Darji - (SVP & GM, Platform as a Service)  Uddhav Gupta; Rick Constanzo",
+//							null, null, 
+//							null, null, 
+//							null, null, 
+//							true, new Topic(Topic.UX_DESIGN),
+//							true, "S0007138856"
+//						));
+//					mentorRepository.save(new Mentor(
+//							UUID.randomUUID().toString(), 
+//							"Fred Verheul",
+//							new MentorStatus(MentorStatus.ALUMNI),
+//							"SAP Consultant",
+//							"SOA People",
+//							new RelationshipToSap(RelationshipToSap.PARTNER),
+//							null,
+//							null,
+//							null,
+//							null,
+//							null,
+//							null,
+//							null,
+//							null,
+//							null,
+//							null,
+//							null,
+//							null,
+//							null,
+//							null,
+//							null,
+//							null,
+//							null,
+//							null,
+//							"Aenean id tempor lectus, dignissim rutrum ligula. Vivamus eu placerat felis. Nullam ornare, massa quis condimentum ornare, elit nulla malesuada augue, nec scelerisque magna ligula posuere ipsum.",
+//							"fred.verheul@gmail.com",
+//							null,
+//							1,
+//							"Keplerstraat 43", 
+//							"Nijmegen", 
+//							null, 
+//							"6533DA", 
+//							new Country(Country.NL), 
+//							"+31777777777",
+//							51.8125626, 5.837226399999963,
+//							new Region(Region.EUR),
+//							64,
+//							"@fredverheul",
+//							new Size(Size.M),
+//							new Gender(Gender.M),
+//							"http://scn.sap.com/people/fred.verheul",
+//							"@fredverheul", 
+//							"http://nl.linkedin.com/in/fredverheul",
+//							null,
+//							null,
+//							false, false, true, true, 0,
+//							null,
+//							null, null,
+//							null, null, 
+//							null, null, 
+//							null, null, 
+//							false, null ,
+//							true, null
+//						));
+//
+//					for (Mentor mentor : mentorRepository.findAll()) {
+//			    		ArrayList<String> emails = new ArrayList<String>();
+//			    		if (mentor.getEmail1() != null && mentor.getEmail1().length() > 0) {
+//			    			emails.add(mentor.getEmail1());
+//			    		}
+//			    		if (mentor.getEmail2() != null && mentor.getEmail1().length() > 0) {
+//			    			emails.add(mentor.getEmail2());
+//			    		}
+//			    		HashMap<String, Boolean> exist = gravatar.emailsExist(emails);
+//			    		if (exist.get(mentor.getEmail1())) {
+//			    			mentor.setPhotoUrl(gravatar.getUrlForEmail(mentor.getEmail1()) + "?s=144");
+//			    		} else if (exist.get(mentor.getEmail2())) {
+//			    			mentor.setPhotoUrl(gravatar.getUrlForEmail(mentor.getEmail2()) + "?s=144");
+//			    		} else { 
+//			    			mentor.setPhotoUrl(gravatar.getUrlOfUser() + "?s=144");
+//			    		}
+//			    		mentorRepository.save(mentor);
+//			    	}
+					importer.importMentors();
 				}
 	        }
 	    };

@@ -12,7 +12,7 @@ public class Region {
 	public static final String EUR = "EUR";
 	public static final String MEA = "MEA";
 	public static final String NA = "NA";
-	public static final String SA = "SA";
+	public static final String LA = "LA";
 	
 	@Id
 	private String id;

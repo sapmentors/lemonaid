@@ -4,8 +4,6 @@
 	<Table
 		id="table"
 		inset="false"
-		growing="true"
-		growingScrollToLoad="true"
 		items="{
 			path: '/Mentors',
 			parameters: {

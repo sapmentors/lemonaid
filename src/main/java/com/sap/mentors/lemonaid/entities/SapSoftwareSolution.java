@@ -54,6 +54,7 @@ public class SapSoftwareSolution {
 	public static final String MOBILE_OPERATOR_SERVICES = "mobile_operator_services";
 	public static final String MOBILE_TECHNOLOGY = "mobile_technology";
 	public static final String OMNICHANNEL_COMMERCE_MANAGEMENT = "omnichannel_commerce_management";
+	public static final String OUTPUT_MANAGEMENT_IFBA = "output_management_ifba";
 	public static final String PARTNER_MANAGED_CLOUD = "partner_managed_cloud";
 	public static final String PREDICTIVE_ANALYTICS = "predictive_analytics";
 	public static final String S4HANA = "s4hana";
@@ -262,6 +263,7 @@ public class SapSoftwareSolution {
 	public static final String SAP_PRICING_AND_COSTING_FOR_UTILITIES = "sap_pricing_and_costing_for_utilities";
 	public static final String SAP_PROCESS_CONTROL = "sap_process_control";
 	public static final String SAP_PROCESS_OBJECT_BUILDER = "sap_process_object_builder";
+	public static final String SAP_PROCESS_ORCHESTRATION = "sap_process_orchestration";
 	public static final String SAP_PRODUCT_LIFECYCLE_MANAGEMENT_FOR_INSURANCE = "sap_product_lifecycle_management_for_insurance";
 	public static final String SAP_PRODUCTION_AND_REVENUE_ACCOUNTING = "sap_production_and_revenue_accounting";
 	public static final String SAP_PROFITABILITY_AND_COST_MANAGEMENT = "sap_profitability_and_cost_management";

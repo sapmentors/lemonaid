@@ -12,6 +12,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import com.sap.mentors.lemonaid.utils.types.Point;
+
 @Entity
 @Table(name="mentors")
 public class Mentor {
@@ -116,7 +118,7 @@ public class Mentor {
     		String scnUrl, String twitterId, String linkedInUrl, String xingUrl, String facebookUrl,
     		boolean interestInMentorCommunicationStrategy, boolean interestInMentorManagementModel, boolean interestInMentorMix, boolean interestInOtherIdeas, int hoursAvailable,
     		Region topicLeadRegionId, Topic topic1Id, String topic1Executive, Topic topic2Id, String topic2Executive, Topic topic3Id, String topic3Executive, Topic topic4Id, String topic4Executive, boolean topicLeadInterest, Topic topicInterestId,
-    		String userId)
+    		boolean publicProfile, String userId)
     {
     	this.id = id;
         this.fullName = fullName;
@@ -192,7 +194,7 @@ public class Mentor {
         this.topicInterestId = topicInterestId;
         
         this.userId = userId;
-        this.publicProfile = true;
+        this.publicProfile = publicProfile;
     }
 
     @Override
@@ -744,6 +746,17 @@ public class Mentor {
 
 	public void setAttachments(List<Attachment> attachments) {
 		this.attachments = attachments;
+	}
+
+	public void setLocation(Point location) {
+		if (location == null) {
+			this.latitude = null;
+			this.longitude = null;
+		} else {
+			this.latitude = location.getLatitude();
+			this.longitude = location.getLongitude();
+		}
+		
 	}
 
 }

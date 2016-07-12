@@ -36,6 +36,9 @@ sap.ui.define([
 			// initialize the error handler with the component
 			this._oErrorHandler = new ErrorHandler(this);
 
+			// configure the main model
+			this.getModel().setSizeLimit(1000);
+			
 			// set the device model
 			this.setModel(models.createDeviceModel(), "device");
 

@@ -2,6 +2,7 @@
 	xmlns="openui5.googlemaps"
 	xmlns:core="sap.ui.core">
     <Map
+    	id="map"
     	height="100%" 
     	width="100%" 
     	lat="20"
@@ -10,7 +11,7 @@
     	markers="{
 			path: '/Mentors',
 			parameters: {
-				select: 'Id,FullName,ShirtNumber,Email1,Latitude,Longitude,MentorStatus/Id',
+				select: 'Id,FullName,ShirtNumber,PhotoUrl,Latitude,Longitude,MentorStatus/Id',
 				expand: 'MentorStatus'
 			}
 		}">

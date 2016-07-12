@@ -10,14 +10,18 @@ import org.apache.olingo.odata2.api.batch.BatchHandler;
 import org.apache.olingo.odata2.api.commons.HttpStatusCodes;
 import org.apache.olingo.odata2.api.edm.EdmEntityType;
 import org.apache.olingo.odata2.api.exception.ODataException;
+import org.apache.olingo.odata2.api.exception.ODataNotFoundException;
 import org.apache.olingo.odata2.api.processor.ODataContext;
 import org.apache.olingo.odata2.api.processor.ODataResponse;
 import org.apache.olingo.odata2.api.uri.info.DeleteUriInfo;
+import org.apache.olingo.odata2.api.uri.info.GetEntitySetCountUriInfo;
 import org.apache.olingo.odata2.api.uri.info.GetEntitySetUriInfo;
 import org.apache.olingo.odata2.api.uri.info.GetEntityUriInfo;
 import org.apache.olingo.odata2.api.uri.info.GetMediaResourceUriInfo;
 import org.apache.olingo.odata2.api.uri.info.PostUriInfo;
 import org.apache.olingo.odata2.api.uri.info.PutMergePatchUriInfo;
+import org.apache.olingo.odata2.core.uri.UriInfoImpl;
+import org.apache.olingo.odata2.core.uri.expression.FilterParserImpl;
 import org.apache.olingo.odata2.jpa.processor.api.ODataJPAContext;
 import org.apache.olingo.odata2.jpa.processor.core.ODataJPAContextImpl;
 import org.apache.olingo.odata2.jpa.processor.core.ODataJPAProcessorDefault;
@@ -79,7 +83,21 @@ public class ODataJPAProcessor extends ODataJPAProcessorDefault {
 		}
 		return jpaEntities;
 	}
-	
+
+	private UriInfoImpl augmentFilter(UriInfoImpl uriParserResultView) 
+			throws ODataException{
+		if (uriParserResultView.getTargetEntitySet().getEntityType().getName().equals("Mentor")) {
+			if (!this.isMentor() && !this.isAlumnus() && !this.isProjectMember()) {  
+				uriParserResultView.setFilter(
+					(new FilterParserImpl(uriParserResultView.getTargetEntitySet().getEntityType())).parseFilterString(
+						(uriParserResultView.getFilter() != null && uriParserResultView.getFilter().getExpressionString() != null && uriParserResultView.getFilter().getExpressionString().length() > 0 ?
+							"(" + uriParserResultView.getFilter().getExpressionString() + ") and " : "") + 
+						"PublicProfile eq true"));
+			}
+		}
+		return uriParserResultView;
+	}
+
 	@Override
 	public ODataResponse readEntityMedia(final GetMediaResourceUriInfo uriInfo, final String contentType)
 			throws ODataException {
@@ -100,6 +118,13 @@ public class ODataJPAProcessor extends ODataJPAProcessorDefault {
 			oDataJPAContext.setODataContext(getContext());
 			Object jpaEntity = jpaProcessor.process(uriParserResultView);
 			jpaEntity = enrichEntity(uriParserResultView.getTargetEntitySet().getEntityType(), jpaEntity);
+			if (jpaEntity instanceof Mentor) {
+				if (!this.isMentor() && !this.isAlumnus() && !this.isProjectMember()) {
+					if (!((Mentor) jpaEntity).isPublicProfile()) {
+						throw new ODataNotFoundException(ODataNotFoundException.ENTITY);
+					}
+				}
+			}
 			oDataResponse = responseBuilder.build(uriParserResultView, jpaEntity, contentType);
 		} finally {
 			close();
@@ -108,9 +133,10 @@ public class ODataJPAProcessor extends ODataJPAProcessorDefault {
 	}
 
 	@Override
-	public ODataResponse readEntitySet(final GetEntitySetUriInfo uriParserResultView, final String contentType)
+	public ODataResponse readEntitySet(GetEntitySetUriInfo uriParserResultView, final String contentType)
 			throws ODataException {
 		ODataResponse oDataResponse = null;
+		augmentFilter((UriInfoImpl) uriParserResultView);
 		try {
 			oDataJPAContext.setODataContext(getContext());
 			List<Object> jpaEntities = jpaProcessor.process(uriParserResultView);
@@ -119,8 +145,6 @@ public class ODataJPAProcessor extends ODataJPAProcessorDefault {
 				jpaEntities.add(new Config("IsMentor", Boolean.toString(isMentor())));
 				jpaEntities.add(new Config("IsAlumnus", Boolean.toString(isAlumnus())));
 				jpaEntities.add(new Config("IsProjectMember", Boolean.toString(isProjectMember())));
-			} else if (uriParserResultView.getTargetEntitySet().getEntityType().getName().equals("Mentor")) {
-				
 			}
 			oDataResponse = responseBuilder.build(uriParserResultView, jpaEntities, contentType);
 		} finally {
@@ -129,6 +153,21 @@ public class ODataJPAProcessor extends ODataJPAProcessorDefault {
 		return oDataResponse;
 	}
 
+	@Override
+	public ODataResponse countEntitySet(final GetEntitySetCountUriInfo uriParserResultView, final String contentType)
+			throws ODataException {
+		ODataResponse oDataResponse = null;
+		augmentFilter((UriInfoImpl) uriParserResultView);
+		try {
+			oDataJPAContext.setODataContext(getContext());
+			long jpaEntityCount = jpaProcessor.process(uriParserResultView);
+			oDataResponse = responseBuilder.build(jpaEntityCount);
+		} finally {
+			close();
+		}
+		return oDataResponse;
+	}
+	
 	@Override
 	public ODataResponse createEntity(final PostUriInfo uriParserResultView, final InputStream content,
 			final String requestContentType, final String contentType) throws ODataException {

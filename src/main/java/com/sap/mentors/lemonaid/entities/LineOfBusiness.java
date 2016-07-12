@@ -11,8 +11,10 @@ public class LineOfBusiness {
 	public static final String PLATFORM_AND_TECHNOLOGY = "platform_and_technology";
 	public static final String ASSET_MANAGEMENT = "asset_management";
 	public static final String COMMERCE = "commerce";
+	public static final String ERP = "erp";
 	public static final String FINANCE = "finance";
 	public static final String HUMAN_RESOURCES = "human_resources";
+	public static final String MAINTENANCE = "maintenance";
 	public static final String MANUFACTURING = "manufacturing";
 	public static final String MARKETING = "marketing";
 	public static final String ENGINEERING = "engineering";

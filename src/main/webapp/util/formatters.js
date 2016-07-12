@@ -189,6 +189,7 @@ sap.ui.define([
 								a.address1,
 								a.address2,
 								a.locale + "  " + a.zip + "  " + a.city,
+								a.country
 						   ];
 					},
 							

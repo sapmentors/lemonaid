@@ -33,11 +33,11 @@ public class Gravatar {
 		return DigestUtils.md5Hex(s.toLowerCase().trim());
 	}
 
-	public String getUrlForHash(String hash) {
+	public String getUrlForHash(final String hash) {
 		return img_endpoint + hash;
 	}
 
-	public String getUrlForEmail(String email) {
+	public String getUrlForEmail(final String email) {
 		return getUrlForHash(hash(email));
 	}
 	
@@ -45,7 +45,7 @@ public class Gravatar {
 		return getUrlForHash(this.user);
 	}
 	
-	public void setUser(String user) {
+	public void setUser(final String user) {
 		this.user = user;
 		try {
 			this.endpoint = new URL(this.api_endpoint + "?user=" + user);
@@ -57,15 +57,15 @@ public class Gravatar {
 		this.client.setConfig(config);
 	}
 
-	public void setPassword(String password) {
+	public void setPassword(final String password) {
 		this.password = password;
 	}
 
-	public void setApiKey(String apiKey) {
+	public void setApiKey(final String apiKey) {
 		this.apiKey = apiKey;
 	}
 			
-	Object callFunction(String method, Map<String, Object> parameters) {
+	Object callFunction(final String method, final Map<String, Object> parameters) {
 		Map<String,Object> map = new HashMap<String,Object>();
 		map.putAll(parameters);
 		if (this.apiKey != null) {
@@ -82,36 +82,38 @@ public class Gravatar {
 		}
 	}
 	
-	public boolean emailExists(String email) {
+	public boolean emailExists(final String email) {
 		return this.emailsExist(new ArrayList<String>(Arrays.asList(email))).get(email);
 	}
 	
 	@SuppressWarnings("unchecked")
-	public HashMap<String, Boolean> emailsExist(List<String> emails) {
+	public HashMap<String, Boolean> emailsExist(final List<String> emails) {
         ArrayList<String> hashes = new ArrayList<String>();
         for (String email : emails) {
         	hashes.add(hash(email));
         }
 		Map<String,Object> map = new HashMap<String,Object>();
         map.put("hashes", hashes);
-        HashMap<String, Integer> result = (HashMap<String, Integer>) callFunction("grav.exists", map);
         HashMap<String, Boolean> retval = new HashMap<String, Boolean>();
+        if (hashes.isEmpty()) return retval;
+        HashMap<String, Integer> result = (HashMap<String, Integer>) callFunction("grav.exists", map);
         for (String email : emails) {
         	retval.put(email, result.get(hash(email)) > 0);
         }
         return retval;
 	}
 
-	public boolean hashExists(String hash) {
+	public boolean hashExists(final String hash) {
 		return this.hashesExist(new ArrayList<String>(Arrays.asList(hash))).get(hash);
 	}
 
-	public HashMap<String, Boolean> hashesExist(List<String> hashes) {
+	@SuppressWarnings("unchecked")
+	public HashMap<String, Boolean> hashesExist(final List<String> hashes) {
 		Map<String,Object> map = new HashMap<String,Object>();
         map.put("hashes", hashes);
-        @SuppressWarnings("unchecked")
-		HashMap<String, Integer> result = (HashMap<String, Integer>) callFunction("grav.exists", map);
         HashMap<String, Boolean> retval = new HashMap<String, Boolean>();
+        if (hashes.isEmpty()) return retval;
+		HashMap<String, Integer> result = (HashMap<String, Integer>) callFunction("grav.exists", map);
         for (String hash : hashes) {
         	retval.put(hash, result.get(hash) > 0);
         }
