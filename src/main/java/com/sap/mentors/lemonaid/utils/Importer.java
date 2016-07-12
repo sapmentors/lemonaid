@@ -132,7 +132,7 @@ public class Importer {
 		}
 		jsonReader.endObject();
 		mentor.setPhotoUrl(mentorUtils.getImageOfMentor(mentor));
-		mentor.setLocation(mentorUtils.getLocationOfMentor(mentor));
+//		mentor.setLocation(mentorUtils.getLocationOfMentor(mentor));
 		if (mentor.getFullName().equals("Jan Penninkhof") || 
 			mentor.getFullName().equals("Robin van het Hof") ||
 			mentor.getFullName().equals("Twan van den Broek") ||
