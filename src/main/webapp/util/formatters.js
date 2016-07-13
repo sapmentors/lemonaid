@@ -7,7 +7,7 @@ sap.ui.define([
 				return '<table><tr><td valign="top">' +
 				       '<img class="placeIcon" src="images/pin-' + (status === 'active' ? 'mentor' : 'alumni') + '.png"/></td>' +
 				       '<td><b>' + name + '</b><br/>' + number + '</td>' +
-				       '</tr><tr><td colspan="2" align="center"><img src="' + photo + '"/></td>' +
+				       '</tr><tr><td colspan="2" align="center"><img src="' + photo + '" width="144" height="144"/></td>' +
 				       '</tr></table>';
 			},
 
