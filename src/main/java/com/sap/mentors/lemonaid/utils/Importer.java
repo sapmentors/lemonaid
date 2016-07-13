@@ -40,7 +40,7 @@ public class Importer {
 	public void importMentors() {
 		try {
 			JsonReader jsonReader = new JsonReader(
-					new InputStreamReader(this.getClass().getResourceAsStream("/" + fileName)));
+					new InputStreamReader(this.getClass().getResourceAsStream("/" + fileName), "UTF-8"));
 			jsonReader.beginObject();
 			while (jsonReader.hasNext()) {
 				String name = jsonReader.nextName();
@@ -101,7 +101,7 @@ public class Importer {
 				else if (key.equals("LinkedIn")) { mentor.setLinkedInUrl(value); }
 				else if (key.equals("Xing profile")) { mentor.setXingUrl(value); }
 				else if (key.equals("Facebook")) { mentor.setFacebookUrl(value); }
-				else if (key.equals("Address Street / P.O. Box / Appartment ")) { mentor.setAddress1(value); }
+				else if (key.equals("Address 1")) { mentor.setAddress1(value); }
 				else if (key.equals("City")) { mentor.setCity(value); }
 				else if (key.equals("State/ Province")) { mentor.setState(value); }
 				else if (key.equals("Zip/Postal Code")) { mentor.setZip(value); }
@@ -132,7 +132,7 @@ public class Importer {
 		}
 		jsonReader.endObject();
 		mentor.setPhotoUrl(mentorUtils.getImageOfMentor(mentor));
-//		mentor.setLocation(mentorUtils.getLocationOfMentor(mentor));
+		mentor.setLocation(mentorUtils.getLocationOfMentor(mentor));
 		if (mentor.getFullName().equals("Jan Penninkhof") || 
 			mentor.getFullName().equals("Robin van het Hof") ||
 			mentor.getFullName().equals("Twan van den Broek") ||
