@@ -6244,6 +6244,10 @@
         },
         {
             "Full Name": "Ajay Maheshwari",
+            "Shirt Number": "133",
+            "Shirt Text": "@ajaycwa1981",
+            "Shirt Size": "L",
+            "Shirt M/F": "M",
 			"Company": "Infosys Limited",
 			"Country": "India",
             "Mentor Status": "active",
@@ -6251,6 +6255,10 @@
         },
         {
             "Full Name": "Aslan Noghre-Kar",
+            "Shirt Number": "46",
+            "Shirt Text": "@aslann",
+            "Shirt Size": "L",
+            "Shirt M/F": "M",
 			"Company": "SAP",
 			"Country": "United States",
             "Mentor Status": "active",
@@ -6258,6 +6266,10 @@
         },
         {
             "Full Name": "Brandon Toombs",
+            "Shirt Number": "134",
+            "Shirt Text": "@brandontoombs",
+            "Shirt Size": "XL",
+            "Shirt M/F": "M",
 			"Company": "Toombs Consulting",
 			"Country": "United States",
             "Mentor Status": "active",
@@ -6265,6 +6277,10 @@
         },
         {
             "Full Name": "Chris Paine",
+            "Shirt Number": "128",
+            "Shirt Text": "@wombling",
+            "Shirt Size": "M",
+            "Shirt M/F": "M",
 			"Company": "Discovery Consulting Group",
 			"Country": "Australia",
             "Mentor Status": "active",
@@ -6272,6 +6288,10 @@
         },
         {
             "Full Name": "Denise Nepraunig",
+            "Shirt Number": "185",
+            "Shirt Text": "@denisenepraunig",
+            "Shirt Size": "S",
+            "Shirt M/F": "F",
 			"Company": "SAP",
 			"Country": "Germany",
             "Mentor Status": "active",
@@ -6279,6 +6299,10 @@
         },
         {
             "Full Name": "Fredrik Ohlsson",
+            "Shirt Number": "501",
+            "Shirt Text": "@fredrikohlsson",
+            "Shirt Size": "M",
+            "Shirt M/F": "M",
 			"Company": "Tetrapack",
 			"Country": "Singapore",
             "Mentor Status": "active",
@@ -6286,6 +6310,10 @@
         },
         {
             "Full Name": "Georg Glantschnig",
+            "Shirt Number": "135",
+            "Shirt Text": "Georg",
+            "Shirt Size": "M",
+            "Shirt M/F": "M",
 			"Company": "SAP Labs",
 			"Country": "United States",
             "Mentor Status": "active",
@@ -6293,6 +6321,10 @@
         },
         {
             "Full Name": "James Wood",
+            "Shirt Number": "412",
+            "Shirt Text": "@bowdark",
+            "Shirt Size": "XL",
+            "Shirt M/F": "M",
 			"Company": "Bowdark Consulting, Inc.",
 			"State/ Province": "TX",
 			"Country": "United States",
@@ -6301,6 +6333,10 @@
         },
         {
             "Full Name": "Julien Delvat",
+            "Shirt Number": "78",
+            "Shirt Text": "@jdelvat",
+            "Shirt Size": "M",
+            "Shirt M/F": "M",
 			"Company": "Alta Via Consulting",
 			"Country": "United States",
             "Mentor Status": "active",
@@ -6308,13 +6344,18 @@
         },
         {
             "Full Name": "Karin Tillotson",
+            "Shirt Number": "63",
 			"Company": "Coca-Cola",
 			"Country": "United States",
-            "Mentor Status": "active",
+            "Mentor Status": "alumni",
 			"SCN User ID URL": "http://scn.sap.com/people/karin.tillotson2"
         },
         {
             "Full Name": "Leonardo Araujo",
+            "Shirt Number": "1",
+            "Shirt Text": "Leonardo",
+            "Shirt Size": "S",
+            "Shirt M/F": "M",
 			"Company": "Beyond Technologies",
 			"Country": "Canada",
             "Mentor Status": "active",
@@ -6322,6 +6363,10 @@
         },
         {
             "Full Name": "Lestor Meadows",
+            "Shirt Number": "181",
+            "Shirt Text": "@lestormead",
+            "Shirt Size": "XL",
+            "Shirt M/F": "M",
 			"Company": "BI Manager",
 			"Country": "Australia",
             "Mentor Status": "active",
@@ -6329,6 +6374,10 @@
         },
         {
             "Full Name": "Manju Bansal",
+            "Shirt Number": "650",
+            "Shirt Text": "@bansalmanju",
+            "Shirt Size": "M",
+            "Shirt M/F": "F",
 			"Company": "SAP Labs, Inc",
 			"Country": "United States",
             "Mentor Status": "active",
@@ -6336,6 +6385,10 @@
         },
         {
             "Full Name": "Mike Howles",
+            "Shirt Number": "321",
+            "Shirt Text": "@Mike_Howles",
+            "Shirt Size": "L",
+            "Shirt M/F": "M",
 			"Company": "International Paper",
 			"Country": "United States",
             "Mentor Status": "active",
@@ -6343,6 +6396,10 @@
         },
         {
             "Full Name": "Paul Kurchina",
+            "Shirt Number": "129",
+            "Shirt Text": "@paulkurchina ",
+            "Shirt Size": "L",
+            "Shirt M/F": "M",
 			"Company": "KurMeta Group",
 			"Country": "Canada",
             "Mentor Status": "active",
@@ -6350,6 +6407,10 @@
         },
         {
             "Full Name": "Andy Silvey",
+            "Shirt Number": "171",
+            "Shirt Text": "@andysilvey",
+            "Shirt Size": "L",
+            "Shirt M/F": "M",
 			"Company": "Novartis",
 			"Country": "Czech Republic",
             "Mentor Status": "active",
@@ -6357,6 +6418,10 @@
         },
         {
             "Full Name": "Phil Loewen",
+            "Shirt Number": "360",
+            "Shirt Text": "@it360eu",
+            "Shirt Size": "L",
+            "Shirt M/F": "M",
 			"Company": "Infosys Consulting",
 			"City": "Zurich",
 			"Country": "Switzerland",
@@ -6365,6 +6430,10 @@
         },
         {
             "Full Name": "Raquel Seville",
+            "Shirt Number": "318",
+            "Shirt Text": "@quelzseville",
+            "Shirt Size": "S",
+            "Shirt M/F": "F",
 			"Company": "Columbus Communications Ltd. (FLOW)",
 			"Country": "Jamaica",
             "Mentor Status": "active",
@@ -6372,6 +6441,10 @@
         },
         {
             "Full Name": "Raymond Giuseppi",
+            "Shirt Number": "971",
+            "Shirt Text": "@raymond_scn",
+            "Shirt Size": "XL",
+            "Shirt M/F": "M",
 			"Company": "Dassault Falcon Service",
 			"Country": "France",
             "Mentor Status": "active",
@@ -6379,13 +6452,18 @@
         },
         {
             "Full Name": "Rukhshaan Omar",
+            "Shirt Number": "236",
+            "Shirt Text": "@rukso",
+            "Shirt Size": "L",
+            "Shirt M/F": "F",
 			"Company": "SAP",
-			"Country": "Germany",
+			"Country": "South Africa",
             "Mentor Status": "active",
 			"SCN User ID URL": "http://scn.sap.com/people/rukhshaan.omar"
         },
         {
             "Full Name": "Seung Chan Lim",
+            "Shirt Number": "999",
 			"Company": "Forks & Bridges",
 			"Country": "United States",
             "Mentor Status": "active",
@@ -6393,6 +6471,10 @@
         },
         {
             "Full Name": "Stephen Lofthouse",
+            "Shirt Number": "140",
+            "Shirt Text": "Steve Lofthouse",
+            "Shirt Size": "M",
+            "Shirt M/F": "M",
 			"Company": "Sheffield Hallam University",
 			"Country": "United Kingdom",
             "Mentor Status": "active",
@@ -6400,6 +6482,7 @@
         },
         {
             "Full Name": "Tim Guest",
+            "Shirt Number": "909",
 			"Company": "Zoedale",
 			"Country": "United Kingdom",
             "Mentor Status": "active",
@@ -6407,6 +6490,10 @@
         },
         {
             "Full Name": "Zimkhita Buwa",
+            "Shirt Number": "456",
+            "Shirt Text": "@zimbuwa",
+            "Shirt Size": "M",
+            "Shirt M/F": "F",
 			"Company": "Britehouse",
 			"Country": "South Africa",
             "Mentor Status": "active",
@@ -6414,8 +6501,53 @@
         },
         {
         	"Full Name": "Vasily Baranovsky",
+            "Shirt Number": "999",
         	"Company": "CIS",
         	"Country": "Ukraine"
+        },
+        {
+        	"Full Name": "Maria Farrales",
+            "Shirt Number": "338",
+            "Shirt Text": "Mariza",
+            "Shirt Size": "M",
+            "Shirt M/F": "F",
+        	"Company": "SAP",
+        	"Country": "United States"
+        },
+        {
+        	"Full Name": "Malin Liden",
+            "Shirt Number": "245",
+            "Shirt Text": "@MalinJessica",
+            "Shirt Size": "S",
+            "Shirt M/F": "F",
+        	"Company": "SAP",
+        	"Country": "Germany"
+        },
+        {
+        	"Full Name": "Ann Rosenberg",
+            "Shirt Number": "5",
+            "Shirt Text": "@rosenberg ",
+            "Shirt Size": "S",
+            "Shirt M/F": "F",
+        	"Company": "SAP",
+        	"City": "Palo Alto",
+            "State/ Province": "CA",
+       		"Country": "United States"
+        },
+        {
+        	"Full Name": "Jim Spath",
+            "Shirt Number": "10",
+            "Shirt Text": "@JSpath55",
+            "Shirt Size": "XL",
+            "Shirt M/F": "M",
+        	"Company": "The Black & Decker Corporation",
+        	"Email1": "james.spath@bdk.com",
+        	"Email2": "jspath55@gmail.com",
+        	"SCNUrl": "http://scn.sap.com/people/jim.spath",
+			"Relationship to SAP": "customer",
+        	"City": "Baltimore",
+            "State/ Province": "MD",
+       		"Country": "United States"
         }
     ]
 }
