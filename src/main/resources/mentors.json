@@ -852,7 +852,7 @@
             "email 1": "clint.vosloo@gmail.com",
             "email 2": "clint@evtechnologies.com",
             "Preferred email (1 or 2)": "Primary",
-            "SCN User ID URL": "http://scn.sap.com/people/clintvosloo",
+            "SCN User ID URL": "http://scn.sap.com/people/clint.vosloo",
             "Twitter Handle": "vosloo777",
             "LinkedIn": "http://au.linkedin.com/pub/clint-vosloo/1/57b/ab2",
             "City": "Brisbane",
@@ -2721,7 +2721,7 @@
             "email 1": "josh@geek2live.net",
             "email 2": null,
             "Preferred email (1 or 2)": "Primary",
-            "SCN User ID URL": "http://scn.sap.com/people/josh.fletcher",
+            "SCN User ID URL": "http://scn.sap.com/people/joshua.fletcher2",
             "Twitter Handle": "josh_fletcher",
             "LinkedIn": "http://au.linkedin.com/in/joshuafletcher/",
             "City": "Henley Brook",
@@ -3705,7 +3705,7 @@
             "email 1": "masayuki.sekihara@sap.com",
             "email 2": "masa.noppo@gmail.com",
             "Preferred email (1 or 2)": null,
-            "SCN User ID URL": "http://scn.sap.com/people/masayuki.sekihara/",
+            "SCN User ID URL": "http://scn.sap.com/people/masayuki.sekihara",
             "Twitter Handle": null,
             "LinkedIn": "https://www.linkedin.com/pub/masayuki-sekihara/5/25b/68",
             "City": "Chiyoda-ku",
@@ -4851,7 +4851,7 @@
             "email 1": "Ronald.konijnenburg@interdobs.nl",
             "email 2": null,
             "Preferred email (1 or 2)": "Primary",
-            "SCN User ID URL": "http://scn.sap.com/people/r.konijnenburg/",
+            "SCN User ID URL": "http://scn.sap.com/people/r.konijnenburg",
             "Twitter Handle": "konijnenburg",
             "LinkedIn": "https://nl.linkedin.com/in/ronaldkonijnenburg",
             "City": "Hendrik-Ido-Ambacht",
@@ -6241,6 +6241,176 @@
             "4th Soft Skills": "Process improvement expertise",
             "5th Soft Skills": "Change Management",
             "6th Soft Skills": "Leadership skills"
+        },
+        {
+            "Full Name": "Ajay Maheshwari",
+			"Company": "Infosys Limited",
+			"Country": "India",
+            "Mentor Status": "active",
+			"SCN User ID URL": "http://scn.sap.com/people/ajay.maheshwari"
+        },
+        {
+            "Full Name": "Aslan Noghre-Kar",
+			"Company": "SAP",
+			"Country": "United States",
+            "Mentor Status": "active",
+			"SCN User ID URL": "http://scn.sap.com/people/aslan.noghre-kar2"
+        },
+        {
+            "Full Name": "Brandon Toombs",
+			"Company": "Toombs Consulting",
+			"Country": "United States",
+            "Mentor Status": "active",
+			"SCN User ID URL": "http://scn.sap.com/people/brandon.toombs"
+        },
+        {
+            "Full Name": "Chris Paine",
+			"Company": "Discovery Consulting Group",
+			"Country": "Australia",
+            "Mentor Status": "active",
+			"SCN User ID URL": "http://scn.sap.com/people/chris.paine3"
+        },
+        {
+            "Full Name": "Denise Nepraunig",
+			"Company": "SAP",
+			"Country": "Germany",
+            "Mentor Status": "active",
+			"SCN User ID URL": "http://scn.sap.com/people/denise.nepraunig.sap"
+        },
+        {
+            "Full Name": "Fredrik Ohlsson",
+			"Company": "Tetrapack",
+			"Country": "Singapore",
+            "Mentor Status": "active",
+			"SCN User ID URL": "http://scn.sap.com/people/fredrik.ohlsson"
+        },
+        {
+            "Full Name": "Georg Glantschnig",
+			"Company": "SAP Labs",
+			"Country": "United States",
+            "Mentor Status": "active",
+			"SCN User ID URL": "http://scn.sap.com/people/georg.glantschnig"
+        },
+        {
+            "Full Name": "James Wood",
+			"Company": "Bowdark Consulting, Inc.",
+			"State/ Province": "TX",
+			"Country": "United States",
+            "Mentor Status": "active",
+			"SCN User ID URL": "http://scn.sap.com/people/james.wood"
+        },
+        {
+            "Full Name": "Julien Delvat",
+			"Company": "Alta Via Consulting",
+			"Country": "United States",
+            "Mentor Status": "active",
+			"SCN User ID URL": "http://scn.sap.com/people/julien.delvat2"
+        },
+        {
+            "Full Name": "Karin Tillotson",
+			"Company": "Coca-Cola",
+			"Country": "United States",
+            "Mentor Status": "active",
+			"SCN User ID URL": "http://scn.sap.com/people/karin.tillotson2"
+        },
+        {
+            "Full Name": "Leonardo Araujo",
+			"Company": "Beyond Technologies",
+			"Country": "Canada",
+            "Mentor Status": "active",
+			"SCN User ID URL": "http://scn.sap.com/people/leonardo.araujo"
+        },
+        {
+            "Full Name": "Lestor Meadows",
+			"Company": "BI Manager",
+			"Country": "Australia",
+            "Mentor Status": "active",
+			"SCN User ID URL": "http://scn.sap.com/people/lestor.meadows"
+        },
+        {
+            "Full Name": "Manju Bansal",
+			"Company": "SAP Labs, Inc",
+			"Country": "United States",
+            "Mentor Status": "active",
+			"SCN User ID URL": "http://scn.sap.com/people/manju.bansal"
+        },
+        {
+            "Full Name": "Mike Howles",
+			"Company": "International Paper",
+			"Country": "United States",
+            "Mentor Status": "active",
+			"SCN User ID URL": "http://scn.sap.com/people/mike.howles4"
+        },
+        {
+            "Full Name": "Paul Kurchina",
+			"Company": "KurMeta Group",
+			"Country": "Canada",
+            "Mentor Status": "active",
+			"SCN User ID URL": "http://scn.sap.com/people/paul.kurchina"
+        },
+        {
+            "Full Name": "Andy Silvey",
+			"Company": "Novartis",
+			"Country": "Czech Republic",
+            "Mentor Status": "active",
+			"SCN User ID URL": "http://scn.sap.com/people/petr.solberg"
+        },
+        {
+            "Full Name": "Phil Loewen",
+			"Company": "Infosys Consulting",
+			"City": "Zurich",
+			"Country": "Switzerland",
+            "Mentor Status": "active",
+			"SCN User ID URL": "http://scn.sap.com/people/phil.loewen2"
+        },
+        {
+            "Full Name": "Raquel Seville",
+			"Company": "Columbus Communications Ltd. (FLOW)",
+			"Country": "Jamaica",
+            "Mentor Status": "active",
+			"SCN User ID URL": "http://scn.sap.com/people/raquel.seville"
+        },
+        {
+            "Full Name": "Raymond Giuseppi",
+			"Company": "Dassault Falcon Service",
+			"Country": "France",
+            "Mentor Status": "active",
+			"SCN User ID URL": "http://scn.sap.com/people/raymond.giuseppi"
+        },
+        {
+            "Full Name": "Rukhshaan Omar",
+			"Company": "SAP",
+			"Country": "Germany",
+            "Mentor Status": "active",
+			"SCN User ID URL": "http://scn.sap.com/people/rukhshaan.omar"
+        },
+        {
+            "Full Name": "Seung Chan Lim",
+			"Company": "Forks & Bridges",
+			"Country": "United States",
+            "Mentor Status": "active",
+			"SCN User ID URL": "http://scn.sap.com/people/slim"
+        },
+        {
+            "Full Name": "Stephen Lofthouse",
+			"Company": "Sheffield Hallam University",
+			"Country": "United Kingdom",
+            "Mentor Status": "active",
+			"SCN User ID URL": "http://scn.sap.com/people/stephenlofthouse"
+        },
+        {
+            "Full Name": "Tim Guest",
+			"Company": "Zoedale",
+			"Country": "United Kingdom",
+            "Mentor Status": "active",
+			"SCN User ID URL": "http://scn.sap.com/people/tim.guest"
+        },
+        {
+            "Full Name": "Zimkhita Buwa",
+			"Company": "Britehouse",
+			"Country": "South Africa",
+            "Mentor Status": "active",
+			"SCN User ID URL": "http://scn.sap.com/people/zimkhita.buwa"
         }
     ]
 }
