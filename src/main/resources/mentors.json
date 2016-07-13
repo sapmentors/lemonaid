@@ -6411,6 +6411,11 @@
 			"Country": "South Africa",
             "Mentor Status": "active",
 			"SCN User ID URL": "http://scn.sap.com/people/zimkhita.buwa"
+        },
+        {
+        	"Full Name": "Vasily Baranovsky",
+        	"Company": "CIS",
+        	"Country": "Ukraine"
         }
     ]
 }
