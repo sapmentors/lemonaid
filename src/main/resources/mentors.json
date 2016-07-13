@@ -6244,6 +6244,7 @@
         },
         {
             "Full Name": "Ajay Maheshwari",
+            "Mentor Status": "active",
             "Shirt Number": "133",
             "Shirt Text": "@ajaycwa1981",
             "Shirt Size": "L",
@@ -6255,6 +6256,7 @@
         },
         {
             "Full Name": "Aslan Noghre-Kar",
+            "Mentor Status": "active",
             "Shirt Number": "46",
             "Shirt Text": "@aslann",
             "Shirt Size": "L",
@@ -6266,6 +6268,7 @@
         },
         {
             "Full Name": "Brandon Toombs",
+            "Mentor Status": "active",
             "Shirt Number": "134",
             "Shirt Text": "@brandontoombs",
             "Shirt Size": "XL",
@@ -6277,6 +6280,7 @@
         },
         {
             "Full Name": "Chris Paine",
+            "Mentor Status": "active",
             "Shirt Number": "128",
             "Shirt Text": "@wombling",
             "Shirt Size": "M",
@@ -6288,6 +6292,7 @@
         },
         {
             "Full Name": "Denise Nepraunig",
+            "Mentor Status": "active",
             "Shirt Number": "185",
             "Shirt Text": "@denisenepraunig",
             "Shirt Size": "S",
@@ -6299,6 +6304,7 @@
         },
         {
             "Full Name": "Fredrik Ohlsson",
+            "Mentor Status": "active",
             "Shirt Number": "501",
             "Shirt Text": "@fredrikohlsson",
             "Shirt Size": "M",
@@ -6310,6 +6316,7 @@
         },
         {
             "Full Name": "Georg Glantschnig",
+            "Mentor Status": "active",
             "Shirt Number": "135",
             "Shirt Text": "Georg",
             "Shirt Size": "M",
@@ -6321,6 +6328,7 @@
         },
         {
             "Full Name": "James Wood",
+            "Mentor Status": "active",
             "Shirt Number": "412",
             "Shirt Text": "@bowdark",
             "Shirt Size": "XL",
@@ -6333,6 +6341,7 @@
         },
         {
             "Full Name": "Julien Delvat",
+            "Mentor Status": "active",
             "Shirt Number": "78",
             "Shirt Text": "@jdelvat",
             "Shirt Size": "M",
@@ -6344,6 +6353,7 @@
         },
         {
             "Full Name": "Karin Tillotson",
+            "Mentor Status": "active",
             "Shirt Number": "63",
 			"Company": "Coca-Cola",
 			"Country": "United States",
@@ -6352,6 +6362,7 @@
         },
         {
             "Full Name": "Leonardo Araujo",
+            "Mentor Status": "active",
             "Shirt Number": "1",
             "Shirt Text": "Leonardo",
             "Shirt Size": "S",
@@ -6363,6 +6374,7 @@
         },
         {
             "Full Name": "Lestor Meadows",
+            "Mentor Status": "active",
             "Shirt Number": "181",
             "Shirt Text": "@lestormead",
             "Shirt Size": "XL",
@@ -6374,6 +6386,7 @@
         },
         {
             "Full Name": "Manju Bansal",
+            "Mentor Status": "active",
             "Shirt Number": "650",
             "Shirt Text": "@bansalmanju",
             "Shirt Size": "M",
@@ -6385,6 +6398,7 @@
         },
         {
             "Full Name": "Mike Howles",
+            "Mentor Status": "active",
             "Shirt Number": "321",
             "Shirt Text": "@Mike_Howles",
             "Shirt Size": "L",
@@ -6396,6 +6410,7 @@
         },
         {
             "Full Name": "Paul Kurchina",
+            "Mentor Status": "active",
             "Shirt Number": "129",
             "Shirt Text": "@paulkurchina ",
             "Shirt Size": "L",
@@ -6407,6 +6422,7 @@
         },
         {
             "Full Name": "Andy Silvey",
+            "Mentor Status": "active",
             "Shirt Number": "171",
             "Shirt Text": "@andysilvey",
             "Shirt Size": "L",
@@ -6418,6 +6434,7 @@
         },
         {
             "Full Name": "Phil Loewen",
+            "Mentor Status": "active",
             "Shirt Number": "360",
             "Shirt Text": "@it360eu",
             "Shirt Size": "L",
@@ -6430,6 +6447,7 @@
         },
         {
             "Full Name": "Raquel Seville",
+            "Mentor Status": "active",
             "Shirt Number": "318",
             "Shirt Text": "@quelzseville",
             "Shirt Size": "S",
@@ -6441,6 +6459,7 @@
         },
         {
             "Full Name": "Raymond Giuseppi",
+            "Mentor Status": "active",
             "Shirt Number": "971",
             "Shirt Text": "@raymond_scn",
             "Shirt Size": "XL",
@@ -6452,6 +6471,7 @@
         },
         {
             "Full Name": "Rukhshaan Omar",
+            "Mentor Status": "active",
             "Shirt Number": "236",
             "Shirt Text": "@rukso",
             "Shirt Size": "L",
@@ -6463,6 +6483,7 @@
         },
         {
             "Full Name": "Seung Chan Lim",
+            "Mentor Status": "active",
             "Shirt Number": "999",
 			"Company": "Forks & Bridges",
 			"Country": "United States",
@@ -6471,6 +6492,7 @@
         },
         {
             "Full Name": "Stephen Lofthouse",
+            "Mentor Status": "active",
             "Shirt Number": "140",
             "Shirt Text": "Steve Lofthouse",
             "Shirt Size": "M",
@@ -6482,6 +6504,7 @@
         },
         {
             "Full Name": "Tim Guest",
+            "Mentor Status": "active",
             "Shirt Number": "909",
 			"Company": "Zoedale",
 			"Country": "United Kingdom",
@@ -6490,6 +6513,7 @@
         },
         {
             "Full Name": "Zimkhita Buwa",
+            "Mentor Status": "active",
             "Shirt Number": "456",
             "Shirt Text": "@zimbuwa",
             "Shirt Size": "M",
@@ -6501,12 +6525,14 @@
         },
         {
         	"Full Name": "Vasily Baranovsky",
+            "Mentor Status": "active",
             "Shirt Number": "999",
         	"Company": "CIS",
         	"Country": "Ukraine"
         },
         {
         	"Full Name": "Maria Farrales",
+            "Mentor Status": "active",
             "Shirt Number": "338",
             "Shirt Text": "Mariza",
             "Shirt Size": "M",
@@ -6516,6 +6542,7 @@
         },
         {
         	"Full Name": "Malin Liden",
+            "Mentor Status": "active",
             "Shirt Number": "245",
             "Shirt Text": "@MalinJessica",
             "Shirt Size": "S",
@@ -6525,6 +6552,7 @@
         },
         {
         	"Full Name": "Ann Rosenberg",
+            "Mentor Status": "active",
             "Shirt Number": "5",
             "Shirt Text": "@rosenberg ",
             "Shirt Size": "S",
@@ -6536,6 +6564,7 @@
         },
         {
         	"Full Name": "Jim Spath",
+            "Mentor Status": "active",
             "Shirt Number": "10",
             "Shirt Text": "@JSpath55",
             "Shirt Size": "XL",
