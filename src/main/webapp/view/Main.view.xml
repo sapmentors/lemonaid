@@ -62,6 +62,10 @@
 						key="SocialMedia"
 						text="{i18n>socialMedia}" 
 						icon="sap-icon://discussion" />
+					<tnt:NavigationListItem 
+						key="ImportExport"
+						text="{i18n>importExport}" 
+						icon="sap-icon://download-from-cloud" />
 				</tnt:NavigationList>
 			</tnt:SideNavigation>
 		</tnt:sideContent>
@@ -82,6 +86,9 @@
 				</Page>
 				<Page id="SocialMedia" showHeader="false">
 					<mvc:XMLView viewName="com.sap.mentors.lemonaid.view.SocialMedia"/>
+				</Page>
+				<Page id="ImportExport" showHeader="false">
+					<mvc:XMLView viewName="com.sap.mentors.lemonaid.view.ImportExport"/>
 				</Page>
 			</NavContainer>
 		</tnt:mainContents>

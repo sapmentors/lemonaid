@@ -1300,7 +1300,7 @@
             "Country": "United Kingdom",
             "Overall Region": "EUR",
             "Company": null,
-            "Relationship to SAP": null,
+            "Relationship to SAP": "partner",
             "1st Line of Business": "Platform and Technology",
             "2nd Line of Business": null,
             "3rd Line of Business": null,
@@ -6308,6 +6308,7 @@
             "Shirt M/F": "M",
 			"Company": "Tetrapack",
 			"Country": "Singapore",
+            "Relationship to SAP": "customer",
 			"SCN User ID URL": "http://scn.sap.com/people/fredrik.ohlsson"
         },
         {
@@ -6351,6 +6352,7 @@
             "Shirt Number": "63",
 			"Company": "Coca-Cola",
 			"Country": "United States",
+            "Relationship to SAP": "customer",
 			"SCN User ID URL": "http://scn.sap.com/people/karin.tillotson2"
         },
         {
