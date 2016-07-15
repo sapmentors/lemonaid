@@ -2,9 +2,44 @@
 	controllerName="com.sap.mentors.lemonaid.controller.ImportExport" 
 	xmlns="sap.m"
 	xmlns:l="sap.ui.layout"
-	xmlns:mvc="sap.ui.core.mvc" 
-	xmlns:core="sap.ui.core">
+	xmlns:mvc="sap.ui.core.mvc">
+	<Label text="Import/Export" class="actionTitle sapUiResponsiveMargin" />
+	<IconTabBar
+		id="idIconTabBar"
+		expanded="{device>/isNoPhone}">
+		<items>
+			
+			<IconTabFilter icon="sap-icon://download" text="{i18n>download}">
+				<VBox>
+					<l:Grid defaultSpan="L4 M6 S6">
+						<l:content>
+							<Panel width="auto" headerText="{i18n>basicInfo}">
+								<Text text="First" />
+							</Panel>
+							<Panel width="auto" headerText="{i18n>address}">
+								<Text text="Second" />
+							</Panel>
+							<Panel width="auto" headerText="{i18n>socialMedia}">
+								<Text text="Third" />
+							</Panel>
+						</l:content>
+					</l:Grid>
+					<FlexBox justifyContent="End">
+						<Button text="{i18n>download}" press="onDownload" type="Accept" />
+					</FlexBox>
+				</VBox>
+			</IconTabFilter>
+			
+			<IconTabFilter icon="sap-icon://upload" text="{i18n>upload}">
+				<VBox>
+					<Text text="Placeholder for upload"/>	
+					<FlexBox justifyContent="End">
+						<Button text="{i18n>upload}" press="onUpload" type="Accept" />
+					</FlexBox>
+				</VBox>
+			</IconTabFilter>
 
-	<Text text="Placeholder for Import/Export page" class="sapUiResponsiveMargin" />
+		</items>
+	</IconTabBar>
 
 </mvc:View>

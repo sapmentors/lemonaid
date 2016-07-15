@@ -1,3 +1,9 @@
+.actionTitle {
+	font-size: 22px;
+	font-family: Arial;
+	color: #333;
+}
+
 .avatarSmall {
 	border-radius: 4rem;
 	border: 0.2rem solid rgba(0,73,144,0.2);
