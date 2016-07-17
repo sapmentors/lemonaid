@@ -1,5 +1,7 @@
 package com.sap.mentors.lemonaid;
 
+import java.util.UUID;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -14,6 +16,7 @@ import com.sap.mentors.lemonaid.entities.ExpertiseLevel;
 import com.sap.mentors.lemonaid.entities.Gender;
 import com.sap.mentors.lemonaid.entities.Industry;
 import com.sap.mentors.lemonaid.entities.LineOfBusiness;
+import com.sap.mentors.lemonaid.entities.Mentor;
 import com.sap.mentors.lemonaid.entities.MentorStatus;
 import com.sap.mentors.lemonaid.entities.Region;
 import com.sap.mentors.lemonaid.entities.RelationshipToSap;
@@ -35,6 +38,7 @@ import com.sap.mentors.lemonaid.repository.SizeRepository;
 import com.sap.mentors.lemonaid.repository.SoftSkillRepository;
 import com.sap.mentors.lemonaid.repository.TopicRepository;
 import com.sap.mentors.lemonaid.utils.Importer;
+import com.sap.mentors.lemonaid.utils.MentorUtils;
 
 @SpringBootApplication
 public class Application extends SpringBootServletInitializer {
@@ -66,7 +70,8 @@ public class Application extends SpringBootServletInitializer {
 			final GenderRepository genderRepository,
 			final SizeRepository sizeRepository,
 			final TopicRepository topicRepository,
-			final Importer importer
+			final Importer importer,
+			final MentorUtils mentorUtils
 		) {
 
 		return new CommandLineRunner() {
@@ -822,192 +827,179 @@ public class Application extends SpringBootServletInitializer {
 				}
 
 				if (mentorRepository.count() == 0) {
-//					log.info("Mentors is still empty. Adding some sample records");
-//					mentorRepository.save(new Mentor(
-//							UUID.randomUUID().toString(), 
-//							"Jan Penninkhof",
-//							new MentorStatus(MentorStatus.ACTIVE),
-//							"SAP Consultant",
-//							"Phoqus B.V.",
-//							new RelationshipToSap(RelationshipToSap.PARTNER),
-//							new LineOfBusiness(LineOfBusiness.PLATFORM_AND_TECHNOLOGY),
-//							null,
-//							null,
-//							new Industry(Industry.HEALTHCARE),
-//							new Industry(Industry.HIGH_TECH),
-//							null,
-//							new SapSoftwareSolution(SapSoftwareSolution.SAP_HANA_CLOUD_PLATFORM),
-//							new ExpertiseLevel(ExpertiseLevel.EXPERT),
-//							new SapSoftwareSolution(SapSoftwareSolution.SAP_MOBILE_PLATFORM),
-//							new ExpertiseLevel(ExpertiseLevel.EXPERT),
-//							new SapSoftwareSolution(SapSoftwareSolution.SAP_FIORI),
-//							new ExpertiseLevel(ExpertiseLevel.EXPERT),
-//							new SoftSkill(SoftSkill.INSIDETRACKS),
-//							new SoftSkill(SoftSkill.DESIGN_THINKING),
-//							new SoftSkill(SoftSkill.INTERNET_OF_THINGS),
-//							null,
-//							null,
-//							null,
-//							"Lorem ipsum dolor sit amet, consectetur adipiscing elit.\nCras posuere nunc non efficitur feugiat.\nQuisque aliquam porttitor eros quis vestibulum.",
-//							"jan@penninkhof.com",
-//							"email2@jpenninkhof.com",
-//							1,
-//							"Cannenburch 110", 
-//							"Lelystad", 
-//							null, 
-//							"8226RT", 
-//							new Country(Country.NL), 
-//							"+31987654321",
-//							52.51853699999999, 5.471421999999961,
-//							new Region(Region.EUR),
-//							150,
-//							"@jpenninkhof",
-//							new Size(Size.L),
-//							new Gender(Gender.M),
-//							"http://scn.sap.com/people/jan.penninkhof2",
-//							"@jpenninkhof", 
-//							"http://nl.linkedin.com/in/jpenninkhof/",
-//							null,
-//							null,
-//							false, false, false, false, 0,
-//							null,
-//							null, null, 
-//							null, null, 
-//							null, null, 
-//							null, null, 
-//							true, new Topic(Topic.HANA_CLOUD_PLATFORM),
-//							true, "P508741"
-//						));
-//					mentorRepository.save(new Mentor(
-//							UUID.randomUUID().toString(), 
-//							"Robin van het Hof",
-//							new MentorStatus(MentorStatus.ACTIVE),
-//							"SAP NetWeaver Magician",
-//							"Qualiture",
-//							new RelationshipToSap(RelationshipToSap.FREELANCE),
-//							new LineOfBusiness(LineOfBusiness.PLATFORM_AND_TECHNOLOGY),
-//							new LineOfBusiness(LineOfBusiness.SUPPLY_CHAIN),
-//							new LineOfBusiness(LineOfBusiness.HUMAN_RESOURCES),
-//							new Industry(Industry.PROFESSIONAL_SERVICES),
-//							new Industry(Industry.OIL_AND_GAS),
-//							null,
-//							new SapSoftwareSolution(SapSoftwareSolution.UI_ADDON),
-//							new ExpertiseLevel(ExpertiseLevel.EXPERT),
-//							new SapSoftwareSolution(SapSoftwareSolution.SAP_HANA_CLOUD_PLATFORM),
-//							new ExpertiseLevel(ExpertiseLevel.EXPERT),
-//							new SapSoftwareSolution(SapSoftwareSolution.SAP_NETWEAVER),
-//							new ExpertiseLevel(ExpertiseLevel.EXPERT),
-//							new SoftSkill(SoftSkill.INTERPERSONAL_SKILLS),
-//							new SoftSkill(SoftSkill.EMOTIONAL_INTELLIGENCE),
-//							new SoftSkill(SoftSkill.DESIGN_THINKING),
-//							new SoftSkill(SoftSkill.LEAN_METHODOLOGY),
-//							new SoftSkill(SoftSkill.CONFLICT_RESOLUTION),
-//							new SoftSkill(SoftSkill.CRITICAL_OBSERVATION_SKILLS),
-//							"Donec tincidunt turpis magna, in consequat eros condimentum ut.\nCurabitur eleifend pharetra varius.",
-//							"robin.van.het.hof@qualiture.nl",
-//							"email2@robin.com",
-//							1,
-//							"Multatulihove 40", 
-//							"Zoetermeer", 
-//							null, 
-//							"2726CC", 
-//							new Country(Country.NL), 
-//							"+31123456789",
-//							52.060669, 4.494024999999965,
-//							new Region(Region.EUR),
-//							234,
-//							"@Qualiture",
-//							new Size(Size.L),
-//							new Gender(Gender.M),
-//							"http://scn.sap.com/people/robin.vanhethof",
-//							"@qualiture", 
-//							"http://nl.linkedin.com/pub/robin-van-het-hof/2/526/bb7/",
-//							null,
-//							null,
-//							false, false, true, true, 0,
-//							new Region(Region.EUR),
-//							new Topic(Topic.UX_DESIGN), "Prakash Darji Prakash Darji - (SVP & GM, Platform as a Service)  Uddhav Gupta; Rick Constanzo",
-//							null, null, 
-//							null, null, 
-//							null, null, 
-//							true, new Topic(Topic.UX_DESIGN),
-//							true, "S0007138856"
-//						));
-//					mentorRepository.save(new Mentor(
-//							UUID.randomUUID().toString(), 
-//							"Fred Verheul",
-//							new MentorStatus(MentorStatus.ALUMNI),
-//							"SAP Consultant",
-//							"SOA People",
-//							new RelationshipToSap(RelationshipToSap.PARTNER),
-//							null,
-//							null,
-//							null,
-//							null,
-//							null,
-//							null,
-//							null,
-//							null,
-//							null,
-//							null,
-//							null,
-//							null,
-//							null,
-//							null,
-//							null,
-//							null,
-//							null,
-//							null,
-//							"Aenean id tempor lectus, dignissim rutrum ligula. Vivamus eu placerat felis. Nullam ornare, massa quis condimentum ornare, elit nulla malesuada augue, nec scelerisque magna ligula posuere ipsum.",
-//							"fred.verheul@gmail.com",
-//							null,
-//							1,
-//							"Keplerstraat 43", 
-//							"Nijmegen", 
-//							null, 
-//							"6533DA", 
-//							new Country(Country.NL), 
-//							"+31777777777",
-//							51.8125626, 5.837226399999963,
-//							new Region(Region.EUR),
-//							64,
-//							"@fredverheul",
-//							new Size(Size.M),
-//							new Gender(Gender.M),
-//							"http://scn.sap.com/people/fred.verheul",
-//							"@fredverheul", 
-//							"http://nl.linkedin.com/in/fredverheul",
-//							null,
-//							null,
-//							false, false, true, true, 0,
-//							null,
-//							null, null,
-//							null, null, 
-//							null, null, 
-//							null, null, 
-//							false, null ,
-//							true, null
-//						));
-//
-//					for (Mentor mentor : mentorRepository.findAll()) {
-//			    		ArrayList<String> emails = new ArrayList<String>();
-//			    		if (mentor.getEmail1() != null && mentor.getEmail1().length() > 0) {
-//			    			emails.add(mentor.getEmail1());
-//			    		}
-//			    		if (mentor.getEmail2() != null && mentor.getEmail1().length() > 0) {
-//			    			emails.add(mentor.getEmail2());
-//			    		}
-//			    		HashMap<String, Boolean> exist = gravatar.emailsExist(emails);
-//			    		if (exist.get(mentor.getEmail1())) {
-//			    			mentor.setPhotoUrl(gravatar.getUrlForEmail(mentor.getEmail1()) + "?s=144");
-//			    		} else if (exist.get(mentor.getEmail2())) {
-//			    			mentor.setPhotoUrl(gravatar.getUrlForEmail(mentor.getEmail2()) + "?s=144");
-//			    		} else { 
-//			    			mentor.setPhotoUrl(gravatar.getUrlOfUser() + "?s=144");
-//			    		}
-//			    		mentorRepository.save(mentor);
-//			    	}
-					importer.importMentors();
+					log.info("Mentors is still empty. Adding some sample records");
+					mentorRepository.save(new Mentor(
+							UUID.randomUUID().toString(), 
+							"Jan Penninkhof",
+							new MentorStatus(MentorStatus.ACTIVE),
+							"SAP Consultant",
+							"Phoqus B.V.",
+							new RelationshipToSap(RelationshipToSap.PARTNER),
+							new LineOfBusiness(LineOfBusiness.PLATFORM_AND_TECHNOLOGY),
+							null,
+							null,
+							new Industry(Industry.HEALTHCARE),
+							new Industry(Industry.HIGH_TECH),
+							null,
+							new SapSoftwareSolution(SapSoftwareSolution.SAP_HANA_CLOUD_PLATFORM),
+							new ExpertiseLevel(ExpertiseLevel.EXPERT),
+							new SapSoftwareSolution(SapSoftwareSolution.SAP_MOBILE_PLATFORM),
+							new ExpertiseLevel(ExpertiseLevel.EXPERT),
+							new SapSoftwareSolution(SapSoftwareSolution.SAP_FIORI),
+							new ExpertiseLevel(ExpertiseLevel.EXPERT),
+							new SoftSkill(SoftSkill.INSIDETRACKS),
+							new SoftSkill(SoftSkill.DESIGN_THINKING),
+							new SoftSkill(SoftSkill.INTERNET_OF_THINGS),
+							null,
+							null,
+							null,
+							"Lorem ipsum dolor sit amet, consectetur adipiscing elit.\nCras posuere nunc non efficitur feugiat.\nQuisque aliquam porttitor eros quis vestibulum.",
+							"jan@penninkhof.com",
+							"email2@jpenninkhof.com",
+							1,
+							"Cannenburch 110", 
+							"Lelystad", 
+							null, 
+							"8226RT", 
+							new Country(Country.NL), 
+							"+31987654321",
+							52.51853699999999, 5.471421999999961,
+							new Region(Region.EUR),
+							150,
+							"@jpenninkhof",
+							new Size(Size.L),
+							new Gender(Gender.M),
+							"http://scn.sap.com/people/jan.penninkhof2",
+							"@jpenninkhof", 
+							"http://nl.linkedin.com/in/jpenninkhof/",
+							null,
+							null,
+							false, false, false, false, 0,
+							null,
+							null, null, 
+							null, null, 
+							null, null, 
+							null, null, 
+							true, new Topic(Topic.HANA_CLOUD_PLATFORM),
+							true, "P508741"
+						));
+					mentorRepository.save(new Mentor(
+							UUID.randomUUID().toString(), 
+							"Robin van het Hof",
+							new MentorStatus(MentorStatus.ACTIVE),
+							"SAP NetWeaver Magician",
+							"Qualiture",
+							new RelationshipToSap(RelationshipToSap.FREELANCE),
+							new LineOfBusiness(LineOfBusiness.PLATFORM_AND_TECHNOLOGY),
+							new LineOfBusiness(LineOfBusiness.SUPPLY_CHAIN),
+							new LineOfBusiness(LineOfBusiness.HUMAN_RESOURCES),
+							new Industry(Industry.PROFESSIONAL_SERVICES),
+							new Industry(Industry.OIL_AND_GAS),
+							null,
+							new SapSoftwareSolution(SapSoftwareSolution.UI_ADDON),
+							new ExpertiseLevel(ExpertiseLevel.EXPERT),
+							new SapSoftwareSolution(SapSoftwareSolution.SAP_HANA_CLOUD_PLATFORM),
+							new ExpertiseLevel(ExpertiseLevel.EXPERT),
+							new SapSoftwareSolution(SapSoftwareSolution.SAP_NETWEAVER),
+							new ExpertiseLevel(ExpertiseLevel.EXPERT),
+							new SoftSkill(SoftSkill.INTERPERSONAL_SKILLS),
+							new SoftSkill(SoftSkill.EMOTIONAL_INTELLIGENCE),
+							new SoftSkill(SoftSkill.DESIGN_THINKING),
+							new SoftSkill(SoftSkill.LEAN_METHODOLOGY),
+							new SoftSkill(SoftSkill.CONFLICT_RESOLUTION),
+							new SoftSkill(SoftSkill.CRITICAL_OBSERVATION_SKILLS),
+							"Donec tincidunt turpis magna, in consequat eros condimentum ut.\nCurabitur eleifend pharetra varius.",
+							"robin.van.het.hof@qualiture.nl",
+							"email2@robin.com",
+							1,
+							"Multatulihove 40", 
+							"Zoetermeer", 
+							null, 
+							"2726CC", 
+							new Country(Country.NL), 
+							"+31123456789",
+							52.060669, 4.494024999999965,
+							new Region(Region.EUR),
+							234,
+							"@Qualiture",
+							new Size(Size.L),
+							new Gender(Gender.M),
+							"http://scn.sap.com/people/robin.vanhethof",
+							"@qualiture", 
+							"http://nl.linkedin.com/pub/robin-van-het-hof/2/526/bb7/",
+							null,
+							null,
+							false, false, true, true, 0,
+							new Region(Region.EUR),
+							new Topic(Topic.UX), "Prakash Darji Prakash Darji - (SVP & GM, Platform as a Service)  Uddhav Gupta; Rick Constanzo",
+							null, null, 
+							null, null, 
+							null, null, 
+							true, new Topic(Topic.UX),
+							true, "S0007138856"
+						));
+					mentorRepository.save(new Mentor(
+							UUID.randomUUID().toString(), 
+							"Fred Verheul",
+							new MentorStatus(MentorStatus.ALUMNI),
+							"SAP Consultant",
+							"SOA People",
+							new RelationshipToSap(RelationshipToSap.PARTNER),
+							null,
+							null,
+							null,
+							null,
+							null,
+							null,
+							null,
+							null,
+							null,
+							null,
+							null,
+							null,
+							null,
+							null,
+							null,
+							null,
+							null,
+							null,
+							"Aenean id tempor lectus, dignissim rutrum ligula. Vivamus eu placerat felis. Nullam ornare, massa quis condimentum ornare, elit nulla malesuada augue, nec scelerisque magna ligula posuere ipsum.",
+							"fred.verheul@gmail.com",
+							null,
+							1,
+							"Keplerstraat 43", 
+							"Nijmegen", 
+							null, 
+							"6533DA", 
+							new Country(Country.NL), 
+							"+31777777777",
+							51.8125626, 5.837226399999963,
+							new Region(Region.EUR),
+							64,
+							"@fredverheul",
+							new Size(Size.M),
+							new Gender(Gender.M),
+							"http://scn.sap.com/people/fred.verheul",
+							"@fredverheul", 
+							"http://nl.linkedin.com/in/fredverheul",
+							null,
+							null,
+							false, false, true, true, 0,
+							null,
+							null, null,
+							null, null, 
+							null, null, 
+							null, null, 
+							false, null ,
+							true, null
+						));
+
+					for (Mentor mentor : mentorRepository.findAll()) {
+						mentor.setPhotoUrl(mentorUtils.getImageOfMentor(mentor));
+						mentor.setLocation(mentorUtils.getLocationOfMentor(mentor));
+			    		mentorRepository.save(mentor);
+			    	}
+//					importer.importMentors();
 				}
 	        }
 	    };

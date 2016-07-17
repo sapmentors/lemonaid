@@ -12,6 +12,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import com.sap.mentors.lemonaid.annotations.SAP;
 import com.sap.mentors.lemonaid.utils.types.Point;
 
 @Entity
@@ -19,14 +20,14 @@ import com.sap.mentors.lemonaid.utils.types.Point;
 public class Mentor {
 
 	@Id
-	private String id;
-    private String fullName;
-    private String photoUrl;
-    @JoinColumn(name="statusId") @ManyToOne private MentorStatus statusId;
+	@SAP(fieldGroup="Key") private String id;
+	@SAP(fieldGroup="BasicInfo") private String fullName;
+	@SAP(fieldGroup="BasicInfo")private String photoUrl;
+	@SAP(fieldGroup="BasicInfo") @JoinColumn(name="statusId") @ManyToOne private MentorStatus statusId;
 
-    private String jobTitle;
-    private String company;
-    @JoinColumn(name="relationshipToSapId") @ManyToOne private RelationshipToSap relationshipToSapId;
+	@SAP(fieldGroup="BasicInfo")private String jobTitle;
+	@SAP(fieldGroup="BasicInfo")private String company;
+	@SAP(fieldGroup="BasicInfo") @JoinColumn(name="relationshipToSapId") @ManyToOne private RelationshipToSap relationshipToSapId;
 
     @JoinColumn(name="lineOfBusiness1Id") @ManyToOne private LineOfBusiness lineOfBusiness1Id;
     @JoinColumn(name="lineOfBusiness2Id") @ManyToOne private LineOfBusiness lineOfBusiness2Id;

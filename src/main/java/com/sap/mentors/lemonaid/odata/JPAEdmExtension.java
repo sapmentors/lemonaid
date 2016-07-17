@@ -1,18 +1,31 @@
 package com.sap.mentors.lemonaid.odata;
 
 import java.io.InputStream;
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Proxy;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.ResourceBundle;
 
 import org.apache.olingo.odata2.api.edm.EdmSimpleTypeKind;
+import org.apache.olingo.odata2.api.edm.FullQualifiedName;
 import org.apache.olingo.odata2.api.edm.provider.AnnotationAttribute;
+import org.apache.olingo.odata2.api.edm.provider.AnnotationElement;
+import org.apache.olingo.odata2.api.edm.provider.EntityContainer;
+import org.apache.olingo.odata2.api.edm.provider.EntitySet;
 import org.apache.olingo.odata2.api.edm.provider.EntityType;
 import org.apache.olingo.odata2.api.edm.provider.Property;
 import org.apache.olingo.odata2.api.edm.provider.Schema;
 import org.apache.olingo.odata2.api.edm.provider.SimpleProperty;
 import org.apache.olingo.odata2.jpa.processor.api.model.JPAEdmSchemaView;
 import org.apache.olingo.odata2.jpa.processor.core.model.JPAEdmMappingImpl;
+
+import com.sap.mentors.lemonaid.annotations.SAP;
 
 public class JPAEdmExtension implements org.apache.olingo.odata2.jpa.processor.api.model.JPAEdmExtension {
 
@@ -32,7 +45,7 @@ public class JPAEdmExtension implements org.apache.olingo.odata2.jpa.processor.a
 		
 		for (EntityType entityType : edmSchema.getEntityTypes()) {
 			
-			// Add language specific labels to the properties
+			// Add property annotations
 			for (Property property : entityType.getProperties()) {
 				String label = null;
 				if (i18n != null) { try { label = i18n.getString(entityType.getName() + "." + property.getName()); } catch (Exception e) {} }
@@ -43,9 +56,10 @@ public class JPAEdmExtension implements org.apache.olingo.odata2.jpa.processor.a
 							.setPrefix(SAP_PREFIX)
 							.setName(LABEL).setText(label));
 				}
+				annotationAttributeList.addAll(getSapPropertyAnnotations(entityType, property));
 				property.setAnnotationAttributes(annotationAttributeList); 
 			}
-
+			
 			// Add transient properties
 			if (entityType.getName().equals("Mentor")) {
 				JPAEdmMappingImpl mapping = new JPAEdmMappingImpl();
@@ -65,6 +79,176 @@ public class JPAEdmExtension implements org.apache.olingo.odata2.jpa.processor.a
 			}
 
 		}
+		
+		// Add smart annotations
+		addSmartAnnotations(edmSchema);
+
+	}
+
+	@SuppressWarnings("unchecked")
+	private Collection<AnnotationAttribute> getSapPropertyAnnotations(EntityType entityType, Property property) {
+		List<AnnotationAttribute> result = new ArrayList<AnnotationAttribute>();
+		for (Field field : ((JPAEdmMappingImpl)entityType.getMapping()).getJPAType().getDeclaredFields()) {
+			if (field.getName().equals(((JPAEdmMappingImpl) property.getMapping()).getInternalName())) {
+				if (field.getAnnotation(SAP.class) != null) {
+					InvocationHandler handler = Proxy.getInvocationHandler(field.getAnnotation(SAP.class));
+					Field f = null;
+					try {
+				        f = handler.getClass().getDeclaredField("memberValues");
+				    } catch (NoSuchFieldException | SecurityException e) {
+				        continue;
+				    }
+					f.setAccessible(true);
+					Map<String, Object> memberValues = null;
+				    try {
+				        memberValues = (Map<String, Object>) f.get(handler);
+				    } catch (IllegalArgumentException | IllegalAccessException e) {
+				    	continue;
+				    }
+				    for (Entry<String, Object> memberValue : memberValues.entrySet()) {
+				    	if (!"FieldGroup".equals(memberValue.getKey())) {
+							result.add(new AnnotationAttribute()
+									.setNamespace(SAP_NAMESPACE)
+									.setPrefix(SAP_PREFIX)
+									.setName(memberValue.getKey())
+									.setText(String.valueOf(memberValue.getValue())));
+				    	}
+					}
+				}
+			}
+		}
+		return result;
+	}
+
+	@SuppressWarnings({ "serial", "unchecked" })
+	private void addSmartAnnotations(final Schema edmSchema) {
+		List<AnnotationElement> schemaAnnotations = edmSchema.getAnnotationElements();
+		if (schemaAnnotations == null) {
+			schemaAnnotations = new ArrayList<AnnotationElement>();
+			edmSchema.setAnnotationElements(schemaAnnotations);
+			for (final EntityContainer container : edmSchema.getEntityContainers()) {
+				for (final EntitySet entitySet : container.getEntitySets()) {
+					EntityType entityType = getEntityType(edmSchema, entitySet.getEntityType());
+					final HashMap<String, ArrayList<String>> fieldGroups = new HashMap<String, ArrayList<String>>(); 
+					for (Property property : entityType.getProperties()) {
+						for (Field field : ((JPAEdmMappingImpl)entityType.getMapping()).getJPAType().getDeclaredFields()) {
+							if (field.getName().equals(((JPAEdmMappingImpl) property.getMapping()).getInternalName())) {
+								if (field.getAnnotation(SAP.class) != null) {
+									InvocationHandler handler = Proxy.getInvocationHandler(field.getAnnotation(SAP.class));
+									Field f = null;
+									try {
+								        f = handler.getClass().getDeclaredField("memberValues");
+								    } catch (NoSuchFieldException | SecurityException e) {
+								        continue;
+								    }
+									f.setAccessible(true);
+									Map<String, Object> memberValues = null;
+								    try {
+								        memberValues = (Map<String, Object>) f.get(handler);
+								    } catch (IllegalArgumentException | IllegalAccessException e) {
+								    	continue;
+								    }
+								    for (Entry<String, Object> memberValue : memberValues.entrySet()) {
+								    	if ("fieldGroup".equals(memberValue.getKey())) {
+								    		ArrayList<String> fieldGroup = fieldGroups.get(memberValue.getValue());
+								    		if (fieldGroup == null) {
+								    			fieldGroup = new ArrayList<String>();
+								    		}
+								    		fieldGroup.add(property.getName());
+								    		fieldGroups.put((String) memberValue.getValue(), fieldGroup);
+								    	}
+								    }
+								}
+							}
+						}
+					}
+					if (!fieldGroups.isEmpty()) {
+						schemaAnnotations.add(new AnnotationElement()
+							.setName("Annotations")
+							.setAttributes(
+								new ArrayList<AnnotationAttribute>() {{
+									add(new AnnotationAttribute()
+										.setName("Target")
+										.setNamespace("http://docs.oasis-open.org/odata/ns/edm")
+										.setText(entitySet.getEntityType().toString()));
+							}})
+							.setChildElements(new ArrayList<AnnotationElement>() {{
+								for (final Entry<String, ArrayList<String>> fieldGroup : fieldGroups.entrySet()) {
+									add(new AnnotationElement()
+										.setName("Annotation")
+										.setAttributes(
+											new ArrayList<AnnotationAttribute>() {{ 
+												add(new AnnotationAttribute()
+														.setName("Term")
+														.setText("UI.FieldGroup"));
+												add(new AnnotationAttribute()
+														.setName("Qualifier")
+														.setText(fieldGroup.getKey()));
+									}})
+									.setChildElements(new ArrayList<AnnotationElement>() {{ 
+										add(new AnnotationElement()
+											.setName("Record")
+											.setAttributes(
+												new ArrayList<AnnotationAttribute>() {{ 
+													add(new AnnotationAttribute()
+													.setName("Type")
+													.setText("UI.FieldGroupType"));
+										}})
+										.setChildElements(new ArrayList<AnnotationElement>() {{
+											add(new AnnotationElement()
+												.setName("PropertyValue")
+												.setAttributes(
+													new ArrayList<AnnotationAttribute>() {{ 
+														add(new AnnotationAttribute()
+															.setName("Property")
+															.setText("Data"));				
+											}})
+											.setChildElements(new ArrayList<AnnotationElement>() {{
+												add(new AnnotationElement()
+													.setName("Collection")
+													.setChildElements(new ArrayList<AnnotationElement>() {{
+														for (final String field : fieldGroup.getValue()) {
+															add(new AnnotationElement()
+																.setName("Record")
+																.setAttributes(
+																	new ArrayList<AnnotationAttribute>() {{ 
+																		add(new AnnotationAttribute()
+																			.setName("Type")
+																			.setText("UI.DataField"));				
+																}})
+																.setChildElements(new ArrayList<AnnotationElement>() {{
+																		add(new AnnotationElement()
+																			.setName("PropertyValue")
+																			.setAttributes(
+																				new ArrayList<AnnotationAttribute>() {{ 
+																					add(new AnnotationAttribute()
+																						.setName("Property")
+																						.setText("Value"));				
+																					add(new AnnotationAttribute()
+																						.setName("Path")
+																						.setText(field));
+																		}}));
+															}}));
+														}
+												}}));
+											}}));
+										}}));
+									}})
+							);}}})
+						);
+					}
+				}
+			}
+		}
+	}
+
+	private EntityType getEntityType(Schema edmSchema, FullQualifiedName entityType) {
+		for (EntityType e : edmSchema.getEntityTypes()) {
+			if (entityType.equals(new FullQualifiedName(edmSchema.getNamespace(), e.getName()))) {
+				return e;
+			}
+		}
+		return null;
 	}
 
 	@Override
