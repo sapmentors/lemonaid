@@ -11,19 +11,28 @@
 			
 			<IconTabFilter icon="sap-icon://download" text="{i18n>download}">
 				<VBox>
-					<l:Grid defaultSpan="L4 M6 S6">
-						<l:content>
-							<Panel width="auto" headerText="{i18n>basicInfo}">
-								<Text text="First" />
+					<List
+						class="FieldGroupGrid"
+						showSeparators="None"
+						items="{ui>/FieldGroups}" >
+						<CustomListItem>
+							<Panel width="auto">
+								<headerToolbar>
+									<Toolbar>
+										<Title text="{ui>Name}" />
+										<ToolbarSpacer />
+										<Button icon="sap-icon://multiselect-none" press="onSelectNone" />
+										<Button icon="sap-icon://multiselect-all" press="onSelectAll" />
+									</Toolbar>
+								</headerToolbar>
+								<List class="FieldGroupItem" items="{ path: 'ui>Fields', templateShareable: true }">
+									<CustomListItem>
+										<CheckBox text="{ui>Name}" selected="{ui>Value}" />
+									</CustomListItem>
+								</List>	
 							</Panel>
-							<Panel width="auto" headerText="{i18n>address}">
-								<Text text="Second" />
-							</Panel>
-							<Panel width="auto" headerText="{i18n>socialMedia}">
-								<Text text="Third" />
-							</Panel>
-						</l:content>
-					</l:Grid>
+						</CustomListItem>
+					</List>	
 					<FlexBox justifyContent="End">
 						<Button text="{i18n>download}" press="onDownload" type="Accept" />
 					</FlexBox>

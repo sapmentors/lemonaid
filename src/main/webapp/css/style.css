@@ -1,42 +1,87 @@
 .actionTitle {
-	font-size: 22px;
-	font-family: Arial;
-	color: #333;
+    font-size: 22px;
+    font-family: Arial;
+    color: #333;
 }
-
 .avatarSmall {
-	border-radius: 4rem;
-	border: 0.2rem solid rgba(0,73,144,0.2);
+    border-radius: 4rem;
+    border: 0.2rem solid rgba(0, 73, 144, 0.2);
 }
-
 .withoutMargin {
-	margin: 0rem 0rem !important;
+    margin: 0rem 0rem !important;
+}
+.removeToolbarPaddingLeft {
+    padding-left: 0 !important;
 }
 
-.removeToolbarPaddingLeft {
-	padding-left: 0 !important;
+/* =========================================================== */
+/* Styling of fieldgroup grid: multiple table aggregation      */
+/* lines into a single line                                    */
+/* =========================================================== */
+.FieldGroupGrid {
+    padding: 0.25em;
+    overflow: hidden;
+    background-color: #fff;
+}
+.FieldGroupGrid .sapMCLI {
+    float: left;
+    width: 100%;
+    padding: 0.25em;
+}
+.FieldGroupGrid .sapMLIBContent {
+    position: relative;
+}
+.FieldGroupItem .sapMCLI {
+    width: 100% !important;
+    clear: none !important;
+}
+@media screen and (min-width: 50em) {
+    .FieldGroupGrid .sapMCLI {
+        width: 50%;
+    }
+    .FieldGroupGrid .sapMCLI:nth-child(odd) {
+        clear: left;
+    }
+}
+@media screen and (min-width: 72em) {
+    .FieldGroupGrid .sapMCLI {
+        width: 33.3%;
+    }
+    .FieldGroupGrid .sapMCLI:nth-child(3n+1) {
+        clear: left;
+    }
+    .FieldGroupGrid .sapMCLI:nth-child(2n+1) {
+        clear: none;
+    }
+}
+@media screen and (min-width: 90em) {
+    .FieldGroupGrid .sapMCLI {
+        width: 25%;
+    }
+    .FieldGroupGrid .sapMCLI:nth-child(4n+1) {
+        clear: left;
+    }
+    .FieldGroupGrid .sapMCLI:nth-child(3n+1) {
+        clear: none;
+    }
 }
 
 /* =========================================================== */
 /* Styling of toolpage's side nav bar to get light Grey on a   */
 /* dark background                                             */
 /* =========================================================== */
-
 .sapTntSideNavigation {
     background: #444 !important;
     color: #e5e5e5 !important;
 }
-
 .sapTntNavLIItemSelected .sapTntNavLIGroup {
     background-color: #666 !important;
     color: #e5e5e5 !important;
 }
-
 .sapTntNavLIGroup {
     background-color: #444 !important;
     color: #e5e5e5 !important;
 }
-
 .sapTntNavLIGroup>.sapUiIcon {
     color: #e5e5e5 !important;
 }

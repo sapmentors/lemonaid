@@ -22,77 +22,76 @@ public class Mentor {
 	@Id
 	@SAP(fieldGroup="Key") private String id;
 	@SAP(fieldGroup="BasicInfo") private String fullName;
-	@SAP(fieldGroup="BasicInfo")private String photoUrl;
+	@SAP(fieldGroup="BasicInfo") private String photoUrl;
 	@SAP(fieldGroup="BasicInfo") @JoinColumn(name="statusId") @ManyToOne private MentorStatus statusId;
 
-	@SAP(fieldGroup="BasicInfo")private String jobTitle;
-	@SAP(fieldGroup="BasicInfo")private String company;
+	@SAP(fieldGroup="BasicInfo") private String jobTitle;
+	@SAP(fieldGroup="BasicInfo") private String company;
 	@SAP(fieldGroup="BasicInfo") @JoinColumn(name="relationshipToSapId") @ManyToOne private RelationshipToSap relationshipToSapId;
 
-    @JoinColumn(name="lineOfBusiness1Id") @ManyToOne private LineOfBusiness lineOfBusiness1Id;
-    @JoinColumn(name="lineOfBusiness2Id") @ManyToOne private LineOfBusiness lineOfBusiness2Id;
-    @JoinColumn(name="lineOfBusiness3Id") @ManyToOne private LineOfBusiness lineOfBusiness3Id;
-    @JoinColumn(name="industry1Id") @ManyToOne private Industry industry1Id;
-    @JoinColumn(name="industry2Id") @ManyToOne private Industry industry2Id;
-    @JoinColumn(name="industry3Id") @ManyToOne private Industry industry3Id;
-    @JoinColumn(name="sapExpertise1Id") @ManyToOne private SapSoftwareSolution sapExpertise1Id;
-    @JoinColumn(name="sapExpertise1LevelId") @ManyToOne private ExpertiseLevel sapExpertise1LevelId;
-    @JoinColumn(name="sapExpertise2Id") @ManyToOne private SapSoftwareSolution sapExpertise2Id;
-    @JoinColumn(name="sapExpertise2LevelId") @ManyToOne private ExpertiseLevel sapExpertise2LevelId;
-    @JoinColumn(name="sapExpertise3Id") @ManyToOne private SapSoftwareSolution sapExpertise3Id;
-    @JoinColumn(name="sapExpertise3LevelId") @ManyToOne private ExpertiseLevel sapExpertise3LevelId;
-    @JoinColumn(name="softSkill1Id") @ManyToOne private SoftSkill softSkill1Id;
-    @JoinColumn(name="softSkill2Id") @ManyToOne private SoftSkill softSkill2Id;
-    @JoinColumn(name="softSkill3Id") @ManyToOne private SoftSkill softSkill3Id;
-    @JoinColumn(name="softSkill4Id") @ManyToOne private SoftSkill softSkill4Id;
-    @JoinColumn(name="softSkill5Id") @ManyToOne private SoftSkill softSkill5Id;
-    @JoinColumn(name="softSkill6Id") @ManyToOne private SoftSkill softSkill6Id;
-    
-    @Lob private String bio; 
-    private String email1;
-    private String email2;
-    private int preferredEmail;
-    
-    private String address1;
-    private String address2;
-    private String city;
-    private String state;
-    private String zip;
-    @JoinColumn(name="countryId") @ManyToOne() private Country countryId;    
-    private String phone;
-    private Double latitude;
-    private Double longitude;
-    
-    @JoinColumn(name="regionId") @ManyToOne private Region regionId;
-    
-    private int shirtNumber;
-    private String shirtText;
-    @JoinColumn(name="shirtSizeId") @ManyToOne private Size shirtSizeId;
-    @JoinColumn(name="shirtMFId") @ManyToOne private Gender shirtMFId;
+	@SAP(fieldGroup="BasicInfo") @Lob private String bio; 
+	@SAP(fieldGroup="BasicInfo") private String email1;
+	@SAP(fieldGroup="BasicInfo") private String email2;
 
-    private String scnUrl;
-    private String twitterId;
-    private String linkedInUrl;
-    private String xingUrl;
-    private String facebookUrl;
-        
-    private boolean interestInMentorCommunicationStrategy;
-    private boolean interestInMentorManagementModel;
-    private boolean interestInMentorMix;
-    private boolean interestInOtherIdeas;
-    private int hoursAvailable;
+	@SAP(fieldGroup="Expertise") @JoinColumn(name="lineOfBusiness1Id") @ManyToOne private LineOfBusiness lineOfBusiness1Id;
+	@SAP(fieldGroup="Expertise") @JoinColumn(name="lineOfBusiness2Id") @ManyToOne private LineOfBusiness lineOfBusiness2Id;
+	@SAP(fieldGroup="Expertise") @JoinColumn(name="lineOfBusiness3Id") @ManyToOne private LineOfBusiness lineOfBusiness3Id;
+	@SAP(fieldGroup="Expertise") @JoinColumn(name="industry1Id") @ManyToOne private Industry industry1Id;
+	@SAP(fieldGroup="Expertise") @JoinColumn(name="industry2Id") @ManyToOne private Industry industry2Id;
+	@SAP(fieldGroup="Expertise") @JoinColumn(name="industry3Id") @ManyToOne private Industry industry3Id;
+	@SAP(fieldGroup="Expertise") @JoinColumn(name="sapExpertise1Id") @ManyToOne private SapSoftwareSolution sapExpertise1Id;
+	@SAP(fieldGroup="Expertise") @JoinColumn(name="sapExpertise1LevelId") @ManyToOne private ExpertiseLevel sapExpertise1LevelId;
+	@SAP(fieldGroup="Expertise") @JoinColumn(name="sapExpertise2Id") @ManyToOne private SapSoftwareSolution sapExpertise2Id;
+	@SAP(fieldGroup="Expertise") @JoinColumn(name="sapExpertise2LevelId") @ManyToOne private ExpertiseLevel sapExpertise2LevelId;
+	@SAP(fieldGroup="Expertise") @JoinColumn(name="sapExpertise3Id") @ManyToOne private SapSoftwareSolution sapExpertise3Id;
+	@SAP(fieldGroup="Expertise") @JoinColumn(name="sapExpertise3LevelId") @ManyToOne private ExpertiseLevel sapExpertise3LevelId;
+	@SAP(fieldGroup="Expertise") @JoinColumn(name="softSkill1Id") @ManyToOne private SoftSkill softSkill1Id;
+	@SAP(fieldGroup="Expertise") @JoinColumn(name="softSkill2Id") @ManyToOne private SoftSkill softSkill2Id;
+	@SAP(fieldGroup="Expertise") @JoinColumn(name="softSkill3Id") @ManyToOne private SoftSkill softSkill3Id;
+	@SAP(fieldGroup="Expertise") @JoinColumn(name="softSkill4Id") @ManyToOne private SoftSkill softSkill4Id;
+	@SAP(fieldGroup="Expertise") @JoinColumn(name="softSkill5Id") @ManyToOne private SoftSkill softSkill5Id;
+	@SAP(fieldGroup="Expertise") @JoinColumn(name="softSkill6Id") @ManyToOne private SoftSkill softSkill6Id;
     
-    @JoinColumn(name="topicLeadRegionId") @ManyToOne private Region topicLeadRegionId;
-    @JoinColumn(name="topic1Id") @ManyToOne private Topic topic1Id;
-    private String topic1Executive;
-    @JoinColumn(name="topic2Id") @ManyToOne private Topic topic2Id;
-    private String topic2Executive;
-    @JoinColumn(name="topic3Id") @ManyToOne private Topic topic3Id;
-    private String topic3Executive;
-    @JoinColumn(name="topic4Id") @ManyToOne private Topic topic4Id;
-    private String topic4Executive;
-    private boolean topicLeadInterest;
-    @JoinColumn(name="topicInterestId") @ManyToOne private Topic topicInterestId;
+    @SAP(fieldGroup="Address") private String address1;
+    @SAP(fieldGroup="Address") private String address2;
+    @SAP(fieldGroup="Address") private String city;
+    @SAP(fieldGroup="Address") private String state;
+    @SAP(fieldGroup="Address") private String zip;
+    @SAP(fieldGroup="Address") @JoinColumn(name="countryId") @ManyToOne() private Country countryId;    
+    @SAP(fieldGroup="Address") private String phone;
+    @SAP(fieldGroup="Address") private Double latitude;
+    @SAP(fieldGroup="Address") private Double longitude;
+    
+    @SAP(fieldGroup="Address") @JoinColumn(name="regionId") @ManyToOne private Region regionId;
+    
+    @SAP(fieldGroup="Shirt") private int shirtNumber;
+    @SAP(fieldGroup="Shirt") private String shirtText;
+    @SAP(fieldGroup="Shirt") @JoinColumn(name="shirtSizeId") @ManyToOne private Size shirtSizeId;
+    @SAP(fieldGroup="Shirt") @JoinColumn(name="shirtMFId") @ManyToOne private Gender shirtMFId;
+
+    @SAP(fieldGroup="SocialMedia") private String scnUrl;
+    @SAP(fieldGroup="SocialMedia") private String twitterId;
+    @SAP(fieldGroup="SocialMedia") private String linkedInUrl;
+    @SAP(fieldGroup="SocialMedia") private String xingUrl;
+    @SAP(fieldGroup="SocialMedia") private String facebookUrl;
+        
+    @SAP(fieldGroup="MentorManagement") private boolean interestInMentorCommunicationStrategy;
+    @SAP(fieldGroup="MentorManagement") private boolean interestInMentorManagementModel;
+    @SAP(fieldGroup="MentorManagement") private boolean interestInMentorMix;
+    @SAP(fieldGroup="MentorManagement") private boolean interestInOtherIdeas;
+    @SAP(fieldGroup="MentorManagement") private int hoursAvailable;
+    
+    @SAP(fieldGroup="TopicLead") @JoinColumn(name="topicLeadRegionId") @ManyToOne private Region topicLeadRegionId;
+    @SAP(fieldGroup="TopicLead") @JoinColumn(name="topic1Id") @ManyToOne private Topic topic1Id;
+    @SAP(fieldGroup="TopicLead") private String topic1Executive;
+    @SAP(fieldGroup="TopicLead") @JoinColumn(name="topic2Id") @ManyToOne private Topic topic2Id;
+    @SAP(fieldGroup="TopicLead") private String topic2Executive;
+    @SAP(fieldGroup="TopicLead") @JoinColumn(name="topic3Id") @ManyToOne private Topic topic3Id;
+    @SAP(fieldGroup="TopicLead") private String topic3Executive;
+    @SAP(fieldGroup="TopicLead") @JoinColumn(name="topic4Id") @ManyToOne private Topic topic4Id;
+    @SAP(fieldGroup="TopicLead") private String topic4Executive;
+    @SAP(fieldGroup="TopicLead") private boolean topicLeadInterest;
+    @SAP(fieldGroup="TopicLead") @JoinColumn(name="topicInterestId") @ManyToOne private Topic topicInterestId;
  
     private String userId;
     @Transient private boolean mayEdit;
@@ -151,7 +150,6 @@ public class Mentor {
         this.bio = bio;
         this.email1 = email1;
         this.email2 = email2;
-        this.preferredEmail = 1;
         
         this.address1 = address;
         this.city = city;
@@ -427,14 +425,6 @@ public class Mentor {
 
 	public void setEmail2(String email2) {
 		this.email2 = email2;
-	}
-
-	public int getPreferredEmail() {
-		return preferredEmail;
-	}
-
-	public void setPreferredEmail(int preferredEmail) {
-		this.preferredEmail = preferredEmail;
 	}
 
 	public String getAddress1() {

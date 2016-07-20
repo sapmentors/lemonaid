@@ -38,6 +38,9 @@ sap.ui.define([
 
 			// configure the main model
 			this.getModel().setSizeLimit(1000);
+			this.getModel().attachMetadataLoaded(function(event) {
+				this.metadata = event.getParameter("metadata");
+			}, this);
 			
 			// set the device model
 			this.setModel(models.createDeviceModel(), "device");
