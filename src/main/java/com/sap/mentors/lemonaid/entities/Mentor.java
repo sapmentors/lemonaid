@@ -110,7 +110,7 @@ public class Mentor {
     		SapSoftwareSolution sapExpertise1Id, ExpertiseLevel sapExpertise1LevelId, SapSoftwareSolution sapExpertise2Id, ExpertiseLevel sapExpertise2LevelId, SapSoftwareSolution sapExpertise3Id, ExpertiseLevel sapExpertise3LevelId,
     		SoftSkill softSkill1Id, SoftSkill softSkill2Id, SoftSkill softSkill3Id, SoftSkill softSkill4Id, SoftSkill softSkill5Id, SoftSkill softSkill6Id,
     		String bio,
-    		String email1, String email2, int preferredEmail,
+    		String email1, String email2,
     		String address, String city, String state, String zip, Country countryId, String phone,
     		Double latitude, Double longitude,
     		Region regionId,
