@@ -1,6 +1,7 @@
 package com.sap.mentors.lemonaid.odata;
 
 import java.io.InputStream;
+import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Proxy;
@@ -12,6 +13,8 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.ResourceBundle;
 
+import javax.persistence.JoinColumn;
+
 import org.apache.olingo.odata2.api.edm.EdmSimpleTypeKind;
 import org.apache.olingo.odata2.api.edm.FullQualifiedName;
 import org.apache.olingo.odata2.api.edm.provider.AnnotationAttribute;
@@ -19,6 +22,7 @@ import org.apache.olingo.odata2.api.edm.provider.AnnotationElement;
 import org.apache.olingo.odata2.api.edm.provider.EntityContainer;
 import org.apache.olingo.odata2.api.edm.provider.EntitySet;
 import org.apache.olingo.odata2.api.edm.provider.EntityType;
+import org.apache.olingo.odata2.api.edm.provider.NavigationProperty;
 import org.apache.olingo.odata2.api.edm.provider.Property;
 import org.apache.olingo.odata2.api.edm.provider.Schema;
 import org.apache.olingo.odata2.api.edm.provider.SimpleProperty;
@@ -120,7 +124,7 @@ public class JPAEdmExtension implements org.apache.olingo.odata2.jpa.processor.a
 		return result;
 	}
 
-	@SuppressWarnings({ "serial", "unchecked" })
+	@SuppressWarnings({ "serial" })
 	private void addSmartAnnotations(final Schema edmSchema) {
 		List<AnnotationElement> schemaAnnotations = edmSchema.getAnnotationElements();
 		if (schemaAnnotations == null) {
@@ -130,35 +134,34 @@ public class JPAEdmExtension implements org.apache.olingo.odata2.jpa.processor.a
 				for (final EntitySet entitySet : container.getEntitySets()) {
 					EntityType entityType = getEntityType(edmSchema, entitySet.getEntityType());
 					final HashMap<String, ArrayList<String>> fieldGroups = new HashMap<String, ArrayList<String>>(); 
-					for (Property property : entityType.getProperties()) {
-						for (Field field : ((JPAEdmMappingImpl)entityType.getMapping()).getJPAType().getDeclaredFields()) {
+					for (Field field : ((JPAEdmMappingImpl)entityType.getMapping()).getJPAType().getDeclaredFields()) {
+						String propertyName = null;
+						for (Property property : entityType.getProperties()) {
 							if (field.getName().equals(((JPAEdmMappingImpl) property.getMapping()).getInternalName())) {
-								if (field.getAnnotation(SAP.class) != null) {
-									InvocationHandler handler = Proxy.getInvocationHandler(field.getAnnotation(SAP.class));
-									Field f = null;
-									try {
-								        f = handler.getClass().getDeclaredField("memberValues");
-								    } catch (NoSuchFieldException | SecurityException e) {
-								        continue;
-								    }
-									f.setAccessible(true);
-									Map<String, Object> memberValues = null;
-								    try {
-								        memberValues = (Map<String, Object>) f.get(handler);
-								    } catch (IllegalArgumentException | IllegalAccessException e) {
-								    	continue;
-								    }
-								    for (Entry<String, Object> memberValue : memberValues.entrySet()) {
-								    	if ("fieldGroup".equals(memberValue.getKey())) {
-								    		ArrayList<String> fieldGroup = fieldGroups.get(memberValue.getValue());
-								    		if (fieldGroup == null) {
-								    			fieldGroup = new ArrayList<String>();
-								    		}
-								    		fieldGroup.add(property.getName());
-								    		fieldGroups.put((String) memberValue.getValue(), fieldGroup);
-								    	}
-								    }
+								propertyName = property.getName();
+							}
+						}
+						if (propertyName == null && entityType.getNavigationProperties() != null) {
+							for (NavigationProperty property : entityType.getNavigationProperties()) {
+								if (field.getName().equals(((JPAEdmMappingImpl) property.getMapping()).getInternalName())) {
+									propertyName = (String) getAnnotationMemberValue(field, JoinColumn.class, "name");
+									if (propertyName != null) {
+										propertyName = propertyName.substring(0, 1).toUpperCase() + propertyName.substring(1);
+									} else {
+										propertyName = property.getName();
+									} 
 								}
+							}
+						}
+						if (propertyName != null) {
+							String fieldGroupName = (String) getAnnotationMemberValue(field, SAP.class, "fieldGroup");
+							if (fieldGroupName != null) {
+					    		ArrayList<String> fieldGroup = fieldGroups.get(fieldGroupName);
+					    		if (fieldGroup == null) {
+					    			fieldGroup = new ArrayList<String>();
+					    		}
+					    		fieldGroup.add(propertyName);
+					    		fieldGroups.put((String) fieldGroupName, fieldGroup);
 							}
 						}
 					}
@@ -240,6 +243,28 @@ public class JPAEdmExtension implements org.apache.olingo.odata2.jpa.processor.a
 				}
 			}
 		}
+	}
+
+	@SuppressWarnings("unchecked")
+	private Object getAnnotationMemberValue(Field field, Class<? extends Annotation> annoClass, String memberKey) {
+		if (field.getAnnotation(annoClass) != null) {
+			InvocationHandler handler = Proxy.getInvocationHandler(field.getAnnotation(annoClass));
+			Field f = null;
+			try {
+		        f = handler.getClass().getDeclaredField("memberValues");
+		    } catch (NoSuchFieldException | SecurityException e) {
+		        return null;
+		    }
+			f.setAccessible(true);
+			Map<String, Object> memberValues = null;
+		    try {
+		        memberValues = (Map<String, Object>) f.get(handler);
+		    } catch (IllegalArgumentException | IllegalAccessException e) {
+		    	return null;
+		    }
+		    return memberValues.get(memberKey);
+		}
+		return null;
 	}
 
 	private EntityType getEntityType(Schema edmSchema, FullQualifiedName entityType) {
