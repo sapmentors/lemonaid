@@ -63,7 +63,7 @@ sap.ui.define([
 							if (annotation.term === "UI.FieldGroup") {
 								jQuery.each(annotation.extensions, function(extensionIdx, extension) {
 									if (extension.name === "Qualifier") {
-										fieldGroup = { Id: extension.value, Name: extension.value.replace(/([A-Z])/g, ' $1'), Fields: [] };
+										fieldGroup = { Id: extension.value, Name: extension.value.replace(/([A-Z0-9])/g, ' $1'), Fields: [] };
 										fieldGroups.push(fieldGroup);
 									}
 								});
@@ -74,7 +74,7 @@ sap.ui.define([
 												if (record.type === "UI.DataField") {
 													jQuery.each(record.propertyValue, function(propValueIdx, propValue) {
 														if (propValue.property === "Value") {
-															fieldGroup.Fields.push( { Id: propValue.path, Name: propValue.path.replace(/([A-Z])/g, ' $1'), Value: propValue.path === "Id" } );
+															fieldGroup.Fields.push( { Id: propValue.path, Name: propValue.path.replace(/([A-Z0-9])/g, ' $1'), Value: propValue.path === "Id" } );
 														}
 													});
 												}
