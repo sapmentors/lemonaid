@@ -2,7 +2,7 @@
 	xmlns="sap.m"
 	xmlns:core="sap.ui.core">
 	<Table
-		id="table"
+		id="mentorsTable"
 		inset="false"
 		items="{
 			path: '/Mentors',

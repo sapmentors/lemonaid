@@ -10,9 +10,10 @@
 		<items>
 			
 			<IconTabFilter icon="sap-icon://download" text="{i18n>download}">
-				<VBox>
+				<Text text="{i18n>importExportDescription}" class="sapUiResponsiveMargin" />
+ 				<VBox>
 					<List
-						class="FieldGroupGrid"
+						class="FieldGroupGrid sapUiSizeCompact"
 						showSeparators="None"
 						items="{ui>/FieldGroups}" >
 						<CustomListItem>
