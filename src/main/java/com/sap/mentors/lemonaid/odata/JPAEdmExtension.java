@@ -7,7 +7,7 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Proxy;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -37,7 +37,7 @@ public class JPAEdmExtension implements org.apache.olingo.odata2.jpa.processor.a
 	public static final String SAP_NAMESPACE = "http://www.sap.com/Protocols/SAPData";
 	public static final String SAP_PREFIX = "sap";
 	public static final String LABEL = "label";
-	
+
 	@Override
 	public void extendWithOperation(JPAEdmSchemaView view) {
 	}
@@ -133,7 +133,7 @@ public class JPAEdmExtension implements org.apache.olingo.odata2.jpa.processor.a
 			for (final EntityContainer container : edmSchema.getEntityContainers()) {
 				for (final EntitySet entitySet : container.getEntitySets()) {
 					EntityType entityType = getEntityType(edmSchema, entitySet.getEntityType());
-					final HashMap<String, ArrayList<String>> fieldGroups = new HashMap<String, ArrayList<String>>(); 
+					final LinkedHashMap<String, ArrayList<String>> fieldGroups = new LinkedHashMap<String, ArrayList<String>>(); 
 					for (Field field : ((JPAEdmMappingImpl)entityType.getMapping()).getJPAType().getDeclaredFields()) {
 						String propertyName = null;
 						for (Property property : entityType.getProperties()) {
