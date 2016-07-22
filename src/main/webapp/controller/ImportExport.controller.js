@@ -1,7 +1,11 @@
 sap.ui.define([
     "com/sap/mentors/lemonaid/controller/BaseController",
-	"sap/ui/model/json/JSONModel"
-], function(BaseController, JSONModel) {
+	"sap/ui/model/json/JSONModel",
+	"sap/m/MessageBox",
+	"sap/ui/core/util/Export",
+	"sap/ui/core/util/ExportColumn",
+	"sap/ui/core/util/ExportTypeCSV"
+], function(BaseController, JSONModel, MessageBox, Export, ExportColumn, ExportTypeCSV) {
     "use strict";
 
     return BaseController.extend("com.sap.mentors.lemonaid.controller.ImportExport", {
@@ -39,6 +43,30 @@ sap.ui.define([
 		
 		onSelectNone: function(event) {
 			this._toggleFieldGroup(event.getSource().getBindingContext("ui").sPath, false);
+		},
+		
+		onDownload: function(event) {
+			var exp = new Export({
+				exportType: new ExportTypeCSV( { separatorChar : ";" } ),
+				models: this.model,
+				rows : { path : "/Mentors" }
+			});
+			jQuery.each(this.ui.getProperty("/FieldGroups"), function(FieldGroupIdx, fieldGroup) {
+				var e = exp;
+				jQuery.each(fieldGroup.Fields, function(fieldIdx, field) {
+					if (field.Value) {
+						e.addColumn(new ExportColumn({
+								name : field.Name, 
+								template : { content : "{" + field.Id + "}" }
+							}));
+					}
+				});
+			});
+			exp.saveFile("mentors").catch(function(oError) {
+				MessageBox.error("Error whhile downloading export file\n\n" + oError);
+			}).then(function() {
+				exp.destroy();
+			});
 		},
 
 		/* =========================================================== */
