@@ -13,3 +13,4 @@ extended_runnable_file.html
 .*/extended_runnable_file.html
 /src/main/webapp/preview_hidden.html
 /.user.project.json
+/node_modules/
