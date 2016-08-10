@@ -155,6 +155,10 @@ sap.ui.define([
 			}
 			this.busyDialog.close();
 		},
+		
+		onTypeMismatch: function(event) {
+			MessageBox.error(this.i18n.getText("importOnlyCsv"));
+		},
 
 		/* =========================================================== */
 		/* internal methods											*/

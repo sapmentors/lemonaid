@@ -49,7 +49,7 @@
 						uploadUrl="" 
 						buttonText="{i18n>selectFile}" 
 						fileType="csv" 
-						maximumFileSize="1" 
+						typeMissmatch="onTypeMismatch"
 						change="onUploadChange" /> 
 					<List
 						id="errorList"
