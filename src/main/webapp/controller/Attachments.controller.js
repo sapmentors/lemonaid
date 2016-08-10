@@ -1,13 +1,14 @@
 sap.ui.define([
     "com/sap/mentors/lemonaid/controller/BaseController",
     "sap/ui/model/json/JSONModel",
-    "sap/m/MessageBox"
-], function(BaseController, JSONModel, MessageBox) {
+    "sap/m/MessageBox",
+    "sap/m/BusyDialog"
+], function(BaseController, JSONModel, MessageBox, BusyDialog) {
     "use strict";
 
     return BaseController.extend("com.sap.mentors.lemonaid.controller.Attachments", {
 
-    	busyDialog: new sap.m.BusyDialog(),
+    	busyDialog: new BusyDialog(),
     	
     	getComponent: function(control) {
     		return ( control instanceof sap.ui.core.mvc.View && 

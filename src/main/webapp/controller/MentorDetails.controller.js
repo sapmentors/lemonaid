@@ -21,11 +21,11 @@ sap.ui.define([
 
         onRouteMatched: function(oEvent) {
             this.sMentorId = oEvent.getParameter("arguments").Id;
-            this.getModel().metadataLoaded().then(this.bindView.bind(this));
+            this.model.metadataLoaded().then(this.bindView.bind(this));
         },
 
         bindView: function() {
-            this.getView().bindElement({
+            this.view.bindElement({
                 path: this.getModel().createKey("/Mentors", { Id: this.sMentorId }),
                 parameters: {
                     expand: 'MentorStatus,RelationshipToSap,Country,Region,Topic1,Topic2,Topic3'
@@ -36,4 +36,3 @@ sap.ui.define([
 
     });
 });
-

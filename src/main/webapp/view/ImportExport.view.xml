@@ -2,6 +2,7 @@
 	controllerName="com.sap.mentors.lemonaid.controller.ImportExport" 
 	xmlns="sap.m"
 	xmlns:l="sap.ui.layout"
+	xmlns:u="sap.ui.unified"
 	xmlns:mvc="sap.ui.core.mvc">
 	<Label text="Import/Export" class="actionTitle sapUiResponsiveMargin" />
 	<IconTabBar
@@ -10,8 +11,8 @@
 		<items>
 			
 			<IconTabFilter icon="sap-icon://download" text="{i18n>download}">
-				<Text text="{i18n>importExportDescription}" class="sapUiResponsiveMargin" />
  				<VBox>
+					<Text text="{i18n>exportDescription}" class="sapUiResponsiveMargin" />
 					<List
 						class="FieldGroupGrid sapUiSizeCompact"
 						showSeparators="None"
@@ -42,9 +43,30 @@
 			
 			<IconTabFilter icon="sap-icon://upload" text="{i18n>upload}">
 				<VBox>
-					<Text text="Placeholder for upload"/>	
+					<Text text="{i18n>importDescription}" class="sapUiResponsiveMargin" />
+					<u:FileUploader
+						id="fileUploader"
+						uploadUrl="" 
+						buttonText="{i18n>selectFile}" 
+						fileType="csv" 
+						maximumFileSize="1" 
+						change="onUploadChange" /> 
+					<List
+						id="errorList"
+						noDataText="{i18n>importReportNoData}"
+						items="{ui>/errors}">
+						<items>
+							<NotificationListItem
+								id="errorListItem"
+								title="{ui>title}"
+								priority="{ui>priority}"
+								description="{ui>message}"
+								authorPicture="{ui>picture}"
+								showCloseButton="false"/>
+						</items>
+					</List>
 					<FlexBox justifyContent="End">
-						<Button text="{i18n>upload}" press="onUpload" type="Accept" />
+						<Button id="btnUpload" enabled="false" text="{i18n>upload}" press="onUpload" type="Accept" />
 					</FlexBox>
 				</VBox>
 			</IconTabFilter>
