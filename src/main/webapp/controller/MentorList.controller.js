@@ -66,7 +66,7 @@ sap.ui.define([
 			var that = this;
 			var count = event.getParameter("total");
 			this.ui.setProperty("/count", count);
-			if (count && this.table.getBinding("items").isLengthFinal()) {
+			if (count && event.getSource().getBinding("items").isLengthFinal()) {
 				jQuery.each(['active', 'alumni'], function (idx, key) {
 					that.model.read("/Mentors/$count", {
 						filters: [ new sap.ui.model.Filter("MentorStatus/Id", "EQ", key) ],
