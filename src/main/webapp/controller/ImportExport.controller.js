@@ -32,6 +32,7 @@ sap.ui.define([
 			this.i18n = this.component.getModel("i18n").getResourceBundle();
 			this.ui = new JSONModel();
 			this.setModel(this.ui, "ui");
+			this.metadata = this.component.metadata;
 			this.model.metadataLoaded().then(function() {
 				that.metadata = that.component.metadata;
 				that._buildFieldGroups("Model.Mentor");
@@ -45,11 +46,11 @@ sap.ui.define([
 		onSelectAll: function(event) {
 			this._toggleFieldGroup(event.getSource().getBindingContext("ui").sPath, true);
 		},
-		
+
 		onSelectNone: function(event) {
 			this._toggleFieldGroup(event.getSource().getBindingContext("ui").sPath, false);
 		},
-		
+
 		onDownload: function(event) {
 			var exp = new Export({
 				exportType: new ExportTypeCSV( { separatorChar : ";" } ),
@@ -61,7 +62,7 @@ sap.ui.define([
 				jQuery.each(fieldGroup.Fields, function(fieldIdx, field) {
 					if (field.Value) {
 						e.addColumn(new ExportColumn({
-								name : field.Name, 
+								name : field.Name,
 								template : { content : "{" + field.Id + "}" }
 							}));
 					}
@@ -73,7 +74,7 @@ sap.ui.define([
 				exp.destroy();
 			});
 		},
-		
+
 		onUploadChange: function(event) {
 			var that = this,
 				file = event.getParameter("files") && event.getParameter("files")[0];
@@ -96,11 +97,21 @@ sap.ui.define([
 					});
 					if (imp.errors && imp.errors.length > 0) {
 						imp.errors.push({
-						title: that.i18n.getText("importReportErrorsTitle"),
+							title: that.i18n.getText("importReportErrorsTitle"),
 							message: that.i18n.getText("importReportErrors", [ imp.data.length, imp.errors.length ]),
 							priority: "High"
 						});
 					} else {
+						jQuery.each(imp.meta.fields, function(idx, field) {
+							if (!that._isValidField(field.replace(/\s+/g, ''))) {
+								var type = "ErrorIdentifyingField";
+								imp.errors.push({
+									title: that.i18n.getText("importErrorIdentifyingFieldTitle", field),
+									message: that.i18n.getText("importErrorIdentifyingField", field),
+									priority: "Medium"
+								});
+							}
+						});
 						var newCount = 0;
 						jQuery.each(imp.data, function(idx, row) {
 							row.__skip = false;
@@ -155,7 +166,7 @@ sap.ui.define([
 			}
 			this.busyDialog.close();
 		},
-		
+
 		onTypeMismatch: function(event) {
 			MessageBox.error(this.i18n.getText("importOnlyCsv"));
 		},
@@ -163,14 +174,14 @@ sap.ui.define([
 		/* =========================================================== */
 		/* internal methods											*/
 		/* =========================================================== */
-		
+
 		_toggleFieldGroup: function(path, state) {
 			jQuery.each(this.ui.getProperty(path + "/Fields"), function(idx, field) {
-				field.Value = state;	
+				field.Value = state;
 			});
 			this.ui.refresh();
 		},
-		
+
 		_buildFieldGroups: function(entityType) {
 			var fieldGroups = [];
 			var fieldGroup;
@@ -206,6 +217,24 @@ sap.ui.define([
 					}
 				});
 			});
+		},
+
+		_isValidField: function(fieldName) {
+			for (var i = 0; i < this.metadata.getServiceMetadata().dataServices.schema.length; i++) {
+				var schema = this.metadata.getServiceMetadata().dataServices.schema[i];
+				for (var j = 0; j < schema.entityType.length; j++) {
+					var entityType = schema.entityType[j];
+					if (entityType.name === "Mentor") {
+						for (var k = 0; k < entityType.property.length; k++) {
+							var property = entityType.property[k];
+							if (property.name === fieldName) {
+								return true;
+							}
+						}
+					}
+				}
+			}
+			return false;
 		}
 
 	});

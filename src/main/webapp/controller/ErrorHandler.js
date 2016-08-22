@@ -49,7 +49,6 @@ sap.ui.define([
 					{
 						id : "metadataErrorMessageBox",
 						details: sDetails,
-						styleClass: this._oComponent.getContentDensityClass(),
 						actions: [MessageBox.Action.RETRY, MessageBox.Action.CLOSE],
 						onClose: function (sAction) {
 							if (sAction === MessageBox.Action.RETRY) {

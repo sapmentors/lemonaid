@@ -25,7 +25,7 @@ sap.ui.define([
 
 			// Remove the splash screen
 		    $('.loader-icon').removeClass('spinning-cog').addClass('shrinking-cog');
-		    $('.loader-background').fadeOut(); 
+		    $('.loader-background').fadeOut();
 		    $('.loader-text').fadeOut();
 		    window.setTimeout(function() { $('#loader').remove() }, 400);
 
@@ -38,16 +38,17 @@ sap.ui.define([
 
 			// configure the main model
 			this.getModel().setSizeLimit(1000);
+			this.metadata = {};
 			this.getModel().attachMetadataLoaded(function(event) {
 				this.metadata = event.getParameter("metadata");
 			}, this);
-			
+
 			// set the device model
 			this.setModel(models.createDeviceModel(), "device");
 
 			// set the mentors model, needed for additional info
 			this.setModel(models.createConfigModel(this.getModel()), "config");
-			
+
 			//TODO - get real key this is W3Cs
        		gmapScriptsUtil.setApiKey('AIzaSyCaQHRFcYj9WY2yU_bfaf1pW5MWpszjWrM');
 
