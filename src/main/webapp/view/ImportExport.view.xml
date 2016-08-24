@@ -1,5 +1,5 @@
-<mvc:View 
-	controllerName="com.sap.mentors.lemonaid.controller.ImportExport" 
+<mvc:View
+	controllerName="com.sap.mentors.lemonaid.controller.ImportExport"
 	xmlns="sap.m"
 	xmlns:l="sap.ui.layout"
 	xmlns:u="sap.ui.unified"
@@ -9,7 +9,7 @@
 		id="idIconTabBar"
 		expanded="{device>/isNoPhone}">
 		<items>
-			
+
 			<IconTabFilter icon="sap-icon://download" text="{i18n>download}">
  				<VBox>
 					<Text text="{i18n>exportDescription}" class="sapUiResponsiveMargin" />
@@ -31,30 +31,30 @@
 									<CustomListItem>
 										<CheckBox text="{ui>Name}" selected="{ui>Value}" />
 									</CustomListItem>
-								</List>	
+								</List>
 							</Panel>
 						</CustomListItem>
-					</List>	
+					</List>
 					<FlexBox justifyContent="End">
 						<Button text="{i18n>download}" press="onDownload" type="Accept" />
 					</FlexBox>
 				</VBox>
 			</IconTabFilter>
-			
+
 			<IconTabFilter icon="sap-icon://upload" text="{i18n>upload}">
 				<VBox>
 					<Text text="{i18n>importDescription}" class="sapUiResponsiveMargin" />
 					<u:FileUploader
 						id="fileUploader"
-						uploadUrl="" 
-						buttonText="{i18n>selectFile}" 
-						fileType="csv" 
+						uploadUrl=""
+						buttonText="{i18n>selectFile}"
+						fileType="csv"
 						typeMissmatch="onTypeMismatch"
-						change="onUploadChange" /> 
+						change="onUploadChange" />
 					<List
 						id="errorList"
 						noDataText="{i18n>importReportNoData}"
-						items="{ui>/errors}">
+						items="{ui>/import/errors}">
 						<items>
 							<NotificationListItem
 								id="errorListItem"

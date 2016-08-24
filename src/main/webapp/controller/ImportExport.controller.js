@@ -75,8 +75,15 @@ sap.ui.define([
 			});
 		},
 
+		onTypeMismatch: function(event) {
+			MessageBox.error(this.i18n.getText("importOnlyCsv"));
+		},
+
 		onUploadChange: function(event) {
 			var that = this,
+				errorCount = 0,
+				warningCount = 0,
+				newCount = 0,
 				file = event.getParameter("files") && event.getParameter("files")[0];
 			this.view.byId("btnUpload").setEnabled(false);
 			that.ui.setProperty("/errors", []);
@@ -92,15 +99,17 @@ sap.ui.define([
 					strCSV = lines.join('\n');
 					var imp = Papa.parse(strCSV, { header: true });
 					jQuery.each(imp.errors, function(idx, row) {
-						row.title = that.i18n.getText("importReportTitle", [ row.type.replace(/([A-Z0-9])/g, ' $1').trim(), row.row ]);
+						row.title = that.i18n.getText("importReportTitle", [ row.type.replace(/([A-Z0-9])/g, ' $1').trim(), row.row + 2 ]);
 						row.priority = "High";
+						errorCount++;
 					});
 					if (imp.errors && imp.errors.length > 0) {
 						imp.errors.push({
 							title: that.i18n.getText("importReportErrorsTitle"),
-							message: that.i18n.getText("importReportErrors", [ imp.data.length, imp.errors.length ]),
+							message: that.i18n.getText("importReportErrors", [ imp.data.length, imp.errors.length, 0 ]),
 							priority: "High"
 						});
+						errorCount++;
 					} else {
 						jQuery.each(imp.meta.fields, function(idx, field) {
 							if (!that._isValidField(field.replace(/\s+/g, ''))) {
@@ -110,65 +119,163 @@ sap.ui.define([
 									message: that.i18n.getText("importErrorIdentifyingField", field),
 									priority: "Medium"
 								});
+								warningCount++;
 							}
 						});
-						var newCount = 0;
+						var checks = [];
 						jQuery.each(imp.data, function(idx, row) {
-							row.__skip = false;
-							if (!row.Id) {
-								row.__new = true;
-								newCount++;
-							} else {
-								that.model.read(that.model.createKey("/Mentors", { Id: row.Id }), {
-									success: function(data) {
-										row.__new = false;
-									},
-									error: function(error) {
-										if (error.statusCode === "404") {
-											row.__new = true;
-											newCount++;
-										} else {
-											imp.errors.push({
-												type: "ErrorIdentifyingMentor",
-												title: that.i18n.getText("importReportTitle", [ row.type.replace(/([A-Z0-9])/g, ' $1').trim(), idx ]),
-												message: that.i18n.getText("importErrorIdentifyingMentor", [ row.Id ]),
-												priority: "High"
-											});
+							checks.push(new Promise(function(resolve) {
+								row.__skip = false;
+								if (!row.Id) {
+									row.__new = true;
+									newCount++;
+									resolve();
+								} else {
+									that.model.read(that.model.createKey("/Mentors", { Id: row.Id }), {
+										success: function(data) {
+											row.__new = false;
+											resolve();
+										},
+										error: function(error) {
+											if (error.statusCode === "404") {
+												row.__new = true;
+												newCount++;
+												resolve();
+											} else {
+												imp.errors.push({
+													type: "ErrorIdentifyingMentor",
+													title: that.i18n.getText("importReportTitle", [ row.type.replace(/([A-Z0-9])/g, ' $1').trim(), idx ]),
+													message: that.i18n.getText("importErrorIdentifyingMentor", [ row.Id ]),
+													priority: "High"
+												});
+												errorCount++;
+												resolve();
+											}
 										}
-									}
+									});
+								}
+							}));
+						});
+						Promise.all(checks).then(function() {
+							if (errorCount + warningCount > 0) {
+								imp.errors.push({
+									title: that.i18n.getText("importReportErrorsTitle"),
+									message: that.i18n.getText("importReportErrors", [ imp.data.length, errorcount, warningCount ]) +
+											 (warningCount > 0 ? " " + that.i18n.getText("importReportErrorsCanContinue") : ""),
+									priority: errorCount > 0 ? "High" : "Medium"
+								});
+							} else {
+								imp.errors.push({
+									title: that.i18n.getText("importReportResultTitle"),
+									picture: jQuery.sap.getModulePath("com.sap.mentors.lemonaid.images") + "/heart.png",
+									message: that.i18n.getText("importReportResult", [
+										imp.data.length,
+										imp.meta.fields.length,
+										newCount,
+										imp.data.length - newCount
+									])
 								});
 							}
+							that.view.byId("btnUpload").setEnabled(errorCount === 0);
+							that.ui.setProperty("/import", imp);
 						});
-						if (imp.errors && imp.errors.length > 0) {
-							imp.errors.push({
-								title: that.i18n.getText("importReportErrorsTitle"),
-								message: that.i18n.getText("importReportErrors", [ imp.data.length, imp.errors.length ]),
-								priority: "High"
-							});
-						} else {
-							that.view.byId("btnUpload").setEnabled(true);
-							imp.errors.push({
-								title: that.i18n.getText("importReportResultTitle"),
-								picture: jQuery.sap.getModulePath("com.sap.mentors.lemonaid.images") + "/heart.png",
-								message: that.i18n.getText("importReportResult", [
-									imp.data.length,
-									imp.meta.fields.length,
-									newCount,
-									imp.data.length - newCount
-								])
-							});
-						}
 					}
-					that.ui.setProperty("/errors", imp.errors);
-					that.ui.setProperty("/import", imp.data.length + " lines");
+					that.ui.setProperty("/import", imp);
 				};
 				reader.readAsText(file);
 			}
 			this.busyDialog.close();
 		},
 
-		onTypeMismatch: function(event) {
-			MessageBox.error(this.i18n.getText("importOnlyCsv"));
+        onUpload: function(event) {
+            var that = this,
+			    imp = this.ui.getProperty("/import"),
+                errorCount = 0,
+                updateCount = 0,
+                newCount = 0,
+                requests = [];
+            imp.errors = [];
+            that.view.byId("btnUpload").setEnabled(false);
+            this.model.detachRequestFailed(
+                this.component._oErrorHandler._requestFailedHandler,
+                this.component._oErrorHandler);
+            jQuery.each(imp.data, function(rowIdx, row) {
+            	if (!row.__skip) {
+					var object = {};
+					jQuery.each(row, function(fieldName, field) {
+						fieldName = fieldName.replace(/\s+/g, '');
+						if (that._isValidField(fieldName)) {
+							object[fieldName] = field;
+						}
+					});
+                    requests.push(new Promise(function(resolve) {
+    					if (row.__new) {
+                            that.model.create(
+                                "/Mentors",
+                                object,
+                                {
+                                    success: function(data) {
+                                        newCount++;
+                                        resolve();
+                                    },
+                                    error: function(error) {
+                                        imp.errors.push({
+        									title: that.i18n.getText("importCreateErrorTitle"),
+        									message: that.i18n.getText("importCreateError", [
+        										object.Id,
+        										object.fullName,
+                                                error.responseText
+        									])
+        								});
+                                        errorCount++;
+                                        resolve();
+                                    }
+                                }
+                            );
+                        } else {
+                            that.model.update(
+                                that.model.createKey("/Mentors", { Id: object.Id }),
+                                object,
+                                {
+                                    success: function(data) {
+                                        updateCount++;
+                                        resolve();
+                                    },
+                                    error: function(error) {
+                                        imp.errors.push({
+        									title: that.i18n.getText("importUpdateErrorTitle"),
+        									message: that.i18n.getText("importUpdateError", [
+        										object.Id,
+        										object.fullName,
+                                                error.responseText
+        									])
+        								});
+                                        errorCount++;
+                                        resolve();
+                                    }
+                                }
+                            );
+                        }
+                    }));
+                    Promise.all(requests).then(function() {
+                        if (errorCount === 0) {
+                            imp.errors.push({
+                                title: that.i18n.getText("importSuccessTitle"),
+                                picture: jQuery.sap.getModulePath("com.sap.mentors.lemonaid.images") + "/heart.png",
+                                message: that.i18n.getText("importSuccess", [
+                                    imp.data.length,
+                                    newCount,
+                                    updateCount
+                                ])
+                            });
+                        }
+                        that.model.attachRequestFailed(
+                            that.component._oErrorHandler._requestFailedHandler,
+                            that.component._oErrorHandler);
+                        that.ui.setProperty("/import", imp);
+                    });
+            	}
+            });
 		},
 
 		/* =========================================================== */

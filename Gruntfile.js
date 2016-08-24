@@ -2,7 +2,7 @@
 
 module.exports = function(grunt) {
 
-	var ui5version = '1.32.9'
+	var ui5version = ''
     var uirepo = 'sapui5.hana.ondemand.com'
 
 	// Project configuration.
@@ -50,18 +50,15 @@ module.exports = function(grunt) {
                     }
                 },
                 proxies: [
-                    {
-                        context: '/resources',
-                        host: 'sapui5.hana.ondemand.com',
-                        changeOrigin: true,
-                        port: 443,
-                        https: true,
-                        rewrite: {
-                            '^/resources': '/' + ui5version + '/resources'
-                        }
-                    },
 					{
                         context: '/odata.svc',
+                        host: 'lemonaida5a504e08.hana.ondemand.com',
+                        changeOrigin: true,
+                        port: 443,
+                        https: true
+                    },
+					{
+                        context: '/userapi',
                         host: 'lemonaida5a504e08.hana.ondemand.com',
                         changeOrigin: true,
                         port: 443,
