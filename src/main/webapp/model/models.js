@@ -19,6 +19,8 @@ sap.ui.define([
     		    odataModel.read("/Configuration", {
     		    	success: function(data) {
     		    		jQuery.each(data.results, function(idx, value) {
+                            if (value.Name === "false") { value.Name = false; }
+                            if (value.Name === "true") { value.Name = true; }
     		    			oModel.setProperty("/" + value.Id, value.Name)
     		    		});
                         resolve();
