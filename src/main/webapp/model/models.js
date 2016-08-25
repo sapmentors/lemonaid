@@ -28,27 +28,6 @@ sap.ui.define([
 			return oModel;
 		},
 
-        // <tnt:NavigationListItem
-        //     key="Mentors"
-        //     text="{i18n>mentors}"
-        //     icon="sap-icon://person-placeholder" />
-        // <tnt:NavigationListItem
-        //     key="Events"
-        //     text="{i18n>events}"
-        //     icon="sap-icon://calendar" />
-        // <tnt:NavigationListItem
-        //     key="Content"
-        //     text="{i18n>content}"
-        //     icon="sap-icon://documents" />
-        // <tnt:NavigationListItem
-        //     key="SocialMedia"
-        //     text="{i18n>socialMedia}"
-        //     icon="sap-icon://discussion" />
-        // <tnt:NavigationListItem
-        //     key="ImportExport"
-        //     text="{i18n>importExport}"
-        //     icon="sap-icon://download-from-cloud" />
-
         createMenuModel: function(i18n, config) {
             var menu = [{
                     key: "Mentors",
