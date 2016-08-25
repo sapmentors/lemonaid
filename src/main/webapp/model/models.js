@@ -50,7 +50,7 @@ sap.ui.define([
 			oModel.setDefaultBindingMode("OneWay");
             oModel._loaded = new Promise(function(resolve) {
                 config._loaded.then(function() {
-                    if (config.getProperty("IsProjectMember")) {
+                    if (config.getProperty("/IsProjectMember")) {
                         menu.push({
                             key: "ImportExport",
                             text: i18n.getText("importExport"),
