@@ -46,8 +46,14 @@ sap.ui.define([
 			// set the device model
 			this.setModel(models.createDeviceModel(), "device");
 
-			// set the mentors model, needed for additional info
+			// set the config model, needed for additional info
 			this.setModel(models.createConfigModel(this.getModel()), "config");
+
+            // set the menu model, contains the main menu
+			this.setModel(models.createMenuModel(
+                this.getModel("i18n").getResourceBundle(),
+                this.getModel("config")
+            ), "menu");
 
 			//TODO - get real key this is W3Cs
        		gmapScriptsUtil.setApiKey('AIzaSyCaQHRFcYj9WY2yU_bfaf1pW5MWpszjWrM');

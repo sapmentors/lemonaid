@@ -28,36 +28,39 @@ sap.ui.define([
 		/* =========================================================== */
 		/* event handlers                                              */
 		/* =========================================================== */
-        
+
         onRoutePatternMatched: function(event) {
-        	var key = event.getParameter("name");
+        	var that = this,
+                key = event.getParameter("name");
         	switch(key) {
         		case "Main":
         			this.router.navTo("Mentors", null, true);
         			break;
         		default:
-        			var navList = this.view.byId("NavigationList");
-        			var items = navList.getItems();
-        			for (var i = 0; i < items.length; i++) {
-        				if (items[i].getKey() === key) {
-        					navList.setSelectedItem(items[i]);
-        				}
-        			}
-					this.view.byId("pageContainer").to(this.getView().byId(key));
+                    this.getModel("menu")._loaded.then(function() {
+                        var navList = that.view.byId("NavigationList");
+            			var items = navList.getItems();
+            			for (var i = 0; i < items.length; i++) {
+            				if (items[i].getKey() === key) {
+            					navList.setSelectedItem(items[i]);
+            				}
+            			}
+    					that.view.byId("pageContainer").to(that.getView().byId(key));
+                    });
         	}
         },
-        
+
 		onHamburgerPress: function() {
  			this.toolPage.setSideExpanded(!this.toolPage.getSideExpanded());
 		},
-		
+
 		onMenuSelect: function(event) {
             this.router.navTo(event.getParameter('item').getKey(), null, true);
             if (this.device.getProperty("/system/phone")) {
  				this.toolPage.setSideExpanded(false);
             }
 		},
-		
+
 		onPressLogin: function() {
 			window.location = "login.html";
 		}

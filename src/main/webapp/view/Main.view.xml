@@ -5,10 +5,10 @@
 	xmlns:tnt="sap.tnt"
 	xmlns="sap.m">
 
-	<tnt:ToolPage 
+	<tnt:ToolPage
 		id="toolPage"
 		sideExpanded="false">
-	
+
 		<tnt:header>
 			<tnt:ToolHeader>
 				<Button id="sideNavigationToggleButton"
@@ -20,20 +20,20 @@
 					</layoutData>
 				</Button>
 				<ToolbarSpacer width="0" />
-				<Text text="{i18n>title}" />	
+				<Text text="{i18n>title}" />
 				<ToolbarSpacer>
 					<layoutData>
 						<OverflowToolbarLayoutData priority="NeverOverflow" minWidth="20px" />
 					</layoutData>
-				</ToolbarSpacer>		
+				</ToolbarSpacer>
 				<Button
-					text="{i18n>login}" 
+					text="{i18n>login}"
 					type="Transparent"
 					press="onPressLogin"
-					visible="{= !${user>/name} }" />	
-				<Button 
-					text="{user>/displayName}" 
-					type="Transparent" 
+					visible="{= !${user>/name} }" />
+				<Button
+					text="{user>/displayName}"
+					type="Transparent"
 					press="onPressUserName"
 					visible="{= !!${user>/name}}">
 					<layoutData>
@@ -45,31 +45,39 @@
 
 		<tnt:sideContent>
 			<tnt:SideNavigation expanded="false" itemSelect="onMenuSelect">
-				<tnt:NavigationList id="NavigationList">
-					<tnt:NavigationListItem 
-						key="Mentors"
-						text="{i18n>mentors}" 
-						icon="sap-icon://person-placeholder" />
-					<tnt:NavigationListItem 
-						key="Events"
-						text="{i18n>events}" 
-						icon="sap-icon://calendar" />
-					<tnt:NavigationListItem 
-						key="Content"
-						text="{i18n>content}" 
-						icon="sap-icon://documents" />
-					<tnt:NavigationListItem 
-						key="SocialMedia"
-						text="{i18n>socialMedia}" 
-						icon="sap-icon://discussion" />
-					<tnt:NavigationListItem 
-						key="ImportExport"
-						text="{i18n>importExport}" 
-						icon="sap-icon://download-from-cloud" />
+
+                <tnt:NavigationList id="NavigationList" items="{menu>/}">
+					<tnt:NavigationListItem
+                        key="{menu>key}"
+                        text="{menu>text}"
+                        icon="{menu>icon}" />
 				</tnt:NavigationList>
+
+				<!-- <tnt:NavigationList id="NavigationList">
+					<tnt:NavigationListItem
+						key="Mentors"
+						text="{i18n>mentors}"
+						icon="sap-icon://person-placeholder" />
+					<tnt:NavigationListItem
+						key="Events"
+						text="{i18n>events}"
+						icon="sap-icon://calendar" />
+					<tnt:NavigationListItem
+						key="Content"
+						text="{i18n>content}"
+						icon="sap-icon://documents" />
+					<tnt:NavigationListItem
+						key="SocialMedia"
+						text="{i18n>socialMedia}"
+						icon="sap-icon://discussion" />
+					<tnt:NavigationListItem
+						key="ImportExport"
+						text="{i18n>importExport}"
+						icon="sap-icon://download-from-cloud" />
+				</tnt:NavigationList> -->
 			</tnt:SideNavigation>
 		</tnt:sideContent>
-		
+
 		<tnt:mainContents>
 			<NavContainer id="pageContainer">
 				<Page id="Mentors" showHeader="false">
@@ -92,6 +100,6 @@
 				</Page>
 			</NavContainer>
 		</tnt:mainContents>
-			
+
 	</tnt:ToolPage>
 </mvc:View>
