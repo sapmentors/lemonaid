@@ -170,7 +170,8 @@
 			</plugin>
             <plugin>
                 <groupId>com.sap.cloud</groupId>
-                <artifactId>${sap.cloud.sdk.plugin}</artifactId>
+                <artifactId>neo-java-web-maven-plugin</artifactId>
+                <version>1.109.9</version>
                 <executions>
                     <execution>
                         <phase>initialize</phase>
@@ -179,6 +180,9 @@
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <sdkInstallPath>${project.build.directory}/sdk</sdkInstallPath>
+                </configuration>
             </plugin>
 		</plugins>
 	</build>
