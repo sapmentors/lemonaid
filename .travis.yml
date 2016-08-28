@@ -1,2 +1,2 @@
 language: java
-script: package
+script: mvn package
