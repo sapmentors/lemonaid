@@ -168,6 +168,18 @@
 					<target>${java.version}</target>
 				</configuration>
 			</plugin>
+            <plugin>
+                <groupId>com.sap.cloud</groupId>
+                <artifactId>${sap.cloud.sdk.plugin}</artifactId>
+                <executions>
+                    <execution>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>install-sdk</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
 		</plugins>
 	</build>
 
