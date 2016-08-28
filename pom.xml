@@ -154,7 +154,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>/</finalName>
+		<finalName>lemonaid.war</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
