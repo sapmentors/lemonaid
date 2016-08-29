@@ -26,6 +26,11 @@
 		<xmlrpc.version>3.1.3</xmlrpc.version>
 		<gmaps.version>0.1.15</gmaps.version>
 		<tomcat.version>7.0.59</tomcat.version>
+
+        <sap.cloud.host>hana.ondemand.com</sap.cloud.host>
+        <sap.cloud.username>p508741</sap.cloud.username>
+        <sap.cloud.account>a5a504e08</sap.cloud.account>
+        <sap.cloud.application>lemonaid</sap.cloud.application>
 	</properties>
 
 	<dependencies>
