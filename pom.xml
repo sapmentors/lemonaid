@@ -154,7 +154,6 @@
 	</dependencies>
 
 	<build>
-		<finalName>lemonaid</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -171,13 +170,27 @@
             <plugin>
                 <groupId>com.sap.cloud</groupId>
                 <artifactId>neo-java-web-maven-plugin</artifactId>
-                <version>1.109.9</version>
+                <version>2.57.7.1</version>
                 <executions>
                     <execution>
                         <phase>initialize</phase>
                         <goals>
                             <goal>install-sdk</goal>
                         </goals>
+                    </execution>
+                    <execution>
+                        <id>deploy</id>
+                        <goals>
+                            <goal>deploy</goal>
+                        </goals>
+                        <configuration>
+                            <host>${sap.cloud.host}</host>
+                            <user>${sap.cloud.username}</user>
+                            <password>${sap.cloud.password}</password>
+                            <account>${sap.cloud.account}</account>
+                            <application>${sap.cloud.application}</application>
+                            <source>${project.build.directory}/${project.artifactId}.war</source>
+                        </configuration>
                     </execution>
                 </executions>
                 <configuration>
