@@ -1,5 +1,7 @@
 package com.sap.mentors.lemonaid.jobs;
 
+import java.io.IOException;
+
 import org.quartz.DisallowConcurrentExecution;
 import org.quartz.Job;
 import org.quartz.JobExecutionContext;
@@ -31,8 +33,12 @@ public class GravatarJob implements Job {
 		log.info("Setting photoUrl of mentors - Start");
 		long startTime = System.currentTimeMillis();
     	for (Mentor mentor : mentorRepository.findAll()) {
-    		mentor.setPhotoUrl(mentorUtils.getImageOfMentor(mentor));
-    		mentorRepository.save(mentor);
+    		try {
+				mentor.setPhotoUrl(mentorUtils.getImageOfMentor(mentor));
+	    		mentorRepository.save(mentor);
+			} catch (IOException e) {
+				log.warn("Error occurred while refreshing photo of mentor '" + mentor.getId() + "': " + e.getMessage());
+			}
     	}
 		log.info("Setting photoUrl of mentors - End. Duration: " + Long.toString(System.currentTimeMillis() - startTime) + "ms");
 	}

@@ -1,5 +1,6 @@
 package com.sap.mentors.lemonaid.external;
 
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -65,7 +66,7 @@ public class Gravatar {
 		this.apiKey = apiKey;
 	}
 			
-	Object callFunction(final String method, final Map<String, Object> parameters) {
+	Object callFunction(final String method, final Map<String, Object> parameters) throws IOException {
 		Map<String,Object> map = new HashMap<String,Object>();
 		map.putAll(parameters);
 		if (this.apiKey != null) {
@@ -78,16 +79,16 @@ public class Gravatar {
         try {
 			return client.execute(method, new Object [] { map });
 		} catch (XmlRpcException e) {
-			throw new RuntimeException(e);
+			throw new IOException(e);
 		}
 	}
 	
-	public boolean emailExists(final String email) {
+	public boolean emailExists(final String email) throws IOException {
 		return this.emailsExist(new ArrayList<String>(Arrays.asList(email))).get(email);
 	}
 	
 	@SuppressWarnings("unchecked")
-	public HashMap<String, Boolean> emailsExist(final List<String> emails) {
+	public HashMap<String, Boolean> emailsExist(final List<String> emails) throws IOException {
         ArrayList<String> hashes = new ArrayList<String>();
         for (String email : emails) {
         	hashes.add(hash(email));
@@ -103,12 +104,12 @@ public class Gravatar {
         return retval;
 	}
 
-	public boolean hashExists(final String hash) {
+	public boolean hashExists(final String hash) throws IOException {
 		return this.hashesExist(new ArrayList<String>(Arrays.asList(hash))).get(hash);
 	}
 
 	@SuppressWarnings("unchecked")
-	public HashMap<String, Boolean> hashesExist(final List<String> hashes) {
+	public HashMap<String, Boolean> hashesExist(final List<String> hashes) throws IOException {
 		Map<String,Object> map = new HashMap<String,Object>();
         map.put("hashes", hashes);
         HashMap<String, Boolean> retval = new HashMap<String, Boolean>();

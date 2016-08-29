@@ -57,7 +57,8 @@ public class QuartzConfig {
 
 		Trigger[] triggers = { 
 				gravatarTrigger().getObject(), 
-				locationTrigger().getObject() 
+				locationTrigger().getObject(),
+				insideTrackTrigger().getObject()
 			};
 		quartzScheduler.setTriggers(triggers);
 
@@ -96,6 +97,24 @@ public class QuartzConfig {
 		CronTriggerFactoryBean cronTriggerFactoryBean = new CronTriggerFactoryBean();
 		cronTriggerFactoryBean.setJobDetail(locationJob().getObject());
 		cronTriggerFactoryBean.setCronExpression("0 0 0 * * ?"); // Every day
+		cronTriggerFactoryBean.setGroup("lemonaid-quartz");
+		return cronTriggerFactoryBean;
+	}
+
+	@Bean
+	public JobDetailFactoryBean insideTrackJob() {
+		JobDetailFactoryBean jobDetailFactory = new JobDetailFactoryBean();
+		jobDetailFactory.setJobClass(InsideTrackJob.class);
+		jobDetailFactory.setGroup("lemonaid-quartz");
+		jobDetailFactory.setDurability(true);
+		return jobDetailFactory;
+	}
+
+	@Bean
+	public CronTriggerFactoryBean insideTrackTrigger() {
+		CronTriggerFactoryBean cronTriggerFactoryBean = new CronTriggerFactoryBean();
+		cronTriggerFactoryBean.setJobDetail(insideTrackJob().getObject());
+		cronTriggerFactoryBean.setCronExpression("0 * * * * ?"); // Every hour
 		cronTriggerFactoryBean.setGroup("lemonaid-quartz");
 		return cronTriggerFactoryBean;
 	}

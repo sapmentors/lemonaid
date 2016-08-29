@@ -1,5 +1,6 @@
 package com.sap.mentors.lemonaid;
 
+import java.io.IOException;
 import java.util.UUID;
 
 import org.slf4j.Logger;
@@ -992,7 +993,7 @@ public class Application extends SpringBootServletInitializer {
 						));
 
 					for (Mentor mentor : mentorRepository.findAll()) {
-						mentor.setPhotoUrl(mentorUtils.getImageOfMentor(mentor));
+						try { mentor.setPhotoUrl(mentorUtils.getImageOfMentor(mentor)); } catch (IOException e) {}
 						mentor.setLocation(mentorUtils.getLocationOfMentor(mentor));
 			    		mentorRepository.save(mentor);
 			    	}

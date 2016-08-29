@@ -1,5 +1,6 @@
 package com.sap.mentors.lemonaid.utils;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -28,7 +29,7 @@ public class MentorUtils {
 
 	private static final Logger log = LoggerFactory.getLogger(MentorUtils.class);
 	
-	public String getImageOfMentor(Mentor mentor) {
+	public String getImageOfMentor(Mentor mentor) throws IOException {
 		String photoUrl = null;
 		
 		// Try email based Gravatar first
