@@ -32,7 +32,6 @@ public class InsideTrackJob implements Job {
 		long startTime = System.currentTimeMillis();
 		ArrayList<Event> events = sitregClient.getEvents();
 		if (events != null) {
-			eventRepository.deleteAll();
 			for (Event event : events) {
 				eventRepository.save(event);
 			}
