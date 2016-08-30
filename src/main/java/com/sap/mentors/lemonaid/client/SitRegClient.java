@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class SitRegClient extends GenericODataClient {
 
-	public static final String SERVICE_URL = "https://hanamdcs0001142741trial.hanatrial.ondemand.com/com/sap/sapmentors/sitreg/odatapublic/service.xsodata";
+	public static final String SERVICE_URL = "https://sapmentorsa5a504e08.hana.ondemand.com/com/sap/sapmentors/sitreg/odatapublic/service.xsodata";
 
 	public ODataFeed readFeed(String entitySetName)
 			throws IOException, ODataException {
