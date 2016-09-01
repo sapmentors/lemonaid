@@ -18,7 +18,7 @@ import org.springframework.stereotype.Component;
 
 @ConfigurationProperties(prefix="gravatar")
 @Component
-public class Gravatar {
+public class GravatarImage {
 
 	private final String img_endpoint = "https://www.gravatar.com/avatar/";
 	private final String api_endpoint = "https://secure.gravatar.com/xmlrpc";

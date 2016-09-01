@@ -15,9 +15,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Twitter {
+public class TwitterImage {
 
-	private final Logger logger = LoggerFactory.getLogger(Twitter.class);
+	private final Logger logger = LoggerFactory.getLogger(TwitterImage.class);
 	
 	public String getAvatar(final String twitterId) {
 		String url;

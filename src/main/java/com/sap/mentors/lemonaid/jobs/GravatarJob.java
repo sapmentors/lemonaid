@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.sap.mentors.lemonaid.entities.Mentor;
-import com.sap.mentors.lemonaid.external.Gravatar;
+import com.sap.mentors.lemonaid.external.GravatarImage;
 import com.sap.mentors.lemonaid.repository.MentorRepository;
 import com.sap.mentors.lemonaid.utils.MentorUtils;
 
@@ -24,7 +24,7 @@ public class GravatarJob implements Job {
     
 	private static final Logger log = LoggerFactory.getLogger(GravatarJob.class);
 
-	@Autowired Gravatar gravatar;
+	@Autowired GravatarImage gravatar;
 	@Autowired MentorRepository mentorRepository;
 	@Autowired MentorUtils mentorUtils;
 

@@ -73,6 +73,10 @@
 			</exclusions>
 		</dependency>
 		<dependency>
+			<groupId>org.springframework.social</groupId>
+			<artifactId>spring-social-twitter</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>org.apache.olingo</groupId>
 			<artifactId>olingo-odata2-jpa-processor-api</artifactId>
 			<version>${olingo.version}</version>

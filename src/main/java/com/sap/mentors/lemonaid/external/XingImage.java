@@ -15,9 +15,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Xing {
+public class XingImage {
 
-	private final Logger logger = LoggerFactory.getLogger(Xing.class);
+	private final Logger logger = LoggerFactory.getLogger(XingImage.class);
 	
 	public String getProfilePhoto(final String xingUrl) {
 		try {

@@ -13,19 +13,19 @@ import com.google.maps.GeoApiContext;
 import com.google.maps.GeocodingApi;
 import com.google.maps.model.GeocodingResult;
 import com.sap.mentors.lemonaid.entities.Mentor;
-import com.sap.mentors.lemonaid.external.Gravatar;
-import com.sap.mentors.lemonaid.external.SCN;
-import com.sap.mentors.lemonaid.external.Twitter;
-import com.sap.mentors.lemonaid.external.Xing;
+import com.sap.mentors.lemonaid.external.GravatarImage;
+import com.sap.mentors.lemonaid.external.ScnImage;
+import com.sap.mentors.lemonaid.external.TwitterImage;
+import com.sap.mentors.lemonaid.external.XingImage;
 import com.sap.mentors.lemonaid.utils.types.Point;
 
 @Component
 public class MentorUtils {
 
-	@Autowired Gravatar gravatar;
-	@Autowired Twitter twitter;
-	@Autowired SCN scn;
-	@Autowired Xing xing;
+	@Autowired GravatarImage gravatar;
+	@Autowired TwitterImage twitter;
+	@Autowired ScnImage scn;
+	@Autowired XingImage xing;
 
 	private static final Logger log = LoggerFactory.getLogger(MentorUtils.class);
 	
