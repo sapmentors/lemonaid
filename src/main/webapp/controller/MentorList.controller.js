@@ -1,3 +1,5 @@
+/* global sap, $ */
+
 sap.ui.define([
     "com/sap/mentors/lemonaid/controller/BaseController",
     "com/sap/mentors/lemonaid/util/formatters",
@@ -9,8 +11,8 @@ sap.ui.define([
 
     return BaseController.extend("com.sap.mentors.lemonaid.controller.MentorList", {
 
-		formatters: formatters, 
-		
+		formatters: formatters,
+
 		/* =========================================================== */
 		/* lifecycle methods                                           */
 		/* =========================================================== */
@@ -44,7 +46,7 @@ sap.ui.define([
 
         onSearchPressed: function(event) {
             var search = event.getParameters().query;
-            var filter = new Filter("FullName", FilterOperator.Contains, search); 
+            var filter = new Filter("FullName", FilterOperator.Contains, search);
             this.table.getBinding("items").filter(filter);
             this.map.getBinding("markers").filter(filter);
         },
@@ -67,7 +69,7 @@ sap.ui.define([
 			var count = event.getParameter("total");
 			this.ui.setProperty("/count", count);
 			if (count && event.getSource().getBinding("items").isLengthFinal()) {
-				jQuery.each(['active', 'alumni'], function (idx, key) {
+				$.each(["active", "alumni"], function (idx, key) {
 					that.model.read("/Mentors/$count", {
 						filters: [ new sap.ui.model.Filter("MentorStatus/Id", "EQ", key) ],
 						success: function (oData) {
@@ -77,7 +79,7 @@ sap.ui.define([
 				});
 			}
 		},
-		
+
         onMentorDetailPress: function(event) {
             this.getRouter().navTo("Mentor", {
                 Id: event.getSource().getBindingContext().getProperty("Id")
@@ -90,14 +92,14 @@ sap.ui.define([
 		 * @public
 		 */
 		onQuickFilter: function(oEvent) {
-			var filter = 
-				oEvent.getParameter("key") === "all" ? 
+			var filter =
+				oEvent.getParameter("key") === "all" ?
 					[] :
 					new sap.ui.model.Filter("MentorStatus/Id", "EQ", oEvent.getParameter("key"));
 			this.table.getBinding("items").filter(filter);
 			this.map.getBinding("markers").filter(filter);
 		},
-		
+
 		onRouteMatched: function() {
 		}
 

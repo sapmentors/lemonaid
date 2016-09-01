@@ -1,3 +1,5 @@
+/* global sap */
+
 sap.ui.define([
 		"com/sap/mentors/lemonaid/controller/BaseController",
 		"sap/ui/model/json/JSONModel"
@@ -26,7 +28,7 @@ sap.ui.define([
 					then(fnSetAppNotBusy);
 
 			}
-		
+
 		});
 
 	}

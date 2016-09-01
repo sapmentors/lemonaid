@@ -1,3 +1,5 @@
+/* global sap, jQuery */
+
 sap.ui.define([
     "sap/ui/core/util/MockServer",
     "./MockRequests"

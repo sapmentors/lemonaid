@@ -1,3 +1,5 @@
+/* global sap */
+
 sap.ui.define([
     "com/sap/mentors/lemonaid/controller/BaseController",
     "sap/ui/model/json/JSONModel"
@@ -13,9 +15,9 @@ sap.ui.define([
         	this.router = this.getRouter();
         	this.i18n = this.component.getModel("i18n").getResourceBundle();
         	this.ui = new JSONModel({
-        		ServiceUrl: this.model.sServiceUrl,
+        		ServiceUrl: this.model.sServiceUrl
         	});
-        	this.getView().setModel(this.ui, "ui")
+        	this.getView().setModel(this.ui, "ui");
             this.router.getRoute("Mentor").attachMatched(this.onRouteMatched, this);
         },
 
@@ -28,7 +30,7 @@ sap.ui.define([
             this.view.bindElement({
                 path: this.getModel().createKey("/Mentors", { Id: this.sMentorId }),
                 parameters: {
-                    expand: 'MentorStatus,RelationshipToSap,Country,Region,Topic1,Topic2,Topic3'
+                    expand: "MentorStatus,RelationshipToSap,SapExpertise1,SapExpertise2,SapExpertise3,SoftSkill1,SoftSkill2,SoftSkill3,SoftSkill4,SoftSkill5,SoftSkill6,Country,Region,Topic1,Topic2,Topic3"
                 }
             });
             this.ui.setProperty("/UploadUrl", this.model.sServiceUrl + "/" + this.model.createKey("Mentors", {Id: this.sMentorId}) + "/Attachments");

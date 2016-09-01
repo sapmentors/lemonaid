@@ -1,21 +1,21 @@
-<mvc:View 
-	controllerName="com.sap.mentors.lemonaid.controller.MentorDetails" 
+<mvc:View
+	controllerName="com.sap.mentors.lemonaid.controller.MentorDetails"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:core="sap.ui.core"
-	xmlns="sap.uxap" 
-	xmlns:l="sap.ui.layout" 
-	xmlns:m="sap.m" 
+	xmlns="sap.uxap"
+	xmlns:l="sap.ui.layout"
+	xmlns:m="sap.m"
 	xmlns:f="sap.ui.layout.form"
 	xmlns:details="com.sap.mentors.lemonaid.view.MentorDetails">
-	<ObjectPageLayout 
-		id="ObjectPageLayout" 
-		enableLazyLoading="false" 
+	<ObjectPageLayout
+		id="ObjectPageLayout"
+		enableLazyLoading="false"
 		showTitleInHeaderContent="true"
 		showEditHeaderButton="false"
 		editHeaderButtonPress="handleEditBtnPress">
 
 		<headerTitle>
-			<ObjectPageHeader 
+			<ObjectPageHeader
 				id="header"
 				objectImageURI="{PhotoUrl}"
 				objectTitle="{FullName}"
@@ -33,7 +33,7 @@
 						<m:contentRight>
 							<m:Button icon="sap-icon://edit" text="{i18n>edit}" press="onEdit" visible="{MayEdit}"/>
 						</m:contentRight>
-					</m:Bar>					
+					</m:Bar>
 				</navigationBar>
 			</ObjectPageHeader>
 		</headerTitle>
@@ -47,8 +47,8 @@
 				<m:Link text="{Email2}"/>
 			</l:VerticalLayout>
 			<l:HorizontalLayout>
-				<m:Image src="images/linkedin.png"></m:Image>
-				<m:Image src="images/Twitter.png"></m:Image>
+				<m:Image src="images/linkedin.png" />
+				<m:Image src="images/Twitter.png" />
 			</l:HorizontalLayout>
 			<l:VerticalLayout>
 				<m:Label text="{Bio}"/>
@@ -70,42 +70,54 @@
 					</ObjectPageSubSection>
 				</subSections>
 			</ObjectPageSection>
-		
-<!-- 			<ObjectPageSection title="About" importance="Medium">
+
+			<ObjectPageSection title="Mentor details" importance="Medium">
 				<subSections>
-					<ObjectPageSubSection title="Connect">
+					<ObjectPageSubSection title="Mentor details">
 						<blocks>
-							<f:SimpleForm labelMinWidth="192" maxContainerCols="2" layout="ResponsiveGridLayout" columnsL="1" columnsM="1" columnsXL="1">
-								<f:title>
-									<core:Title text="{i18n>status}"/>
-								</f:title>
-								<f:content>
-								<m:Label text="{i18n>relSAP}"/>
-								<m:Text text="{RelationshipToSap/Name}"/>
-								<m:Label text="{i18n>mentorStatus}"/>
-								<m:Text text="{MentorStatus/Name}"/>
-								</f:content>
-							</f:SimpleForm>
-							<f:SimpleForm labelMinWidth="192" maxContainerCols="2" layout="ResponsiveGridLayout" columnsL="1" columnsM="1" columnsXL="1">
-								<f:title>
-									<core:Title text="{i18n>socialAccounts}"/>
-								</f:title>
-								<f:content>
-								<m:Label text="SCN"/>
-								<m:Link href="{ScnUrl}" text="{ScnUrl}" target="_blank"/>
-								<m:Label text="LinkedIn"/>
-								<m:Link href="{LinkedInUrl}" text="{LinkedInUrl}" target="_blank"/>
-								<m:Label text="Twitter"/>
-								<m:Text text="{TwitterId}"/>
-								<m:Label text="Facebook"/>
-								<m:Link href="{FacebookUrl}" text="{FacebookUrl}" target="_blank"/>
-								</f:content>
-							</f:SimpleForm>
+							<details:BlockExpertise />
+							<details:BlockTopics />
+							<details:BlockSoftskills />
 						</blocks>
 					</ObjectPageSubSection>
 				</subSections>
 			</ObjectPageSection>
- -->
+
+			<!-- 			<ObjectPageSection title="About" importance="Medium">
+                            <subSections>
+                                <ObjectPageSubSection title="Connect">
+                                    <blocks>
+                                        <f:SimpleForm labelMinWidth="192" maxContainerCols="2" layout="ResponsiveGridLayout" columnsL="1" columnsM="1" columnsXL="1">
+                                            <f:title>
+                                                <core:Title text="{i18n>status}"/>
+                                            </f:title>
+                                            <f:content>
+                                            <m:Label text="{i18n>relSAP}"/>
+                                            <m:Text text="{RelationshipToSap/Name}"/>
+                                            <m:Label text="{i18n>mentorStatus}"/>
+                                            <m:Text text="{MentorStatus/Name}"/>
+                                            </f:content>
+                                        </f:SimpleForm>
+                                        <f:SimpleForm labelMinWidth="192" maxContainerCols="2" layout="ResponsiveGridLayout" columnsL="1" columnsM="1" columnsXL="1">
+                                            <f:title>
+                                                <core:Title text="{i18n>socialAccounts}"/>
+                                            </f:title>
+                                            <f:content>
+                                            <m:Label text="SCN"/>
+                                            <m:Link href="{ScnUrl}" text="{ScnUrl}" target="_blank"/>
+                                            <m:Label text="LinkedIn"/>
+                                            <m:Link href="{LinkedInUrl}" text="{LinkedInUrl}" target="_blank"/>
+                                            <m:Label text="Twitter"/>
+                                            <m:Text text="{TwitterId}"/>
+                                            <m:Label text="Facebook"/>
+                                            <m:Link href="{FacebookUrl}" text="{FacebookUrl}" target="_blank"/>
+                                            </f:content>
+                                        </f:SimpleForm>
+                                    </blocks>
+                                </ObjectPageSubSection>
+                            </subSections>
+                        </ObjectPageSection>
+             -->
  			<ObjectPageSection title="Media" importance="Medium">
 				<subSections>
 					<ObjectPageSubSection title="Media and Documents">
@@ -117,7 +129,7 @@
 			</ObjectPageSection>
 
 		</sections>
-		
+
 	</ObjectPageLayout>
-	
+
 </mvc:View>

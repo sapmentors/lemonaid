@@ -1,3 +1,5 @@
+/* global sap, $, Promise */
+
 sap.ui.define([
 	"sap/ui/model/json/JSONModel",
 	"sap/ui/Device"
@@ -18,10 +20,10 @@ sap.ui.define([
             oModel._loaded = new Promise(function(resolve) {
     		    odataModel.read("/Configuration", {
     		    	success: function(data) {
-    		    		jQuery.each(data.results, function(idx, value) {
+    		    		$.each(data.results, function(idx, value) {
                             if (value.Name === "false") { value.Name = false; }
                             if (value.Name === "true") { value.Name = true; }
-    		    			oModel.setProperty("/" + value.Id, value.Name)
+    		    			oModel.setProperty("/" + value.Id, value.Name);
     		    		});
                         resolve();
     		    	}

@@ -1,3 +1,5 @@
+/* global sap */
+
 // In mock mode, the mock server intercepts HTTP calls and provides fake output to the
 // client without involving a backend system. But special backend logic, such as that
 // performed by function imports, is not automatically known to the mock server. To handle

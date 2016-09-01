@@ -1,0 +1,33 @@
+<mvc:View
+		controllerName="com.sap.mentors.lemonaid.controller.BaseBlock"
+		xmlns:mvc="sap.ui.core.mvc"
+		xmlns:forms="sap.ui.layout.form"
+		xmlns:core="sap.ui.core"
+		xmlns="sap.m">
+
+	<forms:SimpleForm
+			labelSpanL="4"
+			labelSpanM="4"
+			labelSpanS="4"
+			emptySpanL="0"
+			emptySpanM="0"
+			emptySpanS="0"
+			maxContainerCols="2" layout="ResponsiveLayout"
+			width="100%">
+
+		<core:Title text="{i18n>sapExpertise}" />
+
+		<Label text="" visible="{= !${SapExpertise1Id} }" />
+		<Text text="{i18n>nodata}" visible="{= !${SapExpertise1Id} }" />
+
+		<Label text="{i18n>expertise} 1" visible="{= !!${SapExpertise1Id} }" />
+		<Text text="{SapExpertise1/Name}" visible="{= !!${SapExpertise1Id} }" />
+
+		<Label text="{i18n>expertise} 2" visible="{= !!${SapExpertise2Id} }" />
+		<Text text="{SapExpertise2/Name}" visible="{= !!${SapExpertise2Id} }" />
+
+		<Label text="{i18n>expertise} 3" visible="{= !!${SapExpertise3Id} }" />
+		<Text text="{SapExpertise3/Name}" visible="{= !!${SapExpertise3Id} }" />
+
+	</forms:SimpleForm>
+</mvc:View>

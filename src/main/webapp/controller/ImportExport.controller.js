@@ -1,3 +1,5 @@
+/* global sap, jQuery, Papa, Promise */
+
 sap.ui.define([
 	"com/sap/mentors/lemonaid/controller/BaseController",
 	"sap/ui/model/json/JSONModel",
@@ -94,12 +96,12 @@ sap.ui.define([
 				var reader = new FileReader();
 				reader.onload = function(evn) {
 					var strCSV = evn.target.result; //string in CSV
-					var lines = strCSV.split('\n');
-					lines[0] = lines[0].replace(/ /g,'');
-					strCSV = lines.join('\n');
+					var lines = strCSV.split("\n");
+					lines[0] = lines[0].replace(/ /g,"");
+					strCSV = lines.join("\n");
 					var imp = Papa.parse(strCSV, { header: true });
 					jQuery.each(imp.errors, function(idx, row) {
-						row.title = that.i18n.getText("importReportTitle", [ row.type.replace(/([A-Z0-9])/g, ' $1').trim(), row.row + 2 ]);
+						row.title = that.i18n.getText("importReportTitle", [ row.type.replace(/([A-Z0-9])/g, " $1").trim(), row.row + 2 ]);
 						row.priority = "High";
 						errorCount++;
 					});
@@ -112,8 +114,8 @@ sap.ui.define([
 						errorCount++;
 					} else {
 						jQuery.each(imp.meta.fields, function(idx, field) {
-							if (!that._isValidField(field.replace(/\s+/g, ''))) {
-								var type = "ErrorIdentifyingField";
+							if (!that._isValidField(field.replace(/\s+/g, ""))) {
+								// RvhHof var not used? var type = "ErrorIdentifyingField";
 								imp.errors.push({
 									title: that.i18n.getText("importErrorIdentifyingFieldTitle", field),
 									message: that.i18n.getText("importErrorIdentifyingField", field),
@@ -144,7 +146,7 @@ sap.ui.define([
 											} else {
 												imp.errors.push({
 													type: "ErrorIdentifyingMentor",
-													title: that.i18n.getText("importReportTitle", [ row.type.replace(/([A-Z0-9])/g, ' $1').trim(), idx ]),
+													title: that.i18n.getText("importReportTitle", [ row.type.replace(/([A-Z0-9])/g, " $1").trim(), idx ]),
 													message: that.i18n.getText("importErrorIdentifyingMentor", [ row.Id ]),
 													priority: "High"
 												});
@@ -160,7 +162,7 @@ sap.ui.define([
 							if (errorCount + warningCount > 0) {
 								imp.errors.push({
 									title: that.i18n.getText("importReportErrorsTitle"),
-									message: that.i18n.getText("importReportErrors", [ imp.data.length, errorcount, warningCount ]) +
+									message: that.i18n.getText("importReportErrors", [ imp.data.length, errorCount, warningCount ]) +
 											 (warningCount > 0 ? " " + that.i18n.getText("importReportErrorsCanContinue") : ""),
 									priority: errorCount > 0 ? "High" : "Medium"
 								});
@@ -203,7 +205,7 @@ sap.ui.define([
             	if (!row.__skip) {
 					var object = {};
 					jQuery.each(row, function(fieldName, field) {
-						fieldName = fieldName.replace(/\s+/g, '');
+						fieldName = fieldName.replace(/\s+/g, "");
 						if (that._isValidField(fieldName)) {
 							object[fieldName] = field;
 						}
@@ -300,7 +302,7 @@ sap.ui.define([
 							if (annotation.term === "UI.FieldGroup") {
 								jQuery.each(annotation.extensions, function(extensionIdx, extension) {
 									if (extension.name === "Qualifier") {
-										fieldGroup = { Id: extension.value, Name: extension.value.replace(/([A-Z0-9])/g, ' $1').trim(), Fields: [] };
+										fieldGroup = { Id: extension.value, Name: extension.value.replace(/([A-Z0-9])/g, " $1").trim(), Fields: [] };
 										fieldGroups.push(fieldGroup);
 									}
 								});
@@ -311,7 +313,7 @@ sap.ui.define([
 												if (record.type === "UI.DataField") {
 													jQuery.each(record.propertyValue, function(propValueIdx, propValue) {
 														if (propValue.property === "Value") {
-															fieldGroup.Fields.push( { Id: propValue.path, Name: propValue.path.replace(/([A-Z0-9])/g, ' $1').trim(), Value: propValue.path === "Id" } );
+															fieldGroup.Fields.push( { Id: propValue.path, Name: propValue.path.replace(/([A-Z0-9])/g, " $1").trim(), Value: propValue.path === "Id" } );
 														}
 													});
 												}

@@ -1,3 +1,5 @@
+/* global sap, $, jQuery */
+
 sap.ui.define([
 	"sap/ui/core/UIComponent",
 	"sap/ui/Device",
@@ -24,10 +26,10 @@ sap.ui.define([
 			UIComponent.prototype.init.apply(this, arguments);
 
 			// Remove the splash screen
-		    $('.loader-icon').removeClass('spinning-cog').addClass('shrinking-cog');
-		    $('.loader-background').fadeOut();
-		    $('.loader-text').fadeOut();
-		    window.setTimeout(function() { $('#loader').remove() }, 400);
+		    $(".loader-icon").removeClass("spinning-cog").addClass("shrinking-cog");
+		    $(".loader-background").fadeOut();
+		    $(".loader-text").fadeOut();
+		    window.setTimeout(function() { $("#loader").remove(); }, 400);
 
 			// Register Google Maps
 			var sPath = jQuery.sap.getResourcePath("openui5/googlemaps/loadScripts");
@@ -56,7 +58,7 @@ sap.ui.define([
             ), "menu");
 
 			//TODO - get real key this is W3Cs
-       		gmapScriptsUtil.setApiKey('AIzaSyCaQHRFcYj9WY2yU_bfaf1pW5MWpszjWrM');
+       		gmapScriptsUtil.setApiKey("AIzaSyCaQHRFcYj9WY2yU_bfaf1pW5MWpszjWrM");
 
 			// create the views based on the url/hash
 			this.getRouter().initialize();

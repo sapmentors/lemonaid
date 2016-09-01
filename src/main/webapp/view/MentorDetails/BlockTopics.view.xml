@@ -1,0 +1,36 @@
+<mvc:View
+		controllerName="com.sap.mentors.lemonaid.controller.BaseBlock"
+		xmlns:mvc="sap.ui.core.mvc"
+		xmlns:forms="sap.ui.layout.form"
+		xmlns:core="sap.ui.core"
+		xmlns="sap.m">
+
+	<forms:SimpleForm
+			labelSpanL="4"
+			labelSpanM="4"
+			labelSpanS="4"
+			emptySpanL="0"
+			emptySpanM="0"
+			emptySpanS="0"
+			maxContainerCols="2" layout="ResponsiveLayout"
+			width="100%">
+
+		<core:Title text="{i18n>sapTopics}" />
+
+		<Label text="" visible="{= !${Topic1Id} }" />
+		<Text text="{i18n>nodata}" visible="{= !${Topic1Id} }" />
+
+		<Label text="{i18n>topic} 1" visible="{= !!${Topic1Id} }" />
+		<Text text="{Topic1/Name}" visible="{= !!${Topic1Id} }" />
+
+		<Label text="{i18n>topic} 2" visible="{= !!${Topic2Id} }" />
+		<Text text="{Topic2/Name}" visible="{= !!${Topic2Id} }" />
+
+		<Label text="{i18n>topic} 3" visible="{= !!${Topic3Id} }" />
+		<Text text="{Topic3/Name}" visible="{= !!${Topic3Id} }" />
+
+		<Label text="{i18n>topic} 4" visible="{= !!${Topic4Id} }" />
+		<Text text="{Topic4/Name}" visible="{= !!${Topic4Id} }" />
+
+	</forms:SimpleForm>
+</mvc:View>
