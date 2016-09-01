@@ -1,3 +1,5 @@
+/* global sap */
+
 sap.ui.define([
     "com/sap/mentors/lemonaid/controller/BaseController",
     "sap/ui/model/json/JSONModel",
@@ -9,10 +11,10 @@ sap.ui.define([
     return BaseController.extend("com.sap.mentors.lemonaid.controller.Attachments", {
 
     	busyDialog: new BusyDialog(),
-    	
+
     	getComponent: function(control) {
-    		return ( control instanceof sap.ui.core.mvc.View && 
-    			     control.getController() && 
+    		return ( control instanceof sap.ui.core.mvc.View &&
+    			     control.getController() &&
     			     control.getController().getOwnerComponent() ) ?
     						control.getController().getOwnerComponent() :
     						( control.getParent() ? this.getComponent(control.getParent()) : null );
@@ -30,9 +32,9 @@ sap.ui.define([
 			this.busyDialog.setText(i18n.getText("uploadingAttachment", [ oEvent.getParameter("fileName") ]));
 			this.busyDialog.open();
 		},
-		
+
 		onUploadComplete: function(event) {
-			var result = event.getParameter("mParameters"); 
+			var result = event.getParameter("mParameters");
 			if (result.status >= 400) {
 				var i18n = this.getView().getModel("i18n").getResourceBundle();
 				var component = this.getComponent(this.getView());
@@ -45,11 +47,11 @@ sap.ui.define([
 			this.getView().getModel().refresh();
 			this.busyDialog.close();
 		},
-		
+
 		onFileDeleted: function(event) {
 			this.getView().getModel().remove(event.getParameter("item").getBindingContext().getPath());
 		},
-		
+
 		onDownloadItems: function(oEvent){
 			var oUploadCollection = this.getView().byId("UploadCollection");
 			var aSelectedItems = oUploadCollection.getSelectedItems();

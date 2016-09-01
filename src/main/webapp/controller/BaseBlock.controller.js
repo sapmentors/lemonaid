@@ -1,3 +1,5 @@
+/* global sap */
+
 sap.ui.define([
     "com/sap/mentors/lemonaid/controller/BaseController",
     "com/sap/mentors/lemonaid/util/formatters"

@@ -1,9 +1,11 @@
+/* global sap */
+
 sap.ui.define([
     "com/sap/mentors/lemonaid/controller/BaseController",
     "sap/ui/model/Filter",
     "sap/ui/model/FilterOperator",
     "sap/ui/model/json/JSONModel"
-], function(BaseController, Filter, FilterOperator, JSONModel) {
+], function(BaseController) {
     "use strict";
 
     return BaseController.extend("com.sap.mentors.lemonaid.controller.Main", {
@@ -55,7 +57,7 @@ sap.ui.define([
 		},
 
 		onMenuSelect: function(event) {
-            this.router.navTo(event.getParameter('item').getKey(), null, true);
+            this.router.navTo(event.getParameter("item").getKey(), null, true);
             if (this.device.getProperty("/system/phone")) {
  				this.toolPage.setSideExpanded(false);
             }

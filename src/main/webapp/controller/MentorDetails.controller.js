@@ -7,7 +7,7 @@ sap.ui.define([
     "use strict";
 
     return BaseController.extend("com.sap.mentors.lemonaid.controller.MentorDetails", {
-//TEST
+
         onInit: function() {
         	this.view = this.getView();
         	this.component = this.getComponent();

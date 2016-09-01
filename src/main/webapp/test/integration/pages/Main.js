@@ -1,3 +1,5 @@
+/* global sap */
+
 sap.ui.define([
         "sap/ui/test/Opa5",
         "test/integration/pages/Common",

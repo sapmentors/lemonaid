@@ -1,3 +1,5 @@
+/* global sap */
+
 sap.ui.define([
 		"sap/ui/base/Object",
 		"sap/m/MessageBox"
@@ -15,7 +17,7 @@ sap.ui.define([
 			 */
 			constructor : function (oComponent) {
 				this._oResourceBundle = oComponent.getModel("i18n").getResourceBundle();
-				this._oComponent = oComponent;
+				this._oComponent = oComponent; //TODO: RvhHof : Variable 'this._oComponent' defined but seems never used?
 				this._oModel = oComponent.getModel();
 				this._bMessageOpen = false;
 				this._sErrorText = this._oResourceBundle.getText("errorText");
