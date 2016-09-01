@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<title>Hello Twitter</title>
+		<style>
+			body {
+			    font-family: Arial,Helvetica,sans-serif;
+			    color: black;
+			    background-color: #ffffff;
+			    margin: 3em;
+			}
+			.button {
+			    background-color: #4CAF50; /* Green */
+			    border: none;
+			    color: white;
+			    padding: 15px 32px;
+			    text-align: center;
+			    text-decoration: none;
+			    display: inline-block;
+			    font-size: 16px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Connect to Twitter</h1>
+		<span th:if="${social_provider_error}">Provider error (maybe you need to configure the app id and secret?)</span>
+		<form action="/connect/twitter" method="POST">
+			<div class="formInfo">
+				<p>You aren't connected to Twitter yet. Click the button to connect this application with your Twitter account.</p>
+			</div>
+			<p><button class="button" type="submit">Connect to Twitter</button></p>
+		</form>
+	</body>
+</html>
