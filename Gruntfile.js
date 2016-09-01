@@ -117,11 +117,11 @@ module.exports = function(grunt) {
 	// grunt.registerTask("default", [ "openui5_preload"]);
 
 	grunt.registerTask("validate", [
-		"jshint",   //TODO: Make all JS files valid before enabling this!
+		"jshint",
 		"xml_validator"]);
 
 	grunt.registerTask("default", [
-		"jshint",   //TODO: Make all JS files valid before enabling this!
+		"jshint",
 		"xml_validator",
 		"configureProxies:server",
         "connect:server",
