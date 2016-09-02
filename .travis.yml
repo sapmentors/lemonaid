@@ -1,5 +1,5 @@
 language: java
-before_script:
+before_install:
   - npm install
   - npm install grunt-cli -g
   - grunt openui5_preload
