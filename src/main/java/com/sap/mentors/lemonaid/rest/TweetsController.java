@@ -21,7 +21,7 @@ public class TweetsController {
 	private static final Logger log = LoggerFactory.getLogger(TweetsController.class);
 
     @RequestMapping(method = RequestMethod.POST)
-    SearchResults getTweets(HttpServletRequest request) {
+    Tweets getTweets(HttpServletRequest request) {
 	    if (twitterClient.isAuthenticated()) {
 	    	log.warn("Retrieving tweets");
 	    	String host = request.getParameter("request[host]");
@@ -37,8 +37,7 @@ public class TweetsController {
 			} catch (NumberFormatException e) {
 				int count = 5;
 			}
-	    	SearchResults results = twitterClient.search(query);
-	    	return results;
+	    	return new Tweets(twitterClient.search(query));
 	    } else {
 	    	log.error("Twitter client not connected, Pleasec connect using /connect/twitter)");
 	    }
