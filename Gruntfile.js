@@ -100,7 +100,7 @@ module.exports = function(grunt) {
 					livereload: 35729,
 					keepAlive:true
 				},
-				tasks: ["test"],
+				tasks: ["validate"],
 				files: ["<%= jshint.files %>", "<%= xml_validator.your_target.src %>"]
 			},
         }
