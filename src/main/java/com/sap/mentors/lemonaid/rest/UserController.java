@@ -19,8 +19,6 @@ import com.sap.security.um.user.UserProvider;
 @RequestMapping("/userapi/currentUser")
 public class UserController {
 
-	@Autowired TwitterClient twitterClient;
-
 	private static final Logger log = LoggerFactory.getLogger(UserController.class);
 
     @RequestMapping(method = RequestMethod.GET)
@@ -34,8 +32,6 @@ public class UserController {
 			    // Read the currently logged in user from the user storage
 			    com.sap.security.um.user.User user = users.getUser(userPrincipal.getName());
 	
-			    twitterClient.isAuthenticated();
-			    
 			    // Print the user name and email
 			    return new User(
 			    		userPrincipal.getName(),

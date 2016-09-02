@@ -3,6 +3,7 @@ package com.sap.mentors.lemonaid.client;
 import javax.inject.Inject;
 
 import org.springframework.social.connect.ConnectionRepository;
+import org.springframework.social.twitter.api.SearchResults;
 import org.springframework.social.twitter.api.Twitter;
 import org.springframework.stereotype.Component;
 
@@ -20,6 +21,10 @@ public class TwitterClient {
 	
 	public boolean isAuthenticated() {
 		return connectionRepository.findPrimaryConnection(Twitter.class) != null;
+	}
+	
+	public SearchResults search(String query) { 
+		return twitter.searchOperations().search(query);
 	}
 	
 }
