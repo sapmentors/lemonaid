@@ -9,6 +9,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.sap.mentors.lemonaid.client.TwitterClient;
 
 @RestController
@@ -21,8 +25,10 @@ public class TweetsController {
 
     @SuppressWarnings("unused")
 	@RequestMapping(method = RequestMethod.POST)
-    Tweets getTweets(HttpServletRequest request) {
+    String getTweets(HttpServletRequest request) {
+    	
 	    if (twitterClient.isAuthenticated()) {
+	    	
 	    	log.warn("Retrieving tweets");
 	    	String host = request.getParameter("request[host]");
 	    	String url = request.getParameter("request[url]");
@@ -37,7 +43,16 @@ public class TweetsController {
 			} catch (NumberFormatException e) {
 				int count = 5;
 			}
-	    	return new Tweets(twitterClient.search(query));
+	    	
+	    	ObjectMapper mapper = new ObjectMapper();
+	        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.CAMEL_CASE_TO_LOWER_CASE_WITH_UNDERSCORES);
+	        mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL); 
+	        try {
+				return mapper.writeValueAsString(new Tweets(twitterClient.search(query)));
+			} catch (JsonProcessingException e) {
+				e.printStackTrace();
+			}
+
 	    } else {
 	    	log.error("Twitter client not connected, Pleasec connect using /connect/twitter)");
 	    }
