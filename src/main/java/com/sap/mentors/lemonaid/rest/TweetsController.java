@@ -19,7 +19,8 @@ public class TweetsController {
 
 	private static final Logger log = LoggerFactory.getLogger(TweetsController.class);
 
-    @RequestMapping(method = RequestMethod.POST)
+    @SuppressWarnings("unused")
+	@RequestMapping(method = RequestMethod.POST)
     Tweets getTweets(HttpServletRequest request) {
 	    if (twitterClient.isAuthenticated()) {
 	    	log.warn("Retrieving tweets");

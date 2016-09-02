@@ -13,31 +13,57 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 @JsonInclude(Include.NON_NULL)
 public class Tweets {
 
-	private List<Tweet> statuses;
-	private SearchMetadata search_metadata;
-
+	private Response response;
+	private String message;
+	
 	public Tweets(SearchResults results) {
-		for (int i = 0; i < results.getTweets().size(); i++) {
-			if (statuses == null) this.statuses = new ArrayList<Tweet>(); 
-			this.statuses.add(results.getTweets().get(i));
+		this.response = new Response(results);
+	}
+	
+	public Response getResponse() {
+		return response;
+	}
+
+	public void setResponse(Response response) {
+		this.response = response;
+	}
+
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public class Response {
+		
+		private List<Tweet> statuses;
+		private SearchMetadata search_metadata;
+
+		public Response(SearchResults results) {
+			for (int i = 0; i < results.getTweets().size(); i++) {
+				if (statuses == null) this.statuses = new ArrayList<Tweet>(); 
+				this.statuses.add(results.getTweets().get(i));
+			}
+			search_metadata = results.getSearchMetadata();
 		}
-		search_metadata = results.getSearchMetadata();
-	}
+	
+		public List<Tweet> getStatuses() {
+			return statuses;
+		}
+	
+		public void setStatuses(List<Tweet> statuses) {
+			this.statuses = statuses;
+		}
+	
+		public SearchMetadata getSearch_metadata() {
+			return search_metadata;
+		}
+	
+		public void setSearch_metadata(SearchMetadata search_metadata) {
+			this.search_metadata = search_metadata;
+		}
 
-	public List<Tweet> getStatuses() {
-		return statuses;
 	}
-
-	public void setStatuses(List<Tweet> statuses) {
-		this.statuses = statuses;
-	}
-
-	public SearchMetadata getSearch_metadata() {
-		return search_metadata;
-	}
-
-	public void setSearch_metadata(SearchMetadata search_metadata) {
-		this.search_metadata = search_metadata;
-	}
-
 }
