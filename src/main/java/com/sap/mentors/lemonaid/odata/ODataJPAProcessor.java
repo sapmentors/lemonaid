@@ -25,14 +25,21 @@ import org.apache.olingo.odata2.core.uri.expression.FilterParserImpl;
 import org.apache.olingo.odata2.jpa.processor.api.ODataJPAContext;
 import org.apache.olingo.odata2.jpa.processor.core.ODataJPAContextImpl;
 import org.apache.olingo.odata2.jpa.processor.core.ODataJPAProcessorDefault;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.sap.mentors.lemonaid.entities.Config;
 import com.sap.mentors.lemonaid.entities.Mentor;
+import com.sap.mentors.lemonaid.rest.User;
+import com.sap.security.um.service.UserManagementAccessor;
+import com.sap.security.um.user.UserProvider;
 
 public class ODataJPAProcessor extends ODataJPAProcessorDefault {
 
 	private final MediaProcessor mediaProcessor = new MediaProcessor();
 	private HttpServletRequest batchRequest = null;
+
+	private static final Logger log = LoggerFactory.getLogger(ODataJPAProcessor.class);
 
 	public ODataJPAProcessor(ODataJPAContext oDataJPAContext) {
 		super(oDataJPAContext);
@@ -60,18 +67,49 @@ public class ODataJPAProcessor extends ODataJPAProcessorDefault {
     	return isInRole("ProjectMember");
 	}
 	
-	private String currentUser() {
+	private User currentUser() {
     	Principal userPrincipal = getRequest().getUserPrincipal();
-		return userPrincipal == null ? null : userPrincipal.getName(); 
+		if (userPrincipal != null) {
+            try {
+			    // UserProvider provides access to the user storage
+			    UserProvider users = UserManagementAccessor.getUserProvider();
+	
+			    // Read the currently logged in user from the user storage
+			    com.sap.security.um.user.User user = users.getUser(userPrincipal.getName());
+	
+			    // Print the user name and email
+			    return new User(
+			    		userPrincipal.getName(),
+			    		user.getAttribute("firstname"),
+			    		user.getAttribute("lastname"),
+			    		user.getAttribute("email"),
+			    		user.getAttribute("firstname") + " " + user.getAttribute("lastname") + " (" + userPrincipal.getName() + ")"
+			    	);
+			} catch (Exception e) {
+				log.error("Error: " + e.getMessage());
+			}			
+	        return new User(userPrincipal.getName());
+		}
+        return null;
 	}
 	
 	private Object enrichEntity(EdmEntityType entityType, Object jpaEntity) throws ODataException {
+		User user = currentUser();
 		if (entityType.getName().equals("Mentor") && jpaEntity != null) {
 			Mentor mentor = (Mentor) jpaEntity;
 			mentor.setMayEdit(
-					isProjectMember() ||
-					mentor.getUserId() != null && currentUser() != null && mentor.getUserId().toUpperCase().equals(currentUser().toUpperCase())
+					( isProjectMember() ) ||
+					( user != null && user.getName() != null && mentor.getUserId() != null && mentor.getUserId().toUpperCase().equals(user.getName().toUpperCase()) ) ||
+					( user != null && user.getEmail() != null && mentor.getEmail1() != null && mentor.getEmail1().toUpperCase().equals(user.getEmail().toUpperCase()) ) || 
+					( user != null && user.getEmail() != null && mentor.getEmail2() != null && mentor.getEmail2().toUpperCase().equals(user.getEmail().toUpperCase()) ) 
 				);
+			if (mentor.getUserId() == null && user != null && user.getName() != null && user.getName().length() > 0) {
+				if (( user != null && user.getEmail() != null && mentor.getEmail1() != null && mentor.getEmail1().toUpperCase().equals(user.getEmail().toUpperCase()) ) || 
+					( user != null && user.getEmail() != null && mentor.getEmail2() != null && mentor.getEmail2().toUpperCase().equals(user.getEmail().toUpperCase()) )) {
+					mentor.setUserId(user.getName());
+					oDataJPAContext.getEntityManager().persist(mentor);
+				}
+			}
 			return mentor;
 		}
 		return jpaEntity;
