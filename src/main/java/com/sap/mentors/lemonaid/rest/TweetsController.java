@@ -26,37 +26,29 @@ public class TweetsController {
     @SuppressWarnings("unused")
 	@RequestMapping(method = RequestMethod.POST)
     String getTweets(HttpServletRequest request) {
-    	
 	    if (twitterClient.isAuthenticated()) {
-	    	
 	    	log.warn("Retrieving tweets");
+			boolean includeEntities = true;
+			int count = 7;
 	    	String host = request.getParameter("request[host]");
 	    	String url = request.getParameter("request[url]");
 	    	String query = request.getParameter("request[parameters][q]");
-	    	try {
-				boolean includeEntities = Integer.parseInt(request.getParameter("request[parameters][include_entities]")) > 0;
-			} catch (NumberFormatException e) {
-				boolean includeEntities = true;
-			}
-	    	try {
-				int count = Integer.parseInt(request.getParameter("request[parameters][count]"));
-			} catch (NumberFormatException e) {
-				int count = 5;
-			}
-	    	
+	    	try { includeEntities = Integer.parseInt(request.getParameter("request[parameters][include_entities]")) > 0; } catch (NumberFormatException e) {}
+	    	try { count = Integer.parseInt(request.getParameter("request[parameters][count]")); } catch (NumberFormatException e) {}
 	    	ObjectMapper mapper = new ObjectMapper();
 	        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.CAMEL_CASE_TO_LOWER_CASE_WITH_UNDERSCORES);
 	        mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL); 
 	        try {
-				return mapper.writeValueAsString(new Tweets(twitterClient.search(query)));
+				return mapper.writeValueAsString(new Tweets(twitterClient.search(query), count));
 			} catch (JsonProcessingException e) {
 				e.printStackTrace();
+				return e.getMessage();
 			}
-
 	    } else {
-	    	log.error("Twitter client not connected, Pleasec connect using /connect/twitter)");
+	    	String msg = "Twitter client not connected, Pleasec connect using /connect/twitter)"; 
+	    	log.error(msg);
+	    	return msg;
 	    }
-	    return null;
     }
 
 }

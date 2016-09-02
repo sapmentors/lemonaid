@@ -12,8 +12,8 @@ public class Tweets {
 	private Response response;
 	private String message;
 	
-	public Tweets(SearchResults results) {
-		this.response = new Response(results);
+	public Tweets(SearchResults results, int count) {
+		this.response = new Response(results, count);
 	}
 	
 	public Response getResponse() {
@@ -37,10 +37,11 @@ public class Tweets {
 		private List<Tweet> statuses;
 		private SearchMetadata search_metadata;
 
-		public Response(SearchResults results) {
+		public Response(SearchResults results, int count) {
 			for (int i = 0; i < results.getTweets().size(); i++) {
 				if (statuses == null) this.statuses = new ArrayList<Tweet>(); 
 				this.statuses.add(results.getTweets().get(i));
+				if (i >= count - 1) break;
 			}
 			search_metadata = results.getSearchMetadata();
 		}
