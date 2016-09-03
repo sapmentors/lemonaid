@@ -4,7 +4,7 @@ import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.GregorianCalendar;
+import java.util.Calendar;
 
 import org.apache.olingo.odata2.api.ep.entry.ODataEntry;
 import org.apache.olingo.odata2.api.ep.feed.ODataFeed;
@@ -33,8 +33,20 @@ public class SitRegClient extends GenericODataClient {
 				event.setId(event.getSource() + "-" + event.getSourceId());
 				event.setName((String) entry.getProperties().get("Location"));
 				event.setLocation((String) entry.getProperties().get("Location"));
-				event.setStartDate(((GregorianCalendar) entry.getProperties().get("StartTime")).getTime());
-				event.setEndDate(((GregorianCalendar) entry.getProperties().get("EndTime")).getTime());
+				event.setStartDate((Calendar) entry.getProperties().get("StartTime"));
+				event.setEndDate((Calendar) entry.getProperties().get("EndTime"));
+//				Okay, this is really kinda sucky. Unfortunately the SitReg app sometimes has the date included in the StartTime/EndTime and sometimes doesn't.
+//				Hopefully it'll be possible to remove this in the future
+				if (event.getStartDate().getTime().getTime() < 86400000) {
+					Calendar date = event.getStartDate();
+					date.add(Calendar.MINUTE, (int) (((Calendar) entry.getProperties().get("EventDate")).getTime().getTime() / 1000 / 60));
+					event.setStartDate(date);
+				}
+				if (event.getEndDate().getTime().getTime() < 86400000) {
+					Calendar date = event.getEndDate();
+					date.add(Calendar.MINUTE, (int) (((Calendar) entry.getProperties().get("EventDate")).getTime().getTime() / 1000 / 60));
+					event.setEndDate(date);
+				}
 				event.setUrl((String) entry.getProperties().get("HomepageURL"));
 				events.add(event);
 			}

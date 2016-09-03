@@ -2,7 +2,7 @@ package com.sap.mentors.lemonaid.entities;
 
 import static javax.persistence.TemporalType.TIMESTAMP;
 
-import java.util.Date;
+import java.util.Calendar;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -19,8 +19,8 @@ public class Event {
     private String sourceId;
     private String name;
     private String location;
-	@Temporal(TIMESTAMP) private Date startDate;
-	@Temporal(TIMESTAMP) private Date endDate;
+	@Temporal(TIMESTAMP) private Calendar startDate;
+	@Temporal(TIMESTAMP) private Calendar endDate;
 	private String url;
 	
 	public String getId() {
@@ -63,19 +63,19 @@ public class Event {
 		this.location = location;
 	}
 	
-	public Date getStartDate() {
+	public Calendar getStartDate() {
 		return startDate;
 	}
 	
-	public void setStartDate(Date startDate) {
+	public void setStartDate(Calendar startDate) {
 		this.startDate = startDate;
 	}
 	
-	public Date getEndDate() {
+	public Calendar getEndDate() {
 		return endDate;
 	}
 	
-	public void setEndDate(Date endDate) {
+	public void setEndDate(Calendar endDate) {
 		this.endDate = endDate;
 	}
 	
