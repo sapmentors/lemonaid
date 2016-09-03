@@ -1,11 +1,11 @@
-<mvc:View 
-	controllerName="com.sap.mentors.lemonaid.controller.BaseBlock" 
-	xmlns:mvc="sap.ui.core.mvc" 
+<mvc:View
+	controllerName="com.sap.mentors.lemonaid.controller.BaseBlock"
+	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:forms="sap.ui.layout.form"
-	xmlns:core="sap.ui.core" 
-	xmlns:layout="sap.ui.layout" 
+	xmlns:core="sap.ui.core"
+	xmlns:layout="sap.ui.layout"
 	xmlns="sap.m">
- 
+
 	<forms:SimpleForm
 			labelSpanL="4"
 			labelSpanM="4"
@@ -15,30 +15,46 @@
 			emptySpanS="0"
 			maxContainerCols="2" layout="ResponsiveLayout"
 			width="100%">
-			
+
 		<core:Title text="{i18n>socialMedia}"></core:Title>
 
+		<Label text="{i18n>scn}" visible="{ui>/isEditMode}" />
+		<Input value="{ScnUrl}" visible="{ui>/isEditMode}"/>
 		<Label text="{i18n>scn}" visible="{= !!${ScnUrl} }" />
-		<Link text="{ScnUrl}" href="{ScnUrl}" target="_blank" visible="{= !!${ScnUrl} }" />
+		<Link text="{ScnUrl}" href="{ScnUrl}" target="_blank" visible="{= !!${ScnUrl} &amp;&amp; !${ui>/isEditMode} }" />
 
- 		<Label text="{i18n>twitter}" visible="{= !!${TwitterId} }" />
-		<Link text="{TwitterId}" href="https://www.twitter.com/{TwitterId}" target="_blank" visible="{= !!${TwitterId} }" />
+ 		<Label text="{i18n>twitter}" visible="{ui>/isEditMode}" />
+		<Input value="{TwitterId}" visible="{ui>/isEditMode}"/>
+		<Label text="{i18n>twitter}" visible="{= !!${TwitterId} }" />
+		<Link text="{TwitterId}" href="https://www.twitter.com/{TwitterId}" target="_blank" visible="{= !!${TwitterId} &amp;&amp; !${ui>/isEditMode} }" />
 
+		<Label text="{i18n>linkedIn}" visible="{ui>/isEditMode}" />
+		<Input value="{LinkedInUrl}" visible="{ui>/isEditMode}"/>
 		<Label text="{i18n>linkedIn}" visible="{= !!${LinkedInUrl} }" />
-		<Link text="{LinkedInUrl}" href="{LinkedInUrl}" target="_blank" visible="{= !!${LinkedInUrl} }" />
+		<Link text="{LinkedInUrl}" href="{LinkedInUrl}" target="_blank" visible="{= !!${LinkedInUrl} &amp;&amp; !${ui>/isEditMode} }" />
 
+		<Label text="{i18n>xing}" visible="{ui>/isEditMode}" />
+		<Input value="{XingUrl}" visible="{ui>/isEditMode}"/>
 		<Label text="{i18n>xing}" visible="{= !!${XingUrl} }" />
-		<Link text="{XingUrl}" href="{XingUrl}" target="_blank" visible="{= !!${XingUrl} }" />
+		<Link text="{XingUrl}" href="{XingUrl}" target="_blank" visible="{= !!${XingUrl} &amp;&amp; !${ui>/isEditMode} }" />
 
+		<Label text="{i18n>facebook}" visible="{ui>/isEditMode}" />
+		<Input value="{FacebookUrl}" visible="{ui>/isEditMode}"/>
 		<Label text="{i18n>facebook}" visible="{= !!${FacebookUrl} }" />
-		<Link text="{FacebookUrl}" href="{FacebookUrl}" target="_blank" visible="{= !!${FacebookUrl} }" />
+		<Link text="{FacebookUrl}" href="{FacebookUrl}" target="_blank" visible="{= !!${FacebookUrl} &amp;&amp; !${ui>/isEditMode} }" />
 
-		<Label text="{i18n>email}" visible="{= !!${Email1} &amp;&amp; !!${Email2} }" />
+		<Label text="{i18n>email}" visible="{= (!!${Email1} || !!${Email2}) &amp;&amp; !${ui>/isEditMode} }" />
 		<layout:VerticalLayout>
-			<Link text="{Email1}" href="mailto:{Email1}" target="_blank" visible="{= !!${Email1} }" />
-			<Link text="{Email2}" href="mailto:{Email2}" target="_blank" visible="{= !!${Email2} }" />
+			<Link text="{Email1}" href="mailto:{Email1}" target="_blank" visible="{= !!${Email1} &amp;&amp; !${ui>/isEditMode} }" />
+			<Link text="{Email2}" href="mailto:{Email2}" target="_blank" visible="{= !!${Email2} &amp;&amp; !${ui>/isEditMode} }" />
 		</layout:VerticalLayout>
-		
+
+		<Label text="{i18n>email} 1" visible="{ui>/isEditMode}" />
+		<Input value="{Email1}" visible="{ui>/isEditMode}"/>
+
+		<Label text="{i18n>email} 2" visible="{ui>/isEditMode}" />
+		<Input value="{Email2}" visible="{ui>/isEditMode}"/>
+
 
 	</forms:SimpleForm>
 </mvc:View>
