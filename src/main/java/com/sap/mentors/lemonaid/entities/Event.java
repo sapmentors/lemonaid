@@ -22,6 +22,7 @@ public class Event {
 	@Temporal(TIMESTAMP) private Calendar startDate;
 	@Temporal(TIMESTAMP) private Calendar endDate;
 	private String url;
+	private String deepUrl;
 	
 	public String getId() {
 		return id;
@@ -87,10 +88,19 @@ public class Event {
 		this.url = url;
 	}
 
+	public String getDeepUrl() {
+		return deepUrl;
+	}
+
+	public void setDeepUrl(String deepUrl) {
+		this.deepUrl = deepUrl;
+	}
+
 	@Override
 	public String toString() {
 		return "Event [id=" + id + ", source=" + source + ", sourceId=" + sourceId + ", name=" + name + ", location="
-				+ location + ", startDate=" + startDate + ", endDate=" + endDate + ", url=" + url + "]";
+				+ location + ", startDate=" + startDate + ", endDate=" + endDate + ", url=" + url + ", deepUrl="
+				+ deepUrl + "]";
 	}
 
 }
