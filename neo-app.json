@@ -5,7 +5,8 @@
             "path": "/odata.svc",
             "target": {
                 "type": "destination",
-                "name": "Lemonaid"
+                "name": "Lemonaid",
+                "entryPath": "/odata.svc"
             },
             "description": "Lemonaid services"
         },

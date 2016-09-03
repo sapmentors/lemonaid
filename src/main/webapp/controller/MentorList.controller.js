@@ -22,7 +22,7 @@ sap.ui.define([
 		 * @public
 		 */
         onInit: function() {
-        	this.table = this.byId("table");
+        	this.table = this.byId("mentorsTable");
         	this.map = this.byId("map");
             this.ui = new JSONModel({ tableBusyDelay: 0, count: 0, mentors: 0, alumni: 0 });
             this.model = this.getComponent().getModel();
