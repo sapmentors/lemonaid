@@ -17,6 +17,7 @@ public class Event {
 	private String id;
 	private String source;
     private String sourceId;
+    private String name;
     private String location;
 	@Temporal(TIMESTAMP) private Date startDate;
 	@Temporal(TIMESTAMP) private Date endDate;
@@ -46,6 +47,14 @@ public class Event {
 		this.sourceId = sourceId;
 	}
 	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	public String getLocation() {
 		return location;
 	}
@@ -80,8 +89,8 @@ public class Event {
 
 	@Override
 	public String toString() {
-		return "Event [id=" + id + ", source=" + source + ", sourceId=" + sourceId + ", location=" + location
-				+ ", startDate=" + startDate + ", endDate=" + endDate + ", url=" + url + "]";
+		return "Event [id=" + id + ", source=" + source + ", sourceId=" + sourceId + ", name=" + name + ", location="
+				+ location + ", startDate=" + startDate + ", endDate=" + endDate + ", url=" + url + "]";
 	}
 
 }

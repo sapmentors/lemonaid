@@ -31,6 +31,7 @@ public class SitRegClient extends GenericODataClient {
 				event.setSourceId(entry.getProperties().get("ID").toString());
 				event.setSource("SITREG");
 				event.setId(event.getSource() + "-" + event.getSourceId());
+				event.setName((String) entry.getProperties().get("Location"));
 				event.setLocation((String) entry.getProperties().get("Location"));
 				event.setStartDate(((GregorianCalendar) entry.getProperties().get("StartTime")).getTime());
 				event.setEndDate(((GregorianCalendar) entry.getProperties().get("EndTime")).getTime());
