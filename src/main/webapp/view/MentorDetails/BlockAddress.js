@@ -6,7 +6,13 @@ sap.ui.define([
 	"use strict";
 
 	return BlockBase.extend("com.sap.mentors.lemonaid.view.MentorDetails.BlockAddress", {
-		metadata: {}
+		metadata: {
+			events : {
+				"displayDialogSelectCountry" : {},
+				"closeDialogSelectCountry"   : {},
+				"searchCountry"              : {}
+			}
+		}
 	});
 
 }, true);

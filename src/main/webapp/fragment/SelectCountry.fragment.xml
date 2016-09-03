@@ -1,0 +1,17 @@
+<core:FragmentDefinition
+		xmlns="sap.m"
+		xmlns:core="sap.ui.core">
+	<SelectDialog
+			noDataText="No Countries Found"
+			title="Select Country"
+			search="onSearchCountry"
+			confirm="onCloseDialogSelectCountry"
+			close="onCloseDialogSelectCountry"
+			items="{
+				path: '/Countries'
+		}" >
+		<StandardListItem
+				title="{Name}"
+				type="Active" />
+	</SelectDialog>
+</core:FragmentDefinition>
