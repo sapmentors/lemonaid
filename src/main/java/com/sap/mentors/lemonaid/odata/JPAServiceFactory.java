@@ -22,7 +22,7 @@ public class JPAServiceFactory extends ODataServiceFactory {
 
 	private ODataJPAContext oDataJPAContext;
 	private ODataContext oDataContext;
-	private boolean setDetailErrors = false;
+	private boolean setDetailErrors = true;
 	private OnJPAWriteContent onJPAWriteContent = null;
 	private ODataJPATransaction oDataJPATransaction = null;
 
@@ -161,4 +161,5 @@ public class JPAServiceFactory extends ODataServiceFactory {
 		}
 
 	}
+		
 }
