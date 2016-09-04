@@ -1,0 +1,47 @@
+<mvc:View 
+	controllerName="com.sap.mentors.lemonaid.controller.BaseBlock" 
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns:forms="sap.ui.layout.form"
+	xmlns:core="sap.ui.core" 
+	xmlns:layout="sap.ui.layout" 
+	xmlns="sap.m">
+ 
+ 
+ 	<forms:SimpleForm labelSpanL="4" labelSpanM="4"
+					  labelSpanS="4" emptySpanL="0" emptySpanM="0" emptySpanS="0"
+					  maxContainerCols="2" layout="ResponsiveGridLayout"
+					  width="100%">
+
+		<core:Title text="{i18n>eventInfo}"></core:Title>
+		<Label text="{i18n>eventName}"/>
+		<Text text="{Name}" />
+		<Label text="{i18n>eventLocation}"/>
+		<Text text="{Location}" />
+
+		<core:Title text="{i18n>dateAndTime}"/>
+		<Label text="{i18n>eventStart}"/>
+		<Text text="{
+				path: 'StartDate',
+				type: 'sap.ui.model.type.DateTime',
+				formatOptions: {
+					style: 'medium'
+				}
+			}" />
+		<Label text="{i18n>eventEnd}"/>
+		<Text text="{
+				path: 'EndDate',
+				type: 'sap.ui.model.type.DateTime',
+				formatOptions: {
+					style: 'medium'
+				}
+			}" />
+
+		<core:Title text="{i18n>links}"/>
+		<Label text="{i18n>website}"/>
+		<Link href="{Url}" text="{Url}" target="_blank"/>
+		<Label text="{i18n>registration}"/>
+		<Link href="https://sitregparticipant-a5a504e08.dispatcher.hana.ondemand.com/#/Events/{SourceId}" text="SAP Inside Track Registration" target="_blank"/>
+		
+	</forms:SimpleForm>
+	
+</mvc:View>

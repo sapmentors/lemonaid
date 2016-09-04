@@ -1,0 +1,69 @@
+<core:FragmentDefinition
+	xmlns:core="sap.ui.core"
+	xmlns="sap.uxap"
+	xmlns:l="sap.ui.layout"
+	xmlns:m="sap.m"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:details="com.sap.mentors.lemonaid.view.Events">
+
+	<ObjectPageLayout
+		id="eventDetails"
+		enableLazyLoading="false"
+		showTitleInHeaderContent="true"
+		showEditHeaderButton="false"
+		useIconTabBar="true" 
+		alwaysShowContentHeader="true"
+		height="100%"
+		class="EventDetailsPage"
+		editHeaderButtonPress="handleEditBtnPress">
+
+		<headerTitle>
+			<ObjectPageHeader
+				id="header"
+				objectTitle="{Name}"
+				objectImageShape="Circle"
+				objectImageAlt="{Name}"
+            	objectImageURI="{
+					path: 'Source',
+					formatter: '.formatters.formatEventLogo'
+				}"
+				objectSubtitle="{
+					path: 'StartDate',
+					type: 'sap.ui.model.type.Date',
+					formatOptions: {
+						style: 'long'
+					}
+				} - {Location}"
+				isObjectIconAlwaysVisible="false"
+				isObjectTitleAlwaysVisible="false"
+				isObjectSubtitleAlwaysVisible="false">
+			</ObjectPageHeader>
+		</headerTitle>
+
+		<sections>
+			
+			<ObjectPageSection title="{i18n>eventInfo}" importance="Medium">
+				<subSections>
+					<ObjectPageSubSection title="{i18n>eventInfo}">
+						<blocks>
+							<details:EventInfo />
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+
+			<ObjectPageSection id="PageSectionMoreInfo" title="{i18n>moreInfo}" importance="Medium" class="iFrameContainer" >
+				<subSections>
+					<ObjectPageSubSection id="SubSectionMoreInfo" title="{i18n>moreInfo}" class="iFrameContainer">
+						<blocks>
+							<details:MoreInfo class="iFrameContainer" />
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+
+		</sections>
+
+	</ObjectPageLayout>
+	
+</core:FragmentDefinition>

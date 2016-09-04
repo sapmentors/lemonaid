@@ -1,0 +1,9 @@
+<mvc:View 
+	controllerName="com.sap.mentors.lemonaid.controller.BaseBlock" 
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns="com.sap.mentors.lemonaid.controls"
+	height="100%">
+ 
+	<Iframe url="{= ${DeepUrl} ? ${DeepUrl} : ${Url} }" />
+
+</mvc:View>

@@ -1,0 +1,44 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+
+	<List      
+		id="eventList"
+		items="{
+			path: '/Events',
+			parameters: {
+				select: 'Id,Name,Location,StartDate'
+			},
+			sorter: {path: 'StartDate', descending: true}
+		}"
+		mode="{= ${device>/system/phone} ? 'None' : 'SingleSelectMaster'}"
+		growing="true"
+		growingScrollToLoad="true"
+		updateFinished="onUpdateFinished"
+		selectionChange="onSelectionChange">
+		<headerToolbar>
+			<Toolbar>
+				<SearchField
+					id="searchField"
+					showRefreshButton="{= !${device>/support/touch} }"
+					tooltip="{i18n>masterSearchTooltip}"
+					width="100%"
+					search="onSearch">
+				</SearchField>
+			</Toolbar>
+		</headerToolbar>
+		<items>
+			<ObjectListItem
+				title="{Name}"
+				intro="{
+					path: 'StartDate',
+					type: 'sap.ui.model.type.Date',
+					formatOptions: {
+						style: 'long'
+					}
+				}"
+				type="Active" />
+		</items>
+	</List>   
+
+</core:FragmentDefinition>

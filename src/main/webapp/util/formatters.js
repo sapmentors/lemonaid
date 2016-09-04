@@ -2,6 +2,14 @@ sap.ui.define([
 	] , function () {
 		"use strict";
 		return {
+			
+			formatEventLogo: function(source) {
+				var baseUrl = jQuery.sap.getModulePath("com.sap.mentors.lemonaid");
+				switch(source) {
+				    case "SITREG": return baseUrl + "/images/insidetrack.png";
+				    default: return baseUrl + "/images/sap.png";
+				}
+			},
 
 			formatMapInfo: function(name, number, photo, status) {
 				return '<table><tr><td valign="top">' +

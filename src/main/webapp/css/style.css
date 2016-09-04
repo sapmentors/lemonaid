@@ -85,3 +85,24 @@
 .sapTntNavLIGroup>.sapUiIcon {
     color: #e5e5e5 !important;
 }
+
+/* =========================================================== */
+/* Styling of the Events info section containing the event's   */
+/* Website                                                     */
+/* =========================================================== */
+.EventDetailsPage .sapUxAPObjectPageScroll,
+.EventDetailsPage .sapUxAPObjectPageContainer,
+.EventDetailsPage .sapUxAPObjectPageSectionContainer,
+.iFrameContainer,
+.iFrameContainer > div,
+.iFrameContainer .sapUiRespGrid,
+.iFrameContainer .sapUiRespGrid > div {
+	height: 100%;
+}
+.iFrameContainer > div,
+.iFrameContainer .sapUiRespGrid.sapUiRespGridHSpace1,
+.iFrameContainer .sapUiRespGrid.sapUiRespGridHSpace1 > div {
+	margin: 0 0 !important;
+	padding: 0 0;
+	width: 100%;
+}

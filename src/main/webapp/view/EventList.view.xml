@@ -3,8 +3,22 @@
 	xmlns="sap.m"
 	xmlns:l="sap.ui.layout"
 	xmlns:mvc="sap.ui.core.mvc" 
-	xmlns:core="sap.ui.core">
+	xmlns:core="sap.ui.core"
+	height="100%">
 
-	<Text text="Placeholder for Events page" class="sapUiResponsiveMargin" />
+	<l:ResponsiveSplitter defaultPane="default">
+		<l:PaneContainer>
+			<l:SplitPane requiredParentWidth="0" id="default">
+				<core:Fragment fragmentName="com.sap.mentors.lemonaid.view.Events.List" type="XML"/>
+				<l:layoutData>
+					<l:SplitterLayoutData 
+						size="{= ${device>/system/desktop} ? '33%' : null }" />
+				</l:layoutData>
+			</l:SplitPane>
+			<l:SplitPane requiredParentWidth="800" demandPane="false">
+				<core:Fragment fragmentName="com.sap.mentors.lemonaid.view.Events.Detail" type="XML"/>
+			</l:SplitPane>
+		</l:PaneContainer>
+	</l:ResponsiveSplitter>
 
 </mvc:View>

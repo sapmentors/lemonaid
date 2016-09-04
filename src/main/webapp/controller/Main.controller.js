@@ -57,7 +57,7 @@ sap.ui.define([
 		},
 
 		onMenuSelect: function(event) {
-            this.router.navTo(event.getParameter("item").getKey(), null, true);
+            this.router.navTo(event.getParameter("item").getKey(), {}, true);
             if (this.device.getProperty("/system/phone")) {
  				this.toolPage.setSideExpanded(false);
             }

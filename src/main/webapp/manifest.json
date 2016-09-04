@@ -117,7 +117,7 @@
 				"name": "Mentor",
 				"target": "mentor"
 			},{
-				"pattern": "Events",
+				"pattern": "Events/:Id:",
 				"name": "Events",
 				"target": "events"
 			},{
