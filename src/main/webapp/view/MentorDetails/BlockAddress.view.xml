@@ -51,7 +51,8 @@
 		<Input value="{Zip}" visible="{ui>/isEditMode}"/>
 
 		<Label text="{i18n>country}" />
-		<Input value="{Country/Name}" visible="{ui>/isEditMode}" enabled="false">
+		<!--<Input value="{Country/Name}" visible="{ui>/isEditMode}" enabled="false">-->
+		<Input id="mentorDetailsCountry" value="{Country/Name}" visible="{ui>/isEditMode}" enabled="false">
 			<layoutData>
 				<layout:GridData span="L10 M10 S10" />
 			</layoutData>

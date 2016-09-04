@@ -76,9 +76,12 @@ sap.ui.define([
 		onCloseDialogSelectCountry: function(oEvent) {
 			var aContexts = oEvent.getParameter("selectedContexts");
 			if (aContexts.length) {
-				//TODO: This does not work with OData
 				MessageToast.show("TODO: Needs to update the model \"/Mentors('key')/Country\" entity correctly!");
-				this.getModel().setProperty("/Mentors(" + this.sMentorId + ")/Country", aContexts[0].getObject());
+				this.getModel().setProperty("/Mentors(" + this.sMentorId + ")/CountryId", aContexts[0].getObject().Id);
+				//TODO: RvhHof: There **HAS** to be a better way to display the selected value from SelectDialog to the view!
+				//TODO:         Is ODataModel & sap.uxap.BlockBase broken?
+				//TODO:         Referencing a view element by ID and set its value, as opposed to databinding is just plain wrong...
+				sap.ui.getCore().byId(this.getView().byId("blockAddress").getSelectedView() + "--mentorDetailsCountry").setValue(aContexts[0].getObject().Name);
 			}
 			oEvent.getSource().getBinding("items").filter([]);
 		},

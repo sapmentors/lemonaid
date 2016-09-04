@@ -63,11 +63,12 @@
 
 		<sections>
 
-			<ObjectPageSection title="{i18n>personalInfo}" importance="Medium">
+			<ObjectPageSection id="personalInfoSection" title="{i18n>personalInfo}" importance="Medium">
 				<subSections>
 					<ObjectPageSubSection title="{i18n>personalInfo}">
 						<blocks>
 							<details:BlockAddress
+									id="blockAddress"
 									displayDialogSelectCountry="onDisplayDialogSelectCountry"
 									closeDialogSelectCountry="onCloseDialogSelectCountry"
 									searchCountry="onSearchCountry"/>
