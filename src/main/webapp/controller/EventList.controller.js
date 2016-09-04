@@ -1,4 +1,4 @@
-/* global sap */
+/* global sap, Promise, jQuery */
 
 sap.ui.define([
     "com/sap/mentors/lemonaid/controller/BaseController",
@@ -10,7 +10,7 @@ sap.ui.define([
     "use strict";
 
     return BaseController.extend("com.sap.mentors.lemonaid.controller.EventList", {
-    	
+
     	formatters: formatters,
 
 		/* =========================================================== */
@@ -74,7 +74,7 @@ sap.ui.define([
             	]);
             this.list.getBinding("items").filter(filter);
 		},
-		
+
 		onSelectionChange: function(event) {
 			var item = event.getParameter("listItem") || event.getSource();
             this.getRouter().navTo("Events", {
