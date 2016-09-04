@@ -1,11 +1,11 @@
-<mvc:View 
-	controllerName="com.sap.mentors.lemonaid.controller.BaseBlock" 
-	xmlns:mvc="sap.ui.core.mvc" 
+<mvc:View
+	controllerName="com.sap.mentors.lemonaid.controller.BlockAddress"
+	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:forms="sap.ui.layout.form"
-	xmlns:core="sap.ui.core" 
-	xmlns:layout="sap.ui.layout" 
+	xmlns:core="sap.ui.core"
+	xmlns:layout="sap.ui.layout"
 	xmlns="sap.m">
- 
+
 	<forms:SimpleForm
 			labelSpanL="4"
 			labelSpanM="4"
@@ -16,28 +16,62 @@
 			maxContainerCols="2" layout="ResponsiveLayout"
 			width="100%">
 		<core:Title text="{i18n>address}"></core:Title>
-		
-		<Label text="{i18n>homeAddress}"/>
+
+		<Label text="{i18n>homeAddress}" visible="{= !${ui>/isEditMode} }" />
 		<Text text="{
 				parts: [
 					'FullName',
 					'Address1',
 					'Address2',
-					'City', 
-					'State', 
+					'City',
+					'State',
 					'Zip',
 					'Country/Name',
 					'Country/Id'
 				],
 				formatter: '.formatters.formatAddress'
-			}" />
+			}" visible="{= !${ui>/isEditMode} }" />
+
+		<Label text="{i18n>fullName}" />
+		<Input value="{FullName}" visible="{ui>/isEditMode}"/>
+
+		<Label text="{i18n>address} 1" />
+		<Input value="{Address1}" visible="{ui>/isEditMode}"/>
+
+		<Label text="{i18n>address} 2" />
+		<Input value="{Address2}" visible="{ui>/isEditMode}"/>
+
+		<Label text="{i18n>city}" />
+		<Input value="{City}" visible="{ui>/isEditMode}"/>
+
+		<Label text="{i18n>state}" />
+		<Input value="{State}" visible="{ui>/isEditMode}"/>
+
+		<Label text="{i18n>zip}" />
+		<Input value="{Zip}" visible="{ui>/isEditMode}"/>
+
+		<Label text="{i18n>country}" />
+		<Input value="{Country/Name}" visible="{ui>/isEditMode}" enabled="false">
+			<layoutData>
+				<layout:GridData span="L10 M10 S10" />
+			</layoutData>
+		</Input>
+		<Button icon="sap-icon://value-help" press="onDisplayDialogSelectCountry"  visible="{ui>/isEditMode}" />
 
 
-		<Label text="{i18n>phone}" visible="{= !!${Phone} }" />
-		<Link text="{Phone}" href="tel:{Phone}" target="_blank" visible="{= !!${Phone} }" />
 
-		<Label text="{i18n>region}" />
-		<Text text="{Region/Name}" />
+
+		<Label text="{i18n>phone}" visible="{ui>/isEditMode}" />
+		<Input value="{Phone}" visible="{ui>/isEditMode}"/>
+		<Label text="{i18n>phone}" visible="{= !!${Phone} || ${ui>/isEditMode} }" />
+		<Link text="{Phone}" href="tel:{Phone}" target="_blank" visible="{= !!${Phone} &amp;&amp; !${ui>/isEditMode} }" />
+
+		<Label text="{i18n>region}" visible="{ui>/isEditMode}" />
+		<Select selectedKey="{TopicLeadRegionId}" items="{/Regions}" visible="{ui>/isEditMode}">
+			<core:Item key="{Id}" text="{Name}" />
+		</Select>
+		<Label text="{i18n>region}" visible="{= !${ui>/isEditMode} }" />
+		<Text text="{Region/Name}" visible="{= !${ui>/isEditMode} }"/>
 
 	</forms:SimpleForm>
 </mvc:View>

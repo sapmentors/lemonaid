@@ -2,7 +2,7 @@ package com.sap.mentors.lemonaid.entities;
 
 import static javax.persistence.TemporalType.TIMESTAMP;
 
-import java.util.Date;
+import java.util.Calendar;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -17,10 +17,12 @@ public class Event {
 	private String id;
 	private String source;
     private String sourceId;
+    private String name;
     private String location;
-	@Temporal(TIMESTAMP) private Date startDate;
-	@Temporal(TIMESTAMP) private Date endDate;
+	@Temporal(TIMESTAMP) private Calendar startDate;
+	@Temporal(TIMESTAMP) private Calendar endDate;
 	private String url;
+	private String deepUrl;
 	
 	public String getId() {
 		return id;
@@ -46,6 +48,14 @@ public class Event {
 		this.sourceId = sourceId;
 	}
 	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	public String getLocation() {
 		return location;
 	}
@@ -54,19 +64,19 @@ public class Event {
 		this.location = location;
 	}
 	
-	public Date getStartDate() {
+	public Calendar getStartDate() {
 		return startDate;
 	}
 	
-	public void setStartDate(Date startDate) {
+	public void setStartDate(Calendar startDate) {
 		this.startDate = startDate;
 	}
 	
-	public Date getEndDate() {
+	public Calendar getEndDate() {
 		return endDate;
 	}
 	
-	public void setEndDate(Date endDate) {
+	public void setEndDate(Calendar endDate) {
 		this.endDate = endDate;
 	}
 	
@@ -78,10 +88,19 @@ public class Event {
 		this.url = url;
 	}
 
+	public String getDeepUrl() {
+		return deepUrl;
+	}
+
+	public void setDeepUrl(String deepUrl) {
+		this.deepUrl = deepUrl;
+	}
+
 	@Override
 	public String toString() {
-		return "Event [id=" + id + ", source=" + source + ", sourceId=" + sourceId + ", location=" + location
-				+ ", startDate=" + startDate + ", endDate=" + endDate + ", url=" + url + "]";
+		return "Event [id=" + id + ", source=" + source + ", sourceId=" + sourceId + ", name=" + name + ", location="
+				+ location + ", startDate=" + startDate + ", endDate=" + endDate + ", url=" + url + ", deepUrl="
+				+ deepUrl + "]";
 	}
 
 }
