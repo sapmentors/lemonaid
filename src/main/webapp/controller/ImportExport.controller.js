@@ -9,13 +9,15 @@ sap.ui.define([
 	"sap/ui/core/util/Export",
 	"sap/ui/core/util/ExportColumn",
 	"sap/ui/core/util/ExportTypeCSV",
+	"com/sap/mentors/lemonaid/util/GuidGenerator",
 	"com/sap/mentors/lemonaid/util/papaparse"
-], function(BaseController, JSONModel, MessageBox, MessageToast, BusyDialog, Export, ExportColumn, ExportTypeCSV) {
+], function(BaseController, JSONModel, MessageBox, MessageToast, BusyDialog, Export, ExportColumn, ExportTypeCSV, GuidGenerator) {
 	"use strict";
 
 	return BaseController.extend("com.sap.mentors.lemonaid.controller.ImportExport", {
 
 		busyDialog: new BusyDialog(),
+		guidGenerator: GuidGenerator,
 
 		/* =========================================================== */
 		/* lifecycle methods										   */
@@ -210,8 +212,26 @@ sap.ui.define([
 							object[fieldName] = field;
 						}
 					});
+					delete object.longitude;
+					delete object.latitude;
+					if (object.ShirtNumber) { object.ShirtNumber = that._parseInteger(object.ShirtNumber); } else { delete object.ShirtNumber; }
+					if (object.HoursAvailable) { object.HoursAvailable = that._parseInteger(object.HoursAvailable); } else { delete object.HoursAvailable; }
+					if (object.InterestInMentorCommunicationStrategy) { object.InterestInMentorCommunicationStrategy = that._parseBoolean(object.InterestInMentorCommunicationStrategy); } else { delete object.InterestInMentorCommunicationStrategy; }
+					if (object.InterestInMentorManagementModel) { object.InterestInMentorManagementModel = that._parseBoolean(object.InterestInMentorManagementModel); } else { delete object.InterestInMentorManagementModel; }
+					if (object.InterestInMentorMix) { object.InterestInMentorMix = that._parseBoolean(object.InterestInMentorMix); } else { delete object.InterestInMentorMix; }
+					if (object.InterestInOtherIdeas) { object.InterestInOtherIdeas = that._parseBoolean(object.InterestInOtherIdeas); } else { delete object.InterestInOtherIdeas; }
+					if (object.TopicLeadInterest) { object.TopicLeadInterest = that._parseBoolean(object.TopicLeadInterest); } else { delete object.TopicLeadInterest; }
+					if (object.HoursAvailable) { object.HoursAvailable = that._parseInteger(object.HoursAvailable); } else { delete object.HoursAvailable; }
                     requests.push(new Promise(function(resolve) {
     					if (row.__new) {
+    	            		if (!object.Id) {
+    	            			object.Id = that.guidGenerator.generateGuid();
+    	            		}
+    					    for (var i in object) {
+    					        if (object[i].length === 0) {
+    					            delete object[i];
+    					        }
+    					    }
                             that.model.create(
                                 "/Mentors",
                                 object,
@@ -344,8 +364,34 @@ sap.ui.define([
 				}
 			}
 			return false;
+		},
+		
+		_parseBoolean: function(value) {
+			if (value) {
+				if (value.toUpperCase() === "YES" || 
+					value.toUpperCase() === "TRUE" || 
+					value.toUpperCase() === "Y" || 
+					value.toUpperCase() === "T" || 
+					value.toUpperCase() == "1") {
+					return true;
+				}
+			}
+			return false;
+		},
+		
+		_parseInteger: function(value) {
+			if (typeof value === "undefined") return;
+			if (typeof value === "number") return value;
+			var res = value.split(" ");
+			for (var i = 0; i < res.length; i++) {
+				var iValue = parseInt(res[i]);
+				if (!isNaN(iValue)) {
+					return iValue;
+				}
+			}
+			return 0;
 		}
-
+		
 	});
 
 });
