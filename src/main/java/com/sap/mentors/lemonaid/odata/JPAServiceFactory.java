@@ -24,7 +24,7 @@ public class JPAServiceFactory extends ODataServiceFactory {
 	private ODataContext oDataContext;
 	private boolean setDetailErrors = true;
 	private OnJPAWriteContent onJPAWriteContent = null;
-	private ODataJPATransaction oDataJPATransaction = null;
+	private ODataJPATransaction oDataJPATransaction = new NoJPATransaction();
 
 	public static final String DEFAULT_ENTITY_UNIT_NAME = "Model";
 	public static final String ENTITY_MANAGER_FACTORY_ID = "entityManagerFactory";
