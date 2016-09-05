@@ -53,6 +53,7 @@
 		<Label text="{i18n>country}" visible="{ui>/isEditMode}" />
         <Select
 			selectedKey="{Country/Id}"
+            visible="{ui>/isEditMode}"
 			items="{ path: '/Countries', sorter: { path: 'Name' } }">
 			<core:Item key="{Id}" text="{Name}" />
 		</Select>
