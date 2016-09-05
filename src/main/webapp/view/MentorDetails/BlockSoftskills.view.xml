@@ -23,7 +23,7 @@
 		<Label text="{i18n>skill} 1" visible="{= !!${SoftSkill1Id}  &amp;&amp; !${ui>/isEditMode}}" />
 		<Text text="{SoftSkill1/Name}" visible="{= !!${SoftSkill1Id}  &amp;&amp; !${ui>/isEditMode}}" />
 		<Label text="{i18n>skill} 1" visible="{ui>/isEditMode}" />
-		<Select	selectedKey="{SoftSkill1/Id}"
+		<Select	selectedKey="{SoftSkill1Id}"
 				   visible="{ui>/isEditMode}"
 				   forceSelection="false"
 				   items="{ path: '/SoftSkills', sorter: { path: 'Name' } }">
@@ -33,7 +33,7 @@
 		<Label text="{i18n>skill} 2" visible="{= !!${SoftSkill2Id}  &amp;&amp; !${ui>/isEditMode}}" />
 		<Text text="{SoftSkill2/Name}" visible="{= !!${SoftSkill2Id}  &amp;&amp; !${ui>/isEditMode}}" />
 		<Label text="{i18n>skill} 2" visible="{ui>/isEditMode}" />
-		<Select	selectedKey="{SoftSkill2/Id}"
+		<Select	selectedKey="{SoftSkill2Id}"
 				   visible="{ui>/isEditMode}"
 				   forceSelection="false"
 				   items="{ path: '/SoftSkills', sorter: { path: 'Name' } }">
@@ -43,7 +43,7 @@
 		<Label text="{i18n>skill} 3" visible="{= !!${SoftSkill3Id}  &amp;&amp; !${ui>/isEditMode}}" />
 		<Text text="{SoftSkill3/Name}" visible="{= !!${SoftSkill3Id}  &amp;&amp; !${ui>/isEditMode}}" />
 		<Label text="{i18n>skill} 3" visible="{ui>/isEditMode}" />
-		<Select	selectedKey="{SoftSkill3/Id}"
+		<Select	selectedKey="{SoftSkill3Id}"
 				   visible="{ui>/isEditMode}"
 				   forceSelection="false"
 				   items="{ path: '/SoftSkills', sorter: { path: 'Name' } }">
@@ -53,7 +53,7 @@
 		<Label text="{i18n>skill} 4" visible="{= !!${SoftSkill4Id}  &amp;&amp; !${ui>/isEditMode}}" />
 		<Text text="{SoftSkill4/Name}" visible="{= !!${SoftSkill4Id}  &amp;&amp; !${ui>/isEditMode}}" />
 		<Label text="{i18n>skill} 4" visible="{ui>/isEditMode}" />
-		<Select	selectedKey="{SoftSkill4/Id}"
+		<Select	selectedKey="{SoftSkill4Id}"
 				   visible="{ui>/isEditMode}"
 				   forceSelection="false"
 				   items="{ path: '/SoftSkills', sorter: { path: 'Name' } }">
@@ -63,7 +63,7 @@
 		<Label text="{i18n>skill} 5" visible="{= !!${SoftSkill5Id}  &amp;&amp; !${ui>/isEditMode}}" />
 		<Text text="{SoftSkill5/Name}" visible="{= !!${SoftSkill5Id}  &amp;&amp; !${ui>/isEditMode}}" />
 		<Label text="{i18n>skill} 5" visible="{ui>/isEditMode}" />
-		<Select	selectedKey="{SoftSkill5/Id}"
+		<Select	selectedKey="{SoftSkill5Id}"
 				   visible="{ui>/isEditMode}"
 				   forceSelection="false"
 				   items="{ path: '/SoftSkills', sorter: { path: 'Name' } }">
@@ -73,7 +73,7 @@
 		<Label text="{i18n>skill} 6" visible="{= !!${SoftSkill6Id}  &amp;&amp; !${ui>/isEditMode}}" />
 		<Text text="{SoftSkill6/Name}" visible="{= !!${SoftSkill6Id}  &amp;&amp; !${ui>/isEditMode}}" />
 		<Label text="{i18n>skill} 6" visible="{ui>/isEditMode}" />
-		<Select	selectedKey="{SoftSkill6/Id}"
+		<Select	selectedKey="{SoftSkill6Id}"
 				   visible="{ui>/isEditMode}"
 				   forceSelection="false"
 				   items="{ path: '/SoftSkills', sorter: { path: 'Name' } }">
