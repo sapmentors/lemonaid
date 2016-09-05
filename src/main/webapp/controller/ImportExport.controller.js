@@ -365,23 +365,25 @@ sap.ui.define([
 			}
 			return false;
 		},
-		
+
 		_parseBoolean: function(value) {
 			if (value) {
-				if (value.toUpperCase() === "YES" || 
-					value.toUpperCase() === "TRUE" || 
-					value.toUpperCase() === "Y" || 
-					value.toUpperCase() === "T" || 
-					value.toUpperCase() == "1") {
+				if (value.toUpperCase() === "YES" ||
+					value.toUpperCase() === "TRUE" ||
+					value.toUpperCase() === "Y" ||
+					value.toUpperCase() === "T" ||
+					value === "1" ||
+                    value === true ||
+                    value === 1) {
 					return true;
 				}
 			}
 			return false;
 		},
-		
+
 		_parseInteger: function(value) {
-			if (typeof value === "undefined") return;
-			if (typeof value === "number") return value;
+			if (typeof value === "undefined") { return; }
+			if (typeof value === "number") { return value; }
 			var res = value.split(" ");
 			for (var i = 0; i < res.length; i++) {
 				var iValue = parseInt(res[i]);
@@ -391,7 +393,7 @@ sap.ui.define([
 			}
 			return 0;
 		}
-		
+
 	});
 
 });

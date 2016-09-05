@@ -35,6 +35,9 @@ sap.ui.define([
             this.whenListLoaded = new Promise(function (resolve) {
 				this._resolveListLoaded = resolve;
 			}.bind(this));
+            this.whenRouteMatched = new Promise(function(fnRouteMatched) {
+                this.resolveRouteMatched = fnRouteMatched;
+            }.bind(this));
         },
 
 		/* =========================================================== */
@@ -52,17 +55,20 @@ sap.ui.define([
 					}.bind(this));
 				}
 			}.bind(this));
+            this.resolveRouteMatched();
 		},
 
 		onUpdateFinished: function(event) {
-			if (!this.currentId) {
-				var firstEvent = this.list.getItems()[0];
-				if (firstEvent) {
-		            this.getRouter().navTo("Events", {
-		                Id: firstEvent.getBindingContext().getProperty("Id")
-		            });
-				}
-			}
+            this.whenRouteMatched.then(function() {
+    			if (!this.currentId) {
+    				var firstEvent = this.list.getItems()[0];
+    				if (firstEvent) {
+    		            this.getRouter().navTo("Events", {
+    		                Id: firstEvent.getBindingContext().getProperty("Id")
+    		            });
+    				}
+    			}
+            }.bind(this));
 			this._resolveListLoaded();
 		},
 
