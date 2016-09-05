@@ -50,7 +50,7 @@
 		<Label text="{i18n>zip}" />
 		<Input value="{Zip}" visible="{ui>/isEditMode}"/>
 
-		<Label text="{i18n>country}" />
+		<Label text="{i18n>country}" visible="{ui>/isEditMode}" />
         <Select
 			selectedKey="{Country/Id}"
 			items="{ path: '/Countries', sorter: { path: 'Name' } }">
