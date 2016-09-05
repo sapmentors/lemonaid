@@ -17,26 +17,68 @@
 
 		<core:Title text="{i18n>softSkills}" />
 
-		<Label text="" visible="{= !${SoftSkill1Id} }" />
-		<Text text="{i18n>nodata}" visible="{= !${SoftSkill1Id} }" />
+		<Label text="" visible="{= !${SoftSkill1Id}  &amp;&amp; !${ui>/isEditMode}}" />
+		<Text text="{i18n>nodata}" visible="{= !${SoftSkill1Id}  &amp;&amp; !${ui>/isEditMode}}" />
 
-		<Label text="{i18n>skill} 1" visible="{= !!${SoftSkill1Id} }" />
-		<Text text="{SoftSkill1/Name}" visible="{= !!${SoftSkill1Id} }" />
+		<Label text="{i18n>skill} 1" visible="{= !!${SoftSkill1Id}  &amp;&amp; !${ui>/isEditMode}}" />
+		<Text text="{SoftSkill1/Name}" visible="{= !!${SoftSkill1Id}  &amp;&amp; !${ui>/isEditMode}}" />
+		<Label text="{i18n>skill} 1" visible="{ui>/isEditMode}" />
+		<Select	selectedKey="{SoftSkill1/Id}"
+				   visible="{ui>/isEditMode}"
+				   forceSelection="false"
+				   items="{ path: '/SoftSkills', sorter: { path: 'Name' } }">
+			<core:Item key="{Id}" text="{Name}" />
+		</Select>
 
-		<Label text="{i18n>skill} 2" visible="{= !!${SoftSkill2Id} }" />
-		<Text text="{SoftSkill2/Name}" visible="{= !!${SoftSkill2Id} }" />
+		<Label text="{i18n>skill} 2" visible="{= !!${SoftSkill2Id}  &amp;&amp; !${ui>/isEditMode}}" />
+		<Text text="{SoftSkill2/Name}" visible="{= !!${SoftSkill2Id}  &amp;&amp; !${ui>/isEditMode}}" />
+		<Label text="{i18n>skill} 2" visible="{ui>/isEditMode}" />
+		<Select	selectedKey="{SoftSkill2/Id}"
+				   visible="{ui>/isEditMode}"
+				   forceSelection="false"
+				   items="{ path: '/SoftSkills', sorter: { path: 'Name' } }">
+			<core:Item key="{Id}" text="{Name}" />
+		</Select>
 
-		<Label text="{i18n>skill} 3" visible="{= !!${SoftSkill3Id} }" />
-		<Text text="{SoftSkill3/Name}" visible="{= !!${SoftSkill3Id} }" />
+		<Label text="{i18n>skill} 3" visible="{= !!${SoftSkill3Id}  &amp;&amp; !${ui>/isEditMode}}" />
+		<Text text="{SoftSkill3/Name}" visible="{= !!${SoftSkill3Id}  &amp;&amp; !${ui>/isEditMode}}" />
+		<Label text="{i18n>skill} 3" visible="{ui>/isEditMode}" />
+		<Select	selectedKey="{SoftSkill3/Id}"
+				   visible="{ui>/isEditMode}"
+				   forceSelection="false"
+				   items="{ path: '/SoftSkills', sorter: { path: 'Name' } }">
+			<core:Item key="{Id}" text="{Name}" />
+		</Select>
 
-		<Label text="{i18n>skill} 4" visible="{= !!${SoftSkill4Id} }" />
-		<Text text="{SoftSkill4/Name}" visible="{= !!${SoftSkill4Id} }" />
+		<Label text="{i18n>skill} 4" visible="{= !!${SoftSkill4Id}  &amp;&amp; !${ui>/isEditMode}}" />
+		<Text text="{SoftSkill4/Name}" visible="{= !!${SoftSkill4Id}  &amp;&amp; !${ui>/isEditMode}}" />
+		<Label text="{i18n>skill} 4" visible="{ui>/isEditMode}" />
+		<Select	selectedKey="{SoftSkill4/Id}"
+				   visible="{ui>/isEditMode}"
+				   forceSelection="false"
+				   items="{ path: '/SoftSkills', sorter: { path: 'Name' } }">
+			<core:Item key="{Id}" text="{Name}" />
+		</Select>
 
-		<Label text="{i18n>skill} 5" visible="{= !!${SoftSkill5Id} }" />
-		<Text text="{SoftSkill5/Name}" visible="{= !!${SoftSkill5Id} }" />
+		<Label text="{i18n>skill} 5" visible="{= !!${SoftSkill5Id}  &amp;&amp; !${ui>/isEditMode}}" />
+		<Text text="{SoftSkill5/Name}" visible="{= !!${SoftSkill5Id}  &amp;&amp; !${ui>/isEditMode}}" />
+		<Label text="{i18n>skill} 5" visible="{ui>/isEditMode}" />
+		<Select	selectedKey="{SoftSkill5/Id}"
+				   visible="{ui>/isEditMode}"
+				   forceSelection="false"
+				   items="{ path: '/SoftSkills', sorter: { path: 'Name' } }">
+			<core:Item key="{Id}" text="{Name}" />
+		</Select>
 
-		<Label text="{i18n>skill} 6" visible="{= !!${SoftSkill6Id} }" />
-		<Text text="{SoftSkill6/Name}" visible="{= !!${SoftSkill6Id} }" />
+		<Label text="{i18n>skill} 6" visible="{= !!${SoftSkill6Id}  &amp;&amp; !${ui>/isEditMode}}" />
+		<Text text="{SoftSkill6/Name}" visible="{= !!${SoftSkill6Id}  &amp;&amp; !${ui>/isEditMode}}" />
+		<Label text="{i18n>skill} 6" visible="{ui>/isEditMode}" />
+		<Select	selectedKey="{SoftSkill6/Id}"
+				   visible="{ui>/isEditMode}"
+				   forceSelection="false"
+				   items="{ path: '/SoftSkills', sorter: { path: 'Name' } }">
+			<core:Item key="{Id}" text="{Name}" />
+		</Select>
 
 	</forms:SimpleForm>
 </mvc:View>

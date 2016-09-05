@@ -1,4 +1,4 @@
-/* global sap, jQuery */
+/* global sap, console */
 
 sap.ui.define([
     "com/sap/mentors/lemonaid/controller/BaseController",
@@ -11,12 +11,12 @@ sap.ui.define([
     return BaseController.extend("com.sap.mentors.lemonaid.controller.MentorDetails", {
 
         onInit: function() {
-        	this.view = this.getView();
-        	this.component = this.getComponent();
-        	this.model = this.component.getModel();
-        	this.router = this.getRouter();
-        	this.i18n = this.component.getModel("i18n").getResourceBundle();
-        	this.ui = new JSONModel({
+			this.view      = this.getView();
+			this.component = this.getComponent();
+			this.model     = this.component.getModel();
+			this.router    = this.getRouter();
+			this.i18n      = this.component.getModel("i18n").getResourceBundle();
+			this.ui        = new JSONModel({
         		ServiceUrl : this.model.sServiceUrl,
 				isEditMode : false
         	});
@@ -42,10 +42,19 @@ sap.ui.define([
 		 * @param {sap.ui.base.Event} oEvent - 'press' event of Save button
 		 */
 		onSave: function(oEvent) {
-			//TODO: Implement!
-			MessageToast.show("TODO: \"Save\" not implemented!");
+			var self = this;
 
-			this.getView().getModel("ui").setProperty("/isEditMode", false);
+			this.model.submitChanges({
+				success: function(oData) {
+					console.log("OK", oData);
+					MessageToast.show("Profile is saved successfully");
+					self.getView().getModel("ui").setProperty("/isEditMode", false);
+				},
+				error: function(oError) {
+					MessageToast.show("ERROR: Profile cannot be saved!");
+					console.log("ERROR", oError);
+				}
+			});
 		},
 
 		/**
@@ -53,9 +62,7 @@ sap.ui.define([
 		 * @param {sap.ui.base.Event} oEvent - 'press' event of Cancel button
 		 */
 		onCancel: function(oEvent) {
-			//TODO: Implement!
-			MessageToast.show("TODO: \"Cancel\" not implemented!");
-
+			this.model.resetChanges();
 			this.getView().getModel("ui").setProperty("/isEditMode", false);
 		},
 

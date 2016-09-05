@@ -17,20 +17,48 @@
 
 		<core:Title text="{i18n>sapTopics}" />
 
-		<Label text="" visible="{= !${Topic1Id} }" />
-		<Text text="{i18n>nodata}" visible="{= !${Topic1Id} }" />
+		<Label text="" visible="{= !${Topic1Id} &amp;&amp; !${ui>/isEditMode} }" />
+		<Text text="{i18n>nodata}" visible="{= !${Topic1Id} &amp;&amp; !${ui>/isEditMode} }" />
 
-		<Label text="{i18n>topic} 1" visible="{= !!${Topic1Id} }" />
-		<Text text="{Topic1/Name}" visible="{= !!${Topic1Id} }" />
+		<Label text="{i18n>topic} 1" visible="{= !!${Topic1Id} &amp;&amp; !${ui>/isEditMode} }" />
+		<Text text="{Topic1/Name}" visible="{= !!${Topic1Id} &amp;&amp; !${ui>/isEditMode} }" />
+		<Label text="{i18n>topic} 1" visible="{ui>/isEditMode}" />
+		<Select	selectedKey="{Topic1/Id}"
+				visible="{ui>/isEditMode}"
+				forceSelection="false"
+				items="{ path: '/Topics', sorter: { path: 'Name' } }">
+			<core:Item key="{Id}" text="{Name}" />
+		</Select>
 
-		<Label text="{i18n>topic} 2" visible="{= !!${Topic2Id} }" />
-		<Text text="{Topic2/Name}" visible="{= !!${Topic2Id} }" />
+		<Label text="{i18n>topic} 2" visible="{= !!${Topic2Id} &amp;&amp; !${ui>/isEditMode} }" />
+		<Text text="{Topic2/Name}" visible="{= !!${Topic2Id} &amp;&amp; !${ui>/isEditMode} }" />
+		<Label text="{i18n>topic} 2" visible="{ui>/isEditMode}" />
+		<Select	selectedKey="{Topic2/Id}"
+				visible="{ui>/isEditMode}"
+				forceSelection="false"
+				items="{ path: '/Topics', sorter: { path: 'Name' } }">
+			<core:Item key="{Id}" text="{Name}" />
+		</Select>
 
-		<Label text="{i18n>topic} 3" visible="{= !!${Topic3Id} }" />
-		<Text text="{Topic3/Name}" visible="{= !!${Topic3Id} }" />
+		<Label text="{i18n>topic} 3" visible="{= !!${Topic3Id} &amp;&amp; !${ui>/isEditMode} }" />
+		<Text text="{Topic3/Name}" visible="{= !!${Topic3Id} &amp;&amp; !${ui>/isEditMode} }" />
+		<Label text="{i18n>topic} 3" visible="{ui>/isEditMode}" />
+		<Select	selectedKey="{Topic3/Id}"
+				visible="{ui>/isEditMode}"
+				forceSelection="false"
+				items="{ path: '/Topics', sorter: { path: 'Name' } }">
+			<core:Item key="{Id}" text="{Name}" />
+		</Select>
 
-		<Label text="{i18n>topic} 4" visible="{= !!${Topic4Id} }" />
-		<Text text="{Topic4/Name}" visible="{= !!${Topic4Id} }" />
+		<Label text="{i18n>topic} 4" visible="{= !!${Topic4Id} &amp;&amp; !${ui>/isEditMode} }" />
+		<Text text="{Topic4/Name}" visible="{= !!${Topic4Id} &amp;&amp; !${ui>/isEditMode} }" />
+		<Label text="{i18n>topic} 4" visible="{ui>/isEditMode}" />
+		<Select	selectedKey="{Topic4/Id}"
+				visible="{ui>/isEditMode}"
+				forceSelection="false"
+				items="{ path: '/Topics', sorter: { path: 'Name' } }">
+			<core:Item key="{Id}" text="{Name}" />
+		</Select>
 
 	</forms:SimpleForm>
 </mvc:View>

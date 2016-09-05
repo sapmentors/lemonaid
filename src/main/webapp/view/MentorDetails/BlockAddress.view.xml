@@ -60,7 +60,7 @@
 
 		<Label text="{i18n>phone}" visible="{ui>/isEditMode}" />
 		<Input value="{Phone}" visible="{ui>/isEditMode}"/>
-		<Label text="{i18n>phone}" visible="{= !!${Phone} || ${ui>/isEditMode} }" />
+		<Label text="{i18n>phone}" visible="{= !!${Phone} &amp;&amp; !${ui>/isEditMode} }" />
 		<Link text="{Phone}" href="tel:{Phone}" target="_blank" visible="{= !!${Phone} &amp;&amp; !${ui>/isEditMode} }" />
 
 		<Label text="{i18n>region}" visible="{ui>/isEditMode}" />
