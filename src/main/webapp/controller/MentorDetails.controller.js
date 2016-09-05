@@ -59,40 +59,6 @@ sap.ui.define([
 			this.getView().getModel("ui").setProperty("/isEditMode", false);
 		},
 
-		onDisplayDialogSelectCountry: function(oEvent) {
-			if (! this._oDialogSelectCountry) {
-				this._oDialogSelectCountry = sap.ui.xmlfragment("com.sap.mentors.lemonaid.fragment.SelectCountry", this);
-				this._oDialogSelectCountry.setModel(this.getView().getModel());
-			}
-
-			// clear the old search filter
-			this._oDialogSelectCountry.getBinding("items").filter([]);
-
-			// toggle compact style
-			jQuery.sap.syncStyleClass("sapUiSizeCompact", this.getView(), this._oDialogSelectCountry);
-			this._oDialogSelectCountry.open();
-		},
-
-		onCloseDialogSelectCountry: function(oEvent) {
-			var aContexts = oEvent.getParameter("selectedContexts");
-			if (aContexts.length) {
-				MessageToast.show("TODO: Needs to update the model \"/Mentors('key')/Country\" entity correctly!");
-				this.getModel().setProperty("/Mentors(" + this.sMentorId + ")/CountryId", aContexts[0].getObject().Id);
-				//TODO: RvhHof: There **HAS** to be a better way to display the selected value from SelectDialog to the view!
-				//TODO:         Is ODataModel & sap.uxap.BlockBase broken?
-				//TODO:         Referencing a view element by ID and set its value, as opposed to databinding is just plain wrong...
-				sap.ui.getCore().byId(this.getView().byId("blockAddress").getSelectedView() + "--mentorDetailsCountry").setValue(aContexts[0].getObject().Name);
-			}
-			oEvent.getSource().getBinding("items").filter([]);
-		},
-
-		onSearchCountry: function(oEvent) {
-			var sValue = oEvent.getParameter("value");
-			var oFilter = new Filter("Name", sap.ui.model.FilterOperator.Contains, sValue);
-			var oBinding = oEvent.getSource().getBinding("items");
-			oBinding.filter([oFilter]);
-		},
-
 		bindView: function() {
             this.view.bindElement({
                 path: this.getModel().createKey("/Mentors", { Id: this.sMentorId }),

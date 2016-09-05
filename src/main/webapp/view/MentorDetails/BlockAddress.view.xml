@@ -51,16 +51,11 @@
 		<Input value="{Zip}" visible="{ui>/isEditMode}"/>
 
 		<Label text="{i18n>country}" />
-		<!--<Input value="{Country/Name}" visible="{ui>/isEditMode}" enabled="false">-->
-		<Input id="mentorDetailsCountry" value="{Country/Name}" visible="{ui>/isEditMode}" enabled="false">
-			<layoutData>
-				<layout:GridData span="L10 M10 S10" />
-			</layoutData>
-		</Input>
-		<Button icon="sap-icon://value-help" press="onDisplayDialogSelectCountry"  visible="{ui>/isEditMode}" />
-
-
-
+        <Select
+			selectedKey="{Country/Id}"
+			items="{ path: '/Countries', sorter: { path: 'Name' } }">
+			<core:Item key="{Id}" text="{Name}" />
+		</Select>
 
 		<Label text="{i18n>phone}" visible="{ui>/isEditMode}" />
 		<Input value="{Phone}" visible="{ui>/isEditMode}"/>
