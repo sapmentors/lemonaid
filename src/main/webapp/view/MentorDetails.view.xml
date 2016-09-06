@@ -73,6 +73,7 @@
 									closeDialogSelectCountry="onCloseDialogSelectCountry"
 									searchCountry="onSearchCountry"/>
 							<details:BlockSocialMedia />
+							<details:BlockShirt />
 							<details:BlockMap />
 						</blocks>
 					</ObjectPageSubSection>
