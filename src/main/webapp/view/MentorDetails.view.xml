@@ -73,7 +73,6 @@
 									closeDialogSelectCountry="onCloseDialogSelectCountry"
 									searchCountry="onSearchCountry"/>
 							<details:BlockSocialMedia />
-							<details:BlockShirt />
 							<details:BlockMap />
 						</blocks>
 					</ObjectPageSubSection>
@@ -84,6 +83,7 @@
 				<subSections>
 					<ObjectPageSubSection title="Mentor details">
 						<blocks>
+							<details:BlockShirt />
 							<details:BlockExpertise />
 							<details:BlockTopics />
 							<details:BlockSoftskills />
