@@ -83,6 +83,7 @@
 				<subSections>
 					<ObjectPageSubSection title="Mentor details">
 						<blocks>
+							<details:BlockShirt />
 							<details:BlockExpertise />
 							<details:BlockTopics />
 							<details:BlockSoftskills />

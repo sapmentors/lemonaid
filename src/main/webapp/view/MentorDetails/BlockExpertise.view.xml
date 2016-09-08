@@ -17,17 +17,59 @@
 
 		<core:Title text="{i18n>sapExpertise}" />
 
-		<Label text="" visible="{= !${SapExpertise1Id} }" />
-		<Text text="{i18n>nodata}" visible="{= !${SapExpertise1Id} }" />
+		<Label text="" visible="{= !${SapExpertise1Id} &amp;&amp; !${ui>/isEditMode} }" />
+		<Text text="{i18n>nodata}" visible="{= !${SapExpertise1Id} &amp;&amp; !${ui>/isEditMode}}" />
 
-		<Label text="{i18n>expertise} 1" visible="{= !!${SapExpertise1Id} }" />
-		<Text text="{SapExpertise1/Name}" visible="{= !!${SapExpertise1Id} }" />
+		<Label text="{i18n>expertise} 1" visible="{= !!${SapExpertise1Id} &amp;&amp; !${ui>/isEditMode}}" />
+		<Text text="{SapExpertise1/Name}" visible="{= !!${SapExpertise1Id} &amp;&amp; !${ui>/isEditMode}}" />
+		<Text text="{ExpertiseLevelDetails/Name}" visible="{= !!${SapExpertise1Id} &amp;&amp; !${ui>/isEditMode}}" />
+		<Label text="{i18n>expertise} 1" visible="{ui>/isEditMode}" />
+		<Select	selectedKey="{SapExpertise1Id}"
+				   visible="{ui>/isEditMode}"
+				   forceSelection="false"
+				   items="{ path: '/SapSoftwareSolutions', sorter: { path: 'Name' } }">
+			<core:Item key="{Id}" text="{Name}" />
+		</Select>
+		<Select	selectedKey="{SapExpertise1LevelId}"
+				   visible="{ui>/isEditMode}"
+				   forceSelection="false"
+				   items="{ path: '/ExpertiseLevels', sorter: { path: 'Name' } }">
+			<core:Item key="{Id}" text="{Name}" />
+		</Select>
 
-		<Label text="{i18n>expertise} 2" visible="{= !!${SapExpertise2Id} }" />
-		<Text text="{SapExpertise2/Name}" visible="{= !!${SapExpertise2Id} }" />
+		<Label text="{i18n>expertise} 2" visible="{= !!${SapExpertise2Id} &amp;&amp; !${ui>/isEditMode}}" />
+		<Text text="{SapExpertise2/Name}" visible="{= !!${SapExpertise2Id} &amp;&amp; !${ui>/isEditMode}}" />
+		<Text text="{ExpertiseLevelDetails1/Name}" visible="{= !!${SapExpertise2Id} &amp;&amp; !${ui>/isEditMode}}" />
+		<Label text="{i18n>expertise} 2" visible="{ui>/isEditMode}" />
+		<Select	selectedKey="{SapExpertise2Id}"
+				visible="{ui>/isEditMode}"
+				forceSelection="false"
+				items="{ path: '/SapSoftwareSolutions', sorter: { path: 'Name' } }">
+			<core:Item key="{Id}" text="{Name}" />
+		</Select>
+		<Select	selectedKey="{SapExpertise2LevelId}"
+				   visible="{ui>/isEditMode}"
+				   forceSelection="false"
+				   items="{ path: '/ExpertiseLevels', sorter: { path: 'Name' } }">
+			<core:Item key="{Id}" text="{Name}" />
+		</Select>
 
-		<Label text="{i18n>expertise} 3" visible="{= !!${SapExpertise3Id} }" />
-		<Text text="{SapExpertise3/Name}" visible="{= !!${SapExpertise3Id} }" />
+		<Label text="{i18n>expertise} 3" visible="{= !!${SapExpertise3Id} &amp;&amp; !${ui>/isEditMode}}" />
+		<Text text="{SapExpertise3/Name}" visible="{= !!${SapExpertise3Id} &amp;&amp; !${ui>/isEditMode}}" />
+		<Text text="{ExpertiseLevelDetails2/Name}" visible="{= !!${SapExpertise3Id} &amp;&amp; !${ui>/isEditMode}}" />
+		<Label text="{i18n>expertise} 3" visible="{ui>/isEditMode}" />
+		<Select	selectedKey="{SapExpertise3Id}"
+				visible="{ui>/isEditMode}"
+				forceSelection="false"
+				items="{ path: '/SapSoftwareSolutions', sorter: { path: 'Name' } }">
+			<core:Item key="{Id}" text="{Name}" />
+		</Select>
+		<Select	selectedKey="{SapExpertise3LevelId}"
+				   visible="{ui>/isEditMode}"
+				   forceSelection="false"
+				   items="{ path: '/ExpertiseLevels', sorter: { path: 'Name' } }">
+			<core:Item key="{Id}" text="{Name}" />
+		</Select>
 
 	</forms:SimpleForm>
 </mvc:View>
