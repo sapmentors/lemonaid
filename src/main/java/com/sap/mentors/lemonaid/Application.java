@@ -881,6 +881,7 @@ public class Application extends SpringBootServletInitializer {
 							null, null, 
 							null, null, 
 							true, new Topic(Topic.HANA_CLOUD_PLATFORM),
+							true, false, true, "Keyboard",	
 							true, "P508741"
 						));
 					mentorRepository.save(new Mentor(
@@ -935,6 +936,7 @@ public class Application extends SpringBootServletInitializer {
 							null, null, 
 							null, null, 
 							true, new Topic(Topic.UX),
+							false, false, false, null,
 							true, "S0007138856"
 						));
 					mentorRepository.save(new Mentor(
@@ -988,7 +990,8 @@ public class Application extends SpringBootServletInitializer {
 							null, null, 
 							null, null, 
 							null, null, 
-							false, null ,
+							false, null,
+							false, false, false, null,
 							true, null
 						));
 

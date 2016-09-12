@@ -123,6 +123,7 @@ public class Mentor {
     		String scnUrl, String twitterId, String linkedInUrl, String xingUrl, String facebookUrl,
     		boolean interestInMentorCommunicationStrategy, boolean interestInMentorManagementModel, boolean interestInMentorMix, boolean interestInOtherIdeas, int hoursAvailable,
     		Region topicLeadRegionId, Topic topic1Id, String topic1Executive, Topic topic2Id, String topic2Executive, Topic topic3Id, String topic3Executive, Topic topic4Id, String topic4Executive, boolean topicLeadInterest, Topic topicInterestId,
+    		boolean jambandMusician, boolean jambandLasVegas, boolean jambandBarcelona, String jambandInstrument,
     		boolean publicProfile, String userId)
     {
     	this.id = id;
@@ -197,6 +198,11 @@ public class Mentor {
         this.topicLeadInterest = topicLeadInterest;
         this.topicInterestId = topicInterestId;
         
+		this.jambandMusician = jambandMusician;
+		this.jambandLasVegas = jambandLasVegas;
+		this.jambandBarcelona = jambandBarcelona;
+		this.jambandInstrument = jambandInstrument;
+
         this.userId = userId;
         this.publicProfile = publicProfile;
     }
