@@ -93,10 +93,10 @@ public class Mentor {
     @SAP(fieldGroup="TopicLead") private boolean topicLeadInterest;
     @SAP(fieldGroup="TopicLead") @JoinColumn(name="topicInterestId") @ManyToOne private Topic topicInterestId;
     
-    @SAP(fieldGroup="JamBand") private boolean jambandMusician;
-    @SAP(fieldGroup="JamBand") private boolean jambandLasVegas;
-    @SAP(fieldGroup="JamBand") private boolean jambandBarcelona;
-    @SAP(fieldGroup="JamBand") private String jambandInstrument;
+//    @SAP(fieldGroup="JamBand") private boolean jambandMusician;
+//    @SAP(fieldGroup="JamBand") private boolean jambandLasVegas;
+//    @SAP(fieldGroup="JamBand") private boolean jambandBarcelona;
+//    @SAP(fieldGroup="JamBand") private String jambandInstrument;
  
     private String userId;
     @Transient private boolean mayEdit;
@@ -123,7 +123,7 @@ public class Mentor {
     		String scnUrl, String twitterId, String linkedInUrl, String xingUrl, String facebookUrl,
     		boolean interestInMentorCommunicationStrategy, boolean interestInMentorManagementModel, boolean interestInMentorMix, boolean interestInOtherIdeas, int hoursAvailable,
     		Region topicLeadRegionId, Topic topic1Id, String topic1Executive, Topic topic2Id, String topic2Executive, Topic topic3Id, String topic3Executive, Topic topic4Id, String topic4Executive, boolean topicLeadInterest, Topic topicInterestId,
-    		boolean jambandMusician, boolean jambandLasVegas, boolean jambandBarcelona, String jambandInstrument,
+//    		boolean jambandMusician, boolean jambandLasVegas, boolean jambandBarcelona, String jambandInstrument,
     		boolean publicProfile, String userId)
     {
     	this.id = id;
@@ -198,10 +198,10 @@ public class Mentor {
         this.topicLeadInterest = topicLeadInterest;
         this.topicInterestId = topicInterestId;
         
-		this.jambandMusician = jambandMusician;
-		this.jambandLasVegas = jambandLasVegas;
-		this.jambandBarcelona = jambandBarcelona;
-		this.jambandInstrument = jambandInstrument;
+//		this.jambandMusician = jambandMusician;
+//		this.jambandLasVegas = jambandLasVegas;
+//		this.jambandBarcelona = jambandBarcelona;
+//		this.jambandInstrument = jambandInstrument;
 
         this.userId = userId;
         this.publicProfile = publicProfile;
@@ -718,37 +718,37 @@ public class Mentor {
 		this.topicInterestId = topicInterestId;
 	}
 
-	public boolean isJambandMusician() {
-		return jambandMusician;
-	}
-
-	public void setJambandMusician(boolean jambandMusician) {
-		this.jambandMusician = jambandMusician;
-	}
-
-	public boolean isJambandLasVegas() {
-		return jambandLasVegas;
-	}
-
-	public void setJambandLasVegas(boolean jambandLasVegas) {
-		this.jambandLasVegas = jambandLasVegas;
-	}
-
-	public boolean isJambandBarcelona() {
-		return jambandBarcelona;
-	}
-
-	public void setJambandBarcelona(boolean jambandBarcelona) {
-		this.jambandBarcelona = jambandBarcelona;
-	}
-
-	public String getJambandInstrument() {
-		return jambandInstrument;
-	}
-
-	public void setJambandInstrument(String jambandInstrument) {
-		this.jambandInstrument = jambandInstrument;
-	}
+//	public boolean isJambandMusician() {
+//		return jambandMusician;
+//	}
+//
+//	public void setJambandMusician(boolean jambandMusician) {
+//		this.jambandMusician = jambandMusician;
+//	}
+//
+//	public boolean isJambandLasVegas() {
+//		return jambandLasVegas;
+//	}
+//
+//	public void setJambandLasVegas(boolean jambandLasVegas) {
+//		this.jambandLasVegas = jambandLasVegas;
+//	}
+//
+//	public boolean isJambandBarcelona() {
+//		return jambandBarcelona;
+//	}
+//
+//	public void setJambandBarcelona(boolean jambandBarcelona) {
+//		this.jambandBarcelona = jambandBarcelona;
+//	}
+//
+//	public String getJambandInstrument() {
+//		return jambandInstrument;
+//	}
+//
+//	public void setJambandInstrument(String jambandInstrument) {
+//		this.jambandInstrument = jambandInstrument;
+//	}
 
 	public String getUserId() {
 		return userId;
