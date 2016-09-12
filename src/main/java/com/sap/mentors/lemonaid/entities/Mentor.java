@@ -92,6 +92,11 @@ public class Mentor {
     @SAP(fieldGroup="TopicLead") private String topic4Executive;
     @SAP(fieldGroup="TopicLead") private boolean topicLeadInterest;
     @SAP(fieldGroup="TopicLead") @JoinColumn(name="topicInterestId") @ManyToOne private Topic topicInterestId;
+    
+    @SAP(fieldGroup="JamBand") private boolean jambandMusician;
+    @SAP(fieldGroup="JamBand") private boolean jambandLasVegas;
+    @SAP(fieldGroup="JamBand") private boolean jambandBarcelona;
+    @SAP(fieldGroup="JamBand") private String jambandInstrument;
  
     private String userId;
     @Transient private boolean mayEdit;
@@ -705,6 +710,38 @@ public class Mentor {
 
 	public void setTopicInterestId(Topic topicInterestId) {
 		this.topicInterestId = topicInterestId;
+	}
+
+	public boolean isJambandMusician() {
+		return jambandMusician;
+	}
+
+	public void setJambandMusician(boolean jambandMusician) {
+		this.jambandMusician = jambandMusician;
+	}
+
+	public boolean isJambandLasVegas() {
+		return jambandLasVegas;
+	}
+
+	public void setJambandLasVegas(boolean jambandLasVegas) {
+		this.jambandLasVegas = jambandLasVegas;
+	}
+
+	public boolean isJambandBarcelona() {
+		return jambandBarcelona;
+	}
+
+	public void setJambandBarcelona(boolean jambandBarcelona) {
+		this.jambandBarcelona = jambandBarcelona;
+	}
+
+	public String getJambandInstrument() {
+		return jambandInstrument;
+	}
+
+	public void setJambandInstrument(String jambandInstrument) {
+		this.jambandInstrument = jambandInstrument;
 	}
 
 	public String getUserId() {
