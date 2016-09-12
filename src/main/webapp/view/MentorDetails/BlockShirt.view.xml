@@ -19,7 +19,7 @@
 		<core:Title text="{i18n>mentorShirt}" />
 
 		<Label text="{i18n>shirtPreview}" />
-		<cc:MentorShirt text="{ShirtText}" number="{ShirtNumber}" />
+		<cc:MentorShirt gender="{ShirtMFId}" text="{ShirtText}" number="{ShirtNumber}" />
 
 		<Label text="{i18n>shirtMF}" visible="{= !${ui>/isEditMode} }" />
 		<Text text="{ShirtMF/Name}" visible="{= !${ui>/isEditMode} }" />

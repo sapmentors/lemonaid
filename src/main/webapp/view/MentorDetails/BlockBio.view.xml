@@ -1,0 +1,58 @@
+<mvc:View
+		controllerName="com.sap.mentors.lemonaid.controller.BaseBlock"
+		xmlns:mvc="sap.ui.core.mvc"
+		xmlns:forms="sap.ui.layout.form"
+		xmlns:core="sap.ui.core"
+		xmlns:layout="sap.ui.layout"
+		xmlns="sap.m">
+
+	<forms:SimpleForm
+			labelSpanL="4"
+			labelSpanM="4"
+			labelSpanS="4"
+			emptySpanL="0"
+			emptySpanM="0"
+			emptySpanS="0"
+			maxContainerCols="2" layout="ResponsiveLayout"
+			width="100%">
+
+		<core:Title text="{i18n>bio}"></core:Title>
+
+		<Label text="{i18n>industry} 1" visible="{= !!${Industry1Id} &amp;&amp; !${ui>/isEditMode}}" />
+		<Text text="{Industry1/Name}" visible="{= !!${Industry1Id} &amp;&amp; !${ui>/isEditMode}}" />
+		<Label text="{i18n>industry} 1" visible="{ui>/isEditMode}" />
+		<Select	selectedKey="{Industry1Id}"
+				   visible="{ui>/isEditMode}"
+				   forceSelection="false"
+				   items="{ path: '/Industries', sorter: { path: 'Name' } }">
+			<core:Item key="{Id}" text="{Name}" />
+		</Select>
+
+		<Label text="{i18n>industry} 2" visible="{= !!${Industry2Id} &amp;&amp; !${ui>/isEditMode}}" />
+		<Text text="{Industry2/Name}" visible="{= !!${Industry2Id} &amp;&amp; !${ui>/isEditMode}}" />
+		<Label text="{i18n>industry} 2" visible="{ui>/isEditMode}" />
+		<Select	selectedKey="{Industry2Id}"
+				   visible="{ui>/isEditMode}"
+				   forceSelection="false"
+				   items="{ path: '/Industries', sorter: { path: 'Name' } }">
+			<core:Item key="{Id}" text="{Name}" />
+		</Select>
+
+		<Label text="{i18n>industry} 3" visible="{= !!${Industry3Id} &amp;&amp; !${ui>/isEditMode}}" />
+		<Text text="{Industry3/Name}" visible="{= !!${Industry3Id} &amp;&amp; !${ui>/isEditMode}}" />
+		<Label text="{i18n>industry} 3" visible="{ui>/isEditMode}" />
+		<Select	selectedKey="{Industry3Id}"
+				   visible="{ui>/isEditMode}"
+				   forceSelection="false"
+				   items="{ path: '/Industries', sorter: { path: 'Name' } }">
+			<core:Item key="{Id}" text="{Name}" />
+		</Select>
+
+		<Label text="{i18n>shortBio}" visible="{= !!${Bio} &amp;&amp; !${ui>/isEditMode}}" />
+		<Text text="{Bio}" visible="{= !!${Bio} &amp;&amp; !${ui>/isEditMode}}" />
+		<Label text="{i18n>shortBio}" visible="{ui>/isEditMode}" />
+		<TextArea value="{Bio}" visible="{ui>/isEditMode}" rows="5" growing="true" />
+
+
+	</forms:SimpleForm>
+</mvc:View>

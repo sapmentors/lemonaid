@@ -113,29 +113,37 @@
 /* =========================================================== */
 .mentorShirtContainer {
 	width: 300px;
-	height: 300px;
-	background-image: url("../images/MentorShirt.png");
+	height: 356px;
 }
 
-.MentorShirtText {
+.mentorShirtContainer.male {
+	background-image: url("../images/MentorShirtM.png")
+}
+
+.mentorShirtContainer.female {
+	background-image: url("../images/MentorShirtF.png")
+}
+
+.mentorShirtTypeface {
+	font-family: Arial, sans-serif; /* NOTE: Not the exact font, but most close resemblance */
+}
+.mentorShirtText.mentorShirtTypeface {
 	position: relative;
-	top: 60px;
+	top: 66px;
 	left: 77px;
 	width: 150px;
 	color: #FFF;
-	font-family: 'Arial Narrow';
 	font-weight: bold;
-	font-size: 20px;
+	font-size: 18px;
 	text-align: center;
 	border: 0px solid red;
 }
-.MentorShirtNumber {
+.mentorShirtNumber.mentorShirtTypeface {
 	position: relative;
-	top: 54px;
+	top: 68px;
 	left: 77px;
 	width: 150px;
 	color: #FFF;
-	font-family: 'Arial Narrow';
 	font-weight: bold;
 	font-size: 64px;
 	text-align: center;

@@ -11,9 +11,6 @@ sap.ui.define([], function () {
 				gender : { type: "string", defaultValue: "" },
 				text   : { type: "string", defaultValue: "" },
 				number : { type: "string", defaultValue: 0 }
-				// },
-				// events: {
-				//     generateImage: { }
 			}
 		},
 
@@ -30,9 +27,9 @@ sap.ui.define([], function () {
 			oRm.write(">");
 
 			oRm.write("<div class=\"mentorShirtContainer\">");
-			oRm.write("<div class=\"MentorShirtText\"></div>");
-			oRm.write("<div class=\"MentorShirtNumber\">" + oControl.getNumber() + "</div>");
-			oRm.write("<span class=\"hidden-resizer MentorShirtText\" style=\"visibility: hidden\">" + oControl.getText() + "</span>");
+			oRm.write("<div class=\"mentorShirtText mentorShirtTypeface\"></div>");
+			oRm.write("<div class=\"mentorShirtNumber mentorShirtTypeface\">" + oControl.getNumber() + "</div>");
+			oRm.write("<span class=\"hidden-resizer mentorShirtText mentorShirtTypeface\" style=\"visibility: hidden\">" + oControl.getText() + "</span>");
 			oRm.write("</div>");
 
 			oRm.write("</div>");
@@ -40,15 +37,28 @@ sap.ui.define([], function () {
 
 		onAfterRendering: function () {
 			var size;
-			var desiredWidth = 135;
-			var resizer = $(".hidden-resizer.MentorShirtText");
+			var desired_width = 135;
+			var resizer = $(".hidden-resizer.mentorShirtText");
 
-			while(resizer.width() > desiredWidth) {
+			this.setGender(this.getGender());
+
+			while(resizer.width() > desired_width) {
 				size = parseInt(resizer.css("font-size"), 10);
 				resizer.css("font-size", size - 1);
 			}
 
-			$("div.MentorShirtText").css("font-size", size).html(resizer.html());
+			$("div.mentorShirtText").css("font-size", size).html(resizer.html());
+		},
+
+		setGender: function(sGender) {
+			var container = $(".mentorShirtContainer");
+			if (sGender === "F") {
+				container.removeClass("male").addClass("female");
+			}
+			else {
+				container.removeClass("female").addClass("male");
+			}
+			this.setProperty("gender", sGender);
 		}
 	});
 
