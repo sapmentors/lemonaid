@@ -1,5 +1,6 @@
 package com.sap.mentors.lemonaid.entities;
 
+import java.util.Calendar;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -10,6 +11,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
 import com.sap.mentors.lemonaid.annotations.SAP;
@@ -24,6 +27,7 @@ public class Mentor {
 	@SAP(fieldGroup="BasicInfo") private String fullName;
 	@SAP(fieldGroup="BasicInfo") private String photoUrl;
 	@SAP(fieldGroup="BasicInfo") @JoinColumn(name="statusId") @ManyToOne private MentorStatus statusId;
+	@SAP(fieldGroup="BasicInfo") @Temporal(TemporalType.DATE) private Calendar mentorSince;
 
 	@SAP(fieldGroup="BasicInfo") private String jobTitle;
 	@SAP(fieldGroup="BasicInfo") private String company;
@@ -244,6 +248,14 @@ public class Mentor {
 
 	public void setStatusId(MentorStatus statusId) {
 		this.statusId = statusId;
+	}
+
+	public Calendar getMentorSince() {
+		return mentorSince;
+	}
+
+	public void setMentorSince(Calendar mentorSince) {
+		this.mentorSince = mentorSince;
 	}
 
 	public String getJobTitle() {
