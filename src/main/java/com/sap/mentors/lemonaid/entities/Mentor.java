@@ -3,10 +3,10 @@ package com.sap.mentors.lemonaid.entities;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -29,10 +29,10 @@ public class Mentor {
 	@SAP(fieldGroup="BasicInfo") private String company;
 	@SAP(fieldGroup="BasicInfo") @JoinColumn(name="relationshipToSapId") @ManyToOne private RelationshipToSap relationshipToSapId;
 
-	@SAP(fieldGroup="BasicInfo") @Lob private String bio; 
+	@SAP(fieldGroup="BasicInfo") @Column(length = 5000) private String bio;
 	@SAP(fieldGroup="BasicInfo") private String email1;
 	@SAP(fieldGroup="BasicInfo") private String email2;
-
+	
 	@SAP(fieldGroup="Expertise") @JoinColumn(name="lineOfBusiness1Id") @ManyToOne private LineOfBusiness lineOfBusiness1Id;
 	@SAP(fieldGroup="Expertise") @JoinColumn(name="lineOfBusiness2Id") @ManyToOne private LineOfBusiness lineOfBusiness2Id;
 	@SAP(fieldGroup="Expertise") @JoinColumn(name="lineOfBusiness3Id") @ManyToOne private LineOfBusiness lineOfBusiness3Id;
