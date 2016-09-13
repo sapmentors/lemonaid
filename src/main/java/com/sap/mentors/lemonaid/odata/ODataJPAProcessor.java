@@ -126,10 +126,12 @@ public class ODataJPAProcessor extends ODataJPAProcessorDefault {
 			throws ODataException{
 		if (uriParserResultView.getTargetEntitySet().getEntityType().getName().equals("Mentor")) {
 			// Search on FullName should be case insensitive
-			uriParserResultView.setFilter(
-				(new FilterParserImpl(uriParserResultView.getTargetEntitySet().getEntityType())).parseFilterString(
-					uriParserResultView.getFilter().getExpressionString().replaceAll("substringof\\(('.+'),(FullName)\\)", "substringof\\(tolower\\($1\\),tolower\\($2\\)\\)")
-				));
+			if (uriParserResultView.getFilter() != null && uriParserResultView.getFilter().getExpressionString() != null && uriParserResultView.getFilter().getExpressionString().length() > 0) {
+				uriParserResultView.setFilter(
+					(new FilterParserImpl(uriParserResultView.getTargetEntitySet().getEntityType())).parseFilterString(
+						uriParserResultView.getFilter().getExpressionString().replaceAll("substringof\\(('.+'),(FullName)\\)", "substringof\\(tolower\\($1\\),tolower\\($2\\)\\)")
+					));
+			}
 			// If the user is not a mentor, only return mentors profiles that are marked as publicly visible
 			if (!this.isMentor() && !this.isAlumnus() && !this.isProjectMember()) {  
 				uriParserResultView.setFilter(
