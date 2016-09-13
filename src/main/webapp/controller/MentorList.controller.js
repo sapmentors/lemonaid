@@ -46,7 +46,7 @@ sap.ui.define([
 
         onSearchPressed: function(event) {
             var search = event.getParameters().query;
-            var filter = new Filter("tolower(FullName)", FilterOperator.Contains, search);
+            var filter = new Filter("FullName", FilterOperator.Contains, search);
             this.table.getBinding("items").filter(filter);
             this.map.getBinding("markers").filter(filter);
         },
