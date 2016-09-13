@@ -37,12 +37,12 @@ sap.ui.define([], function () {
 
 		onAfterRendering: function () {
 			var size;
-			var desired_width = 135;
+			var desiredWidth = 135;
 			var resizer = $(".hidden-resizer.mentorShirtText");
 
 			this.setGender(this.getGender());
 
-			while(resizer.width() > desired_width) {
+			while(resizer.width() > desiredWidth) {
 				size = parseInt(resizer.css("font-size"), 10);
 				resizer.css("font-size", size - 1);
 			}
