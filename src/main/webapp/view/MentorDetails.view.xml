@@ -63,7 +63,7 @@
 
 		<sections>
 
-			<ObjectPageSection id="personalInfoSection" title="{i18n>personalInfo}" importance="Medium">
+			<ObjectPageSection id="personalInfoSection" title="{i18n>personalInfo}">
 				<subSections>
 					<ObjectPageSubSection title="{i18n>personalInfo}">
 						<blocks>
