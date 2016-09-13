@@ -31,9 +31,9 @@
 							<m:Button icon="sap-icon://nav-back" press="onNavBack"/>
 						</m:contentLeft>
 						<m:contentRight>
-							<!--<m:Button icon="sap-icon://edit" text="{i18n>edit}" press="onEdit" visible="{= ${MayEdit} &amp;&amp; !${ui>/isEditMode} }"/>-->
+							<m:Button icon="sap-icon://edit" text="{i18n>edit}" press="onEdit" visible="{= ${MayEdit} &amp;&amp; !${ui>/isEditMode} }"/>
 							<!--FOR TESTING ONLY, IGNORES 'MayEdit' FLAG-->
-							<m:Button icon="sap-icon://edit" text="{i18n>edit}" press="onEdit" visible="{= !${ui>/isEditMode} }"/>
+							<!--<m:Button icon="sap-icon://edit" text="{i18n>edit}" press="onEdit" visible="{= !${ui>/isEditMode} }"/>-->
 							<m:Button icon="sap-icon://save" text="Save changes" type="Accept" press="onSave" visible="{ui>/isEditMode}"/>
 							<m:Button text="Cancel" press="onCancel" type="Reject" visible="{ui>/isEditMode}"/>
 						</m:contentRight>
