@@ -1,0 +1,41 @@
+<mvc:View
+		controllerName="com.sap.mentors.lemonaid.controller.BaseBlock"
+		xmlns:mvc="sap.ui.core.mvc"
+		xmlns:forms="sap.ui.layout.form"
+		xmlns:core="sap.ui.core"
+		xmlns="sap.m">
+
+	<forms:SimpleForm
+			labelSpanL="4"
+			labelSpanM="4"
+			labelSpanS="4"
+			emptySpanL="0"
+			emptySpanM="0"
+			emptySpanS="0"
+			maxContainerCols="2" layout="ResponsiveLayout"
+			width="100%">
+
+		<core:Title text="{i18n>jamBand}" />
+
+		<Label text="{i18n>jamMusician}" visible="{= !${ui>/isEditMode}}" />
+		<Text text="{= ${JambandMusician} ? ${i18n>yes} : ${i18n>no}}" visible="{= !${ui>/isEditMode}}" />
+		<Label text="{i18n>jamMusician}" visible="{ui>/isEditMode}" />
+		<Switch state="{JambandMusician}" visible="{ui>/isEditMode}" customTextOn="{i18n>yes}" customTextOff="{i18n>no}" />
+
+		<Label text="{i18n>jamInstruments}" visible="{= !${ui>/isEditMode} &amp;&amp; ${JambandMusician}}" />
+		<Text text="{JambandInstrument}" visible="{= !${ui>/isEditMode} &amp;&amp; ${JambandMusician}}" />
+		<Label text="{i18n>jamInstruments}" visible="{= ${ui>/isEditMode} &amp;&amp; ${JambandMusician}}" />
+		<Input value="{JambandInstrument}" visible="{= ${ui>/isEditMode} &amp;&amp; ${JambandMusician}}" />
+
+		<Label text="{i18n>jamBarcelona}" visible="{= !${ui>/isEditMode} &amp;&amp; ${JambandMusician}}" />
+		<Text text="{= ${JambandBarcelona} ? ${i18n>yes} : ${i18n>no}}" visible="{= !${ui>/isEditMode} &amp;&amp; ${JambandMusician}}" />
+		<Label text="{i18n>jamBarcelona}" visible="{= ${ui>/isEditMode} &amp;&amp; ${JambandMusician}}" />
+		<Switch state="{JambandBarcelona}" visible="{= ${ui>/isEditMode} &amp;&amp; ${JambandMusician}}" customTextOn="{i18n>yes}" customTextOff="{i18n>no}" />
+
+		<Label text="{i18n>jamLasVegas}" visible="{= !${ui>/isEditMode} &amp;&amp; ${JambandMusician}}" />
+		<Text text="{= ${JambandLasVegas} ? ${i18n>yes} : ${i18n>no}}" visible="{= !${ui>/isEditMode} &amp;&amp; ${JambandMusician}}" />
+		<Label text="{i18n>jamLasVegas}" visible="{= ${ui>/isEditMode} &amp;&amp; ${JambandMusician}}" />
+		<Switch state="{JambandLasVegas}" visible="{= ${ui>/isEditMode} &amp;&amp; ${JambandMusician}}" customTextOn="{i18n>yes}" customTextOff="{i18n>no}" />
+
+	</forms:SimpleForm>
+</mvc:View>
