@@ -3,7 +3,6 @@
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:forms="sap.ui.layout.form"
 	xmlns:core="sap.ui.core"
-	xmlns:layout="sap.ui.layout"
 	xmlns="sap.m">
 
 	<forms:SimpleForm
@@ -44,10 +43,10 @@
 		<Link text="{FacebookUrl}" href="{FacebookUrl}" target="_blank" visible="{= !!${FacebookUrl} &amp;&amp; !${ui>/isEditMode} }" />
 
 		<Label text="{i18n>email}" visible="{= (!!${Email1} || !!${Email2}) &amp;&amp; !${ui>/isEditMode} }" />
-		<layout:VerticalLayout>
+		<VBox>
 			<Link text="{Email1}" href="mailto:{Email1}" target="_blank" visible="{= !!${Email1} &amp;&amp; !${ui>/isEditMode} }" />
 			<Link text="{Email2}" href="mailto:{Email2}" target="_blank" visible="{= !!${Email2} &amp;&amp; !${ui>/isEditMode} }" />
-		</layout:VerticalLayout>
+		</VBox>
 
 		<Label text="{i18n>email} 1" visible="{ui>/isEditMode}" />
 		<Input value="{Email1}" visible="{ui>/isEditMode}"/>

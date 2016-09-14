@@ -2,7 +2,6 @@
 	controllerName="com.sap.mentors.lemonaid.controller.MentorDetails"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns="sap.uxap"
-	xmlns:l="sap.ui.layout"
 	xmlns:m="sap.m"
 	xmlns:details="com.sap.mentors.lemonaid.view.MentorDetails">
 	<ObjectPageLayout
@@ -37,26 +36,26 @@
 				</navigationBar>
 			</ObjectPageHeader>
 		</headerTitle>
-<!--
+
 		<headerContent>
 			<m:NumericContent value="{ShirtNumber}" size="M" />
-			<l:VerticalLayout>
+			<m:VBox>
 				<m:Label text="{City}, {Country/Name}"/>
 				<m:Link text="{Phone}"/>
 				<m:Link text="{Email1}"/>
 				<m:Link text="{Email2}"/>
-			</l:VerticalLayout>
-			<l:HorizontalLayout>
+			</m:VBox>
+			<m:HBox>
 				<m:Image src="images/linkedin.png" />
 				<m:Image src="images/Twitter.png" />
-			</l:HorizontalLayout>
-			<l:VerticalLayout>
+			</m:HBox>
+			<m:VBox>
 				<m:Label text="{Bio}"/>
-			</l:VerticalLayout>
-			<l:VerticalLayout>
-			</l:VerticalLayout>
+			</m:VBox>
+			<m:VBox>
+			</m:VBox>
 		</headerContent>
--->
+
 		<sections>
 
 			<ObjectPageSection id="personalInfoSection" title="{i18n>personalInfo}">
@@ -72,7 +71,7 @@
 				</subSections>
 			</ObjectPageSection>
 
-			<ObjectPageSection title="Mentor details" importance="Medium">
+			<ObjectPageSection title="Mentor details">
 				<subSections>
 					<ObjectPageSubSection title="Mentor details">
 						<blocks>
@@ -86,7 +85,7 @@
 				</subSections>
 			</ObjectPageSection>
 
- 			<ObjectPageSection title="Media" importance="Medium">
+ 			<ObjectPageSection title="Media">
 				<subSections>
 					<ObjectPageSubSection title="Media and Documents">
 						<blocks>

@@ -79,7 +79,8 @@ module.exports = function(grunt) {
             files: [
             	"Gruntfile.js",
 				"src/main/webapp/**/*.js",
-				"!src/main/webapp/util/**"
+				"!src/main/webapp/util/**",
+				"!src/main/webapp/*-preload.js"
 			],
             options: {
                 jshintrc: ".jshintrc"
