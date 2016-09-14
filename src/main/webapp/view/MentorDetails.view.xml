@@ -11,7 +11,7 @@
 		showTitleInHeaderContent="true"
 		showEditHeaderButton="false"
 		editHeaderButtonPress="handleEditBtnPress">
-
+<!--
 		<headerTitle>
 			<ObjectPageHeader
 				id="header"
@@ -56,7 +56,7 @@
 			<l:VerticalLayout>
 			</l:VerticalLayout>
 		</headerContent>
-
+-->
 		<sections>
 
 			<ObjectPageSection id="personalInfoSection" title="{i18n>personalInfo}">
