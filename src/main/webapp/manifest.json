@@ -82,13 +82,14 @@
 			},
 			"user": {
 				"type": "sap.ui.model.json.JSONModel",
-				"dataSource": "user",		
+				"dataSource": "user",
 				"settings": {
 					"defaultBindingMode": "OneWay"
 				}
 			},
 			"": {
 				"dataSource": "odata",
+                "type": "com.sap.mentors.lemonaid.model.ODataModel",
 				"settings": {
 					"defaultBindingMode": "TwoWay",
 					"json": true

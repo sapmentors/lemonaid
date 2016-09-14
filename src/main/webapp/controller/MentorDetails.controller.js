@@ -10,6 +10,14 @@ sap.ui.define([
 
     return BaseController.extend("com.sap.mentors.lemonaid.controller.MentorDetails", {
 
+        /* =========================================================== */
+        /* lifecycle methods                                           */
+        /* =========================================================== */
+
+        /**
+         * Called when the master list controller is instantiated. It sets up the event handling for the master/detail communication and other lifecycle tasks.
+         * @public
+         */
         onInit: function() {
 			this.view      = this.getView();
 			this.component = this.getComponent();
@@ -23,6 +31,10 @@ sap.ui.define([
         	this.getView().setModel(this.ui, "ui");
             this.router.getRoute("Mentor").attachMatched(this.onRouteMatched, this);
         },
+
+        /* =========================================================== */
+        /* event handlers                                              */
+        /* =========================================================== */
 
         onRouteMatched: function(oEvent) {
             this.sMentorId = oEvent.getParameter("arguments").Id;
@@ -42,14 +54,12 @@ sap.ui.define([
 		 * @param {sap.ui.base.Event} oEvent - 'press' event of Save button
 		 */
 		onSave: function(oEvent) {
-			var self = this;
-
 			this.model.submitChanges({
 				success: function(oData) {
 					console.log("OK", oData);
 					MessageToast.show("Profile is saved successfully");
-					self.getView().getModel("ui").setProperty("/isEditMode", false);
-				},
+					this.getView().getModel("ui").setProperty("/isEditMode", false);
+				}.bind(this),
 				error: function(oError) {
 					MessageToast.show("ERROR: Profile cannot be saved!");
 					console.log("ERROR", oError);
@@ -74,7 +84,12 @@ sap.ui.define([
                 }
             });
             this.ui.setProperty("/UploadUrl", this.model.sServiceUrl + "/" + this.model.createKey("Mentors", {Id: this.sMentorId}) + "/Attachments");
-        }
+        },
+
+        /* =========================================================== */
+        /* begin: internal methods                                     */
+        /* =========================================================== */
+        
 
     });
 });
