@@ -11,7 +11,7 @@
 		showTitleInHeaderContent="true"
 		showEditHeaderButton="false"
 		editHeaderButtonPress="handleEditBtnPress">
-<!--
+
 		<headerTitle>
 			<ObjectPageHeader
 				id="header"
@@ -37,7 +37,7 @@
 				</navigationBar>
 			</ObjectPageHeader>
 		</headerTitle>
-
+<!--
 		<headerContent>
 			<m:NumericContent value="{ShirtNumber}" size="M" />
 			<l:VerticalLayout>
