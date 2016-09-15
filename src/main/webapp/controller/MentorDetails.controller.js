@@ -80,7 +80,7 @@ sap.ui.define([
             this.view.bindElement({
                 path: this.getModel().createKey("/Mentors", { Id: this.sMentorId }),
                 parameters: {
-                    expand: "MentorStatus,RelationshipToSap,Industry1,Industry2,Industry3,ShirtMF,ShirtSize,SapExpertise1,ExpertiseLevelDetails,SapExpertise2,ExpertiseLevelDetails1,SapExpertise3,ExpertiseLevelDetails2,SoftSkill1,SoftSkill2,SoftSkill3,SoftSkill4,SoftSkill5,SoftSkill6,Country,Region,Topic1,Topic2,Topic3"
+                    expand: "MentorStatus,RelationshipToSap,Industry1,Industry2,Industry3,ShirtMF,ShirtSize,SapExpertise1,SapExpertise1Level,SapExpertise2,SapExpertise2Level,SapExpertise3,SapExpertise3Level,SoftSkill1,SoftSkill2,SoftSkill3,SoftSkill4,SoftSkill5,SoftSkill6,Country,Region,Topic1,Topic2,Topic3"
                 }
             });
             this.ui.setProperty("/UploadUrl", this.model.sServiceUrl + "/" + this.model.createKey("Mentors", {Id: this.sMentorId}) + "/Attachments");

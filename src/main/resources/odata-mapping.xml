@@ -16,9 +16,9 @@
 					<JPARelationship name="sapExpertise1Id">SapExpertise1</JPARelationship>
 					<JPARelationship name="sapExpertise2Id">SapExpertise2</JPARelationship>
 					<JPARelationship name="sapExpertise3Id">SapExpertise3</JPARelationship>
-					<JPARelationship name="sapExpertise1levelId">SapExpertise1Level</JPARelationship>
-					<JPARelationship name="sapExpertise2levelId">SapExpertise2Level</JPARelationship>
-					<JPARelationship name="sapExpertise3levelId">SapExpertise3Level</JPARelationship>
+					<JPARelationship name="sapExpertise1LevelId">SapExpertise1Level</JPARelationship>
+					<JPARelationship name="sapExpertise2LevelId">SapExpertise2Level</JPARelationship>
+					<JPARelationship name="sapExpertise3LevelId">SapExpertise3Level</JPARelationship>
 					<JPARelationship name="softSkill1Id">SoftSkill1</JPARelationship>
 					<JPARelationship name="softSkill2Id">SoftSkill2</JPARelationship>
 					<JPARelationship name="softSkill3Id">SoftSkill3</JPARelationship>

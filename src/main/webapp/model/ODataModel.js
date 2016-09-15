@@ -128,11 +128,13 @@ sap.ui.define([
 		jQuery.each(oPayload, function(sPropName, oPropValue) {
 			result[sPropName] = oPropValue;
 			if (sPropName !== "__metadata") {
-				var principal = this._getAssociationPrincipal(oEntityType, sPropName),
+				var association = this._getAssociation(oEntityType, sPropName),
+				 	principal = association.referentialConstraint.principal,
+					dependent = association.referentialConstraint.dependent,
 					associationSet = null;
 				if (principal) {
 					var key = {}; 
-					associationSet = this._getAssociationSet(oEntityType.name, principal.role);
+					associationSet = this._getAssociationSet(association);
 					key[principal.propertyRef[0].name] = oPropValue;
 					var uri = this.createKey(
 							this._getPrincipalEntitySetName(associationSet, oEntityType.name, principal.role), 
@@ -146,26 +148,27 @@ sap.ui.define([
 		return result;
 	};
 	
-	ODataModel.prototype._getAssociationPrincipal = function(oEntityTypeDependent, sPropName) {
+	ODataModel.prototype._getAssociation = function(oEntityTypeDependent, sPropName) {
 		var retval = null;
 		jQuery.each(this.oMetadata.oMetadata.dataServices.schema, function(schemaIdx, schema) {
 			jQuery.each(schema.association, function(associationIdx, association) {
 				if (association.referentialConstraint.dependent.role === oEntityTypeDependent.name && 
 					association.referentialConstraint.dependent.propertyRef[0].name === sPropName) {
-					retval = association.referentialConstraint.principal;
+					retval = association;
+					retval.namespace = schema.namespace;
+					return false;
 				}
 			}.bind(this));
 		}.bind(this));
 		return retval;
 	};
 
-	ODataModel.prototype._getAssociationSet = function(sDependentRoleName, sPrincipalRoleName) {
+	ODataModel.prototype._getAssociationSet = function(association) {
 		var retval = null;
 		jQuery.each(this.oMetadata.oMetadata.dataServices.schema, function(schemaIdx, schema) {
 			jQuery.each(schema.entityContainer, function(entityContainerIdx, entityContainer) {
 				jQuery.each(entityContainer.associationSet, function(associationSetIdx, associationSet) {
-					if ((associationSet.end[0].role === sDependentRoleName && associationSet.end[1].role === sPrincipalRoleName) ||
-					    (associationSet.end[1].role === sDependentRoleName && associationSet.end[0].role === sPrincipalRoleName)) {
+					if (associationSet.association === association.namespace + "." + association.name) {
 						retval = associationSet;
 						return false;
 					}
