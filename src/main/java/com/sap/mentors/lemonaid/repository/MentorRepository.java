@@ -12,7 +12,10 @@ public interface MentorRepository extends CrudRepository<Mentor, String> {
 
     List<Mentor> findByFullName(String fullName);
     
-    @Query("SELECT m FROM Mentor m WHERE LOWER(m.userId) = LOWER(:userId) OR LOWER(m.email1) = LOWER(:email) OR LOWER(m.email2) = LOWER(:email)")
-    public List<Mentor> findByUserIdOrEmail(@Param("userId") String userId, @Param("email") String email);
-    
+    @Query("SELECT m FROM Mentor m WHERE LOWER(m.userId) = LOWER(:userId)")
+    public List<Mentor> findByUserId(@Param("userId") String userId);
+
+    @Query("SELECT m FROM Mentor m WHERE LOWER(m.email1) = LOWER(:email) OR LOWER(m.email2) = LOWER(:email)")
+    public List<Mentor> findByEmail(@Param("email") String email);
+
 }

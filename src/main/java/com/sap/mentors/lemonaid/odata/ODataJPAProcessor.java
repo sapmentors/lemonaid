@@ -2,7 +2,9 @@ package com.sap.mentors.lemonaid.odata;
 
 import java.io.InputStream;
 import java.security.Principal;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -43,9 +45,14 @@ public class ODataJPAProcessor extends ODataJPAProcessorDefault {
 	private static final Logger log = LoggerFactory.getLogger(ODataJPAProcessor.class);
 
 	private MentorRepository mentorRepository = null;
+	private static ThreadLocal<Map<String, Object>> threadLocalData = new ThreadLocal<Map<String, Object>>();
+	static {
+		threadLocalData.set(new HashMap<String, Object>());
+	}
 	
 	public ODataJPAProcessor(ODataJPAContext oDataJPAContext) {
 		super(oDataJPAContext);
+		threadLocalData.set(new HashMap<String, Object>());
 	}
 	
 	private HttpServletRequest getRequest() {
@@ -75,7 +82,8 @@ public class ODataJPAProcessor extends ODataJPAProcessorDefault {
 		if (user != null) {
 			if (this.mentorRepository == null) this.mentorRepository = (MentorRepository) SpringContextsUtil.getBean("mentorRepository");
 			if (this.mentorRepository == null) return null;
-			List<Mentor> mentors = mentorRepository.findByUserIdOrEmail(user.getName(), user.getEmail());
+			List<Mentor> mentors = mentorRepository.findByUserId(user.getName());
+			if (mentors.isEmpty()) mentors = mentorRepository.findByEmail(user.getEmail());
 			for (Mentor mentor : mentors) {
 				return mentor;
 			}
@@ -93,6 +101,9 @@ public class ODataJPAProcessor extends ODataJPAProcessorDefault {
 			    // Read the currently logged in user from the user storage
 			    com.sap.security.um.user.User user = users.getUser(userPrincipal.getName());
 	
+			    // Store the userName in ThreadLocal
+			    threadLocalData.get().put("UserName", userPrincipal.getName());
+			    
 			    // Print the user name and email
 			    return new User(
 			    		userPrincipal.getName(),
@@ -262,6 +273,7 @@ public class ODataJPAProcessor extends ODataJPAProcessorDefault {
 		if (!isMentor() && !isAlumnus() && !isProjectMember()) {
 			return ODataResponse.entity("Unauthorized").status(HttpStatusCodes.UNAUTHORIZED).contentHeader("text/html").build();
 		}
+		getCurrentUser();
 		ODataResponse oDataResponse = null;
 		try {
 			oDataJPAContext.setODataContext(getContext());
@@ -280,6 +292,7 @@ public class ODataJPAProcessor extends ODataJPAProcessorDefault {
 		if (!isMentor() && !isAlumnus() && !isProjectMember()) {
 			return ODataResponse.entity("Unauthorized").status(HttpStatusCodes.UNAUTHORIZED).contentHeader("text/html").build();
 		}
+		getCurrentUser();
 		ODataResponse oDataResponse = null;
 		try {
 			oDataJPAContext.setODataContext(getContext());
@@ -341,8 +354,12 @@ public class ODataJPAProcessor extends ODataJPAProcessorDefault {
 	public ODataResponse executeBatch(BatchHandler handler, String contentType, InputStream content)
 			throws ODataException {
 		ODataContext ctx = ODataJPAContextImpl.getContextInThreadLocal();  
-		this.batchRequest = (HttpServletRequest) ctx.getParameter(ODataContext.HTTP_SERVLET_REQUEST_OBJECT);  
+		this.batchRequest = (HttpServletRequest) ctx.getParameter(ODataContext.HTTP_SERVLET_REQUEST_OBJECT);
 		return super.executeBatch(handler, contentType, content);
+	}
+
+	public static ThreadLocal<Map<String, Object>> getThreadLocalData() {
+		return threadLocalData;
 	}
 	
 }

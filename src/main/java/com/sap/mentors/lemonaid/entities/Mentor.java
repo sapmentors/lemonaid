@@ -10,18 +10,24 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
 import com.sap.mentors.lemonaid.annotations.SAP;
+import com.sap.mentors.lemonaid.odata.ODataJPAProcessor;
+import com.sap.mentors.lemonaid.repository.MentorRepository;
 import com.sap.mentors.lemonaid.utils.types.Point;
 
 @Entity
 @Table(name="mentors")
 public class Mentor {
 
+	static MentorRepository mentorRepository;
+	
 	@Id
 	@SAP(fieldGroup="Key") private String id;
 	@SAP(fieldGroup="BasicInfo") private String fullName;
@@ -113,6 +119,11 @@ public class Mentor {
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="mentorId")
     private List<Attachment> attachments;    
     
+	@Temporal(TemporalType.TIMESTAMP) private Calendar createdAt;
+	private String createdBy;
+	@Temporal(TemporalType.TIMESTAMP) private Calendar updatedAt;
+	private String updatedBy;
+	
     public Mentor() {}
 
     public Mentor(
@@ -833,4 +844,59 @@ public class Mentor {
 		
 	}
 
+	public Calendar getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(Calendar createdAt) {
+		this.createdAt = createdAt;
+	}
+
+	public String getCreatedBy() {
+		return createdBy;
+	}
+
+	public void setCreatedBy(String createdBy) {
+		this.createdBy = createdBy;
+	}
+
+	public Calendar getUpdatedAt() {
+		return updatedAt;
+	}
+
+	public void setUpdatedAt(Calendar updatedAt) {
+		this.updatedAt = updatedAt;
+	}
+
+	public String getUpdatedBy() {
+		return updatedBy;
+	}
+
+	public void setUpdatedBy(String updatedBy) {
+		this.updatedBy = updatedBy;
+	}
+
+	@PrePersist
+	private void persist() {
+		String userName = (String) ODataJPAProcessor.getThreadLocalData().get().get("UserName");
+		this.createdAt = Calendar.getInstance();
+		this.updatedAt = Calendar.getInstance();
+		if (userName == null) {
+			this.createdBy = "SYSTEM";
+			this.updatedBy = "SYSTEM";
+		} else {
+			this.createdBy = userName;
+			this.updatedBy = userName;
+		}
+	}
+	
+	@PreUpdate
+	private void update() {
+		String userName = (String) ODataJPAProcessor.getThreadLocalData().get().get("UserName");
+		if (userName != null) {
+			this.updatedAt = Calendar.getInstance();
+			this.updatedBy = (String) ODataJPAProcessor.getThreadLocalData().get().get("UserName");
+		}
+	}
+	
 }
