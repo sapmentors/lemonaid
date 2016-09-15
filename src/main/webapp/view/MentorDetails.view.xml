@@ -16,9 +16,9 @@
 				id="header"
 				objectImageURI="{PhotoUrl}"
 				objectTitle="{FullName}"
+				objectSubtitle="SAP NetWeaver Magician"
 				objectImageShape="Circle"
 				objectImageAlt="{FullName}"
-				objectSubtitle="{JobTitle}"
 				isObjectIconAlwaysVisible="false"
 				isObjectTitleAlwaysVisible="false"
 				isObjectSubtitleAlwaysVisible="false">
@@ -38,22 +38,26 @@
 		</headerTitle>
 
 		<headerContent>
-			<m:NumericContent value="{ShirtNumber}" size="M" />
+			<m:VBox>
+				<m:ObjectStatus title="{i18n>shirtAlias}" text="{ShirtText}"/>
+				<m:ObjectStatus title="{i18n>shirtNumber}" text="{ShirtNumber}"/>
+			</m:VBox>
+			<!--<m:NumericContent value="{ShirtNumber}" size="M" />-->
 			<m:VBox>
 				<m:Label text="{City}, {Country/Name}"/>
 				<m:Link text="{Phone}"/>
 				<m:Link text="{Email1}"/>
 				<m:Link text="{Email2}"/>
 			</m:VBox>
-			<m:HBox>
-				<m:Image src="images/linkedin.png" />
-				<m:Image src="images/Twitter.png" />
-			</m:HBox>
-			<m:VBox>
-				<m:Label text="{Bio}"/>
-			</m:VBox>
-			<m:VBox>
-			</m:VBox>
+			<!--<m:HBox>-->
+				<!--<m:Image src="images/linkedin.png" />-->
+				<!--<m:Image src="images/Twitter.png" />-->
+			<!--</m:HBox>-->
+			<!--<m:VBox>-->
+				<!--<m:Text width="100%" wrapping="true" text="{Bio}"/>-->
+			<!--</m:VBox>-->
+			<!--<m:VBox>-->
+			<!--</m:VBox>-->
 		</headerContent>
 
 		<sections>

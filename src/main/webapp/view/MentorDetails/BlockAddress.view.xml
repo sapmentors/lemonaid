@@ -34,6 +34,9 @@
 		<Label text="{i18n>fullName}" />
 		<Input value="{FullName}" visible="{ui>/isEditMode}"/>
 
+		<Label text="{i18n>jobTitle}" />
+		<Input value="{JobTitle}" visible="{ui>/isEditMode}"/>
+
 		<Label text="{i18n>address} 1" />
 		<Input value="{Address1}" visible="{ui>/isEditMode}"/>
 
@@ -65,9 +68,9 @@
 
 		<Label text="{i18n>region}" visible="{ui>/isEditMode}" />
 		<Select
-			selectedKey="{TopicLeadRegionId}" 
+			selectedKey="{TopicLeadRegionId}"
 			items="{/Regions}"
-			forceSelection="false" 
+			forceSelection="false"
 			visible="{ui>/isEditMode}">
 			<core:Item key="{Id}" text="{Name}" />
 		</Select>
