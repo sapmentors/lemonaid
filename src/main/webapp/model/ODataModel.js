@@ -8,6 +8,7 @@ sap.ui.define([
 	"use strict";
 
 	var ODataModel = BaseControl.extend("com.sap.mentors.lemonaid.model.ODataModel", {
+
 	});
 
     /* =========================================================== */
@@ -127,20 +128,22 @@ sap.ui.define([
 		jQuery.each(oPayload, function(sPropName, oPropValue) {
 			result[sPropName] = oPropValue;
 			if (sPropName !== "__metadata") {
-				var association = this._getAssociation(oEntityType, sPropName),
-				 	principal = association.referentialConstraint.principal,
-					dependent = association.referentialConstraint.dependent,
-					associationSet = null;
-				if (principal) {
-					var key = {}; 
-					associationSet = this._getAssociationSet(association);
-					key[principal.propertyRef[0].name] = oPropValue;
-					var uri = this.createKey(
-							this._getPrincipalEntitySetName(associationSet, oEntityType.name, principal.role), 
-							key
-						);
-					var navProperty = this._getNavigationPropertyOfAssociationsetInEntity(associationSet, oEntityType);
-					result[navProperty.name] = { __deferred: { uri: uri } };
+				var association = this._getAssociation(oEntityType, sPropName);
+				if (association) {
+					var principal = association.referentialConstraint.principal,
+						dependent = association.referentialConstraint.dependent,
+						associationSet = null;
+					if (principal) {
+						var key = {}; 
+						associationSet = this._getAssociationSet(association);
+						key[principal.propertyRef[0].name] = oPropValue;
+						var uri = this.createKey(
+								this._getPrincipalEntitySetName(associationSet, oEntityType.name, principal.role), 
+								key
+							);
+						var navProperty = this._getNavigationPropertyOfAssociationsetInEntity(associationSet, oEntityType);
+						result[navProperty.name] = { __deferred: { uri: uri } };
+					}
 				}
 			}
 		}.bind(this));
