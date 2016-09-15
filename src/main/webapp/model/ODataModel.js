@@ -126,6 +126,7 @@ sap.ui.define([
 	ODataModel.prototype._addNavigationLinks = function(oPayload, oEntityType) {
 		var result = {};
 		jQuery.each(oPayload, function(sPropName, oPropValue) {
+			result[sPropName] = oPropValue;
 			if (sPropName !== "__metadata") {
 				var principal = this._getAssociationPrincipal(oEntityType, sPropName),
 					associationSet = null;
@@ -139,11 +140,7 @@ sap.ui.define([
 						);
 					var navProperty = this._getNavigationPropertyOfAssociationsetInEntity(associationSet, oEntityType);
 					result[navProperty.name] = { __deferred: { uri: uri } };
-				} else {
-					result[sPropName] = oPropValue;
 				}
-			} else {
-				result[sPropName] = oPropValue;
 			}
 		}.bind(this));
 		return result;
