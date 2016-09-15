@@ -16,7 +16,7 @@
 				id="header"
 				objectImageURI="{PhotoUrl}"
 				objectTitle="{FullName}"
-				objectSubtitle="SAP NetWeaver Magician"
+				objectSubtitle="{JobTitle}"
 				objectImageShape="Circle"
 				objectImageAlt="{FullName}"
 				isObjectIconAlwaysVisible="false"
