@@ -75,7 +75,7 @@ public class ODataJPAProcessor extends ODataJPAProcessorDefault {
 		if (user != null) {
 			if (this.mentorRepository == null) this.mentorRepository = (MentorRepository) SpringContextsUtil.getBean("mentorRepository");
 			if (this.mentorRepository == null) return null;
-			List<Mentor> mentors = mentorRepository.findByEmail(user.getEmail());
+			List<Mentor> mentors = mentorRepository.findByUserIdOrEmail(user.getName(), user.getEmail());
 			for (Mentor mentor : mentors) {
 				return mentor;
 			}
