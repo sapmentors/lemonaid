@@ -72,11 +72,11 @@ sap.ui.define([
 
 			if (mentorId) {
 				this.getRouter().navTo("Mentor", {
-					Id: event.getSource().getBindingContext().getProperty("Id")
+					Id: mentorId
 				});
 			}
 			else {
-				console.log("ERROR: Not logged in or id not registered");
+				console.log("ERROR: Not logged in or id not registered", mentorId);
 			}
 		}
 
