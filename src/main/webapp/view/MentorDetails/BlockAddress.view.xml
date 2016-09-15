@@ -80,7 +80,12 @@
 		<Label text="{i18n>language} 1" visible="{ui>/isEditMode}" />
 		<Select
 				selectedKey="{Language1Id}"
-				items="{/Languages}"
+				items="{
+					 path : '/Languages',
+					 sorter : {
+						path : 'Name'
+					 }
+				 }"
 				forceSelection="false"
 				visible="{ui>/isEditMode}">
 			<core:Item key="{Id}" text="{Name}" />
@@ -91,7 +96,12 @@
 		<Label text="{i18n>language} 2" visible="{ui>/isEditMode}" />
 		<Select
 				selectedKey="{Language2Id}"
-				items="{/Languages}"
+				items="{
+					 path : '/Languages',
+					 sorter : {
+						path : 'Name'
+					 }
+				 }"
 				forceSelection="false"
 				visible="{ui>/isEditMode}">
 			<core:Item key="{Id}" text="{Name}" />
@@ -102,7 +112,12 @@
 		<Label text="{i18n>language} 3" visible="{ui>/isEditMode}" />
 		<Select
 				selectedKey="{Language3Id}"
-				items="{/Languages}"
+				items="{
+					 path : '/Languages',
+					 sorter : {
+						path : 'Name'
+					 }
+				 }"
 				forceSelection="false"
 				visible="{ui>/isEditMode}">
 			<core:Item key="{Id}" text="{Name}" />
