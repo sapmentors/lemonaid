@@ -26,6 +26,9 @@
 					<JPARelationship name="softSkill5Id">SoftSkill5</JPARelationship>
 					<JPARelationship name="softSkill6Id">SoftSkill6</JPARelationship>
 					<JPARelationship name="countryId">Country</JPARelationship>
+					<JPARelationship name="language1Id">Language1</JPARelationship>
+					<JPARelationship name="language2Id">Language2</JPARelationship>
+					<JPARelationship name="language3Id">Language3</JPARelationship>
 					<JPARelationship name="regionId">Region</JPARelationship>
 					<JPARelationship name="shirtSizeId">ShirtSize</JPARelationship>
 					<JPARelationship name="shirtMFId">ShirtMF</JPARelationship>

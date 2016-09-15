@@ -37,6 +37,10 @@ public class Mentor {
 	@SAP(fieldGroup="BasicInfo") private String email1;
 	@SAP(fieldGroup="BasicInfo") private String email2;
 	
+	@SAP(fieldGroup="BasicInfo") @JoinColumn(name="Language1Id") @ManyToOne private Language language1Id;
+	@SAP(fieldGroup="BasicInfo") @JoinColumn(name="Language2Id") @ManyToOne private Language language2Id;
+	@SAP(fieldGroup="BasicInfo") @JoinColumn(name="Language3Id") @ManyToOne private Language language3Id;	
+	
 	@SAP(fieldGroup="Expertise") @JoinColumn(name="lineOfBusiness1Id") @ManyToOne private LineOfBusiness lineOfBusiness1Id;
 	@SAP(fieldGroup="Expertise") @JoinColumn(name="lineOfBusiness2Id") @ManyToOne private LineOfBusiness lineOfBusiness2Id;
 	@SAP(fieldGroup="Expertise") @JoinColumn(name="lineOfBusiness3Id") @ManyToOne private LineOfBusiness lineOfBusiness3Id;
@@ -448,6 +452,30 @@ public class Mentor {
 
 	public void setEmail2(String email2) {
 		this.email2 = email2;
+	}
+
+	public Language getLanguage1Id() {
+		return language1Id;
+	}
+
+	public void setLanguage1Id(Language language1Id) {
+		this.language1Id = language1Id;
+	}
+
+	public Language getLanguage2Id() {
+		return language2Id;
+	}
+
+	public void setLanguage2Id(Language language2Id) {
+		this.language2Id = language2Id;
+	}
+
+	public Language getLanguage3Id() {
+		return language3Id;
+	}
+
+	public void setLanguage3Id(Language language3Id) {
+		this.language3Id = language3Id;
 	}
 
 	public String getAddress1() {
