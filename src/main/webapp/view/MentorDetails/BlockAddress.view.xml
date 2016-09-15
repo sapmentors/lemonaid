@@ -53,6 +53,7 @@
         <Select
 			selectedKey="{CountryId}"
             visible="{ui>/isEditMode}"
+            forceSelection="false"
 			items="{ path: '/Countries', sorter: { path: 'Name' } }">
 			<core:Item key="{Id}" text="{Name}" />
 		</Select>
@@ -63,7 +64,11 @@
 		<Link text="{Phone}" href="tel:{Phone}" target="_blank" visible="{= !!${Phone} &amp;&amp; !${ui>/isEditMode} }" />
 
 		<Label text="{i18n>region}" visible="{ui>/isEditMode}" />
-		<Select selectedKey="{TopicLeadRegionId}" items="{/Regions}" visible="{ui>/isEditMode}">
+		<Select
+			selectedKey="{TopicLeadRegionId}" 
+			items="{/Regions}"
+			forceSelection="false" 
+			visible="{ui>/isEditMode}">
 			<core:Item key="{Id}" text="{Name}" />
 		</Select>
 		<Label text="{i18n>region}" visible="{= !${ui>/isEditMode} }" />

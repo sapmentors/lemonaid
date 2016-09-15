@@ -127,15 +127,18 @@ sap.ui.define([
 		var result = {};
 		jQuery.each(oPayload, function(sPropName, oPropValue) {
 			if (sPropName !== "__metadata") {
-				var principal = this._getAssociationPrincipal(oEntityType, sPropName);
+				var principal = this._getAssociationPrincipal(oEntityType, sPropName),
+					associationSet = null;
 				if (principal) {
-					var key = {};
+					var key = {}; 
+					associationSet = this._getAssociationSet(oEntityType.name, principal.role);
 					key[principal.propertyRef[0].name] = oPropValue;
 					var uri = this.createKey(
-							this._getPrincipalEntitySetName(oEntityType.name, principal.role), 
+							this._getPrincipalEntitySetName(associationSet, oEntityType.name, principal.role), 
 							key
 						);
-					result[principal.role] = { __deferred: { uri: uri } };
+					var navProperty = this._getNavigationPropertyOfAssociationsetInEntity(associationSet, oEntityType);
+					result[navProperty.name] = { __deferred: { uri: uri } };
 				} else {
 					result[sPropName] = oPropValue;
 				}
@@ -158,20 +161,41 @@ sap.ui.define([
 		}.bind(this));
 		return retval;
 	};
-	
-	ODataModel.prototype._getPrincipalEntitySetName = function(sDependentRoleName, sPrincipalRoleName) {
+
+	ODataModel.prototype._getAssociationSet = function(sDependentRoleName, sPrincipalRoleName) {
 		var retval = null;
 		jQuery.each(this.oMetadata.oMetadata.dataServices.schema, function(schemaIdx, schema) {
 			jQuery.each(schema.entityContainer, function(entityContainerIdx, entityContainer) {
 				jQuery.each(entityContainer.associationSet, function(associationSetIdx, associationSet) {
-					if (associationSet.end[0].role === sDependentRoleName && associationSet.end[1].role === sPrincipalRoleName) {
-						retval = associationSet.end[1].entitySet;
-					} else if (associationSet.end[1].role === sDependentRoleName && associationSet.end[0].role === sPrincipalRoleName) {
-						retval = associationSet.end[0].entitySet;
+					if ((associationSet.end[0].role === sDependentRoleName && associationSet.end[1].role === sPrincipalRoleName) ||
+					    (associationSet.end[1].role === sDependentRoleName && associationSet.end[0].role === sPrincipalRoleName)) {
+						retval = associationSet;
+						return false;
 					}
 				}.bind(this));
 			}.bind(this));
 		}.bind(this));
+		return retval;
+	};
+
+	ODataModel.prototype._getPrincipalEntitySetName = function(associationSet, sDependentRoleName, sPrincipalRoleName) {
+		var retval = null;
+		if (associationSet.end[0].role === sDependentRoleName && associationSet.end[1].role === sPrincipalRoleName) {
+			retval = associationSet.end[1].entitySet;
+		} else if (associationSet.end[1].role === sDependentRoleName && associationSet.end[0].role === sPrincipalRoleName) {
+			retval = associationSet.end[0].entitySet;
+		}
+		return retval;
+	};
+	
+	ODataModel.prototype._getNavigationPropertyOfAssociationsetInEntity = function(associationSet, oEntityType) {
+		var retval = null;
+		jQuery.each(oEntityType.navigationProperty, function(i, navigationProperty) {
+			if (navigationProperty.relationship === associationSet.association) {
+				retval = navigationProperty;
+				return false;
+			}
+		});
 		return retval;
 	};
 
