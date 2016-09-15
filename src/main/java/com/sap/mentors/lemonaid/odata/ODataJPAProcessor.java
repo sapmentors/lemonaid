@@ -30,6 +30,7 @@ import org.slf4j.LoggerFactory;
 
 import com.sap.mentors.lemonaid.entities.Config;
 import com.sap.mentors.lemonaid.entities.Mentor;
+import com.sap.mentors.lemonaid.repository.MentorRepository;
 import com.sap.mentors.lemonaid.rest.User;
 import com.sap.security.um.service.UserManagementAccessor;
 import com.sap.security.um.user.UserProvider;
@@ -41,6 +42,8 @@ public class ODataJPAProcessor extends ODataJPAProcessorDefault {
 
 	private static final Logger log = LoggerFactory.getLogger(ODataJPAProcessor.class);
 
+	private MentorRepository mentorRepository = null;
+	
 	public ODataJPAProcessor(ODataJPAContext oDataJPAContext) {
 		super(oDataJPAContext);
 	}
@@ -67,7 +70,19 @@ public class ODataJPAProcessor extends ODataJPAProcessorDefault {
     	return isInRole("ProjectMember");
 	}
 	
-	private User currentUser() {
+	private Mentor getCurrentMentor() {
+		User user = getCurrentUser();
+		if (user != null) {
+			if (this.mentorRepository == null) this.mentorRepository = (MentorRepository) SpringContextsUtil.getBean("mentorRepository");
+			List<Mentor> mentors = mentorRepository.findByEmail(user.getEmail());
+			for (Mentor mentor : mentors) {
+				return mentor;
+			}
+		}
+		return null;
+	}
+	
+	private User getCurrentUser() {
     	Principal userPrincipal = getRequest().getUserPrincipal();
 		if (userPrincipal != null) {
             try {
@@ -94,7 +109,7 @@ public class ODataJPAProcessor extends ODataJPAProcessorDefault {
 	}
 	
 	private Object enrichEntity(EdmEntityType entityType, Object jpaEntity) throws ODataException {
-		User user = currentUser();
+		User user = getCurrentUser();
 		if (entityType.getName().equals("Mentor") && jpaEntity != null) {
 			Mentor mentor = (Mentor) jpaEntity;
 			mentor.setMayEdit(
@@ -187,10 +202,12 @@ public class ODataJPAProcessor extends ODataJPAProcessorDefault {
 			oDataJPAContext.setODataContext(getContext());
 			List<Object> jpaEntities = jpaProcessor.process(uriParserResultView);
 			jpaEntities = enrichEntities(uriParserResultView.getTargetEntitySet().getEntityType(), jpaEntities);
+			Mentor currentMentor = getCurrentMentor();
 			if (uriParserResultView.getTargetEntitySet().getEntityType().getName().equals("Config")) {
 				jpaEntities.add(new Config("IsMentor", Boolean.toString(isMentor())));
 				jpaEntities.add(new Config("IsAlumnus", Boolean.toString(isAlumnus())));
 				jpaEntities.add(new Config("IsProjectMember", Boolean.toString(isProjectMember())));
+				if (currentMentor != null) jpaEntities.add(new Config("MentorId", currentMentor.getId()));
 			}
 			oDataResponse = responseBuilder.build(uriParserResultView, jpaEntities, contentType);
 		} finally {
