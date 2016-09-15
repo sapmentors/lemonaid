@@ -8,7 +8,6 @@ sap.ui.define([
 	"use strict";
 
 	var ODataModel = BaseControl.extend("com.sap.mentors.lemonaid.model.ODataModel", {
-
 	});
 
     /* =========================================================== */
