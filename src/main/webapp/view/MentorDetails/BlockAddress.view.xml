@@ -77,5 +77,38 @@
 		<Label text="{i18n>region}" visible="{= !${ui>/isEditMode} }" />
 		<Text text="{Region/Name}" visible="{= !${ui>/isEditMode} }"/>
 
+		<Label text="{i18n>language} 1" visible="{ui>/isEditMode}" />
+		<Select
+				selectedKey="{Language1Id}"
+				items="{/Languages}"
+				forceSelection="false"
+				visible="{ui>/isEditMode}">
+			<core:Item key="{Id}" text="{Name}" />
+		</Select>
+		<Label text="{i18n>language} 1" visible="{= !!${Language1Id} &amp;&amp; !${ui>/isEditMode} }" />
+		<Text text="{Language1/Name}" visible="{= !!${Language1Id} &amp;&amp; !${ui>/isEditMode} }"/>
+
+		<Label text="{i18n>language} 2" visible="{ui>/isEditMode}" />
+		<Select
+				selectedKey="{Language2Id}"
+				items="{/Languages}"
+				forceSelection="false"
+				visible="{ui>/isEditMode}">
+			<core:Item key="{Id}" text="{Name}" />
+		</Select>
+		<Label text="{i18n>language} 2" visible="{= !!${Language2Id} &amp;&amp; !${ui>/isEditMode} }" />
+		<Text text="{Language2/Name}" visible="{= !!${Language2Id} &amp;&amp; !${ui>/isEditMode} }"/>
+
+		<Label text="{i18n>language} 3" visible="{ui>/isEditMode}" />
+		<Select
+				selectedKey="{Language3Id}"
+				items="{/Languages}"
+				forceSelection="false"
+				visible="{ui>/isEditMode}">
+			<core:Item key="{Id}" text="{Name}" />
+		</Select>
+		<Label text="{i18n>language} 3" visible="{= !!${Language3Id} &amp;&amp; !${ui>/isEditMode} }" />
+		<Text text="{Language3/Name}" visible="{= !!${Language3Id} &amp;&amp; !${ui>/isEditMode} }"/>
+
 	</forms:SimpleForm>
 </mvc:View>

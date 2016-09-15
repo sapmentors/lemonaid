@@ -1,4 +1,4 @@
-/* global sap */
+/* global sap, console */
 
 sap.ui.define([
     "com/sap/mentors/lemonaid/controller/BaseController",
@@ -65,6 +65,19 @@ sap.ui.define([
 
 		onPressLogin: function() {
 			window.location = "login.html";
+		},
+
+		onPressUserName: function() {
+			var mentorId = this.component.getModel("config").getProperty("/MentorId");
+
+			if (mentorId) {
+				this.getRouter().navTo("Mentor", {
+					Id: event.getSource().getBindingContext().getProperty("Id")
+				});
+			}
+			else {
+				console.log("ERROR: Not logged in or id not registered");
+			}
 		}
 
 	});

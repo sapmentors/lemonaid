@@ -32,7 +32,7 @@
 					press="onPressLogin"
 					visible="{= !${user>/name} }" />
 				<Button
-					text="{user>/displayName}"
+					text="{= !${device>/system/phone} ? ${user>/displayName} : ${user>/firstName}}"
 					type="Transparent"
 					press="onPressUserName"
 					visible="{= !!${user>/name}}">
