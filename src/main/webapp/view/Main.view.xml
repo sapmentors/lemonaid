@@ -45,59 +45,23 @@
 
 		<tnt:sideContent>
 			<tnt:SideNavigation expanded="false" itemSelect="onMenuSelect">
-
                 <tnt:NavigationList id="NavigationList" items="{menu>/}">
 					<tnt:NavigationListItem
                         key="{menu>key}"
                         text="{menu>text}"
                         icon="{menu>icon}" />
 				</tnt:NavigationList>
-
-				<!-- <tnt:NavigationList id="NavigationList">
-					<tnt:NavigationListItem
-						key="Mentors"
-						text="{i18n>mentors}"
-						icon="sap-icon://person-placeholder" />
-					<tnt:NavigationListItem
-						key="Events"
-						text="{i18n>events}"
-						icon="sap-icon://calendar" />
-					<tnt:NavigationListItem
-						key="Content"
-						text="{i18n>content}"
-						icon="sap-icon://documents" />
-					<tnt:NavigationListItem
-						key="SocialMedia"
-						text="{i18n>socialMedia}"
-						icon="sap-icon://discussion" />
-					<tnt:NavigationListItem
-						key="ImportExport"
-						text="{i18n>importExport}"
-						icon="sap-icon://download-from-cloud" />
-				</tnt:NavigationList> -->
 			</tnt:SideNavigation>
 		</tnt:sideContent>
 
 		<tnt:mainContents>
 			<NavContainer id="pageContainer">
-				<Page id="Mentors" showHeader="false">
-					<mvc:XMLView viewName="com.sap.mentors.lemonaid.view.MentorList"/>
-				</Page>
-				<Page id="Mentor" showHeader="false" enableScrolling="false">
-					<mvc:XMLView viewName="com.sap.mentors.lemonaid.view.MentorDetails"/>
-				</Page>
-				<Page id="Events" showHeader="false">
-					<mvc:XMLView viewName="com.sap.mentors.lemonaid.view.EventList"/>
-				</Page>
-				<Page id="Content" showHeader="false">
-					<mvc:XMLView viewName="com.sap.mentors.lemonaid.view.ContentList"/>
-				</Page>
-				<Page id="SocialMedia" showHeader="false">
-					<mvc:XMLView viewName="com.sap.mentors.lemonaid.view.SocialMedia"/>
-				</Page>
-				<Page id="ImportExport" showHeader="false">
-					<mvc:XMLView viewName="com.sap.mentors.lemonaid.view.ImportExport"/>
-				</Page>
+				<Page id="Mentors" showHeader="false" />
+				<Page id="Mentor" showHeader="false" enableScrolling="false" />
+				<Page id="Events" showHeader="false" />
+				<Page id="Content" showHeader="false" />
+				<Page id="SocialMedia" showHeader="false" />
+				<Page id="ImportExport" showHeader="false" />
 			</NavContainer>
 		</tnt:mainContents>
 
