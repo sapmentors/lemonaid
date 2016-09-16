@@ -56,14 +56,12 @@ sap.ui.define([
 		onSave: function(oEvent) {
 			this.model.submitChanges({
 				success: function(oData) {
-					console.log("OK", oData);
-					MessageToast.show("Profile is saved successfully");
+					MessageToast.show(this.i18n.getText("profileSavedSuccesfully"));
 					this.getView().getModel("ui").setProperty("/isEditMode", false);
 				}.bind(this),
 				error: function(oError) {
-					MessageToast.show("ERROR: Profile cannot be saved!");
-					console.log("ERROR", oError);
-				}
+					MessageToast.show(this.i18n.getText("profileSavedError"));
+				}.bind(this)
 			});
 		},
 
@@ -84,7 +82,7 @@ sap.ui.define([
                 }
             });
             this.ui.setProperty("/UploadUrl", this.model.sServiceUrl + "/" + this.model.createKey("Mentors", {Id: this.sMentorId}) + "/Attachments");
-        },
+        }
 
         /* =========================================================== */
         /* begin: internal methods                                     */
