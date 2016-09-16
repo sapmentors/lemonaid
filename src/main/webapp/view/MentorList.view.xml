@@ -31,6 +31,19 @@
 				iconColor="Default"
 				count="{ui>/alumni}"
 				text="{i18n>alumni}"/>
+			<IconTabSeparator class="sapUiVisibleOnlyOnDesktop" />
+			<IconTabFilter
+				key="bandVegas"
+				icon="sap-icon://microphone"
+				iconColor="Positive"
+				count="{ui>/bandVegas}"
+				text="{i18n>bandVegas}"/>
+			<IconTabFilter
+				key="bandBcn"
+				icon="sap-icon://microphone"
+				iconColor="Default"
+				count="{ui>/bandBcn}"
+				text="{i18n>bandBcn}"/>
 		</items>
 		<content>
 			<l:ResponsiveSplitter defaultPane="default">
