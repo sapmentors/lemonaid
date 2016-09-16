@@ -217,6 +217,7 @@
                             <account>${sap.cloud.account}</account>
                             <application>${sap.cloud.application}</application>
                             <source>${project.build.directory}/ROOT.war</source>
+                            <synchronous>true</synchronous>
                         </configuration>
                     </execution>
                     <execution>
@@ -231,6 +232,7 @@
                             <password>${sap.cloud.password}</password>
                             <account>${sap.cloud.account}</account>
                             <application>${sap.cloud.application}</application>
+                            <synchronous>true</synchronous>
                         </configuration>
                     </execution>
                 </executions>
