@@ -87,6 +87,20 @@
 			</exclusions>
         </dependency>
 		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+            <exclusions>
+				<exclusion>
+					<artifactId>logback-classic</artifactId>
+					<groupId>ch.qos.logback</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>slf4j-api</artifactId>
+					<groupId>org.slf4j</groupId>
+				</exclusion>
+			</exclusions>
+        </dependency>
+		<dependency>
 			<groupId>org.springframework.social</groupId>
 			<artifactId>spring-social-twitter</artifactId>
 		</dependency>
