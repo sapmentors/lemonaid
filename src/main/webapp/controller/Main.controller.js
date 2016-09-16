@@ -1,10 +1,7 @@
 /* global sap, console */
 
 sap.ui.define([
-    "com/sap/mentors/lemonaid/controller/BaseController",
-    "sap/ui/model/Filter",
-    "sap/ui/model/FilterOperator",
-    "sap/ui/model/json/JSONModel"
+    "com/sap/mentors/lemonaid/controller/BaseController"
 ], function(BaseController) {
     "use strict";
 

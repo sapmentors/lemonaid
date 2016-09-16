@@ -17,6 +17,14 @@ sap.ui.define([
 		/* lifecycle methods                                           */
 		/* =========================================================== */
 
+		filters: {
+				active: 	new sap.ui.model.Filter("MentorStatus/Id", "EQ", "active"),
+				alumni: 	new sap.ui.model.Filter("MentorStatus/Id", "EQ", "alumni"),
+				bandVegas:	new sap.ui.model.Filter("JambandLasVegas", "EQ", true),
+				bandBcn:	new sap.ui.model.Filter("JambandBarcelona", "EQ", true)
+			},
+		searchFilter: null, quickFilter: null,
+
 		/**
 		 * Called when the view controller is instantiated.
 		 * @public
@@ -24,7 +32,7 @@ sap.ui.define([
         onInit: function() {
         	this.table = this.byId("mentorsTable");
         	this.map = this.byId("map");
-            this.ui = new JSONModel({ tableBusyDelay: 0, count: 0, mentors: 0, alumni: 0 });
+            this.ui = new JSONModel({ tableBusyDelay: 0, count: 0 });
             this.model = this.getComponent().getModel();
             this.view = this.getView();
             this.router = this.getRouter();
@@ -46,9 +54,8 @@ sap.ui.define([
 
         onSearchPressed: function(event) {
             var search = event.getParameters().query;
-            var filter = new Filter("FullName", FilterOperator.Contains, search);
-            this.table.getBinding("items").filter(filter);
-            this.map.getBinding("markers").filter(filter);
+            this.searchFilter = search ? new Filter("FullName", FilterOperator.Contains, search) : null;
+            this._applyFilters();
         },
 
 		/* =========================================================== */
@@ -69,11 +76,11 @@ sap.ui.define([
 			var count = event.getParameter("total");
 			this.ui.setProperty("/count", count);
 			if (count && event.getSource().getBinding("items").isLengthFinal()) {
-				$.each(["active", "alumni"], function (idx, key) {
+				$.each(this.filters, function (name, filters) {
 					that.model.read("/Mentors/$count", {
-						filters: [ new sap.ui.model.Filter("MentorStatus/Id", "EQ", key) ],
+						filters: [ filters ],
 						success: function (oData) {
-							that.ui.setProperty("/" + key, oData);
+							that.ui.setProperty("/" + name, oData);
 						}
 					});
 				});
@@ -92,20 +99,26 @@ sap.ui.define([
 		 * @public
 		 */
 		onQuickFilter: function(oEvent) {
-			var filter =
-				oEvent.getParameter("key") === "all" ?
-					[] :
-					new sap.ui.model.Filter("MentorStatus/Id", "EQ", oEvent.getParameter("key"));
-			this.table.getBinding("items").filter(filter);
-			this.map.getBinding("markers").filter(filter);
+			var key = oEvent.getParameter("key");
+			this.quickFilter = key === "all" ? null : this.filters[key];
+			this._applyFilters();
 		},
 
 		onRouteMatched: function() {
-		}
+		},
 
 		/* =========================================================== */
 		/* internal methods                                            */
 		/* =========================================================== */
+		
+		_applyFilters: function() {
+			var aFilter = [];
+			if (this.searchFilter)	{ aFilter.push(this.searchFilter); }
+			if (this.quickFilter)	{ aFilter.push(this.quickFilter); }
+			var filter = aFilter.length === 0 ? null : new sap.ui.model.Filter(aFilter, true);
+            this.table.getBinding("items").filter(filter);
+            this.map.getBinding("markers").filter(filter);
+		}
 
     });
 

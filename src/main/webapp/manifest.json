@@ -140,28 +140,46 @@
 					"viewLevel": 0
 				},
 				"mentors": {
-					"viewName": "Main",
-					"viewLevel": 0
+					"parent": "main",
+					"viewPath": "com.sap.mentors.lemonaid.view",
+					"viewName": "MentorList",
+					"controlId": "Mentors",
+					"controlAggregation": "content"
 				},
 				"mentor": {
-					"viewName": "Main",
-					"viewLevel": 0
+					"parent": "main",
+					"viewPath": "com.sap.mentors.lemonaid.view",
+					"viewName": "MentorDetails",
+					"controlId": "Mentor",
+					"controlAggregation": "content"
 				},
 				"events": {
-					"viewName": "Main",
-					"viewLevel": 0
+					"parent": "main",
+					"viewPath": "com.sap.mentors.lemonaid.view",
+					"viewName": "EventList",
+					"controlId": "Events",
+					"controlAggregation": "content"
 				},
 				"content": {
-					"viewName": "Main",
-					"viewLevel": 0
+					"parent": "main",
+					"viewPath": "com.sap.mentors.lemonaid.view",
+					"viewName": "ContentList",
+					"controlId": "Content",
+					"controlAggregation": "content"
 				},
 				"socialMedia": {
-					"viewName": "Main",
-					"viewLevel": 0
+					"parent": "main",
+					"viewPath": "com.sap.mentors.lemonaid.view",
+					"viewName": "SocialMedia",
+					"controlId": "SocialMedia",
+					"controlAggregation": "content"
 				},
 				"importExport": {
-					"viewName": "Main",
-					"viewLevel": 0
+					"parent": "main",
+					"viewPath": "com.sap.mentors.lemonaid.view",
+					"viewName": "ImportExport",
+					"controlId": "ImportExport",
+					"controlAggregation": "content"
 				}
 			}
 		},
