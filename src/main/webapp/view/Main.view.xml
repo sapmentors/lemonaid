@@ -32,9 +32,10 @@
 					press="onPressLogin"
 					visible="{= !${user>/name} }" />
 				<Button
+					id="openUserMenu"
 					text="{= !${device>/system/phone} ? ${user>/displayName} : ${user>/firstName}}"
 					type="Transparent"
-					press="onPressUserName"
+					press="onPressUserMenu"
 					visible="{= !!${user>/name}}">
 					<layoutData>
 						<OverflowToolbarLayoutData priority="NeverOverflow" />

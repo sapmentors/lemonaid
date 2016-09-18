@@ -1,0 +1,17 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:u="sap.ui.unified">
+		<u:Menu>
+			<u:MenuItem
+				text="Go to my own profile"
+				visible="{config>/IsMentor}"
+				select="onGotoMyProfile"
+				icon="sap-icon://customer"/>
+			<u:MenuItem
+				text="Logout"
+				select="onPressLogout"
+				icon="sap-icon://log"/>
+		</u:Menu>
+ 
+</core:FragmentDefinition>
