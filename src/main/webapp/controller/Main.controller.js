@@ -22,6 +22,9 @@ sap.ui.define([
         	this.toolPage = this.view.byId("toolPage");
         	this.device = this.component.getModel("device");
         	this.router.attachRoutePatternMatched(this.onRoutePatternMatched, this);
+        	this.byId("openUserMenu").attachBrowserEvent("tab keyup", function(oEvent){
+				this._bKeyboard = oEvent.type == "keyup";
+			}, this);
         },
 
 		/* =========================================================== */
@@ -63,8 +66,25 @@ sap.ui.define([
 		onPressLogin: function() {
 			window.location = "login.html";
 		},
+		
+		onPressLogout: function() {
+			window.location = "logout.html";
+		},
 
-		onPressUserName: function() {
+		onPressUserMenu: function(event) {
+			var button = event.getSource();
+			if (!this._menu) {
+				this._menu = sap.ui.xmlfragment(
+					"com.sap.mentors.lemonaid.view.UserMenu",
+					this
+				);
+				this.getView().addDependent(this._menu);
+			}
+			var dock = sap.ui.core.Popup.Dock;
+			this._menu.open(this._bKeyboard, button, dock.BeginTop, dock.BeginBottom, button);
+		},
+		
+		onGotoMyProfile: function() {
 			var mentorId = this.component.getModel("config").getProperty("/MentorId");
 
 			if (mentorId) {
@@ -76,6 +96,6 @@ sap.ui.define([
 				console.log("ERROR: Not logged in or id not registered", mentorId);
 			}
 		}
-
+		
 	});
 });

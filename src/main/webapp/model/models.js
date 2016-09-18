@@ -60,6 +60,11 @@ sap.ui.define([
                             text: i18n.getText("importExport"),
                             icon: "sap-icon://download-from-cloud"
                         });
+                        menu.push({
+                            key: "Admin",
+                            text: i18n.getText("admin"),
+                            icon: "sap-icon://action-settings"
+                        });
                     }
                     oModel.setProperty("/", menu);
                     resolve();

@@ -27,4 +27,8 @@ public class TwitterClient {
 		return twitter.searchOperations().search(query);
 	}
 	
+	public String getScreenName() {
+		return twitter.userOperations().getScreenName();
+	}
+	
 }

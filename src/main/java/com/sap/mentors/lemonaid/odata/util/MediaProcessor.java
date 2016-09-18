@@ -1,4 +1,4 @@
-package com.sap.mentors.lemonaid.odata;
+package com.sap.mentors.lemonaid.odata.util;
 
 import java.io.IOException;
 import java.io.InputStream;

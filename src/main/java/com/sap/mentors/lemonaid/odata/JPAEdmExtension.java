@@ -30,6 +30,7 @@ import org.apache.olingo.odata2.jpa.processor.api.model.JPAEdmSchemaView;
 import org.apache.olingo.odata2.jpa.processor.core.model.JPAEdmMappingImpl;
 
 import com.sap.mentors.lemonaid.annotations.SAP;
+import com.sap.mentors.lemonaid.odata.util.ODataContextUtil;
 
 public class JPAEdmExtension implements org.apache.olingo.odata2.jpa.processor.api.model.JPAEdmExtension {
 

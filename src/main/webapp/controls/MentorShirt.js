@@ -102,10 +102,11 @@ sap.ui.define([], function () {
 
 			this.setGender(this.getGender());
 
-			while(resizer.width() > desiredWidth) {
-				size = parseInt(resizer.css("font-size"), 10);
-				resizer.css("font-size", size - 1);
-			}
+//			TODO: Temporarily remove because it caused infinite loops
+//			while(resizer.width() > desiredWidth) {
+//				size = parseInt(resizer.css("font-size"), 10);
+//				resizer.css("font-size", size - 1);
+//			}
 
 			$("div.mentorShirtText").css("font-size", size).html(resizer.html());
 		}
