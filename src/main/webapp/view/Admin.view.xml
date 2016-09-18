@@ -7,9 +7,11 @@
 	<IconTabBar
 		id="idIconTabBarMulti"
 		expanded="{device>/isNoPhone}"
+		select="onTabSelect"
 		class="sapUiResponsiveContentPadding">
 		<items>
-			<IconTabFilter id="AdminHealth" icon="sap-icon://stethoscope" text="Health" />
+			<IconTabFilter id="AdminHealth" icon="sap-icon://stethoscope" text="Health" key="Admin-Health" />
+			<IconTabFilter id="AdminTwitter" icon="sap-icon://chain-link" text="Twitter" key="Admin-Twitter" />
 		</items>
 	</IconTabBar>
 	

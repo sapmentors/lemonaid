@@ -141,6 +141,10 @@
 				"pattern": "Admin/Health",
 				"name": "Admin-Health",
 				"target": "adminHealth"
+            },{
+				"pattern": "Admin/Twitter",
+				"name": "Admin-Twitter",
+				"target": "adminTwitter"
 			}],
 			"targets": {
 				"main": {
@@ -201,6 +205,13 @@
 					"viewPath": "com.sap.mentors.lemonaid.view.Admin",
 					"viewName": "Health",
 					"controlId": "AdminHealth",
+					"controlAggregation": "content"
+				},
+                "adminTwitter": {
+					"parent": "admin",
+					"viewPath": "com.sap.mentors.lemonaid.view.Admin",
+					"viewName": "Twitter",
+					"controlId": "AdminTwitter",
 					"controlAggregation": "content"
 				}
 
