@@ -40,7 +40,6 @@ import com.sap.mentors.lemonaid.repository.SapSoftwareSolutionRepository;
 import com.sap.mentors.lemonaid.repository.SizeRepository;
 import com.sap.mentors.lemonaid.repository.SoftSkillRepository;
 import com.sap.mentors.lemonaid.repository.TopicRepository;
-import com.sap.mentors.lemonaid.utils.Importer;
 import com.sap.mentors.lemonaid.utils.MentorUtils;
 
 @SpringBootApplication
@@ -74,7 +73,6 @@ public class Application extends SpringBootServletInitializer {
 			final GenderRepository genderRepository,
 			final SizeRepository sizeRepository,
 			final TopicRepository topicRepository,
-			final Importer importer,
 			final MentorUtils mentorUtils
 		) {
 
@@ -1073,7 +1071,7 @@ public class Application extends SpringBootServletInitializer {
 							null, null, 
 							true, new Topic(Topic.HANA_CLOUD_PLATFORM),
 							true, false, true, "Keyboard",	
-							true, "P508741"
+							true
 						));
 					mentorRepository.save(new Mentor(
 							UUID.randomUUID().toString(), 
@@ -1128,7 +1126,7 @@ public class Application extends SpringBootServletInitializer {
 							null, null, 
 							true, new Topic(Topic.UX),
 							false, false, false, null,
-							true, "S0007138856"
+							true
 						));
 					mentorRepository.save(new Mentor(
 							UUID.randomUUID().toString(), 
@@ -1183,7 +1181,7 @@ public class Application extends SpringBootServletInitializer {
 							null, null, 
 							false, null,
 							false, false, false, null,
-							true, null
+							true
 						));
 
 					for (Mentor mentor : mentorRepository.findAll()) {
@@ -1191,7 +1189,6 @@ public class Application extends SpringBootServletInitializer {
 						mentor.setLocation(mentorUtils.getLocationOfMentor(mentor));
 			    		mentorRepository.save(mentor);
 			    	}
-//					importer.importMentors();
 				}
 	        }
 	    };

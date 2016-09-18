@@ -62,6 +62,7 @@
 				<Page id="Content" showHeader="false" />
 				<Page id="SocialMedia" showHeader="false" />
 				<Page id="ImportExport" showHeader="false" />
+				<Page id="Admin" showHeader="false" />
 			</NavContainer>
 		</tnt:mainContents>
 

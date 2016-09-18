@@ -18,6 +18,9 @@ import org.apache.olingo.odata2.jpa.processor.api.exception.ODataJPARuntimeExcep
 import org.apache.olingo.odata2.jpa.processor.api.factory.ODataJPAAccessFactory;
 import org.apache.olingo.odata2.jpa.processor.api.factory.ODataJPAFactory;
 
+import com.sap.mentors.lemonaid.odata.util.ODataContextUtil;
+import com.sap.mentors.lemonaid.odata.util.SpringContextsUtil;
+
 public class JPAServiceFactory extends ODataServiceFactory {
 
 	private ODataJPAContext oDataJPAContext;

@@ -133,6 +133,10 @@
 				"pattern": "ImportExport",
 				"name": "ImportExport",
 				"target": "importExport"
+            },{
+				"pattern": "Admin",
+				"name": "Admin",
+				"target": "admin"
 			}],
 			"targets": {
 				"main": {
@@ -180,7 +184,15 @@
 					"viewName": "ImportExport",
 					"controlId": "ImportExport",
 					"controlAggregation": "content"
+				},
+                "admin": {
+					"parent": "main",
+					"viewPath": "com.sap.mentors.lemonaid.view",
+					"viewName": "Admin",
+					"controlId": "Admin",
+					"controlAggregation": "content"
 				}
+
 			}
 		},
 		"resources": {

@@ -30,14 +30,6 @@
 		<role-name>Everyone</role-name>
 	</security-role>
 	<security-role>
-		<description>SAP Mentor</description>
-		<role-name>Mentor</role-name>
-	</security-role>
-	<security-role>
-		<description>SAP Mentors Alumnus</description>
-		<role-name>Alumnus</role-name>
-	</security-role>
-	<security-role>
 		<description>SAP Mentors Project Member</description>
 		<role-name>ProjectMember</role-name>
 	</security-role>    
