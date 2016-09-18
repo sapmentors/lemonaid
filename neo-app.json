@@ -11,6 +11,15 @@
             "description": "Lemonaid services"
         },
         {
+            "path": "/admin",
+            "target": {
+                "type": "destination",
+                "name": "Lemonaid",
+                "entryPath": "/admin"
+            },
+            "description": "Lemonaid admin"
+        },
+        {
             "path": "/userapi",
             "target": {
                 "type": "service",

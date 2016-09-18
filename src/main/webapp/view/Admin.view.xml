@@ -1,10 +1,16 @@
 <mvc:View
-	controllerName="com.sap.mentors.lemonaid.controller.Admin" 
-	xmlns="sap.m"
 	xmlns:l="sap.ui.layout"
 	xmlns:mvc="sap.ui.core.mvc"
-	xmlns:core="sap.ui.core">
+	xmlns="sap.m"
+	controllerName="com.sap.mentors.lemonaid.controller.Admin">
 
-	<Text text="Placeholder for Admin page" class="sapUiResponsiveMargin" />
-
+	<IconTabBar
+		id="idIconTabBarMulti"
+		expanded="{device>/isNoPhone}"
+		class="sapUiResponsiveContentPadding">
+		<items>
+			<IconTabFilter id="AdminHealth" icon="sap-icon://stethoscope" text="Health" />
+		</items>
+	</IconTabBar>
+	
 </mvc:View>

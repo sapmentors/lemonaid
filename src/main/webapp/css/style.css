@@ -129,3 +129,73 @@
 	text-align: center;
 	border: 0px solid red;
 }
+
+/* =========================================================== */
+/* Cockpit tile custom control styling                         */
+/* =========================================================== */
+
+.cockpitTileBorder {
+	border: solid 1px;
+	box-sizing: border-box;
+	display: inline-block;
+}
+
+.sapUiTheme-sap_belize .cockpitTileBorder,
+.sapUiTheme-sap_belize .borderBottom {
+	border-color: #d5d5d5;
+}
+
+.sapUiTheme-sap_belize .cockpitTileBackground {
+	background-color: #ffffff;
+}
+.cockpitTileWrapper {
+	display: inline-block;
+}
+
+.cockpitTileWrapContent {
+	display: block;
+}
+
+.cockpitTileContainerNoData {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center !important;
+}
+
+.cockpitTileFlags {
+	font-size: 0.875rem !important;
+}
+
+.tileTitleContent .sapUiFixFlexFixed > .sapMLnk,
+.tileTitleContent .sapUiFixFlexFlexibleContainer > .sapMLnk,
+.tileTitleContent .sapUiFixFlexFixed > .sapMLabel,
+.tileTitleContent .sapUiFixFlexFlexibleContainer > .sapMLabel,
+.tileTitleContent .sapUiFixFlexFixed > .sapMText,
+.tileTitleContent .sapUiFixFlexFlexibleContainer > .sapMText {
+	font-size: 16px;
+	line-height: 18px;
+	padding-top: 6px;
+}
+
+.twoColumnTileLayout .first {
+	padding-right: 1rem;
+	box-sizing: border-box;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.twoColumnTileLayout .second {
+	padding-left: 1rem;
+	box-sizing: border-box;
+	display:inline-block;
+	vertical-align: top;
+}
+
+.twoColumnTileLayout .verticalTileSeparator {
+	border-left : 1px solid;
+}
+
+.sapUiTheme-sap_belize .twoColumnTileLayout .verticalTileSeparator {
+	border-left-color: rgb(213, 213, 213);
+}

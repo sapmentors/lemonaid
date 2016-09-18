@@ -1,0 +1,52 @@
+<mvc:View
+	controllerName="com.sap.mentors.lemonaid.controller.Admin.Health" 
+	xmlns="sap.m"
+	xmlns:l="com.sap.mentors.lemonaid.controls"
+	xmlns:layout="sap.ui.layout"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc">
+
+	<FlexBox
+		alignItems="Start"
+		justifyContent="End">
+		<items>
+			<Button icon="sap-icon://refresh" type="Transparent" press="onRefresh"/>
+		</items>
+	</FlexBox>	
+
+	<l:TileContainer id="tiles" content="{path : '/tiles', templateShareable : true}" >
+		<l:CockpitTile groupLabel="{titleText}" width="380px">
+			<l:TwoColumnTileLayout
+				contentHeight="130px">
+				<l:title>
+					<layout:FixFlex fixFirst="false" vertical="false">
+						<layout:flexContent>
+							<Label text="{titleText}" design="Bold" />
+						</layout:flexContent>
+					</layout:FixFlex>
+				</l:title>
+				<l:first>
+					<layout:VerticalLayout>
+						<Text text="{status/title}" class="sapUiSmallMarginBottom"
+							tooltip="{status/title}" />
+						<core:Icon size="30px" visible="{= ${status/status} !== 'NOAPPS'}"
+							class="stateIcon sapUiSmallMarginTop sapUiSmallMarginBottom" src="{path : 'status/status', formatter : '.formatIcon'}" />
+						<Text text="{path : 'status/status', formatter : '.formatStatusText' }"
+							class="sapUiSmallMarginTop"
+							tooltip="{path : 'status/status', formatter : '.formatStatusText' }" />
+					</layout:VerticalLayout>
+				</l:first>
+				<l:second>
+					<layout:VerticalLayout width="100%"
+						content="{path : 'status/details', templateShareable : true}">
+						<layout:HorizontalLayout>
+							<Label text="{label}" class="sapUiTinyMarginBottom" width="5.5em" />
+							<Text text="{text}" class="sapUiTinyMarginBottom" width="6em" />
+						</layout:HorizontalLayout>
+					</layout:VerticalLayout>
+				</l:second>
+			</l:TwoColumnTileLayout>
+		</l:CockpitTile>
+	</l:TileContainer>
+
+</mvc:View>

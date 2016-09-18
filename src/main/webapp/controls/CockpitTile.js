@@ -1,87 +1,63 @@
-jQuery.sap.declare("cockpit.shared.ui.CockpitTileRenderer");
+sap.ui.define([], function () {
+	"use strict";
 
-cockpit.shared.ui.CockpitTileRenderer = {
-	render : function(rm, oControl) {
+	var CockpitTile = sap.ui.core.Control.extend("com.sap.mentors.lemonaid.controls.CockpitTile", {
 
-		rm.write("<div tabindex=\"0\""); // root
-		rm.writeControlData(oControl);
-		if (oControl.getBack()) {
-			rm.addClass("flipcard");
-		} else {
-			rm.addClass("cockpitTileBorder");
-			rm.addClass("cockpitTileBackground");
-			rm.addStyle("padding", oControl.getPadding());
+		metadata : {
+			properties : {
+				width : {
+					type : "sap.ui.core.CSSSize",
+					defaultValue : "auto"
+				},
+				height : {
+					type : "sap.ui.core.CSSSize",
+					defaultValue : "auto"
+				},
+				padding : {
+					type : "sap.ui.core.CSSSize",
+					defaultValue : "1rem"
+				},
+				groupLabel : {
+					type : "string"
+				},
+				flipped : {
+					type : "boolean",
+					defaultValue : false
+				}
+			},
+			aggregations : {
+				back : {
+					type : "sap.ui.core.Control",
+					multiple : false
+				},
+				content : {
+					type : "sap.ui.core.Control",
+					multiple : false
+				}
+			},
+			events : {
+				press : {
+					enablePreventDefault : true
+				}
+			},
+			defaultAggregation : "content"
+		},
+	
+		constructor : function() {
+			sap.ui.core.Control.prototype.constructor.apply(this, arguments);
+		},
+	
+		onclick : function() {
+			this.firePress();
 		}
+	});
+	
+	CockpitTile.prototype.setFlipped = function(flipped) {
+		var flipValue = !!flipped;
+		this.setProperty("flipped", flipValue, true);
+		this.$("flipDiv").toggleClass("flipped", flipValue);
+	};
+	
+	return CockpitTile;
 
-		rm.addStyle("height", oControl.getHeight());
-		rm.addStyle("width", oControl.getWidth());
-
-		rm.writeClasses();
-		rm.writeStyles();
-
-		if (oControl.getGroupLabel()) {
-			// ARIA
-			var bAccessible = sap.ui.getCore().getConfiguration().getAccessibility();
-			if (bAccessible) {
-				rm.writeAccessibilityState(oControl, {
-					role : "group",
-					label : oControl.getGroupLabel()
-				});
-			}
-		}
-		rm.write(">"); // close root
-
-		// we want to flip the whole tile if we have a back side
-		if (oControl.getBack()) {
-			rm.write("<div id=\"" + oControl.getId() + "-flipDiv\""); // flip content
-			if (oControl.getFlipped()) {
-				rm.addClass("flipped");
-			}
-			if (oControl.getBack()) {
-				rm.addClass("flipContent");
-			}
-			rm.writeClasses();
-			rm.write(">"); // close flip content
-		}
-
-		if (oControl.getBack()) {
-			this._renderTwoSided(rm, oControl);
-		} else {
-			this._renderOneSided(rm, oControl);
-		}
-
-		if (oControl.getBack()) {
-			rm.write("</div>"); // flip content end
-		}
-
-		rm.write("</div>"); // root end
-	},
-
-	_renderOneSided : function(rm, oControl) {
-		rm.renderControl(oControl.getContent());
-	},
-
-	_renderTwoSided : function(rm, oControl) {
-		rm.write("<div"); // front
-		rm.addClass("flipFrontSide");
-		rm.addClass("cockpitTileBorder");
-		rm.addClass("cockpitTileBackground");
-		rm.writeClasses();
-		rm.addStyle("padding", oControl.getPadding());
-		rm.writeStyles();
-		rm.write(">");
-		rm.renderControl(oControl.getContent());
-		rm.write("</div>");
-
-		rm.write("<div"); // back
-		rm.addClass("flipBackSide");
-		rm.addClass("cockpitTileBorder");
-		rm.addClass("cockpitTileBackground");
-		rm.writeClasses();
-		rm.addStyle("padding", oControl.getPadding());
-		rm.writeStyles();
-		rm.write(">");
-		rm.renderControl(oControl.getBack());
-		rm.write("</div>");
-	}
-};
+});

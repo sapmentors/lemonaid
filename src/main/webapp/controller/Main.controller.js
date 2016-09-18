@@ -43,11 +43,11 @@ sap.ui.define([
                         var navList = that.view.byId("NavigationList");
             			var items = navList.getItems();
             			for (var i = 0; i < items.length; i++) {
-            				if (items[i].getKey() === key) {
+            				if (items[i].getKey() === key.split("-")[0]) {
             					navList.setSelectedItem(items[i]);
             				}
             			}
-    					that.view.byId("pageContainer").to(that.getView().byId(key));
+    					that.view.byId("pageContainer").to(that.getView().byId(key.split("-")[0]));
                     });
         	}
         },

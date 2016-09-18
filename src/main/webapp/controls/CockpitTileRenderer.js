@@ -1,6 +1,11 @@
-jQuery.sap.declare('cockpit.shared.ui.CockpitTileRenderer');
-cockpit.shared.ui.CockpitTileRenderer = {
-    render: function(r, c) {
+sap.ui.define(['jquery.sap.global'],
+
+	function(jQuery) {
+	"use strict";
+
+	var CockpitTileRenderer = {};
+
+	CockpitTileRenderer.render = function(r, c) {
         r.write("<div tabindex=\"0\"");
         r.writeControlData(c);
         if (c.getBack()) {
@@ -44,11 +49,13 @@ cockpit.shared.ui.CockpitTileRenderer = {
             r.write('</div>');
         }
         r.write('</div>');
-    },
-    _renderOneSided: function(r, c) {
+    };
+    
+    CockpitTileRenderer._renderOneSided = function(r, c) {
         r.renderControl(c.getContent());
-    },
-    _renderTwoSided: function(r, c) {
+    };
+    
+    CockpitTileRenderer._renderTwoSided = function(r, c) {
         r.write('<div');
         r.addClass('flipFrontSide');
         r.addClass('cockpitTileBorder');
@@ -69,5 +76,8 @@ cockpit.shared.ui.CockpitTileRenderer = {
         r.write('>');
         r.renderControl(c.getBack());
         r.write('</div>');
-    }
-};
+    };
+
+	return CockpitTileRenderer;
+
+}, /* bExport= */ true);
