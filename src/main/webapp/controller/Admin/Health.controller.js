@@ -86,7 +86,8 @@ sap.ui.define([
 	        			var title = "";
 	        			if (key === "db") { 
 	        				title = "DB"; 
-	        				value.hello = value.hello + " profiles";
+	        				value.result = value.hello + " profiles";
+	        				delete value.hello;
 	        			} else {
 		        			title = key.replace(/([A-Z0-9])/g, " $1");
 		        			title = title.charAt(0).toUpperCase() + title.slice(1);
@@ -95,6 +96,11 @@ sap.ui.define([
 	        				value.total = Math.round(value.total / 1024 / 1024) + " MB";
 	        				value.free = Math.round(value.free / 1024 / 1024) + " MB";
 	        				value.threshold = Math.round(value.threshold / 1024 / 1024) + " MB";
+	        			}
+	        			if (key ==="twitter") {
+	        				if (value.status === "NotAuthenticated") {
+	        					value.result = "Not authenticated";
+	        				}
 	        			}
 		        		var entry = {
 		        			titleText: title,

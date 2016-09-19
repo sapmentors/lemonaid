@@ -14,5 +14,5 @@
 			<IconTabFilter id="AdminTwitter" icon="sap-icon://chain-link" text="Twitter" key="Admin-Twitter" />
 		</items>
 	</IconTabBar>
-	
+
 </mvc:View>

@@ -1,41 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5">
 
-  <resource-ref>
-    <res-ref-name>jdbc/DefaultDB</res-ref-name>
-    <res-type>javax.sql.DataSource</res-type>
-  </resource-ref>
+	<resource-ref>
+		<res-ref-name>jdbc/DefaultDB</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+	</resource-ref>
 
-  <login-config>
-    <auth-method>FORM</auth-method>
-  </login-config>
-  <security-constraint>
-    <web-resource-collection>
-      <web-resource-name>Protected Area</web-resource-name>
-      <url-pattern>/login.html</url-pattern>
-    </web-resource-collection>
-    <auth-constraint>
-      <role-name>Everyone</role-name>
-    </auth-constraint>
-  </security-constraint>
-  <security-role>
-    <description>All SAP HANA Cloud Platform users</description>
-    <role-name>Everyone</role-name>
-  </security-role>
-  <security-role>
-    <description>SAP Mentors Project Member</description>
-    <role-name>ProjectMember</role-name>
-  </security-role>
+	<login-config>
+		<auth-method>FORM</auth-method>
+	</login-config>
 
-  <servlet>
-    <description></description>
-    <display-name>LogoutServlet</display-name>
-    <servlet-name>LogoutServlet</servlet-name>
-    <servlet-class>com.sap.mentors.lemonaid.servlet.LogoutServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>LogoutServlet</servlet-name>
-    <url-pattern>/logout.html</url-pattern>
-  </servlet-mapping>
-  
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>Login Page</web-resource-name>
+			<url-pattern>/login.html</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>Everyone</role-name>
+		</auth-constraint>
+	</security-constraint>
+
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>Admin Area</web-resource-name>
+			<url-pattern>/admin/mappings/*</url-pattern>
+			<url-pattern>/admin/liquibase/*</url-pattern>
+			<url-pattern>/admin/configprops/*</url-pattern>
+			<url-pattern>/admin/beans/*</url-pattern>
+			<url-pattern>/admin/autoconfig/*</url-pattern>
+			<url-pattern>/admin/metrics/*</url-pattern>
+			<url-pattern>/admin/trace/*</url-pattern>
+			<url-pattern>/admin/env/*</url-pattern>
+			<url-pattern>/admin/info/*</url-pattern>
+			<url-pattern>/admin/dump/*</url-pattern>
+			<url-pattern>/connect/*</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>ProjectMember</role-name>
+		</auth-constraint>
+	</security-constraint>
+
+	<security-role>
+		<description>All SAP HANA Cloud Platform users</description>
+		<role-name>Everyone</role-name>
+	</security-role>
+	<security-role>
+		<description>SAP Mentors Project Member</description>
+		<role-name>ProjectMember</role-name>
+	</security-role>
+
+	<servlet>
+		<description></description>
+		<display-name>LogoutServlet</display-name>
+		<servlet-name>LogoutServlet</servlet-name>
+		<servlet-class>com.sap.mentors.lemonaid.servlet.LogoutServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LogoutServlet</servlet-name>
+		<url-pattern>/logout.html</url-pattern>
+	</servlet-mapping>
+
 </web-app>

@@ -1,10 +1,10 @@
-/* global sap */
+/* global sap, jQuery */
 
 sap.ui.define([
-	"jquery.sap.global",
+	"sap/ui/model/odata/v2/ODataModel",
 	"sap/ui/model/odata/ODataUtils",
-	"sap/ui/model/odata/v2/ODataModel"
-], function (jQuery, ODataUtils, BaseControl) {
+	"com/sap/mentors/lemonaid/util/ODataUtils"
+], function (BaseControl, ODataUtils, LemonaidODataUtils) {
 	"use strict";
 
 	var ODataModel = BaseControl.extend("com.sap.mentors.lemonaid.model.ODataModel", {
@@ -101,7 +101,7 @@ sap.ui.define([
 		oPayload = this._removeReferences(oPayload);
 
 		// add navigation links
-		oPayload = this._addNavigationLinks(oPayload, oEntityType);	// <-- This is the portion that has been added (in the override)
+		oPayload = LemonaidODataUtils.addNavigationLinks(this, oPayload, oEntityType);	// <-- This is the portion that has been added (in the override)
 
 		//get additional request info for created entries
 		aUrlParams = mParams && mParams.urlParameters ? ODataUtils._createUrlParamsArray(mParams.urlParameters) : undefined;
@@ -117,88 +117,6 @@ sap.ui.define([
 		}
 
 		return oRequest;
-	};
-
-    /* =========================================================== */
-    /* Additional internal methods                                 */
-    /* =========================================================== */
-
-	ODataModel.prototype._addNavigationLinks = function(oPayload, oEntityType) {
-		var result = {};
-		jQuery.each(oPayload, function(sPropName, oPropValue) {
-			result[sPropName] = oPropValue;
-			if (sPropName !== "__metadata") {
-				var association = this._getAssociation(oEntityType, sPropName);
-				if (association) {
-					var principal = association.referentialConstraint.principal,
-						// dependent = association.referentialConstraint.dependent,
-						associationSet = null;
-					if (principal) {
-						var key = {};
-						associationSet = this._getAssociationSet(association);
-						key[principal.propertyRef[0].name] = oPropValue;
-						var uri = this.createKey(
-								this._getPrincipalEntitySetName(associationSet, oEntityType.name, principal.role),
-								key
-							);
-						var navProperty = this._getNavigationPropertyOfAssociationsetInEntity(associationSet, oEntityType);
-						result[navProperty.name] = { __deferred: { uri: uri } };
-					}
-				}
-			}
-		}.bind(this));
-		return result;
-	};
-
-	ODataModel.prototype._getAssociation = function(oEntityTypeDependent, sPropName) {
-		var retval = null;
-		jQuery.each(this.oMetadata.oMetadata.dataServices.schema, function(schemaIdx, schema) {
-			jQuery.each(schema.association, function(associationIdx, association) {
-				if (association.referentialConstraint.dependent.role === oEntityTypeDependent.name &&
-					association.referentialConstraint.dependent.propertyRef[0].name === sPropName) {
-					retval = association;
-					retval.namespace = schema.namespace;
-					return false;
-				}
-			}.bind(this));
-		}.bind(this));
-		return retval;
-	};
-
-	ODataModel.prototype._getAssociationSet = function(association) {
-		var retval = null;
-		jQuery.each(this.oMetadata.oMetadata.dataServices.schema, function(schemaIdx, schema) {
-			jQuery.each(schema.entityContainer, function(entityContainerIdx, entityContainer) {
-				jQuery.each(entityContainer.associationSet, function(associationSetIdx, associationSet) {
-					if (associationSet.association === association.namespace + "." + association.name) {
-						retval = associationSet;
-						return false;
-					}
-				}.bind(this));
-			}.bind(this));
-		}.bind(this));
-		return retval;
-	};
-
-	ODataModel.prototype._getPrincipalEntitySetName = function(associationSet, sDependentRoleName, sPrincipalRoleName) {
-		var retval = null;
-		if (associationSet.end[0].role === sDependentRoleName && associationSet.end[1].role === sPrincipalRoleName) {
-			retval = associationSet.end[1].entitySet;
-		} else if (associationSet.end[1].role === sDependentRoleName && associationSet.end[0].role === sPrincipalRoleName) {
-			retval = associationSet.end[0].entitySet;
-		}
-		return retval;
-	};
-
-	ODataModel.prototype._getNavigationPropertyOfAssociationsetInEntity = function(associationSet, oEntityType) {
-		var retval = null;
-		jQuery.each(oEntityType.navigationProperty, function(i, navigationProperty) {
-			if (navigationProperty.relationship === associationSet.association) {
-				retval = navigationProperty;
-				return false;
-			}
-		});
-		return retval;
 	};
 
 	return ODataModel;

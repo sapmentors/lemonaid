@@ -40,8 +40,8 @@
 					<layout:VerticalLayout width="100%"
 						content="{path : 'status/details', templateShareable : true}">
 						<layout:HorizontalLayout>
-							<Label text="{label}" class="sapUiTinyMarginBottom" width="5.5em" />
-							<Text text="{text}" class="sapUiTinyMarginBottom" width="6em" />
+							<Label text="{label}" class="sapUiTinyMarginBottom" width="4.8em" />
+							<Text text="{text}" class="sapUiTinyMarginBottom" width="6.6em" />
 						</layout:HorizontalLayout>
 					</layout:VerticalLayout>
 				</l:second>

@@ -3,6 +3,6 @@
 	xmlns="com.sap.mentors.lemonaid.controls"
 	xmlns:mvc="sap.ui.core.mvc">
 
-	<Iframe height="300px" url="/connect/twitter" />
+	<Iframe height="500px" url="/connect/twitter" />
 	
 </mvc:View>
