@@ -61,7 +61,7 @@ sap.ui.define([
 						        a.name,
 						        a.address1,
 						        a.address2,
-						        a.city + ", " + a.state + " " + a.zip,
+						        a.city + (a.city ? ", " : "") + a.state + " " + a.zip,
 						        a.country
 						   ];
 					},
@@ -71,7 +71,7 @@ sap.ui.define([
 								a.name,
 								a.address1,
 								a.address2,
-								a.city + ",  " + a.state + "  " + a.zip,
+						        a.city + (a.city ? ", " : "") + a.state + " " + a.zip,
 								a.country
 						   ];
 					},
@@ -102,7 +102,7 @@ sap.ui.define([
 								a.name,
 								a.address1,
 								a.address2,
-								a.city + ",  " + a.state + "  " + a.zip,
+						        a.city + (a.city ? ", " : "") + a.state + " " + a.zip,
 								a.country
 						   ];
 					},
@@ -507,7 +507,7 @@ sap.ui.define([
 								a.name,
 								a.address1,
 								a.address2,
-								a.zip + ",  " + a.city,
+								a.zip + (a.zip ? ", " : "") + a.city,
 								a.country
 						   ];
 					},
@@ -516,7 +516,7 @@ sap.ui.define([
 						        a.name,
 						        a.address1,
 						        a.address2,
-						        a.city + ", " + a.state + " " + a.zip,
+						        a.city + (a.city ? ", " : "") + a.state + " " + a.zip,
 						        a.country
 						   ];
 				}

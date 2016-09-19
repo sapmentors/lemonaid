@@ -44,7 +44,7 @@
 			</m:VBox>
 			<!--<m:NumericContent value="{ShirtNumber}" size="M" />-->
 			<m:VBox>
-				<m:Label text="{City}, {Country/Name}"/>
+				<m:Label text="{City}{= ${City} ? ', ' : '' }{Country/Name}"/>
 				<m:Link text="{Phone}"/>
 				<m:Link text="{Email1}"/>
 				<m:Link text="{Email2}"/>
