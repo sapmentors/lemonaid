@@ -68,7 +68,7 @@
 
 		<Label text="{i18n>region}" visible="{ui>/isEditMode}" />
 		<Select
-			selectedKey="{TopicLeadRegionId}"
+			selectedKey="{RegionId}"
 			items="{/Regions}"
 			forceSelection="false"
 			visible="{ui>/isEditMode}">
