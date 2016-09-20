@@ -49,6 +49,19 @@ sap.ui.define([
 					return "sap-icon://status-in-process";
 			}
 		},
+
+		formatIconColor: function(status) {
+			switch (status) {
+				case "DOWN":
+					return "red";
+				case "UP":
+					return "green";
+				case "OUT_OF_SERVICE":
+					return "red";
+				default:
+					return "yellow";
+			}
+		},
 	
 		formatStatusText: function(status) {
 			switch (status) {

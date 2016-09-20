@@ -16,7 +16,7 @@
 				id="header"
 				objectImageURI="{PhotoUrl}"
 				objectTitle="{FullName}"
-				objectSubtitle="{JobTitle}"
+				objectSubtitle="{JobTitle} {= ${JobTitle} &amp;&amp; ${Company} ? 'at' : '' } {Company}"
 				objectImageShape="Circle"
 				objectImageAlt="{FullName}"
 				isObjectIconAlwaysVisible="false"

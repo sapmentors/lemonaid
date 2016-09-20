@@ -29,7 +29,7 @@
 					<layout:VerticalLayout>
 						<Text text="{status/title}" class="sapUiSmallMarginBottom"
 							tooltip="{status/title}" />
-						<core:Icon size="30px" visible="{= ${status/status} !== 'NOAPPS'}"
+						<core:Icon size="30px" visible="{= ${status/status} !== 'NOAPPS'}" color="{path : 'status/status', formatter : '.formatIconColor'}"
 							class="stateIcon sapUiSmallMarginTop sapUiSmallMarginBottom" src="{path : 'status/status', formatter : '.formatIcon'}" />
 						<Text text="{path : 'status/status', formatter : '.formatStatusText' }"
 							class="sapUiSmallMarginTop"

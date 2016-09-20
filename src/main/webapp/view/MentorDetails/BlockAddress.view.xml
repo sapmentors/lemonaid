@@ -37,6 +37,9 @@
 		<Label text="{i18n>jobTitle}" />
 		<Input value="{JobTitle}" visible="{ui>/isEditMode}"/>
 
+		<Label text="{i18n>company}" />
+		<Input value="{Company}" visible="{ui>/isEditMode}"/>
+
 		<Label text="{i18n>address} 1" />
 		<Input value="{Address1}" visible="{ui>/isEditMode}"/>
 
