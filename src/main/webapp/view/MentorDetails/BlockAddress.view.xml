@@ -77,6 +77,10 @@
 		<Label text="{i18n>region}" visible="{= !${ui>/isEditMode} }" />
 		<Text text="{Region/Name}" visible="{= !${ui>/isEditMode} }"/>
 
+		<Label text="{i18n>languages}" visible="{= !${ui>/isEditMode} &amp;&amp; ( !!${Language1Id} || !!${Language2Id} || !!${Language3Id} ) }"/>
+		<Text 
+			text="{ parts: ['Language1/Name', 'Language2/Name', 'Language3/Name' ], formatter: '.formatters.commaSeparated'}" 
+			visible="{= !${ui>/isEditMode} &amp;&amp; ( !!${Language1Id} || !!${Language2Id} || !!${Language3Id} ) }"/>
 		<Label text="{i18n>language} 1" visible="{ui>/isEditMode}" />
 		<Select
 				selectedKey="{Language1Id}"
@@ -90,8 +94,6 @@
 				visible="{ui>/isEditMode}">
 			<core:Item key="{Id}" text="{Name}" />
 		</Select>
-		<Label text="{i18n>language} 1" visible="{= !!${Language1Id} &amp;&amp; !${ui>/isEditMode} }" />
-		<Text text="{Language1/Name}" visible="{= !!${Language1Id} &amp;&amp; !${ui>/isEditMode} }"/>
 
 		<Label text="{i18n>language} 2" visible="{ui>/isEditMode}" />
 		<Select
@@ -106,8 +108,6 @@
 				visible="{ui>/isEditMode}">
 			<core:Item key="{Id}" text="{Name}" />
 		</Select>
-		<Label text="{i18n>language} 2" visible="{= !!${Language2Id} &amp;&amp; !${ui>/isEditMode} }" />
-		<Text text="{Language2/Name}" visible="{= !!${Language2Id} &amp;&amp; !${ui>/isEditMode} }"/>
 
 		<Label text="{i18n>language} 3" visible="{ui>/isEditMode}" />
 		<Select
@@ -122,8 +122,6 @@
 				visible="{ui>/isEditMode}">
 			<core:Item key="{Id}" text="{Name}" />
 		</Select>
-		<Label text="{i18n>language} 3" visible="{= !!${Language3Id} &amp;&amp; !${ui>/isEditMode} }" />
-		<Text text="{Language3/Name}" visible="{= !!${Language3Id} &amp;&amp; !${ui>/isEditMode} }"/>
 
 	</forms:SimpleForm>
 </mvc:View>

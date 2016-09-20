@@ -45,6 +45,10 @@ sap.ui.define([
 					}).join("\n");
 			},
 			
+			commaSeparated: function() {
+				return Array.prototype.slice.call(arguments).join(", ");
+			},
+			
 			addressFormatters: {
 				NL: function(a) {
 						return [
