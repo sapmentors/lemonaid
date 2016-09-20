@@ -2,7 +2,7 @@
 	xmlns="sap.m"
 	xmlns:core="sap.ui.core"
 	xmlns:u="sap.ui.unified">
-		<u:Menu>
+		<u:Menu class="sapUiSizeCozy">
 			<u:MenuItem
 				text="Go to my own profile"
 				visible="{config>/IsMentor}"
@@ -13,5 +13,4 @@
 				select="onPressLogout"
 				icon="sap-icon://log"/>
 		</u:Menu>
- 
 </core:FragmentDefinition>
