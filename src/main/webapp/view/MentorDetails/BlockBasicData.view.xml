@@ -95,6 +95,11 @@
 				visible="{ui>/isEditMode}">
 			<core:Item key="{Id}" text="{Name}" />
 		</Select>
+		
+		<Label text="{i18n>publicProfile}" visible="{= !${ui>/isEditMode} &amp;&amp; ( ${config>/IsMentor} || ${config>/IsProjectMember} ) }" />
+		<Text text="{= ${PublicProfile} ? ${i18n>yes} : ${i18n>no}}" visible="{= !${ui>/isEditMode} &amp;&amp; ( ${config>/IsMentor} || ${config>/IsProjectMember} ) }" />
+		<Label text="{i18n>publicProfile}" visible="{= ${ui>/isEditMode} }" />
+		<Switch state="{PublicProfile}" visible="{= ${ui>/isEditMode} }" customTextOn="{i18n>yes}" customTextOff="{i18n>no}" />
 
 	</forms:SimpleForm>
 </mvc:View>
