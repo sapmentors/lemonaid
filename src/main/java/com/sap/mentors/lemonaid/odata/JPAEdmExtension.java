@@ -8,6 +8,7 @@ import java.lang.reflect.Proxy;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedHashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -30,7 +31,9 @@ import org.apache.olingo.odata2.jpa.processor.api.model.JPAEdmSchemaView;
 import org.apache.olingo.odata2.jpa.processor.core.model.JPAEdmMappingImpl;
 
 import com.sap.mentors.lemonaid.annotations.SAP;
+import com.sap.mentors.lemonaid.odata.authorization.ODataAuthorization;
 import com.sap.mentors.lemonaid.odata.util.ODataContextUtil;
+import com.sap.mentors.lemonaid.odata.util.SpringContextsUtil;
 
 public class JPAEdmExtension implements org.apache.olingo.odata2.jpa.processor.api.model.JPAEdmExtension {
 
@@ -38,7 +41,22 @@ public class JPAEdmExtension implements org.apache.olingo.odata2.jpa.processor.a
 	public static final String SAP_NAMESPACE = "http://www.sap.com/Protocols/SAPData";
 	public static final String SAP_PREFIX = "sap";
 	public static final String LABEL = "label";
+	
+	public static final String PUBLIC_PROPERTIES = 
+			"Id|FullName|PublicProfile|ShirtNumber|PhotoUrl|"
+			+ "StatusId|RelationshipToSap|RegionId|CountryId|"
+			+ "Bio|"
+			+ "JambandLasVegas|JambandBarcelona|JambandMusician|JambandInstrument|"
+			+ "Longitude|Latitude";
+	public static final String PUBLIC_NAVPROPERTIES = 
+			"MentorStatus|RelationshipToSap|Region|Country";
+	
+	private ODataAuthorization authorization = null;
 
+	public JPAEdmExtension() {
+		this.authorization = (ODataAuthorization) SpringContextsUtil.getBean("ODataAuthorization");
+	}
+	
 	@Override
 	public void extendWithOperation(JPAEdmSchemaView view) {
 	}
@@ -64,12 +82,36 @@ public class JPAEdmExtension implements org.apache.olingo.odata2.jpa.processor.a
 				annotationAttributeList.addAll(getSapPropertyAnnotations(entityType, property));
 				property.setAnnotationAttributes(annotationAttributeList); 
 			}
-			
-			// Add transient properties
+
 			if (entityType.getName().equals("Mentor")) {
-				JPAEdmMappingImpl mapping = new JPAEdmMappingImpl();
-				mapping.setJPAType(boolean.class);
-				entityType.getProperties().add(new SimpleProperty().setName("MayEdit").setType(EdmSimpleTypeKind.Boolean).setMapping(mapping));
+
+				if (authorization.isMentor()) {
+			
+					// Add transient properties
+					JPAEdmMappingImpl mapping = new JPAEdmMappingImpl();
+					mapping.setJPAType(boolean.class);
+					entityType.getProperties().add(new SimpleProperty().setName("MayEdit").setType(EdmSimpleTypeKind.Boolean).setMapping(mapping));
+
+				} else {
+
+					// Remove properties that are not meant for the public
+					List<Property> publicProperties = new LinkedList<Property>();
+					for (Property property : entityType.getProperties()) {
+						if (property.getName().matches(PUBLIC_PROPERTIES)) {
+							publicProperties.add(property);
+						}
+					}
+					entityType.setProperties(publicProperties);
+
+					List<NavigationProperty> publicNavigationProperties = new LinkedList<NavigationProperty>();
+					for (NavigationProperty navigationProperty : entityType.getNavigationProperties()) {
+						if (navigationProperty.getName().matches(PUBLIC_NAVPROPERTIES)) {
+							publicNavigationProperties.add(navigationProperty);
+						}
+					}
+					entityType.setNavigationProperties(publicNavigationProperties);					
+				}
+					
 			}
 			
 			// Turn entity 'Attachments' into a media entity (with a stream) and hide the data property

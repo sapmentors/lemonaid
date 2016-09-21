@@ -46,7 +46,7 @@ sap.ui.define([
 			},
 			
 			commaSeparated: function() {
-				return Array.prototype.slice.call(arguments).join(", ");
+				return $.grep(Array.prototype.slice.call(arguments), Boolean).join(", ");
 			},
 			
 			addressFormatters: {

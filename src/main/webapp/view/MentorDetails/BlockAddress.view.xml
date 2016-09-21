@@ -16,7 +16,7 @@
 			width="100%">
 		<core:Title text="{i18n>address}"></core:Title>
 
-		<Label text="{i18n>homeAddress}" visible="{= !${ui>/isEditMode} }" />
+		<Label text="{i18n>basicData}" visible="{= !${ui>/isEditMode} }" />
 		<Text text="{
 				parts: [
 					'FullName',
@@ -68,63 +68,6 @@
 		<Input value="{Phone}" visible="{ui>/isEditMode}"/>
 		<Label text="{i18n>phone}" visible="{= !!${Phone} &amp;&amp; !${ui>/isEditMode} }" />
 		<Link text="{Phone}" href="tel:{Phone}" target="_blank" visible="{= !!${Phone} &amp;&amp; !${ui>/isEditMode} }" />
-
-		<Label text="{i18n>region}" visible="{ui>/isEditMode}" />
-		<Select
-			selectedKey="{RegionId}"
-			items="{/Regions}"
-			forceSelection="false"
-			visible="{ui>/isEditMode}">
-			<core:Item key="{Id}" text="{Name}" />
-		</Select>
-		<Label text="{i18n>region}" visible="{= !${ui>/isEditMode} }" />
-		<Text text="{Region/Name}" visible="{= !${ui>/isEditMode} }"/>
-
-		<Label text="{i18n>languages}" visible="{= !${ui>/isEditMode} &amp;&amp; ( !!${Language1Id} || !!${Language2Id} || !!${Language3Id} ) }"/>
-		<Text 
-			text="{ parts: ['Language1/Name', 'Language2/Name', 'Language3/Name' ], formatter: '.formatters.commaSeparated'}" 
-			visible="{= !${ui>/isEditMode} &amp;&amp; ( !!${Language1Id} || !!${Language2Id} || !!${Language3Id} ) }"/>
-		<Label text="{i18n>language} 1" visible="{ui>/isEditMode}" />
-		<Select
-				selectedKey="{Language1Id}"
-				items="{
-					 path : '/Languages',
-					 sorter : {
-						path : 'Name'
-					 }
-				 }"
-				forceSelection="false"
-				visible="{ui>/isEditMode}">
-			<core:Item key="{Id}" text="{Name}" />
-		</Select>
-
-		<Label text="{i18n>language} 2" visible="{ui>/isEditMode}" />
-		<Select
-				selectedKey="{Language2Id}"
-				items="{
-					 path : '/Languages',
-					 sorter : {
-						path : 'Name'
-					 }
-				 }"
-				forceSelection="false"
-				visible="{ui>/isEditMode}">
-			<core:Item key="{Id}" text="{Name}" />
-		</Select>
-
-		<Label text="{i18n>language} 3" visible="{ui>/isEditMode}" />
-		<Select
-				selectedKey="{Language3Id}"
-				items="{
-					 path : '/Languages',
-					 sorter : {
-						path : 'Name'
-					 }
-				 }"
-				forceSelection="false"
-				visible="{ui>/isEditMode}">
-			<core:Item key="{Id}" text="{Name}" />
-		</Select>
 
 	</forms:SimpleForm>
 </mvc:View>

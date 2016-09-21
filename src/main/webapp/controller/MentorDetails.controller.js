@@ -19,17 +19,28 @@ sap.ui.define([
          * @public
          */
         onInit: function() {
+        	
 			this.view      = this.getView();
 			this.component = this.getComponent();
 			this.model     = this.component.getModel();
 			this.router    = this.getRouter();
 			this.i18n      = this.component.getModel("i18n").getResourceBundle();
+			this.config    = this.component.getModel("config");
 			this.ui        = new JSONModel({
         		ServiceUrl : this.model.sServiceUrl,
 				isEditMode : false
         	});
         	this.getView().setModel(this.ui, "ui");
             this.router.getRoute("Mentor").attachMatched(this.onRouteMatched, this);
+            
+            // Remove sections/blocks that are not meant for a general audience
+            this.config._loaded.then(function() {
+                if (!this.config.getProperty("/IsProjectMember") && !this.config.getProperty("/IsMentor")) {
+                	this.byId("ObjectPageLayout").removeSection(this.view.getId() + "--Media");
+                	this.byId("PersonalInfo").removeBlock(this.view.getId() + "--BlockAddress");
+                }
+            }.bind(this));
+            
         },
 
         /* =========================================================== */
@@ -78,7 +89,9 @@ sap.ui.define([
             this.view.bindElement({
                 path: this.getModel().createKey("/Mentors", { Id: this.sMentorId }),
                 parameters: {
-                    expand: "MentorStatus,RelationshipToSap,Language1,Language2,Language3,Industry1,Industry2,Industry3,ShirtMF,ShirtSize,SapExpertise1,SapExpertise1Level,SapExpertise2,SapExpertise2Level,SapExpertise3,SapExpertise3Level,SoftSkill1,SoftSkill2,SoftSkill3,SoftSkill4,SoftSkill5,SoftSkill6,Country,Region,Topic1,Topic2,Topic3,TopicLeadRegion"
+                    expand: this.component.metadata._getEntityTypeByName("Mentor").navigationProperty.map(function(navigationProperty) {
+                        return navigationProperty['name'];
+                    }).join() 	// Expand all navigation properties
                 }
             });
             this.ui.setProperty("/UploadUrl", this.model.sServiceUrl + "/" + this.model.createKey("Mentors", {Id: this.sMentorId}) + "/Attachments");
