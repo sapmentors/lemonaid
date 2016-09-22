@@ -33,6 +33,7 @@ import org.slf4j.LoggerFactory;
 
 import com.sap.mentors.lemonaid.entities.Config;
 import com.sap.mentors.lemonaid.entities.Mentor;
+import com.sap.mentors.lemonaid.entities.Region;
 import com.sap.mentors.lemonaid.odata.authorization.ODataAuthorization;
 import com.sap.mentors.lemonaid.odata.util.MediaProcessor;
 import com.sap.mentors.lemonaid.odata.util.SpringContextsUtil;
@@ -61,8 +62,16 @@ public class ODataJPAProcessor extends ODataJPAProcessorDefault {
 	}
 	
 	private List<Object> enrichEntities(Object uriParserResultView, List<Object> jpaEntities) throws ODataException {
+		UriInfo uriInfo = (UriInfo) uriParserResultView;
 		for (Object jpaEntity : jpaEntities) {
-			jpaEntity = enrichEntity(uriParserResultView, jpaEntity);
+			jpaEntity = enrichEntity(uriInfo, jpaEntity);
+		}
+		String entityTypeName = uriInfo.getTargetEntitySet().getEntityType().getName();
+		if (entityTypeName.equals("Config")) {
+			Mentor currentMentor = authorization.getCurrentMentor();
+			if (currentMentor != null) jpaEntities.add(new Config("MentorId", currentMentor.getId()));
+			jpaEntities.add(new Config("IsMentor", Boolean.toString(authorization.isMentor())));
+			jpaEntities.add(new Config("IsProjectMember", Boolean.toString(authorization.isProjectMember())));
 		}
 		return jpaEntities;
 	}
@@ -135,12 +144,6 @@ public class ODataJPAProcessor extends ODataJPAProcessorDefault {
 			oDataJPAContext.setODataContext(getContext());
 			List<Object> jpaEntities = jpaProcessor.process(uriParserResultView);
 			jpaEntities = enrichEntities(uriParserResultView, jpaEntities);
-			Mentor currentMentor = authorization.getCurrentMentor();
-			if (uriParserResultView.getTargetEntitySet().getEntityType().getName().equals("Config")) {
-				jpaEntities.add(new Config("IsMentor", Boolean.toString(authorization.isMentor())));
-				jpaEntities.add(new Config("IsProjectMember", Boolean.toString(authorization.isProjectMember())));
-				if (currentMentor != null) jpaEntities.add(new Config("MentorId", currentMentor.getId()));
-			}
 			oDataResponse = responseBuilder.build(uriParserResultView, jpaEntities, contentType);
 		} finally {
 			close();
