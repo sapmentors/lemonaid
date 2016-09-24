@@ -882,7 +882,10 @@ public class Mentor {
 	
 	@PreUpdate
 	private void update() {
-		String userName = (String) ODataAuthorization.getThreadLocalData().get().get("UserName");
+		String userName = null;
+		try {
+			userName = (String) ODataAuthorization.getThreadLocalData().get().get("UserName");
+		} catch (RuntimeException e) {};
 		if (userName != null) {
 			this.updatedAt = Calendar.getInstance();
 			this.updatedBy = userName;
