@@ -6,7 +6,11 @@ import org.springframework.stereotype.Component;
 public class ScnImage {
 
 	public String getProfilePhoto(final String scnUrl) {
-		return scnUrl + "/avatar/144.png";
+		if (scnUrl.contains("people.sap.com")) {
+			return scnUrl.replace("people.sap.com", "people.sap.com/avatar");
+		} else {
+			return scnUrl + "/avatar/144.png";
+		}
 	}
 
 }
