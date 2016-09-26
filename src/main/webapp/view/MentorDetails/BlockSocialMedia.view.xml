@@ -26,6 +26,13 @@
 		<Input value="{TwitterId}" visible="{ui>/isEditMode}"/>
 		<Label text="{i18n>twitter}" visible="{= !!${TwitterId} }" />
 		<Link text="{TwitterId}" href="https://www.twitter.com/{TwitterId}" target="_blank" visible="{= !!${TwitterId} &amp;&amp; !${ui>/isEditMode} }" />
+		<Link text="Send PM" href="https://twitter.com/intent/tweet?text=D%20{TwitterId}%20%3Cyour%20message%20here%3E" target="_blank" visible="{= !!${SlackId} &amp;&amp; !${ui>/isEditMode} }" />
+
+ 		<Label text="{i18n>slack}" visible="{ui>/isEditMode}" />
+		<Input value="{SlackId}" visible="{ui>/isEditMode}"/>
+		<Label text="{i18n>slack}" visible="{= !!${SlackId} }" />
+		<Link text="{SlackId}" href="https://sapmentors.slack.com/team/{SlackId}/" target="_blank" visible="{= !!${SlackId} &amp;&amp; !${ui>/isEditMode} }" />
+		<Link text="Send PM" href="https://sapmentors.slack.com/messages/{SlackId}/" target="_blank" visible="{= !!${SlackId} &amp;&amp; !${ui>/isEditMode} }" />
 
 		<Label text="{i18n>linkedIn}" visible="{ui>/isEditMode}" />
 		<Input value="{LinkedInUrl}" visible="{ui>/isEditMode}"/>
@@ -47,10 +54,8 @@
 			<Link text="{Email1}" href="mailto:{Email1}" target="_blank" visible="{= !!${Email1} &amp;&amp; !${ui>/isEditMode} }" />
 			<Link text="{Email2}" href="mailto:{Email2}" target="_blank" visible="{= !!${Email2} &amp;&amp; !${ui>/isEditMode} }" />
 		</VBox>
-
 		<Label text="{i18n>email} 1" visible="{ui>/isEditMode}" />
 		<Input value="{Email1}" visible="{ui>/isEditMode}"/>
-
 		<Label text="{i18n>email} 2" visible="{ui>/isEditMode}" />
 		<Input value="{Email2}" visible="{ui>/isEditMode}"/>
 

@@ -88,6 +88,7 @@ public class Mentor {
     @SAP(fieldGroup="SocialMedia") private String linkedInUrl;
     @SAP(fieldGroup="SocialMedia") private String xingUrl;
     @SAP(fieldGroup="SocialMedia") private String facebookUrl;
+    @SAP(fieldGroup="SocialMedia") private String slackId;
         
     @SAP(fieldGroup="MentorManagement") private boolean interestInMentorCommunicationStrategy;
     @SAP(fieldGroup="MentorManagement") private boolean interestInMentorManagementModel;
@@ -138,7 +139,7 @@ public class Mentor {
     		Double latitude, Double longitude,
     		Region regionId,
     		int shirtNumber, String shirtText, Size shirtSizeId, Gender shirtMFId,
-    		String scnUrl, String twitterId, String linkedInUrl, String xingUrl, String facebookUrl,
+    		String scnUrl, String twitterId, String linkedInUrl, String xingUrl, String facebookUrl, String slackId,
     		boolean interestInMentorCommunicationStrategy, boolean interestInMentorManagementModel, boolean interestInMentorMix, boolean interestInOtherIdeas, int hoursAvailable,
     		Region topicLeadRegionId, Topic topic1Id, String topic1Executive, Topic topic2Id, String topic2Executive, Topic topic3Id, String topic3Executive, Topic topic4Id, String topic4Executive, boolean topicLeadInterest, Topic topicInterestId,
     		boolean jambandMusician, boolean jambandLasVegas, boolean jambandBarcelona, String jambandInstrument,
@@ -197,6 +198,7 @@ public class Mentor {
         this.linkedInUrl = linkedInUrl;
         this.xingUrl = xingUrl;
         this.facebookUrl = facebookUrl;
+        this.slackId = slackId;
         
         this.interestInMentorCommunicationStrategy = interestInMentorCommunicationStrategy;
         this.interestInMentorManagementModel = interestInMentorManagementModel;
@@ -637,6 +639,14 @@ public class Mentor {
 
 	public void setFacebookUrl(String facebookUrl) {
 		this.facebookUrl = facebookUrl;
+	}
+
+	public String getSlackId() {
+		return slackId;
+	}
+
+	public void setSlackId(String slackId) {
+		this.slackId = slackId;
 	}
 
 	public boolean isInterestInMentorCommunicationStrategy() {
