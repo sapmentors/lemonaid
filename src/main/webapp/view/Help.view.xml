@@ -1,0 +1,18 @@
+<mvc:View
+	xmlns:l="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	controllerName="com.sap.mentors.lemonaid.controller.Help">
+
+	<IconTabBar
+		id="idIconTabBarMulti"
+		expanded="{device>/isNoPhone}"
+		select="onTabSelect"
+		class="sapUiResponsiveContentPadding">
+		<items>
+			<IconTabFilter id="HelpFaq" icon="sap-icon://question-mark" text="{i18n>faq}" key="Help-Faq" />
+			<IconTabFilter id="HelpAbout" icon="sap-icon://message-information" text="{i18n>about}" key="Help-About" />
+		</items>
+	</IconTabBar>
+
+</mvc:View>

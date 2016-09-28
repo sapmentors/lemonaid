@@ -66,6 +66,11 @@ sap.ui.define([
                             icon: "sap-icon://action-settings"
                         });
                     }
+                    menu.push({
+                        key: "Help",
+                        text: i18n.getText("help"),
+                        icon: "sap-icon://sys-help"
+                    });
                     oModel.setProperty("/", menu);
                     resolve();
                 });

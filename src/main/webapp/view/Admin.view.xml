@@ -10,8 +10,8 @@
 		select="onTabSelect"
 		class="sapUiResponsiveContentPadding">
 		<items>
-			<IconTabFilter id="AdminHealth" icon="sap-icon://stethoscope" text="Health" key="Admin-Health" />
-			<IconTabFilter id="AdminTwitter" icon="sap-icon://chain-link" text="Twitter" key="Admin-Twitter" />
+			<IconTabFilter id="AdminHealth" icon="sap-icon://stethoscope" text="{i18n>health}" key="Admin-Health" />
+			<IconTabFilter id="AdminTwitter" icon="sap-icon://chain-link" text="{i18n>twitter}" key="Admin-Twitter" />
 		</items>
 	</IconTabBar>
 

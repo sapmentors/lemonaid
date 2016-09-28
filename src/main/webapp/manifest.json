@@ -145,6 +145,18 @@
 				"pattern": "Admin/Twitter",
 				"name": "Admin-Twitter",
 				"target": "adminTwitter"
+            },{
+				"pattern": "Help",
+				"name": "Help",
+				"target": "help"
+            },{
+				"pattern": "Help/Faq",
+				"name": "Help-Faq",
+				"target": "helpFaq"
+            },{
+				"pattern": "Help/About",
+				"name": "Help-About",
+				"target": "helpAbout"
 			}],
 			"targets": {
 				"main": {
@@ -212,6 +224,27 @@
 					"viewPath": "com.sap.mentors.lemonaid.view.Admin",
 					"viewName": "Twitter",
 					"controlId": "AdminTwitter",
+					"controlAggregation": "content"
+				},
+               "help": {
+					"parent": "main",
+					"viewPath": "com.sap.mentors.lemonaid.view",
+					"viewName": "Help",
+					"controlId": "Help",
+					"controlAggregation": "content"
+				},
+                "helpFaq": {
+					"parent": "help",
+					"viewPath": "com.sap.mentors.lemonaid.view.Help",
+					"viewName": "Faq",
+					"controlId": "HelpFaq",
+					"controlAggregation": "content"
+				},
+                "helpAbout": {
+					"parent": "help",
+					"viewPath": "com.sap.mentors.lemonaid.view.Help",
+					"viewName": "About",
+					"controlId": "HelpAbout",
 					"controlAggregation": "content"
 				}
 

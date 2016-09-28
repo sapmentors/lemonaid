@@ -199,3 +199,21 @@
 .sapUiTheme-sap_belize .twoColumnTileLayout .verticalTileSeparator {
 	border-left-color: rgb(213, 213, 213);
 }
+
+
+/* =========================================================== */
+/* Help Text                                                   */
+/* =========================================================== */
+
+.helpText .sapMTitle {
+    white-space: normal;
+    display: block;
+}
+
+.helpText .sapMTitleStyleH1 {
+	margin-bottom: 0.5em;
+}
+
+.helpText .sapMTitleStyleH3 {
+	padding-top: 0.75em;
+}

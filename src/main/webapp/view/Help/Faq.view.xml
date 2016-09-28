@@ -1,0 +1,10 @@
+<mvc:View
+	controllerName="com.sap.mentors.lemonaid.controller.Help.Faq" 
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+
+	<VBox class="sapUiResponsiveMargin">
+		<FormattedText class="helpText" htmlText="{/faq}" />
+	</VBox>
+
+</mvc:View>

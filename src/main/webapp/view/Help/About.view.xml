@@ -1,0 +1,10 @@
+<mvc:View
+	controllerName="com.sap.mentors.lemonaid.controller.Help.About" 
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+
+	<VBox class="sapUiResponsiveMargin">
+		<FormattedText class="helpText" htmlText="{/about}" />
+	</VBox>
+	
+</mvc:View>
