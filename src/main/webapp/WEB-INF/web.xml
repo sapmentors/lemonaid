@@ -63,7 +63,7 @@
 		<url-pattern>/logout.html</url-pattern>
 	</servlet-mapping>
 
- 	<filter>
+ <!-- 	<filter>
 		<display-name>AppCacheBusterFilter</display-name>
 		<filter-name>AppCacheBusterFilter</filter-name>
 		<filter-class>com.sap.ui5.resource.AppCacheBusterFilter</filter-class>
@@ -71,6 +71,6 @@
 	<filter-mapping>
 		<filter-name>AppCacheBusterFilter</filter-name>
 		<url-pattern>/*</url-pattern>
-	</filter-mapping>
+	</filter-mapping> -->
  
  </web-app>
