@@ -3,7 +3,7 @@
 		xmlns:mvc="sap.ui.core.mvc"
 		xmlns:forms="sap.ui.layout.form"
 		xmlns:core="sap.ui.core"
-		xmlns:cc="com.sap.mentors.lemonaid.controls"
+		xmlns:lemonaid="com.sap.mentors.lemonaid.controls"
 		xmlns="sap.m">
 
 	<forms:SimpleForm
@@ -19,7 +19,7 @@
 		<core:Title text="{i18n>mentorShirt}" />
 
 		<Label text="{i18n>shirtPreview}" />
-		<cc:MentorShirt gender="{ShirtMFId}" text="{ShirtText}" number="{ShirtNumber}" />
+		<lemonaid:MentorShirt gender="{ShirtMFId}" text="{ShirtText}" number="{ShirtNumber}" />
 
 		<Label text="{i18n>shirtMF}" visible="{= !${ui>/isEditMode} }" />
 		<Text text="{ShirtMF/Name}" visible="{= !${ui>/isEditMode} }" />

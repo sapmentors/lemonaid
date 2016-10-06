@@ -17,7 +17,6 @@
 			<Toolbar id="tableToolbar" class="removeToolbarPaddingLeft">
 				<SearchField
 					id="searchField"
-					tooltip="{i18n>worklistSearchTooltip}"
 					search="onSearchPressed"
 					width="100%"/>
 			</Toolbar>

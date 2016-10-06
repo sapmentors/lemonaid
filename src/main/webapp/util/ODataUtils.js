@@ -10,6 +10,7 @@ sap.ui.define([] , function () {
 				if (sPropName !== "__metadata") {
 					var association = ODataUtils.getAssociation(oModel, oEntityType, sPropName);
 					if (association) {
+						if (!oPropValue) result[sPropName] = oPropValue = null;
 						var principal = association.referentialConstraint.principal,
 							// dependent = association.referentialConstraint.dependent,
 							associationSet = null;
@@ -21,8 +22,8 @@ sap.ui.define([] , function () {
 									ODataUtils.getPrincipalEntitySetName(associationSet, oEntityType.name, principal.role),
 									key
 								);
-							var navProperty = ODataUtils.getNavigationPropertyOfAssociationsetInEntity(associationSet, oEntityType);
-							result[navProperty.name] = { __deferred: { uri: uri } };
+							var navProperty = ODataUtils.getNavigationPropertyOfAssociationsetInEntity(associationSet, oEntityType);							
+							result[navProperty.name] = oPropValue ? { __deferred: { uri: uri } } : null;
 						}
 					}
 				}

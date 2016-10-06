@@ -3,6 +3,7 @@
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:forms="sap.ui.layout.form"
 	xmlns:core="sap.ui.core"
+	xmlns:lemonaid="com.sap.mentors.lemonaid.controls"
 	xmlns="sap.m">
 
 	<forms:SimpleForm
@@ -19,12 +20,13 @@
 		<Label text="{i18n>mentorStatus}" visible="{= !!${StatusId} &amp;&amp; !${ui>/isEditMode}}" />
 		<Text text="{MentorStatus/Name}" visible="{= !!${StatusId} &amp;&amp; !${ui>/isEditMode}}" />
 		<Label text="{i18n>mentorStatus}" visible="{ui>/isEditMode}" />
-		<Select	selectedKey="{StatusId}"
+		<lemonaid:Select selectedKey="{StatusId}"
 				   visible="{ui>/isEditMode}"
+				   nullable="true"
 				   forceSelection="false"
 				   items="{ path: '/MentorStatuses', sorter: { path: 'Name' } }">
 			<core:Item key="{Id}" text="{Name}" />
-		</Select>
+		</lemonaid:Select>
 
 		<Label text="{i18n>relationshipToSap}" visible="{= !!${RelationshipToSapId} &amp;&amp; !${ui>/isEditMode}}" />
 		<Text text="{RelationshipToSap/Name}" visible="{= !!${RelationshipToSapId} &amp;&amp; !${ui>/isEditMode}}" />

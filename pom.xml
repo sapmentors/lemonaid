@@ -206,6 +206,12 @@
 					<target>${java.version}</target>
 				</configuration>
 			</plugin>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<packagingExcludes>WEB-INF/lib/*.jar</packagingExcludes>
+				</configuration>
+			</plugin>
             <plugin>
                 <groupId>com.sap.cloud</groupId>
                 <artifactId>neo-java-web-maven-plugin</artifactId>
