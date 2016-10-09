@@ -20,13 +20,12 @@
 		<Label text="{i18n>mentorStatus}" visible="{= !!${StatusId} &amp;&amp; !${ui>/isEditMode}}" />
 		<Text text="{MentorStatus/Name}" visible="{= !!${StatusId} &amp;&amp; !${ui>/isEditMode}}" />
 		<Label text="{i18n>mentorStatus}" visible="{ui>/isEditMode}" />
-		<lemonaid:Select selectedKey="{StatusId}"
+		<Select selectedKey="{StatusId}"
 				   visible="{ui>/isEditMode}"
-				   nullable="true"
 				   forceSelection="false"
 				   items="{ path: '/MentorStatuses', sorter: { path: 'Name' } }">
 			<core:Item key="{Id}" text="{Name}" />
-		</lemonaid:Select>
+		</Select>
 
 		<Label text="{i18n>relationshipToSap}" visible="{= !!${RelationshipToSapId} &amp;&amp; !${ui>/isEditMode}}" />
 		<Text text="{RelationshipToSap/Name}" visible="{= !!${RelationshipToSapId} &amp;&amp; !${ui>/isEditMode}}" />
@@ -66,12 +65,13 @@
 					 }
 				 }"
 				forceSelection="false"
+			    nullable="true"
 				visible="{ui>/isEditMode}">
 			<core:Item key="{Id}" text="{Name}" />
 		</Select>
 
 		<Label text="{i18n>language} 2" visible="{ui>/isEditMode}" />
-		<Select
+		<lemonaid:Select
 				selectedKey="{Language2Id}"
 				items="{
 					 path : '/Languages',
@@ -80,12 +80,13 @@
 					 }
 				 }"
 				forceSelection="false"
+				nullable="true"
 				visible="{ui>/isEditMode}">
 			<core:Item key="{Id}" text="{Name}" />
-		</Select>
+		</lemonaid:Select>
 
 		<Label text="{i18n>language} 3" visible="{ui>/isEditMode}" />
-		<Select
+		<lemonaid:Select
 				selectedKey="{Language3Id}"
 				items="{
 					 path : '/Languages',
@@ -94,9 +95,10 @@
 					 }
 				 }"
 				forceSelection="false"
+				nullable="true"
 				visible="{ui>/isEditMode}">
 			<core:Item key="{Id}" text="{Name}" />
-		</Select>
+		</lemonaid:Select>
 		
 		<Label text="{i18n>publicProfile}" visible="{= !${ui>/isEditMode} &amp;&amp; ( ${config>/IsMentor} || ${config>/IsProjectMember} ) }" />
 		<Text text="{= ${PublicProfile} ? ${i18n>yes} : ${i18n>no}}" visible="{= !${ui>/isEditMode} &amp;&amp; ( ${config>/IsMentor} || ${config>/IsProjectMember} ) }" />
