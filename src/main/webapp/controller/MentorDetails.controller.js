@@ -30,7 +30,7 @@ sap.ui.define([
         		ServiceUrl : this.model.sServiceUrl,
 				isEditMode : false
         	});
-        	this.getView().setModel(this.ui, "ui");
+        	this.view.setModel(this.ui, "ui");
             this.router.getRoute("Mentor").attachMatched(this.onRouteMatched, this);
             
             // Remove sections/blocks that are not meant for a general audience
@@ -57,7 +57,7 @@ sap.ui.define([
 		 * @param {sap.ui.base.Event} oEvent - 'press' event of Edit button
 		 */
 		onEdit: function(oEvent) {
-			this.getView().getModel("ui").setProperty("/isEditMode", true);
+			this.ui.setProperty("/isEditMode", true);
 		},
 
 		/**
@@ -68,7 +68,7 @@ sap.ui.define([
 			this.model.submitChanges({
 				success: function(oData) {
 					MessageToast.show(this.i18n.getText("profileSavedSuccesfully"));
-					this.getView().getModel("ui").setProperty("/isEditMode", false);
+					this.ui.setProperty("/isEditMode", false);
 				}.bind(this),
 				error: function(oError) {
 					MessageToast.show(this.i18n.getText("profileSavedError"));
@@ -82,7 +82,7 @@ sap.ui.define([
 		 */
 		onCancel: function(oEvent) {
 			this.model.resetChanges();
-			this.getView().getModel("ui").setProperty("/isEditMode", false);
+			this.ui.setProperty("/isEditMode", false);
 		},
 
 		bindView: function() {

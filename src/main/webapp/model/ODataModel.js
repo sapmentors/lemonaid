@@ -101,7 +101,7 @@ sap.ui.define([
 		oPayload = this._removeReferences(oPayload);
 
 		// add navigation links
-		oPayload = LemonaidODataUtils.addNavigationLinks(this, oPayload, oEntityType, sKey, mParams);	// <-- This is the portion that has been added (in the override)
+		oPayload = LemonaidODataUtils.addNavigationLinks(this, oPayload, oEntityType, sKey);	// <-- This is the portion that has been added (in the override)
 
 		//get additional request info for created entries
 		aUrlParams = mParams && mParams.urlParameters ? ODataUtils._createUrlParamsArray(mParams.urlParameters) : undefined;
