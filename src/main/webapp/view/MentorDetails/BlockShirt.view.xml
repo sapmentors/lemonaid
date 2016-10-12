@@ -31,6 +31,9 @@
 			<core:Item key="{Id}" text="{Name}" />
 		</Select>
 
+		<Label text="{i18n>shirtNumber}" visible="{ui>/isEditMode}" />
+		<Input value="{ShirtNumber}" visible="{ui>/isEditMode}"/>
+
 		<Label text="{i18n>shirtText}" visible="{ui>/isEditMode}" />
 		<Input value="{ShirtText}" visible="{ui>/isEditMode}"/>
 		<!--<Label text="{i18n>shirtText}" />-->
