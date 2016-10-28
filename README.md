@@ -25,4 +25,4 @@ Product names, logos, brands and other trademarks referred to within the Lemonai
 
 ##Why Mentors Matter
 
-[![Why SAP Mentors Matter](http://img.youtube.com/vi/2s06k_wedrI/0.jpg)](http://www.youtube.com/watch?v=2s06k_wedrI "Why SAP Mentors Matter")
+[![Why SAP Mentors Matter](http://img.youtube.com/vi/2s06k_wedrI/0.jpg)](https://www.youtube.com/watch?v=wJj7WlKFXao "Why SAP Mentors Matter")
