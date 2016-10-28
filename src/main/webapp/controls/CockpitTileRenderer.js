@@ -1,3 +1,5 @@
+/* global sap */
+
 sap.ui.define(["jquery.sap.global"],
 
 	function(jQuery) {
@@ -50,11 +52,11 @@ sap.ui.define(["jquery.sap.global"],
         }
         r.write("</div>");
     };
-    
+
     CockpitTileRenderer._renderOneSided = function(r, c) {
         r.renderControl(c.getContent());
     };
-    
+
     CockpitTileRenderer._renderTwoSided = function(r, c) {
         r.write("<div");
         r.addClass("flipFrontSide");
