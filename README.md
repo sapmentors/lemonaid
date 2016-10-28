@@ -1,5 +1,7 @@
 # SAP Mentors Lemonaid
 
+[![Build Status](https://travis-ci.org/sapmentors/lemonaid.svg?branch=master)](https://travis-ci.org/sapmentors/lemonaid)
+
 ##Purpose
 
 Historically, there have been several Excel sheets containing mentor details, each for its own purpose. Unfortunately these sheets were often out of sync, causing most sheets not to be up-to-date. 
