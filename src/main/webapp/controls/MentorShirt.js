@@ -97,7 +97,8 @@ sap.ui.define([], function () {
 		 */
 		_resizeMentorShirtText: function() {
 			var size;
-			var desiredWidth = 135; // arbitrarily determined maximum pixel width for shirt text
+//          TODO: Re-enable when infinite loop issue has been resolved
+//			var desiredWidth = 135; // arbitrarily determined maximum pixel width for shirt text
 			var resizer = $(".hidden-resizer.mentorShirtText");
 
 			this.setGender(this.getGender());

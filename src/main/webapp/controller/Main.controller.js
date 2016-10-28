@@ -23,7 +23,7 @@ sap.ui.define([
         	this.device = this.component.getModel("device");
         	this.router.attachRoutePatternMatched(this.onRoutePatternMatched, this);
         	this.byId("openUserMenu").attachBrowserEvent("tab keyup", function(oEvent){
-				this._bKeyboard = oEvent.type == "keyup";
+				this._bKeyboard = oEvent.type === "keyup";
 			}, this);
         },
 
