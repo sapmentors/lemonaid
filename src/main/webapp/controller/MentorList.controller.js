@@ -122,7 +122,7 @@ sap.ui.define([
                 }
             }
 
-            if (this.activeMarker != oEvent.getSource()) {
+            if (this.activeMarker !== oEvent.getSource()) {
                 this.activeMarker = oEvent.getSource();
                 this.activeMarker.isOpen = true;
             }
