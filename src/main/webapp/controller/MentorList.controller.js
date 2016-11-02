@@ -107,6 +107,28 @@ sap.ui.define([
 		onRouteMatched: function() {
 		},
 
+		/**
+         * Event handler for Map Marker click
+         * @param  {sap.ui.base.Event} oEvent for click event
+         * @public
+         */
+        onMarkerClick: function(oEvent) {
+            if (this.activeMarker) {
+                if (this.activeMarker.isOpen) {
+                    this.activeMarker.infoWindowClose();
+                    this.activeMarker.isOpen = false;
+                } else {
+                    this.activeMarker.isOpen = true; //same marker reopen
+                }
+            }
+
+            if (this.activeMarker !== oEvent.getSource()) {
+                this.activeMarker = oEvent.getSource();
+                this.activeMarker.isOpen = true;
+            }
+        },
+
+
 		/* =========================================================== */
 		/* internal methods                                            */
 		/* =========================================================== */

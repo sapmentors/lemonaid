@@ -1,4 +1,4 @@
-/* global sap, console */
+/* global sap */
 
 sap.ui.define([
     "com/sap/mentors/lemonaid/controller/BaseController",
@@ -90,7 +90,7 @@ sap.ui.define([
                 path: this.getModel().createKey("/Mentors", { Id: this.sMentorId }),
                 parameters: {
                     expand: this.component.metadata._getEntityTypeByName("Mentor").navigationProperty.map(function(navigationProperty) {
-                        return navigationProperty['name'];
+                        return navigationProperty.name;
                     }).join() 	// Expand all navigation properties
                 }
             });

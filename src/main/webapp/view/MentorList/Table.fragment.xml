@@ -10,7 +10,7 @@
 				select: 'Id,FullName,ShirtNumber,PhotoUrl,RelationshipToSap/Name,MentorStatus/Name',
 				expand: 'MentorStatus,RelationshipToSap'
 			},
-			sorter: {path: 'ShirtNumber', descending: false}
+			sorter: {path: 'FullName', descending: false}
 		}"
 		updateFinished="onUpdateFinished">
 		<headerToolbar>

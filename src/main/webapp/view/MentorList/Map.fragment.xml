@@ -28,7 +28,8 @@
 					],
 					formatter: '.formatters.formatMapInfo'
 				}"
-            	icon="images/pin-{= ${MentorStatus/Id} === 'active' ? 'mentor' : 'alumni' }.svg" />  
+            	icon="images/pin-{= ${MentorStatus/Id} === 'active' ? 'mentor' : 'alumni' }.svg"
+            	click='.onMarkerClick' />  
         </markers>  
     </Map>
 </core:FragmentDefinition>

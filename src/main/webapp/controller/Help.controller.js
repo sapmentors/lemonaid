@@ -1,4 +1,4 @@
-/* global sap */
+/* global sap, showdown, jQuery */
 
 sap.ui.define([
     "com/sap/mentors/lemonaid/controller/BaseController",
