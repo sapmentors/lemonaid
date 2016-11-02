@@ -188,7 +188,7 @@ public class JPAEdmExtension implements org.apache.olingo.odata2.jpa.processor.a
 							for (NavigationProperty property : entityType.getNavigationProperties()) {
 								if (field.getName().equals(((JPAEdmMappingImpl) property.getMapping()).getInternalName())) {
 									propertyName = (String) getAnnotationMemberValue(field, JoinColumn.class, "name");
-									if (propertyName != null) {
+									if (propertyName != null && propertyName.length() > 0) {
 										propertyName = propertyName.substring(0, 1).toUpperCase() + propertyName.substring(1);
 									} else {
 										propertyName = property.getName();

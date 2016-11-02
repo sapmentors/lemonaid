@@ -116,8 +116,10 @@ public class ODataAuthorization {
 		User currentUser = getCurrentUser();
 		if (currentUser == null) return false;
 		if (isProjectMember()) return true;
-		if (mentor.getEmail1() != null && currentUser.getEmail().toUpperCase().equals(mentor.getEmail1().toUpperCase())) return true; 
-		if (mentor.getEmail2() != null && currentUser.getEmail().toUpperCase().equals(mentor.getEmail2().toUpperCase())) return true; 
+		if (currentUser.getEmail() != null) {
+			if (mentor.getEmail1() != null && currentUser.getEmail().toUpperCase().equals(mentor.getEmail1().toUpperCase())) return true; 
+			if (mentor.getEmail2() != null && currentUser.getEmail().toUpperCase().equals(mentor.getEmail2().toUpperCase())) return true;
+		}
 		return false; 
 	
 	}
