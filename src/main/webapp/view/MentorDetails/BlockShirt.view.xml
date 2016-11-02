@@ -31,16 +31,10 @@
 			<core:Item key="{Id}" text="{Name}" />
 		</Select>
 
-		<!-- Label text="{i18n>shirtNumber}" visible="{ui>/isEditMode}" /-->
-		<!-- Input value="{ShirtNumber}" visible="{ui>/isEditMode}"/-->
-
+		<Label text="{i18n>shirtNumber}" visible="{ui>/isEditMode}"/>
+		<Input value="{ShirtNumber}" visible="{ui>/isEditMode}"/>
 		<Label text="{i18n>shirtText}" visible="{ui>/isEditMode}" />
 		<Input value="{ShirtText}" visible="{ui>/isEditMode}"/>
-		<!--<Label text="{i18n>shirtText}" />-->
-		<!--<Text text="{ShirtText}" />-->
-
-		<!--<Label text="{i18n>shirtNumber}" />-->
-		<!--<Text text="{ShirtNumber}" />-->
 
 		<Label text="{i18n>shirtSize}" visible="{= !${ui>/isEditMode} }"/>
 		<Text text="{ShirtSize/Name}" visible="{= !${ui>/isEditMode} }" />
