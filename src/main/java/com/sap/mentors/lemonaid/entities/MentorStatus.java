@@ -9,7 +9,8 @@ import javax.persistence.Table;
 public class MentorStatus {
 
 	public static final String ACTIVE = "active";
-	public static final String ALUMNI = "alumni"; 
+	public static final String ALUMNI = "alumni";
+	public static final String PROGRAM = "program"; 
 	
 	@Id
 	private String id;

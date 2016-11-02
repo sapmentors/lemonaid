@@ -31,6 +31,12 @@
 				iconColor="Default"
 				count="{ui>/alumni}"
 				text="{i18n>alumni}"/>
+			<IconTabFilter
+				key="program"
+				icon="sap-icon://person-placeholder"
+				iconColor="Negative"
+				count="{ui>/program}"
+				text="{i18n>program}"/>
 			<IconTabSeparator class="sapUiVisibleOnlyOnDesktop" />
 			<IconTabFilter
 				key="bandVegas"

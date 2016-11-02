@@ -20,6 +20,7 @@ sap.ui.define([
 		filters: {
 				active: 	new sap.ui.model.Filter("MentorStatus/Id", "EQ", "active"),
 				alumni: 	new sap.ui.model.Filter("MentorStatus/Id", "EQ", "alumni"),
+				program: 	new sap.ui.model.Filter("MentorStatus/Id", "EQ", "program"),
 				bandVegas:	new sap.ui.model.Filter("JambandLasVegas", "EQ", true),
 				bandBcn:	new sap.ui.model.Filter("JambandBarcelona", "EQ", true)
 			},

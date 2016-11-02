@@ -83,6 +83,7 @@ public class Application extends SpringBootServletInitializer {
 					log.info("Mentor status table is still empty. Prepopulating it");
 					mentorStatusRepository.save(new MentorStatus(MentorStatus.ACTIVE, "Active mentor"));
 					mentorStatusRepository.save(new MentorStatus(MentorStatus.ALUMNI, "Alumni"));
+					mentorStatusRepository.save(new MentorStatus(MentorStatus.PROGRAM, "Program team member"));
 				}
 
 				if (relationshipToSapRepository.count() == 0) {
