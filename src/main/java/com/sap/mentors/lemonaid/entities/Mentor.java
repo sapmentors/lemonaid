@@ -78,7 +78,7 @@ public class Mentor {
     
     @SAP(fieldGroup="Address") @JoinColumn(name="regionId") @ManyToOne private Region regionId;
     
-    @SAP(fieldGroup="Shirt") private int shirtNumber;
+    @SAP(fieldGroup="Shirt") private String shirtNumber;
     @SAP(fieldGroup="Shirt") private String shirtText;
     @SAP(fieldGroup="Shirt") @JoinColumn(name="shirtSizeId") @ManyToOne private Size shirtSizeId;
     @SAP(fieldGroup="Shirt") @JoinColumn(name="shirtMFId") @ManyToOne private Gender shirtMFId;
@@ -138,7 +138,7 @@ public class Mentor {
     		String address, String city, String state, String zip, Country countryId, String phone,
     		Double latitude, Double longitude,
     		Region regionId,
-    		int shirtNumber, String shirtText, Size shirtSizeId, Gender shirtMFId,
+    		String shirtNumber, String shirtText, Size shirtSizeId, Gender shirtMFId,
     		String scnUrl, String twitterId, String linkedInUrl, String xingUrl, String facebookUrl, String slackId,
     		boolean interestInMentorCommunicationStrategy, boolean interestInMentorManagementModel, boolean interestInMentorMix, boolean interestInOtherIdeas, int hoursAvailable,
     		Region topicLeadRegionId, Topic topic1Id, String topic1Executive, Topic topic2Id, String topic2Executive, Topic topic3Id, String topic3Executive, Topic topic4Id, String topic4Executive, boolean topicLeadInterest, Topic topicInterestId,
@@ -569,11 +569,11 @@ public class Mentor {
 		this.regionId = regionId;
 	}
 
-	public int getShirtNumber() {
+	public String getShirtNumber() {
 		return shirtNumber;
 	}
 
-	public void setShirtNumber(int shirtNumber) {
+	public void setShirtNumber(String shirtNumber) {
 		this.shirtNumber = shirtNumber;
 	}
 
