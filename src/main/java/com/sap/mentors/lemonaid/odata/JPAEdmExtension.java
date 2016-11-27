@@ -85,7 +85,7 @@ public class JPAEdmExtension implements org.apache.olingo.odata2.jpa.processor.a
 
 			if (entityType.getName().equals("Mentor")) {
 
-				if (authorization.isMentor()) {
+				if (authorization.isMentor() || authorization.isProjectMember()) {
 			
 					// Add transient properties
 					JPAEdmMappingImpl mapping = new JPAEdmMappingImpl();
