@@ -96,7 +96,7 @@ public class QuartzConfig {
 	public CronTriggerFactoryBean locationTrigger() {
 		CronTriggerFactoryBean cronTriggerFactoryBean = new CronTriggerFactoryBean();
 		cronTriggerFactoryBean.setJobDetail(locationJob().getObject());
-		cronTriggerFactoryBean.setCronExpression("0 15 * * * ?"); // Every day
+		cronTriggerFactoryBean.setCronExpression("0 15 0 * * ?"); // Every day
 		cronTriggerFactoryBean.setGroup("lemonaid-quartz");
 		return cronTriggerFactoryBean;
 	}
