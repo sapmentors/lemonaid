@@ -28,17 +28,16 @@ public class MentorUtilsTest {
 	@Test
 	public void testGeocodingForMalaysia() {
 		Mentor mentor = new Mentor();
-		mentor.setAddress1("A-09-03 Casa Desa Condominium,1 Jalan Desa Utama");
-		mentor.setAddress2("Taman Desa");
+		mentor.setAddress1("22, Gtower, 199, Jalan Tun Razak");
 		mentor.setCity("Kuala Lumpur");
 		mentor.setState("Wilayah Persekutuan Kuala Lumpur");
-		mentor.setZip("58100");
+		mentor.setZip("50450");
 		Country countryId = new Country("MY");
 		mentor.setCountryId(countryId);
 		MentorUtils mentorUtils = new MentorUtils();
 		Point point = mentorUtils.getLocationOfMentor(mentor);
-		double lat = new Double(3.1088357);
-		double lon = new Double(101.6861987);
+		double lat = new Double(3.1589771);
+		double lon = new Double(101.719424);
 		assertEquals(lat, point.getLatitude(), 0.001);
 		assertEquals(lon, point.getLongitude(), 0.001);
 	}
