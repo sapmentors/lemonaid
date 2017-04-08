@@ -37,6 +37,13 @@
 				iconColor="Negative"
 				count="{ui>/program}"
 				text="{i18n>program}"/>
+			<IconTabFilter
+				key="notpublic"
+				icon="sap-icon://private"
+				iconColor="Negative"
+				count="{ui>/notpublic}"
+				text="{i18n>notpublic}"
+				visible="{MayEdit}"/>
 			<IconTabSeparator class="sapUiVisibleOnlyOnDesktop" />
 			<IconTabFilter
 				key="bandVegas"

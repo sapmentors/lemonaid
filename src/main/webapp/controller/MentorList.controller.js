@@ -22,7 +22,8 @@ sap.ui.define([
 				alumni: 	new sap.ui.model.Filter("MentorStatus/Id", "EQ", "alumni"),
 				program: 	new sap.ui.model.Filter("MentorStatus/Id", "EQ", "program"),
 				bandVegas:	new sap.ui.model.Filter("JambandLasVegas", "EQ", true),
-				bandBcn:	new sap.ui.model.Filter("JambandBarcelona", "EQ", true)
+				bandBcn:	new sap.ui.model.Filter("JambandBarcelona", "EQ", true),
+				notpublic:	new sap.ui.model.Filter("PublicProfile", "EQ", false)
 			},
 		searchFilter: null, quickFilter: null,
 
