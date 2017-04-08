@@ -33,7 +33,6 @@ import org.slf4j.LoggerFactory;
 
 import com.sap.mentors.lemonaid.entities.Config;
 import com.sap.mentors.lemonaid.entities.Mentor;
-import com.sap.mentors.lemonaid.entities.Region;
 import com.sap.mentors.lemonaid.odata.authorization.ODataAuthorization;
 import com.sap.mentors.lemonaid.odata.util.MediaProcessor;
 import com.sap.mentors.lemonaid.odata.util.SpringContextsUtil;
