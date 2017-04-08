@@ -43,7 +43,7 @@
 				iconColor="Negative"
 				count="{ui>/notpublic}"
 				text="{i18n>notpublic}"
-				visible="{MayEdit}"/>
+				visible="{= ${config>/IsMentor} || ${config>/IsProjectMember} }"/>
 			<IconTabSeparator class="sapUiVisibleOnlyOnDesktop" />
 			<IconTabFilter
 				key="bandVegas"
