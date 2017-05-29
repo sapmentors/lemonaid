@@ -1,6 +1,6 @@
 # SAP Mentors Lemonaid
 
-[![Build Status](https://travis-ci.org/larslanghammer/lemonaid.svg?branch=master)](https://travis-ci.org/larslanghammer/lemonaid)
+[![Build Status](https://travis-ci.org/sapmentors/lemonaid.svg?branch=master)](https://travis-ci.org/sapmentors/lemonaid)
 
 ##Purpose
 
