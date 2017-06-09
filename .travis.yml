@@ -3,6 +3,8 @@ before_install:
   - npm install
   - npm install grunt-cli -g
   - grunt openui5_preload
+  - rm ~/.m2/settings.xml
+  
 env:
   global:
     - secure: "jGiBBWWm5u5XUy6o2+WbVcQSPWvby8pK/N8xA4kERAHjUkvhPBdgXe3F2elbDM2fe4j+7giCjVhiOnXG4h6Jgg+7xlIbbGX43mO5qCdRxrzaWqJGQ7/8BHmcUgphgV9DW7+LRgsbX9Vpxnc12ntieGKZ3qYJSdLpGlm6g0LhyeF/By6r7MQ/5R0gaVd+AxPmyN0fpVp+FP33kUnb2r+MKikZmwZzw77ZUlNVmmD2GbtkRyHxsNmj7ze2RqQvqleBn2CCf5L+gLYeWnoj1Qjd8tk9UWDYmsehuBUrC8c7kD3u3/gH3PGp3l6sM5Cm/CWRgikhMsX6q5ycl0fQhC8wSJVlt92EDkjj9mHhedX5dddY7XRoarkJcK/sehamkeKUqicIBTbezrbmYRNjhJQ/VreXNxXN7/xvXPzMl7I1jOgdm8swFtYrs74gbdvzM8/g5hR4UkQjp1aJHrsDY4wfiwvxxfyuOr148gg8cQ+Pu6CKLXNTDqTW/ljCWGmSIMhsL/fK0UobrDHbI/vQ7qYd0I4IOJzs5meQCMLKF4R2187JLwLcB97fRG7X6E/oADKhxrKsJD51EoqM80d3O2ddxApdhJJBsfsc7NffLL87s3rmwi3JgZrlS8kWaLcLrPMi7KUpvafykCK3YK3qblkpAWHoQmfONBuYnHcl8EEl2Ac="
