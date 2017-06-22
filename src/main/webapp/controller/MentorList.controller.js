@@ -18,11 +18,11 @@ sap.ui.define([
 		/* =========================================================== */
 
 		filters: {
-				active: 	new sap.ui.model.Filter("MentorStatus/Id", "EQ", "active"),
-				alumni: 	new sap.ui.model.Filter("MentorStatus/Id", "EQ", "alumni"),
-				program: 	new sap.ui.model.Filter("MentorStatus/Id", "EQ", "program"),
-				bandVegas:	new sap.ui.model.Filter("JambandLasVegas", "EQ", true),
-				bandBcn:	new sap.ui.model.Filter("JambandBarcelona", "EQ", true)
+				active: 	new Filter("MentorStatus/Id", "EQ", "active"),
+				alumni: 	new Filter("MentorStatus/Id", "EQ", "alumni"),
+				program: 	new Filter("MentorStatus/Id", "EQ", "program"),
+				bandVegas:	new Filter("JambandLasVegas", "EQ", true),
+				bandBcn:	new Filter("JambandBarcelona", "EQ", true)
 			},
 		searchFilter: null, quickFilter: null,
 
@@ -55,7 +55,20 @@ sap.ui.define([
 
         onSearchPressed: function(event) {
             var search = event.getParameters().query;
-            this.searchFilter = search ? new Filter("FullName", FilterOperator.Contains, search) : null;
+
+				var afilters = [];
+				var outerFilters = [];
+				var searchTerms = search.split(" "); //words separated by space are considered as separate search terms. 
+				for (var k = 0; k < searchTerms.length; k++) {
+					afilters.push(new Filter("FullName", FilterOperator.Contains, searchTerms[k]));
+					afilters.push(new Filter("ShirtNumber", FilterOperator.Contains, searchTerms[k]));
+					afilters.push(new Filter("RelationshipToSap/Name", FilterOperator.Contains, searchTerms[k]));
+					afilters.push(new Filter("MentorStatus/Name", FilterOperator.Contains, searchTerms[k]));					
+					outerFilters.push(new Filter(afilters));
+					afilters = [];
+				}
+            
+            this.searchFilter = search ? new Filter(outerFilters) : null;
             this._applyFilters();
         },
 
@@ -138,7 +151,7 @@ sap.ui.define([
 			var aFilter = [];
 			if (this.searchFilter)	{ aFilter.push(this.searchFilter); }
 			if (this.quickFilter)	{ aFilter.push(this.quickFilter); }
-			var filter = aFilter.length === 0 ? null : new sap.ui.model.Filter(aFilter, true);
+			var filter = aFilter.length === 0 ? null : new Filter(aFilter, true);
             this.table.getBinding("items").filter(filter);
             this.map.getBinding("markers").filter(filter);
 		}
