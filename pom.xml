@@ -30,7 +30,9 @@
         <sap.cloud.host>hana.ondemand.com</sap.cloud.host>
         <sap.cloud.username>${env.CI_DEPLOY_USERNAME}</sap.cloud.username>
         <sap.cloud.password>${env.CI_DEPLOY_PASSWORD}</sap.cloud.password>
-        <sap.cloud.account>a5a504e08</sap.cloud.account>
+      <!-->  <sap.cloud.account>a5a504e08</sap.cloud.account>
+        <sap.cloud.application>lemonaid</sap.cloud.application> -->
+                <sap.cloud.account>d062371trial</sap.cloud.account>
         <sap.cloud.application>lemonaid</sap.cloud.application>
 	</properties>
 
@@ -309,7 +311,7 @@
 			<url>http://dl.bintray.com/jpenninkhof/olingo</url>
 		</repository>
 	</repositories>
- 
+
 <!--  	<repositories>
 		<repository>
 			<snapshots>
@@ -320,7 +322,7 @@
 			<url>https://repository.apache.org/content/repositories/snapshots/</url>
 		</repository>
 	</repositories> -->
- 
+
 	<pluginRepositories>
 		<pluginRepository>
 			<id>spring-releases</id>
