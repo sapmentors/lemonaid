@@ -25,6 +25,7 @@
 		<Text text="{ShirtMF/Name}" visible="{= !${ui>/isEditMode} }" />
 		<Label text="{i18n>shirtMF}" visible="{ui>/isEditMode}" />
 		<Select	selectedKey="{ShirtMFId}"
+					id="select-shirtMF"
 				   visible="{ui>/isEditMode}"
 				   forceSelection="false"
 				   items="{ path: '/Genders', sorter: { path: 'Name' } }">
@@ -32,14 +33,15 @@
 		</Select>
 
 		<Label text="{i18n>shirtNumber}" visible="{ui>/isEditMode}"/>
-		<Input value="{ShirtNumber}" visible="{ui>/isEditMode}"/>
+		<Input id="input-shirtNumber" value="{ShirtNumber}" visible="{ui>/isEditMode}"/>
 		<Label text="{i18n>shirtText}" visible="{ui>/isEditMode}" />
-		<Input value="{ShirtText}" visible="{ui>/isEditMode}"/>
+		<Input id="input-shirtText" value="{ShirtText}" visible="{ui>/isEditMode}"/>
 
 		<Label text="{i18n>shirtSize}" visible="{= !${ui>/isEditMode} }"/>
 		<Text text="{ShirtSize/Name}" visible="{= !${ui>/isEditMode} }" />
 		<Label text="{i18n>shirtSize}" visible="{ui>/isEditMode}" />
 		<Select	selectedKey="{ShirtSizeId}"
+					id="select-shirtSize"
 				   visible="{ui>/isEditMode}"
 				   forceSelection="false"
 				   items="{ path: '/Sizes', sorter: { path: 'Name' } }">

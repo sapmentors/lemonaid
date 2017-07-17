@@ -18,18 +18,18 @@
 		<core:Title text="{i18n>bio}"></core:Title>
 
 		<Label text="{i18n>mentorSince}" visible="{= !!${MentorSince} &amp;&amp; !${ui>/isEditMode}}" />
-		<Text text="{path:'MentorSince', type:'sap.ui.model.type.Date', formatOptions: { pattern: 'MMMM yyyy', UTC:true}}" visible="{= !!${MentorSince} &amp;&amp; !${ui>/isEditMode}}" />
+		<Text text="{path:'MentorSince', type:'sap.ui.model.type.Date', formatOptions: { pattern: 'MMMM yyyy'}}" visible="{= !!${MentorSince} &amp;&amp; !${ui>/isEditMode}}" />
 		<Label text="{i18n>mentorSince}" visible="{ui>/isEditMode}" />
-		<DateTimeInput 
-			type="Date" 
+		<DateTimeInput
+			id="input-mentorSince"
+			type="Date"
 			displayFormat="MM/yyyy"
-			visible="{ui>/isEditMode}" 
+			visible="{ui>/isEditMode}"
 			value="{
 					path:'MentorSince',
 					type:'sap.ui.model.type.Date',
 					formatOptions: {
-						pattern: 'MM-yyyy',
-						UTC:true
+						pattern: 'MM-yyyy'
 					}
 				}" />
 
@@ -37,6 +37,7 @@
 		<Text text="{Industry1/Name}" visible="{= !!${Industry1Id} &amp;&amp; !${ui>/isEditMode}}" />
 		<Label text="{i18n>industry} 1" visible="{ui>/isEditMode}" />
 		<Select	selectedKey="{Industry1Id}"
+					id="select-industry1"
 				   visible="{ui>/isEditMode}"
 				   forceSelection="false"
 				   items="{ path: '/Industries', sorter: { path: 'Name' } }">
@@ -47,6 +48,7 @@
 		<Text text="{Industry2/Name}" visible="{= !!${Industry2Id} &amp;&amp; !${ui>/isEditMode}}" />
 		<Label text="{i18n>industry} 2" visible="{ui>/isEditMode}" />
 		<Select	selectedKey="{Industry2Id}"
+					id="select-industry2"
 				   visible="{ui>/isEditMode}"
 				   forceSelection="false"
 				   items="{ path: '/Industries', sorter: { path: 'Name' } }">
@@ -57,6 +59,7 @@
 		<Text text="{Industry3/Name}" visible="{= !!${Industry3Id} &amp;&amp; !${ui>/isEditMode}}" />
 		<Label text="{i18n>industry} 3" visible="{ui>/isEditMode}" />
 		<Select	selectedKey="{Industry3Id}"
+					id="select-industry3"
 				   visible="{ui>/isEditMode}"
 				   forceSelection="false"
 				   items="{ path: '/Industries', sorter: { path: 'Name' } }">
@@ -66,7 +69,7 @@
 		<Label text="{i18n>shortBio}" visible="{= !!${Bio} &amp;&amp; !${ui>/isEditMode}}" />
 		<Text text="{Bio}" visible="{= !!${Bio} &amp;&amp; !${ui>/isEditMode}}" />
 		<Label text="{i18n>shortBio}" visible="{ui>/isEditMode}" />
-		<TextArea value="{Bio}" visible="{ui>/isEditMode}" rows="5" growing="true" />
+		<TextArea id="input-bio" value="{Bio}" visible="{ui>/isEditMode}" rows="5" growing="true" />
 
 
 	</forms:SimpleForm>

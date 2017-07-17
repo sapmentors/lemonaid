@@ -21,6 +21,7 @@
 		<Text text="{MentorStatus/Name}" visible="{= !!${StatusId} &amp;&amp; !${ui>/isEditMode}}" />
 		<Label text="{i18n>mentorStatus}" visible="{ui>/isEditMode}" />
 		<Select selectedKey="{StatusId}"
+					id="select-status"
 				   visible="{ui>/isEditMode}"
 				   forceSelection="false"
 				   items="{ path: '/MentorStatuses', sorter: { path: 'Name' } }">
@@ -31,17 +32,19 @@
 		<Text text="{RelationshipToSap/Name}" visible="{= !!${RelationshipToSapId} &amp;&amp; !${ui>/isEditMode}}" />
 		<Label text="{i18n>relationshipToSap}" visible="{ui>/isEditMode}" />
 		<Select	selectedKey="{RelationshipToSapId}"
+					id="select-relationshipToSap"
 				   visible="{ui>/isEditMode}"
 				   forceSelection="false"
 				   items="{ path: '/RelationshipsToSap', sorter: { path: 'Name' } }">
 			<core:Item key="{Id}" text="{Name}" />
 		</Select>
-		
+
 		<Label text="{i18n>country}" visible="{= !!${CountryId} &amp;&amp; !${ui>/isEditMode} }" />
 		<Text text="{Country/Name}" visible="{= !!${CountryId} &amp;&amp; !${ui>/isEditMode} }"/>
 
 		<Label text="{i18n>region}" visible="{ui>/isEditMode}" />
 		<Select
+			id="select-region"
 			selectedKey="{RegionId}"
 			items="{/Regions}"
 			forceSelection="false"
@@ -52,11 +55,12 @@
 		<Text text="{Region/Name}" visible="{= !!${CountryId} &amp;&amp; !${ui>/isEditMode} }"/>
 
 		<Label text="{i18n>languages}" visible="{= !${ui>/isEditMode} &amp;&amp; ( !!${Language1Id} || !!${Language2Id} || !!${Language3Id} ) }"/>
-		<Text 
-			text="{ parts: ['Language1/Name', 'Language2/Name', 'Language3/Name' ], formatter: '.formatters.commaSeparated'}" 
+		<Text
+			text="{ parts: ['Language1/Name', 'Language2/Name', 'Language3/Name' ], formatter: '.formatters.commaSeparated'}"
 			visible="{= !${ui>/isEditMode} &amp;&amp; ( !!${Language1Id} || !!${Language2Id} || !!${Language3Id} ) }"/>
 		<Label text="{i18n>language} 1" visible="{ui>/isEditMode}" />
 		<Select
+				id="select-language1"
 				selectedKey="{Language1Id}"
 				items="{
 					 path : '/Languages',
@@ -72,6 +76,7 @@
 
 		<Label text="{i18n>language} 2" visible="{ui>/isEditMode}" />
 		<lemonaid:Select
+				id="select-language2"
 				selectedKey="{Language2Id}"
 				items="{
 					 path : '/Languages',
@@ -87,6 +92,7 @@
 
 		<Label text="{i18n>language} 3" visible="{ui>/isEditMode}" />
 		<lemonaid:Select
+				id="select-language3"
 				selectedKey="{Language3Id}"
 				items="{
 					 path : '/Languages',
@@ -99,11 +105,11 @@
 				visible="{ui>/isEditMode}">
 			<core:Item key="{Id}" text="{Name}" />
 		</lemonaid:Select>
-		
+
 		<Label text="{i18n>publicProfile}" visible="{= !${ui>/isEditMode} &amp;&amp; ( ${config>/IsMentor} || ${config>/IsProjectMember} ) }" />
 		<Text text="{= ${PublicProfile} ? ${i18n>yes} : ${i18n>no}}" visible="{= !${ui>/isEditMode} &amp;&amp; ( ${config>/IsMentor} || ${config>/IsProjectMember} ) }" />
 		<Label text="{i18n>publicProfile}" visible="{= ${ui>/isEditMode} }" />
-		<Switch state="{PublicProfile}" visible="{= ${ui>/isEditMode} }" customTextOn="{i18n>yes}" customTextOff="{i18n>no}" />
+		<Switch id="switch-public" state="{PublicProfile}" visible="{= ${ui>/isEditMode} }" customTextOn="{i18n>yes}" customTextOff="{i18n>no}" />
 
 	</forms:SimpleForm>
 </mvc:View>

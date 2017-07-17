@@ -59,16 +59,16 @@ sap.ui.define([
 
 				var afilters = [];
 				var outerFilters = [];
-				var searchTerms = search.split(" "); //words separated by space are considered as separate search terms. 
+				var searchTerms = search.split(" "); //words separated by space are considered as separate search terms.
 				for (var k = 0; k < searchTerms.length; k++) {
 					afilters.push(new Filter("FullName", FilterOperator.Contains, searchTerms[k]));
 					afilters.push(new Filter("ShirtNumber", FilterOperator.Contains, searchTerms[k]));
 					afilters.push(new Filter("RelationshipToSap/Name", FilterOperator.Contains, searchTerms[k]));
-					afilters.push(new Filter("MentorStatus/Name", FilterOperator.Contains, searchTerms[k]));					
+					afilters.push(new Filter("MentorStatus/Name", FilterOperator.Contains, searchTerms[k]));
 					outerFilters.push(new Filter(afilters));
 					afilters = [];
 				}
-            
+
             this.searchFilter = search ? new Filter(outerFilters) : null;
             this._applyFilters();
         },
@@ -106,6 +106,10 @@ sap.ui.define([
             this.getRouter().navTo("Mentor", {
                 Id: event.getSource().getBindingContext().getProperty("Id")
             });
+        },
+
+        onAddNewMentor: function () {
+            this.getRouter().navTo("MentorAddition");
         },
 
 		/**
@@ -147,7 +151,7 @@ sap.ui.define([
 		/* =========================================================== */
 		/* internal methods                                            */
 		/* =========================================================== */
-		
+
 		_applyFilters: function() {
 			var aFilter = [];
 			if (this.searchFilter)	{ aFilter.push(this.searchFilter); }

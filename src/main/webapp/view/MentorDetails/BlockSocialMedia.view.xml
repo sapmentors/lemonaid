@@ -18,34 +18,34 @@
 		<core:Title text="{i18n>socialMedia}"></core:Title>
 
 		<Label text="{i18n>scn}" visible="{ui>/isEditMode}" />
-		<Input value="{ScnUrl}" visible="{ui>/isEditMode}"/>
+		<Input id="input-scnUrl" value="{ScnUrl}" visible="{ui>/isEditMode}"/>
 		<Label text="{i18n>scn}" visible="{= !!${ScnUrl} }" />
 		<Link text="{ScnUrl}" href="{ScnUrl}" target="_blank" visible="{= !!${ScnUrl} &amp;&amp; !${ui>/isEditMode} }" />
 
  		<Label text="{i18n>twitter}" visible="{ui>/isEditMode}" />
-		<Input value="{TwitterId}" visible="{ui>/isEditMode}"/>
+		<Input id="input-twitterUrl" value="{TwitterId}" visible="{ui>/isEditMode}"/>
 		<Label text="{i18n>twitter}" visible="{= !!${TwitterId} }" />
 		<Link text="{TwitterId}" href="https://www.twitter.com/{TwitterId}" target="_blank" visible="{= !!${TwitterId} &amp;&amp; !${ui>/isEditMode} }" />
 		<Link text="Send PM" href="https://twitter.com/intent/tweet?text=D%20{TwitterId}%20%3Cyour%20message%20here%3E" target="_blank" visible="{= !!${SlackId} &amp;&amp; !${ui>/isEditMode} }" />
 
  		<Label text="{i18n>slack}" visible="{ui>/isEditMode}" />
-		<Input value="{SlackId}" visible="{ui>/isEditMode}"/>
+		<Input id="input-slackUrl" value="{SlackId}" visible="{ui>/isEditMode}"/>
 		<Label text="{i18n>slack}" visible="{= !!${SlackId} }" />
 		<Link text="{SlackId}" href="https://sapmentors.slack.com/team/{SlackId}/" target="_blank" visible="{= !!${SlackId} &amp;&amp; !${ui>/isEditMode} }" />
 		<Link text="Send PM" href="https://sapmentors.slack.com/messages/{SlackId}/" target="_blank" visible="{= !!${SlackId} &amp;&amp; !${ui>/isEditMode} }" />
 
 		<Label text="{i18n>linkedIn}" visible="{ui>/isEditMode}" />
-		<Input value="{LinkedInUrl}" visible="{ui>/isEditMode}"/>
+		<Input id="input-linkedIn" value="{LinkedInUrl}" visible="{ui>/isEditMode}"/>
 		<Label text="{i18n>linkedIn}" visible="{= !!${LinkedInUrl} }" />
 		<Link text="{LinkedInUrl}" href="{LinkedInUrl}" target="_blank" visible="{= !!${LinkedInUrl} &amp;&amp; !${ui>/isEditMode} }" />
 
 		<Label text="{i18n>xing}" visible="{ui>/isEditMode}" />
-		<Input value="{XingUrl}" visible="{ui>/isEditMode}"/>
+		<Input id="input-xing" value="{XingUrl}" visible="{ui>/isEditMode}"/>
 		<Label text="{i18n>xing}" visible="{= !!${XingUrl} }" />
 		<Link text="{XingUrl}" href="{XingUrl}" target="_blank" visible="{= !!${XingUrl} &amp;&amp; !${ui>/isEditMode} }" />
 
 		<Label text="{i18n>facebook}" visible="{ui>/isEditMode}" />
-		<Input value="{FacebookUrl}" visible="{ui>/isEditMode}"/>
+		<Input id="input-facebook" value="{FacebookUrl}" visible="{ui>/isEditMode}"/>
 		<Label text="{i18n>facebook}" visible="{= !!${FacebookUrl} }" />
 		<Link text="{FacebookUrl}" href="{FacebookUrl}" target="_blank" visible="{= !!${FacebookUrl} &amp;&amp; !${ui>/isEditMode} }" />
 
@@ -55,9 +55,9 @@
 			<Link text="{Email2}" href="mailto:{Email2}" target="_blank" visible="{= !!${Email2} &amp;&amp; !${ui>/isEditMode} }" />
 		</VBox>
 		<Label text="{i18n>email} 1" visible="{ui>/isEditMode}" />
-		<Input value="{Email1}" visible="{ui>/isEditMode}"/>
+		<Input id="input-email1" value="{Email1}" visible="{ui>/isEditMode}"/>
 		<Label text="{i18n>email} 2" visible="{ui>/isEditMode}" />
-		<Input value="{Email2}" visible="{ui>/isEditMode}"/>
+		<Input id="input-email2" value="{Email2}" visible="{ui>/isEditMode}"/>
 
 
 	</forms:SimpleForm>

@@ -17,9 +17,10 @@
 			<Toolbar id="tableToolbar" class="removeToolbarPaddingLeft">
 				<SearchField
 					id="searchField"
-					search="onSearchPressed"
-					width="100%"/>
-			</Toolbar>
+				    search="onSearchPressed"
+				    width="90%"/>
+			    <Button icon="sap-icon://add-contact" press="onAddNewMentor" width="10%" visible="{=${config>/IsProjectMember}}"/>
+				</Toolbar>
 		</headerToolbar>
 		<columns>
 			<Column id="photo" width="5rem">

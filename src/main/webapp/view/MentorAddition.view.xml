@@ -1,0 +1,107 @@
+<mvc:View
+	controllerName="com.sap.mentors.lemonaid.controller.MentorAddition"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.uxap"
+	xmlns:m="sap.m"
+	xmlns:details="com.sap.mentors.lemonaid.view.MentorDetails">
+	<ObjectPageLayout
+		id="ObjectPageLayout"
+		enableLazyLoading="false"
+		showTitleInHeaderContent="true"
+		showEditHeaderButton="false"
+		editHeaderButtonPress="handleEditBtnPress">
+
+		<headerTitle>
+			<ObjectPageHeader
+				id="header"
+				objectImageURI="{PhotoUrl}"
+				objectTitle="{FullName}"
+				objectSubtitle="{JobTitle} {= ${JobTitle} &amp;&amp; ${Company} ? 'at' : '' } {Company}"
+				objectImageShape="Circle"
+				objectImageAlt="{FullName}"
+				isObjectIconAlwaysVisible="false"
+				isObjectTitleAlwaysVisible="false"
+				isObjectSubtitleAlwaysVisible="false">
+				<navigationBar>
+					<m:Bar>
+						<m:contentLeft>
+							<m:Button icon="sap-icon://nav-back" press="onNavBack"/>
+						</m:contentLeft>
+						<m:contentRight>
+							<m:Button icon="sap-icon://edit" text="{i18n>edit}" press="onEdit" visible="{= !!${MayEdit} &amp;&amp; !${ui>/isEditMode} }"/>
+							<m:Button icon="sap-icon://save" text="Save User" type="Accept" press="onSave" visible="{ui>/isEditMode}"/>
+							<m:Button text="Cancel" press="onCancel" type="Reject" visible="{ui>/isEditMode}"/>
+						</m:contentRight>
+					</m:Bar>
+				</navigationBar>
+			</ObjectPageHeader>
+		</headerTitle>
+
+		<headerContent>
+			<m:VBox>
+				<m:ObjectStatus title="{i18n>shirtAlias}" text="{ShirtText}"/>
+				<m:ObjectStatus title="{i18n>shirtNumber}" text="{ShirtNumber}"/>
+			</m:VBox>
+			<!--<m:NumericContent value="{ShirtNumber}" size="M" />-->
+			<m:VBox>
+				<m:Label text="{City}{= ${City} ? ', ' : '' }{Country/Name}"/>
+				<m:Link text="{Phone}"/>
+				<m:Link text="{Email1}"/>
+				<m:Link text="{Email2}"/>
+			</m:VBox>
+			<!--<m:HBox>-->
+				<!--<m:Image src="images/linkedin.png" />-->
+				<!--<m:Image src="images/Twitter.png" />-->
+			<!--</m:HBox>-->
+			<!--<m:VBox>-->
+				<!--<m:Text width="100%" wrapping="true" text="{Bio}"/>-->
+			<!--</m:VBox>-->
+			<!--<m:VBox>-->
+			<!--</m:VBox>-->
+		</headerContent>
+
+		<sections>
+
+			<ObjectPageSection id="personalInfoSection" title="{i18n>personalInfo}">
+				<subSections>
+					<ObjectPageSubSection id="PersonalInfo" title="{i18n>personalInfo}">
+						<blocks>
+							<details:BlockBasicData id="BasicData_creation"/>
+							<details:BlockAddress  id="Address_creation"/>
+							<details:BlockBio id="Bio_creation"/>
+							<details:BlockSocialMedia id="Media_creation"/>
+						<!--	<details:BlockMap /> -->
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+
+			<ObjectPageSection id="MentorDetails" title="Mentor details">
+				<subSections>
+					<ObjectPageSubSection title="Mentor details">
+						<blocks>
+							<details:BlockShirt id="Shirt_creation"/>
+							<details:BlockExpertise id="Expertise_creation"/>
+							<details:BlockTopics id="Topics_creation"/>
+							<details:BlockSoftskills id="SoftSkills_creation"/>
+							<details:BlockJamBand id="JamBand_creation"/>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+
+ 			<ObjectPageSection id="Media" title="Media">
+				<subSections>
+					<ObjectPageSubSection title="Media and Documents">
+						<blocks>
+							<details:BlockAttachments id="Attachments_creation" />
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+
+		</sections>
+
+	</ObjectPageLayout>
+
+</mvc:View>

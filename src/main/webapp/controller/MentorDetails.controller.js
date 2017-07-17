@@ -19,7 +19,7 @@ sap.ui.define([
          * @public
          */
         onInit: function() {
-        	
+
 			this.view      = this.getView();
 			this.component = this.getComponent();
 			this.model     = this.component.getModel();
@@ -32,7 +32,7 @@ sap.ui.define([
         	});
         	this.view.setModel(this.ui, "ui");
             this.router.getRoute("Mentor").attachMatched(this.onRouteMatched, this);
-            
+
             // Remove sections/blocks that are not meant for a general audience
             this.config._loaded.then(function() {
                 if (!this.config.getProperty("/IsProjectMember") && !this.config.getProperty("/IsMentor")) {
@@ -40,7 +40,7 @@ sap.ui.define([
                 	this.byId("PersonalInfo").removeBlock(this.view.getId() + "--BlockAddress");
                 }
             }.bind(this));
-            
+
         },
 
         /* =========================================================== */
@@ -95,6 +95,53 @@ sap.ui.define([
                 }
             });
             this.ui.setProperty("/UploadUrl", this.model.sServiceUrl + "/" + this.model.createKey("Mentors", {Id: this.sMentorId}) + "/Attachments");
+        },
+         onDelete: function () {
+            var that = this;
+            var dialog = new Dialog({
+                title: 'Delete Profil',
+                type: 'Message',
+                content: new sap.m.Text({
+                    text: 'Are you sure you want to delete this profil?'
+                }),
+                endButton: new sap.m.Button({
+                    text: 'Delete',
+                    type: 'Reject',
+                    press: function () {
+                        console.log(that.model.oData["Mentors('" + that.sMentorId + "')"])
+                        that.model.remove(
+                            "/Mentors('" + that.sMentorId + "')",
+                            //that.model.oData["Mentors('"+that.sMentorId+"')"],
+                            {
+                                success: function (data) {
+                                    sap.m.MessageToast.show(that.i18n.getText("profileDeleted"));
+                                    dialog.close();
+                                    that.getRouter().navTo("Mentors");
+
+                                },
+                                error: function (error) {
+                                    sap.m.MessageToast.show(that.i18n.getText("profileDeletedError"));
+                                    dialog.close();
+
+                                }
+                            }
+                        );
+
+                    }
+
+                }),
+                beginButton: new sap.m.Button({
+                    text: 'Cancel',
+                    press: function () {
+                        dialog.close();
+                    }
+                }),
+                afterClose: function () {
+                    dialog.destroy();
+                }
+            });
+
+            dialog.open();
         }
 
         /* =========================================================== */

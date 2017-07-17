@@ -25,12 +25,14 @@
 		<Text text="{SapExpertise1Level/Name}" visible="{= !!${SapExpertise1Id} &amp;&amp; !${ui>/isEditMode}}" />
 		<Label text="{i18n>expertise} 1" visible="{ui>/isEditMode}" />
 		<Select	selectedKey="{SapExpertise1Id}"
+					id="select-expertise1"
 				   visible="{ui>/isEditMode}"
 				   forceSelection="false"
 				   items="{ path: '/SapSoftwareSolutions', sorter: { path: 'Name' } }">
 			<core:Item key="{Id}" text="{Name}" />
 		</Select>
 		<Select	selectedKey="{SapExpertise1LevelId}"
+					id="select-expertiseLevel1"
 				   visible="{ui>/isEditMode}"
 				   forceSelection="false"
 				   items="{ path: '/ExpertiseLevels', sorter: { path: 'Name' } }">
@@ -42,12 +44,14 @@
 		<Text text="{SapExpertise2Level/Name}" visible="{= !!${SapExpertise2Id} &amp;&amp; !${ui>/isEditMode}}" />
 		<Label text="{i18n>expertise} 2" visible="{ui>/isEditMode}" />
 		<Select	selectedKey="{SapExpertise2Id}"
+				id="select-expertise2"
 				visible="{ui>/isEditMode}"
 				forceSelection="false"
 				items="{ path: '/SapSoftwareSolutions', sorter: { path: 'Name' } }">
 			<core:Item key="{Id}" text="{Name}" />
 		</Select>
 		<Select	selectedKey="{SapExpertise2LevelId}"
+					id="select-expertiseLevel2"
 				   visible="{ui>/isEditMode}"
 				   forceSelection="false"
 				   items="{ path: '/ExpertiseLevels', sorter: { path: 'Name' } }">
@@ -59,12 +63,14 @@
 		<Text text="{SapExpertise3Level/Name}" visible="{= !!${SapExpertise3Id} &amp;&amp; !${ui>/isEditMode}}" />
 		<Label text="{i18n>expertise} 3" visible="{ui>/isEditMode}" />
 		<Select	selectedKey="{SapExpertise3Id}"
+				id="select-expertise3"
 				visible="{ui>/isEditMode}"
 				forceSelection="false"
 				items="{ path: '/SapSoftwareSolutions', sorter: { path: 'Name' } }">
 			<core:Item key="{Id}" text="{Name}" />
 		</Select>
 		<Select	selectedKey="{SapExpertise3LevelId}"
+					id="select-expertiseLevel3"
 				   visible="{ui>/isEditMode}"
 				   forceSelection="false"
 				   items="{ path: '/ExpertiseLevels', sorter: { path: 'Name' } }">
