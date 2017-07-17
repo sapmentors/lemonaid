@@ -18,11 +18,12 @@ sap.ui.define([
 		/* =========================================================== */
 
 		filters: {
-				active: 	new Filter("MentorStatus/Id", "EQ", "active"),
-				alumni: 	new Filter("MentorStatus/Id", "EQ", "alumni"),
-				program: 	new Filter("MentorStatus/Id", "EQ", "program"),
-				bandVegas:	new Filter("JambandLasVegas", "EQ", true),
-				bandBcn:	new Filter("JambandBarcelona", "EQ", true)
+				active: 	new sap.ui.model.Filter("MentorStatus/Id", "EQ", "active"),
+				alumni: 	new sap.ui.model.Filter("MentorStatus/Id", "EQ", "alumni"),
+				program: 	new sap.ui.model.Filter("MentorStatus/Id", "EQ", "program"),
+				bandVegas:	new sap.ui.model.Filter("JambandLasVegas", "EQ", true),
+				bandBcn:	new sap.ui.model.Filter("JambandBarcelona", "EQ", true),
+				notpublic:	new sap.ui.model.Filter("PublicProfile", "EQ", false)
 			},
 		searchFilter: null, quickFilter: null,
 
