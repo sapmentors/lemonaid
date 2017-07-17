@@ -40,7 +40,7 @@ sap.ui.define([
 				var component = this.getComponent(this.getView());
 				MessageBox.error(
 						i18n.getText("errorDuringUpload", [ result.status, result.responseRaw]), {
-						styleClass: component ? component.getContentDensityClass() : ""
+						//styleClass: component ? component.getContentDensityClass() : ""
 				     });
 			}
 			this.getView().getModel().read(this.getView().getBindingContext().getPath() + "/Attachments");
@@ -64,7 +64,7 @@ sap.ui.define([
 				var component = this.getComponent(this.getView());
 				MessageBox.information(
 						i18n.getText("selectAttachmentsFirst"), {
-						styleClass: component ? component.getContentDensityClass() : ""
+						//styleClass: component ? component.getContentDensityClass() : ""
 				     });
 			}
 		}

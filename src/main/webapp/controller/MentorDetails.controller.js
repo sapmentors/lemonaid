@@ -108,7 +108,6 @@ sap.ui.define([
                     text: 'Delete',
                     type: 'Reject',
                     press: function () {
-                        console.log(that.model.oData["Mentors('" + that.sMentorId + "')"])
                         that.model.remove(
                             "/Mentors('" + that.sMentorId + "')",
                             //that.model.oData["Mentors('"+that.sMentorId+"')"],

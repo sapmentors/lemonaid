@@ -90,7 +90,7 @@
 				</subSections>
 			</ObjectPageSection>
 
- 			<ObjectPageSection id="Media" title="Media">
+ 	<!--	<ObjectPageSection id="Media" title="Media">
 				<subSections>
 					<ObjectPageSubSection title="Media and Documents">
 						<blocks>
@@ -98,7 +98,7 @@
 						</blocks>
 					</ObjectPageSubSection>
 				</subSections>
-			</ObjectPageSection>
+			</ObjectPageSection> -->
 
 		</sections>
 
