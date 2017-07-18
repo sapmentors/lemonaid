@@ -69,11 +69,11 @@ sap.ui.define([
 		onSave: function(oEvent) {
 			this.model.submitChanges({
 				success: function(oData) {
-					MessageToast.show(this.i18n.getText("profileSavedSuccesfully"));
+					 sap.m.MessageToast.show(this.i18n.getText("profileSavedSuccesfully"));
 					this.ui.setProperty("/isEditMode", false);
 				}.bind(this),
 				error: function(oError) {
-					MessageToast.show(this.i18n.getText("profileSavedError"));
+					 sap.m.MessageToast.show(this.i18n.getText("profileSavedError"));
 				}.bind(this)
 			});
 		},

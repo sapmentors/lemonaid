@@ -18,7 +18,7 @@
 		<core:Title text="{i18n>bio}"></core:Title>
 
 		<Label text="{i18n>mentorSince}" visible="{= !!${MentorSince} &amp;&amp; !${ui>/isEditMode}}" />
-		<Text text="{path:'MentorSince', type:'sap.ui.model.type.Date', formatOptions: { pattern: 'MMMM yyyy'}}" visible="{= !!${MentorSince} &amp;&amp; !${ui>/isEditMode}}" />
+		<Text text="{path:'MentorSince', type:'sap.ui.model.type.Date', formatOptions: { pattern: 'MMMM yyyy', UTC:true}}" visible="{= !!${MentorSince} &amp;&amp; !${ui>/isEditMode}}" />
 		<Label text="{i18n>mentorSince}" visible="{ui>/isEditMode}" />
 		<DatePicker
 			id="date-mentorSince"
@@ -29,7 +29,8 @@
 					path:'MentorSince',
 					type:'sap.ui.model.type.Date',
 					formatOptions: {
-						pattern: 'MM-yyyy'
+						pattern: 'MM-yyyy',
+                        UTC:true
 					}
 				}" />
 
