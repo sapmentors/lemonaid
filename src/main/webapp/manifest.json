@@ -92,12 +92,11 @@
                 "type": "com.sap.mentors.lemonaid.model.ODataModel",
 				"settings": {
 					"defaultBindingMode": "TwoWay",
-					"json": true,
-					"defaultOperationMode": "Client"
+					"json": true
 				}
 			}
 		},
-		"routing": {
+			"routing": {
 			"config": {
 				"routerClass": "sap.m.routing.Router",
 				"viewType": "XML",
@@ -118,6 +117,10 @@
 				"pattern": "Mentor/{Id}",
 				"name": "Mentor",
 				"target": "mentor"
+			},{
+				"pattern": "MentorAddition",
+				"name": "MentorAddition",
+				"target": "mentorAddition"
 			},{
 				"pattern": "Events/:Id:",
 				"name": "Events",
@@ -178,6 +181,13 @@
 					"controlId": "Mentor",
 					"controlAggregation": "content"
 				},
+				"mentorAddition": {
+					"parent": "main",
+					"viewPath": "com.sap.mentors.lemonaid.view",
+					"viewName": "MentorAddition",
+					"controlId": "MentorAddition",
+					"controlAggregation": "content"
+				},
 				"events": {
 					"parent": "main",
 					"viewPath": "com.sap.mentors.lemonaid.view",
@@ -226,8 +236,8 @@
 					"viewName": "Twitter",
 					"controlId": "AdminTwitter",
 					"controlAggregation": "content"
-				},
-               "help": {
+        },
+        "help": {
 					"parent": "main",
 					"viewPath": "com.sap.mentors.lemonaid.view",
 					"viewName": "Help",
