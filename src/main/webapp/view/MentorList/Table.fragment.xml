@@ -7,7 +7,7 @@
 		items="{
 			path: '/Mentors',
 			parameters: {
-				select: 'Id,FullName,ShirtNumber,PhotoUrl,RelationshipToSap/Name,MentorStatus/Name',
+				select: 'Id,FullName,ShirtNumber,PhotoUrl,RelationshipToSap/Name,MentorStatus/Name,PublicProfile,JambandBarcelona,JambandLasVegas',
 				expand: 'MentorStatus,RelationshipToSap'
 			},
 			sorter: {path: 'FullName', descending: false}
@@ -17,9 +17,10 @@
 			<Toolbar id="tableToolbar" class="removeToolbarPaddingLeft">
 				<SearchField
 					id="searchField"
-					search="onSearchPressed"
-					width="100%"/>
-			</Toolbar>
+				    search="onSearchPressed"
+				    width="90%"/>
+			    <Button icon="sap-icon://add-contact" press="onAddNewMentor" width="10%" visible="{=${config>/IsProjectMember}}"/>
+				</Toolbar>
 		</headerToolbar>
 		<columns>
 			<Column id="photo" width="5rem">
@@ -29,7 +30,7 @@
 				<Text text="{i18n>fullName}" visible="{= !${device>/system/phone} }" />
 			</Column>
 			<Column id="relationship" minScreenWidth="Tablet">
-				<Text text="{i18n>relSAP}" />	
+				<Text text="{i18n>relSAP}" />
 			</Column>
 			<Column id="status" minScreenWidth="Tablet">
 				<Text text="{i18n>mentorStatus}" />

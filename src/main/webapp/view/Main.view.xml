@@ -59,6 +59,7 @@
 			<NavContainer id="pageContainer">
 				<Page id="Mentors" showHeader="false" />
 				<Page id="Mentor" showHeader="false" enableScrolling="false" />
+                <Page id="MentorAddition" showHeader="false" enableScrolling="false" />
 				<Page id="Events" showHeader="false" />
 				<Page id="Content" showHeader="false" />
 				<Page id="SocialMedia" showHeader="false" />

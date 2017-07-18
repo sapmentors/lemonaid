@@ -309,7 +309,7 @@
 			<url>http://dl.bintray.com/jpenninkhof/olingo</url>
 		</repository>
 	</repositories>
- 
+
 <!--  	<repositories>
 		<repository>
 			<snapshots>
@@ -320,7 +320,7 @@
 			<url>https://repository.apache.org/content/repositories/snapshots/</url>
 		</repository>
 	</repositories> -->
- 
+
 	<pluginRepositories>
 		<pluginRepository>
 			<id>spring-releases</id>

@@ -32,31 +32,32 @@
 			}" visible="{= !${ui>/isEditMode} }" />
 
 		<Label text="{i18n>fullName}" />
-		<Input value="{FullName}" visible="{ui>/isEditMode}"/>
+		<Input id="input-fullName" value="{FullName}" visible="{ui>/isEditMode}" /> <!-- unbindAggregation("value",true) -->
 
 		<Label text="{i18n>jobTitle}" />
-		<Input value="{JobTitle}" visible="{ui>/isEditMode}"/>
+		<Input id="input-jobTitle" value="{JobTitle}" visible="{ui>/isEditMode}"/>
 
 		<Label text="{i18n>company}" />
-		<Input value="{Company}" visible="{ui>/isEditMode}"/>
+		<Input id="input-company" value="{Company}" visible="{ui>/isEditMode}"/>
 
 		<Label text="{i18n>address} 1" />
-		<Input value="{Address1}" visible="{ui>/isEditMode}"/>
+		<Input id="input-address1" value="{Address1}" visible="{ui>/isEditMode}"/>
 
 		<Label text="{i18n>address} 2" />
-		<Input value="{Address2}" visible="{ui>/isEditMode}"/>
+		<Input id="input-address2" value="{Address2}" visible="{ui>/isEditMode}"/>
 
 		<Label text="{i18n>city}" />
-		<Input value="{City}" visible="{ui>/isEditMode}"/>
+		<Input id="input-city" value="{City}" visible="{ui>/isEditMode}"/>
 
 		<Label text="{i18n>state}" />
-		<Input value="{State}" visible="{ui>/isEditMode}"/>
+		<Input id="input-state" value="{State}" visible="{ui>/isEditMode}"/>
 
 		<Label text="{i18n>zip}" />
-		<Input value="{Zip}" visible="{ui>/isEditMode}"/>
+		<Input id="input-zip" value="{Zip}" visible="{ui>/isEditMode}"/>
 
 		<Label text="{i18n>country}" visible="{ui>/isEditMode}" />
         <Select
+        	id="select-country"
 			selectedKey="{CountryId}"
             visible="{ui>/isEditMode}"
             forceSelection="false"
@@ -65,7 +66,7 @@
 		</Select>
 
 		<Label text="{i18n>phone}" visible="{ui>/isEditMode}" />
-		<Input value="{Phone}" visible="{ui>/isEditMode}"/>
+		<Input id="input-phone" value="{Phone}" visible="{ui>/isEditMode}"/>
 		<Label text="{i18n>phone}" visible="{= !!${Phone} &amp;&amp; !${ui>/isEditMode} }" />
 		<Link text="{Phone}" href="tel:{Phone}" target="_blank" visible="{= !!${Phone} &amp;&amp; !${ui>/isEditMode} }" />
 
