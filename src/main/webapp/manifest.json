@@ -150,6 +150,10 @@
 				"name": "Admin-Twitter",
 				"target": "adminTwitter"
             },{
+				"pattern": "Admin/Table",
+				"name": "Admin-Table",
+				"target": "adminTable"
+            },{
 				"pattern": "Help",
 				"name": "Help",
 				"target": "help"
@@ -236,8 +240,15 @@
 					"viewName": "Twitter",
 					"controlId": "AdminTwitter",
 					"controlAggregation": "content"
-        },
-        "help": {
+				},
+				 "adminTable": {
+					"parent": "admin",
+					"viewPath": "com.sap.mentors.lemonaid.view.Admin",
+					"viewName": "UpdatedTable",
+					"controlId": "AdminTable",
+					"controlAggregation": "content"
+				},
+               "help": {
 					"parent": "main",
 					"viewPath": "com.sap.mentors.lemonaid.view",
 					"viewName": "Help",

@@ -3,9 +3,11 @@
 sap.ui.define([
     "com/sap/mentors/lemonaid/controller/BaseController",
     "sap/ui/model/json/JSONModel",
-	"sap/ui/model/Filter",
-	"sap/m/MessageToast"
-], function(BaseController, JSONModel, Filter, MessageToast) {
+    "sap/ui/model/Filter",
+    'sap/m/Button',
+    'sap/m/Dialog',
+    "sap/m/MessageToast"
+], function (BaseController, JSONModel, Filter, MessageToast, Dialog, Button) {
     "use strict";
 
     return BaseController.extend("com.sap.mentors.lemonaid.controller.MentorDetails", {
