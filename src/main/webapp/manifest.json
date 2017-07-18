@@ -92,7 +92,8 @@
                 "type": "com.sap.mentors.lemonaid.model.ODataModel",
 				"settings": {
 					"defaultBindingMode": "TwoWay",
-					"json": true
+          "json": true,
+          "defaultOperationMode": "Client"
 				}
 			}
 		},
