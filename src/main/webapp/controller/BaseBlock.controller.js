@@ -38,8 +38,11 @@ sap.ui.define([
                         oData.push(controlsArray[i].getState());
                         oTest[controlsId.split("-")[6]] = controlsArray[i].getState();
                     } else if(controlsId.includes("date")) {
-                        oData.push(controlsArray[i].getDateValue());
-                        oTest[controlsId.split("-")[6]] = controlsArray[i].getDateValue();
+                        var date = controlsArray[i].getDateValue();
+                        date = date.toDateString();
+                        var newDate = new Date(date+' GMT+0000 (UTC)')
+                        oData.push(newDate);
+                        oTest[controlsId.split("-")[6]] = newDate;
                     }
                 }
             } else {
