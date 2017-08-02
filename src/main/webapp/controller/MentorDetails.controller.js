@@ -68,15 +68,24 @@ sap.ui.define([
          * @param {sap.ui.base.Event} oEvent - 'press' event of Save button
          */
         onSave: function (oEvent) {
-            this.model.submitChanges({
-                success: function (oData) {
-                    sap.m.MessageToast.show(this.i18n.getText("profileSavedSuccesfully"));
-                    this.ui.setProperty("/isEditMode", false);
-                }.bind(this),
-                error: function (oError) {
-                    sap.m.MessageToast.show(this.i18n.getText("profileSavedError"));
-                }.bind(this)
-            });
+            var mentor =this.model.getPendingChanges()["Mentors('" + this.sMentorId + "')"];
+            if(mentor != undefined){
+                var name = mentor.FullName;
+                var email =mentor.Email1;
+                if((name== undefined || name.trim().length>0) && (email== undefined || email.trim().length>0)){
+                    this.model.submitChanges({
+                        success: function (oData) {
+                            sap.m.MessageToast.show(this.i18n.getText("profileSavedSuccesfully"));
+                            this.ui.setProperty("/isEditMode", false);
+                        }.bind(this),
+                        error: function (oError) {
+                            sap.m.MessageToast.show(this.i18n.getText("profileSavedError"));
+                        }.bind(this)
+                    });
+                }else {
+                    sap.m.MessageToast.show(this.i18n.getText("requiredFieldError"));
+                }
+            }
         },
 
         /**
