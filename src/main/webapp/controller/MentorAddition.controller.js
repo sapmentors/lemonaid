@@ -72,7 +72,7 @@ sap.ui.define([
          */
         onSave: function (oEvent) {
             var oEventBus = sap.ui.getCore().getEventBus();
-            this.accessHandleCounter("zero");
+             this.accessHandleCounter("zero");
             oEventBus.publish("BlockChannel", "readBlockContent");
         },
 

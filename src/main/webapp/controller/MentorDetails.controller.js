@@ -55,6 +55,7 @@ sap.ui.define([
             this.model.metadataLoaded().then(this.bindView.bind(this));
         },
 
+
         /**
          *
          * @param {sap.ui.base.Event} oEvent - 'press' event of Edit button
@@ -98,6 +99,7 @@ sap.ui.define([
         },
 
         bindView: function () {
+
             this.view.bindElement({
                 path: this.getModel().createKey("/Mentors", {
                     Id: this.sMentorId
