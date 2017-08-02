@@ -19,7 +19,7 @@ import com.sap.mentors.lemonaid.utils.types.Point;
 @Transactional
 @DisallowConcurrentExecution
 public class LocationJob implements Job {
-    
+
 	private static final Logger log = LoggerFactory.getLogger(LocationJob.class);
 
 	@Autowired MentorRepository mentorRepository;
@@ -31,7 +31,8 @@ public class LocationJob implements Job {
     	log.info("Setting geolocation of mentors - Start");
 		long startTime = System.currentTimeMillis();
 		for (Mentor mentor : mentorRepository.findAll()) {
-			mentor.setLocation(mentorUtils.getLocationOfMentor(mentor));
+            mentor.setLocation(mentorUtils.getLocationOfMentor(mentor));
+            mentor.setPublicLocation(mentorUtils.getPublicLocationOfMentor(mentor));
     		mentorRepository.save(mentor);
     	}
 		log.info("Setting geolocation of mentors - End. Duration: " + Long.toString(System.currentTimeMillis() - startTime) + "ms");

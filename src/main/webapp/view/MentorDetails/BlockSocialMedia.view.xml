@@ -54,10 +54,12 @@
 			<Link text="{Email1}" href="mailto:{Email1}" target="_blank" visible="{= !!${Email1} &amp;&amp; !${ui>/isEditMode} }" />
 			<Link text="{Email2}" href="mailto:{Email2}" target="_blank" visible="{= !!${Email2} &amp;&amp; !${ui>/isEditMode} }" />
 		</VBox>
-		<Label text="{i18n>email} 1" visible="{ui>/isEditMode}" />
-		<Input id="input-email1" value="{Email1}" visible="{ui>/isEditMode}"/>
+		<Label text="{i18n>email} 1" visible="{ui>/isEditMode}" labelFor="input-email1"/>
+		<Input id="input-email1" value="{Email1}" visible="{ui>/isEditMode}" required="true"/>
+        <Switch id="switch-email1Public" state="{Email1Public}" visible="{= ${ui>/isEditMode} }" customTextOn="{i18n>see}" customTextOff="{i18n>hide}"/>
 		<Label text="{i18n>email} 2" visible="{ui>/isEditMode}" />
 		<Input id="input-email2" value="{Email2}" visible="{ui>/isEditMode}"/>
+        <Switch id="switch-email2Public" state="{Email2Public}" visible="{= ${ui>/isEditMode} }" customTextOn="{i18n>see}" customTextOff="{i18n>hide}"/>
 
 
 	</forms:SimpleForm>

@@ -146,7 +146,7 @@ public class Application extends SpringBootServletInitializer {
 					industryRepository.save(new Industry(Industry.UTILITIES, "Utilities"));
 					industryRepository.save(new Industry(Industry.WHOLESALE_DISTRIBUTION, "Wholesale Distribution"));
 				}
-				
+
 				if (sapSoftwareSolutionRepository.count() == 0) {
 					log.info("Sap software solutions table is still empty. Prepopulating it");
 					sapSoftwareSolutionRepository.save(new SapSoftwareSolution(SapSoftwareSolution.ACCELERATED_APPLICATION_DELIVERY, "Accelerated application delivery"));
@@ -946,7 +946,7 @@ public class Application extends SpringBootServletInitializer {
 					languageRepository.save(new Language(Language.ZH, "Chinese", "中文"));
 					languageRepository.save(new Language(Language.ZU, "Zulu", "isiZulu"));
 				}
-				
+
 				if (regionRepository.count() == 0) {
 					log.info("Region table is still empty. Prepopulating it");
 					regionRepository.save(new Region(Region.APJ, "Asia Pacific and Japan (APJ)"));
@@ -955,7 +955,7 @@ public class Application extends SpringBootServletInitializer {
 					regionRepository.save(new Region(Region.NA, "North America"));
 					regionRepository.save(new Region(Region.LA, "Latin America"));
 				}
-				
+
 				if (sizeRepository.count() == 0) {
 					log.info("Sizes table is still empty. Prepopulating it");
 					sizeRepository.save(new Size(Size.S, "S"));
@@ -971,7 +971,7 @@ public class Application extends SpringBootServletInitializer {
 					genderRepository.save(new Gender(Gender.M, "Male"));
 					genderRepository.save(new Gender(Gender.F, "Female"));
 				}
-				
+
 				if (topicRepository.count() == 0) {
 					log.info("Topics table is still empty. Populating it");
 					topicRepository.save(new Topic(Topic.SAP_RUN_SAP, "SAP Run SAP"));
@@ -1020,7 +1020,7 @@ public class Application extends SpringBootServletInitializer {
 				if (mentorRepository.count() == 0) {
 					log.info("Mentors is still empty. Adding some sample records");
 					mentorRepository.save(new Mentor(
-							UUID.randomUUID().toString(), 
+							UUID.randomUUID().toString(),
 							"Jan Penninkhof",
 							new MentorStatus(MentorStatus.ACTIVE),
 							"SAP Consultant",
@@ -1047,11 +1047,11 @@ public class Application extends SpringBootServletInitializer {
 							"Lorem ipsum dolor sit amet, consectetur adipiscing elit.\nCras posuere nunc non efficitur feugiat.\nQuisque aliquam porttitor eros quis vestibulum.",
 							"jan@penninkhof.com",
 							"email2@jpenninkhof.com",
-							"Cannenburch 110", 
-							"Lelystad", 
-							null, 
-							"8226RT", 
-							new Country(Country.NL), 
+							"Cannenburch 110",
+							"Lelystad",
+							null,
+							"8226RT",
+							new Country(Country.NL),
 							"+31987654321",
 							52.51853699999999, 5.471421999999961,
 							new Region(Region.EUR),
@@ -1060,23 +1060,23 @@ public class Application extends SpringBootServletInitializer {
 							new Size(Size.L),
 							new Gender(Gender.M),
 							"http://scn.sap.com/people/jan.penninkhof2",
-							"@jpenninkhof", 
+							"@jpenninkhof",
 							"http://nl.linkedin.com/in/jpenninkhof/",
 							null,
 							null,
 							"jpenninkhof",
 							false, false, false, false, 0,
 							null,
-							null, null, 
-							null, null, 
-							null, null, 
-							null, null, 
+							null, null,
+							null, null,
+							null, null,
+							null, null,
 							true, new Topic(Topic.HANA_CLOUD_PLATFORM),
-							true, false, true, "Keyboard",	
+							true, false, true, "Keyboard",
 							true
 						));
 					mentorRepository.save(new Mentor(
-							UUID.randomUUID().toString(), 
+							UUID.randomUUID().toString(),
 							"Robin van het Hof",
 							new MentorStatus(MentorStatus.ACTIVE),
 							"SAP NetWeaver Magician",
@@ -1103,11 +1103,11 @@ public class Application extends SpringBootServletInitializer {
 							"Donec tincidunt turpis magna, in consequat eros condimentum ut.\nCurabitur eleifend pharetra varius.",
 							"robin.van.het.hof@qualiture.nl",
 							"email2@robin.com",
-							"Multatulihove 40", 
-							"Zoetermeer", 
-							null, 
-							"2726CC", 
-							new Country(Country.NL), 
+							"Multatulihove 40",
+							"Zoetermeer",
+							null,
+							"2726CC",
+							new Country(Country.NL),
 							"+31123456789",
 							52.060669, 4.494024999999965,
 							new Region(Region.EUR),
@@ -1116,7 +1116,7 @@ public class Application extends SpringBootServletInitializer {
 							new Size(Size.L),
 							new Gender(Gender.M),
 							"http://scn.sap.com/people/robin.vanhethof",
-							"@qualiture", 
+							"@qualiture",
 							"http://nl.linkedin.com/pub/robin-van-het-hof/2/526/bb7/",
 							null,
 							null,
@@ -1124,15 +1124,15 @@ public class Application extends SpringBootServletInitializer {
 							false, false, true, true, 0,
 							new Region(Region.EUR),
 							new Topic(Topic.UX), "Prakash Darji Prakash Darji - (SVP & GM, Platform as a Service)  Uddhav Gupta; Rick Constanzo",
-							null, null, 
-							null, null, 
-							null, null, 
+							null, null,
+							null, null,
+							null, null,
 							true, new Topic(Topic.UX),
 							false, false, false, null,
 							true
 						));
 					mentorRepository.save(new Mentor(
-							UUID.randomUUID().toString(), 
+							UUID.randomUUID().toString(),
 							"Fred Verheul",
 							new MentorStatus(MentorStatus.ALUMNI),
 							"SAP Consultant",
@@ -1159,11 +1159,11 @@ public class Application extends SpringBootServletInitializer {
 							"Aenean id tempor lectus, dignissim rutrum ligula. Vivamus eu placerat felis. Nullam ornare, massa quis condimentum ornare, elit nulla malesuada augue, nec scelerisque magna ligula posuere ipsum.",
 							"fred.verheul@gmail.com",
 							null,
-							"Keplerstraat 43", 
-							"Nijmegen", 
-							null, 
-							"6533DA", 
-							new Country(Country.NL), 
+							"Keplerstraat 43",
+							"Nijmegen",
+							null,
+							"6533DA",
+							new Country(Country.NL),
 							"+31777777777",
 							51.8125626, 5.837226399999963,
 							new Region(Region.EUR),
@@ -1172,7 +1172,7 @@ public class Application extends SpringBootServletInitializer {
 							new Size(Size.M),
 							new Gender(Gender.M),
 							"http://scn.sap.com/people/fred.verheul",
-							"@fredverheul", 
+							"@fredverheul",
 							"http://nl.linkedin.com/in/fredverheul",
 							null,
 							null,
@@ -1180,9 +1180,9 @@ public class Application extends SpringBootServletInitializer {
 							false, false, true, true, 0,
 							null,
 							null, null,
-							null, null, 
-							null, null, 
-							null, null, 
+							null, null,
+							null, null,
+							null, null,
 							false, null,
 							false, false, false, null,
 							true
@@ -1196,5 +1196,5 @@ public class Application extends SpringBootServletInitializer {
 				}
 	        }
 	    };
-	}	
+	}
 }

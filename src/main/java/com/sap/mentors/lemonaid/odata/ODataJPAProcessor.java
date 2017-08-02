@@ -44,12 +44,12 @@ public class ODataJPAProcessor extends ODataJPAProcessorDefault {
 
 	@SuppressWarnings("unused")
 	private static final Logger log = LoggerFactory.getLogger(ODataJPAProcessor.class);
-	
+
 	public ODataJPAProcessor(ODataJPAContext oDataJPAContext) {
 		super(oDataJPAContext);
 		this.authorization = (ODataAuthorization) SpringContextsUtil.getBean("ODataAuthorization");
 	}
-	
+
 	private Object enrichEntity(Object uriParserResultView, Object jpaEntity) throws ODataException {
 		UriInfo uriInfo = (UriInfo) uriParserResultView;
 		if ("Mentors".equals(uriInfo.getTargetEntitySet().getName()) && jpaEntity != null) {
@@ -59,7 +59,7 @@ public class ODataJPAProcessor extends ODataJPAProcessorDefault {
 		}
 		return jpaEntity;
 	}
-	
+
 	private List<Object> enrichEntities(Object uriParserResultView, List<Object> jpaEntities) throws ODataException {
 		UriInfo uriInfo = (UriInfo) uriParserResultView;
 		for (Object jpaEntity : jpaEntities) {
@@ -75,7 +75,7 @@ public class ODataJPAProcessor extends ODataJPAProcessorDefault {
 		return jpaEntities;
 	}
 
-	private UriInfoImpl augmentFilter(UriInfoImpl uriParserResultView) 
+	private UriInfoImpl augmentFilter(UriInfoImpl uriParserResultView)
 			throws ODataException{
 		if (uriParserResultView.getTargetEntitySet().getEntityType().getName().equals("Mentor")) {
 			// Search on FullName should be case insensitive
@@ -86,11 +86,11 @@ public class ODataJPAProcessor extends ODataJPAProcessorDefault {
 					));
 			}
 			// If the user is not a mentor, only return mentors profiles that are marked as publicly visible
-			if (!authorization.isMentor() && !authorization.isProjectMember()) {  
+			if (!authorization.isMentor() && !authorization.isProjectMember()) {
 				uriParserResultView.setFilter(
 					(new FilterParserImpl(uriParserResultView.getTargetEntitySet().getEntityType())).parseFilterString(
 						(uriParserResultView.getFilter() != null && uriParserResultView.getFilter().getExpressionString() != null && uriParserResultView.getFilter().getExpressionString().length() > 0 ?
-							"(" + uriParserResultView.getFilter().getExpressionString() + ") and " : "") + 
+							"(" + uriParserResultView.getFilter().getExpressionString() + ") and " : "") +
 						"PublicProfile eq true"));
 			}
 		}
@@ -123,8 +123,56 @@ public class ODataJPAProcessor extends ODataJPAProcessorDefault {
 				if (!authorization.isMentor() && !authorization.isProjectMember()) {
 					if (!((Mentor) jpaEntity).isPublicProfile()) {
 						throw new ODataNotFoundException(ODataNotFoundException.ENTITY);
-					}
-				}
+                    }
+                    //Set non public values to null!
+                    if ((!((Mentor) jpaEntity).getCompanyPublic())) {
+						((Mentor) jpaEntity).setCompany(null);
+                    }
+                    if (!((Mentor) jpaEntity).getJobTitlePublic()) {
+						((Mentor) jpaEntity).setJobTitle(null);
+                    }
+                    if (!((Mentor) jpaEntity).getAddress1Public()) {
+						((Mentor) jpaEntity).setAddress1(null);
+                    }
+                    if (!((Mentor) jpaEntity).getAddress2Public()) {
+						((Mentor) jpaEntity).setAddress2(null);
+                    }
+                    if (!((Mentor) jpaEntity).getCityPublic()) {
+						((Mentor) jpaEntity).setCity(null);
+                    }
+                    if (!((Mentor) jpaEntity).getZipPublic()) {
+						((Mentor) jpaEntity).setZip(null);
+                    }
+                    if (!((Mentor) jpaEntity).getStatePublic()) {
+						((Mentor) jpaEntity).setState(null);
+                    }
+                     if (!((Mentor) jpaEntity).getCountryPublic()) {
+                       ((Mentor) jpaEntity).setCountryId(null);
+                    }
+                    if (!((Mentor) jpaEntity).getPhonePublic()) {
+						((Mentor) jpaEntity).setPhone(null);
+                    }
+                    if (!((Mentor) jpaEntity).getEmail1Public()) {
+						((Mentor) jpaEntity).setEmail1(null);
+                    }
+                    if (!((Mentor) jpaEntity).getEmail2Public()) {
+						((Mentor) jpaEntity).setEmail2(null);
+                    }
+                    if (!((Mentor) jpaEntity).getSoftSkillsPublic()) {
+                        ((Mentor) jpaEntity).setSoftSkill1Id(null);
+                        ((Mentor) jpaEntity).setSoftSkill2Id(null);
+                        ((Mentor) jpaEntity).setSoftSkill3Id(null);
+                        ((Mentor) jpaEntity).setSoftSkill4Id(null);
+                        ((Mentor) jpaEntity).setSoftSkill5Id(null);
+                        ((Mentor) jpaEntity).setSoftSkill6Id(null);
+                    }
+                    if(!((Mentor) jpaEntity).getAttachmentsPublic()) {
+						((Mentor) jpaEntity).setAttachments(null);
+                    }
+				}else{
+                        ((Mentor) jpaEntity).setPublicLongitude(((Mentor) jpaEntity).getLongitude());
+                        ((Mentor) jpaEntity).setPublicLatitude(((Mentor) jpaEntity).getLatitude());
+                }
 			}
 			oDataResponse = responseBuilder.build(uriParserResultView, jpaEntity, contentType);
 		} finally {
@@ -142,7 +190,18 @@ public class ODataJPAProcessor extends ODataJPAProcessorDefault {
 		try {
 			oDataJPAContext.setODataContext(getContext());
 			List<Object> jpaEntities = jpaProcessor.process(uriParserResultView);
-			jpaEntities = enrichEntities(uriParserResultView, jpaEntities);
+            jpaEntities = enrichEntities(uriParserResultView, jpaEntities);
+            for(Object jpaEntity : jpaEntities){
+                if (jpaEntity instanceof Mentor) {
+				    if (!authorization.isMentor() && !authorization.isProjectMember()) {
+
+                    }else{
+                        ((Mentor) jpaEntity).setPublicLongitude(((Mentor) jpaEntity).getLongitude());
+                        ((Mentor) jpaEntity).setPublicLatitude(((Mentor) jpaEntity).getLatitude());
+                    }
+
+                }
+            }
 			oDataResponse = responseBuilder.build(uriParserResultView, jpaEntities, contentType);
 		} finally {
 			close();
@@ -165,7 +224,7 @@ public class ODataJPAProcessor extends ODataJPAProcessorDefault {
 		}
 		return oDataResponse;
 	}
-	
+
 	@Override
 	public ODataResponse createEntity(final PostUriInfo uriParserResultView, final InputStream content,
 			final String requestContentType, final String contentType) throws ODataException {
@@ -262,9 +321,9 @@ public class ODataJPAProcessor extends ODataJPAProcessorDefault {
 	@Override
 	public ODataResponse executeBatch(BatchHandler handler, String contentType, InputStream content)
 			throws ODataException {
-		ODataContext ctx = ODataJPAContextImpl.getContextInThreadLocal();  
+		ODataContext ctx = ODataJPAContextImpl.getContextInThreadLocal();
 		authorization.setContext((HttpServletRequest) ctx.getParameter(ODataContext.HTTP_SERVLET_REQUEST_OBJECT));
 		return super.executeBatch(handler, contentType, content);
 	}
-	
+
 }

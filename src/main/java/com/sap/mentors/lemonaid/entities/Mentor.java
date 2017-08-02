@@ -27,7 +27,7 @@ import com.sap.mentors.lemonaid.utils.types.Point;
 public class Mentor {
 
 	static MentorRepository mentorRepository;
-	
+
 	@Id
 	@SAP(fieldGroup="Key") private String id;
 	@SAP(fieldGroup="BasicInfo") private String fullName;
@@ -35,18 +35,22 @@ public class Mentor {
 	@SAP(fieldGroup="BasicInfo") @JoinColumn(name="statusId") @ManyToOne private MentorStatus statusId;
 	@SAP(fieldGroup="BasicInfo") @Temporal(TemporalType.DATE) private Calendar mentorSince;
 
-	@SAP(fieldGroup="BasicInfo") private String jobTitle;
-	@SAP(fieldGroup="BasicInfo") private String company;
+    @SAP(fieldGroup="BasicInfo") private String jobTitle;
+    @SAP(fieldGroup="BasicInfo")  @Column(nullable = true ) private Boolean jobTitlePublic = false;
+    @SAP(fieldGroup="BasicInfo") private String company;
+     @SAP(fieldGroup="BasicInfo")  @Column(nullable = true ) private Boolean companyPublic = false;
 	@SAP(fieldGroup="BasicInfo") @JoinColumn(name="relationshipToSapId") @ManyToOne private RelationshipToSap relationshipToSapId;
 
 	@SAP(fieldGroup="BasicInfo") @Column(length = 5000) private String bio;
-	@SAP(fieldGroup="BasicInfo") private String email1;
-	@SAP(fieldGroup="BasicInfo") private String email2;
-	
+    @SAP(fieldGroup="BasicInfo") private String email1;
+        @SAP(fieldGroup="BasicInfo")  @Column(nullable = true ) private Boolean email1Public = false;
+    @SAP(fieldGroup="BasicInfo") private String email2;
+        @SAP(fieldGroup="BasicInfo")  @Column(nullable = true ) private Boolean email2Public = false;
+
 	@SAP(fieldGroup="BasicInfo") @JoinColumn(name="Language1Id") @ManyToOne private Language language1Id;
 	@SAP(fieldGroup="BasicInfo") @JoinColumn(name="Language2Id") @ManyToOne private Language language2Id;
-	@SAP(fieldGroup="BasicInfo") @JoinColumn(name="Language3Id") @ManyToOne private Language language3Id;	
-	
+	@SAP(fieldGroup="BasicInfo") @JoinColumn(name="Language3Id") @ManyToOne private Language language3Id;
+
 	@SAP(fieldGroup="Expertise") @JoinColumn(name="lineOfBusiness1Id") @ManyToOne private LineOfBusiness lineOfBusiness1Id;
 	@SAP(fieldGroup="Expertise") @JoinColumn(name="lineOfBusiness2Id") @ManyToOne private LineOfBusiness lineOfBusiness2Id;
 	@SAP(fieldGroup="Expertise") @JoinColumn(name="lineOfBusiness3Id") @ManyToOne private LineOfBusiness lineOfBusiness3Id;
@@ -58,26 +62,36 @@ public class Mentor {
 	@SAP(fieldGroup="Expertise") @JoinColumn(name="sapExpertise2Id") @ManyToOne private SapSoftwareSolution sapExpertise2Id;
 	@SAP(fieldGroup="Expertise") @JoinColumn(name="sapExpertise2LevelId") @ManyToOne private ExpertiseLevel sapExpertise2LevelId;
 	@SAP(fieldGroup="Expertise") @JoinColumn(name="sapExpertise3Id") @ManyToOne private SapSoftwareSolution sapExpertise3Id;
-	@SAP(fieldGroup="Expertise") @JoinColumn(name="sapExpertise3LevelId") @ManyToOne private ExpertiseLevel sapExpertise3LevelId;
+    @SAP(fieldGroup="Expertise") @JoinColumn(name="sapExpertise3LevelId") @ManyToOne private ExpertiseLevel sapExpertise3LevelId;
+     @SAP(fieldGroup="Expertise")  @Column(nullable = true ) private Boolean softSkillsPublic = false;
 	@SAP(fieldGroup="Expertise") @JoinColumn(name="softSkill1Id") @ManyToOne private SoftSkill softSkill1Id;
 	@SAP(fieldGroup="Expertise") @JoinColumn(name="softSkill2Id") @ManyToOne private SoftSkill softSkill2Id;
 	@SAP(fieldGroup="Expertise") @JoinColumn(name="softSkill3Id") @ManyToOne private SoftSkill softSkill3Id;
 	@SAP(fieldGroup="Expertise") @JoinColumn(name="softSkill4Id") @ManyToOne private SoftSkill softSkill4Id;
 	@SAP(fieldGroup="Expertise") @JoinColumn(name="softSkill5Id") @ManyToOne private SoftSkill softSkill5Id;
 	@SAP(fieldGroup="Expertise") @JoinColumn(name="softSkill6Id") @ManyToOne private SoftSkill softSkill6Id;
-    
+
     @SAP(fieldGroup="Address") private String address1;
+    @SAP(fieldGroup="Address")  @Column(nullable = true ) private Boolean address1Public = true;
     @SAP(fieldGroup="Address") private String address2;
+    @SAP(fieldGroup="Address")  @Column(nullable = true ) private Boolean address2Public = true;
     @SAP(fieldGroup="Address") private String city;
+    @SAP(fieldGroup="Address")  @Column(nullable = true ) private Boolean cityPublic = true;
     @SAP(fieldGroup="Address") private String state;
+    @SAP(fieldGroup="Address")  @Column(nullable = true ) private Boolean statePublic = true;
     @SAP(fieldGroup="Address") private String zip;
-    @SAP(fieldGroup="Address") @JoinColumn(name="countryId") @ManyToOne() private Country countryId;    
+    @SAP(fieldGroup="Address")  @Column(nullable = true ) private Boolean zipPublic = true;
+    @SAP(fieldGroup="Address") @JoinColumn(name="countryId") @ManyToOne() private Country countryId;
+    @SAP(fieldGroup="Address")  @Column(nullable = true ) private Boolean countryPublic = true;
     @SAP(fieldGroup="Address") private String phone;
+    @SAP(fieldGroup="Address")  @Column(nullable = true ) private Boolean phonePublic = true;
     @SAP(fieldGroup="Address") private Double latitude;
     @SAP(fieldGroup="Address") private Double longitude;
-    
+    @SAP(fieldGroup="Address") private Double publicLatitude;
+    @SAP(fieldGroup="Address") private Double publicLongitude;
+
     @SAP(fieldGroup="Address") @JoinColumn(name="regionId") @ManyToOne private Region regionId;
-    
+
     @SAP(fieldGroup="Shirt") private String shirtNumber;
     @SAP(fieldGroup="Shirt") private String shirtText;
     @SAP(fieldGroup="Shirt") @JoinColumn(name="shirtSizeId") @ManyToOne private Size shirtSizeId;
@@ -89,13 +103,13 @@ public class Mentor {
     @SAP(fieldGroup="SocialMedia") private String xingUrl;
     @SAP(fieldGroup="SocialMedia") private String facebookUrl;
     @SAP(fieldGroup="SocialMedia") private String slackId;
-        
+
     @SAP(fieldGroup="MentorManagement") private boolean interestInMentorCommunicationStrategy;
     @SAP(fieldGroup="MentorManagement") private boolean interestInMentorManagementModel;
     @SAP(fieldGroup="MentorManagement") private boolean interestInMentorMix;
     @SAP(fieldGroup="MentorManagement") private boolean interestInOtherIdeas;
     @SAP(fieldGroup="MentorManagement") private int hoursAvailable;
-    
+
     @SAP(fieldGroup="TopicLead") @JoinColumn(name="topicLeadRegionId") @ManyToOne private Region topicLeadRegionId;
     @SAP(fieldGroup="TopicLead") @JoinColumn(name="topic1Id") @ManyToOne private Topic topic1Id;
     @SAP(fieldGroup="TopicLead") private String topic1Executive;
@@ -107,27 +121,28 @@ public class Mentor {
     @SAP(fieldGroup="TopicLead") private String topic4Executive;
     @SAP(fieldGroup="TopicLead") private boolean topicLeadInterest;
     @SAP(fieldGroup="TopicLead") @JoinColumn(name="topicInterestId") @ManyToOne private Topic topicInterestId;
-    
+
     @SAP(fieldGroup="JamBand") private boolean jambandMusician;
     @SAP(fieldGroup="JamBand") private boolean jambandLasVegas;
     @SAP(fieldGroup="JamBand") private boolean jambandBarcelona;
     @SAP(fieldGroup="JamBand") private String jambandInstrument;
- 
+
     @Transient private boolean mayEdit;
     private boolean publicProfile;
-    
+
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="mentorId")
-    private List<Attachment> attachments;    
-    
+    private List<Attachment> attachments;
+     @Column(nullable = true ) private Boolean attachmentsPublic= true;
+
 	@Temporal(TemporalType.TIMESTAMP) private Calendar createdAt;
 	private String createdBy;
 	@Temporal(TemporalType.TIMESTAMP) private Calendar updatedAt;
 	private String updatedBy;
-	
+
     public Mentor() {}
 
     public Mentor(
-    		String id, String fullName, MentorStatus status, 
+    		String id, String fullName, MentorStatus status,
     		String jobTitle, String company, RelationshipToSap relationshipToSap,
     		LineOfBusiness lineOfBusiness1Id, LineOfBusiness lineOfBusiness2Id, LineOfBusiness lineOfBusiness3Id,
     		Industry industry1Id, Industry industry2Id, Industry industry3Id,
@@ -136,23 +151,26 @@ public class Mentor {
     		String bio,
     		String email1, String email2,
     		String address, String city, String state, String zip, Country countryId, String phone,
-    		Double latitude, Double longitude,
+    		Double latitude, Double longitude, Double publicLatitude, Double publicLongitude,
     		Region regionId,
     		String shirtNumber, String shirtText, Size shirtSizeId, Gender shirtMFId,
     		String scnUrl, String twitterId, String linkedInUrl, String xingUrl, String facebookUrl, String slackId,
     		boolean interestInMentorCommunicationStrategy, boolean interestInMentorManagementModel, boolean interestInMentorMix, boolean interestInOtherIdeas, int hoursAvailable,
     		Region topicLeadRegionId, Topic topic1Id, String topic1Executive, Topic topic2Id, String topic2Executive, Topic topic3Id, String topic3Executive, Topic topic4Id, String topic4Executive, boolean topicLeadInterest, Topic topicInterestId,
     		boolean jambandMusician, boolean jambandLasVegas, boolean jambandBarcelona, String jambandInstrument,
-    		boolean publicProfile)
+            boolean publicProfile, Boolean jobTitlePublic, Boolean companyPublic, Boolean address1Public, Boolean address2Public, Boolean cityPublic, Boolean statePublic, Boolean zipPublic, Boolean countryPublic,Boolean phonePublic, Boolean email1Public,
+            Boolean email2Public, Boolean attachmentsPublic, Boolean softSkillsPublic )
     {
     	this.id = id;
         this.fullName = fullName;
         this.statusId = status;
-        
+
         this.jobTitle = jobTitle;
+        this.jobTitlePublic = jobTitlePublic;
         this.company = company;
+        this.companyPublic = companyPublic;
         this.relationshipToSapId = relationshipToSap;
-        
+
         this.lineOfBusiness1Id = lineOfBusiness1Id;
         this.lineOfBusiness2Id = lineOfBusiness2Id;
         this.lineOfBusiness3Id = lineOfBusiness3Id;
@@ -171,41 +189,53 @@ public class Mentor {
         this.softSkill4Id = softSkill4Id;
         this.softSkill5Id = softSkill5Id;
         this.softSkill6Id = softSkill6Id;
-        
+
         this.bio = bio;
         this.email1 = email1;
+        this.email1Public = email1Public;
         this.email2 = email2;
-        
+        this.email2Public = email2Public;
+
         this.address1 = address;
+        this.address1Public = address1Public;
+        this.address2Public = address2Public;
         this.city = city;
+        this.cityPublic = cityPublic;
         this.state = state;
+        this.statePublic = statePublic;
         this.zip = zip;
+        this.zipPublic = zipPublic;
         this.countryId = countryId;
+        this.countryPublic = countryPublic;
         this.phone = phone;
-        
+        this.phonePublic = phonePublic;
+
         this.latitude = latitude;
         this.longitude = longitude;
-        
+
+        this.publicLatitude = publicLatitude;
+        this.publicLongitude = publicLongitude;
+
         this.regionId = regionId;
-        
+
         this.shirtNumber = shirtNumber;
         this.shirtText = shirtText;
         this.shirtSizeId = shirtSizeId;
         this.shirtMFId = shirtMFId;
-        
-        this.scnUrl = scnUrl; 
+
+        this.scnUrl = scnUrl;
         this.twitterId = twitterId;
         this.linkedInUrl = linkedInUrl;
         this.xingUrl = xingUrl;
         this.facebookUrl = facebookUrl;
         this.slackId = slackId;
-        
+
         this.interestInMentorCommunicationStrategy = interestInMentorCommunicationStrategy;
         this.interestInMentorManagementModel = interestInMentorManagementModel;
         this.interestInMentorMix = interestInMentorMix;
         this.interestInOtherIdeas = interestInOtherIdeas;
         this.hoursAvailable = hoursAvailable;
-        
+
         this.topicLeadRegionId = topicLeadRegionId;
         this.topic1Id = topic1Id;
         this.topic1Executive = topic1Executive;
@@ -217,13 +247,16 @@ public class Mentor {
         this.topic4Executive = topic4Executive;
         this.topicLeadInterest = topicLeadInterest;
         this.topicInterestId = topicInterestId;
-        
+
 		this.jambandMusician = jambandMusician;
 		this.jambandLasVegas = jambandLasVegas;
 		this.jambandBarcelona = jambandBarcelona;
 		this.jambandInstrument = jambandInstrument;
 
         this.publicProfile = publicProfile;
+
+        this.attachmentsPublic = attachmentsPublic;
+        this.softSkillsPublic = softSkillsPublic;
     }
 
     @Override
@@ -559,6 +592,22 @@ public class Mentor {
 
 	public void setLongitude(Double longitude) {
 		this.longitude = longitude;
+    }
+
+    	public Double getPublicLatitude() {
+		return publicLatitude;
+	}
+
+	public void setPublicLatitude(Double publicLatitude) {
+		this.publicLatitude = publicLatitude;
+	}
+
+	public Double getPublicLongitude() {
+		return publicLongitude;
+	}
+
+	public void setPublicLongitude(Double publicLongitude) {
+		this.publicLongitude = publicLongitude;
 	}
 
 	public Region getRegionId() {
@@ -841,7 +890,18 @@ public class Mentor {
 			this.latitude = location.getLatitude();
 			this.longitude = location.getLongitude();
 		}
-		
+
+    }
+
+    	public void setPublicLocation(Point location) {
+		if (location == null) {
+			this.publicLatitude = null;
+			this.publicLongitude = null;
+		} else {
+			this.publicLatitude = location.getLatitude();
+			this.publicLongitude = location.getLongitude();
+		}
+
 	}
 
 	public Calendar getCreatedAt() {
@@ -874,7 +934,146 @@ public class Mentor {
 
 	public void setUpdatedBy(String updatedBy) {
 		this.updatedBy = updatedBy;
-	}
+    }
+
+    public boolean getJobTitlePublic(){
+        if(jobTitlePublic == null){
+            jobTitlePublic = false;
+        }
+        return jobTitlePublic;
+    }
+
+    public void setJobTitlePublic(Boolean jobTitlePublic){
+        this.jobTitlePublic = jobTitlePublic;
+    }
+
+        public boolean getCompanyPublic(){
+        if(companyPublic == null){
+            companyPublic = false;
+        }
+        return companyPublic;
+    }
+
+    public void setCompanyPublic(Boolean companyPublic){
+        this.companyPublic = companyPublic;
+    }
+    public Boolean getAddress1Public(){
+         if(address1Public == null){
+            address1Public = false;
+        }
+        return address1Public;
+    }
+
+    public void setAddress1Public(Boolean address1Public){
+        this.address1Public = address1Public;
+    }
+    public Boolean getAddress2Public(){
+        if(address2Public == null){
+            address2Public = false;
+        }
+        return address2Public;
+    }
+
+    public void setAddress2Public(Boolean address2Public){
+        this.address2Public = address2Public;
+    }
+
+        public Boolean getCityPublic(){
+         if(cityPublic == null){
+            cityPublic = false;
+        }
+        return cityPublic;
+    }
+
+    public void setCityPublic(Boolean cityPublic){
+        this.cityPublic =  cityPublic;
+    }
+
+        public Boolean getStatePublic(){
+        if(statePublic == null){
+            statePublic = false;
+        }
+        return statePublic;
+    }
+
+    public void setStatePublic(Boolean statePublic){
+        this.statePublic = statePublic;
+    }
+
+        public Boolean getZipPublic(){
+        if(zipPublic == null){
+            zipPublic = false;
+        }
+        return zipPublic;
+    }
+
+    public void setZipPublic(Boolean zipPublic){
+        this.zipPublic = zipPublic;
+    }
+
+        public Boolean getCountryPublic(){
+         if(countryPublic == null){
+            countryPublic = false;
+        }
+        return countryPublic;
+    }
+
+    public void setCountryPublic(Boolean countryPublic){
+        this.countryPublic = countryPublic;
+    }
+
+        public Boolean getPhonePublic(){
+        if(phonePublic == null){
+            phonePublic = false;
+        }
+        return phonePublic;
+    }
+
+    public void setPhonePublic(Boolean phonePublic){
+        this.phonePublic = phonePublic;
+    }
+
+            public Boolean getEmail1Public(){
+        if(email1Public == null){
+            email1Public = false;
+        }
+        return email1Public;
+    }
+
+    public void setEmail1Public(Boolean email1Public){
+        this.email1Public = email1Public;
+    }
+
+            public Boolean getEmail2Public(){
+        if(email2Public == null){
+            email2Public = false;
+        }
+        return email2Public;
+    }
+
+    public void setEmail2Public(Boolean email2Public){
+        this.email2Public = email2Public;
+    }
+            public Boolean getAttachmentsPublic(){
+        if(attachmentsPublic == null){
+            attachmentsPublic = false;
+        }
+        return attachmentsPublic;
+    }
+
+    public void setAttachmentsPublic(Boolean attachmentsPublic){
+        this.attachmentsPublic = attachmentsPublic;
+    }
+            public Boolean getSoftSkillsPublic(){
+        if(softSkillsPublic == null){
+            softSkillsPublic = false;
+        }
+        return softSkillsPublic;
+    }
+
+    public void setSoftSkillsPublic(Boolean softSkillsPublic){
+        this.softSkillsPublic = softSkillsPublic;
+    }
 
 	@PrePersist
 	private void persist() {
@@ -889,7 +1088,7 @@ public class Mentor {
 			this.updatedBy = userName;
 		}
 	}
-	
+
 	@PreUpdate
 	private void update() {
 		String userName = null;
@@ -901,5 +1100,5 @@ public class Mentor {
 			this.updatedBy = userName;
 		}
 	}
-	
+
 }

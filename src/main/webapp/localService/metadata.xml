@@ -35,11 +35,17 @@
                     <PropertyRef Name="Id" />
                 </Key>
                 <Property Name="Address" Type="Edm.String" />
+                <Property Name="Address1Public" Type="Edm.Boolean" />
+                <Property Name="Address2Public" Type="Edm.Boolean" />
                 <Property Name="Bio" Type="Edm.String" />
                 <Property Name="City" Type="Edm.String" />
+                <Property Name="CityPublic" Type="Edm.Boolean" />
                 <Property Name="Company" Type="Edm.String" />
+                <Property Name="CompanyPublic" Type="Edm.Boolean" />
                 <Property Name="Email1" Type="Edm.String" />
+                <Property Name="Email1Public" Type="Edm.Boolean" />
                 <Property Name="Email2" Type="Edm.String" />
+                <Property Name="Email2Public" Type="Edm.Boolean" />
                 <Property Name="FacebookUrl" Type="Edm.String" />
                 <Property Name="FullName" Type="Edm.String" sap:label="Name" xmlns:sap="http://www.sap.com/Protocols/SAPData" />
                 <Property Name="HoursAvailable" Type="Edm.Int32" />
@@ -49,13 +55,16 @@
                 <Property Name="InterestInMentorMix" Type="Edm.Boolean" />
                 <Property Name="InterestInOtherIdeas" Type="Edm.Boolean" />
                 <Property Name="JobTitle" Type="Edm.String" />
+                <Property Name="JobTitlePublic" Type="Edm.Boolean" />
                 <Property Name="LinkedInUrl" Type="Edm.String" />
                 <Property Name="Phone" Type="Edm.String" />
+                <Property Name="PhonePublic" Type="Edm.Boolean" />
                 <Property Name="PreferredEmail" Type="Edm.Int32" />
                 <Property Name="ScnUrl" Type="Edm.String" />
                 <Property Name="ShirtNumber" Type="Edm.Int32" />
                 <Property Name="ShirtText" Type="Edm.String" />
                 <Property Name="State" Type="Edm.String" />
+                <Property Name="StatePublic" Type="Edm.Boolean" />
                 <Property Name="Topic1Executive" Type="Edm.String" />
                 <Property Name="Topic2Executive" Type="Edm.String" />
                 <Property Name="Topic3Executive" Type="Edm.String" />
@@ -64,7 +73,9 @@
                 <Property Name="TwitterId" Type="Edm.String" />
                 <Property Name="XingUrl" Type="Edm.String" />
                 <Property Name="Zip" Type="Edm.String" />
+                <Property Name="ZipPublic" Type="Edm.Boolean" />
                 <NavigationProperty Name="Country" Relationship="Model.Mentor_Country_Many_One0" FromRole="Mentor" ToRole="Country" />
+                <Property Name="CountryPublic" Type="Edm.Boolean" />
                 <NavigationProperty Name="Industry1" Relationship="Model.Mentor_Industry_Many_One0" FromRole="Mentor" ToRole="Industry" />
                 <NavigationProperty Name="Industry2" Relationship="Model.Mentor_Industry_Many_One1" FromRole="Mentor" ToRole="Industry" />
                 <NavigationProperty Name="Industry3" Relationship="Model.Mentor_Industry_Many_One2" FromRole="Mentor" ToRole="Industry" />
@@ -81,6 +92,8 @@
                 <NavigationProperty Name="SapExpertise3Level" Relationship="Model.Mentor_ExpertiseLevel_Many_One2" FromRole="Mentor" ToRole="ExpertiseLevel" />
                 <NavigationProperty Name="ShirtMF" Relationship="Model.Mentor_Gender_Many_One0" FromRole="Mentor" ToRole="Gender" />
                 <NavigationProperty Name="ShirtSize" Relationship="Model.Mentor_Size_Many_One0" FromRole="Mentor" ToRole="Size" />
+                <Property Name="AttachmentsPublic" Type="Edm.Boolean"/>
+                <Property Name="SoftSkillsPublic" Type="Edm.Boolean"/>
                 <NavigationProperty Name="SoftSkill1" Relationship="Model.Mentor_SoftSkill_Many_One0" FromRole="Mentor" ToRole="SoftSkill" />
                 <NavigationProperty Name="SoftSkill2" Relationship="Model.Mentor_SoftSkill_Many_One1" FromRole="Mentor" ToRole="SoftSkill" />
                 <NavigationProperty Name="SoftSkill3" Relationship="Model.Mentor_SoftSkill_Many_One2" FromRole="Mentor" ToRole="SoftSkill" />

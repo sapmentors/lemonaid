@@ -31,29 +31,36 @@
 				formatter: '.formatters.formatAddress'
 			}" visible="{= !${ui>/isEditMode} }" />
 
-		<Label text="{i18n>fullName}" />
-		<Input id="input-fullName" value="{FullName}" visible="{ui>/isEditMode}" /> <!-- unbindAggregation("value",true) -->
+		<Label text="{i18n>fullName}" labelFor="input-fullName"/>
+		<Input id="input-fullName" value="{FullName}" visible="{ui>/isEditMode}" required="true"/> <!-- unbindAggregation("value",true) -->
 
 		<Label text="{i18n>jobTitle}" />
 		<Input id="input-jobTitle" value="{JobTitle}" visible="{ui>/isEditMode}"/>
+        <Switch id="switch-jobTitlePublic" state="{JobTitlePublic}" visible="{= ${ui>/isEditMode} }" customTextOn="{i18n>see}" customTextOff="{i18n>hide}"/>
 
 		<Label text="{i18n>company}" />
 		<Input id="input-company" value="{Company}" visible="{ui>/isEditMode}"/>
+        <Switch id="switch-companyPublic" state="{CompanyPublic}" visible="{= ${ui>/isEditMode} }" customTextOn="{i18n>see}" customTextOff="{i18n>hide}"/>
 
 		<Label text="{i18n>address} 1" />
 		<Input id="input-address1" value="{Address1}" visible="{ui>/isEditMode}"/>
+        <Switch id="switch-address1Public" state="{Address1Public}" visible="{= ${ui>/isEditMode} }" customTextOn="{i18n>see}" customTextOff="{i18n>hide}" />
 
 		<Label text="{i18n>address} 2" />
 		<Input id="input-address2" value="{Address2}" visible="{ui>/isEditMode}"/>
+        <Switch id="switch-address2Public" state="{Address2Public}" visible="{= ${ui>/isEditMode} }" customTextOn="{i18n>see}" customTextOff="{i18n>hide}" />
 
 		<Label text="{i18n>city}" />
 		<Input id="input-city" value="{City}" visible="{ui>/isEditMode}"/>
+        <Switch id="switch-cityPublic" state="{CityPublic}" visible="{= ${ui>/isEditMode} }" customTextOn="{i18n>see}" customTextOff="{i18n>hide}" />
 
 		<Label text="{i18n>state}" />
 		<Input id="input-state" value="{State}" visible="{ui>/isEditMode}"/>
+        <Switch id="switch-statePublic" state="{StatePublic}" visible="{= ${ui>/isEditMode} }" customTextOn="{i18n>see}" customTextOff="{i18n>hide}" />
 
 		<Label text="{i18n>zip}" />
 		<Input id="input-zip" value="{Zip}" visible="{ui>/isEditMode}"/>
+        <Switch id="switch-zipPublic" state="{ZipPublic}" visible="{= ${ui>/isEditMode} }" customTextOn="{i18n>see}" customTextOff="{i18n>hide}" />
 
 		<Label text="{i18n>country}" visible="{ui>/isEditMode}" />
         <Select
@@ -64,9 +71,11 @@
 			items="{ path: '/Countries', sorter: { path: 'Name' } }">
 			<core:Item key="{Id}" text="{Name}" />
 		</Select>
+        <Switch id="switch-countryPublic" state="{CountryPublic}" visible="{= ${ui>/isEditMode} }" customTextOn="{i18n>see}" customTextOff="{i18n>hide}" />
 
 		<Label text="{i18n>phone}" visible="{ui>/isEditMode}" />
 		<Input id="input-phone" value="{Phone}" visible="{ui>/isEditMode}"/>
+        <Switch id="switch-phonePublic" state="{PhonePublic}" visible="{= ${ui>/isEditMode} }" customTextOn="{i18n>see}" customTextOff="{i18n>hide}" />
 		<Label text="{i18n>phone}" visible="{= !!${Phone} &amp;&amp; !${ui>/isEditMode} }" />
 		<Link text="{Phone}" href="tel:{Phone}" target="_blank" visible="{= !!${Phone} &amp;&amp; !${ui>/isEditMode} }" />
 

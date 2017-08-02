@@ -23,7 +23,7 @@
 		<Select selectedKey="{StatusId}"
 					id="select-status"
 				   visible="{ui>/isEditMode}"
-				   forceSelection="false"
+				   forceSelection="true"
 				   items="{ path: '/MentorStatuses', sorter: { path: 'Name' } }">
 			<core:Item key="{Id}" text="{Name}" />
 		</Select>
@@ -34,7 +34,7 @@
 		<Select	selectedKey="{RelationshipToSapId}"
 					id="select-relationshipToSap"
 				   visible="{ui>/isEditMode}"
-				   forceSelection="false"
+				   forceSelection="true"
 				   items="{ path: '/RelationshipsToSap', sorter: { path: 'Name' } }">
 			<core:Item key="{Id}" text="{Name}" />
 		</Select>

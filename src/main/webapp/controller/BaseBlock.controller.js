@@ -37,9 +37,18 @@ sap.ui.define([
                     } else if (controlsId.includes("switch")) {
                         oData.push(controlsArray[i].getState());
                         oTest[controlsId.split("-")[6]] = controlsArray[i].getState();
+
                     } else if(controlsId.includes("date")) {
-                        oData.push(controlsArray[i].getDateValue());
-                        oTest[controlsId.split("-")[6]] = controlsArray[i].getDateValue();
+                        var date = controlsArray[i].getDateValue();
+                        var newDate;
+                        if(date != null){
+                        date = date.toDateString();
+                         newDate = new Date(date+' GMT+0000 (UTC)')
+                        }else{
+                            newDate = null;
+                        }
+                        oData.push(newDate);
+                        oTest[controlsId.split("-")[6]] = newDate;
                     }
                 }
             } else {
@@ -63,7 +72,7 @@ sap.ui.define([
                         controlsArray[i].unbindAggregation("selectedKey", true)
                     } else if (controlsId.includes("switch")) {
                         controlsArray[i].unbindAggregation("state", true)
-                    }else if (controlsId.includes("date")) {
+                    } else if (controlsId.includes("date")) {
                         controlsArray[i].unbindAggregation("value", true)
                     }
                 }
