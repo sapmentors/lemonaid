@@ -1018,7 +1018,8 @@ public class Application extends SpringBootServletInitializer {
 				}
 
 				if (mentorRepository.count() == 0) {
-					log.info("Mentors is still empty. Adding some sample records");
+                    //deactivate Mentor sample data for now
+			/*		log.info("Mentors is still empty. Adding some sample records");
 					mentorRepository.save(new Mentor(
 							UUID.randomUUID().toString(),
 							"Jan Penninkhof",
@@ -1186,7 +1187,7 @@ public class Application extends SpringBootServletInitializer {
 							false, null,
 							false, false, false, null,
 							true
-						));
+						));*/
 
 					for (Mentor mentor : mentorRepository.findAll()) {
 						try { mentor.setPhotoUrl(mentorUtils.getImageOfMentor(mentor)); } catch (IOException e) {}
