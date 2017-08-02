@@ -1019,7 +1019,7 @@ public class Application extends SpringBootServletInitializer {
 
 				if (mentorRepository.count() == 0) {
                     //deactivate Mentor sample data for now
-			/*		log.info("Mentors is still empty. Adding some sample records");
+					log.info("Mentors is still empty. Adding some sample records");
 					mentorRepository.save(new Mentor(
 							UUID.randomUUID().toString(),
 							"Jan Penninkhof",
@@ -1054,7 +1054,7 @@ public class Application extends SpringBootServletInitializer {
 							"8226RT",
 							new Country(Country.NL),
 							"+31987654321",
-							52.51853699999999, 5.471421999999961,
+							52.51853699999999, 5.471421999999961,52.51853699999999, 5.471421999999961,
 							new Region(Region.EUR),
 							"150",
 							"@jpenninkhof",
@@ -1074,7 +1074,8 @@ public class Application extends SpringBootServletInitializer {
 							null, null,
 							true, new Topic(Topic.HANA_CLOUD_PLATFORM),
 							true, false, true, "Keyboard",
-							true
+                            true,
+                            null,null,null,null,null,null,null,null,null,null,null,null,null
 						));
 					mentorRepository.save(new Mentor(
 							UUID.randomUUID().toString(),
@@ -1110,7 +1111,7 @@ public class Application extends SpringBootServletInitializer {
 							"2726CC",
 							new Country(Country.NL),
 							"+31123456789",
-							52.060669, 4.494024999999965,
+							52.060669, 4.494024999999965,52.060669, 4.494024999999965,
 							new Region(Region.EUR),
 							"234",
 							"@Qualiture",
@@ -1130,7 +1131,8 @@ public class Application extends SpringBootServletInitializer {
 							null, null,
 							true, new Topic(Topic.UX),
 							false, false, false, null,
-							true
+                            true,
+                            null,null,null,null,null,null,null,null,null,null,null,null,null
 						));
 					mentorRepository.save(new Mentor(
 							UUID.randomUUID().toString(),
@@ -1166,7 +1168,7 @@ public class Application extends SpringBootServletInitializer {
 							"6533DA",
 							new Country(Country.NL),
 							"+31777777777",
-							51.8125626, 5.837226399999963,
+							51.8125626, 5.837226399999963,51.8125626, 5.837226399999963,
 							new Region(Region.EUR),
 							"64",
 							"@fredverheul",
@@ -1186,8 +1188,9 @@ public class Application extends SpringBootServletInitializer {
 							null, null,
 							false, null,
 							false, false, false, null,
-							true
-						));*/
+                            true,
+                            null,null,null,null,null,null,null,null,null,null,null,null,null
+						));
 
 					for (Mentor mentor : mentorRepository.findAll()) {
 						try { mentor.setPhotoUrl(mentorUtils.getImageOfMentor(mentor)); } catch (IOException e) {}
