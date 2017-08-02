@@ -1018,7 +1018,6 @@ public class Application extends SpringBootServletInitializer {
 				}
 
 				if (mentorRepository.count() == 0) {
-                    //deactivate Mentor sample data for now
 					log.info("Mentors is still empty. Adding some sample records");
 					mentorRepository.save(new Mentor(
 							UUID.randomUUID().toString(),
