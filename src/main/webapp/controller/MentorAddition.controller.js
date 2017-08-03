@@ -40,8 +40,8 @@ sap.ui.define([
             // Remove sections/blocks that are not meant for a general audience
             this.config._loaded.then(function () {
                 if (!this.config.getProperty("/IsProjectMember") && !this.config.getProperty("/IsMentor")) {
-                    this.byId("ObjectPageLayout").removeSection(this.view.getId() + "--Media");
-                    this.byId("PersonalInfo").removeBlock(this.view.getId() + "--BlockAddress");
+                    //    this.byId("ObjectPageLayout").removeSection(this.view.getId() + "--Media");
+                    //     this.byId("PersonalInfo").removeBlock(this.view.getId() + "--BlockAddress");
                 }
             }.bind(this));
             this.handleCounter = 0;
@@ -105,43 +105,54 @@ sap.ui.define([
                     }
                 }
                 if (object.viewName.includes("BasicData")) {
-                    this.objectToUpload["Language1"] = this.model.oData["Languages('"+object.language1+"')"];
+                    this.objectToUpload["Language1"] = this.model.oData["Languages('" + object.language1 + "')"];
                     this.objectToUpload["Language1Id"] = object.language1;
-                    this.objectToUpload["Language2"] = this.model.oData["Languages('"+object.language2+"')"];
+                    this.objectToUpload["Language2"] = this.model.oData["Languages('" + object.language2 + "')"];
                     this.objectToUpload["Language2Id"] = object.language2;
-                    this.objectToUpload["Language3"] = this.model.oData["Languages('"+object.language3+"')"];
+                    this.objectToUpload["Language3"] = this.model.oData["Languages('" + object.language3 + "')"];
                     this.objectToUpload["Language3Id"] = object.language3;
                     this.objectToUpload["PublicProfile"] = object.public;
-                    this.objectToUpload["Region"] = this.model.oData["Regions('"+object.region+"')"];
+                    this.objectToUpload["Region"] = this.model.oData["Regions('" + object.region + "')"];
                     this.objectToUpload["RegionId"] = object.region;
-                    this.objectToUpload["RelationshipToSap"] = this.model.oData["RelationshipsToSap('"+object.relationshipToSap+"')"];
+                    this.objectToUpload["RelationshipToSap"] = this.model.oData["RelationshipsToSap('" + object.relationshipToSap + "')"];
                     this.objectToUpload["RelationshipToSapId"] = object.relationshipToSap;
-                    this.objectToUpload["MentorStatus"] = this.model.oData["MentorStatuses('"+object.status+"')"];
+                    this.objectToUpload["MentorStatus"] = this.model.oData["MentorStatuses('" + object.status + "')"];
                     this.objectToUpload["StatusId"] = object.status;
                 } else if (object.viewName.includes("Address")) {
                     this.objectToUpload["Address1"] = object.address1;
+                    this.objectToUpload["Address1Public"] = object.address1Public;
                     this.objectToUpload["Address2"] = object.address2;
+                    this.objectToUpload["Address2Public"] = object.address2Public;
                     this.objectToUpload["City"] = object.city;
+                    this.objectToUpload["CityPublic"] = object.cityPublic;
                     this.objectToUpload["Company"] = object.company;
-                    this.objectToUpload["Country"] = this.model.oData["Countries('"+object.country+"')"];
+                    this.objectToUpload["CompanyPublic"] = object.companyPublic;
+                    this.objectToUpload["Country"] = this.model.oData["Countries('" + object.country + "')"];
                     this.objectToUpload["CountryId"] = object.country;
-                    this.objectToUpload["FullName"] = object.fullName;
+                    this.objectToUpload["CountryPublic"] = object.countryPublic;
+                    this.objectToUpload["FullName"] = object.fullName.trim();
                     this.objectToUpload["JobTitle"] = object.jobTitle;
+                    this.objectToUpload["JobTitlePublic"] = object.jobTitlePublic;
                     this.objectToUpload["Phone"] = object.phone;
+                    this.objectToUpload["PhonePublic"] = object.phonePublic;
                     this.objectToUpload["State"] = object.state;
+                    this.objectToUpload["StatePublic"] = object.statePublic;
                     this.objectToUpload["Zip"] = object.zip;
+                    this.objectToUpload["ZipPublic"] = object.zipPublic;
                 } else if (object.viewName.includes("Bio")) {
                     this.objectToUpload["Bio"] = object.bio;
-                    this.objectToUpload["Industry1"] = this.model.oData["Industries('"+object.industry1+"')"];
+                    this.objectToUpload["Industry1"] = this.model.oData["Industries('" + object.industry1 + "')"];
                     this.objectToUpload["Industry1Id"] = object.industry1;
-                    this.objectToUpload["Industry2"] = this.model.oData["Industries('"+object.industry2+"')"];
+                    this.objectToUpload["Industry2"] = this.model.oData["Industries('" + object.industry2 + "')"];
                     this.objectToUpload["Industry2Id"] = object.industry2;
-                    this.objectToUpload["Industry3"] = this.model.oData["Industries('"+object.industry3+"')"];
+                    this.objectToUpload["Industry3"] = this.model.oData["Industries('" + object.industry3 + "')"];
                     this.objectToUpload["Industry3Id"] = object.industry3;
                     this.objectToUpload["MentorSince"] = object.mentorSince;
                 } else if (object.viewName.includes("Media")) {
-                    this.objectToUpload["Email1"] = object.email1;
+                    this.objectToUpload["Email1"] = object.email1.trim();
+                    this.objectToUpload["Email1Public"] = object.email1Public;
                     this.objectToUpload["Email2"] = object.email2;
+                    this.objectToUpload["Email2Public"] = object.email2Public;
                     this.objectToUpload["FacebookUrl"] = object.facebook;
                     this.objectToUpload["LinkedInUrl"] = object.linkedIn;
                     this.objectToUpload["ScnUrl"] = object.scnUrl;
@@ -149,46 +160,47 @@ sap.ui.define([
                     this.objectToUpload["TwitterId"] = object.twitterUrl;
                     this.objectToUpload["XingUrl"] = object.xing;
                 } else if (object.viewName.includes("Shirt")) {
-                    this.objectToUpload["ShirtMF"] = this.model.oData["Genders('"+object.shirtMF+"')"];
+                    this.objectToUpload["ShirtMF"] = this.model.oData["Genders('" + object.shirtMF + "')"];
                     this.objectToUpload["ShirtMFId"] = object.shirtMF;
                     this.objectToUpload["ShirtNumber"] = object.shirtNumber;
-                    this.objectToUpload["ShirtSize"] = this.model.oData["Sizes('"+object.shirtSize+"')"];
+                    this.objectToUpload["ShirtSize"] = this.model.oData["Sizes('" + object.shirtSize + "')"];
                     this.objectToUpload["ShirtSizeId"] = object.shirtSize;
                     this.objectToUpload["ShirtText"] = object.shirtText;
                 } else if (object.viewName.includes("Expertise")) {
-                    this.objectToUpload["SapExpertise1"] = this.model.oData["SapSoftwareSolutions('"+object.expertise1+"')"];
+                    this.objectToUpload["SapExpertise1"] = this.model.oData["SapSoftwareSolutions('" + object.expertise1 + "')"];
                     this.objectToUpload["SapExpertise1Id"] = object.expertise1;
-                    this.objectToUpload["SapExpertise2"] = this.model.oData["SapSoftwareSolutions('"+object.expertise2+"')"];
+                    this.objectToUpload["SapExpertise2"] = this.model.oData["SapSoftwareSolutions('" + object.expertise2 + "')"];
                     this.objectToUpload["SapExpertise2Id"] = object.expertise2;
-                    this.objectToUpload["SapExpertise3"] = this.model.oData["SapSoftwareSolutions('"+object.expertise3+"')"];
+                    this.objectToUpload["SapExpertise3"] = this.model.oData["SapSoftwareSolutions('" + object.expertise3 + "')"];
                     this.objectToUpload["SapExpertise3Id"] = object.expertise3;
-                    this.objectToUpload["SapExpertise1Level"] = this.model.oData["ExpertiseLevels('"+object.expertiseLevel1+"')"];
+                    this.objectToUpload["SapExpertise1Level"] = this.model.oData["ExpertiseLevels('" + object.expertiseLevel1 + "')"];
                     this.objectToUpload["SapExpertise1LevelId"] = object.expertiseLevel1;
-                    this.objectToUpload["SapExpertise2Level"] = this.model.oData["ExpertiseLevels('"+object.expertiseLevel2+"')"];
+                    this.objectToUpload["SapExpertise2Level"] = this.model.oData["ExpertiseLevels('" + object.expertiseLevel2 + "')"];
                     this.objectToUpload["SapExpertise2LevelId"] = object.expertiseLevel2;
-                    this.objectToUpload["SapExpertise3Level"] = this.model.oData["ExpertiseLevels('"+object.expertiseLevel3+"')"];
+                    this.objectToUpload["SapExpertise3Level"] = this.model.oData["ExpertiseLevels('" + object.expertiseLevel3 + "')"];
                     this.objectToUpload["SapExpertise3LevelId"] = object.expertiseLevel3;
                 } else if (object.viewName.includes("Topics")) {
-                    this.objectToUpload["Topic1"] = this.model.oData["Topics('"+object.topic1+"')"];
+                    this.objectToUpload["Topic1"] = this.model.oData["Topics('" + object.topic1 + "')"];
                     this.objectToUpload["Topic1Id"] = object.topic1;
-                    this.objectToUpload["Topic2"] = this.model.oData["Topics('"+object.topic2+"')"];
+                    this.objectToUpload["Topic2"] = this.model.oData["Topics('" + object.topic2 + "')"];
                     this.objectToUpload["Topic2Id"] = object.topic2;
-                    this.objectToUpload["Topic3"] = this.model.oData["Topics('"+object.topic3+"')"];
+                    this.objectToUpload["Topic3"] = this.model.oData["Topics('" + object.topic3 + "')"];
                     this.objectToUpload["Topic3Id"] = object.topic3;
-                    this.objectToUpload["Topic4"] = this.model.oData["Topics('"+object.topic4+"')"];
+                    this.objectToUpload["Topic4"] = this.model.oData["Topics('" + object.topic4 + "')"];
                     this.objectToUpload["Topic4Id"] = object.topic4;
                 } else if (object.viewName.includes("SoftSkills")) {
-                    this.objectToUpload["SoftSkill1"] = this.model.oData["SoftSkills('"+object.softSkill1+"')"];
+                    this.objectToUpload["SoftSkillsPublic"] = object.softSkillPublic;
+                    this.objectToUpload["SoftSkill1"] = this.model.oData["SoftSkills('" + object.softSkill1 + "')"];
                     this.objectToUpload["SoftSkill1Id"] = object.softSkill1;
-                    this.objectToUpload["SoftSkill2"] = this.model.oData["SoftSkills('"+object.softSkill2+"')"];
+                    this.objectToUpload["SoftSkill2"] = this.model.oData["SoftSkills('" + object.softSkill2 + "')"];
                     this.objectToUpload["SoftSkill2Id"] = object.softSkill2;
-                    this.objectToUpload["SoftSkill3"] = this.model.oData["SoftSkills('"+object.softSkill3+"')"];
+                    this.objectToUpload["SoftSkill3"] = this.model.oData["SoftSkills('" + object.softSkill3 + "')"];
                     this.objectToUpload["SoftSkill3Id"] = object.softSkill3;
-                    this.objectToUpload["SoftSkill4"] = this.model.oData["SoftSkills('"+object.softSkill4+"')"];
+                    this.objectToUpload["SoftSkill4"] = this.model.oData["SoftSkills('" + object.softSkill4 + "')"];
                     this.objectToUpload["SoftSkill4Id"] = object.softSkill4;
-                    this.objectToUpload["SoftSkill5"] = this.model.oData["SoftSkills('"+object.softSkill5+"')"];
+                    this.objectToUpload["SoftSkill5"] = this.model.oData["SoftSkills('" + object.softSkill5 + "')"];
                     this.objectToUpload["SoftSkill5Id"] = object.softSkill5;
-                    this.objectToUpload["SoftSkill6"] = this.model.oData["SoftSkills('"+object.softSkill6+"')"];
+                    this.objectToUpload["SoftSkill6"] = this.model.oData["SoftSkills('" + object.softSkill6 + "')"];
                     this.objectToUpload["SoftSkill6Id"] = object.softSkill6;
                 } else if (object.viewName.includes("JamBand")) {
                     this.objectToUpload["JambandBarcelona"] = object.jamBandBarcelona;
@@ -196,60 +208,70 @@ sap.ui.define([
                     this.objectToUpload["JambandInstrument"] = object.jamInstruments;
                     this.objectToUpload["JambandMusician"] = object.jamMusician;
                 }
-
                 checkAccess = false;
                 var checkSum = false
                 while (checkAccess == false) {
                     checkSum = this.accessHandleCounter("read")
                     if (checkSum != null) {
-                        if (checkSum == true) {
-                            var that = this;
-                            //TEST UPLOAD
-                            var requests = [];
-                            requests.push(new Promise(function (resolve) {
-                                var mentorId;
-                                if (!that.objectToUpload.Id) {
-                                    that.objectToUpload.Id = that.guidGenerator.generateGuid();
-                                }
-                                mentorId = that.objectToUpload.Id;
-                                for (var i in that.objectToUpload) {
-                                    if (that.objectToUpload[i]==undefined  ) {
-                                        delete that.objectToUpload[i];
-                                    }else if(that.objectToUpload[i].length === 0){delete that.objectToUpload[i];}
-                                }
-                                that.model.create(
-                                    "/Mentors",
-                                    that.objectToUpload, {
-                                        success: function (data) {
-                                            MessageToast.show(that.i18n.getText("profileSavedSuccesfully"));
-                                            resolve();
-                                            var createdId = that.objectToUpload.Id;
-                                            that.model.oData["Mentors('" + createdId + "')"] = that.objectToUpload
-                                            that.model.submitChanges({
-                                                success: function (oData) {
-                                                    sap.m.MessageToast.show(this.i18n.getText("profileSavedSuccesfully"));
-                                                }.bind(this),
-                                                error: function (oError) {
-                                                    sap.m.MessageToast.show(this.i18n.getText("profileSavedError"));
-                                                }.bind(this)
-                                            });
-                                            that.getRouter().navTo("Mentor", {
-                                                Id: mentorId
-                                            });
-                                            that.objectToUpload = {};
-                                            that.accessHandleCounter("zero");
 
-                                        },
-                                        error: function (error) {
-                                            MessageToast.show(that.i18n.getText("profileSavedError"));
-                                            that.objectToUpload = {};
-                                            that.accessHandleCounter("zero");
-                                            resolve();
+
+                        if (checkSum == true) {
+                            if (this.objectToUpload.FullName.length >0&&this.objectToUpload.Email1.length>0) {
+                                var that = this;
+                                //TEST UPLOAD
+                                var requests = [];
+                                requests.push(new Promise(function (resolve) {
+                                    var mentorId;
+                                    if (!that.objectToUpload.Id) {
+                                        that.objectToUpload.Id = that.guidGenerator.generateGuid();
+                                    }
+                                    mentorId = that.objectToUpload.Id;
+                                    for (var i in that.objectToUpload) {
+                                        if (that.objectToUpload[i] == undefined) {
+                                            delete that.objectToUpload[i];
+                                        } else if (that.objectToUpload[i].length === 0) {
+                                            delete that.objectToUpload[i];
                                         }
                                     }
-                                );
-                            }));
-                            this.objectToUpload = {};
+                                    that.model.create(
+                                        "/Mentors",
+                                        that.objectToUpload, {
+                                            success: function (data) {
+                                                MessageToast.show(that.i18n.getText("profileSavedSuccesfully"));
+                                                resolve();
+                                                var createdId = that.objectToUpload.Id;
+                                                that.model.oData["Mentors('" + createdId + "')"] = that.objectToUpload
+                                                that.model.submitChanges({
+                                                    success: function (oData) {
+                                                        sap.m.MessageToast.show(this.i18n.getText("profileSavedSuccesfully"));
+                                                    }.bind(this),
+                                                    error: function (oError) {
+                                                        sap.m.MessageToast.show(this.i18n.getText("profileSavedError"));
+                                                    }.bind(this)
+                                                });
+                                                that.getRouter().navTo("Mentor", {
+                                                    Id: mentorId
+                                                });
+                                                that.objectToUpload = {};
+                                                that.accessHandleCounter("zero");
+
+                                            },
+                                            error: function (error) {
+                                                MessageToast.show(that.i18n.getText("profileSavedError"));
+                                                that.objectToUpload = {};
+                                                that.accessHandleCounter("zero");
+                                                resolve();
+                                            }
+                                        }
+                                    );
+                                }));
+                                this.objectToUpload = {};
+                            } else {
+                                MessageToast.show(this.i18n.getText("requiredFieldError"));
+                                this.objectToUpload = {};
+                                this.accessHandleCounter("zero");
+                                checkAccess = true;
+                            }
                         }
                         checkAccess = true;
                     }

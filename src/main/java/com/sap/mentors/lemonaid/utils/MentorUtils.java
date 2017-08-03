@@ -28,10 +28,10 @@ public class MentorUtils {
 	@Autowired XingImage xing;
 
 	private static final Logger log = LoggerFactory.getLogger(MentorUtils.class);
-	
+
 	public String getImageOfMentor(Mentor mentor) throws IOException {
 		String photoUrl = null;
-		
+
 		// Try email based Gravatar first
 		ArrayList<String> emails = new ArrayList<String>();
 		if (mentor.getEmail1() != null && mentor.getEmail1().length() > 0) {
@@ -46,7 +46,7 @@ public class MentorUtils {
 		} else if (mentor.getEmail2() != null && exist.get(mentor.getEmail2())) {
 			photoUrl = gravatar.getUrlForEmail(mentor.getEmail2()) + "?s=144";
 		}
-		
+
 		// Try Twitter Photo
 		if (photoUrl == null && mentor.getTwitterId() != null && mentor.getTwitterId().length() > 0) {
 			photoUrl = twitter.getAvatar(mentor.getTwitterId());
@@ -66,30 +66,30 @@ public class MentorUtils {
 		if (photoUrl == null) {
 			photoUrl = gravatar.getUrlOfUser() + "?s=144";
 		}
-		
+
 		return photoUrl;
 	}
-	
-	public Point getLocationOfMentor(Mentor mentor) {
+
+    	public Point getLocationOfMentor(Mentor mentor) {
 		GeoApiContext context = new GeoApiContext().setApiKey("AIzaSyC9hT7x8gTBdXcTSEy6XU_EWpr_WDe8lSY");
 		try {
 			String address = "";
-			if (mentor.getAddress1() != null && mentor.getAddress1().length() > 0) {
+			if (mentor.getAddress1() != null && mentor.getAddress1().length() > 0 ) {
 				address += (address.length() > 0 ? ", " : "") + mentor.getAddress1();
 			}
-			if (mentor.getAddress2() != null && mentor.getAddress2().length() > 0) {
+			if (mentor.getAddress2() != null && mentor.getAddress2().length() > 0 ) {
 				address += (address.length() > 0 ? ", " : "") + mentor.getAddress2();
 			}
-			if (mentor.getZip() != null && mentor.getZip().length() > 0) {
+			if (mentor.getZip() != null && mentor.getZip().length() > 0 ) {
 				address += (address.length() > 0 ? ", " : "") + mentor.getZip();
 			}
-			if (mentor.getCity() != null && mentor.getCity().length() > 0) {
+			if (mentor.getCity() != null && mentor.getCity().length() > 0 ) {
 				address += (address.length() > 0 ? ", " : "") + mentor.getCity();
 			}
-			if (mentor.getState() != null && mentor.getState().length() > 0) {
+			if (mentor.getState() != null && mentor.getState().length() > 0 ) {
 				address += (address.length() > 0 ? ", " : "") + mentor.getState();
 			}
-			if (mentor.getCountryId() != null && mentor.getCountryId().getName() != null && mentor.getCountryId().getName().length() > 0) {
+			if (mentor.getCountryId() != null && mentor.getCountryId().getName() != null && mentor.getCountryId().getName().length() > 0 ) {
 				address += (address.length() > 0 ? ", " : "") + mentor.getCountryId().getName();
 			}
 			if (address.length() > 0) {
@@ -103,7 +103,43 @@ public class MentorUtils {
 			log.error("Unable to geocode address of " + mentor.getFullName() + ": " + e.toString());
 			return null;
 		}
-		
+
 	}
-	
+
+	public Point getPublicLocationOfMentor(Mentor mentor) {
+		GeoApiContext context = new GeoApiContext().setApiKey("AIzaSyC9hT7x8gTBdXcTSEy6XU_EWpr_WDe8lSY");
+		try {
+			String address = "";
+			if (mentor.getAddress1() != null && mentor.getAddress1().length() > 0 && mentor.getAddress1Public()) {
+				address += (address.length() > 0 ? ", " : "") + mentor.getAddress1();
+			}
+			if (mentor.getAddress2() != null && mentor.getAddress2().length() > 0 && mentor.getAddress2Public()) {
+				address += (address.length() > 0 ? ", " : "") + mentor.getAddress2();
+			}
+			if (mentor.getZip() != null && mentor.getZip().length() > 0 && mentor.getZipPublic()) {
+				address += (address.length() > 0 ? ", " : "") + mentor.getZip();
+			}
+			if (mentor.getCity() != null && mentor.getCity().length() > 0 && mentor.getCityPublic()) {
+				address += (address.length() > 0 ? ", " : "") + mentor.getCity();
+			}
+			if (mentor.getState() != null && mentor.getState().length() > 0 && mentor.getStatePublic()) {
+				address += (address.length() > 0 ? ", " : "") + mentor.getState();
+			}
+			if (mentor.getCountryId() != null && mentor.getCountryId().getName() != null && mentor.getCountryId().getName().length() > 0 && mentor.getCountryPublic()) {
+				address += (address.length() > 0 ? ", " : "") + mentor.getCountryId().getName();
+			}
+			if (address.length() > 0) {
+				GeocodingResult[] results =  GeocodingApi.geocode(context, address).await();
+				return new Point(results[0].geometry.location.lat, results[0].geometry.location.lng);
+			} else {
+				log.error("Unable to geocode address of " + mentor.getFullName() + ": No address available");
+				return null;
+			}
+		} catch (Exception e) {
+			log.error("Unable to geocode address of " + mentor.getFullName() + ": " + e.toString());
+			return null;
+		}
+
+	}
+
 }
