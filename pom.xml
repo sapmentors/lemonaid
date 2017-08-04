@@ -27,10 +27,15 @@
 		<gmaps.version>0.1.15</gmaps.version>
 		<tomcat.version>7.0.59</tomcat.version>
 
-        <sap.cloud.host>hana.ondemand.com</sap.cloud.host>
+        <!--<sap.cloud.host>hana.ondemand.com</sap.cloud.host>
         <sap.cloud.username>${env.CI_DEPLOY_USERNAME}</sap.cloud.username>
         <sap.cloud.password>${env.CI_DEPLOY_PASSWORD}</sap.cloud.password>
         <sap.cloud.account>a5a504e08</sap.cloud.account>
+        <sap.cloud.application>lemonaid</sap.cloud.application> -->
+        <sap.cloud.host>hanatrial.ondemand.com</sap.cloud.host>
+        <sap.cloud.username>${env.CI_DEPLOY_USERNAME}</sap.cloud.username>
+        <sap.cloud.password>${env.CI_DEPLOY_PASSWORD}</sap.cloud.password>
+        <sap.cloud.account>d062371trial</sap.cloud.account>
         <sap.cloud.application>lemonaid</sap.cloud.application>
 	</properties>
 
