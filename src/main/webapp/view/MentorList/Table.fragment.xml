@@ -1,48 +1,55 @@
 <core:FragmentDefinition
 	xmlns="sap.m"
 	xmlns:core="sap.ui.core">
-	<Table
-		id="mentorsTable"
-		inset="false"
-		items="{
-			path: '/Mentors',
-			parameters: {
-				select: 'Id,FullName,ShirtNumber,PhotoUrl,RelationshipToSap/Name,MentorStatus/Name,PublicProfile,JambandBarcelona,JambandLasVegas',
-				expand: 'MentorStatus,RelationshipToSap'
-			},
-			sorter: {path: 'FullName', descending: false}
-		}"
-		updateFinished="onUpdateFinished">
-		<headerToolbar>
-			<Toolbar id="tableToolbar" class="removeToolbarPaddingLeft">
-				<SearchField
-					id="searchField"
-				    search="onSearchPressed"
-				    width="90%"/>
-			    <Button icon="sap-icon://add-contact" press="onAddNewMentor" width="10%" visible="{=${config>/IsProjectMember}}"/>
-				</Toolbar>
-		</headerToolbar>
-		<columns>
-			<Column id="photo" width="5rem">
-				<Text text="" visible="{= !${device>/system/phone} }" />
-			</Column>
-			<Column id="shirtNumber">
-				<Text text="{i18n>fullName}" visible="{= !${device>/system/phone} }" />
-			</Column>
-			<Column id="relationship" minScreenWidth="Tablet">
-				<Text text="{i18n>relSAP}" />
-			</Column>
-			<Column id="status" minScreenWidth="Tablet">
-				<Text text="{i18n>mentorStatus}" />
-			</Column>
-		</columns>
-		<ColumnListItem id="columnListItem" type="Navigation" press="onMentorDetailPress">
-			<cells>
-				<Image width="4rem" height="4rem" src="{PhotoUrl}" class="sapMTableContentMargin avatarSmall sapUxAPObjectPageHeaderObjectImage-Circle" />
-				<ObjectIdentifier title="{FullName}" text="{ShirtNumber}" class="sapMTableContentMargin" />
-				<Text text="{RelationshipToSap/Name}" class="sapMTableContentMargin" />
-				<Text text="{MentorStatus/Name}" class="sapMTableContentMargin" />
-			</cells>
-		</ColumnListItem>
-	</Table>
+    <ScrollContainer
+		height="100%"
+		width="100%"
+		horizontal="true"
+		vertical="true"
+		focusable="true">
+	        <Table
+		        id="mentorsTable"
+		        inset="false"
+		        items="{
+			        path: '/Mentors',
+			        parameters: {
+				        select: 'Id,FullName,ShirtNumber,PhotoUrl,RelationshipToSap/Name,MentorStatus/Name,PublicProfile,JambandBarcelona,JambandLasVegas,SapExpertise1/Name,SapExpertise2/Name,SapExpertise3/Name',
+				        expand: 'MentorStatus,RelationshipToSap,SapExpertise1,SapExpertise2,SapExpertise3'
+			        },
+			        sorter: {path: 'FullName', descending: false}
+		        }"
+		        updateFinished="onUpdateFinished">
+		        <headerToolbar>
+			        <Toolbar id="tableToolbar" class="removeToolbarPaddingLeft">
+				        <SearchField
+					        id="searchField"
+				            search="onSearchPressed"
+				            width="90%"/>
+			            <Button icon="sap-icon://add-contact" press="onAddNewMentor" width="10%" visible="{=${config>/IsProjectMember}}"/>
+				    </Toolbar>
+		        </headerToolbar>
+		        <columns>
+			        <Column id="photo" width="5rem">
+				        <Text text="" visible="{= !${device>/system/phone} }" />
+			        </Column>
+			        <Column id="shirtNumber">
+				        <Text text="{i18n>fullName}" visible="{= !${device>/system/phone} }" />
+			        </Column>
+			        <Column id="relationship" minScreenWidth="Tablet">
+				        <Text text="{i18n>relSAP}" />
+			        </Column>
+			        <Column id="status" minScreenWidth="Tablet">
+				        <Text text="{i18n>mentorStatus}" />
+			        </Column>
+		        </columns>
+		        <ColumnListItem id="columnListItem" type="Navigation" press="onMentorDetailPress">
+			        <cells>
+				        <Image width="4rem" height="4rem" src="{PhotoUrl}" class="sapMTableContentMargin avatarSmall sapUxAPObjectPageHeaderObjectImage-Circle" />
+				        <ObjectIdentifier title="{FullName}" text="{ShirtNumber}" class="sapMTableContentMargin" />
+				        <Text text="{RelationshipToSap/Name}" class="sapMTableContentMargin" />
+				        <Text text="{MentorStatus/Name}" class="sapMTableContentMargin" />
+			        </cells>
+		        </ColumnListItem>
+	        </Table>
+        </ScrollContainer>
 </core:FragmentDefinition>
