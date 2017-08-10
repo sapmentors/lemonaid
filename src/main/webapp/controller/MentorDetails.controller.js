@@ -89,6 +89,7 @@ sap.ui.define([
                             this.busyDialog.close();
                             sap.m.MessageToast.show(this.i18n.getText("profileSavedSuccesfully"));
                             this.ui.setProperty("/isEditMode", false);
+                            this.model.resetChanges();
                         }.bind(this),
                         error: function (oError) {
                             this.busyDialog.close();
