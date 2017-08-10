@@ -270,6 +270,45 @@ sap.ui.define([
                     if(object.JambandMusician != undefined){
                         object.JambandMusician = that._parseBoolean(object.JambandMusician);
                     }
+
+                    //Convert the publicity settings to boolean
+                    if(object.PhonePublic){
+                        object.PhonePublic = that._parseBoolean(object.PhonePublic);
+                    }
+                    if(object.ZipPublic){
+                        object.ZipPublic = that._parseBoolean(object.ZipPublic);
+                    }
+                    if(object.CityPublic){
+                        object.CityPublic = that._parseBoolean(object.CityPublic);
+                    }
+                    if(object.CountryPublic){
+                        object.CountryPublic = that._parseBoolean(object.CountryPublic);
+                    }
+                    if(object.StatePublic){
+                        object.StatePublic = that._parseBoolean(object.StatePublic);
+                    }
+                    if(object.Address1Public){
+                        object.Address1Public = that._parseBoolean(object.Address1Public);
+                    }
+                    if(object.Address2Public){
+                        object.Address2Public = that._parseBoolean(object.Address2Public);
+                    }
+                    if(object.CompanyPublic){
+                        object.CompanyPublic = that._parseBoolean(object.CompanyPublic);
+                    }
+                    if(object.JobTitlePublic){
+                        object.JobTitlePublic = that._parseBoolean(object.JobTitlePublic);
+                    }
+                    if(object.Email1Public){
+                        object.Email1Public = that._parseBoolean(object.Email1Public);
+                    }
+                    if(object.Email2Public){
+                        object.Email2Public = that._parseBoolean(object.Email2Public);
+                    }
+                    if(object.SoftSkillsPublic){
+                        object.SoftSkillsPublic = that._parseBoolean(object.SoftSKILLSPublic);
+                    }
+
                     //Add Objects of JoinColum Entities
                     if(object.Language1Id){
                         object["Language1"] = that.model.oData["Languages('"+object.Language1Id+"')"];
