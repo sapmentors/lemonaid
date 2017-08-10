@@ -41,6 +41,9 @@
 			        <Column id="status" minScreenWidth="Tablet">
 				        <Text text="{i18n>mentorStatus}" />
 			        </Column>
+                    <Column id="expertise" minScreenWidth="Tablet">
+				        <Text text="{i18n>sapExpertise}" />
+			        </Column>
 		        </columns>
 		        <ColumnListItem id="columnListItem" type="Navigation" press="onMentorDetailPress">
 			        <cells>
@@ -48,6 +51,7 @@
 				        <ObjectIdentifier title="{FullName}" text="{ShirtNumber}" class="sapMTableContentMargin" />
 				        <Text text="{RelationshipToSap/Name}" class="sapMTableContentMargin" />
 				        <Text text="{MentorStatus/Name}" class="sapMTableContentMargin" />
+                        <Text text="{SapExpertise1/Name}  {= ${SapExpertise2} ? ',' : ''} {SapExpertise2/Name} {= ${SapExpertise3} ? ',' : ''} {SapExpertise3/Name}" class="sapMTableContentMargin" />
 			        </cells>
 		        </ColumnListItem>
 	        </Table>
