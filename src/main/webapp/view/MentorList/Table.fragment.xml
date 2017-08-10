@@ -51,7 +51,7 @@
 				        <ObjectIdentifier title="{FullName}" text="{ShirtNumber}" class="sapMTableContentMargin" />
 				        <Text text="{RelationshipToSap/Name}" class="sapMTableContentMargin" />
 				        <Text text="{MentorStatus/Name}" class="sapMTableContentMargin" />
-                        <Text text="{SapExpertise1/Name}  {= ${SapExpertise2} ? ',' : ''} {SapExpertise2/Name} {= ${SapExpertise3} ? ',' : ''} {SapExpertise3/Name}" class="sapMTableContentMargin" />
+                        <Text text="{SapExpertise1/Name}{= ${SapExpertise2} ? ',\n' : ''} {SapExpertise2/Name}{= ${SapExpertise3} ? ',\n' : ''} {SapExpertise3/Name}" class="sapMTableContentMargin" />
 			        </cells>
 		        </ColumnListItem>
 	        </Table>
