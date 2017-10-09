@@ -224,6 +224,8 @@ sap.ui.define([
                     });
                     delete object.longitude;
                     delete object.latitude;
+                    delete object.publicLongitude;
+                    delete object.publicLatitude;
                     //if (object.ShirtNumber) { object.ShirtNumber = that._parseInteger(object.ShirtNumber); } else { delete object.ShirtNumber; }
                     if (object.HoursAvailable) {
                         object.HoursAvailable = that._parseInteger(object.HoursAvailable);
