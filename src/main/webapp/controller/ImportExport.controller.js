@@ -104,7 +104,7 @@ sap.ui.define([
                 var reader = new FileReader();
                 reader.onload = function (evn) {
                     var strCSV = evn.target.result; //string in CSV
-                    var lines = strCSV.split("\n");
+                    var lines = strCSV.split(/\r?\n|\r/g);
                     lines[0] = lines[0].replace(/ /g, "");
                     strCSV = lines.join("\n");
                     var imp = Papa.parse(strCSV, {
