@@ -59,8 +59,14 @@ sap.ui.define([
 
 				var afilters = [];
 				var outerFilters = [];
-				var searchTerms = search.split(" "); //words separated by space are considered as separate search terms.
-				for (var k = 0; k < searchTerms.length; k++) {
+				var searchTerms = search.split(","); //words separated by ',' are considered as separate search terms.
+                var umlaute = [["oe","ö"],["ae","ä"],["ue","ü"],["OE","Ö"],["AE","Ä"],["UE","Ü"],["Oe","Ö"],["Ae","Ä"],["Ue","Ü"],["ss","ß"]] //Feel free to add more Umlauts and their replacements
+                for (var k = 0; k < searchTerms.length; k++) {
+                    for(var i = 0; i<umlaute.length; i++){
+                        if(searchTerms[k].includes(umlaute[i][0])){
+							searchTerms[searchTerms.length] = searchTerms[k].replace(umlaute[i][0],umlaute[i][1])
+                        }
+                    }
 					afilters.push(new Filter("FullName", FilterOperator.Contains, searchTerms[k]));
 					afilters.push(new Filter("ShirtNumber", FilterOperator.Contains, searchTerms[k]));
 					afilters.push(new Filter("RelationshipToSap/Name", FilterOperator.Contains, searchTerms[k]));

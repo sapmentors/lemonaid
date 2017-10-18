@@ -136,8 +136,8 @@ public class Mentor {
 
 	@Temporal(TemporalType.TIMESTAMP) private Calendar createdAt;
 	private String createdBy;
-	@Temporal(TemporalType.TIMESTAMP) private Calendar updatedAt;
-	private String updatedBy;
+	@SAP(fieldGroup="MentorManagement") @Temporal(TemporalType.TIMESTAMP) private Calendar updatedAt;
+	@SAP(fieldGroup="MentorManagement") private String updatedBy;
 
     public Mentor() {}
 
