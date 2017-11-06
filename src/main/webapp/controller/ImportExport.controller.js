@@ -215,199 +215,200 @@ sap.ui.define([
                 this.component._oErrorHandler);
             jQuery.each(imp.data, function (rowIdx, row) {
                 if (!row.__skip) {
-                    var object = {};
+                    var objects = {};
+                    objects[rowIdx] = {};
                     jQuery.each(row, function (fieldName, field) {
                         fieldName = fieldName.replace(/\s+/g, "");
                         if (that._isValidField(fieldName)) {
-                            object[fieldName] = field;
+                            objects[rowIdx][fieldName] = field;
                         }
                     });
-                    delete object.longitude;
-                    delete object.latitude;
-                    delete object.publicLongitude;
-                    delete object.publicLatitude;
-                    //if (object.ShirtNumber) { object.ShirtNumber = that._parseInteger(object.ShirtNumber); } else { delete object.ShirtNumber; }
-                    if (object.HoursAvailable) {
-                        object.HoursAvailable = that._parseInteger(object.HoursAvailable);
+                    delete objects[rowIdx].longitude;
+                    delete objects[rowIdx].latitude;
+                    delete objects[rowIdx].publicLongitude;
+                    delete objects[rowIdx].publicLatitude;
+                    //if (objects[rowIdx].ShirtNumber) { objects[rowIdx].ShirtNumber = that._parseInteger(objects[rowIdx].ShirtNumber); } else { delete objects[rowIdx].ShirtNumber; }
+                    if (objects[rowIdx].HoursAvailable) {
+                        objects[rowIdx].HoursAvailable = that._parseInteger(objects[rowIdx].HoursAvailable);
                     } else {
-                        delete object.HoursAvailable;
+                        delete objects[rowIdx].HoursAvailable;
                     }
-                    if (object.InterestInMentorCommunicationStrategy) {
-                        object.InterestInMentorCommunicationStrategy = that._parseBoolean(object.InterestInMentorCommunicationStrategy);
+                    if (objects[rowIdx].InterestInMentorCommunicationStrategy) {
+                        objects[rowIdx].InterestInMentorCommunicationStrategy = that._parseBoolean(objects[rowIdx].InterestInMentorCommunicationStrategy);
                     } else {
-                        delete object.InterestInMentorCommunicationStrategy;
+                        delete objects[rowIdx].InterestInMentorCommunicationStrategy;
                     }
-                    if (object.InterestInMentorManagementModel) {
-                        object.InterestInMentorManagementModel = that._parseBoolean(object.InterestInMentorManagementModel);
+                    if (objects[rowIdx].InterestInMentorManagementModel) {
+                        objects[rowIdx].InterestInMentorManagementModel = that._parseBoolean(objects[rowIdx].InterestInMentorManagementModel);
                     } else {
-                        delete object.InterestInMentorManagementModel;
+                        delete objects[rowIdx].InterestInMentorManagementModel;
                     }
-                    if (object.InterestInMentorMix) {
-                        object.InterestInMentorMix = that._parseBoolean(object.InterestInMentorMix);
+                    if (objects[rowIdx].InterestInMentorMix) {
+                        objects[rowIdx].InterestInMentorMix = that._parseBoolean(objects[rowIdx].InterestInMentorMix);
                     } else {
-                        delete object.InterestInMentorMix;
+                        delete objects[rowIdx].InterestInMentorMix;
                     }
-                    if (object.InterestInOtherIdeas) {
-                        object.InterestInOtherIdeas = that._parseBoolean(object.InterestInOtherIdeas);
+                    if (objects[rowIdx].InterestInOtherIdeas) {
+                        objects[rowIdx].InterestInOtherIdeas = that._parseBoolean(objects[rowIdx].InterestInOtherIdeas);
                     } else {
-                        delete object.InterestInOtherIdeas;
+                        delete objects[rowIdx].InterestInOtherIdeas;
                     }
-                    if (object.TopicLeadInterest) {
-                        object.TopicLeadInterest = that._parseBoolean(object.TopicLeadInterest);
+                    if (objects[rowIdx].TopicLeadInterest) {
+                        objects[rowIdx].TopicLeadInterest = that._parseBoolean(objects[rowIdx].TopicLeadInterest);
                     } else {
-                        delete object.TopicLeadInterest;
+                        delete objects[rowIdx].TopicLeadInterest;
                     }
-                    if (object.HoursAvailable) {
-                        object.HoursAvailable = that._parseInteger(object.HoursAvailable);
+                    if (objects[rowIdx].HoursAvailable) {
+                        objects[rowIdx].HoursAvailable = that._parseInteger(objects[rowIdx].HoursAvailable);
                     } else {
-                        delete object.HoursAvailable;
+                        delete objects[rowIdx].HoursAvailable;
                     }
                     //Convert Jamsband Stuff to boolean!
-                    if(object.JambandBarcelona != undefined){
-                        object.JambandBarcelona = that._parseBoolean(object.JambandBarcelona);
+                    if(objects[rowIdx].JambandBarcelona != undefined){
+                        objects[rowIdx].JambandBarcelona = that._parseBoolean(objects[rowIdx].JambandBarcelona);
                     }
-                    if(object.JambandLasVegas != undefined){
-                        object.JambandLasVegas = that._parseBoolean(object.JambandLasVegas);
+                    if(objects[rowIdx].JambandLasVegas != undefined){
+                        objects[rowIdx].JambandLasVegas = that._parseBoolean(objects[rowIdx].JambandLasVegas);
                     }
-                    if(object.JambandMusician != undefined){
-                        object.JambandMusician = that._parseBoolean(object.JambandMusician);
+                    if(objects[rowIdx].JambandMusician != undefined){
+                        objects[rowIdx].JambandMusician = that._parseBoolean(objects[rowIdx].JambandMusician);
                     }
 
                     //Convert the publicity settings to boolean
-                    if(object.PhonePublic){
-                        object.PhonePublic = that._parseBoolean(object.PhonePublic);
+                    if(objects[rowIdx].PhonePublic){
+                        objects[rowIdx].PhonePublic = that._parseBoolean(objects[rowIdx].PhonePublic);
                     }
-                    if(object.ZipPublic){
-                        object.ZipPublic = that._parseBoolean(object.ZipPublic);
+                    if(objects[rowIdx].ZipPublic){
+                        objects[rowIdx].ZipPublic = that._parseBoolean(objects[rowIdx].ZipPublic);
                     }
-                    if(object.CityPublic){
-                        object.CityPublic = that._parseBoolean(object.CityPublic);
+                    if(objects[rowIdx].CityPublic){
+                        objects[rowIdx].CityPublic = that._parseBoolean(objects[rowIdx].CityPublic);
                     }
-                    if(object.CountryPublic){
-                        object.CountryPublic = that._parseBoolean(object.CountryPublic);
+                    if(objects[rowIdx].CountryPublic){
+                        objects[rowIdx].CountryPublic = that._parseBoolean(objects[rowIdx].CountryPublic);
                     }
-                    if(object.StatePublic){
-                        object.StatePublic = that._parseBoolean(object.StatePublic);
+                    if(objects[rowIdx].StatePublic){
+                        objects[rowIdx].StatePublic = that._parseBoolean(objects[rowIdx].StatePublic);
                     }
-                    if(object.Address1Public){
-                        object.Address1Public = that._parseBoolean(object.Address1Public);
+                    if(objects[rowIdx].Address1Public){
+                        objects[rowIdx].Address1Public = that._parseBoolean(objects[rowIdx].Address1Public);
                     }
-                    if(object.Address2Public){
-                        object.Address2Public = that._parseBoolean(object.Address2Public);
+                    if(objects[rowIdx].Address2Public){
+                        objects[rowIdx].Address2Public = that._parseBoolean(objects[rowIdx].Address2Public);
                     }
-                    if(object.CompanyPublic){
-                        object.CompanyPublic = that._parseBoolean(object.CompanyPublic);
+                    if(objects[rowIdx].CompanyPublic){
+                        objects[rowIdx].CompanyPublic = that._parseBoolean(objects[rowIdx].CompanyPublic);
                     }
-                    if(object.JobTitlePublic){
-                        object.JobTitlePublic = that._parseBoolean(object.JobTitlePublic);
+                    if(objects[rowIdx].JobTitlePublic){
+                        objects[rowIdx].JobTitlePublic = that._parseBoolean(objects[rowIdx].JobTitlePublic);
                     }
-                    if(object.Email1Public){
-                        object.Email1Public = that._parseBoolean(object.Email1Public);
+                    if(objects[rowIdx].Email1Public){
+                        objects[rowIdx].Email1Public = that._parseBoolean(objects[rowIdx].Email1Public);
                     }
-                    if(object.Email2Public){
-                        object.Email2Public = that._parseBoolean(object.Email2Public);
+                    if(objects[rowIdx].Email2Public){
+                        objects[rowIdx].Email2Public = that._parseBoolean(objects[rowIdx].Email2Public);
                     }
-                    if(object.SoftSkillsPublic){
-                        object.SoftSkillsPublic = that._parseBoolean(object.SoftSKILLSPublic);
+                    if(objects[rowIdx].SoftSkillsPublic){
+                        objects[rowIdx].SoftSkillsPublic = that._parseBoolean(objects[rowIdx].SoftSKILLSPublic);
                     }
 
-                    //Add Objects of JoinColum Entities
-                    if(object.Language1Id){
-                        object["Language1"] = that.model.oData["Languages('"+object.Language1Id+"')"];
+                    //Add objects[rowIdx]s of JoinColum Entities
+                    if(objects[rowIdx].Language1Id){
+                        objects[rowIdx]["Language1"] = that.model.oData["Languages('"+objects[rowIdx].Language1Id+"')"];
                     }
-                    if(object.Language2Id){
-                        object["Language2"] = that.model.oData["Languages('"+object.Language2Id+"')"];
+                    if(objects[rowIdx].Language2Id){
+                        objects[rowIdx]["Language2"] = that.model.oData["Languages('"+objects[rowIdx].Language2Id+"')"];
                     }
-                    if(object.Language3Id){
-                        object["Language3"] = that.model.oData["Languages('"+object.Language3Id+"')"];
+                    if(objects[rowIdx].Language3Id){
+                        objects[rowIdx]["Language3"] = that.model.oData["Languages('"+objects[rowIdx].Language3Id+"')"];
                     }
-                    if(object.RegionId){
-                        object["Region"] = that.model.oData["Regions('"+object.RegionId+"')"];
+                    if(objects[rowIdx].RegionId){
+                        objects[rowIdx]["Region"] = that.model.oData["Regions('"+objects[rowIdx].RegionId+"')"];
                     }
-                    if(object.RelationshipToSapId){
-                        object["RelationshipToSap"] = that.model.oData["RelationshipsToSap('"+object.RelationshipToSapId+"')"];
+                    if(objects[rowIdx].RelationshipToSapId){
+                        objects[rowIdx]["RelationshipToSap"] = that.model.oData["RelationshipsToSap('"+objects[rowIdx].RelationshipToSapId+"')"];
                     }
-                    if(object.StatusId){
-                         object["MentorStatus"] = that.model.oData["MentorStatuses('"+object.StatusId+"')"];
+                    if(objects[rowIdx].StatusId){
+                         objects[rowIdx]["MentorStatus"] = that.model.oData["MentorStatuses('"+objects[rowIdx].StatusId+"')"];
                     }
-                    if(object.CountryId){
-                         object["Country"] = that.model.oData["Countries('"+object.CountryId+"')"];
+                    if(objects[rowIdx].CountryId){
+                         objects[rowIdx]["Country"] = that.model.oData["Countries('"+objects[rowIdx].CountryId+"')"];
                     }
-                    if(object.Industry1Id){
-                         object["Industry1"] = that.model.oData["Industries('"+object.Industry1Id+"')"];
+                    if(objects[rowIdx].Industry1Id){
+                         objects[rowIdx]["Industry1"] = that.model.oData["Industries('"+objects[rowIdx].Industry1Id+"')"];
                     }
-                    if(object.Industry2Id){
-                        object["Industry2"] = that.model.oData["Industries('"+object.Industry2Id+"')"];
+                    if(objects[rowIdx].Industry2Id){
+                        objects[rowIdx]["Industry2"] = that.model.oData["Industries('"+objects[rowIdx].Industry2Id+"')"];
                     }
-                    if(object.Industry3Id){
-                        object["Industry3"] = that.model.oData["Industries('"+object.Industry3Id+"')"];
+                    if(objects[rowIdx].Industry3Id){
+                        objects[rowIdx]["Industry3"] = that.model.oData["Industries('"+objects[rowIdx].Industry3Id+"')"];
                     }
-                    if(object.ShirtMFId){
-                        object["ShirtMF"] = that.model.oData["Genders('"+object.shirtMF+"')"];
+                    if(objects[rowIdx].ShirtMFId){
+                        objects[rowIdx]["ShirtMF"] = that.model.oData["Genders('"+objects[rowIdx].shirtMF+"')"];
                     }
-                    if(object.ShirtSizeId){
-                        object["ShirtSize"] = that.model.oData["Sizes('"+object.ShirtSizeId+"')"];
+                    if(objects[rowIdx].ShirtSizeId){
+                        objects[rowIdx]["ShirtSize"] = that.model.oData["Sizes('"+objects[rowIdx].ShirtSizeId+"')"];
                     }
-                    if(object.SapExpertise1Id){
-                        object["SapExpertise1"] = that.model.oData["SapSoftwareSolutions('"+object.SapExpertise1Id+"')"];
+                    if(objects[rowIdx].SapExpertise1Id){
+                        objects[rowIdx]["SapExpertise1"] = that.model.oData["SapSoftwareSolutions('"+objects[rowIdx].SapExpertise1Id+"')"];
                     }
-                    if(object.SapExpertise2Id){
-                        object["SapExpertise2"] = that.model.oData["SapSoftwareSolutions('"+object.SapExpertise2Id+"')"];
+                    if(objects[rowIdx].SapExpertise2Id){
+                        objects[rowIdx]["SapExpertise2"] = that.model.oData["SapSoftwareSolutions('"+objects[rowIdx].SapExpertise2Id+"')"];
                     }
-                    if(object.SapExpertise3Id){
-                        object["SapExpertise3"] = that.model.oData["SapSoftwareSolutions('"+object.SapExpertise3Id+"')"];
+                    if(objects[rowIdx].SapExpertise3Id){
+                        objects[rowIdx]["SapExpertise3"] = that.model.oData["SapSoftwareSolutions('"+objects[rowIdx].SapExpertise3Id+"')"];
                     }
-                    if(object.SapExpertise1LevelId){
-                        object["SapExpertise1Level"] = that.model.oData["ExpertiseLevels('"+object.SapExpertise1LevelId+"')"];
+                    if(objects[rowIdx].SapExpertise1LevelId){
+                        objects[rowIdx]["SapExpertise1Level"] = that.model.oData["ExpertiseLevels('"+objects[rowIdx].SapExpertise1LevelId+"')"];
                     }
-                    if(object.SapExpertise2LevelId){
-                        object["SapExpertise2Level"] = that.model.oData["ExpertiseLevels('"+object.SapExpertise2LevelId+"')"];
+                    if(objects[rowIdx].SapExpertise2LevelId){
+                        objects[rowIdx]["SapExpertise2Level"] = that.model.oData["ExpertiseLevels('"+objects[rowIdx].SapExpertise2LevelId+"')"];
                     }
-                    if(object.SapExpertise3LevelId){
-                        object["SapExpertise3Level"] = that.model.oData["ExpertiseLevels('"+object.SapExpertise3LevelId+"')"];
+                    if(objects[rowIdx].SapExpertise3LevelId){
+                        objects[rowIdx]["SapExpertise3Level"] = that.model.oData["ExpertiseLevels('"+objects[rowIdx].SapExpertise3LevelId+"')"];
                     }
-                    if(object.Topic1Id){
-                         object["Topic1"] = that.model.oData["Topics('"+object.Topic1Id+"')"];
+                    if(objects[rowIdx].Topic1Id){
+                         objects[rowIdx]["Topic1"] = that.model.oData["Topics('"+objects[rowIdx].Topic1Id+"')"];
                     }
-                    if(object.Topic2Id){
-                        object["Topic2"] = that.model.oData["Topics('"+object.Topic2Id+"')"];
+                    if(objects[rowIdx].Topic2Id){
+                        objects[rowIdx]["Topic2"] = that.model.oData["Topics('"+objects[rowIdx].Topic2Id+"')"];
                     }
-                    if(object.Topic3Id){
-                        object["Topic3"] = that.model.oData["Topics('"+object.Topic3Id+"')"];
+                    if(objects[rowIdx].Topic3Id){
+                        objects[rowIdx]["Topic3"] = that.model.oData["Topics('"+objects[rowIdx].Topic3Id+"')"];
                     }
-                    if(object.SoftSkill1Id){
-                        object["SoftSkill1"] = that.model.oData["SoftSkills('"+object.SoftSkill1Id+"')"];
+                    if(objects[rowIdx].SoftSkill1Id){
+                        objects[rowIdx]["SoftSkill1"] = that.model.oData["SoftSkills('"+objects[rowIdx].SoftSkill1Id+"')"];
                     }
-                    if(object.SoftSkill2Id){
-                        object["SoftSkill2"] = that.model.oData["SoftSkills('"+object.SoftSkill2Id+"')"];
+                    if(objects[rowIdx].SoftSkill2Id){
+                        objects[rowIdx]["SoftSkill2"] = that.model.oData["SoftSkills('"+objects[rowIdx].SoftSkill2Id+"')"];
                     }
-                    if(object.SoftSkill3Id){
-                        object["SoftSkill3"] = that.model.oData["SoftSkills('"+object.SoftSkill3Id+"')"];
+                    if(objects[rowIdx].SoftSkill3Id){
+                        objects[rowIdx]["SoftSkill3"] = that.model.oData["SoftSkills('"+objects[rowIdx].SoftSkill3Id+"')"];
                     }
-                    if(object.SoftSkill4Id){
-                        object["SoftSkill4"] = that.model.oData["SoftSkills('"+object.SoftSkill4Id+"')"];
+                    if(objects[rowIdx].SoftSkill4Id){
+                        objects[rowIdx]["SoftSkill4"] = that.model.oData["SoftSkills('"+objects[rowIdx].SoftSkill4Id+"')"];
                     }
-                    if(object.SoftSkill5Id){
-                        object["SoftSkill5"] = that.model.oData["SoftSkills('"+object.SoftSkill5Id+"')"];
+                    if(objects[rowIdx].SoftSkill5Id){
+                        objects[rowIdx]["SoftSkill5"] = that.model.oData["SoftSkills('"+objects[rowIdx].SoftSkill5Id+"')"];
                     }
-                    if(object.SoftSkill6Id){
-                        object["SoftSkill6"] = that.model.oData["SoftSkills('"+object.SoftSkill6Id+"')"];
+                    if(objects[rowIdx].SoftSkill6Id){
+                        objects[rowIdx]["SoftSkill6"] = that.model.oData["SoftSkills('"+objects[rowIdx].SoftSkill6Id+"')"];
                     }
                     requests.push(new Promise(function (resolve) {
                         if (row.__new) {
-                            if (!object.Id) {
-                                object.Id = that.guidGenerator.generateGuid();
+                            if (!objects[rowIdx].Id) {
+                                objects[rowIdx].Id = that.guidGenerator.generateGuid();
                             }
-                            for (var i in object) {
-                                if(object[i] == undefined){
-                                    delete object[i];
-                                }else if (object[i].length === 0) {
-                                    delete object[i];
+                            for (var i in objects[rowIdx]) {
+                                if(objects[rowIdx][i] == undefined){
+                                    delete objects[rowIdx][i];
+                                }else if (objects[rowIdx][i].length === 0) {
+                                    delete objects[rowIdx][i];
                                 }
                             }
                             that.model.create(
                                 "/Mentors",
-                                object, {
+                                objects[rowIdx], {
                                     success: function (data) {
                                         newCount++;
                                         resolve();
@@ -416,8 +417,8 @@ sap.ui.define([
                                         imp.errors.push({
                                             title: that.i18n.getText("importCreateErrorTitle"),
                                             message: that.i18n.getText("importCreateError", [
-                                                object.Id,
-                                                object.fullName,
+                                                objects[rowIdx].Id,
+                                                objects[rowIdx].fullName,
                                                 error.responseText
                                             ])
                                         });
@@ -429,9 +430,9 @@ sap.ui.define([
                         } else {
                             that.model.update(
                                 that.model.createKey("/Mentors", {
-                                    Id: object.Id
+                                    Id: objects[rowIdx].Id
                                 }),
-                                object, {
+                                objects[rowIdx], {
                                     success: function (data) {
                                         updateCount++;
                                         resolve();
@@ -440,8 +441,8 @@ sap.ui.define([
                                         imp.errors.push({
                                             title: that.i18n.getText("importUpdateErrorTitle"),
                                             message: that.i18n.getText("importUpdateError", [
-                                                object.Id,
-                                                object.fullName,
+                                                objects[rowIdx].Id,
+                                                objects[rowIdx].fullName,
                                                 error.responseText
                                             ])
                                         });
