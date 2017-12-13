@@ -14,8 +14,8 @@ To keep the data up-to-date, mentors can update their own profile, which in turn
 
 To see Lemonaid in action, choose one of these options:
 
-* Lemonaid web-application: https://lemonaida5a504e08.hana.ondemand.com/
-* Lemonaid odata service: https://lemonaida5a504e08.hana.ondemand.com/odata.svc
+* Lemonaid web-application: https://finder.sapmentors.sap.com/
+* Lemonaid odata service: https://finder.sapmentors.sap.com/odata.svc
 
 ## Further reading
 
