@@ -1,39 +1,39 @@
 [{
     "__metadata": {
-        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Regions('APJ')",
-        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Regions('APJ')",
+        "id": "https://finder.sapmentors.sap.com:443/odata.svc/Regions('APJ')",
+        "uri": "https://finder.sapmentors.sap.com:443/odata.svc/Regions('APJ')",
         "type": "Model.Region"
     },
     "Id": "APJ",
     "Name": "Asia Pacific and Japan (APJ)"
 }, {
     "__metadata": {
-        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Regions('EUR')",
-        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Regions('EUR')",
+        "id": "https://finder.sapmentors.sap.com:443/odata.svc/Regions('EUR')",
+        "uri": "https://finder.sapmentors.sap.com:443/odata.svc/Regions('EUR')",
         "type": "Model.Region"
     },
     "Id": "EUR",
     "Name": "Europe"
 }, {
     "__metadata": {
-        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Regions('MEA')",
-        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Regions('MEA')",
+        "id": "https://finder.sapmentors.sap.com:443/odata.svc/Regions('MEA')",
+        "uri": "https://finder.sapmentors.sap.com:443/odata.svc/Regions('MEA')",
         "type": "Model.Region"
     },
     "Id": "MEA",
     "Name": "Middle East and Africa"
 }, {
     "__metadata": {
-        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Regions('NA')",
-        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Regions('NA')",
+        "id": "https://finder.sapmentors.sap.com:443/odata.svc/Regions('NA')",
+        "uri": "https://finder.sapmentors.sap.com:443/odata.svc/Regions('NA')",
         "type": "Model.Region"
     },
     "Id": "NA",
     "Name": "North America"
 }, {
     "__metadata": {
-        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Regions('SA')",
-        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/Regions('SA')",
+        "id": "https://finder.sapmentors.sap.com:443/odata.svc/Regions('SA')",
+        "uri": "https://finder.sapmentors.sap.com:443/odata.svc/Regions('SA')",
         "type": "Model.Region"
     },
     "Id": "SA",

@@ -1,15 +1,15 @@
 [{
     "__metadata": {
-        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/ExpertiseLevels('advance')",
-        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/ExpertiseLevels('advance')",
+        "id": "https://finder.sapmentors.sap.com:443/odata.svc/ExpertiseLevels('advance')",
+        "uri": "https://finder.sapmentors.sap.com:443/odata.svc/ExpertiseLevels('advance')",
         "type": "Model.ExpertiseLevel"
     },
     "Id": "advance",
     "Name": "Advance"
 }, {
     "__metadata": {
-        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/ExpertiseLevels('expert')",
-        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/ExpertiseLevels('expert')",
+        "id": "https://finder.sapmentors.sap.com:443/odata.svc/ExpertiseLevels('expert')",
+        "uri": "https://finder.sapmentors.sap.com:443/odata.svc/ExpertiseLevels('expert')",
         "type": "Model.ExpertiseLevel"
     },
     "Id": "expert",

@@ -1,119 +1,119 @@
 [{
     "__metadata": {
-        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SoftSkills('design_thinking')",
-        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SoftSkills('design_thinking')",
+        "id": "https://finder.sapmentors.sap.com:443/odata.svc/SoftSkills('design_thinking')",
+        "uri": "https://finder.sapmentors.sap.com:443/odata.svc/SoftSkills('design_thinking')",
         "type": "Model.SoftSkill"
     },
     "Id": "design_thinking",
     "Name": "Design Thinking"
 }, {
     "__metadata": {
-        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SoftSkills('asug')",
-        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SoftSkills('asug')",
+        "id": "https://finder.sapmentors.sap.com:443/odata.svc/SoftSkills('asug')",
+        "uri": "https://finder.sapmentors.sap.com:443/odata.svc/SoftSkills('asug')",
         "type": "Model.SoftSkill"
     },
     "Id": "asug",
     "Name": "ASUG"
 }, {
     "__metadata": {
-        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SoftSkills('insidetracks')",
-        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SoftSkills('insidetracks')",
+        "id": "https://finder.sapmentors.sap.com:443/odata.svc/SoftSkills('insidetracks')",
+        "uri": "https://finder.sapmentors.sap.com:443/odata.svc/SoftSkills('insidetracks')",
         "type": "Model.SoftSkill"
     },
     "Id": "insidetracks",
     "Name": "InsideTracks"
 }, {
     "__metadata": {
-        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SoftSkills('internet_of_things')",
-        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SoftSkills('internet_of_things')",
+        "id": "https://finder.sapmentors.sap.com:443/odata.svc/SoftSkills('internet_of_things')",
+        "uri": "https://finder.sapmentors.sap.com:443/odata.svc/SoftSkills('internet_of_things')",
         "type": "Model.SoftSkill"
     },
     "Id": "internet_of_things",
     "Name": "Internet of Things"
 }, {
     "__metadata": {
-        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SoftSkills('lean_methodology')",
-        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SoftSkills('lean_methodology')",
+        "id": "https://finder.sapmentors.sap.com:443/odata.svc/SoftSkills('lean_methodology')",
+        "uri": "https://finder.sapmentors.sap.com:443/odata.svc/SoftSkills('lean_methodology')",
         "type": "Model.SoftSkill"
     },
     "Id": "lean_methodology",
     "Name": "Lean Methodology"
 }, {
     "__metadata": {
-        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SoftSkills('communication_skills')",
-        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SoftSkills('communication_skills')",
+        "id": "https://finder.sapmentors.sap.com:443/odata.svc/SoftSkills('communication_skills')",
+        "uri": "https://finder.sapmentors.sap.com:443/odata.svc/SoftSkills('communication_skills')",
         "type": "Model.SoftSkill"
     },
     "Id": "communication_skills",
     "Name": "Communication skills"
 }, {
     "__metadata": {
-        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SoftSkills('interpersonal_skills')",
-        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SoftSkills('interpersonal_skills')",
+        "id": "https://finder.sapmentors.sap.com:443/odata.svc/SoftSkills('interpersonal_skills')",
+        "uri": "https://finder.sapmentors.sap.com:443/odata.svc/SoftSkills('interpersonal_skills')",
         "type": "Model.SoftSkill"
     },
     "Id": "interpersonal_skills",
     "Name": "Interpersonal skills"
 }, {
     "__metadata": {
-        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SoftSkills('project_management_skills')",
-        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SoftSkills('project_management_skills')",
+        "id": "https://finder.sapmentors.sap.com:443/odata.svc/SoftSkills('project_management_skills')",
+        "uri": "https://finder.sapmentors.sap.com:443/odata.svc/SoftSkills('project_management_skills')",
         "type": "Model.SoftSkill"
     },
     "Id": "project_management_skills",
     "Name": "Project management skills"
 }, {
     "__metadata": {
-        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SoftSkills('process_improvement_expertise')",
-        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SoftSkills('process_improvement_expertise')",
+        "id": "https://finder.sapmentors.sap.com:443/odata.svc/SoftSkills('process_improvement_expertise')",
+        "uri": "https://finder.sapmentors.sap.com:443/odata.svc/SoftSkills('process_improvement_expertise')",
         "type": "Model.SoftSkill"
     },
     "Id": "process_improvement_expertise",
     "Name": "Process improvement expertise"
 }, {
     "__metadata": {
-        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SoftSkills('emotional_intelligence')",
-        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SoftSkills('emotional_intelligence')",
+        "id": "https://finder.sapmentors.sap.com:443/odata.svc/SoftSkills('emotional_intelligence')",
+        "uri": "https://finder.sapmentors.sap.com:443/odata.svc/SoftSkills('emotional_intelligence')",
         "type": "Model.SoftSkill"
     },
     "Id": "emotional_intelligence",
     "Name": "Emotional intelligence"
 }, {
     "__metadata": {
-        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SoftSkills('critical_observation_skills')",
-        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SoftSkills('critical_observation_skills')",
+        "id": "https://finder.sapmentors.sap.com:443/odata.svc/SoftSkills('critical_observation_skills')",
+        "uri": "https://finder.sapmentors.sap.com:443/odata.svc/SoftSkills('critical_observation_skills')",
         "type": "Model.SoftSkill"
     },
     "Id": "critical_observation_skills",
     "Name": "Critical observation skills"
 }, {
     "__metadata": {
-        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SoftSkills('conflict_resolution')",
-        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SoftSkills('conflict_resolution')",
+        "id": "https://finder.sapmentors.sap.com:443/odata.svc/SoftSkills('conflict_resolution')",
+        "uri": "https://finder.sapmentors.sap.com:443/odata.svc/SoftSkills('conflict_resolution')",
         "type": "Model.SoftSkill"
     },
     "Id": "conflict_resolution",
     "Name": "Conflict Resolution"
 }, {
     "__metadata": {
-        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SoftSkills('decisionmaking')",
-        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SoftSkills('decisionmaking')",
+        "id": "https://finder.sapmentors.sap.com:443/odata.svc/SoftSkills('decisionmaking')",
+        "uri": "https://finder.sapmentors.sap.com:443/odata.svc/SoftSkills('decisionmaking')",
         "type": "Model.SoftSkill"
     },
     "Id": "decisionmaking",
     "Name": "Decision-Making"
 }, {
     "__metadata": {
-        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SoftSkills('leadership_skills')",
-        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SoftSkills('leadership_skills')",
+        "id": "https://finder.sapmentors.sap.com:443/odata.svc/SoftSkills('leadership_skills')",
+        "uri": "https://finder.sapmentors.sap.com:443/odata.svc/SoftSkills('leadership_skills')",
         "type": "Model.SoftSkill"
     },
     "Id": "leadership_skills",
     "Name": "Leadership skills"
 }, {
     "__metadata": {
-        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SoftSkills('change_management')",
-        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/SoftSkills('change_management')",
+        "id": "https://finder.sapmentors.sap.com:443/odata.svc/SoftSkills('change_management')",
+        "uri": "https://finder.sapmentors.sap.com:443/odata.svc/SoftSkills('change_management')",
         "type": "Model.SoftSkill"
     },
     "Id": "change_management",

@@ -1,47 +1,47 @@
 [{
     "__metadata": {
-        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/RelationshipsToSap('analyst')",
-        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/RelationshipsToSap('analyst')",
+        "id": "https://finder.sapmentors.sap.com:443/odata.svc/RelationshipsToSap('analyst')",
+        "uri": "https://finder.sapmentors.sap.com:443/odata.svc/RelationshipsToSap('analyst')",
         "type": "Model.RelationshipToSap"
     },
     "Id": "analyst",
     "Name": "Analyst / Press"
 }, {
     "__metadata": {
-        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/RelationshipsToSap('customer')",
-        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/RelationshipsToSap('customer')",
+        "id": "https://finder.sapmentors.sap.com:443/odata.svc/RelationshipsToSap('customer')",
+        "uri": "https://finder.sapmentors.sap.com:443/odata.svc/RelationshipsToSap('customer')",
         "type": "Model.RelationshipToSap"
     },
     "Id": "customer",
     "Name": "Customer"
 }, {
     "__metadata": {
-        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/RelationshipsToSap('employee')",
-        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/RelationshipsToSap('employee')",
+        "id": "https://finder.sapmentors.sap.com:443/odata.svc/RelationshipsToSap('employee')",
+        "uri": "https://finder.sapmentors.sap.com:443/odata.svc/RelationshipsToSap('employee')",
         "type": "Model.RelationshipToSap"
     },
     "Id": "employee",
     "Name": "Employee"
 }, {
     "__metadata": {
-        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/RelationshipsToSap('freelance')",
-        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/RelationshipsToSap('freelance')",
+        "id": "https://finder.sapmentors.sap.com:443/odata.svc/RelationshipsToSap('freelance')",
+        "uri": "https://finder.sapmentors.sap.com:443/odata.svc/RelationshipsToSap('freelance')",
         "type": "Model.RelationshipToSap"
     },
     "Id": "freelance",
     "Name": "Freelance"
 }, {
     "__metadata": {
-        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/RelationshipsToSap('partner')",
-        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/RelationshipsToSap('partner')",
+        "id": "https://finder.sapmentors.sap.com:443/odata.svc/RelationshipsToSap('partner')",
+        "uri": "https://finder.sapmentors.sap.com:443/odata.svc/RelationshipsToSap('partner')",
         "type": "Model.RelationshipToSap"
     },
     "Id": "partner",
     "Name": "Partner"
 }, {
     "__metadata": {
-        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/RelationshipsToSap('university_alliance')",
-        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/RelationshipsToSap('university_alliance')",
+        "id": "https://finder.sapmentors.sap.com:443/odata.svc/RelationshipsToSap('university_alliance')",
+        "uri": "https://finder.sapmentors.sap.com:443/odata.svc/RelationshipsToSap('university_alliance')",
         "type": "Model.RelationshipToSap"
     },
     "Id": "university_alliance",

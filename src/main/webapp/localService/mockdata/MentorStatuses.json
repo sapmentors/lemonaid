@@ -1,15 +1,15 @@
 [{
     "__metadata": {
-        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/MentorStatuses('active')",
-        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/MentorStatuses('active')",
+        "id": "https://finder.sapmentors.sap.com:443/odata.svc/MentorStatuses('active')",
+        "uri": "https://finder.sapmentors.sap.com:443/odata.svc/MentorStatuses('active')",
         "type": "Model.MentorStatus"
     },
     "Id": "active",
     "Name": "Active mentor"
 }, {
     "__metadata": {
-        "id": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/MentorStatuses('alumni')",
-        "uri": "https://lemonaida5a504e08.hana.ondemand.com:443/odata.svc/MentorStatuses('alumni')",
+        "id": "https://finder.sapmentors.sap.com:443/odata.svc/MentorStatuses('alumni')",
+        "uri": "https://finder.sapmentors.sap.com:443/odata.svc/MentorStatuses('alumni')",
         "type": "Model.MentorStatus"
     },
     "Id": "alumni",

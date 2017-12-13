@@ -58,14 +58,14 @@ module.exports = function(grunt) {
                 proxies: [
 					{
                         context: "/odata.svc",
-                        host: "lemonaida5a504e08.hana.ondemand.com",
+                        host: "finder.sapmentors.sap.com",
                         changeOrigin: true,
                         port: 443,
                         https: true
                     },
 					{
                         context: "/userapi",
-                        host: "lemonaida5a504e08.hana.ondemand.com",
+                        host: "finder.sapmentors.sap.com",
                         changeOrigin: true,
                         port: 443,
                         https: true
