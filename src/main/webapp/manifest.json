@@ -93,7 +93,6 @@
 				"settings": {
 					"defaultBindingMode": "TwoWay",
           "json": true,
-          "defaultOperationMode": "Client",
           "headers":{
             "Expires": "-1",
             "Pragma": "no-cache",
