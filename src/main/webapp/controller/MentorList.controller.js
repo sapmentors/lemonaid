@@ -57,29 +57,69 @@ sap.ui.define([
         onSearchPressed: function(event) {
             var search = event.getParameters().query;
 
-				var afilters = [];
-				var outerFilters = [];
-				var searchTerms = search.split(","); //words separated by ',' are considered as separate search terms.
-                var umlaute = [["oe","ö"],["ae","ä"],["ue","ü"],["OE","Ö"],["AE","Ä"],["UE","Ü"],["Oe","Ö"],["Ae","Ä"],["Ue","Ü"],["ss","ß"]] //Feel free to add more Umlauts and their replacements
-                for (var k = 0; k < searchTerms.length; k++) {
-                    for(var i = 0; i<umlaute.length; i++){
-                        if(searchTerms[k].includes(umlaute[i][0])){
-							searchTerms[searchTerms.length] = searchTerms[k].replace(umlaute[i][0],umlaute[i][1])
-                        }
-                    }
-					afilters.push(new Filter("FullName", FilterOperator.Contains, searchTerms[k]));
-					afilters.push(new Filter("ShirtNumber", FilterOperator.Contains, searchTerms[k]));
-					afilters.push(new Filter("RelationshipToSap/Name", FilterOperator.Contains, searchTerms[k]));
-					afilters.push(new Filter("MentorStatus/Name", FilterOperator.Contains, searchTerms[k]));
-                    afilters.push(new Filter("SapExpertise1/Name", FilterOperator.Contains, searchTerms[k]));
-                    afilters.push(new Filter("SapExpertise2/Name", FilterOperator.Contains, searchTerms[k]));
-                    afilters.push(new Filter("SapExpertise3/Name", FilterOperator.Contains, searchTerms[k]));
-                    outerFilters.push(new Filter(afilters));
-					afilters = [];
-				}
+			/**
+			 * Helper function to return a list of terms that include
+			 * special-char equivalents.
+			 * e.g. "Koehntopp" -> ["Koehntopp", "Köhntopp"]
+			 */
+			function expandedSearchTerms(term) {
+    
+    			//Feel free to add more Umlauts and their replacements
+		        var specialChars = [
+		        	["oe","ö"],
+		        	["ae","ä"],
+		        	["ue","ü"],
+		        	["OE","Ö"],
+		        	["AE","Ä"],
+		        	["UE","Ü"],
+		        	["Oe","Ö"],
+		        	["Ae","Ä"],
+		        	["Ue","Ü"],
+		        	["ss","ß"]
+		        ];
 
-            this.searchFilter = search ? new Filter(outerFilters) : null;
-            this._applyFilters();
+				/**
+				 * Produces a list of at least one item, the original search
+				 * term. Additionally may contain further items where special 
+				 * chars have been substituted.
+				 */
+				return [term].concat(specialChars.reduce(function(a, x) {
+					if (term.includes(x[0])) {
+						a.push(term.replace(x[0], x[1]));
+					}
+					return a;
+				}, []));
+			}
+
+			// Keeping this "multi term" comma separation in, even though
+			// searching for multiple keywords breaks on the backend currently
+			var keywords = search.split(",").reduce(function(a, x) {
+				return a.concat(expandedSearchTerms(x));
+			}, []);
+			
+			/**
+			 * Build the search filter, which may have multiple terms and properties
+			 * to match. Reduced to just FullName or ShirtNumber as that's all that's
+			 * really appropriate.
+			 */
+			this.searchFilter = new Filter(
+				keywords.map(function(x) {
+					
+					// Match shirt number if the term is digits, otherwise full name
+					var path = x.match(/^\d+$/) ? "ShirtNumber" : "FullName";
+					
+					return new Filter({
+						path : path,
+						operator : FilterOperator.Contains,
+						value1 : x
+					});
+				})
+			); 
+			
+			/**
+			 * Now we have the search filter, go ahead and apply it
+			 */
+			this._applyFilters();
         },
 
 		/* =========================================================== */
