@@ -195,6 +195,17 @@ sap.ui.define([
                 this.activeMarker.isOpen = true;
             }
         },
+        
+        onFilterPress: function(oEvent) {
+			if (!this._expertiseFilter) {
+				this._expertiseFilter = sap.ui.xmlfragment(
+					"com.sap.mentors.lemonaid.view.MentorList.ExpertiseFilter",
+					this
+				);
+				this.getView().addDependent(this._expertiseFilter);
+			}
+			this._expertiseFilter.open();
+        },
 
 
 		/* =========================================================== */

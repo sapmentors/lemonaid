@@ -1,0 +1,17 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<SelectDialog
+		multiSelect="true"
+		title="Areas of Expertise"
+		search="handleSearch"
+		confirm="handleClose"
+		cancel="handleClose"
+		items="{
+			path: '/SapSoftwareSolutions'
+		}" >
+		<StandardListItem
+			title="{Name}"
+			type="Active" />
+	</SelectDialog>
+</core:FragmentDefinition>
