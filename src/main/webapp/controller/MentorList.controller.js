@@ -26,6 +26,7 @@ sap.ui.define([
 				notpublic:	new sap.ui.model.Filter("PublicProfile", "EQ", false)
 			},
 		searchFilter: null, quickFilter: null,
+		expertiseFilters: [],
 
 		/**
 		 * Called when the view controller is instantiated.
@@ -203,10 +204,35 @@ sap.ui.define([
 					this
 				);
 				this.getView().addDependent(this._expertiseFilter);
+				this.getView().getModel().read("/SapSoftwareSolutions", {
+					urlParameters: {
+						skip: 0,
+						top: 1000
+					},
+					success: jQuery.proxy(function(data) {
+						var oAppModel = this.getModel("app");
+						oAppModel.setSizeLimit(1000);
+						oAppModel.setProperty(
+							"/SapSoftwareSolutions",
+							data.results.map(function(x) {x.selected = false; return x; })
+						);
+						this._expertiseFilter.open();
+					}, this)
+				});
+			} else {
+				this._expertiseFilter.open();
 			}
-			this._expertiseFilter.open();
         },
-
+        
+        // Handlers for the View Settings Dialog (filter)
+        onVsdConfirm: function(oEvent) {
+        	var filterKeys = Object.keys(oEvent.getParameter("filterKeys"));
+        	this.expertiseFilters = filterKeys.reduce(jQuery.proxy(function(a, x) {
+        		return a.concat(this._buildExpertiseFilter(x));
+        	}, this), []);
+        	this.getView().getModel("app").setProperty("/expertiseFilterSet", this.expertiseFilters.length > 0);
+        	this._applyFilters();
+        },
 
 		/* =========================================================== */
 		/* internal methods                                            */
@@ -216,9 +242,20 @@ sap.ui.define([
 			var aFilter = [];
 			if (this.searchFilter)	{ aFilter.push(this.searchFilter); }
 			if (this.quickFilter)	{ aFilter.push(this.quickFilter); }
+			if (this.expertiseFilters.length > 0) { aFilter.push(new Filter(this.expertiseFilters)); }
 			var filter = aFilter.length === 0 ? null : new Filter(aFilter, true);
             this.table.getBinding("items").filter(filter);
             this.map.getBinding("markers").filter(filter);
+		},
+		
+		_buildExpertiseFilter: function(expertiseId) {
+			return ["SapExpertise1Id", "SapExpertise2Id", "SapExpertise3Id"].map(function(property) {
+				return new Filter({
+					path: property,
+					operator: "EQ",
+					value1: expertiseId
+				});
+			});
 		}
 
     });

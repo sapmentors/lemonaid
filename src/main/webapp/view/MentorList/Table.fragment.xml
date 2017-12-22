@@ -25,7 +25,7 @@
 					        id="searchField"
 				            search="onSearchPressed"
 				            width="80%"/>
-			            <Button icon="sap-icon://filter" press="onFilterPress" />
+			            <ToggleButton icon="sap-icon://filter" press="onFilterPress" pressed="{app>/expertiseFilterSet}" />
 			            <Button icon="sap-icon://add-contact" press="onAddNewMentor" width="10%" visible="{=${config>/IsProjectMember}}"/>
 				    </Toolbar>
 		        </headerToolbar>
