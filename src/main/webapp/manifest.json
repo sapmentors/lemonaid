@@ -16,7 +16,7 @@
 		},
 		"dataSources": {
 			"odata": {
-				"uri": "/odata.svc/",
+				"uri": "./odata.svc/",
 				"type": "OData",
 				"settings": {
 					"odataVersion": "2.0",
@@ -24,7 +24,7 @@
 				}
 			},
 			"user": {
-				"uri": "/userapi/currentUser",
+				"uri": "./userapi/currentUser",
 				"type": "JSON"
 			}
 		}
