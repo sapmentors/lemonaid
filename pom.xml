@@ -215,20 +215,15 @@
                             <goal>install-sdk</goal>
                         </goals>
                     </execution>
-		            <!-- This execution is used to run the rolling-update command for blue-green deployment -->
-		            <execution>
-		              <id>deploy</id>
-		              <phase>install</phase>
-		              <goals>
-		                <goal>run-console-command</goal>
-		              </goals>
-		              <configuration>
-		                <consoleCommand>rolling-update -a ${sap.cloud.account} -b ${sap.cloud.application} -h ${sap.cloud.host} -u ${sap.cloud.username} -p ${sap.cloud.password} -source ${project.build.directory}/ROOT.war</consoleCommand>                 
-		              </configuration>
-		            </execution>
                 </executions>
                 <configuration>
                     <sdkInstallPath>${project.build.directory}/sdk</sdkInstallPath>
+                    <host>${sap.cloud.host}</host>
+                    <user>${sap.cloud.username}</user>
+                    <password>${sap.cloud.password}</password>
+                    <account>${sap.cloud.account}</account>
+                    <application>${sap.cloud.application}</application>
+                    <source>${project.build.directory}/ROOT.war</source>
                 </configuration>
             </plugin>
 		</plugins>
