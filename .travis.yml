@@ -12,4 +12,4 @@ env:
   - CI_DEPLOY_ACCOUNT=a5a504e08
 deploy:
   provider: script
-  script: "mvn neo-java-web:rolling-update"
+  script: "mvn initialize neo-java-web:rolling-update"
