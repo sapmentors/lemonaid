@@ -13,3 +13,4 @@ env:
 deploy:
   provider: script
   script: "mvn initialize neo-java-web:rolling-update"
+  skip_cleanup: true
