@@ -21,25 +21,28 @@ import com.sap.mentors.lemonaid.utils.MentorUtils;
 @Transactional
 @DisallowConcurrentExecution
 public class GravatarJob implements Job {
-    
+
 	private static final Logger log = LoggerFactory.getLogger(GravatarJob.class);
 
-	@Autowired GravatarImage gravatar;
-	@Autowired MentorRepository mentorRepository;
-	@Autowired MentorUtils mentorUtils;
+	@Autowired
+	GravatarImage gravatar;
+	@Autowired
+	MentorRepository mentorRepository;
+	@Autowired
+	MentorUtils mentorUtils;
 
-    @Override
+	@Override
 	public void execute(JobExecutionContext arg0) throws JobExecutionException {
 		log.info("Setting photoUrl of mentors - Start");
 		long startTime = System.currentTimeMillis();
-    	for (Mentor mentor : mentorRepository.findAll()) {
-    		try {
+		for (Mentor mentor : mentorRepository.findAll()) {
+			try {
 				mentor.setPhotoUrl(mentorUtils.getImageOfMentor(mentor));
-	    		mentorRepository.save(mentor);
+				mentorRepository.save(mentor);
 			} catch (IOException e) {
 				log.warn("Error occurred while refreshing photo of mentor '" + mentor.getId() + "': " + e.getMessage());
 			}
-    	}
+		}
 		log.info("Setting photoUrl of mentors - End. Duration: " + Long.toString(System.currentTimeMillis() - startTime) + "ms");
 	}
 

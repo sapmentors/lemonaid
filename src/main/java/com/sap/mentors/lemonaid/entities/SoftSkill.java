@@ -10,6 +10,7 @@ public class SoftSkill {
 
 	public static final String DESIGN_THINKING = "design_thinking";
 	public static final String ASUG = "asug";
+	public static final String DSAG = "dsag";
 	public static final String INSIDETRACKS = "insidetracks";
 	public static final String INTERNET_OF_THINGS = "internet_of_things";
 	public static final String LEAN_METHODOLOGY = "lean_methodology";
