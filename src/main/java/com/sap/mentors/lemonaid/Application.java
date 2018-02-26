@@ -491,22 +491,25 @@ public class Application extends SpringBootServletInitializer {
 
 				if (softSkillRepository.count() == 0) {
 					log.info("Soft skills table is still empty. Prepopulating it");
-					softSkillRepository.save(new SoftSkill(SoftSkill.DESIGN_THINKING, "Design Thinking"));
-					softSkillRepository.save(new SoftSkill(SoftSkill.ASUG, "ASUG"));
-					softSkillRepository.save(new SoftSkill(SoftSkill.INSIDETRACKS, "InsideTracks"));
-					softSkillRepository.save(new SoftSkill(SoftSkill.INTERNET_OF_THINGS, "Internet of Things"));
-					softSkillRepository.save(new SoftSkill(SoftSkill.LEAN_METHODOLOGY, "Lean Methodology"));
-					softSkillRepository.save(new SoftSkill(SoftSkill.COMMUNICATION_SKILLS, "Communication skills"));
-					softSkillRepository.save(new SoftSkill(SoftSkill.INTERPERSONAL_SKILLS, "Interpersonal skills"));
-					softSkillRepository.save(new SoftSkill(SoftSkill.PROJECT_MANAGEMENT_SKILLS, "Project management skills"));
-					softSkillRepository.save(new SoftSkill(SoftSkill.PROCESS_IMPROVEMENT_EXPERTISE, "Process improvement expertise"));
-					softSkillRepository.save(new SoftSkill(SoftSkill.EMOTIONAL_INTELLIGENCE, "Emotional intelligence"));
-					softSkillRepository.save(new SoftSkill(SoftSkill.CRITICAL_OBSERVATION_SKILLS, "Critical observation skills"));
-					softSkillRepository.save(new SoftSkill(SoftSkill.CONFLICT_RESOLUTION, "Conflict Resolution"));
-					softSkillRepository.save(new SoftSkill(SoftSkill.DECISIONMAKING, "Decision-Making"));
-					softSkillRepository.save(new SoftSkill(SoftSkill.LEADERSHIP_SKILLS, "Leadership skills"));
-					softSkillRepository.save(new SoftSkill(SoftSkill.CHANGE_MANAGEMENT, "Change Management"));
+				} else {
+					log.info("Check that soft skills table is up-to-date.");
 				}
+				softSkillRepository.save(new SoftSkill(SoftSkill.DESIGN_THINKING, "Design Thinking"));
+				softSkillRepository.save(new SoftSkill(SoftSkill.ASUG, "ASUG"));
+				softSkillRepository.save(new SoftSkill(SoftSkill.DSAG, "DSAG"));
+				softSkillRepository.save(new SoftSkill(SoftSkill.INSIDETRACKS, "InsideTracks"));
+				softSkillRepository.save(new SoftSkill(SoftSkill.INTERNET_OF_THINGS, "Internet of Things"));
+				softSkillRepository.save(new SoftSkill(SoftSkill.LEAN_METHODOLOGY, "Lean Methodology"));
+				softSkillRepository.save(new SoftSkill(SoftSkill.COMMUNICATION_SKILLS, "Communication skills"));
+				softSkillRepository.save(new SoftSkill(SoftSkill.INTERPERSONAL_SKILLS, "Interpersonal skills"));
+				softSkillRepository.save(new SoftSkill(SoftSkill.PROJECT_MANAGEMENT_SKILLS, "Project management skills"));
+				softSkillRepository.save(new SoftSkill(SoftSkill.PROCESS_IMPROVEMENT_EXPERTISE, "Process improvement expertise"));
+				softSkillRepository.save(new SoftSkill(SoftSkill.EMOTIONAL_INTELLIGENCE, "Emotional intelligence"));
+				softSkillRepository.save(new SoftSkill(SoftSkill.CRITICAL_OBSERVATION_SKILLS, "Critical observation skills"));
+				softSkillRepository.save(new SoftSkill(SoftSkill.CONFLICT_RESOLUTION, "Conflict Resolution"));
+				softSkillRepository.save(new SoftSkill(SoftSkill.DECISIONMAKING, "Decision-Making"));
+				softSkillRepository.save(new SoftSkill(SoftSkill.LEADERSHIP_SKILLS, "Leadership skills"));
+				softSkillRepository.save(new SoftSkill(SoftSkill.CHANGE_MANAGEMENT, "Change Management"));
 
 				if (countryRepository.count() == 0) {
 					log.info("Country table is still empty. Prepopulating it");
