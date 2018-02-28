@@ -1235,15 +1235,15 @@ public class Application extends SpringBootServletInitializer {
 							"@wolf_gregor",
 							new Size(Size.XL),
 							new Gender(Gender.M),
-							"http://scn.sap.com/people/robin.vanhethof",
-							"@qualiture",
-							"http://nl.linkedin.com/pub/robin-van-het-hof/2/526/bb7/",
+							"http://scn.sap.com/people/gregor.wolf",
+							"@wolf_gregor",
+							"https://www.linkedin.com/in/gregorwolf/",
 							null,
 							null,
-							"qualiture",
+							"gregor.wolf",
 							false, false, true, true, 0,
 							new Region(Region.EUR),
-							new Topic(Topic.UX), "Prakash Darji Prakash Darji - (SVP & GM, Platform as a Service)  Uddhav Gupta; Rick Constanzo",
+							new Topic(Topic.UX), "Sam Yen",
 							null, null,
 							null, null,
 							null, null,
@@ -1254,10 +1254,15 @@ public class Application extends SpringBootServletInitializer {
 						));
 					
 					for (Mentor mentor : mentorRepository.findAll()) {
-						try { mentor.setPhotoUrl(mentorUtils.getImageOfMentor(mentor)); } catch (IOException e) {}
+						// As profile picture and locations is updated via the cronjob we don't do it at startup
+						/*
+						try { 
+							mentor.setPhotoUrl(mentorUtils.getImageOfMentor(mentor)); 
+						} catch (IOException e) {}
 						mentor.setLocation(mentorUtils.getLocationOfMentor(mentor));
-			    		mentorRepository.save(mentor);
-			    	}
+						*/
+			    			mentorRepository.save(mentor);
+			    		}
 				}
 	        }
 	    };
