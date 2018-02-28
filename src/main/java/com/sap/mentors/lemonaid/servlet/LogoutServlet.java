@@ -36,10 +36,10 @@ public class LogoutServlet extends HttpServlet {
 				loginContext = LoginContextFactory.createLoginContext();
 				loginContext.logout();
 			} catch (LoginException e) {
-				response.sendRedirect("/");
+				response.sendRedirect("./");
 			}
 		}
-		response.sendRedirect("/");
+		response.sendRedirect("./");
 	}
 
 }
