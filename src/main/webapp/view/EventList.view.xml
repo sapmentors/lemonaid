@@ -5,7 +5,6 @@
 	xmlns:mvc="sap.ui.core.mvc" 
 	xmlns:core="sap.ui.core"
 	height="100%">
-
 	<l:ResponsiveSplitter defaultPane="default">
 		<l:PaneContainer>
 			<l:SplitPane requiredParentWidth="0" id="default">

@@ -21,8 +21,8 @@
 		<Label text="{i18n>shirtPreview}" />
 		<lemonaid:MentorShirt gender="{ShirtMFId}" text="{ShirtText}" number="{ShirtNumber}" />
 
-		<Label text="{i18n>shirtMF}" visible="{= !${ui>/isEditMode} }" />
-		<Text text="{ShirtMF/Name}" visible="{= !${ui>/isEditMode} }" />
+		<Label text="{i18n>shirtMF}" visible="{= !!${ShirtMF/Name} &amp;&amp; !${ui>/isEditMode} }" />
+		<Text text="{ShirtMF/Name}" visible="{= !!${ShirtMF/Name} &amp;&amp; !${ui>/isEditMode} }" />
 		<Label text="{i18n>shirtMF}" visible="{ui>/isEditMode}" />
 		<Select	selectedKey="{ShirtMFId}"
 					id="select-shirtMF"
@@ -37,8 +37,8 @@
 		<Label text="{i18n>shirtText}" visible="{ui>/isEditMode}" />
 		<Input id="input-shirtText" value="{ShirtText}" visible="{ui>/isEditMode}"/>
 
-		<Label text="{i18n>shirtSize}" visible="{= !${ui>/isEditMode} }"/>
-		<Text text="{ShirtSize/Name}" visible="{= !${ui>/isEditMode} }" />
+		<Label text="{i18n>shirtSize}" visible="{= !!${ShirtSize/Name} &amp;&amp; !${ui>/isEditMode} }"/>
+		<Text text="{ShirtSize/Name}" visible="{= !!${ShirtSize/Name} &amp;&amp; !${ui>/isEditMode} }" />
 		<Label text="{i18n>shirtSize}" visible="{ui>/isEditMode}" />
 		<Select	selectedKey="{ShirtSizeId}"
 					id="select-shirtSize"

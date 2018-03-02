@@ -3,9 +3,10 @@
 	xmlns="sap.uxap"
 	xmlns:l="sap.ui.layout"
 	xmlns:m="sap.m"
-	xmlns:f="sap.ui.layout.form"
+	xmlns:f="sap.f"
 	xmlns:details="com.sap.mentors.lemonaid.view.Events">
 
+				
 	<ObjectPageLayout
 		id="eventDetails"
 		enableLazyLoading="false"
@@ -17,29 +18,55 @@
 		class="EventDetailsPage"
 		editHeaderButtonPress="handleEditBtnPress">
 
+			
 		<headerTitle>
+		<!-- Should be here for the rendering of the object page -->
+		<!-- Won't use it because we want to show a message first -->
 			<ObjectPageHeader
 				id="header"
-				objectTitle="{Name}"
-				objectImageShape="Circle"
-				objectImageAlt="{Name}"
-            	objectImageURI="{
-					path: 'Source',
-					formatter: '.formatters.formatEventLogo'
-				}"
-				objectSubtitle="{
-					path: 'StartDate',
-					type: 'sap.ui.model.type.Date',
-					formatOptions: {
-						style: 'long'
-					}
-				} - {Location}"
+				objectTitle=""
+				objectImageShape=""
+				objectImageAlt=""
+            	objectImageURI=""
+				objectSubtitle=""
 				isObjectIconAlwaysVisible="false"
 				isObjectTitleAlwaysVisible="false"
 				isObjectSubtitleAlwaysVisible="false">
 			</ObjectPageHeader>
 		</headerTitle>
-
+		<headerContent>
+			<m:MessageStrip
+				text="{i18n>sitreginfo}"
+				enableFormattedText="true"
+				type="Information"
+				showIcon="true"
+				class="sapUiMediumMarginBottom">
+			</m:MessageStrip>
+			<f:Avatar
+						src="{
+					path: 'Source',
+					formatter: '.formatters.formatEventLogo'
+				}"
+				displaySize="XL">
+			</f:Avatar>
+			<m:ObjectHeader
+				icon=""
+				iconDensityAware="false"
+				iconAlt="{Name}"
+				title="{Name}"
+				number=""
+				numberUnit="" >
+				<m:attributes>
+					<m:ObjectAttribute text="{
+					path: 'StartDate',
+					type: 'sap.ui.model.type.Date',
+					formatOptions: {
+						style: 'long'
+					}
+				} - {Location}" />
+				</m:attributes>
+			</m:ObjectHeader>
+		</headerContent>
 		<sections>
 			
 			<ObjectPageSection title="{i18n>eventInfo}" importance="Medium">

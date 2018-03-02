@@ -115,17 +115,17 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks("grunt-contrib-jshint");
     grunt.loadNpmTasks("grunt-contrib-watch");
 
-	// grunt.registerTask("default", [ "openui5_preload"]);
+    grunt.registerTask("default", [ "openui5_preload"]);
 
 	grunt.registerTask("validate", [
 		"jshint",
 		"xml_validator"]);
 
-	grunt.registerTask("default", [
+	/*grunt.registerTask("default", [
 		"jshint",
 		"xml_validator",
 		"configureProxies:server",
         "connect:server",
         "watch"]);
-
+*/
 };
