@@ -42,9 +42,14 @@ public class MentorUtils {
 		}
 		HashMap<String, Boolean> exist = gravatar.emailsExist(emails);
 		if (mentor.getEmail1() != null && exist.get(mentor.getEmail1())) {
-			photoUrl = gravatar.getUrlForEmail(mentor.getEmail1()) + "?s=144";
+			photoUrl = gravatar.getUrlForEmail(mentor.getEmail1());
 		} else if (mentor.getEmail2() != null && exist.get(mentor.getEmail2())) {
-			photoUrl = gravatar.getUrlForEmail(mentor.getEmail2()) + "?s=144";
+			photoUrl = gravatar.getUrlForEmail(mentor.getEmail2());
+		}
+		
+		if (photoUrl != null) {
+			photoUrl = photoUrl + "?s=144";
+			return photoUrl;
 		}
 
 		// Try Twitter Photo
