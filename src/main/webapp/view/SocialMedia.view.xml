@@ -3,8 +3,12 @@
 	xmlns="sap.m"
 	xmlns:l="sap.ui.layout"
 	xmlns:mvc="sap.ui.core.mvc" 
-	xmlns:core="sap.ui.core">
+	xmlns:core="sap.ui.core"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	height="100%">
 
-	<Text text="Placeholder for Social Media page" class="sapUiResponsiveMargin" />
-
+<!-- 	<Text text="Placeholder for Social Media page" class="sapUiResponsiveMargin" /> -->
+	<html:iframe 
+		src="https://socialmediawalls-a5a504e08.dispatcher.hana.ondemand.com/client/index.html#sap2018/collections/29659?orientation=responsive&amp;language=en&amp;period=48&amp;rall=30" 
+		height="100%" width="100%"/>
 </mvc:View>

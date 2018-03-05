@@ -62,7 +62,7 @@
                 <Page id="MentorAddition" showHeader="false" enableScrolling="false" />
 				<Page id="Events" showHeader="false" />
 				<Page id="Content" showHeader="false" />
-				<Page id="SocialMedia" showHeader="false" />
+				<Page id="SocialMedia" showHeader="false" enableScrolling="false" />
 				<Page id="ImportExport" showHeader="false" />
 				<Page id="Admin" title="{i18n>lemonaidAdmin}" />
 				<Page id="Help" title="{i18n>help}" />
