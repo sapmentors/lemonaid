@@ -46,6 +46,10 @@ public class GravatarImage {
 		return getUrlForHash(this.user);
 	}
 	
+	public String getUser() {
+		return this.user;
+	}
+	
 	public void setUser(final String user) {
 		this.user = user;
 		try {
@@ -60,6 +64,10 @@ public class GravatarImage {
 
 	public void setPassword(final String password) {
 		this.password = password;
+	}
+
+	public String getApiKey() {
+		return this.apiKey;
 	}
 
 	public void setApiKey(final String apiKey) {
@@ -91,7 +99,7 @@ public class GravatarImage {
 	public HashMap<String, Boolean> emailsExist(final List<String> emails) throws IOException {
         ArrayList<String> hashes = new ArrayList<String>();
         for (String email : emails) {
-        	hashes.add(hash(email));
+        		hashes.add(hash(email));
         }
 		Map<String,Object> map = new HashMap<String,Object>();
         map.put("hashes", hashes);
@@ -99,7 +107,7 @@ public class GravatarImage {
         if (hashes.isEmpty()) return retval;
         HashMap<String, Integer> result = (HashMap<String, Integer>) callFunction("grav.exists", map);
         for (String email : emails) {
-        	retval.put(email, result.get(hash(email)) > 0);
+        		retval.put(email, result.get(hash(email)) > 0);
         }
         return retval;
 	}
