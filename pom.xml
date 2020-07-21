@@ -19,7 +19,7 @@
 		<java.version>1.7</java.version>
 		<cxf.version>3.1.7</cxf.version>
 		<olingo.version>2.0.8</olingo.version>
-		<quartz.version>2.2.3</quartz.version>
+		<quartz.version>[2.3.2,)</quartz.version>
 		<hcp.version>2.93.23</hcp.version>
 		<liquibase-hana.version>3.1.1</liquibase-hana.version>
 		<commons-io.version>2.5</commons-io.version>
