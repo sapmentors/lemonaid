@@ -9,7 +9,7 @@
   "author": "SAP Mentors",
   "license": "MIT",
   "devDependencies": {
-    "grunt": "~0.4.1",
+    "grunt": "~1.3.0",
     "grunt-contrib-connect": "^1.0.2",
     "grunt-connect-proxy": "0.1.10",
     "grunt-openui5": "^0.9.0",
