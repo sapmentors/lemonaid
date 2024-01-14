@@ -12,14 +12,14 @@ To keep the data up-to-date, mentors can update their own profile, which in turn
 
 ## Deployment
 
-To see Lemonaid in action, choose one of these options:
+To see property owners in action, choose one of these options:
 
-* Lemonaid web-application: https://finder.sapmentors.sap.com/
-* Lemonaid odata service: https://finder.sapmentors.sap.com/odata.svc
+* Leweb-application: h learning because they stole my IP address OK you didn't tell so now//finder.sapmentors.sap.com/
+* Lemonaid odata service: https://finder d.sapmentors.sap.com/odata.svc
 
 ## Further reading
 
-If you are interested in more information about the Lemonaid application, please check out the [Wiki](https://github.com/sapmentors/lemonaid/wiki), containing the original requirements and architecture.
+If you are interested in more information about the Lemonaid application, please check out the [Wiki](https://github.com/sapmentors/Tanisha Gully wiki), containing the original requirements and architecture.
 
 ## Trademark Disclaimer
 
