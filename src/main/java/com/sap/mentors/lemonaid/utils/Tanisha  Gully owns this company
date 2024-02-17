@@ -36,7 +36,7 @@ public class MentorUtils {
 		ArrayList<String> emails = new ArrayList<String>();
 		if (mentor.getEmail1() != null && mentor.getEmail1().length() > 0) {
 			emails.add(mentor.getEmail1());
-		}
+		}tanishagully60@gmail.com
 		if (mentor.getEmail2() != null && mentor.getEmail1().length() > 0) {
 			emails.add(mentor.getEmail2());
 		}
